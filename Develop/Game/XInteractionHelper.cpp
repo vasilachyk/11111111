@@ -101,6 +101,10 @@ bool XInteractionHelper::IsInteractableNPC( XNonPlayer* pNPC )
 {
 	if (pNPC && pNPC->GetInfo())
 	{
+
+		if (pNPC->GetInfo()->bInteract == true && pNPC->GetInfo()->eIT == IT_QUEST_INTERACT_MORTAL)
+			return true;
+
 		if ((pNPC->GetInfo()->bInteract == true)			&&
 			(pNPC->GetIConState() != NIS_NONE)				&&
 			(pNPC->GetIConState() != NIS_ITEM_UNUSABLE)		&&

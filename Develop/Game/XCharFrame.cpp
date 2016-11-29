@@ -47,6 +47,8 @@ XCharFrame::~XCharFrame()
 // Open
 bool XCharFrame::Open( int nPrevFrameID, const TCHAR* szArgs)
 {
+	global.camera->GetCamera()->SetPosition(0.0f, -300.0, 120.0f);
+	global.camera->GetCamera()->SetDirection(vec3(0.0f, 1.0f, -0.1f));
 	dlog( "Enter frame : Character\n");
 
 	m_bUpdateOnce = false;
@@ -285,6 +287,8 @@ void XCharFrame::Update( float fDelta)
 	// Check loading completed
 	if ( m_bLoadCampaign == true  &&  XGetLoginCampaign()->IsLoadingCompleted() == true)
 	{
+		global.camera->GetCamera()->SetPosition(0.0f, -300.0, 120.0f);
+		global.camera->GetCamera()->SetDirection(vec3(0.0f, 1.0f, -0.1f));
 		if ( global.script)		global.script->GetGlueGameEvent().OnCharacterEvent( "UI", "LOADED");
 		m_bLoadCampaign = false;
 	}
@@ -349,6 +353,10 @@ void XCharFrame::OnRender()
 // SelectChar
 void XCharFrame::SelectChar( int nIndex)
 {
+
+	global.camera->GetCamera()->SetPosition(0.0f, -300.0, 120.0f);
+	global.camera->GetCamera()->SetDirection(vec3(0.0f, 1.0f, -0.1f));
+
 	if ( nIndex >= (int)gvar.Char.m_CharInfos.size())							return;
 	if ( m_pCurrPlayer != NULL  &&  m_pPlayers[ nIndex] == m_pCurrPlayer)		return;
 
@@ -375,9 +383,6 @@ void XCharFrame::SelectChar( int nIndex)
 	TD_UPDATE_CACHE_PLAYER _info = GetDefaultCharData( ci);
 	_info.SimpleInfo.vPos = DEFAULT_PLAYER_POS;
 	_info.SimpleInfo.svDir = DEFAULT_PLAYER_DIR;
-
-	global.camera->GetCamera()->SetPosition(0.0f, -300.0, 120.0f);
-	global.camera->GetCamera()->SetDirection(vec3(0.0f, 1.0f, -0.1f));
 
 	TD_PLAYER_FEATURE_TATTOO _tattoo;
 	_tattoo.nTattooType = ci.nTattoo;

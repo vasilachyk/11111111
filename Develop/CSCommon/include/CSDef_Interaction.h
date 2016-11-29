@@ -38,6 +38,7 @@ enum NPC_ICON_TYPE
 	NIT_ITEM_USABLE,				// 아이템사용해서 인터랙션
 	NIT_ONLYINTERACTION,			// 인터랙션만 가능(아이콘x)	
 	NIT_TRIGGER,					// 트리거
+	NIT_QUEST_INTERACT,				// 인터랙션으로 퀘스트 목적 업데이트
 	NIT_LOOT,						// 루팅
 	NIT_LOOT_GATHER,				// TODO: not sure this is correct... check required.
 	NIT_TALK,						// 대화

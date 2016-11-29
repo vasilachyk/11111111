@@ -82,7 +82,7 @@ bool LDBManager::GetServerStatusList(const int nWorldID, const std::vector<int>&
 
 
 // 계정 로그인 정보 받아오기
-wchar_t g_szDB_LOGIN_GETINFO[] = L"{CALL RZ_LOGIN_GET_INFO ('%s')}";
+wchar_t g_szDB_LOGIN_GETINFO[] = L"{CALL RZ_LOGIN_GET_INFO ('%s', '%s')}";
 bool LDBManager::LoginGetInfo(LDBT_ACC_LOGIN& data)
 {
 	LDBTaskLogin* pTask = new LDBTaskLogin(data.m_uidPlayer);
@@ -90,7 +90,7 @@ bool LDBManager::LoginGetInfo(LDBT_ACC_LOGIN& data)
 		return false;
 
 	CString strSQL;
-	strSQL.Format(g_szDB_LOGIN_GETINFO, mdb::MDBStringEscaper::Escape(data.m_strSITE_USER_ID).c_str());
+	strSQL.Format(g_szDB_LOGIN_GETINFO, mdb::MDBStringEscaper::Escape(data.m_strSITE_USER_ID).c_str(), mdb::MDBStringEscaper::Escape(data.m_strPWD).c_str());
 
 	pTask->Input(data);
 	pTask->PushSQL(strSQL);

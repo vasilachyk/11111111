@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ #include "stdafx.h"
 #include "LDBTaskLogin.h"
 #include "LDBTaskGlobal.h"
 #include "CCommandTable_Login.h"
@@ -66,30 +66,19 @@ LDBTaskLogin::Completer::Completer( LDBT_ACC_LOGIN& data, _RESULT& result ) : m_
 
 void LDBTaskLogin::Completer::Do()
 {
-	if (0 < m_Result.m_nGSN)
+	if (m_Result.m_nGSN > 0)
 	{
-		CCommandResultTable nErrCode = CheckError();
-
-		if (nErrCode != CR_SUCCESS)
-		{
-			SCmdRouter_Login cmdRouter(gsys.pCommandCenter);
-			cmdRouter.ResponseLogin(m_Data.m_uidPlayer, nErrCode, LConfig::m_nServerMode);
-			return;
-		}
-
 		InitAccountInfo();
 
-		if (LConfig::m_bStandAlone)
-		{
-			SCmdRouter_Login cmdRouter(gsys.pCommandCenter);
-			cmdRouter.ResponseLogin(m_Data.m_uidPlayer, CR_SUCCESS, LConfig::m_nServerMode);
-		}
-		else
-		{
-			LCmdRouter_Player::PostAddPlayerReq(m_Data.m_uidPlayer, m_Result.m_nGSN, m_Data.m_strUSER_ID);
-		}
-
-		gsys.pDBManager->ConnectLog(LDBT_CONN_LOG(m_Result.m_nCONN_SN, m_Result.m_nGSN, m_Data.m_strIP));
+		//if (LConfig::m_bStandAlone)
+		//{
+		//	SCmdRouter_Login cmdRouter(gsys.pCommandCenter);
+		//	cmdRouter.ResponseLogin(m_Data.m_uidPlayer, CR_SUCCESS, LConfig::m_nServerMode);
+		//}
+		//else
+		//{
+			LCmdRouter_Player::PostAddPlayerReq(m_Data.m_uidPlayer, (int)m_Result.m_nGSN, m_Data.m_strUSER_ID);
+		//}
 	}
 	else
 	{
@@ -118,23 +107,23 @@ CCommandResultTable LDBTaskLogin::Completer::CheckError()
 
 void LDBTaskLogin::Completer::DebugCheckExistAccount()
 {
-	if (LConfig::m_isAllowInsertNewAccount)
-	{
-		// 계정이 없으면 만들어준다.
-		LDBT_ACC_INSERT data(m_Data.m_uidPlayer
-			, m_Data.m_strUSER_ID
-			, m_Data.m_strSITE_CODE
-			, m_Data.m_strSITE_USER_ID
-			, m_Data.m_strPWD);
+	//if (LConfig::m_isAllowInsertNewAccount)
+	//{
+	//	// 계정이 없으면 만들어준다.
+	//	LDBT_ACC_INSERT data(m_Data.m_uidPlayer
+	//		, m_Data.m_strUSER_ID
+	//		, m_Data.m_strSITE_CODE
+	//		, m_Data.m_strSITE_USER_ID
+	//		, m_Data.m_strPWD);
 
-		// 계정이 없으면 만들어준다.
-		gsys.pDBManager->InsertAccount(data);
-	}
-	else
-	{
+	//	// 계정이 없으면 만들어준다.
+	//	gsys.pDBManager->InsertAccount(data);
+	//}
+	//else
+	//{
 		SCmdRouter_Login cmdRouter(gsys.pCommandCenter);
-		cmdRouter.ResponseLogin(m_Data.m_uidPlayer, CR_FAIL_LOGIN_INVALID_ID_OR_PASSWORD);
-	}
+		cmdRouter.ResponseLogin(m_Data.m_uidPlayer, CR_FAIL_LOGIN_NOT_EXIST_USER);
+	//}
 }
 
 void LDBTaskLogin::Completer::InitAccountInfo()
