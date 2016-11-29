@@ -9,7 +9,7 @@
 XPlayerModelConst	XCONST::PlayerModel;
 XDefaultEquipments	XCONST::DEFAULT_EQUIPMENTS[ 10];
 XDefaultEquipments	XCONST::DEFAULT_STYLES[ 6];
-string	XCONST::DEFAULT_TATTOO[ 30];
+string	XCONST::DEFAULT_TATTOO[ 48];
 
 // 상수 기본값 정의
 int		XCONST::CAMERA_FOV				= 90;
@@ -526,7 +526,7 @@ void XCONST::InitDefaultStyles(MWLua* pLua)
 
 void XCONST::InitDefaultTattoo( MWLua* pLua)
 {
-	for ( int i = 0;  i < 30;  i++)
+	for ( int i = 0;  i < 48;  i++)
 	{
 		char szName[ 256];
 		sprintf_s( szName, "CONST_DEFAULT_TATTOO%d", i);

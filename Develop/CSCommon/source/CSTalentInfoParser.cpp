@@ -192,7 +192,7 @@ void CSTalentInfoParser::ParseTalentCommon(CSTalentInfo* pTalentInfo, MXmlElemen
 	// csv_parser.Parse_CSV(pElement, TALENT_XML_ATTR_NPC_EXCLUDE, pTalentInfo->m_RequireBuff.vecExcludeBuffID);
 	csv_parser.Parse_CSV(pElement, TALENT_XML_ATTR_BUFF_INCLUDE, pTalentInfo->m_RequireBuff.vecIncludeBuffID);
 	csv_parser.Parse_CSV(pElement, TALENT_XML_ATTR_BUFF_EXCLUDE, pTalentInfo->m_RequireBuff.vecExcludeBuffID);
-	
+	csv_parser.Parse_CSV(pElement, TALENT_XML_ATTR_DESCRIPTION_PARAM, pTalentInfo->m_vecstrDescParam);
 	int nDodgeDifficulty = 230;
 	if (_Attribute(&nDodgeDifficulty,				pElement, TALENT_XML_ATTR_DODGE_DIFFICULTY))
 	{

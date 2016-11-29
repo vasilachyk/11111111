@@ -49,7 +49,7 @@ public:
 
 	static XDefaultEquipments	DEFAULT_EQUIPMENTS[ 10];
 	static XDefaultEquipments	DEFAULT_STYLES[ 6];
-	static string		DEFAULT_TATTOO[ 30];
+	static string		DEFAULT_TATTOO[48];
 
 	// 설정 상수 --------------------------
 	static int			CAMERA_FOV;							// Field of view ( 4:3 , Y 기준 )

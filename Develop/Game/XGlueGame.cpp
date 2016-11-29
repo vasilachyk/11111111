@@ -4466,8 +4466,65 @@ const char* XGlueGame::GetTalentDesc( int nTalentID )
 {
 	XTalentInfo* pTalentInfo = info.talent->Get(nTalentID);
 	if (pTalentInfo == NULL) return "";
+	wstring result = L"";
+	if (pTalentInfo->m_vecstrDescParam.size() == 0)
+		result = pTalentInfo->GetDesc();
+	else if (pTalentInfo->m_vecstrDescParam.size() == 1)
+		result =
+		CSFormatString::Format(
+			(pTalentInfo->GetDesc()), 
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[0].c_str())
+			)
+		);
+	else if(pTalentInfo->m_vecstrDescParam.size() == 2)
+		result =
+		CSFormatString::Format(
+			pTalentInfo->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[1].c_str())
+				)
+		);
+	else if (pTalentInfo->m_vecstrDescParam.size() == 3)
+		result =
+		CSFormatString::Format(
+			pTalentInfo->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[1].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[2].c_str())
+				)
+		);
+	else if (pTalentInfo->m_vecstrDescParam.size() == 4)
+		result =
+		CSFormatString::Format(
+			pTalentInfo->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[1].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[2].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[3].c_str())
+				)
+		);
+	else if (pTalentInfo->m_vecstrDescParam.size() == 5)
+		result =
+		CSFormatString::Format(
+			pTalentInfo->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[1].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[2].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[3].c_str()),
+				MLocale::ConvAnsiToUTF16(pTalentInfo->m_vecstrDescParam[4].c_str())
+				)
+		);
+	else
+	{
+		return "";
+	}
 
-	gvar.Temp.szTemp = MLocale::ConvUTF16ToAnsi(pTalentInfo->GetDesc());
+	gvar.Temp.szTemp = MLocale::ConvUTF16ToAnsi(result);
 
 	return gvar.Temp.szTemp.c_str();
 }

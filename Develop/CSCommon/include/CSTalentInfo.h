@@ -629,7 +629,7 @@ public:
 // CLIENT만 사용 -------------
 public:
 	tstring					m_szDesc;				///< 설명(클라)
-	vector<tstring>			m_vecstrDescParam;
+	vector<string>			m_vecstrDescParam;
 	float					m_fExtraMotionTime;		///< Extra 모션의 플레이 시간 - TOOL에서 사용
 	float					m_fExtraMotionTime2;	///< Extra2 모션의 플레이 시간 - TOOL에서 사용
 	float					m_fExtraMotionTime3;	///< Extra3 모션의 플레이 시간 - TOOL에서 사용
