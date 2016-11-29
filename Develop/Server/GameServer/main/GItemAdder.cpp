@@ -181,8 +181,21 @@ bool GItemAdder::CheckUnique(GEntityPlayer* pPlayer, const vector<CHECK_ADDABLE_
 
 		if (pItemData->m_bUnique)
 		{
-			if (1 < checkAddableItem.m_nAmount) return false;
 			GItemHolder* pItemHolder = pPlayer->GetItemHolder();
+			if (1 < checkAddableItem.m_nAmount)
+			{
+				GItem* pItem = pItemHolder->GetMergeableItem(SLOTTYPE_INVENTORY, pItemData->m_nID, checkAddableItem.m_nAmount);
+				if (!pItem)
+				{
+					//no item, check to see if its in our bank
+					if (pItemHolder->IsExist(SLOTTYPE_EQUIP, pItemData->m_nID))	return false;
+					if (pItemHolder->IsExist(SLOTTYPE_INVENTORY, pItemData->m_nID))	return false;
+					if (pItemHolder->IsExist(SLOTTYPE_STORAGE, pItemData->m_nID))	return false;
+					return true;
+				}
+				//can merge into existing
+				return true;
+			}
 			if (pItemHolder->IsExist(SLOTTYPE_EQUIP, pItemData->m_nID))	return false;
 			if (pItemHolder->IsExist(SLOTTYPE_INVENTORY, pItemData->m_nID))	return false;
 			if (pItemHolder->IsExist(SLOTTYPE_STORAGE, pItemData->m_nID))	return false;

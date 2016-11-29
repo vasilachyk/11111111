@@ -18,7 +18,7 @@ inline void XPostItem_Unequip(SH_ITEM_SLOT nItemSlot)
 
 inline void XPostItem_Use(int nInvenSlotID)
 {
-	XPOSTCMD1(MC_ITEM_USE_REQ, MCommandParameterInt(nInvenSlotID));
+	XPOSTCMD2(MC_ITEM_USE_REQ, MCommandParameterInt(nInvenSlotID), MCommandParameterWideString(L""));
 }
 
 inline void XPostItem_Interact(int nInvenSlotID, const MUID& uidNPC)

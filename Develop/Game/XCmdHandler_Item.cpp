@@ -109,9 +109,6 @@ MCommandResult XCmdHandler_Item::OnItemTalent(MCommand* pCommand, MCommandHandle
 
 	if (pCommand->GetParameter(&nTalentID,	0, MPT_INT)==false) return CR_ERROR;
 
-	XItem* pItem = gvar.MyInfo.Inventory.GetItem(nInvenSlotID);
-	if (pItem == NULL) return CR_TRUE;
-
 	gvar.MyInfo.Inventory.Use(nInvenSlotID, &gvar.MyInfo.ChrStatus, nAmount);
 
 	gvar.Game.pMyPlayer->GetModuleMyControl()->DoActionUseTalent(nTalentID);

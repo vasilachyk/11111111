@@ -259,18 +259,18 @@ enum
 
 static const vec3 POS_CAMERA[] =
 {
-	vec3( 0.0f, -20295.203f, 12623.285f),
-	vec3( 2812.435f, 602.378f, -30.592f),
+	vec3(0.0f, -300.0f, 120.0f),
+	vec3(0.0f, -300.0f, 120.0f),
 	//vec3( 712.435f, -412.378f, -56.592f), //Char Select
-	vec3( 22755.951f, -145.614f, 105.686f)
+	vec3(0.0f, -300.0f, 120.0f)
 	//vec3( 20655.951f, -2145.614f, 105.686f) //Char Create
 };
 
 static const vec3 DIR_CAMERA[] =
 {
-	vec3( 0.0f, 1.0f, 0.0f),
-	vec3( 0.0f, 1.0f, 0.14f),
-	vec3( 0.0f, 1.0f, 0.0f)
+	vec3( 0.0f, 1.0f, -0.1f),
+	vec3( 0.0f, 1.0f, -0.1f),
+	vec3( 0.0f, 1.0f, -0.1f)
 };
 
 static const float GAIN_CAMERA[] = { 100.0f, 100.0f, 100.0f };
