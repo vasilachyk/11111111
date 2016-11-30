@@ -109,6 +109,7 @@ void XMotionAniNameMaker::MakeNPCAniName( wstring& outName, XMotion* pMotion, XM
 
 void XMotionAniNameMaker::MakeRideAniName( wstring& outName, XMotion* pMotion, XMotionTypes curr, int nAniSequence, int nCurrNPCMode, XNPCInfo* pNPCInfo )
 {
+	if (nAniSequence < 0 || nAniSequence >= (int)pMotion->m_vecAniSequence[curr].size()) return;
 	MakeNPCAniName(outName, pMotion, curr, nAniSequence, nCurrNPCMode, pNPCInfo );
 	// ride_ + 
 	outName = L"ride_" + outName;
@@ -116,6 +117,7 @@ void XMotionAniNameMaker::MakeRideAniName( wstring& outName, XMotion* pMotion, X
 
 void XMotionAniNameMaker::MakeRiderAniName( wstring& outName, XMotion* pMotion, XMotionTypes curr, int nAniSequence, WEAPON_TYPE nWeaponType, CHAR_STANCE nStance )
 {
+	if (nAniSequence < 0 || nAniSequence >= (int)pMotion->m_vecAniSequence[curr].size()) return;
 	MakePlayerAniName( outName, pMotion, curr, nAniSequence, nWeaponType, nStance );
 	// + "_ride"
 	outName	= outName + L"_ride";

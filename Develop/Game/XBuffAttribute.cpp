@@ -35,7 +35,7 @@ void XBuffAttribute::ParseBuffAttr( const XBuffInfo* pBuffInfo, int nStackCount 
 		m_bMounted = true;
 	}
 
-	m_fMoveSpeedRatio += pBuffInfo->m_ActorModifier.fMoveSpeed * nStackCount;
+	m_fMoveSpeedRatio += ((pBuffInfo->m_ActorModifier.fMoveSpeed) * nStackCount);
 
 	// 이동 스피드는 0.1 이하가 될수 없다. (0.1 이하가 되면 버그가 생길 수 있다.)
 	if(m_fMoveSpeedRatio < MIN_MOVE_SPEED)

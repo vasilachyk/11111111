@@ -306,6 +306,7 @@ public:
 	bool					m_bShowHitReaction;
 
 	int						m_nExtraActiveModelID;			// 마법진에 사용하는 모델(NPC) ID
+	int						m_nExtraNpcRideID;			// 마법진에 사용하는 모델(NPC) ID
 };
 
 

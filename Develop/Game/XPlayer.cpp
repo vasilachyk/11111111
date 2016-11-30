@@ -91,7 +91,9 @@ float XPlayer::GetMoveSpeed(unsigned int nMovementFlags)
 	if (attrBuff.m_bMounted)
 	{
 		fSpeed = XCONST::MOVE_SPEED_NONE;
-
+		CSPlayerModifier PlayerModifier;
+		PlayerModifier += gvar.MyInfo.PlayerModifier;
+		fModifier += PlayerModifier.fRideSpeed;
 		if (!gvar.Game.IsCombatingNow())
 		{
 			fSpeed = fSpeed * fModifier;

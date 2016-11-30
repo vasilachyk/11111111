@@ -163,7 +163,10 @@ void XModuleBuff::BuffGain( int nBuffID, float fLostRemained, bool bRemainBuffGa
 	{
 		ChangePalette(pBuffInfo);
 	}
-
+	if (pBuffInfo->IsRideBuff())
+	{
+		m_pOwner->AsPlayer()->SetRide(pBuffInfo->m_nRideNPCID);
+	}
 	//------------------------------------------------------------------------
 	// 버프 설정
 	SetGainBuffAnimation(pBuffInfo);
@@ -272,8 +275,10 @@ void XModuleBuff::BuffLost( int nBuffID )
 	CheckInvisibilityLost(pBuffInfo);
 
 	//Mount
-	if(pBuffInfo->IsRideBuff())
+	if (pBuffInfo->IsRideBuff())
+	{
 		m_pOwner->AsPlayer()->RemoveRide();
+	}
 
 	// UI 빼기
 	DeactivedBuffUI(pBuffInfo);
