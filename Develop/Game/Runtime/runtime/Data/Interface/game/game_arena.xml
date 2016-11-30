@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_arena.lua" />
+
+
+  <!-- Frame : 대전신청 -->
+  <Frame name="frmRequestRegister" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="%50" y="%50" />
+      <Size w="400" h="270" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "ARENA_REQUEST_REGISTER"));
+        luaGame:RegisterWindow( frmRequestRegister);
+      </OnLoaded>
+      <OnShow>
+        luaGame:ShowWindow( frmRequestRegister );
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>
+            if( frmRequestRegister:GetShow() == true ) then
+              frmRequestRegister:Show( false);
+            end
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpArenaAui1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwRequestRegister">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="40" />
+          <Size w="390" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntLarge\"}{ALIGN hor=\"center\" ver=\"center\"}{COLOR r=200 g=200 b=200}" .. STR( "ARENA_REQUEST_REGISTER_SELETE_MSG"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : 1:1 -->
+      <Button name="btnArenaOneToOne">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="55" y="80" />
+          <Size w="280" h="30" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ARENA_ONE_TO_ONE"));</OnLoaded>
+          <OnClick>luaArena:ClickRequestRegister(1);</OnClick>
+          <OnToolTip>this:SetToolTip( STR("ARENA_USE_COUNT_INFO"));</OnToolTip>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : 3:3 -->
+      <Button name="btnArenaThreeToThree">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="55" y="120" />
+          <Size w="280" h="30" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ARENA_THREE_TO_THREE"));</OnLoaded>
+          <OnClick>luaArena:ClickRequestRegister(2);</OnClick>
+          <OnToolTip>this:SetToolTip( STR("ARENA_USE_COUNT_INFO"));</OnToolTip>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : 길드 3:3 -->
+      <Button name="btnArenaFiveToFive">
+      <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="55" y="160" />
+          <Size w="280" h="30" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ARENA_GUILD"));</OnLoaded>
+          <OnClick>luaArena:RequestRegisterGuild(3);</OnClick>
+          <OnToolTip>this:SetToolTip( STR("ARENA_USE_COUNT_INFO"));</OnToolTip>
+        </Event>
+      </Button>
+      
+
+      <!-- Buttons : Ranking -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="340" y="210" />
+          <Size w="43" h="43" />
+        </Layout>
+        <Shape>
+          <Icon w="34" h="34">bmpArenaTrophyGold</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+          <OnClick>luaArena:OpenRankingPage();</OnClick>
+          <OnToolTip>this:SetToolTip( STR("RANKING_INFO"));</OnToolTip>
+        </Event>
+      </Button>
+      
+      
+      <!-- TextView : Message -->
+      <TextView name="tvwArenaTimeAvailable">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="200" />
+          <Size w="340" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+      
+    </Controls>
+  </Frame>
+  
+  
+  
+  
+
+  <!-- Frame : 등록 취소 -->
+  <Frame name="frmCancelRegister" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="%50" y="%50" />
+      <Size w="400" h="270" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "ARENA_REQUEST_REGISTER"));
+        luaGame:RegisterWindow( frmCancelRegister);
+      </OnLoaded>
+      <OnUpdate>
+        luaArena:SetCancelRegisterText();
+      </OnUpdate>
+      <OnShow>
+        luaGame:ShowWindow( frmCancelRegister );
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>luaArena:ConfirmCancelRegisterNO();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpArenaAui1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwCancelRegister">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="70" />
+          <Size w="390" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="230" />
+          <Size w="390" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{FONT name=\"fntScriptStrong\"}{ALIGN hor=\"center\" ver=\"center\"}{COLOR r=200 g=200 b=200}{BITMAP name=\"iconDefInformation\" w=20 h=20}{SPACE w=5}" .. STR( "ARENA_CANCEL_REGISTER_INFO_MSG"));
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="85" y="165" />
+          <Size w="220" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ARENA_CANCEL"));</OnLoaded>
+          <OnClick>luaArena:ConfirmCancelRegisterOK();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+  <!-- Frame : 투기장 초대 응답 -->
+  <Frame name="frmRequestInvite" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="400" h="270" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "ARENA_REQUEST_REGISTER"));
+        luaGame:RegisterWindow( frmRequestInvite);
+      </OnLoaded>
+      <OnShow>
+        luaGame:ShowWindow( frmRequestInvite );
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmRequestInvite:Show(false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpArenaAui1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwRequestInvite">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="40" />
+          <Size w="390" h="200" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : MOVE -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="220" />
+          <Size w="180" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ACCEPT"));</OnLoaded>
+          <OnClick>
+            gamefunc:InviteRespondArena(1);
+            luaArena.nState = ARENA_STAGE.AS_NONE;
+            frmRequestInvite:Show(false);
+
+            local w, h = frmRequestInviteWaiting:GetSize();
+            local width, height = gamefunc:GetWindowSize();
+            frmRequestInviteWaiting:SetPosition( width*0.5 - w*0.5, height*0.5 - h*0.5);
+            frmRequestInviteWaiting:Show(true);
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="200" y="220" />
+          <Size w="180" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ARENA_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:InviteRespondArena(0);
+            luaArena.nState = ARENA_STAGE.AS_NORMAL;
+            frmRequestInvite:Show(false);
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  <!-- Frame : 투기장 초대 응답 대기 -->
+  <Frame name="frmRequestInviteWaiting" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="400" h="270" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "ARENA_REQUEST_REGISTER"));
+      </OnLoaded>
+    </Event>
+    <OnShow>
+    </OnShow>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpArenaAui1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwRequestInviteWaiting">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="60" />
+          <Size w="400" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntLarge\"}{ALIGN hor=\"center\" ver=\"center\"}{COLOR r=200 g=200 b=200}" .. STR( "ARENA_REGISTER_INVITE_WAITING_MSG") .. "{CR}" .. "(0/0)");</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : tvwRequestInviteTeam1 -->
+      <TextView name="tvwRequestInviteTeam1">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="140" />
+          <Size w="200" h="130" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+      <!-- TextView : tvwRequestInviteTeam2 -->
+      <TextView name="tvwRequestInviteTeam2">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="200" y="140" />
+          <Size w="200" h="130" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+  <!-- Picture : ArenaFinishImage -->
+  <Picture name="picArenaFinishResult" parent="layerGame2">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="500" h="250" />
+    </Layout>
+    <Image>bmpArenaResultWin</Image>
+    <Shape>
+      <Visible>false</Visible>
+      <Stretch>true</Stretch>
+    </Shape>
+  </Picture>
+
+
+
+  <!-- Frame : ArenaFinishInfo -->
+  <Frame name="frmArenaFinishInfo" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="1110" h="435" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        frmArenaFinishInfo:SetText( STR( "ARENA_FINISH_INFO" ) );
+      </OnLoaded>
+      <OnShow>
+      </OnShow>
+      <OnUserArgument></OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <!--
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="935" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>
+            picArenaFinishResult:Show(false);
+            frmArenaFinishInfo:Show( false );
+            luaPopupMsg:PopupMsg( minimapIndicatorArena, STR( "UI_BALLOON_HELP_ARENA_EXIT"), nil, 7000);
+            luaArena.nState = ARENA_STAGE.AS_RESULT_CLOSE;
+          </OnClick>
+        </Event>
+      </Button>
+      -->
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpArenaAui2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Blue Team Text Background -->
+      <Picture>
+        <Layout>
+          <Location x="30" y="41" />
+          <Size w="420" h="30" />
+        </Layout>
+        <Image>bmpArenaResultBlue</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Blue Team Text-->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="40" y="45" />
+          <Size w="400" h="30" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntLarge\"}{ALIGN hor=\"left\" ver=\"center\"}{COLOR r=254 g=165 b=0}" .. STR( "ARENA_BLUETEAM" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Blue Team list -->
+      <ListCtrl name="lcArenaResultListBlue">
+        <Look>lookDefListCtrlCustomArena</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="30" y="75" />
+          <Size w="500" h="265" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ItemMargin horz="1" vert="3"/>
+          <AddColumn align="hcenter,vcenter" width="260">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="60">level</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="50">kill</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="60">result</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="70">score</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>luaArena:OnLoadedArenaResultListBlue();</OnLoaded>
+          <OnSelChange></OnSelChange>
+        </Event>
+      </ListCtrl>
+
+      <!-- Blue Team Alive Image -->
+      <Picture name="picArenaResultAliveBlue0">
+        <Layout>
+          <Location x="30" y="143" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Blue Team Alive Image -->
+      <Picture name="picArenaResultAliveBlue1">
+        <Layout>
+          <Location x="30" y="183" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Blue Team Alive Image -->
+      <Picture name="picArenaResultAliveBlue2">
+        <Layout>
+          <Location x="30" y="223" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Blue Team Alive Image -->
+      <Picture name="picArenaResultAliveBlue3">
+        <Layout>
+          <Location x="30" y="263" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Blue Team Alive Image -->
+      <Picture name="picArenaResultAliveBlue4">
+        <Layout>
+          <Location x="30" y="303" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Red Team Text Background -->
+      <Picture>
+        <Layout>
+          <Location x="570" y="41" />
+          <Size w="500" h="30" />
+        </Layout>
+        <Image>bmpArenaResultRed</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+    <!-- Red Team Text-->
+    <TextView>
+      <Look>lookDefTextView</Look>
+      <Layout>
+        <Location x="580" y="45" />
+        <Size w="400" h="30" />
+      </Layout>
+      <Shape>
+        <ShowRect>false</ShowRect>
+        <Align>left,vcenter</Align>
+      </Shape>
+      <Event>
+        <OnLoaded>this:SetText( "{FONT name=\"fntLarge\"}{ALIGN hor=\"left\" ver=\"center\"}{COLOR r=254 g=165 b=0}" .. STR( "ARENA_REDTEAM" ) );</OnLoaded>
+      </Event>
+    </TextView>
+
+    <!-- Red Team list -->
+    <ListCtrl name="lcArenaResultListRed">
+      <Look>lookDefListCtrlCustomArena</Look>
+      <Look type="scrollbar">lookDefScrollBar</Look>
+      <Layout>
+        <Location x="570" y="75" />
+        <Size w="500" h="265" />
+      </Layout>
+      <Shape>
+        <ShowRect>false</ShowRect>
+        <ViewStyle>report</ViewStyle>
+        <MultipleSel>false</MultipleSel>
+        <ItemMargin horz="1" vert="3"/>
+        <AddColumn align="hcenter,vcenter" width="260">name</AddColumn>
+        <AddColumn align="hcenter,vcenter" width="60">level</AddColumn>
+        <AddColumn align="hcenter,vcenter" width="50">kill</AddColumn>
+        <AddColumn align="hcenter,vcenter" width="60">result</AddColumn>
+        <AddColumn align="hcenter,vcenter" width="70">score</AddColumn>
+        <ShowScrollBar>false</ShowScrollBar>
+        <ThumbLength>26</ThumbLength>
+      </Shape>
+      <Event>
+        <OnLoaded>luaArena:OnLoadedArenaResultListRed();</OnLoaded>
+        <OnSelChange></OnSelChange>
+      </Event>
+    </ListCtrl>
+
+
+      <!-- Red Team Alive Image -->
+      <Picture name="picArenaResultAliveRed0">
+        <Layout>
+          <Location x="570" y="143" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Red Team Alive Image -->
+      <Picture name="picArenaResultAliveRed1">
+        <Layout>
+          <Location x="570" y="183" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Red Team Alive Image -->
+      <Picture name="picArenaResultAliveRed2">
+        <Layout>
+          <Location x="570" y="223" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Red Team Alive Image -->
+      <Picture name="picArenaResultAliveRed3">
+        <Layout>
+          <Location x="570" y="263" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Red Team Alive Image -->
+      <Picture name="picArenaResultAliveRed4">
+        <Layout>
+          <Location x="570" y="303" />
+          <Size w="500" h="34" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpArenaDie</Image>
+        <Shape>
+          <Visible>false</Visible>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwArenaResultTime">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="350" />
+          <Size w="1060" h="40" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : Re Match -->
+      <Button name="btnArenaReMatch">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="25" y="345" />
+          <Size w="800" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+          <OnClick>
+          </OnClick>
+          <OnValueChanged>
+            btnArenaReMatch:SetCheck( btnArenaReMatch:GetCheck());
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Exit -->
+      <Button name="btnArenaExit">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="450" y="380" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>E</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ARENA_EXIT"));</OnLoaded>
+          <OnClick>
+            if(btnArenaReMatch:GetShow() == true and btnArenaReMatch:GetCheck() == true) then
+              luaArena.bReservedReMatching = true;
+            end
+
+            frmArenaChannelExitButton:Show(false);
+            gamefunc:ArenaExit();
+            gamefunc:LeaveDynamicField();
+          </OnClick>
+        </Event>
+      </Button>
+    
+    </Controls>
+  </Frame>
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmArenaChannelExitButton" parent="layerGame2">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="120" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ARENA_CHANNEL_EXIT"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- ProgressCtrl : Progress bar -->
+      <ProgressCtrl name="pcArenaChannelExitProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="10000"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaArena:OnUpdateArenaChannelExitProgress();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="115" y="75" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            frmArenaChannelExitButton:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+  
+</UI>

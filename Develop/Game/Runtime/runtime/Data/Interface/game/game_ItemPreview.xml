@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_ItemPreview.lua" />
+
+
+  <!-- Frame -->
+  <Frame name="frmItemPreviewFrame" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="550" y="100" />
+      <Size w="360" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_ITEM_PREVIEW"));
+        luaGame:RegisterWindow( frmItemPreviewFrame);
+      </OnLoaded>
+      <OnShow>
+        luaItemPreview:OnShowItemPreviewFrame();
+      </OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmItemPreviewFrame);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmItemPreviewFrame);
+        elseif ( arg == "RESET_UI")  then     luaItemPreview:ResetUI();
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="341" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnClick>
+            if ( frmItemPreviewFrame:GetShow() == true)  then
+              frmItemPreviewFrame:Show(false);
+            end
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <ItemPreview name="frmItemPreview" parent="frmItemPreviewFrame">
+        <!--<Look>lookDefFrame</Look>-->
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="570" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Shape>
+          <Visible>true</Visible>
+          <Resize>false</Resize>
+        </Shape>
+        <Event>
+        </Event>
+      </ItemPreview>
+
+      
+      <!-- Buttons : Change stance -->
+      <Button name="btnChangeStance">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="40" y="560" />
+          <Size w="130" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "UI_ITEM_PREVIEW_CHANGE_STANCE" ) );
+          </OnLoaded>
+          <OnClick>
+            frmItemPreview:ChangeStance();
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : Change stance -->
+      <Button name="btnIntactItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="180" y="560" />
+          <Size w="130" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "UI_ITEM_PREVIEW_INTACT" ) );
+          </OnLoaded>
+          <OnClick>
+            frmItemPreview:IntactItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

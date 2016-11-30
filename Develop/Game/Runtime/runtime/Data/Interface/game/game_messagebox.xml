@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_messagebox.lua" />
+
+
+
+  <!-- TextView : Message box 0 -->
+  <TextView name="mbMessageBox0" parent="layerGame2">
+    <Look>lookDefMessageBox</Look>
+    <Layout>
+      <Size w="200" h="80" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Wrap>false</Wrap>
+      <Visible>false</Visible>
+      <ShowScrollBar>hide</ShowScrollBar>
+    </Shape>
+    <Event>
+      <OnLoaded>luaMessageBox:Initialize();</OnLoaded>
+      <OnUpdate>luaMessageBox:OnUpdateMessageBox();</OnUpdate>
+      <OnPreDraw>luaMessageBox:OnDrawMessageBox();</OnPreDraw>
+      <OnClick>luaMessageBox:OnClickMessageBox();</OnClick>
+    </Event>
+  </TextView>
+  
+  <!-- TextView : Message box 1 -->
+  <TextView name="mbMessageBox1" parent="layerGame2">
+    <Look>lookDefMessageBox</Look>
+    <Layout>
+      <Size w="200" h="80" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Wrap>false</Wrap>
+      <Visible>false</Visible>
+      <ShowScrollBar>hide</ShowScrollBar>
+    </Shape>
+    <Event>
+      <OnLoaded>luaMessageBox:Initialize();</OnLoaded>
+      <OnUpdate>luaMessageBox:OnUpdateMessageBox();</OnUpdate>
+      <OnPreDraw>luaMessageBox:OnDrawMessageBox();</OnPreDraw>
+      <OnClick>luaMessageBox:OnClickMessageBox();</OnClick>
+    </Event>
+  </TextView>
+ 
+  <!-- TextView : Message box 2 -->
+  <TextView name="mbMessageBox2" parent="layerGame2">
+    <Look>lookDefMessageBox</Look>
+    <Layout>
+      <Size w="200" h="80" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Wrap>false</Wrap>
+      <Visible>false</Visible>
+      <ShowScrollBar>hide</ShowScrollBar>
+    </Shape>
+    <Event>
+      <OnLoaded>luaMessageBox:Initialize();</OnLoaded>
+      <OnUpdate>luaMessageBox:OnUpdateMessageBox();</OnUpdate>
+      <OnPreDraw>luaMessageBox:OnDrawMessageBox();</OnPreDraw>
+      <OnClick>luaMessageBox:OnClickMessageBox();</OnClick>
+    </Event>
+  </TextView>
+
+  <!-- TextView : Message box 3 -->
+  <TextView name="mbMessageBox3" parent="layerGame2">
+    <Look>lookDefMessageBox</Look>
+    <Layout>
+      <Size w="200" h="80" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Wrap>false</Wrap>
+      <Visible>false</Visible>
+      <ShowScrollBar>hide</ShowScrollBar>
+    </Shape>
+    <Event>
+      <OnLoaded>luaMessageBox:Initialize();</OnLoaded>
+      <OnUpdate>luaMessageBox:OnUpdateMessageBox();</OnUpdate>
+      <OnPreDraw>luaMessageBox:OnDrawMessageBox();</OnPreDraw>
+      <OnClick>luaMessageBox:OnClickMessageBox();</OnClick>
+    </Event>
+  </TextView>
+
+  <!-- TextView : Message box 4 -->
+  <TextView name="mbMessageBox4" parent="layerGame2">
+    <Look>lookDefMessageBox</Look>
+    <Layout>
+      <Size w="200" h="80" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Wrap>false</Wrap>
+      <Visible>false</Visible>
+      <ShowScrollBar>hide</ShowScrollBar>
+    </Shape>
+    <Event>
+      <OnLoaded>luaMessageBox:Initialize();</OnLoaded>
+      <OnUpdate>luaMessageBox:OnUpdateMessageBox();</OnUpdate>
+      <OnPreDraw>luaMessageBox:OnDrawMessageBox();</OnPreDraw>
+      <OnClick>luaMessageBox:OnClickMessageBox();</OnClick>
+    </Event>
+  </TextView>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Frame -->
+  <Frame name="frmMessageBoxConfirm" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="200" y="210" />
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+      <OnShow>luaMessageBox:OnShowMessageBoxComfirmFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaMessageBox:OnClickConfirmNo();</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefQuestion</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- TextView : Message -->
+      <TextView name="tvwMessageBoxMsg">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button name="btnMessageBoxYes">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaMessageBox:OnClickConfirmYes();</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Buttons : No -->
+      <Button name="btnMessageBoxNo">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaMessageBox:OnClickConfirmNo();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Frame : Error message box -->
+  <Frame name="frmErrorMsgBox" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="200" y="200" />
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_ERROR"));
+        luaGame:RegisterWindow( frmErrorMsgBox);
+      </OnLoaded>
+      <OnShow>
+        if ( frmErrorMsgBox:GetShow() == true)  then
+
+          local x = ( gamefunc:GetWindowWidth() - frmErrorMsgBox:GetWidth()) * 0.5;
+          local y = ( gamefunc:GetWindowHeight() - frmErrorMsgBox:GetHeight()) * 0.5;
+          frmErrorMsgBox:SetPosition( x, y);
+        end
+
+        luaGame:ShowWindow( frmErrorMsgBox);
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>
+            frmErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefStop</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwErrorMsg">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="150" y="110" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>frmErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

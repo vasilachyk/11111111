@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_recipe.lua" />
+
+  <!-- Panel : Quest -->
+  <Panel parent="tpgJournalRecipe">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="440" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- CategoryCtrl : Quest list -->
+      <CategoryCtrl name="ctvRecipeList">
+        <Look>lookDefCategoryCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="335" h="430" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowRootItem>false</ShowRootItem>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="210">name</AddColumn>
+          <AddColumn align="right,vcenter" width="80">make</AddColumn>
+        </Shape>
+        <Event>
+          <OnSelChange>luaRecipe:OnSelChangeRecipeList();</OnSelChange>
+          <OnItemClick>luaRecipe:OnItemClickRecipeList();</OnItemClick>
+          <OnItemDblClick>luaRecipe:IndicateCurSelRecipe();</OnItemDblClick>
+        </Event>
+      </CategoryCtrl>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="440" />
+          <Size w="345" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Buttons : Indicate a recipe -->
+      <Button name="btnIndicateRecipe">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="450" />
+          <Size w="155" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_JOURNAL_INDICATERECIPE"));</OnLoaded>
+          <OnClick>luaRecipe:IndicateCurSelRecipe();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : Remove a recipe -->
+      <Button name="btnRemoveRecipe">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="180" y="450" />
+          <Size w="155" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DELETE"));</OnLoaded>
+          <OnClick>luaRecipe:OpenConfirmRemoveRecipe();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <!-- Frame : Confirm remove recipe -->
+  <Frame name="frmConfirmRemoveRecipe" parent="frmJournal">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="260" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaRecipe:CloseConfirmRemoveRecipe();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_JOURNAL_CONFIRMDELRECIPE"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Picture : Recipe -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="95" />
+          <Size w="410" h="80" />
+        </Layout>
+      </Group>
+
+      <Picture>
+        <Layout>
+          <Location x="39" y="104" />
+          <Size w="42" h="42" />
+        </Layout>
+        <Image>bmpItemSlot</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture name="picRemoveRecipe">
+        <Layout>
+          <Location x="40" y="105" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Label : Recipe name -->
+      <Label name="labRemoveRecipeName">
+        <Look>lookDefLabelLarge</Look>
+        <Layout>
+          <Location x="100" y="105" />
+          <Size w="300" h="20" />
+        </Layout>
+        <Shape>
+          <Text></Text>
+        </Shape>
+      </Label>
+
+      
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaRecipe:OnRemoveRecipeOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaRecipe:OnRemoveRecipeCancel();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

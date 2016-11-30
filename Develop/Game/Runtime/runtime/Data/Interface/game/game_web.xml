@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_web.lua" />
+
+
+  <!-- Frame -->
+  <Frame name="frmWebFrame" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="279" y="80" />
+      <Size w="745" h="620" />
+      <Anchor left="false" top="false" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_INGAMECS"));
+        luaGame:RegisterWindow( frmWebFrame );
+      </OnLoaded>
+      <OnShow>
+        luaWeb:OnShowWebFrame();
+      </OnShow>
+      <OnPosition>luaWeb:OnPosition();</OnPosition>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="720" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnClick>frmWebFrame:Show(false);</OnClick>
+        </Event>
+      </Button>
+
+      <Web name="frmWeb" parent="frmWebFrame">
+        <!--<Look>lookDefFrame</Look>-->
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="586" />
+        </Layout>
+        <Shape>
+          <Visible>false</Visible>
+          <Resize>false</Resize>
+        </Shape>
+        <Event>
+        </Event>
+      </Web>
+      
+    </Controls>
+  </Frame>
+
+</UI>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="cutscene">
+  <Script file="cutscene.lua"/>
+  <!-- 컷신용 -->
+
+  <!-- 레터박스 -->
+  <Paint name="LetterBoxTopView">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="70" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Color r="0" g="0" b="0" />
+    </Shape>
+  </Paint>
+
+  <Paint name="LetterBoxBottomView">
+    <Layout>
+      <Location x="0" y="%100" base="BOTTOMLEFT" />
+      <Size w="%100" h="70" />
+      <Anchor left="true" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Color r="0" g="0" b="0" />
+    </Shape>
+  </Paint>
+  
+
+  <!-- 자막 -->
+  <!-- 자막 밑에서 부터의 위치는 h 값에 의해서 결정합니다. -->
+  <TextView name="CaptionTextView">
+    <Look>lookDefTextView</Look>
+    <Layout>
+      <Location x="0" y="%100" base="BOTTOMLEFT" />
+      <Size w="%100" h="50" />
+      <Anchor left="true" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <ShowScrollBar>hide</ShowScrollBar>
+      <!--<Wrap>false</Wrap>-->
+      <Visible>false</Visible>
+    </Shape>
+  </TextView>
+
+  <!-- 키 이벤트 -->
+  <TextView name="KeyEventView">
+    <Look>lookDefTextView</Look>
+     <Layout>
+      <Location x="0" y="0" base="TOPLEFT"/>
+      <Size w="200" h="50" />
+      <Anchor left="true" top="true" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <ShowScrollBar>hide</ShowScrollBar>
+      <!--<Wrap>false</Wrap>-->
+      <Visible>false</Visible>
+    </Shape>
+  </TextView>
+  
+</UI>

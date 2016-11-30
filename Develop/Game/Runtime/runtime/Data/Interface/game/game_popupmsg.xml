@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_popupmsg.lua" />
+
+    <!-- TextView : Popup message box -->
+    <TextView name="tvwPopupMsg">
+      <Look>lookDefPopupMsg</Look>
+      <Shape>
+        <Static>true</Static>
+        <Visible>false</Visible>
+        <ShowScrollBar>hide</ShowScrollBar>
+        <Wrap>false</Wrap>
+      </Shape>
+      <Event>
+        <OnUpdate>luaPopupMsg:OnUpdatePopupMsg();</OnUpdate>
+        <OnTimer>luaPopupMsg:OnTimerPopupMsg();</OnTimer>
+      </Event>
+    </TextView>
+
+
+    <!-- Picture : Popup message box tail -->
+    <Picture name="picPopupMsgTail">
+      <Layout>
+        <Size w="8" h="8" />
+      </Layout>
+      <Image>bmpPopupMsgTail</Image>
+      <Shape>
+        <Stretch>true</Stretch>
+        <Visible>false</Visible>
+      </Shape>
+    </Picture>
+
+</UI>

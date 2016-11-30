@@ -1,0 +1,1952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="beauty">
+
+  <!-- Include global script -->
+  <Script file="../common/global.lua" />
+
+  <!-- Common Resource -->
+  <Include>../common/com_resource.xml</Include>
+
+  <!-- Common Template -->
+  <Include>../common/com_template.xml</Include>
+
+  <!-- Character Resource -->
+  <Include>../character/character_resource.xml</Include>
+
+  <!-- Character Template -->
+  <Include>../character/character_template.xml</Include>
+  
+  <Script file="game_BeautyParlor.lua" />
+
+  <!-- Layer : layer BeautyParlor -->
+  <Layer name="layerBeautyParlor">
+  </Layer>
+
+  <!-- 오른쪽 -->
+  <Panel name="pnlBeautyParlor" parent="layerBeautyParlor">
+    <Layout>
+      <Location x="484" y="0"/>
+      <Size w="540" h="960" />
+      <Anchor left="false" top="false" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+
+      <!--<OnLoaded>
+        luaCharacterFrame:SwitchScene( luaCharacter.SwitchToCharCreate);
+      </OnLoaded>-->
+
+    </Event>
+    <Controls>
+      
+      <!-- Picture : Base Image2 -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameMain2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Base Image -->
+      <Picture>
+        <Layout>
+          <Location x="158" y="0" />
+          <Size w="382" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameMain</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Base Image -->
+      <Picture name="picCreateMainCycle" >
+        <Layout>
+          <Location x="300" y="170" />
+          <Size w="220" h="220" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpCharFrameMainCycle1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnUpdate>luaBeautyParlor:UpdateMainCycle();</OnUpdate>
+        </Event>
+      </Picture>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="360" y="270" />
+          <Size w="100" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{ALIGN hor=\"center\" ver=\"center\" }{FONT name=\"fntTitle\"}{COLOR r=230 g=230 b=230}" .. STR( "UI_BEAUTYSHOP" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+     
+      <!-- Button : BeautyParlorFace -->
+      <Button name="btnBeautyParlorFace">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="30" y="205" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaBeautyParlor:OnLoadedCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_MAKEFACE, btnBeautyParlorFace, true, 30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_MAKEFACE" ) );
+          </OnLoaded>
+          <OnValueChanged>
+            luaBeautyParlor:OnClickCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_MAKEFACE );
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Button : BeautyParlorHead -->
+      <Button name="btnBeautyParlorHead">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="20" y="255" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaBeautyParlor:OnLoadedCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_HEAD, btnBeautyParlorHead, false, 30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_HEAD" ) );
+          </OnLoaded>
+          <OnValueChanged>
+            luaBeautyParlor:OnClickCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_HEAD );           
+            luaBeautyParlor:HelmButtonVisible();
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Button : BeautyParlorTattoo -->
+      <Button name="btnBeautyParlorTattoo">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="30" y="305" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaBeautyParlor:OnLoadedCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_TATTOO, btnBeautyParlorTattoo, false, 30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO" ) );
+          </OnLoaded>
+          <OnValueChanged>
+            luaBeautyParlor:OnClickCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_TATTOO );
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Button : BeautyParlorVoice -->
+      <Button name="btnBeautyParlorVoice">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="40" y="355" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaBeautyParlor:OnLoadedCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_VOICE, btnBeautyParlorVoice, false, -30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_VOICE" ) );
+          </OnLoaded>
+          <OnValueChanged>
+            luaBeautyParlor:OnClickCreateTagBtn( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_VOICE );
+          </OnValueChanged>
+        </Event>
+      </Button>   
+
+    </Controls>
+  </Panel>
+
+  <!-- Panel -->
+  <Panel parent="layerBeautyParlor">
+    <Layout>
+      <Location x="0" y="0" base="TOPLEFT"/>
+      <Size w="500" h="%100" />
+      <Anchor left="true" top="true" right="false" bottom="true" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameLeftBase</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+    </Controls>
+  </Panel>
+
+  
+    
+
+  <Panel name="pnlBeautyParlorFace" parent="layerBeautyParlor">
+    <Layout>
+      <Location x="0" y="50" base="TOPLEFT"/>
+      <Size w="300" h="610" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaBeautyParlor:OnLoadedCreateTagPnl( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_MAKEFACE, pnlBeautyParlorFace );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        luaBeautyParlor:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 얼굴 모양 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_FACE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterFace">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>        
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="260" h="150" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>          
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>          
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharFaceListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_FACE);</OnToolTip>
+          <OnSelChange>
+            luaBeautyParlor:OnClickItem(E_FT_FACE);
+          </OnSelChange>
+          <OnDrawItem>luaBeautyParlor:OnDrawItemCharFaceListCtrl();</OnDrawItem>         
+        </Event>
+      </ListCtrl>
+
+      <!-- 피부 색 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="210" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="220" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_SKINCOLOR"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterSkinColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="250" />
+          <Size w="260" h="120" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharSkinColorListCtrl();</OnLoaded>
+          <OnDrawItemBkgrnd>luaBeautyParlor:OnDrawItemBkgrndCharSkinColorListCtrl();</OnDrawItemBkgrnd>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_SKIN_COLOR);</OnToolTip>
+          <OnSelChange>
+            luaBeautyParlor:OnClickItem(E_FT_SKIN_COLOR);
+          </OnSelChange>
+        </Event>
+      </ListCtrl>
+
+      <!-- 화장 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="380" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="390" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_MAKEUP"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterMakeUp">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="420" />
+          <Size w="260" h="50" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharMakeUpListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_FACE_MAKEUP);</OnToolTip>
+          <OnSelChange>
+            luaBeautyParlor:OnClickItem(E_FT_FACE_MAKEUP);
+          </OnSelChange>
+          <OnDrawItem>luaBeautyParlor:OnDrawItemCharMakeUpListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+      <!-- 눈동자 색상 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="480" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="490" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_EYECOLOR" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterEyeColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="520" />
+          <Size w="260" h="70" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharEyeColorListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_EYE_COLOR);</OnToolTip>
+          <OnDrawItemBkgrnd>luaBeautyParlor:OnDrawItemBkgrndCharEyeColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>
+            luaBeautyParlor:OnClickItem(E_FT_EYE_COLOR);
+          </OnSelChange>
+        </Event>
+      </ListCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlBeautyParlorHead" parent="layerBeautyParlor">
+    <Layout>
+      <Location x="0" y="100" base="TOPLEFT"/>
+      <Size w="300" h="600" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaBeautyParlor:OnLoadedCreateTagPnl( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_HEAD, pnlBeautyParlorHead );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        luaBeautyParlor:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 머리 모양 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_HAIR" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterHair">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="260" h="250" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharHairListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_HAIR);</OnToolTip>
+          <OnSelChange>luaBeautyParlor:OnClickItem(E_FT_HAIR);</OnSelChange>
+          <OnDrawItem>luaBeautyParlor:OnDrawItemCharHairListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+      <!-- 머리 색 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="310" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="320" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_HAIRCOLOR"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterHairColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="350" />
+          <Size w="250" h="120" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharHairColorListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_HAIR_COLOR);</OnToolTip>
+          <OnDrawItemBkgrnd>luaBeautyParlor:OnDrawItemBkgrndCharHairColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>
+            luaBeautyParlor:OnClickItem(E_FT_HAIR_COLOR);
+          </OnSelChange>
+        </Event>
+      </ListCtrl>     
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlBeautyParlorTattoo" parent="layerBeautyParlor">
+    <Layout>
+      <Location x="0" y="100" base="TOPLEFT"/>
+      <Size w="300" h="600" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaBeautyParlor:OnLoadedCreateTagPnl( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_TATTOO, pnlBeautyParlorTattoo );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        luaBeautyParlor:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 문신 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterTattoo">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="280" h="180" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharTattooListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_TATTOO);</OnToolTip>
+          <OnDrawItem>luaBeautyParlor:OnDrawItemCharTattooListCtrl();</OnDrawItem>
+          <OnSelChange>
+            luaBeautyParlor:OnClickItem(E_FT_TATTOO);
+            luaBeautyParlor:VisibleTattooColor();
+          </OnSelChange>
+        </Event>
+      </ListCtrl>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="230" />
+          <Size w="280" h="116" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Group>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="15" y="240" />
+          <Size w="96" h="96" />
+        </Layout>
+        <Shape>
+          <Opacity>0.5</Opacity>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Group>
+
+      <Picture name="picTattooHeadGrid">
+        <Layout>
+          <Location x="18" y="243" />
+          <Size w="90" h="90" />
+        </Layout>
+        <Image>bmpHeadGrid</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Static>false</Static>
+          <EnableFocus>true</EnableFocus>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLButtonDown>
+            luaBeautyParlor:SetTattooPos( EventArgs:GetCursorPos());
+            luaBeautyParlor:RefreshCharacterModel( false );
+          </OnLButtonDown>        
+          <OnMouseMove>
+            local _wnd = EventArgs:GetOwner();
+            if ( _wnd:IsCapture() == true)  then
+            luaBeautyParlor:SetTattooPos( EventArgs:GetCursorPos());
+            luaBeautyParlor:RefreshCharacterModel( false );
+            end
+          </OnMouseMove>
+          <OnDraw>luaBeautyParlor:OnDrawTattooHeadGrid();</OnDraw>
+        </Event>
+      </Picture>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="120" y="240" />
+          <Size w="160" h="55" />
+        </Layout>
+        <Shape>
+          <Opacity>0.5</Opacity>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Group>
+
+      <Picture>
+        <Layout>
+          <Location x="147" y="266" />
+          <Size w="2" h="5" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="200" y="266" />
+          <Size w="2" h="5" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="250" y="266" />
+          <Size w="2" h="5" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Slider name="sldTattoScale">
+        <Look>lookDefSlider</Look>
+        <Layout>
+          <Location x="140" y="250" />
+          <Size w="120" h="23" />
+        </Layout>
+        <Shape>
+          <Style>horizontal</Style>
+          <ScrollRange min="0" max="10"/>
+          <ScrollValue>5</ScrollValue>
+        </Shape>
+        <Event>
+          <OnValueChanged>
+            luaBeautyParlor:RefreshCharacterModel( false );
+          </OnValueChanged>
+        </Event>
+      </Slider>
+
+      <LabelEx>
+        <Layout>
+          <Location x="97" y="272" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_SMALL"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <LabelEx>
+        <Layout>
+          <Location x="200" y="272" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_LARGE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="305" />
+          <Size w="120" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TATOO_RESET"));</OnLoaded>
+          <OnClick>
+            sldTattoScale:SetScrollValue( 5);
+            luaBeautyParlor.TATTOO.x = 0;
+            luaBeautyParlor.TATTOO.y = 0;
+            luaBeautyParlor:RefreshCharacterModel( false );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 문신 색상 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="370" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="380" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_COLOR" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Label name="lbCharacterTatooColorNone">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="410" />
+          <Size w="%100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_NOCOLOR" ) );</OnLoaded>
+        </Event>
+      </Label>
+
+      <ListCtrl name="lcCharacterTatooColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="410" />
+          <Size w="280" h="70" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharTatooColorListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_TATTOO_COLOR);</OnToolTip>
+          <OnDrawItemBkgrnd>luaBeautyParlor:OnDrawItemBkgrndCharTatooColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>
+            luaBeautyParlor:OnClickItem(E_FT_TATTOO_COLOR);
+          </OnSelChange>
+        </Event>
+      </ListCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlBeautyParlorVoice" parent="layerBeautyParlor">
+    <Layout>
+      <Location x="0" y="100" base="TOPLEFT"/>
+      <Size w="300" h="280" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaBeautyParlor:OnLoadedCreateTagPnl( luaBeautyParlor.BEAUTYPARLORTAG.BEAUTYPARLOR_VOICE, pnlBeautyParlorVoice );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        lcCharacterPreviewEquip:SetCurSel( 0 );
+        luaBeautyParlor:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 목소리 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="180" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="190" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_VOICE" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterVoice">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="220" />
+          <Size w="280" h="50" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaBeautyParlor:OnLoadedCharVoiceListCtrl();</OnLoaded>
+          <OnToolTip>luaBeautyParlor:OnToolTipPartPrice(E_FT_VOICE);</OnToolTip>
+          <OnSelChange>
+            luaBeautyParlor:OnSelChangeCharVoiceListCtrl();
+            luaBeautyParlor:OnClickItem(E_FT_VOICE);
+          </OnSelChange>
+          <OnDrawItem>luaBeautyParlor:OnDrawItemCharVoiceListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+    </Controls>
+  </Panel>
+
+
+
+
+  <!-- 캐릭터 선택 우측 하단 장바구니 -->
+  <Frame name="pnlBeautyParlorBasket" parent="layerBeautyParlor">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Location x="615" y="435"/>
+      <Size w="400" h="330" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>true</Visible>
+      <ShowBorder>true</ShowBorder>
+      <ShowTitleBar>false</ShowTitleBar>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+      
+      <!-- Picture : Background -->
+      <!--
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpPCBenefitLoadingBG</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      -->
+
+
+      <!-- TextView : Title -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="5" />
+          <Size w="400" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntBold\"}{COLOR r=255 g=255 b=255}" .. STR( "UI_BEAUTYSHOP_BASKET"));</OnLoaded>
+        </Event>
+      </TextView>
+      
+
+      <!-- Basket List -->
+      <ListCtrl name="lcBeautyParlorBasketList">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="380" h="188" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="380">name</AddColumn>
+          <AddColumn align="left,vcenter" width="380">price</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+        </Shape>
+        <Event>
+          <OnDrawItem>
+            luaBeautyParlor:DrawBasket();
+          </OnDrawItem>
+          <OnRClick>
+            luaBeautyParlor:BeautyParlorListSeleteCancelCurSel();
+          </OnRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- TextView : HasBelpeso -->
+      <TextView name ="tvwHasBelpeso">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="220" />
+          <Size w="400" h="20" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_HAS_BELPESO"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : Total Belpeso -->
+      <TextView name ="tvwTotalBelpeso">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="240" />
+          <Size w="400" h="20" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_TOTAL_BELPESO"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : All Cancel  -->
+      <Button>
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="25" y="260" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_ALL_CANCEL"));</OnLoaded>
+          <OnClick>luaBeautyParlor:BeautyParlorListAllCancel();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Selete Cancel  -->
+      <Button>
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="25" y="290" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_SELETE_CANCEL"));</OnLoaded>
+          <OnClick>luaBeautyParlor:BeautyParlorListSeleteCancelCurSel();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : ConfirmCreate -->
+      <Button name="btnChangeComplete">
+        <Look>lookDefCharFrameLButton</Look>
+        <Layout>
+          <Location x="200" y="290" />
+          <Size w="170" h="30" />
+        </Layout>
+        <Shape>
+          <Icon w="40" h="40"></Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "UI_BEAUTYSHOP_APPLY_LOOK"));
+          </OnLoaded>
+          <OnClick>luaBeautyParlor:OnShowChangePopup();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+      
+      
+      
+
+  <!-- 캐릭터 선택 하단 -->
+  <Panel name="pnlBeautyParlorBottom" parent="layerBeautyParlor">
+    <Layout>
+      <Location x="0" y="687"/>
+      <Size w="%100" h="80" />
+      <Anchor left="true" top="false" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <!-- Buttons : Exit  -->
+      <Button>
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="200" h="40" />
+          <Anchor left="true" top="false" right="false" bottom="true" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_EXIT"));</OnLoaded>
+          <OnClick>frmEXITMsgBox:DoModal();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnHelmShow">
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="230" y="20" />
+          <Size w="200" h="40" />
+          <Anchor left="true" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_HELM_VISIBLE"));</OnLoaded>
+          <OnClick>luaBeautyParlor:HelmShow();</OnClick>
+        </Event>
+      </Button> 
+
+    </Controls>
+  </Panel>
+
+  <ListCtrl name="lcCharacterPreviewEquip" parent="layerBeautyParlor">
+    <Look>lookDefListCtrlLargeSquareIcon</Look>
+    <Look type="scrollbar">lookDefScrollBar</Look>
+    <Layout>
+      <Location x="100" y="708" />
+      <Size w="300" h="50" />
+      <Anchor left="true" top="false" right="false" bottom="true" />
+    </Layout>
+    <Shape>
+      <ViewStyle>icon</ViewStyle>
+      <ItemMargin horz="2" vert="2"/>
+      <MultipleSel>false</MultipleSel>
+      <ShowBorder>false</ShowBorder>
+      <AddColumn align="left,vcenter" width="10">num</AddColumn>
+      <ShowScrollBar>hide</ShowScrollBar>
+      <ThumbLength>26</ThumbLength>
+      <AlwaysSel>true</AlwaysSel>
+    </Shape>
+    <Event>
+      <OnLoaded>luaCharacterCreate:OnLoadedCharPreviewEquipListCtrl();</OnLoaded>
+      <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+      <OnDrawItem>luaCharacterCreate:OnDrawItemCharPreviewEquipListCtrl();</OnDrawItem>
+    </Event>
+  </ListCtrl>
+
+
+<!-- Frame -->
+  <Frame name="frmConfirmChangeCharacter" parent="layerBeautyParlor">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="250" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaBeautyParlor:CloseShowChangePopup();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="235" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmChangeCharacter">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="200" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( FORMAT( "UI_BEAUTYSHOP_FEATURE", luaBeautyParlor:GetBasketTotalBelpeso() ));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <!--
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="190" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      -->
+
+      <!-- Buttons : Character look change -->
+      <Button name="btnCharacterLookChange">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="150" y="160" />
+          <Size w="270" h="30" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_TIKET_BTN"));</OnLoaded>
+          <OnClick>
+            luaBeautyParlor:CloseShowChangePopup();
+            luaBeautyParlor:OnShowUseLookChangeTicketPopup();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="200" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>
+            luaBeautyParlor:OnClickConfirmChangeCharacter(false);
+            luaBeautyParlor:CloseShowChangePopup();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="200" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaBeautyParlor:CloseShowChangePopup();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+  <!-- Frame : Use Look Change Ticket-->
+  <Frame name="frmConfirmLookChangeTicket" parent="layerBeautyParlor">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="150" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaBeautyParlor:HideUseLookChangeTicketPopup();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_TIKET_MSG"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="90" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="100" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>
+            luaBeautyParlor:OnClickConfirmChangeCharacter(true);
+            luaBeautyParlor:HideUseLookChangeTicketPopup();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="100" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaBeautyParlor:HideUseLookChangeTicketPopup();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+  <!-- Frame -->
+  <Frame name="frmErrorMsgBox" parent="layerBeautyParlor">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="170" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_ERROR"));</OnLoaded>
+      <OnShow>
+        if ( frmErrorMsgBox:GetShow() == true)  then
+
+        local x = ( gamefunc:GetWindowWidth() - frmErrorMsgBox:GetWidth()) * 0.5;
+        local y = ( gamefunc:GetWindowHeight() - frmErrorMsgBox:GetHeight()) * 0.5;
+        frmErrorMsgBox:SetPosition( x, y);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="85" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefStop</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwErrorMsg">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="110" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="120" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            frmErrorMsgBox:Show( false );
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+  <!-- Frame -->
+  <Frame name="frmCompleteMsgBox" parent="layerBeautyParlor">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="170" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_CHANGE_COMPLETE"));</OnLoaded>
+      <OnShow>
+        if ( frmCompleteMsgBox:GetShow() == true)  then
+
+        local x = ( gamefunc:GetWindowWidth() - frmCompleteMsgBox:GetWidth()) * 0.5;
+        local y = ( gamefunc:GetWindowHeight() - frmCompleteMsgBox:GetHeight()) * 0.5;
+        frmCompleteMsgBox:SetPosition( x, y);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCompleteMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="85" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwCompleteMsg">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_CHANGE_COMPLETE_MESSAGE"));</OnLoaded>          
+        </Event>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="110" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="120" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            frmCompleteMsgBox:Show( false );
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  <!-- EXIT Frame -->
+  <Frame name="frmEXITMsgBox" parent="layerBeautyParlor">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="170" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_EXIT"));</OnLoaded>
+      <OnShow>
+        if ( frmEXITMsgBox:GetShow() == true)  then
+
+        local x = ( gamefunc:GetWindowWidth() - frmEXITMsgBox:GetWidth()) * 0.5;
+        local y = ( gamefunc:GetWindowHeight() - frmEXITMsgBox:GetHeight()) * 0.5;
+        frmEXITMsgBox:SetPosition( x, y);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmEXITMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefCaution</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwEXITMsg">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_BEAUTYSHOP_EXIT_ASK"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="110" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="120" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>
+            frmEXITMsgBox:Show( false);
+            luaBeautyParlor:BeautyParlorLeave();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="120" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmEXITMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  <Frame name="frmSwitchBeautyShop" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="200" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmSwitchBeautyShop);
+      </OnLoaded>
+      <OnShow>luaGame:ShowWindow( frmSwitchBeautyShop);</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaBeautyParlor:CloseSwitchBeautyShop();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TextView name="tvBeautyShop">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="150" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( FORMAT("UI_BEAUTYSHOP_ENTER"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="150" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaBeautyParlor:OnSwitchBeautyShopOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="150" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaBeautyParlor:CloseSwitchBeautyShop();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

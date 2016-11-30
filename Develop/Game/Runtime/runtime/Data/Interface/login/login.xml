@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="login">
+
+  <!-- Include global script -->
+  <Script file="../common/global.lua" />
+  
+  <!-- Common Resource -->
+  <Include>../common/com_resource.xml</Include>
+
+  <!-- Common Template -->
+  <Include>../common/com_template.xml</Include>
+
+  <!-- Login Resource -->
+  <Include>login_resource.xml</Include>
+
+  
+
+  <!-- Include script -->
+  <Script file="login.lua" />
+
+
+
+  <!-- Layer -->
+  <Layer name="layerLogin">
+  </Layer>
+
+  <!-- Layer -->
+  <Layer name="layerLoginFrame">
+  </Layer>
+
+  <!-- Layer -->
+  <Layer name="layerLoginLoading">
+  </Layer>
+
+
+
+  <!-- Include Login UI XMLs -->
+  <Include>login_loading.xml</Include>            <!-- Loading -->
+  <Include>login_frame.xml</Include>              <!-- Frame -->
+  <Include>login_connect.xml</Include>            <!-- Connect -->
+
+
+
+
+
+
+
+
+  <!-- Quick option -->
+  
+  <!-- Button : Quick option button -->
+  <Button name="btnQuickOption">
+    <Layout>
+      <Location x="1019" y="5" base="TOPRIGHT"/>
+      <Size w="32" h="32" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Icon w="32" h="32">iconGear</Icon>
+      <Opacity>0.75</Opacity>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetToolTip( STR( "UI_OPTION"));</OnLoaded>
+      <OnEnter>btnQuickOption:SetOpacity( 1.0);</OnEnter>
+      <OnLeave>btnQuickOption:SetOpacity( 0.75);</OnLeave>
+      <OnClick>btnQuickOption:TrackPopupMenu( "pmQuickOption");</OnClick>
+    </Event>
+  </Button>
+
+
+  <!-- Popup menu : Quick option menu -->
+  <PopupMenu name="pmQuickOption">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="300" h="320" />
+    </Layout>
+    <Controls>
+
+      <!-- Option : Low performance system -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="290" h="100" />
+        </Layout>
+      </Group>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="280" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_LOGIN_LOWPERFORMANCE") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_LOGIN_DESCLOWPERFORMANCE");
+            this:SetText( strText);
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Option : Midium performance system -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="110" />
+          <Size w="290" h="100" />
+        </Layout>
+      </Group>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="115" />
+          <Size w="280" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_LOGIN_MEDIUMPERFORMANCE") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_LOGIN_DESCMEDIUMPERFORMANCE");
+            this:SetText( strText);
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Option : High performance system -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="215" />
+          <Size w="290" h="100" />
+        </Layout>
+      </Group>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="220" />
+          <Size w="280" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_LOGIN_HIGHPERFORMANCE") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_LOGIN_DESCHIGHPERFORMANCE");
+            this:SetText( strText);
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Button : Option menu 1 -->
+      <Button>
+        <Look>lookDefSelectBtn</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="290" h="100" />
+        </Layout>
+        <Event>
+          <OnClick>
+            gameoption:SettingLowPerformance();
+
+            gameoption:SaveOption();
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Option menu 2 -->
+      <Button>
+        <Look>lookDefSelectBtn</Look>
+        <Layout>
+          <Location x="5" y="110" />
+          <Size w="290" h="100" />
+        </Layout>
+        <Event>
+          <OnClick>
+            gameoption:SettingMediumPerformance();
+
+            gameoption:SaveOption();
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Option menu 3 -->
+      <Button>
+        <Look>lookDefSelectBtn</Look>
+        <Layout>
+          <Location x="5" y="215" />
+          <Size w="290" h="100" />
+        </Layout>
+        <Event>
+          <OnClick>
+            gameoption:SettingHighPerformance();
+
+            gameoption:SaveOption();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+  
+
+</UI>

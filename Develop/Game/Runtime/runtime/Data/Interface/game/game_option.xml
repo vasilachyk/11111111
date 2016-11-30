@@ -1,0 +1,3019 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_option.lua" />
+
+
+
+  <!-- Frame : Option -->
+  <Frame name="frmOption" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="130" y="80" />
+      <Size w="680" h="525" />
+    </Layout>
+    <Shape>
+  	  <Icon>iconOption</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_OPTION"));
+        gameoption:EndModifyOption();
+      </OnLoaded>
+      <OnShow>luaOption:OnShowOptionFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="665" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmOption:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="55" base="BOTTOMLEFT" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="0" y="460" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="0" y="462" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+
+      <!-- TabCtrl -->
+      <TabCtrl name="tbcOptionTabCtrl">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="670" h="490" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcOptionTabCtrl:SetTabName( 0, STR( "UI_OPTION_GAME"));
+            tbcOptionTabCtrl:SetTabName( 1, STR( "UI_OPTION_VIDEO"));
+            tbcOptionTabCtrl:SetTabName( 2, STR( "UI_OPTION_AUDIO"));
+            tbcOptionTabCtrl:SetTabName( 3, STR( "UI_OPTION_CONTROLS"));
+            tbcOptionTabCtrl:SetTabName( 4, STR( "UI_OPTION_ETC"));
+          </OnLoaded>
+          <OnSelChange>luaOption:RefreshOptionFrame();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="465" />
+              </Layout>
+              <Controls>
+
+                <ViewCtrl>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="665" h="405" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>show</ShowScrollBar>
+                    <ScrollRange min="0" max="540" />
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Controls>
+
+                    <!-- Function options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="30" />
+                        <Size w="310" h="185" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <!-- Show buff name -->
+                    <Button name="btnShowBuffName">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="40" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION_SHOWBUFF"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowBuffName:SetCheck( gameoption:ShowBuffName( btnShowBuffName:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show tutorial -->
+                    <Button name="btnShowHelpMessage">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="65" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION_SHOWTUTORIAL"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowHelpMessage:SetCheck( gameoption:ShowHelpMessage( btnShowHelpMessage:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show indicator -->
+                    <Button name="btnShowIndicator">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="90" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION_SHOWINDICATOR"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowIndicator:SetCheck( gameoption:ShowIndicator( btnShowIndicator:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <Button name="btnShowMIniHPBar">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="115" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION_SHOWNPCHP"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowMIniHPBar:SetCheck( gameoption:ShowMIniHPBar( btnShowMIniHPBar:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <Button name="btnShowCaption">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="140" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION_SHOWCAPTION"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowCaption:SetCheck( gameoption:ShowCaption( btnShowCaption:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <Button name="btnRecipeRemove">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="165" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION_REMOVECOMPLETEDRECIPE"));</OnLoaded>
+                        <OnValueChanged>
+                          btnRecipeRemove:SetCheck( gameoption:RecipeRemove( btnRecipeRemove:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <Button name="btnAutoParty">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="190" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_FUNCTION_AUTOPARTY"));</OnLoaded>
+                        <OnValueChanged>
+                          btnAutoParty:SetCheck( gameoption:AutoPartyMatch( btnAutoParty:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+                    
+                    <!-- Communication options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="250" />
+                        <Size w="310" h="140" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_COMMUNICATION"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <!-- Show chatting message -->
+                    <Button name="btnShowChatMsg">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="260" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_SHOWCHATTING"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowChatMsg:SetCheck( gameoption:ShowChatMsg( btnShowChatMsg:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show whisper message -->
+                    <Button name="btnShowWhisperMsg">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="285" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_SHOWWHISPER"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowWhisperMsg:SetCheck( gameoption:ShowWhisperMsg( btnShowWhisperMsg:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show party message -->
+                    <Button name="btnShowPartyMsg">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="310" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_SHOWPARTYCHAT"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowPartyMsg:SetCheck( gameoption:ShowPartyMsg( btnShowPartyMsg:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show guild message -->
+                    <Button name="btnShowGuildMsg">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="335" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_SHOWGUILDCHAT"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowGuildMsg:SetCheck( gameoption:ShowGuildMsg( btnShowGuildMsg:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show bubble chatting message -->
+                    <Button name="btnShowBubbleChat">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="360" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_SHOWBUBBLECHATBOX"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowBubbleChat:SetCheck( gameoption:ShowBubbleChat( btnShowBubbleChat:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Character options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="335" y="30" />
+                        <Size w="310" h="185" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_CHARACTER"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <!-- Show my player name -->
+                    <Button name="btnShowMyPlayerName">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="40" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_CHARACTER_SHOWMYNAME"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowMyPlayerName:SetCheck( gameoption:ShowMyPlayerName( btnShowMyPlayerName:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show my player guild name -->
+                    <Button name="btnShowMyPlayerGuildName">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="65" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_CHARACTER_SHOWMYGUILD"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowMyPlayerGuildName:SetCheck( gameoption:ShowMyPlayerGuildName( btnShowMyPlayerGuildName:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show other player name -->
+                    <Button name="btnShowOtherPlayerName">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="90" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_CHARACTER_SHOWOTHERNAME"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowOtherPlayerName:SetCheck( gameoption:ShowOtherPlayerName( btnShowOtherPlayerName:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show other player guild name -->
+                    <Button name="btnShowOtherPlayerGuildName">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="115" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_CHARACTER_SHOWOTHERGUILD"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowOtherPlayerGuildName:SetCheck( gameoption:ShowOtherPlayerGuildName( btnShowOtherPlayerGuildName:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show NPC name -->
+                    <Button name="btnShowNpcName">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="140" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_CHARACTER_SHOWNPCNAME"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowNpcName:SetCheck( gameoption:ShowNpcName( btnShowNpcName:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Show NPC guild name -->
+                    <Button name="btnShowNpcGuildName">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="165" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_CHARACTER_SHOWNPCGUILD"));</OnLoaded>
+                        <OnValueChanged>
+                          btnShowNpcGuildName:SetCheck( gameoption:ShowNpcGuildName( btnShowNpcGuildName:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Interaction options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="335" y="250" />
+                        <Size w="310" h="140" />
+                      </Layout>
+                    </Group>
+
+                    <!-- Reject to invited party -->
+                    <Button name="btnRejectParty">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="260" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_DECLINEPARTYINVITATION"));</OnLoaded>
+                        <OnValueChanged>
+                          btnRejectParty:SetCheck( gameoption:RejectParty( btnRejectParty:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Reject to invited guild -->
+                    <Button name="btnRejectGuild">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="285" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_DECLINEGUILDINVITATION"));</OnLoaded>
+                        <OnValueChanged>
+                          btnRejectGuild:SetCheck( gameoption:RejectGuild( btnRejectGuild:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Reject to the duel -->
+                    <Button name="btnRejectDuel">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="310" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_DECLINEDUELREQUEST"));</OnLoaded>
+                        <OnValueChanged>
+                          btnRejectDuel:SetCheck( gameoption:RejectDuel( btnRejectDuel:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Reject to the trading -->
+                    <Button name="btnRejectTrading">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="345" y="335" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_DECLINETRADEREQUEST"));</OnLoaded>
+                        <OnValueChanged>
+                          btnRejectTrading:SetCheck( gameoption:RejectTrading( btnRejectTrading:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+
+                    <!-- Function options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="430" />
+                        <Size w="310" h="95" />
+                      </Layout>
+                    </Group>
+
+                    <!-- Auto continuous attack -->
+                    <Button name="btnAutoContinuousAttack">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="440" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_AUTOCHAINATTACK"));</OnLoaded>
+                        <OnValueChanged>
+                          btnAutoContinuousAttack:SetCheck( gameoption:EnableAutoContinuousAttack( btnAutoContinuousAttack:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Combat Stance Sitting -->
+                    <Button name="btnCombatStanceSitting">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="465" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_SITTINGDURINGCOMBAT"));</OnLoaded>
+                        <OnValueChanged>
+                          btnCombatStanceSitting:SetCheck( gameoption:EnableCombatStanceSitting( btnCombatStanceSitting:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Auto Change To Normal Stance -->
+                    <Button name="btnAutoChangeToNormalStance">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="490" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_GAME_AUTOSHEATHEWEAPON"));</OnLoaded>
+                        <OnValueChanged>
+                          btnAutoChangeToNormalStance:SetCheck( gameoption:EnableAutoChangeToNormalStance( btnAutoChangeToNormalStance:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                  </Controls>
+                </ViewCtrl>
+                
+              </Controls>
+            </Page>
+          </TabPage>
+
+
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="130" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="465" />
+              </Layout>
+              <Controls>
+
+                <!-- ViewCtrl : View -->
+                <ViewCtrl>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="665" h="405" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>show</ShowScrollBar>
+                    <ScrollRange min="0" max="670" />
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Controls>
+
+                    <!-- Vidio options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="30" />
+                        <Size w="635" h="360" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <!-- Resolution -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="40" />
+                        <Size w="250" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_RESOLUTION"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Combobox name="cmbScreenResolution">
+                      <Look>lookDefComboButton</Look>
+                      <Look type="listbox">lookDefComboListBox</Look>
+                      <Look type="scrollbar">lookDefScrollBar</Look>
+                      <Layout>
+                        <Location x="30" y="65" />
+                        <Size w="230" h="23" />
+                      </Layout>
+                      <Shape>
+                        <DroppedWidth>150</DroppedWidth>
+                        <ShowScrollBar>show</ShowScrollBar>
+                        <ThumbLength>26</ThumbLength>
+                      </Shape>
+                      <Event>
+                        <OnSelChange>luaOption:ChangeScreenResolution();</OnSelChange>
+                      </Event>
+                    </Combobox>
+
+                    <!-- Full screen -->
+                    <Button name="btnFullScreen">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="110" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_FULLSCREEN"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnFullScreen:SetCheck( gameoption:EnableFullScreen( btnFullScreen:GetCheck() ));
+                        </OnValueChanged>
+                        <OnUpdate>
+                          btnFullScreen:SetCheck( gameoption:IsEnableFullScreen());
+                        </OnUpdate>
+                      </Event>
+                    </Button>
+
+                    <!-- Normal mapping -->
+                    <Button name="btnNormalMapping">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="135" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_NORMALMAPPING"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnNormalMapping:SetCheck( gameoption:EnableNormalMapping( btnNormalMapping:GetCheck() ));
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- HDR -->
+                    <Button name="btnHDR">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="160" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_HDR"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnHDR:SetCheck( gameoption:EnableHDR( btnHDR:GetCheck() ));
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- DOF -->
+                    <Button name="btnDOF">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="185" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_DOF"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnDOF:SetCheck( gameoption:EnableDOF( btnDOF:GetCheck() ));
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Distortion -->
+                    <Button name="btnDistortion">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="210" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_DISTORTION"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnDistortion:SetCheck( gameoption:EnableDistortion( btnDistortion:GetCheck() ));
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Motion blur -->
+                    <Button name="btnMotionBlur">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="235" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_MOTIONBLUR"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnMotionBlur:SetCheck( gameoption:EnableMotionBlur( btnMotionBlur:GetCheck() ));
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <Button name="btnSoftParticle">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="260" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_SOFTPARTICLE"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnSoftParticle:SetCheck( gameoption:EnableSoftParticle( btnSoftParticle:GetCheck() ));
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- TextView : Notify required rebooting  -->
+                    <TextView name="labRequiredReboot">
+                      <Look>lookDefTextView</Look>
+                      <Layout>
+                        <Location x="20" y="350" />
+                        <Size w="250" h="50" />
+                      </Layout>
+                      <Shape>
+                        <Wrap>false</Wrap>
+                        <Visible>false</Visible>
+                        <ShowScrollBar>hide</ShowScrollBar>
+                        <Static>true</Static>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( "{FONT name=\"fntScript\"}{COLOR r=128 g=0 b=0}" .. STR( "UI_OPTION_REQUIREDREBOOTING"));</OnLoaded>
+                      </Event>
+                    </TextView>
+
+                    <!-- Texture reduction -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="350" y="40" />
+                        <Size w="250" h="23" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_TEXTUREREDUCTION"));</OnLoaded>
+                      </Event>
+                    </Label>
+                    
+                    <Selector name="selTextureReduction">
+                      <Look>lookDefSelector</Look>
+                      <Layout>
+                        <Location x="380" y="65" />
+                        <Size w="230" h="18" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>
+                          selTextureReduction:ResetContent();
+                          selTextureReduction:AddItem( STR( "UI_LOWEST"), 4);
+                          selTextureReduction:AddItem( STR( "UI_LOW"), 3);
+                          selTextureReduction:AddItem( STR( "UI_NORMAL"), 2);
+                          selTextureReduction:AddItem( STR( "UI_HIGH"), 1);
+                          selTextureReduction:AddItem( STR( "UI_HIGHEST"), 0);
+                        </OnLoaded>
+                        <OnSelChange>
+                          luaOption:ChangedOption( true);
+
+                          local _val = selTextureReduction:GetItemValue( selTextureReduction:GetCurSel());
+                          local _index = selTextureReduction:GetItemFromValue( gameoption:SetTextureReduction( _val));
+                          selTextureReduction:SetCurSel( _index);
+                        </OnSelChange>
+                      </Event>
+                    </Selector>
+
+                    <!-- Lighting -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="350" y="110" />
+                        <Size w="250" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_LIGHTING"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Selector name="selLighting">
+                      <Look>lookDefSelector</Look>
+                      <Layout>
+                        <Location x="380" y="135" />
+                        <Size w="230" h="18" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>
+                          selLighting:ResetContent();
+                          selLighting:AddItem( STR( "UI_OFF"), 0);
+                          selLighting:AddItem( STR( "UI_LOW"), 1);
+                          selLighting:AddItem( STR( "UI_HIGH"), 2);
+                        </OnLoaded>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+
+                          local _val = selLighting:GetItemValue( selLighting:GetCurSel());
+                          local _index = selLighting:GetItemFromValue( gameoption:SetLighting( _val));
+                          selLighting:SetCurSel( _index);
+
+                          local _val = selSSAO:GetItemValue( selSSAO:GetCurSel());
+                          local _index = selSSAO:GetItemFromValue( gameoption:SetSSAO( _val));
+                          selSSAO:SetCurSel( _index);
+                        </OnSelChange>
+                      </Event>
+                    </Selector>
+                    
+                    <!-- Ground object visible range -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="350" y="180" />
+                        <Size w="250" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_DETAILTERRAIN"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Selector name="selGrndObjVisibleRange">
+                      <Look>lookDefSelector</Look>
+                      <Layout>
+                        <Location x="380" y="205" />
+                        <Size w="230" h="18" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>
+                          selGrndObjVisibleRange:ResetContent();
+                          selGrndObjVisibleRange:AddItem( STR( "UI_SMALLEST"), 1000);
+                          selGrndObjVisibleRange:AddItem( STR( "UI_SMALL"), 3000);
+                          selGrndObjVisibleRange:AddItem( STR( "UI_NORMAL"), 5000);
+                          selGrndObjVisibleRange:AddItem( STR( "UI_LARGE"), 7000);
+                          selGrndObjVisibleRange:AddItem( STR( "UI_LARGEST"), 9000);
+                        </OnLoaded>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+                          
+                          local _val = selGrndObjVisibleRange:GetItemValue( selGrndObjVisibleRange:GetCurSel());
+                          local _index = selGrndObjVisibleRange:GetItemFromValue( gameoption:SetGrndObjVisibleRange( _val));
+                          selGrndObjVisibleRange:SetCurSel( _index);
+                        </OnSelChange>
+                      </Event>
+                    </Selector>
+                    
+                    <!-- Shadow -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="350" y="250" />
+                        <Size w="250" h="23" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_SHADOW"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Selector name="selShadow">
+                      <Look>lookDefSelector</Look>
+                      <Layout>
+                        <Location x="380" y="275" />
+                        <Size w="230" h="18" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>
+                          selShadow:ResetContent();
+                          selShadow:AddItem( STR( "UI_OFF"), 0);
+                          selShadow:AddItem( STR( "UI_LOWEST"), 1);
+                          selShadow:AddItem( STR( "UI_LOW"), 2);
+                          selShadow:AddItem( STR( "UI_NORMAL"), 3);
+                          selShadow:AddItem( STR( "UI_HIGH"), 4);
+                          selShadow:AddItem( STR( "UI_HIGHEST"), 5);
+                        </OnLoaded>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+
+                          local _val = selShadow:GetItemValue( selShadow:GetCurSel());
+                          local _index = selShadow:GetItemFromValue( gameoption:SetShadow( _val));
+                          selShadow:SetCurSel( _index);
+                        </OnSelChange>
+                      </Event>
+                    </Selector>
+
+                    <!-- SSAO -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="350" y="320" />
+                        <Size w="250" h="23" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_GRAPHICS_SSAO"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Selector name="selSSAO">
+                      <Look>lookDefSelector</Look>
+                      <Layout>
+                        <Location x="380" y="345" />
+                        <Size w="230" h="18" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>
+                          selSSAO:ResetContent();
+                          selSSAO:AddItem( STR( "UI_OFF"), 0);
+                          selSSAO:AddItem( STR( "UI_LOW"), 1);
+                          selSSAO:AddItem( STR( "UI_NORMAL"), 2);
+                          selSSAO:AddItem( STR( "UI_HIGH"), 3);
+                        </OnLoaded>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+
+                          local _val = selSSAO:GetItemValue( selSSAO:GetCurSel());
+                          local _index = selSSAO:GetItemFromValue( gameoption:SetSSAO( _val));
+                          selSSAO:SetCurSel( _index);
+                        </OnSelChange>
+                      </Event>
+                    </Selector>
+
+                    
+                    <!-- Movie recording options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="430" />
+                        <Size w="635" h="105" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_MOVIE"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <!-- Encorder type -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="440" />
+                        <Size w="250" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_MOVIE_ENCORDER"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Combobox name="cmbEncodingType">
+                      <Look>lookDefComboButton</Look>
+                      <Look type="listbox">lookDefComboListBox</Look>
+                      <Look type="scrollbar">lookDefScrollBar</Look>
+                      <Layout>
+                        <Location x="30" y="465" />
+                        <Size w="230" h="23" />
+                      </Layout>
+                      <Shape>
+                        <DroppedWidth>120</DroppedWidth>
+                        <AddString>MPEG1</AddString>
+                        <AddString>MJPEG</AddString>
+                        <AddString>MJPEG HQ</AddString>
+                        <AddString>MPEG4</AddString>
+                        <AddString>YouTube</AddString>
+                        <AddString>YouTube HQ</AddString>
+                        <AddString>YouTube HD</AddString>
+                        <AddString>Video Editing</AddString>
+                        <ThumbLength>26</ThumbLength>
+                      </Shape>
+                      <Event>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+
+                          local strEncordingType = gameoption:SetEncodingType( cmbEncodingType:GetItemText( cmbEncodingType:GetCurSel()) );
+                          for  i = 0, (cmbEncodingType:GetItemCount() - 1)  do
+
+                          if ( cmbEncodingType:GetItemText( i) == strEncordingType)  then  cmbEncodingType:SetCurSel( i);
+                          end
+                          end
+                        </OnSelChange>
+                      </Event>
+                    </Combobox>
+
+                    <!-- Encording resolution -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="350" y="440" />
+                        <Size w="250" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_MOVIE_SIZE"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Combobox name="cmbEncodingResolution">
+                      <Look>lookDefComboButton</Look>
+                      <Look type="listbox">lookDefComboListBox</Look>
+                      <Look type="scrollbar">lookDefScrollBar</Look>
+                      <Layout>
+                        <Location x="360" y="465" />
+                        <Size w="230" h="23" />
+                      </Layout>
+                      <Shape>
+                        <DroppedWidth>120</DroppedWidth>
+                        <ThumbLength>26</ThumbLength>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>
+                          cmbEncodingResolution:ResetContent();
+                          cmbEncodingResolution:AddString( STR( "UI_OPTION_VIDEO_MOVIE_SIZE_FULL"));
+                          cmbEncodingResolution:AddString( STR( "UI_OPTION_VIDEO_MOVIE_SIZE_75PERCENT"));
+                          cmbEncodingResolution:AddString( STR( "UI_OPTION_VIDEO_MOVIE_SIZE_50PERCENT"));
+                          cmbEncodingResolution:AddString( STR( "UI_OPTION_VIDEO_MOVIE_SIZE_25PERCENT"));
+                        </OnLoaded>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+                          cmbEncodingResolution:SetCurSel( gameoption:SetEncodingResolution( cmbEncodingResolution:GetCurSel() ));
+                        </OnSelChange>
+                      </Event>
+                    </Combobox>
+
+                    <!-- Show UI when the recording -->
+                    <Button name="btnShowUIWhenRecording">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="500" />
+                        <Size w="250" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_MOVIE_SHOWUI"));</OnLoaded>
+                        <OnValueChanged>
+                          luaOption:ChangedOption();
+                          btnShowUIWhenRecording:SetCheck( gameoption:ShowUIWhenRecording( btnShowUIWhenRecording:GetCheck() ));
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- ScreenShot options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="575" />
+                        <Size w="635" h="80" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_SCREENSHOT"));</OnLoaded>
+                      </Event>
+                    </Group>
+                    
+                    <!-- ScreenShot type -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="585" />
+                        <Size w="250" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_VIDEO_SCREENSHOT_FORMAT"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <Combobox name="cmbScreenShotFormatType">
+                      <Look>lookDefComboButton</Look>
+                      <Look type="listbox">lookDefComboListBox</Look>
+                      <Look type="scrollbar">lookDefScrollBar</Look>
+                      <Layout>
+                        <Location x="30" y="610" />
+                        <Size w="230" h="23" />
+                      </Layout>
+                      <Shape>
+                        <DroppedWidth>120</DroppedWidth>
+                        <AddString>JPEG(*.jpg)</AddString>
+                        <AddString>BMP(*.bmp)</AddString>
+                        <AddString>PNG(*.png)</AddString>
+                        <ThumbLength>26</ThumbLength>
+                      </Shape>
+                      <Event>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+
+                          local strFromatType = gameoption:SetScreenShotFormatType( cmbScreenShotFormatType:GetItemText( cmbScreenShotFormatType:GetCurSel()) );
+                          for  i = 0, (cmbScreenShotFormatType:GetItemCount() - 1)  do
+
+                          if ( cmbScreenShotFormatType:GetItemText( i) == strFromatType)  then  cmbScreenShotFormatType:SetCurSel( i);
+                          end
+                          end
+                        </OnSelChange>
+                      </Event>
+                    </Combobox>
+
+                  </Controls>
+                </ViewCtrl>
+
+              </Controls>
+            </Page>
+          </TabPage>
+
+
+          <!-- Tab 3 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="260" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="465" />
+              </Layout>
+              <Controls>
+
+                <!-- Sound options -->
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="10" y="30" />
+                    <Size w="320" h="365" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND"));</OnLoaded>
+                  </Event>
+                </Group>
+
+                <!-- Speaker mode -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="20" y="40" />
+                    <Size w="250" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_SPEAKER"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Combobox name="cmbSpeakerMode">
+                  <Look>lookDefComboButton</Look>
+                  <Look type="listbox">lookDefComboListBox</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="30" y="65" />
+                    <Size w="230" h="23" />
+                  </Layout>
+                  <Shape>
+                    <DroppedWidth>150</DroppedWidth>
+                    <ShowScrollBar>show</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>
+                      cmbSpeakerMode:ResetContent();
+                      cmbSpeakerMode:AddString( STR( "UI_OPTION_AUDIO_SOUND_SPEAKER_AUTO"));
+                      cmbSpeakerMode:AddString( STR( "UI_OPTION_AUDIO_SOUND_SPEAKER_2SPEAKER"));
+                      cmbSpeakerMode:AddString( STR( "UI_OPTION_AUDIO_SOUND_SPEAKER_4SPEAKER"));
+                      cmbSpeakerMode:AddString( STR( "UI_OPTION_AUDIO_SOUND_SPEAKER_6SPEAKER"));
+                      cmbSpeakerMode:AddString( STR( "UI_OPTION_AUDIO_SOUND_SPEAKER_8SPEAKER"));
+                    </OnLoaded>
+                    <OnSelChange>
+                      luaOption:ChangedOption();
+                      cmbSpeakerMode:SetCurSel( gameoption:SetSpeakerMode( cmbSpeakerMode:GetCurSel()) );
+                    </OnSelChange>
+                  </Event>
+                </Combobox>
+
+                <!-- Mute all -->
+                <Button name="btnMuteAll">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="20" y="110" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_MUTE"));</OnLoaded>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnMuteAll:SetCheck( gameoption:MuteAll( btnMuteAll:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+
+                <!-- Mute Generic -->
+                <Button name="btnMuteGeneric">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="30" y="135" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_MUTEGENERIC"));</OnLoaded>
+                    <OnUpdate>btnMuteGeneric:Enable( not gameoption:IsMuteAll());</OnUpdate>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnMuteGeneric:SetCheck( gameoption:MuteGenericSound( btnMuteGeneric:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+                
+                <!-- Mute BGM -->
+                <Button name="btnMuteBGM">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="30" y="160" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_MUTEBGM"));</OnLoaded>
+                    <OnUpdate>btnMuteBGM:Enable( not gameoption:IsMuteAll());</OnUpdate>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnMuteBGM:SetCheck( gameoption:MuteBGMSound( btnMuteBGM:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+
+                <!-- Mute effect sound -->
+                <Button name="btnMuteEffect">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="30" y="185" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_MUTEEFFECT"));</OnLoaded>
+                    <OnUpdate>btnMuteEffect:Enable( not gameoption:IsMuteAll());</OnUpdate>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnMuteEffect:SetCheck( gameoption:MuteEffectSound( btnMuteEffect:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+
+                <Button name="btnEnableHardwareAcc">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="20" y="220" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_HARDWAREACCEL"));</OnLoaded>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnEnableHardwareAcc:SetCheck( gameoption:EnableHardwareAccelerate( btnEnableHardwareAcc:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+
+                <Button name="btnEnableReverb">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="20" y="245" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_REVERB"));</OnLoaded>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnEnableReverb:SetCheck( gameoption:EnableReverb( btnEnableReverb:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+
+                <Button name="btnEnableCompressor">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="20" y="270" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_COMPRESSOR"));</OnLoaded>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnEnableCompressor:SetCheck( gameoption:EnableCompressor( btnEnableCompressor:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+
+                <Button name="btnActiveEffect">
+                  <Look>lookDefCheckBox</Look>
+                  <Layout>
+                    <Location x="20" y="295" />
+                    <Size w="280" h="23" />
+                  </Layout>
+                  <Shape>
+                    <Type>checkbutton</Type>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_MUTEDEACTIVATED"));</OnLoaded>
+                    <OnValueChanged>
+                      luaOption:ChangedOption();
+                      btnActiveEffect:SetCheck( gameoption:InActiveSound( btnActiveEffect:GetCheck() ));
+                    </OnValueChanged>
+                  </Event>
+                </Button>
+
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="20" y="320" />
+                    <Size w="250" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_SOUND_GUIDEVOICE"));</OnLoaded>
+                  </Event>
+                </Label>
+                
+                <Selector name="selNarrationVox">
+                  <Look>lookDefSelector</Look>
+                  <Layout>
+                    <Location x="50" y="345" />
+                    <Size w="138" h="18" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>
+                      selNarrationVox:ResetContent();
+                      selNarrationVox:AddItem( STR( "UI_OFF"), 2);
+                      selNarrationVox:AddItem( STR( "MALE"), 0);
+                      selNarrationVox:AddItem( STR( "FEMALE"), 1);
+                    </OnLoaded>
+                    <OnSelChange>
+                      luaOption:ChangedOption();
+
+                      local _val = selNarrationVox:GetItemValue( selNarrationVox:GetCurSel());
+                      local _index = selNarrationVox:GetItemFromValue( gameoption:SetSystemMessage( _val));
+                      selNarrationVox:SetCurSel( _index);
+                    </OnSelChange>
+                  </Event>
+                </Selector>
+                
+                <!-- Sound volume -->
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="340" y="30" />
+                    <Size w="320" h="365" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_VOLUME"));</OnLoaded>
+                  </Event>
+                </Group>
+
+                <!-- Master volume -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="350" y="40" />
+                    <Size w="250" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_VOLUME_MASTER"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Selector name="selMasterVolumn">
+                  <Look>lookDefSelector</Look>
+                  <Layout>
+                    <Location x="380" y="65" />
+                    <Size w="230" h="18" />
+                  </Layout>
+                  <Shape>
+                    <AddItem string="0%" value="0.0" />
+                    <AddItem string="25%" value="0.25" />
+                    <AddItem string="50%" value="0.50" />
+                    <AddItem string="75%" value="0.75" />
+                    <AddItem string="100%" value="1.0" />
+                  </Shape>
+                  <Event>
+                    <OnSelChange>
+                      luaOption:ChangedOption();
+
+                      local _val = selMasterVolumn:GetItemValue( selMasterVolumn:GetCurSel());
+                      local _index = selMasterVolumn:GetItemFromValue( gameoption:SetMasterVolumn( _val));
+                      selMasterVolumn:SetCurSel( _index);
+                    </OnSelChange>
+                  </Event>
+                </Selector>
+
+                <!-- Generic volume -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="350" y="110" />
+                    <Size w="250" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_VOLUME_GENERIC"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Selector name="selGenericVolumn">
+                  <Look>lookDefSelector</Look>
+                  <Layout>
+                    <Location x="380" y="135" />
+                    <Size w="230" h="18" />
+                  </Layout>
+                  <Shape>
+                    <AddItem string="0%" value="0.0" />
+                    <AddItem string="25%" value="0.25" />
+                    <AddItem string="50%" value="0.50" />
+                    <AddItem string="75%" value="0.75" />
+                    <AddItem string="100%" value="1.0" />
+                  </Shape>
+                  <Event>
+                    <OnSelChange>
+                      luaOption:ChangedOption();
+
+                      local _val = selGenericVolumn:GetItemValue( selGenericVolumn:GetCurSel());
+                      local _index = selGenericVolumn:GetItemFromValue( gameoption:SetGenericVolumn( _val));
+                      selGenericVolumn:SetCurSel( _index);
+                    </OnSelChange>
+                  </Event>
+                </Selector>
+
+                <!-- BGM volume -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="350" y="180" />
+                    <Size w="250" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_VOLUME_BGM"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Selector name="selBGMVolumn">
+                  <Look>lookDefSelector</Look>
+                  <Layout>
+                    <Location x="380" y="205" />
+                    <Size w="230" h="18" />
+                  </Layout>
+                  <Shape>
+                    <AddItem string="0%" value="0.0" />
+                    <AddItem string="25%" value="0.25" />
+                    <AddItem string="50%" value="0.50" />
+                    <AddItem string="75%" value="0.75" />
+                    <AddItem string="100%" value="1.0" />
+                  </Shape>
+                  <Event>
+                    <OnSelChange>
+                      luaOption:ChangedOption();
+
+                      local _val = selBGMVolumn:GetItemValue( selBGMVolumn:GetCurSel());
+                      local _index = selBGMVolumn:GetItemFromValue( gameoption:SetBGMVolumn( _val));
+                      selBGMVolumn:SetCurSel( _index);
+                    </OnSelChange>
+                  </Event>
+                </Selector>
+
+                <!-- Effect volume -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="350" y="250" />
+                    <Size w="250" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_OPTION_AUDIO_VOLUME_EFFECT"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Selector name="selEffectVolumn">
+                  <Look>lookDefSelector</Look>
+                  <Layout>
+                    <Location x="380" y="275" />
+                    <Size w="230" h="18" />
+                  </Layout>
+                  <Shape>
+                    <AddItem string="0%" value="0.0" />
+                    <AddItem string="25%" value="0.25" />
+                    <AddItem string="50%" value="0.50" />
+                    <AddItem string="75%" value="0.75" />
+                    <AddItem string="100%" value="1.0" />
+                  </Shape>
+                  <Event>
+                    <OnSelChange>
+                      luaOption:ChangedOption();
+
+                      local _val = selEffectVolumn:GetItemValue( selEffectVolumn:GetCurSel());
+                      local _index = selEffectVolumn:GetItemFromValue( gameoption:SetEffectVolumn( _val));
+                      selEffectVolumn:SetCurSel( _index);
+                    </OnSelChange>
+                  </Event>
+                </Selector>
+
+              </Controls>
+            </Page>
+          </TabPage>
+
+
+          <!-- Tab 4 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="390" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="670" h="465" />
+              </Layout>
+              <Controls>
+
+                <!-- ViewCtrl : View -->
+                <ViewCtrl>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="665" h="405" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>show</ShowScrollBar>
+                    <ScrollRange min="0" max="800" />
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Controls>
+
+                    <!-- Keyboard options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="30" />
+                        <Size w="635" h="620" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <!-- Forward -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="40" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_FORWARD"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="40" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>FORWARD</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Backward -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="65" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_BACKWARD"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="65" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>BACKWARD</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Left -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="90" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_LEFT"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="90" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>LEFT</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Right -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="115" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_RIGHT"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="115" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>RIGHT</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Action -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="140" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_ACTION"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="140" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>ACTION</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Alt. action -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="165" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_ALTACTION"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="165" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>ALTACTION</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Guard -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="190" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_GUARD"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="190" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>GUARD</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Dodge -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="215" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_DODGE"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="215" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>DODGE</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Jump -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="240" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_JUMP"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="240" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>JUMP</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Change stance -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="265" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_STANCE"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="265" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>CHANGESTANCE</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Change weapon -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="290" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_CHANGEWEAPON"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="290" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>CHANGEWEAPON</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Auto run -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="315" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_AUTORUN"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="315" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>AUTORUN</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Sit down -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="340" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_SITDOWN"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="340" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>SIT</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- NPC Interaction -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="365" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_INTERACTION"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="365" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>NPCINTERACTION</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- PC Interaction -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="390" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_PCINTERACTION"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="390" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PCINTERACTION</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Lock target -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="415" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_LOCKTARGET"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="415" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>LOCKTARGET</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Show cursor -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="440" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_SHOWCURSOR"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="440" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>TOGGLEMOUSE</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Main menu -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="465" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_MAINMENU"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="465" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>MAINMENU</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Character window -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="490" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_CHARACTER"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="490" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>CHARACTER</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Inventory window -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="515" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_INVENTORY"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="515" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>INVENTORY</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Journal window -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="540" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_JOURNAL"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="540" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>JOURNAL</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Talent window -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="565" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_TALENT"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="565" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>TALENT</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Social window -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="590" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_SOCIAL"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="590" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>SOCIAL</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Map window -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="615" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_MAP"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="180" y="615" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>MAP</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 0 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="40" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 1));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="40" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE0</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 1 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="65" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 2));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="65" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE1</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 2 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="90" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 3));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="90" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE2</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 3 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="115" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 4));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="115" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE3</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 4 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="140" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 5));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="140" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE4</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 5 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="165" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 6));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="165" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE5</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 6 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="190" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 7));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="190" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE6</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 7 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="215" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 8));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="215" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE7</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 8 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="240" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 9));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="240" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE8</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette 9 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="265" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 10));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="265" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTE9</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette set 0 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="315" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 1));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="315" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTESET0</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette set 1 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="340" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 2));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="340" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTESET1</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette set 2 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="365" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 3));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="365" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTESET2</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette set 3 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="390" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 4));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="390" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTESET3</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Palette set 4 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="415" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 5));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="415" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>PALETTESET4</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+
+                    <!-- Controls help 1 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="465" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_HELPCONTROLKEYS"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="465" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>CONTROLSHELP1</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+                    
+
+                    <!-- Controls help 2 -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="345" y="490" />
+                        <Size w="150" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD_HELPBASICCONTROLS"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <ControlKey>
+                      <Look>lookDefControlKey</Look>
+                      <Layout>
+                        <Location x="505" y="490" />
+                        <Size w="130" h="21" />
+                      </Layout>
+                      <Shape>
+                        <Text>CONTROLSHELP2</Text>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                      </Event>
+                    </ControlKey>
+                    
+
+                    <!-- Mouse options -->
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="680" />
+                        <Size w="310" h="105" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_MOUSE"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <!-- Inverted mouse -->
+                    <Button name="btnInvertedMouse">
+                      <Look>lookDefCheckBox</Look>
+                      <Layout>
+                        <Location x="20" y="690" />
+                        <Size w="280" h="23" />
+                      </Layout>
+                      <Shape>
+                        <Type>checkbutton</Type>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_MOUSE_INVERTED"));</OnLoaded>
+                        <OnValueChanged>
+                          btnInvertedMouse:SetCheck( gameoption:SetInvertedMouse( btnInvertedMouse:GetCheck() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Button>
+
+                    <!-- Mouse sensitivity -->
+                    <Label>
+                      <Look>lookDefLabel</Look>
+                      <Layout>
+                        <Location x="20" y="720" />
+                        <Size w="200" h="20" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_MOUSE_SENSITIVITY"));</OnLoaded>
+                      </Event>
+                    </Label>
+
+                    <LabelEx>
+                      <Layout>
+                        <Location x="20" y="750" />
+                        <Size w="50" h="26" />
+                      </Layout>
+                      <Shape>
+                        <Font>fntScript</Font>
+                        <FontColor r="100" g="100" b="100"/>
+                        <Align>right,vcenter</Align>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_LOW"));</OnLoaded>
+                      </Event>
+                    </LabelEx>
+
+                    <LabelEx>
+                      <Layout>
+                        <Location x="270" y="750" />
+                        <Size w="50" h="26" />
+                      </Layout>
+                      <Shape>
+                        <Font>fntScript</Font>
+                        <FontColor r="100" g="100" b="100"/>
+                        <Align>left,vcenter</Align>
+                      </Shape>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_HIGH"));</OnLoaded>
+                      </Event>
+                    </LabelEx>
+
+                    <Slider name="sldMouseSensitivity">
+                      <Look>lookDefSlider</Look>
+                      <Layout>
+                        <Location x="70" y="750" />
+                        <Size w="200" h="26" />
+                      </Layout>
+                      <Shape>
+                        <Style>horizontal</Style>
+                        <ScrollRange min="0" max="100"/>
+                        <ScrollValue>50</ScrollValue>
+                      </Shape>
+                      <Event>
+                        <OnValueChanged>
+                          sldMouseSensitivity:SetScrollValue( gameoption:SetMouseSensitivity( sldMouseSensitivity:GetScrollValue() ));
+                          luaOption:ChangedOption();
+                        </OnValueChanged>
+                      </Event>
+                    </Slider>
+
+                  </Controls>
+                </ViewCtrl>
+
+              </Controls>
+            </Page>
+          </TabPage>
+
+
+          <!-- Tab 5 기타 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="520" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="670" h="465" />
+              </Layout>
+              <Controls>
+
+                <!-- ViewCtrl : View -->
+                <ViewCtrl>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="665" h="405" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>show</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ScrollRange min="0" max="750" />
+                  </Shape>
+                  <Controls>
+
+                    <Group>
+                      <Look>lookDefGroupBox</Look>
+                      <Layout>
+                        <Location x="10" y="30" />
+                        <Size w="310" h="70" />
+                      </Layout>
+                      <Event>
+                        <OnLoaded>this:SetText( STR( "UI_OPTION_ETC_CROSSHAIR"));</OnLoaded>
+                      </Event>
+                    </Group>
+
+                    <Combobox name="cmbCrossHairSelecter">
+                      <Look>lookDefComboButton</Look>
+                      <Look type="listbox">lookDefComboListBox</Look>
+                      <Look type="scrollbar">lookDefScrollBar</Look>
+                      <Layout>
+                        <Location x="30" y="50" />
+                        <Size w="230" h="23" />
+                      </Layout>
+                      <Shape>
+                        <DroppedWidth>120</DroppedWidth>
+                        <AddString>Default</AddString>
+                        <ThumbLength>26</ThumbLength>
+                      </Shape>
+                      <Event>
+                        <OnSelChange>
+                          luaOption:ChangedOption();
+
+                          local strCrossHairSelect = gameoption:SetCrossHairCurrentType( cmbCrossHairSelecter:GetItemText( cmbCrossHairSelecter:GetCurSel()) );
+
+                          for  i = 0, (cmbCrossHairSelecter:GetItemCount() - 1)  do
+                              if ( cmbCrossHairSelecter:GetItemText( i) == strCrossHairSelect)  then  cmbCrossHairSelecter:SetCurSel( i);
+                              end
+                          end
+                        </OnSelChange>
+                      </Event>
+                    </Combobox>
+
+                  </Controls>
+                </ViewCtrl>
+              </Controls>
+              
+            </Page>
+          </TabPage>
+        </TabPages>
+      </TabCtrl>
+
+
+      <!-- Buttons : Default setting -->
+      <Button>
+        <Look>lookDefNoticeButton</Look>
+        <Layout>
+          <Location x="10" y="475" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OPTION_DEFAULTSETTING"));</OnLoaded>
+          <OnClick>luaOption:SetDefaultOption();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : OK -->
+      <Button name="btnApplyOption">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="350" y="475" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaOption:ApplyOption();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="510" y="475" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>luaOption:CancelOption();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

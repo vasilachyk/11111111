@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_storage.lua" />
+
+
+
+
+  <Frame name="frmStorage" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="160" y="80" />
+      <Size w="356" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Text>보관함</Text>
+      <Icon>iconDefExclamation1</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmStorage);</OnLoaded>
+      <OnShow>luaStorage:OnShowFrame();</OnShow>
+      <OnSetFocus>lcStorage:SetFocus();</OnSetFocus>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then     luaGame:RestoreUIPosition( frmStorage);
+        elseif ( arg == "RECORD_UI")  then  luaGame:RecordUIPosition( frmStorage);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="341" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmStorage:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="515" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- ListCtrl : lcStorage -->
+      <ListCtrl name="lcStorage">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="25" />
+          <Size w="336" h="464" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="300">name</AddColumn>
+          <AddColumn align="left,vcenter" width="100">quantity</AddColumn>
+          <AddColumn align="left,vcenter" width="1">type</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ToolTip offset_x="42" offset_y="42" ></ToolTip>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnDrawItem>luaStorage:OnDrawItemListCtrl();</OnDrawItem>
+          <OnItemRClick>luaStorage:OnItemRClickListCtrl();</OnItemRClick>
+          <OnItemDblClick>luaStorage:OnItemDblClickListCtrl();</OnItemDblClick>
+          <OnSelChange>luaStorage:OnSelChangeListCtrl();</OnSelChange>
+          <OnDragBegin>return luaStorage:OnDragBeginListCtrl();</OnDragBegin>
+          <OnDragEnd>return luaStorage:OnDragEndListCtrl();</OnDragEnd>
+          <OnDrop>return luaStorage:OnDropListCtrl();</OnDrop>
+          <OnToolTip>luaStorage:OnToolTipListCtrl();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="490" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- Item count -->
+      <LabelEx name="labStorageItemCount">
+        <Layout>
+          <Location x="0" y="500" />
+          <Size w="%100" h="30" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetToolTip( STR( "UI_INVEN_ITEMCOUNTTOOLTIP"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- Buttons : Drop item -->
+      <Button name="btnDropStorageItem">
+        <Look>lookDefIconButton</Look>
+        <Layout>
+          <Location x="308" y="500" />
+          <Size w="32" h="32" />
+        </Layout>
+        <Shape>
+          <Icon w="32" h="32">iconTrashCan</Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaStorage:OpenConfirmDropItem();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="540" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+
+      <!-- Money -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="326" h="30" />
+        </Layout>
+      </Group>
+
+      <Picture>
+        <Layout>
+          <Location x="15" y="553" />
+          <Size w="24" h="24" />
+        </Layout>
+        <Image>iconCoin</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TextView name="tvwStorageMoney">
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="326" h="30" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnDragBegin>return luaStorage:OnDragBeginMoney();</OnDragBegin>
+          <OnDrop>return luaStorage:OnDropMoney();</OnDrop>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Frame -->
+  <Frame name="frmConfirmDropStorageItem" parent="frmStorage">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaStorage:CloseConfirmDropStorageItem();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_CONFIRMDROPITEM"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Drop item description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="60" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwStorageDropItemDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaStorage:OnDropStorageItemOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaStorage:CloseConfirmDropStorageItem();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Frame : Confirm item quantity -->
+  <Frame name="frmConfirmStorageItemQuantity" parent="frmStorage">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="260" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaStorage:CloseConfirmItemQuantityFrame();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmStorageItemQuantityMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_SPECITEMQTY"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="110" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmStorageItemQuantityDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Quantity -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="145" />
+          <Size w="410" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="160" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "QUANTITY") .. " :");</OnLoaded>
+        </Event>
+      </Label>
+
+      <Edit name="edtConfirmStorageItemQuantity">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaStorage:OnValueChangedConfirmItemQuantity();</OnValueChanged>
+          <OnOK>luaStorage:DoConfirmItemQuantity();</OnOK>
+          <OnCancel>luaStorage:CloseConfirmItemQuantityFrame();</OnCancel>
+        </Event>
+      </Edit>
+
+      <SpinCtrl>
+        <Look>lookDefSpinCtrl</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="15" h="23" />
+        </Layout>
+        <Shape>
+          <Buddy>edtConfirmStorageItemQuantity</Buddy>
+        </Shape>
+      </SpinCtrl>
+
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaStorage:DoConfirmItemQuantity();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>luaStorage:CloseConfirmItemQuantityFrame();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+</UI>

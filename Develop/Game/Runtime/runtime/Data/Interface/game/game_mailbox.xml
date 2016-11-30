@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script --> 
+  <Script file="game_mailbox.lua" />
+  
+  
+  
+  <!-- Frame : Mail box -->
+  <Frame name="frmMailBox" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="160" y="90" />
+      <Size w="400" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+	    <Icon>iconMailBox</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_MAILBOX"));
+        luaGame:RegisterWindow( frmMailBox);
+      </OnLoaded>
+      <OnShow>luaMailBox:OnShowMailBoxFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmMailBox);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmMailBox);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmMailBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="55" base="BOTTOMLEFT" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- TabCtrl -->
+      <TabCtrl name="tbcMailBoxTabCtrl">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="%100" h="560" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcMailBoxTabCtrl:SetTabName( 0, STR( "UI_MAILBOX_INBOX"));
+            tbcMailBoxTabCtrl:SetTabName( 1, STR( "UI_MAILBOX_WRITE"));
+          </OnLoaded>
+          <OnSelChange>luaMailBox:RefreshMailBox();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <!-- Tab 1 : Recieved mail -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="150" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="535" />
+              </Layout>
+              <Controls>
+
+                <!-- Picture : Background -->
+                <Picture>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="%100" h="485" />
+                  </Layout>
+                  <Image>bmpContentBkgrnd</Image>
+                  <Shape>
+                    <Stretch>true</Stretch>
+                  </Shape>
+                </Picture>
+                
+                
+                <!-- ListCtrl : Mail list -->
+                <ListCtrl name="lcMailBox">
+                  <Look>lookDefListCtrlCustom</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="5" y="0" />
+                    <Size w="380" h="418" />
+                  </Layout>
+                  <Shape>
+                    <ViewStyle>report</ViewStyle>
+                    <ItemMargin horz="1" vert="3"/>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowColumnHeader>false</ShowColumnHeader>
+                    <AddColumn align="left,vcenter" width="390">title</AddColumn>
+                    <AddColumn align="left,vcenter" width="170">sender</AddColumn>
+                    <AddColumn align="left,vcenter" width="40">attached</AddColumn>
+                    <AddColumn align="left,vcenter" width="150">term</AddColumn>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <DragAndDrop>true</DragAndDrop>
+                    <ShowBorder>false</ShowBorder>
+                  </Shape>
+                  <Event>
+                    <OnSelChange>luaMailBox:RefreshMailBoxControls();</OnSelChange>
+                    <OnItemDblClick>luaMailBox:ReadMail();</OnItemDblClick>
+                    <OnDrawItemBkgrnd>luaMailBox:OnDrawItemBkgrndReadMail();</OnDrawItemBkgrnd>
+                  </Event>
+                </ListCtrl>
+
+              
+                <!-- State of mail box -->
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="5" y="425" />
+                    <Size w="380" h="50" />
+                  </Layout>
+                </Group>
+
+                <TextView name="tvwMailBoxState">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="10" y="430" />
+                    <Size w="370" h="40" />
+                  </Layout>
+                  <Shape>
+                    <ShowBorder>false</ShowBorder>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                  </Shape>
+                </TextView>
+
+
+                <!-- Frame bottom -->
+                <Group>
+                  <Look>lookDefFrameBottomBox</Look>
+                  <Layout>
+                    <Location x="0" y="485" />
+                    <Size w="%100" h="50" />
+                  </Layout>
+                </Group>
+                
+                
+                <!-- Button : Read mail -->
+                <Button name="btnReadMail">
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="10" y="495" />
+                    <Size w="180" h="30" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_MAILBOX_READ"));</OnLoaded>
+                    <OnClick>luaMailBox:ReadMail();</OnClick>
+                  </Event>
+                </Button>
+
+                <!-- Button : Delete mail -->
+                <Button name="btnDeleteMail">
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="200" y="495" />
+                    <Size w="180" h="30" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_DELETE"));</OnLoaded>
+                    <OnClick>luaMailBox:OpenConfirmDeleteMailFrame();</OnClick>
+                  </Event>
+                </Button>
+
+              </Controls>
+            </Page>
+          </TabPage>
+
+
+          <!-- Tab 2 : Send mail -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="150" y="0" />
+                <Size w="150" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="535" />
+              </Layout>
+              <Controls>
+
+                <!-- Picture : Background -->
+                <Picture>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="%100" h="485" />
+                  </Layout>
+                  <Image>bmpContentBkgrnd</Image>
+                  <Shape>
+                    <Stretch>true</Stretch>
+                  </Shape>
+                </Picture>
+                
+
+                <!-- Receiver -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="10" y="5" />
+                    <Size w="100" h="23" />
+                  </Layout>
+                  <Shape>
+                    <LimitText>20</LimitText>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_MAILBOX_RECIPIENT"));</OnLoaded>
+                  </Event>
+                </Label>
+                
+                <Edit name="edtSendMailReceiver">
+                  <Look>lookDefEdit</Look>
+                  <Layout>
+                    <Location x="110" y="10" />
+                    <Size w="270" h="23" />
+                  </Layout>
+                  <Shape>
+                    <LimitText>20</LimitText>
+                  </Shape>
+                  <Event>
+                    <OnValueChanged>luaMailBox:RefreshSendMailControls();</OnValueChanged>
+                  </Event>
+                </Edit>
+
+
+                <!-- Title -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="10" y="35" />
+                    <Size w="100" h="23" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_MAILBOX_TITLE"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Edit name="edtSendMailTitle">
+                  <Look>lookDefEdit</Look>
+                  <Layout>
+                    <Location x="110" y="40" />
+                    <Size w="270" h="23" />
+                  </Layout>
+                  <Shape>
+                    <LimitText>20</LimitText>
+                  </Shape>
+                  <Event>
+                    <OnValueChanged>luaMailBox:RefreshSendMailControls();</OnValueChanged>
+                  </Event>
+                </Edit>
+
+
+                <!-- EditCtrl : Content -->
+                <EditCtrl name="edtSendMailContent">
+                  <Look>lookDefEditCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="10" y="75" />
+                    <Size w="370" h="210" />
+                  </Layout>
+                  <Shape>
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Event>
+                    <OnValueChanged>luaMailBox:RefreshSendMailControls();</OnValueChanged>
+                  </Event>
+                </EditCtrl>
+
+
+                <!-- LabelEx : Remained character -->
+                <LabelEx name="labRemainedMailContentChar">
+                  <Layout>
+                    <Location x="10" y="285" />
+                    <Size w="370" h="20" />
+                  </Layout>
+                  <Shape>
+                    <Font>fntScript</Font>
+                    <FontColor r="160" g="160" b="160"/>
+                    <Align>right,vcenter</Align>
+                  </Shape>
+                </LabelEx>
+
+
+                <!-- Attach -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="10" y="295" />
+                    <Size w="200" h="23" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_MAILBOX_ATTACHMENT"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="10" y="325" />
+                    <Size w="370" h="105" />
+                  </Layout>
+                </Group>
+
+                <TextView name="tvwMailAttach">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="15" y="330" />
+                    <Size w="360" h="95" />
+                  </Layout>
+                  <Shape>
+                    <ShowBorder>false</ShowBorder>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                    <DragAndDrop>true</DragAndDrop>
+                  </Shape>
+                  <Event>
+                    <OnItemClick>luaMailBox:OnItemClickSendMailAttach();</OnItemClick>
+                    <OnToolTip>luaMailBox:OnToolTipSendMailAttach();</OnToolTip>
+                    <OnDrop>return luaMailBox:OnDropSendMailAttachedObj();</OnDrop>
+                  </Event>
+                </TextView>
+
+
+                <!-- TextView : Cost -->
+                <TextView name="tvwMailSendCost">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="10" y="450" />
+                    <Size w="370" h="20" />
+                  </Layout>
+                  <Shape>
+                    <ShowBorder>false</ShowBorder>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                  </Shape>
+                </TextView>
+
+
+                <!-- Frame bottom -->
+                <Group>
+                  <Look>lookDefFrameBottomBox</Look>
+                  <Layout>
+                    <Location x="0" y="485" />
+                    <Size w="%100" h="50" />
+                  </Layout>
+                </Group>
+                
+
+                <!-- Button : Reset mail -->
+                <Button name="btnResetMail">
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="10" y="495" />
+                    <Size w="180" h="30" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_MAILBOX_CLEAR"));</OnLoaded>
+                    <OnClick>luaMailBox:ResetSendMail();</OnClick>
+                  </Event>
+                </Button>
+
+                
+                <!-- Button : Send mail -->
+                <Button name="btnSendMail">
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="200" y="495" />
+                    <Size w="180" h="30" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_MAILBOX_SEND"));</OnLoaded>
+                    <OnClick>luaMailBox:SendMail();</OnClick>
+                  </Event>
+                </Button>
+                
+              </Controls>
+            </Page>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame : Read mail -->
+  <Frame name="frmReadMail" parent="frmMailBox">
+    <Layout>
+      <Location x="570" y="70" />
+      <Size w="400" h="600" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <ShowTitleBar>false</ShowTitleBar>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnShow>luaMailBox:OnShowReadMailFrame();</OnShow>
+      <OnUpdate>luaMailBox:OnUpdateReadMailFrame();</OnUpdate>
+      <OnNcHitTest>return luaMailBox:OnNcHitTestReadMail();</OnNcHitTest>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmReadMail);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmReadMail);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Panel : Scroll -->
+      <Panel name="pnlReadMailScroll">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="560" />
+        </Layout>
+        <Controls>
+
+          <!-- Panel : Text -->
+          <Panel>
+            <Layout>
+              <Location x="0" y="5" />
+              <Size w="%100" h="540" />
+              <Anchor left="true" top="true" right="true" bottom="true" />
+            </Layout>
+            <Controls>
+
+              <!-- Picture : Scroll paper -->
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="400" h="540" />
+                </Layout>
+                <Image>bmpScrollPaper</Image>
+              </Picture>
+
+
+              <!-- TextView : Mail content -->
+              <TextView name="tvwReadMail">
+                <Look>lookDefScrollTextView</Look>
+                <Look type="scrollbar">lookDefScrollBar</Look>
+                <Layout>
+                  <Location x="25" y="25" />
+                  <Size w="355" h="495" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>show</ShowScrollBar>
+                  <ThumbLength>26</ThumbLength>
+                  <Wrap>false</Wrap>
+                </Shape>
+                <Event>
+                  <OnItemClick>luaMailBox:OnItemClickReadMail();</OnItemClick>
+                  <OnToolTip>luaMailBox:OnToolTipReadMail();</OnToolTip>
+                </Event>
+              </TextView>
+
+            </Controls>
+          </Panel>
+
+
+          <!-- Picture : Scroll head/tail -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollHead</Image>
+          </Picture>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="%100" base="BOTTOMLEFT"/>
+              <Size w="400" h="70" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Image>bmpScrollTail</Image>
+          </Picture>
+
+        </Controls>
+      </Panel>
+
+      <!-- Buttons : Reply -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="20" y="560" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAILBOX_REPLY"));</OnLoaded>
+          <OnClick>
+            luaMailBox:CloseReadMailFrame();
+            luaMailBox:ReplyMail();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Delete -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="145" y="560" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DELETE"));</OnLoaded>
+          <OnClick>
+            luaMailBox:CloseReadMailFrame();
+            luaMailBox:OpenConfirmDeleteMailFrame();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="270" y="560" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Shape>
+          <Icon w="28" h="28">iconCancel</Icon>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CLOSE"));</OnLoaded>
+          <OnClick>luaMailBox:CloseReadMailFrame();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmDeleteMail" parent="frmMailBox">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaMailBox:CloseConfirmDeleteMailFrame();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAILBOX_CONFIRMDELETE"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Delete mail description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="60" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwDeleteMailDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>
+            luaMailBox:CloseConfirmDeleteMailFrame();
+            luaMailBox:DeleteMail();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaMailBox:CloseConfirmDeleteMailFrame();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+  
+  
+  
+
+  <!-- Frame -->
+  <Frame name="frmSendMailProgress" parent="frmMailBox">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="80" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnShow>luaMailBox:RefreshSendMailControls();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAILBOX_SENDING"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- ProgressCtrl : Progress of send mail -->
+      <ProgressCtrl name="pcSendMailProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="100"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaMailBox:OnUpdateSendMailProgressBar();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+    </Controls>
+  </Frame>
+
+
+  
+  
+
+
+
+
+  
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmSendMailErrorMsgBox" parent="frmMailBox">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_ERROR"));</OnLoaded>
+      <OnShow>luaMailBox:RefreshSendMailControls();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmSendMailErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwSendMailErrorMsg">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+      
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="115" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>frmSendMailErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_quest.lua" />
+
+  <!-- Panel : Quest -->
+  <Panel parent="tpgJournalQuest">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="440" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- CategoryCtrl : Quest list -->
+      <CategoryCtrl name="ctvQuestList">
+        <Look>lookDefCategoryCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="335" h="430" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowRootItem>false</ShowRootItem>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="210">name</AddColumn>
+          <AddColumn align="right,vcenter" width="80">type</AddColumn>
+        </Shape>
+        <Event>
+          <OnSelChange>luaQuest:OnSelChangeQuestList();</OnSelChange>
+          <OnItemClick>luaQuest:OnItemClickQuestList();</OnItemClick>
+          <OnItemDblClick>luaQuest:IndicateCurSelQuest();</OnItemDblClick>
+        </Event>
+      </CategoryCtrl>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="440" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+
+      <!-- Buttons : Indicate a quest -->
+      <Button name="btnIndicateQuest">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="450" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_JOURNAL_INDICATEQUEST"));</OnLoaded>
+          <OnClick>luaQuest:IndicateCurSelQuest();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : Share a quest -->
+      <Button name="btnShareQuest">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="123" y="450" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_JOURNAL_SHAREQUEST"));</OnLoaded>
+          <OnClick>luaQuest:OnShareQuest();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : Giveup a quest -->
+      <Button name="btnGiveupQuest">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="236" y="450" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_JOURNAL_GIVEUPQUEST"));</OnLoaded>
+          <OnClick>luaQuest:OpenConfirmGiveupQuest();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Frame -->
+  <Frame name="frmConfirmGiveupQuest" parent="frmJournal">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>
+            luaQuest:OnGiveupQuestCancel();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_JOURNAL_CONFIRMGIVEUPQUEST"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaQuest:OnGiveupQuestOK();</OnClick>
+        </Event>
+      </Button>
+      
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaQuest:OnGiveupQuestCancel();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

@@ -1,0 +1,4554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_cashshop.lua" />
+
+
+  <!-- Frame : Dyeing -->
+  <Frame name="frmCashShop" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="960" h="740" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Icon>iconCashShop</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CASHSHOP"));
+        luaGame:RegisterWindow( frmCashShop);
+      </OnLoaded>
+      <OnShow>luaCashShop:OnShowCashshopFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="945" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmCashShop:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!--상좌-->
+      <Panel>
+        <Layout>
+          <Location x="5" y="30" />
+          <Size w="690" h="135" />
+        </Layout>
+        <Controls>
+          
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+          </Group>
+
+          <Picture name="picBanner">
+            <Layout>
+              <Location x="1" y="1" />
+              <Size w="688" h="133" />
+            </Layout>
+            <Image>bmpCashShopBanner</Image>
+            <Shape>
+              <Static>false</Static>
+              <Stretch>true</Stretch>
+              <EnableFocus>true</EnableFocus>
+            </Shape>
+            <Event>
+              <OnClick></OnClick>
+              <OnToolTip></OnToolTip>
+            </Event>
+          </Picture>
+
+        </Controls>
+      </Panel>
+
+      <!--좌하-->
+      <Panel name="pnlCashShopMain">
+        <Layout>
+          <Location x="5" y="175" />
+          <Size w="690" h="565" />
+        </Layout>
+        <Controls>
+
+          <!-- Seperate Bar -->
+          <!--<Picture>
+            <Layout>
+              <Location x="0" y="25" base="BOTTOMLEFT" />
+              <Size w="%100" h="2" />
+            </Layout>
+            <Image>bmpDefSeperateBarHor</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>-->
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="25" />
+              <Size w="%100" h="525" />
+            </Layout>
+          </Group>
+
+          <!-- Seperate Bar -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="50" base="BOTTOMLEFT" />
+              <Size w="%100" h="2" />
+            </Layout>
+            <Image>bmpDefSeperateBarHor</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+          <Button name="btnMain">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="50" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_CASHSHOP_MAIN"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.MAIN);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <Button name="btnEnchant">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <ko_KR>
+                <Location x="50" y="0" />
+                <Size w="50" h="25" />
+              </ko_KR>
+              <Location x="50" y="0" />
+              <Size w="80" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_CASHSHOP_ENCHANT"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.ENCHANT);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <Button name="btnConvenience">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <ko_KR>
+                <Location x="100" y="0" />
+                <Size w="50" h="25" />
+              </ko_KR>
+              <Location x="130" y="0" />
+              <Size w="110" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_CASHSHOP_CONVENIENCE"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.CONVENIENCE);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <Button name="btnCostume">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <ko_KR>
+                <Location x="150" y="0" />
+                <Size w="50" h="25" />
+              </ko_KR>
+              <Location x="240" y="0" />
+              <Size w="80" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_CASHSHOP_COSTUME"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.COSTUME);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <Button name="btnPackage">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <ko_KR>
+                <Location x="200" y="0" />
+                <Size w="50" h="25" />
+              </ko_KR>
+              <Location x="320" y="0" />
+              <Size w="80" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_CASHSHOP_PACKAGE"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.PACKAGE);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <Button name="btnEvent">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <ko_KR>
+                <Location x="250" y="0" />
+                <Size w="50" h="25" />
+              </ko_KR>
+              <Location x="400" y="0" />
+              <Size w="70" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_CASHSHOP_EVENT"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.EVENT);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <Button name="btnRide">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <ko_KR>
+                <Location x="300" y="0" />
+                <Size w="50" h="25" />
+              </ko_KR>
+              <Location x="470" y="0" />
+              <Size w="70" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_CASHSHOP_RIDE"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.RIDE);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <Button name="btnCrystal">
+            <Look>lookDefSmallTabBtn</Look>
+            <Layout>
+              <ko_KR>
+                <Location x="350" y="0" />
+                <Size w="100" h="25" />
+              </ko_KR>
+              <Location x="540" y="0" />
+              <Size w="130" h="25" />
+            </Layout>
+            <Shape>
+              <Type>pushbutton</Type>
+              <Icon w="15" h="15">bmpCrystal</Icon>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( " " .. STR( "UI_CASHSHOP_CRYSTAL"));</OnLoaded>
+              <OnValueChanged>luaCashShop:ChangeCategory( luaCashShop.CATEGORY.CRYSTAL);</OnValueChanged>
+            </Event>
+          </Button>
+
+          <!-- TextView : Message -->
+          <TextView name="tvwCashShopNoItem">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="0" y="180" />
+              <Size w="%100" h="150" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <!--<Wrap>false</Wrap>-->
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( "{FONT name=\"fntLargeStrong\"}{ALIGN hor=\"center\" ver=\"center\"}" .. STR( "UI_CASHSHOP_NO_ITEM"));</OnLoaded>
+            </Event>
+          </TextView>
+
+          <Panel name="pnlProductItem1">
+            <Layout>
+              <Location x="10" y="60" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage1">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(1);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(1);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag1">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount1">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName1">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice1">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview1">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(1);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(1);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift1">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(1);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem2">
+            <Layout>
+              <Location x="235" y="60" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage2">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(2);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(2);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag2">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount2">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName2">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice2">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview2">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(2);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(2);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift2">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(2);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem3">
+            <Layout>
+              <Location x="460" y="60" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage3">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(3);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(3);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag3">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount3">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName3">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice3">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview3">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(3);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(3);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift3">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(3);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem4">
+            <Layout>
+              <Location x="10" y="150" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage4">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(4);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(4);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag4">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount4">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName4">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice4">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview4">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(4);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(4);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift4">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(4);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem5">
+            <Layout>
+              <Location x="235" y="150" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage5">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(5);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(5);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag5">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount5">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName5">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice5">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview5">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(5);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(5);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift5">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(5);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem6">
+            <Layout>
+              <Location x="460" y="150" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage6">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(6);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(6);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag6">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount6">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName6">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice6">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview6">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(6);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(6);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift6">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(6);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem7">
+            <Layout>
+              <Location x="10" y="240" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage7">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(7);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(7);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag7">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount7">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName7">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice7">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview7">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(7);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(7);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift7">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(7);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem8">
+            <Layout>
+              <Location x="235" y="240" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage8">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(8);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(8);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag8">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount8">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName8">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice8">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview8">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(8);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(8);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift8">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(8);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem9">
+            <Layout>
+              <Location x="460" y="240" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage9">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(9);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(9);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag9">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount9">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName9">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice9">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview9">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(9);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(9);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift9">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(9);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem10">
+            <Layout>
+              <Location x="10" y="330" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage10">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(10);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(10);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag10">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount10">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName10">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice10">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview10">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(10);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(10);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift10">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(10);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem11">
+            <Layout>
+              <Location x="235" y="330" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage11">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(11);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(11);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag11">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount11">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName11">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice11">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview11">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(11);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(11);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift11">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(11);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem12">
+            <Layout>
+              <Location x="460" y="330" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage12">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(12);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(12);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag12">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount12">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName12">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice12">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview12">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(12);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(12);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift12">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(12);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem13">
+            <Layout>
+              <Location x="10" y="420" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage13">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(13);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(13);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag13">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount13">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName13">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice13">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview13">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(13);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(13);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift13">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(13);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem14">
+            <Layout>
+              <Location x="235" y="420" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage14">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(14);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(14);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag14">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount14">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName14">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice14">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview14">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(14);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(14);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift14">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(14);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+          <Panel name="pnlProductItem15">
+            <Layout>
+              <Location x="460" y="420" />
+              <Size w="220" h="85" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="54" h="54" />
+                </Layout>
+                <Image>bmpMiniFrame</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <Picture name="picProductItemImage15">
+                <Layout>
+                  <Location x="5" y="5"/>
+                  <Size w="44" h="44" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Static>false</Static>
+                  <Stretch>true</Stretch>
+                  <EnableFocus>true</EnableFocus>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickProductItemIcon(15);</OnClick>
+                  <OnToolTip>luaCashShop:OnToolTipProductItemIcon(15);</OnToolTip>
+                </Event>
+              </Picture>
+
+              <Picture name="picProductItemImageTag15">
+                <Layout>
+                  <Location x="0" y="0"/>
+                  <Size w="40" h="40" />
+                </Layout>
+                <Image></Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <LabelEx name="labProductItemCount15">
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="48" h="48" />
+                </Layout>
+                <Shape>
+                  <Font>fntSubScriptStrong</Font>
+                  <FontColor r="230" g="230" b="230"/>
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <TextView name="tvwProductItemName15">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="5" />
+                  <Size w="160" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <TextView name="tvwProductItemPrice15">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="170" h="50" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+              <!-- 미리보기 버튼 -->
+              <Button name="btnProductItemPreview15">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="10" y="60" />
+                  <Size w="80" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CRAFTING_ITEM_PREVIEW"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemPreview(15);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 구매 버튼 -->
+              <Button>
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="95" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemBuy(15);
+                  </OnClick>
+                </Event>
+              </Button>
+
+              <!-- 선물 버튼 -->
+              <Button name="btnProductItemGift15">
+                <Look>lookDefButtonSmall</Look>
+                <Layout>
+                  <Location x="155" y="60" />
+                  <Size w="55" h="20" />
+                </Layout>
+                <Event>
+                  <OnLoaded>this:SetText( STR( "UI_CASHSHOP_BTN_GIFT"));</OnLoaded>
+                  <OnClick>
+                    luaCashShop:OnClickProductItemGift(15);
+                  </OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+
+          <Panel>
+            <Layout>
+              <Location x="130" y="515" />
+              <Size w="448" h="32" />
+            </Layout>
+            <Shape>
+              <!--<ShowRect>true</ShowRect>-->
+            </Shape>
+            <Controls>
+
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Image>bmpPre2Btn</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button>
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickPreButton(true);</OnClick>
+                </Event>
+              </Button>
+
+              <Picture>
+                <Layout>
+                  <Location x="32" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Image>bmpPre1Btn</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button>
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="32" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickPreButton();</OnClick>
+                </Event>
+              </Button>
+
+              <Picture name="picNumber1">
+                <Layout>
+                  <Location x="64" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Image>bmpTextlabel1</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button name="btnNumber1">
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="64" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnLoaded>this:SetText( "1");</OnLoaded>
+                  <OnClick>luaCashShop:OnClickPageButton(0);</OnClick>
+                </Event>
+              </Button>
+
+              <Picture name="picNumber2">
+                <Layout>
+                  <Location x="128" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Image>bmpTextlabel1</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button name="btnNumber2">
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="128" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnLoaded>this:SetText( "2");</OnLoaded>
+                  <OnClick>luaCashShop:OnClickPageButton(1);</OnClick>
+                </Event>
+              </Button>
+
+              <Picture name="picNumber3">
+                <Layout>
+                  <Location x="192" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Image>bmpTextlabel1</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button name="btnNumber3">
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="192" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnLoaded>this:SetText( "3");</OnLoaded>
+                  <OnClick>luaCashShop:OnClickPageButton(2);</OnClick>
+                </Event>
+              </Button>
+
+              <Picture name="picNumber4">
+                <Layout>
+                  <Location x="256" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Image>bmpTextlabel1</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button name="btnNumber4">
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="256" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnLoaded>this:SetText( "4");</OnLoaded>
+                  <OnClick>luaCashShop:OnClickPageButton(3);</OnClick>
+                </Event>
+              </Button>
+
+              <Picture name="picNumber5">
+                <Layout>
+                  <Location x="320" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Image>bmpTextlabel1</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button name="btnNumber5">
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="320" y="0" />
+                  <Size w="64" h="32" />
+                </Layout>
+                <Shape>
+                  <!--<Type>checkbutton</Type>-->
+                  <ShowBorder>false</ShowBorder>
+                  <!--<ShowRect>true</ShowRect>-->
+                </Shape>
+                <Event>
+                  <OnLoaded>this:SetText( "5");</OnLoaded>
+                  <OnClick>luaCashShop:OnClickPageButton(4);</OnClick>
+                </Event>
+              </Button>
+
+              <Picture>
+                <Layout>
+                  <Location x="384" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Image>bmpNext1Btn</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button>
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="384" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickNextButton();</OnClick>
+                </Event>
+              </Button>
+
+              <Picture>
+                <Layout>
+                  <Location x="416" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Image>bmpNext2Btn</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+              <Button>
+                <Look>lookDefSmallBtn</Look>
+                <Layout>
+                  <Location x="416" y="0" />
+                  <Size w="32" h="32" />
+                </Layout>
+                <Shape>
+                  <ShowBorder>false</ShowBorder>
+                </Shape>
+                <Event>
+                  <OnClick>luaCashShop:OnClickNextButton(true)</OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+        </Controls>
+      </Panel>
+
+      <!--상우-->
+      <Panel>
+        <Layout>
+          <Location x="705" y="30" />
+          <Size w="238" h="160" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Controls>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="25" />
+            </Layout>
+            <Image>bmpContentBar</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="25" />
+              <Size w="%100" h="135" />
+            </Layout>
+          </Group>
+
+          <Label>
+            <Look>lookDefLabelLargeHighCA</Look>
+            <Layout>
+              <Location x="10" y="0" />
+              <Size w="%100" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR("UI_CASHSHOP_MYBALANCE"));</OnLoaded>
+            </Event>
+          </Label>
+
+          <!--피망 캐시-->
+          <Panel>
+            <Layout>
+              <Location x="10" y="40" />
+              <Size w="220" h="30" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefGroupBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+                <Shape>
+                  <!--<Opacity>0.25</Opacity>-->
+                </Shape>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="5" y="3" />
+                  <Size w="24" h="24" />
+                </Layout>
+                <Image>iconCoin</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <TextView name="tvwPmangMoney">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="30" y="0" />
+                  <Size w="190" h="30" />
+                </Layout>
+                <Shape>
+                  <!--<ShowRect>true</ShowRect>-->
+                  <ShowBorder>false</ShowBorder>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+                <Event>
+                  <OnClick>gamefunc:ShowCashCharge();</OnClick>
+                </Event>
+              </TextView>
+
+              <!--?-->
+              <Button>
+                <Look>lookDefQuestionBtn</Look>
+                <Layout>
+                  <Location x="220" y="3" base="TOPRIGHT" />
+                  <Size w="27" h="26" />
+                </Layout>
+                <Event>
+                  <OnClick>luaCashShop:OnClickCashHelp();</OnClick>
+                </Event>
+              </Button>
+
+            </Controls>
+          </Panel>
+
+
+          <!--보유 크리스탈-->
+          <Panel>
+            <Layout>
+              <Location x="10" y="80" />
+              <Size w="220" h="30" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Controls>
+
+              <Group>
+                <Look>lookDefGroupBox</Look>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="%100" h="%100" />
+                </Layout>
+                <Shape>
+                  <!--<Opacity>0.25</Opacity>-->
+                </Shape>
+              </Group>
+
+              <Picture>
+                <Layout>
+                  <Location x="5" y="3" />
+                  <Size w="24" h="24" />
+                </Layout>
+                <Image>bmpCrystal</Image>
+                <Shape>
+                  <Stretch>true</Stretch>
+                </Shape>
+              </Picture>
+
+              <TextView name="tvwHaveCrystal">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                  <Location x="30" y="0" />
+                  <Size w="190" h="30" />
+                </Layout>
+                <Shape>
+                  <!--<ShowRect>truㅑe</ShowRect>-->
+                  <ShowBorder>false</ShowBorder>
+                  <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+              </TextView>
+
+            </Controls>
+          </Panel>
+          
+          
+
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="20" y="120" />
+              <Size w="200" h="30" />
+            </Layout>
+            <Shape>
+              <!--<HotKey>N</HotKey>-->
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR("UI_CASHSHOP_CASH_CHARGE"));</OnLoaded>
+              <OnClick>gamefunc:ShowCashCharge();</OnClick>
+            </Event>
+          </Button>
+
+        </Controls>
+      </Panel>
+
+      <!--하우-->
+      <Panel>
+        <Layout>
+          <Location x="705" y="200" />
+          <Size w="238" h="480" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Controls>
+
+          <Group>
+            <Look>lookDefCashInvenGroupBox</Look>
+            <Layout>
+              <Location x="0" y="25" />
+              <Size w="%100" h="455" />
+            </Layout>
+          </Group>
+
+          <TabCtrl name="tbcCashInven">
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>tbcCashInven:SetTabName( 0, STR( "UI_CASHSHOP_INVEN"));</OnLoaded>
+            </Event>
+            <TabPages>
+
+              <TabPage>
+                <Tab>
+                  <Look>lookDefSmallTabBtn</Look>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="180" h="25" />
+                    <ko_KR>
+                      <Location x="0" y="0" />
+                      <Size w="120" h="25" />
+                    </ko_KR>
+                  </Layout>
+                  <Shape>
+                    <Type>pushbutton</Type>
+                  </Shape>
+                </Tab>
+                <Page/>
+              </TabPage>
+
+            </TabPages>
+          </TabCtrl>
+
+          <ListCtrl name="lcCashInventory">
+            <Look>lookDefListCtrlCustom</Look>
+            <Look type="scrollbar">lookDefScrollBar</Look>
+            <Layout>
+              <Location x="13" y="25" />
+              <Size w="225" h="419" />
+            </Layout>
+            <Shape>
+              <ViewStyle>icon</ViewStyle>
+              <ItemMargin horz="1" vert="3"/>
+              <MultipleSel>false</MultipleSel>
+              <ShowColumnHeader>false</ShowColumnHeader>
+              <AddColumn align="left,vcenter">name</AddColumn>
+              <AddColumn align="left,vcenter">image</AddColumn>
+              <AddColumn align="left,vcenter">quantity</AddColumn>
+              <ShowScrollBar>auto</ShowScrollBar>
+              <ThumbLength>26</ThumbLength>
+              <DragAndDrop>true</DragAndDrop>
+              <ToolTip offset_x="42" offset_y="42" ></ToolTip>
+              <ShowBorder>false</ShowBorder>
+            </Shape>
+            <Event>
+              <OnDrawItem>luaCashShop:OnDrawItemCashInvenListCtrl();</OnDrawItem>
+              <OnDragBegin>return luaCashShop:OnDragBeginCashInvenListCtrl();</OnDragBegin>
+              <OnToolTip>luaCashShop:OnToolTipCashInvenListCtrl();</OnToolTip>
+              <OnClick>luaCashShop:OnClickCashInvenItem();</OnClick>
+            </Event>
+          </ListCtrl>
+
+
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="28" y="450" />
+              <Size w="80" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR("UI_CASHSHOP_INVENTORY"));</OnLoaded>
+              <OnToolTip>this:SetToolTip( STR("UI_OPTION_CONTROLS_KEYBOARD_INVENTORY"));</OnToolTip>
+              <OnClick>luaCashShop:OpenfrmInventory()</OnClick>
+            </Event>
+          </Button>
+
+          <Button name="btnMoveItem">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="128" y="450" />
+              <Size w="80" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR("UI_CASHSHOP_ITEMMOVE"));</OnLoaded>
+              <OnClick>luaCashShop:OpenCorfirmMovetoInven(luaCashShop.nClickItemIndex);</OnClick>
+            </Event>
+          </Button>
+
+
+        </Controls>
+      </Panel>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="728" y="690" />
+          <Size w="190" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CASHSHOP_EXIT"));</OnLoaded>
+          <OnClick>frmCashShop:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+  <Panel name="pnlMain" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcMain">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcMain:SetTabName( 0, STR( "UI_CASHSHOP_MAIN_HOT"    ));
+            tbcMain:SetTabName( 1, STR( "UI_CASHSHOP_MAIN_NEW"    ));
+            tbcMain:SetTabName( 2, STR( "UI_ALL"    ));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangeMainTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="50" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="100" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="100" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="200" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlEnchant" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcEnchant">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcEnchant:SetTabName( 0, STR( "UI_ALL"    ));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangeEnchantTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="60" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlConvenience" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcConvenience">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcConvenience:SetTabName( 0, STR( "UI_ALL"));
+            tbcConvenience:SetTabName( 1, STR( "UI_CASHSHOP_CONVENIENCE_CONSUMABLE"));
+            tbcConvenience:SetTabName( 2, STR( "UI_CASHSHOP_CONVENIENCE_SCROLL"));
+            tbcConvenience:SetTabName( 3, STR( "UI_CASHSHOP_CONVENIENCE_FUNCTION"));
+            tbcConvenience:SetTabName( 4, STR( "UI_CASHSHOP_CONVENIENCE_GROWTH"));
+            tbcConvenience:SetTabName( 5, STR( "UI_CASHSHOP_CONVENIENCE_POTION"));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangeConvenienceTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="50" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="100" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="100" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="200" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="150" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="300" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="200" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="400" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="250" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="500" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlCostume" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcCostume">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcCostume:SetTabName( 0, STR( "UI_ALL"));
+            tbcCostume:SetTabName( 1, STR( "UI_CASHSHOP_COSTUME_FUNCTION"));
+            tbcCostume:SetTabName( 2, STR( "UI_CASHSHOP_COSTUME_PACKAGE"));
+            tbcCostume:SetTabName( 3, STR( "UI_CASHSHOP_COSTUME_ARMOR"));
+            tbcCostume:SetTabName( 4, STR( "UI_CASHSHOP_COSTUME_WEAPON"));
+            tbcCostume:SetTabName( 5, STR( "UI_CASHSHOP_COSTUME_ACCESSORY"));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangeCostumeTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="50" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="100" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="100" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="200" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="150" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="300" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="200" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="400" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="250" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="500" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlPackage" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcPackage">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcPackage:SetTabName( 0, STR( "UI_ALL"));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangePackageTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlEvent" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcEvent">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcEvent:SetTabName( 0, STR( "UI_CASHSHOP_EVENT_LIMIT"    ));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangeEventTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="60" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlRide" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcRide">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcRide:SetTabName( 0, STR( "UI_ALL"    ));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangeRideTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="50" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="80" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+
+  <Panel name="pnlCrystal" parent="pnlCashShopMain">
+    <Layout>
+      <Location x="25" y="25" />
+      <Size w="%100" h="25" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcCrystal">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcCrystal:SetTabName( 0, STR( "UI_ALL"    ));
+          </OnLoaded>
+          <OnSelChange>luaCashShop:OnSelChangeCrystalTabCtrl();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <ko_KR>
+                  <Location x="0" y="0" />
+                  <Size w="80" h="25" />
+                </ko_KR>
+                <Location x="0" y="0" />
+                <Size w="120" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Panel>
+
+
+
+
+
+
+
+  <!--상세보기-->
+  <Frame name="frmProductItemInfo" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="400" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR("UI_CASHSHOP_DETAILINFO"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCashShop:CloseProductItemInfo();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="40" />
+          <Size w="410" h="80" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwProductItemInfo">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="45" />
+          <Size w="400" h="70" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="130" />
+          <Size w="410" h="210" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwProductItemInfoDesc">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <ko_KR>
+            <Location x="15" y="135" />
+            <Size w="400" h="200" />
+          </ko_KR>
+          <Location x="15" y="135" />
+          <Size w="400" h="210" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>auto</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <!-- Buttons : OK -->
+      <Button name="btnBuyProductItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="350" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CASHSHOP_BTN_BUY"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            luaCashShop:DoBuyProductItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="350" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            luaCashShop:CloseProductItemInfo();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+  <Frame name="frmConfirmBuyProductItem" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="460" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText(STR("UI_CASHSHOP_DLG_BUY"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCashShop:CloseConfirmBuyProductItem();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText(STR("UI_CASHSHOP_DLG_STR_BUY"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="80" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmBuyProductItem">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="70" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="180" />
+          <Size w="410" h="130" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmBuyProductItemMoney">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="185" />
+          <Size w="400" h="210" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnItemClick>luaCashShop:OnItemClickTerms(tvwConfirmBuyProductItemMoney);</OnItemClick>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : OK -->
+      <Button name="btnConfirmBuyProductItemOK">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="410" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            luaCashShop:DoConfirmBuyProductItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="410" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            luaCashShop:CloseConfirmBuyProductItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+  <Frame name="frmConfirmMoveProductItem" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="330" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR("UI_CASHSHOP_DLG_MOVE"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCashShop:CloseConfirmMovetoInven();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwDlgStrMoveItem">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="90" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText(STR("UI_CASHSHOP_DLG_STR_MOVE"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="80" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwMoveProductItem">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="170" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <!-- Buttons : OK -->
+      <Button name="btnConfirmMoveProductItemOK">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="280" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            luaCashShop:DoConfirmMovetoInven();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="280" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            luaCashShop:CloseConfirmMovetoInven();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmBuySuccess" parent="frmCashShop">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCashShop:CloseConfirmBuySuccess();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwBuyItemComfirm">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CASHSHOP_BUYSUCCESS"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Drop item description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="60" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwBuyItemDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="120" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaCashShop:CloseConfirmBuySuccess();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+  <Frame name="frmConfirmGiftCashItem" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="515" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText(STR("UI_CASHSHOP_DLG_GIFT"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCashShop:CloseConfirmGiftCashItem();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText(STR("UI_CASHSHOP_DLG_STR_GIFT"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!--user-->
+      <Panel>
+        <Layout>
+          <Location x="10" y="80" />
+          <Size w="410" h="55" />
+        </Layout>
+        <Controls>
+
+          <!--<Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+          </Group>-->
+
+          <!--<Label>
+            <Look>lookDefLabelHigh</Look>
+            <Layout>
+              <Location x="5" y="0" />
+              <Size w="200" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR("UI_CASHSHOP_EDT_GIFT") );</OnLoaded>
+            </Event>
+          </Label>-->
+
+          <Edit name="edtUserName">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="5" y="5" />
+              <Size w="200" h="25" />
+            </Layout>
+            <Shape>
+              <LimitText>20</LimitText>
+            </Shape>
+            <Event>
+              <OnSetFocus>
+                this:SetText("");
+                tvwNotMatchUser:SetText("");
+              </OnSetFocus>
+              <OnValueChanged>luaCashShop:OnValueChangedUserName();</OnValueChanged>
+              <OnOK>luaCashShop:FindMatchUser(this:GetText());</OnOK>
+            </Event>
+            <!--<Event>
+          <OnLoaded>
+            local nMinKor, nMaxKor = gamefunc:GetCharacterNameLengthKor();
+            local nMinEng, nMaxEng = gamefunc:GetCharacterNameLengthEng();
+            local strToolTip = FORMAT( "UI_SELCHAR_TOOLTIPENTERNAME", nMinKor .. "~" .. nMaxKor);
+            this:SetToolTip( strToolTip);
+          </OnLoaded>
+          <OnValueChanged>luaCharacterCreate:CheckCharacterNameValidate();</OnValueChanged>
+          <OnKillFocus>luaCharacterCreate:CheckCharacterNameValidate();</OnKillFocus>>
+          <OnOK>frmCharacterCreate:SetFocus();</OnOK>
+          <OnCancel>frmCharacterCreate:SetFocus();</OnCancel>
+        </Event>-->
+          </Edit>
+
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="210" y="5" />
+              <Size w="100" h="24" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR("UI_CONFIRM"));</OnLoaded>
+              <OnClick>luaCashShop:FindMatchUser(edtUserName:GetText());</OnClick>
+            </Event>
+          </Button>
+
+          <TextView name="tvwNotMatchUser">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="5" y="30" />
+              <Size w="400" h="25" />
+            </Layout>
+            <!--<Event>
+              <OnLoaded>this:SetText( STR("UI_CASHSHOP_NOTMATCH_USER") );</OnLoaded>
+            </Event>-->
+          </TextView>
+
+          <!--<Edit name="edtGiftMessage">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="5" y="70" />
+              <Size w="400" h="25" />
+            </Layout>
+            <Shape>
+              <LimitText>20</LimitText>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( "친구에게 보낼 메세지를 입력하세요(20자제한)");</OnLoaded>
+            </Event>
+          </Edit>-->
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="52" />
+              <Size w="%100" h="2" />
+            </Layout>
+            <Image>bmpDefSeperateBarHor2</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+        </Controls>
+      </Panel>
+
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="15" y="135" />
+          <Size w="200" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CASHSHOP_GIFT_ITEM") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="160" />
+          <Size w="410" h="80" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmGiftCashItem">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="165" />
+          <Size w="400" h="70" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="245" />
+          <Size w="410" h="130" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmGiftCashItemMoney">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="250" />
+          <Size w="400" h="210" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnItemClick>luaCashShop:OnItemClickTerms(tvwConfirmGiftCashItemMoney);</OnItemClick>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : OK -->
+      <Button name="btnConfirmGiftCashItemOK">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="465" />
+          <Size w="200" h="30" />
+        </Layout>
+        <!--<Action>
+          <Enabled>false</Enabled>
+        </Action>-->
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            luaCashShop:DoConfirmGiftCashItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="465" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            luaCashShop:CloseConfirmGiftCashItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+  <Frame name="frmCashHelp" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="300" h="130" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText(STR("UI_CASHSHOP_PMANG_CASH"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="280" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCashHelp:Show(false);</OnClick>
+        </Event>
+      </Button>
+
+      <TextView name="tvwCashHelp">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="8" y="27" />
+          <Size w="270" h="150" />
+        </Layout>
+        <Shape>
+          <!--<Wrap>false</Wrap>-->
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCashShop:OnLoadedCashHelp();</OnLoaded>
+        </Event>
+      </TextView>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="45" y="94" />
+          <Size w="190" h="23" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CASHSHOP_CASH_CHARGE"));</OnLoaded>
+          <OnClick>gamefunc:ShowCashCharge();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  <Frame name="frmGiftSuccess" parent="frmCashShop">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCashShop:CloseGiftSuccess();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CASHSHOP_GIFTSUCCESS"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Drop item description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="60" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwGiftItemDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="120" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaCashShop:CloseGiftSuccess();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+  <Frame name="frmCashBalanceShort" parent="frmCashShop">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCashBalanceShort:Show(false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CASHSHOP_CASHBALACE_SHORT"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="50" y="110" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            frmCashBalanceShort:Show(false);
+            gamefunc:ShowCashCharge();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="230" y="110" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmCashBalanceShort:Show(false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

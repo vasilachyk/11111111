@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="tray/tray_main.lua" />
+  
+  
+  <!-- Import files -->
+  <Include>tray/tray_gamemenu.xml</Include>               <!-- Import game menu -->
+  <Include>tray/tray_mailbox.xml</Include>                <!-- Import mail box -->
+  <Include>tray/tray_durability.xml</Include>             <!-- Import durability -->
+  <Include>tray/tray_clock.xml</Include>                  <!-- Import clock -->
+  <Include>tray/tray_cursor.xml</Include>                 <!-- Import cursor -->
+  <Include>tray/tray_stance.xml</Include>                 <!-- Import stance -->
+  <Include>tray/tray_autoparty.xml</Include>              <!-- Import autoparty -->
+
+
+
+  <!-- Popup menu -->
+  <PopupMenu name="pmTrayPopupMenu">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="150" h="200" />
+    </Layout>
+    <Controls>
+      
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>없음</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayBase");</OnClick>
+        </Event>
+      </Button>
+      
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>게임 메뉴</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayGameMenu");</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="50" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>편지함</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayMailBox");</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="75" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>내구도</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayDurability");</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="100" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>시계</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayClock");</OnClick>
+        </Event>
+      </Button>
+      
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="125" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>커서</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayCursor");</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="150" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>전투 상태</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayStance");</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="175" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Text>파티 상태</Text>
+        </Shape>
+        <Event>
+          <OnClick>OnTrayBindScript( "luaTrayAutoParty");</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </PopupMenu>
+
+
+</UI>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_friends.lua" />
+
+
+  <!-- Panel : Friends -->
+  <Panel parent="tpgSocialFriends">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="485" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+<!--
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="380" h="50" />
+        </Layout>
+      </Group>
+-->
+
+      <!-- Friends members -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="5" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Image>bmpContentBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="5" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "FRIENDSMEMBER"));</OnLoaded>
+        </Event>
+      </Label>
+
+
+      <!-- Friends members list -->
+      <ListCtrl name="lcFriendsList">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="470" h="415" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="450">name</AddColumn>
+          <AddColumn align="left,vcenter" width="200">grade</AddColumn>
+          <AddColumn align="left,vcenter" width="200">state</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+        </Shape>
+        <Event>
+          <OnSelChange>luaFriends:RefreshControls();</OnSelChange>
+		  <OnItemDblClick>luaFriends:WhisperToFriend();</OnItemDblClick>
+        </Event>
+      </ListCtrl>
+      
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="485" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+      <!-- Button : Whisper to friend -->
+      <Button name="btnWhisperToFriend">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="20" y="495" />
+          <Size w="140" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_WHISPER_TO_FRIEND"));</OnLoaded>
+          <OnClick>luaFriends:WhisperToFriend();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Add Friend -->
+      <Button name="btnAddFriend">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="175" y="495" />
+          <Size w="140" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ADD_FRIEND"));</OnLoaded>
+          <OnClick>luaFriends:OnShowfrmConfirmFriends("Add");</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Delete Friend -->
+      <Button name="btnDeleteFriend">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="330" y="495" />
+          <Size w="140" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DELETE_FRIEND"));</OnLoaded>
+          <OnClick>luaFriends:OnShowfrmConfirmFriends("Delete");</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Show offline member -->
+      <Button name="btnShowOfflineFriends">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="5" y="455" />
+          <Size w="300" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+          <Check>false</Check>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SOCIAL_DISPLAY_OFFLINE_FRIENDS"));</OnLoaded>
+          <OnValueChanged>
+            lcFriendsList:SetCurSel(0);
+            luaFriends:RefreshFriends();
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <Label name="labFriendMemberCount">
+        <Look>lookDefLabelRA</Look>
+        <Layout>
+          <Location x="270" y="460" />
+          <Size w="200" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>luaFriends:OnLoadedMemberCount()</OnLoaded>
+        </Event>
+      </Label>
+      
+    </Controls>
+  </Panel>
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmFriends" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmConfirmFriends );
+      </OnLoaded>
+      <OnShow>
+        if ( frmConfirmFriends:GetShow() == true)  then
+
+        local width, height = frmConfirmFriends:GetParent():GetSize();
+        local x, y, w, h = frmConfirmFriends:GetRect();
+        frmConfirmFriends:SetPosition( (width - w) * 0.5, (height - h) * 0.5);
+
+        luaFriends.DisbandPartmember	= -1;
+        
+        end
+
+        luaGame:ShowWindow( frmConfirmFriends );
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmFriends:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmFriends">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+
+      <Edit name="edtAddFriend">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="60" y="70" />
+          <Size w="310" h="23" />
+        </Layout>
+        <Shape>
+          <Visible>false</Visible>
+          <LimitText>15</LimitText>
+        </Shape>
+        <Event>
+          <OnToolTip></OnToolTip>
+          <OnOK>luaFriends:OnClickConfirmFriend();</OnOK>
+        </Event>
+      </Edit>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>
+            luaFriends:OnClickConfirmFriend();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmFriends:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

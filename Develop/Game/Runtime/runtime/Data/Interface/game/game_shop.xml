@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_shop.lua" />
+  
+  
+
+  <!-- Frame : Shop -->
+  <Frame name="frmShop" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="30" y="80" />
+      <Size w="400" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+  	  <Icon>iconShop</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_SHOP"));
+        luaGame:RegisterWindow( frmShop);
+      </OnLoaded>
+      <OnShow>luaShop:OnShowShopFrame();</OnShow>
+      <OnSetFocus>lcShop:SetFocus();</OnSetFocus>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmShop);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmShop);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmShop:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="515" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- ListCtrl : Shop item list -->
+      <ListCtrl name="lcShop">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="25" />
+          <Size w="380" h="510" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="390">name</AddColumn>
+          <AddColumn align="left,vcenter" width="150">cost</AddColumn>
+          <AddColumn align="left,vcenter" width="150">level</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnSelChange>luaShop:RefreshControls();</OnSelChange>
+          <OnItemDblClick>luaShop:OnItemDblClickShopListCtrl();</OnItemDblClick>
+          <OnDragBegin>return luaShop:OnDragBeginShopListCtrl();</OnDragBegin>
+          <OnDrop>return luaShop:OnDropShopListCtrl();</OnDrop>
+          <OnToolTip>luaShop:OnToolTipShopListCtrl();</OnToolTip>
+        </Event>
+      </ListCtrl>
+      
+      
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="540" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+
+      <!-- Button : Buy -->
+      <Button name="btnBuyItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY"));</OnLoaded>
+          <OnClick>luaShop:OpenConfirmBuyItemQuantity();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Sell all items -->
+      <Button name="btnSellCommonItems">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="550" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_SELLCOMMONITEMS"));</OnLoaded>
+          <OnClick>luaShop:OpenConfirmSellCommonItems();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Repair items -->
+      <Button name="btnRepairItems">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="270" y="550" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_REPAIR"));</OnLoaded>
+          <OnClick>luaShop:OpenConfirmRepairItems();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+  <!-- Frame : Confirm buy item quantity -->
+  <Frame name="frmConfirmBuyItemQuantity" parent="frmShop">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="260" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaShop:CloseConfirmBuyItemQuantity();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_CONFIRMBUYITEM"));</OnLoaded>
+        </Event>
+      </TextView>
+      
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="110" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmBuyItemQuantityDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+      
+      
+      <!-- Quantity -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="145" />
+          <Size w="410" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="160" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "QUANTITY"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Edit name="edtConfirmBuyItemQuantity">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaShop:OnValueChangedConfirmBuyItemQuantity();</OnValueChanged>
+          <OnOK>luaShop:DoConfirmBuyItemQuantity();</OnOK>
+          <OnCancel>luaShop:CloseConfirmBuyItemQuantity();</OnCancel>
+        </Event>
+      </Edit>
+
+      <SpinCtrl>
+        <Look>lookDefSpinCtrl</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="15" h="23" />
+        </Layout>
+        <Shape>
+          <Buddy>edtConfirmBuyItemQuantity</Buddy>
+        </Shape>
+      </SpinCtrl>
+
+      
+      <!-- Price -->
+      <TextView name="tvwConfirmBuyItemPriceDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="220" y="160" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>   
+
+      
+      <!-- Buttons : OK -->
+      <Button name="btnConfirmBuyItemQuantityOK">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaShop:DoConfirmBuyItemQuantity();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>luaShop:CloseConfirmBuyItemQuantity();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  <!-- Frame : Confirm sell all common items -->
+  <Frame name="frmConfirmSellCommonItems" parent="frmShop">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="480" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmSellCommonItems:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="395" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="310" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_CONFIRMSELLCOMMONITEMS"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- ListCtrl : Sell all items list -->
+      <ListCtrl name="lcSellCommonItems">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="85" />
+          <Size w="410" h="280" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="410">name</AddColumn>
+          <AddColumn align="left,vcenter" width="150">quantity</AddColumn>
+          <AddColumn align="left,vcenter" width="200">price</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnToolTip>luaShop:OnToolTipCommonItemsList();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Info -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="375" />
+          <Size w="420" h="35" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwSellCommonItemsInfo">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="380" />
+          <Size w="410" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+      
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="420" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="430" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaShop:OnClickSellCommonItemsOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="430" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmSellCommonItems:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+
+
+
+
+
+
+
+
+  <!-- Frame : Confirm repair items -->
+  <Frame name="frmConfirmRepairItems" parent="frmShop">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="480" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmRepairItems:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="395" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="310" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_CONFIRMREPAIR"));</OnLoaded>
+        </Event>
+      </TextView>
+      
+      
+      <!-- ListCtrl : Repair item list -->
+      <ListCtrl name="lcRepairItems">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="85" />
+          <Size w="410" h="280" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="410">name</AddColumn>
+          <AddColumn align="left,vcenter" width="150">durability</AddColumn>
+          <AddColumn align="left,vcenter" width="200">price</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnSelChange>luaShop:RefreshRepairItemsControls();</OnSelChange>
+          <OnItemDblClick>luaShop:RepairItem();</OnItemDblClick>
+          <OnToolTip>luaShop:OnToolTipRepairItemList();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+      
+      <!-- Info -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="375" />
+          <Size w="420" h="35" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwRepairItemsInfo">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="380" />
+          <Size w="410" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="420" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+
+      <!-- Buttons : Repair once -->
+      <Button name="btnRepairItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="430" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_REPAIR"));</OnLoaded>
+          <OnClick>luaShop:OnClickRepairItem();</OnClick>
+        </Event>
+      </Button>
+      
+      
+      <!-- Buttons : Repair all -->
+      <Button name="btnRepairAllItems">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="150" y="430" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_REPAIRALL"));</OnLoaded>
+          <OnClick>luaShop:OnClickRepairAllItems();</OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Buttons : Close -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="290" y="430" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CLOSE"));</OnLoaded>
+          <OnClick>frmConfirmRepairItems:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

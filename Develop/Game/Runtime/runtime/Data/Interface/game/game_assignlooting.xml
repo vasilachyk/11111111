@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_assignlooting.lua" />
+
+
+  <!-- Frame : Assign looting --> 
+  <Frame name="frmAssignLooting" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="210" y="150" />
+      <Size w="590" h="420" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_LOOTING"));
+        luaAssignLooting:OnLoadedAssignLootingFrame();
+      </OnLoaded>
+      <OnShow>luaAssignLooting:OnShowAssignLootingFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="575" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmAssignLooting:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="480" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ASSIGNLOOTING_CONFIRMASSIGN"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="85" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- Looting list -->
+      <Label name="labAssignLootingCount">
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="95" />
+          <Size w="250" h="20" />
+        </Layout>
+      </Label>
+            
+      <ListCtrl name="lcAssignLooting">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="15" y="120" />
+          <Size w="250" h="280" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="250">name</AddColumn>
+          <AddColumn align="left,vcenter" width="120">quantity</AddColumn>
+          <AddColumn align="left,vcenter" width="120">tier</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnToolTip>luaAssignLooting:OnToolTipAssignLooting();</OnToolTip>
+          <OnSelChange>luaAssignLooting:OnSelChangeLootingList();</OnSelChange>
+        </Event>
+      </ListCtrl>
+      
+
+      <!-- Looter list -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="320" y="95" />
+          <Size w="250" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ASSIGNLOOTING_RECIPIENTS"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <ListCtrl name="lcLooter">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="315" y="120" />
+          <Size w="250" h="234" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="100">name</AddColumn>
+          <AddColumn align="left,vcenter" width="80">grade</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnSelChange>luaAssignLooting:RefreshControls();</OnSelChange>
+          <OnItemDblClick>luaAssignLooting:OnItemDblClickLooterList();</OnItemDblClick>
+        </Event>
+      </ListCtrl>
+
+      
+      <!-- Button : Selected assign looting -->
+      <Button name="btnSelectedAssignLooting">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="310" y="370" />
+          <Size w="125" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ASSIGNLOOTING_DISTRIBUTION"));</OnLoaded>
+          <OnClick>luaAssignLooting:OnClickSelectedAssignLooting();</OnClick>
+        </Event>
+      </Button>
+
+    
+      <!-- Button : Random assign looting -->
+      <Button name="btnRandomAssignLooting">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="445" y="370" />
+          <Size w="125" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ASSIGNLOOTING_RANDOMDISTRIBUTION"));</OnLoaded>
+          <OnClick>luaAssignLooting:OnClickRandomAssignLooting();</OnClick>
+        </Event>
+      </Button>
+    </Controls>
+  </Frame>
+  
+</UI>

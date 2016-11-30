@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_hellhound.lua" />
+  
+  
+  
+  <!-- Frame : Crafting -->
+  <Frame name="frmHellhound" parent="layerGame2">
+    <Look>lookDefScrollFrame</Look>
+    <Layout>
+      <Location x="70" y="100" />
+	    <Size w="930" h="580" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+	    <Icon>hellhound_board</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <!--<ShowRect>true</ShowRect>-->
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_HELLHOUND"));
+        luaGame:RegisterWindow( frmHellhound);
+      </OnLoaded>
+      <OnShow>luaHellhound:OnShowHellhoundFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmHellhound);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmHellhound);
+        elseif ( arg == "RESET_UI")  then     luaHellhound:ResetUI();
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="520" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>
+            frmHellhound:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="525" h="495" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="93" y="25" base="TOPLEFT" />
+          <Size w="2" h="495" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TabCtrl name="tbcHellhoundTypeFilter">
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="95" h="%100" />
+        </Layout>
+        <Event>
+          <OnLoaded></OnLoaded>
+          <OnSelChange>luaHellhound:OnSelChangeHellhoundTypeFilter();</OnSelChange>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="45" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="90" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="135" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="180" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="225" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="270" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="315" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabVerBtn</Look>
+              <Layout>
+                <Location x="0" y="360" />
+                <Size w="95" h="35" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+
+      <!-- InvenTokenQuantity -->
+      <Picture>
+        <Layout>
+          <Location x="95" y="25" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Image>bmpContentBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label name="labHaveHallhoundList">
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="100" y="25" />
+          <Size w="425" h="25" />
+        </Layout>
+        <Event>
+        </Event>
+      </Label>
+
+     
+      
+      <!-- ListCtrl : Hellhound Quest list -->
+      <ListCtrl name="lcHellhound">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="100" y="50" />
+          <Size w="425" h="464" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="440">name</AddColumn>
+          <AddColumn align="left,vcenter" width="110">level</AddColumn>
+          <AddColumn align="left,vcenter" width="80">type</AddColumn>
+          <AddColumn align="left,vcenter" width="80">difficulty</AddColumn>
+          <AddColumn align="left,vcenter" width="80">token</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnSelChange>luaHellhound:OnSelChangeHellhoundListCtrl();</OnSelChange>
+          <OnDblClick>luaHellhound:OnClickHellhoundMissionPerform();</OnDblClick>
+          <OnDrawItem>luaHellhound:OnDrawTodayQuestImage();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+
+      
+      <!-- Frame : Hellhound Quest description info -->
+      <Frame>
+        <Layout>
+          <Location x="525" y="0" />
+          <Size w="370" h="545" />
+          <!--<Size w="370" h="570" />-->
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowTitleBar>false</ShowTitleBar>
+          <Visible>true</Visible>
+          <Resize>false</Resize>
+          <Movable>false</Movable>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Controls>
+
+          <!-- Picture : Scroll paper -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="10" />
+              <Size w="370" h="525" />
+            </Layout>
+            <Image>bmpScrollPaper</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+
+          <!-- TextView : Hellhound Quest recipe info -->
+          <TextView name="tvwHellhoundQuestInfo">
+            <Look>lookDefScrollTextView</Look>
+            <Look type="scrollbar">lookDefScrollBar</Look>
+            <Layout>
+              <Location x="25" y="15" />
+              <Size w="325" h="440" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>show</ShowScrollBar>
+              <ThumbLength>65</ThumbLength>
+              <!--<Wrap>false</Wrap>-->
+              <!--<ShowRect>true</ShowRect>-->
+            </Shape>
+            <Event>
+              <OnToolTip>luaHellhound:OnToolTipAccepthHellhoundQuest();</OnToolTip>
+            </Event>
+          </TextView>
+
+
+          <!-- Picture : Scroll head/tail -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="370" h="70" />
+            </Layout>
+            <Image>bmpScrollHead</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="%100" base="BOTTOMLEFT"/>
+              <Size w="370" h="70" />
+            </Layout>
+            <Image>bmpScrollTail</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+          
+        </Controls>
+      </Frame>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="520" />
+          <Size w="525" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Hellhound Mission Perform -->
+      <Button name="btnHellhoundMissionPerform">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="160" y="530" />
+          <Size w="210" h="30" />
+        </Layout>
+        <Action>
+          <Enabled>true</Enabled>
+        </Action>
+        <Shape>
+          <HotKey>E</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_HELLHOUND_MiSSION_RECEIVE"));</OnLoaded>
+          <OnClick>luaHellhound:OnClickHellhoundMissionPerform();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  <!-- Frame : Confirm Enter Hellhound Mission -->
+  <Frame name="frmConfirmEnterHellhoundMission" parent="frmHellhound">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="380" h="200" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="365" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmEnterHellhoundMission:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="115" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmEnterHellhoundMission">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="300" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="140" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="150" />
+          <Size w="170" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaHellhound:EnterHellhoundMission();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="190" y="150" />
+          <Size w="170" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmEnterHellhoundMission:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  <!-- Picture : HellhoundFinishEffect -->
+  <Picture name="picHellhoundFinishEffect" parent="layerGame0">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="80" h="80" />
+    </Layout>
+    <Image>bmpArenaResultWin</Image>
+    <Shape>
+      <Visible>false</Visible>
+      <Stretch>true</Stretch>
+    </Shape>
+    <Event>
+      <OnDraw>luaHellhound:OnDrawFinishEffect();</OnDraw>
+    </Event>
+  </Picture>
+  
+      
+  <!-- Frame : HellhoundFinishInfo -->
+  <Frame name="frmHellhoundFinishInfo" parent="layerGame2">
+    <Layout>
+      <Location x="570" y="70" />
+      <Size w="400" h="600" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <ShowTitleBar>false</ShowTitleBar>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <Static>true</Static>
+    </Shape>
+    <Event>
+      <OnLoaded></OnLoaded>
+      <OnShow>luaHellhound:OnShowHellhoundFinishInfoFrame();</OnShow>
+      <OnUpdate>luaHellhound:OnUpdateHellhoundFinishInfoFrame();</OnUpdate>
+    </Event>
+    <Controls>
+
+      <!-- Panel : Scroll -->
+      <Panel name="pnlHellhoundFinishInfoScroll">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="560" />
+        </Layout>
+        <Controls>
+
+          <!-- Panel : Text -->
+          <Panel>
+            <Layout>
+              <Location x="0" y="5" />
+              <Size w="%100" h="540" />
+              <Anchor left="true" top="true" right="true" bottom="true" />
+            </Layout>
+            <Controls>
+
+              <!-- Picture : Scroll paper -->
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="400" h="540" />
+                </Layout>
+                <Image>bmpScrollPaper</Image>
+              </Picture>
+
+
+              <!-- TextView : Message -->
+              <TextView name="tvwHellhoundFinishInfo">
+                <Look>lookDefScrollTextView</Look>
+                <Look type="scrollbar">lookDefScrollBar</Look>
+                <Layout>
+                  <Location x="25" y="25" />
+                  <Size w="355" h="495" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>show</ShowScrollBar>
+                  <ThumbLength>26</ThumbLength>
+                </Shape>
+                <Event>
+                  <OnToolTip>luaHellhound:OnToolTipHellhoundFinishInfo();</OnToolTip>
+                </Event>
+              </TextView>
+
+            </Controls>
+          </Panel>
+
+
+          <!-- Picture : Scroll head/tail -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollHead</Image>
+          </Picture>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="%100" base="BOTTOMLEFT"/>
+              <Size w="400" h="70" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Image>bmpScrollTail</Image>
+          </Picture>
+
+        </Controls>
+      </Panel>
+
+
+      <!-- Buttons : Accept quest -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <de_DE>
+            <Location x="85" y="560" />
+            <Size w="180" h="30" />
+          </de_DE>
+          <Location x="85" y="560" />
+          <Size w="230" h="30" />
+        </Layout>
+        <Shape>
+          <Icon w="28" h="28">iconOK</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+          <OnClick>luaHellhound:OnClickHellhoundFinishInfo();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+
+
+  
+</UI>

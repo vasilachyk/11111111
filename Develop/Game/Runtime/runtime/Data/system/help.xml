@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<maiet>
+    <!-- 색설명 구분인자 키 {COLOR r=0 g=204 b=0} , {COLOR r=220 g=220 b=100}황색, {COLOR r=50 g=200 b=50}연두색,  {COLOR r=230 g=60 b=60}빨간색, {BITMAP name=&quot;Tutorial003&quot; w=280 h=200}  -->
+    <!-- 예시 예시 {BITMAP name=&quot;Tutorial004&quot; w=280 h=200}{CR}{COLOR r=0 g=204 b=0}Q키{/COLOR}를 누르면 
+{COLOR r=220 g=220 b=100}방어{/COLOR}를 할 수 있습니다. 방어를 하려면 기력이 필요합니다.  -->
+    <!-- 조작 도움말 : 중, 하단에 이미지와 함께 간략한 텍스트 제목이 출력되는 도움말  -->
+    <!-- 101 tutorial 이동 {BITMAP name=&quot;wasdKey&quot; w=186 h=126} {BITMAP name=&quot;wasdKey_r&quot; w=186 h=126} [W][A][S][D]키와 마우스로 캐릭터를 이동하세요. 1 10  -->
+    <HELP id="101" Type="tutorial" Name="이동" Img="{BITMAP name=&quot;wasdKey&quot; w=186 h=126}" Img2="{BITMAP name=&quot;wasdKey_r&quot; w=186 h=126}" String="[W][A][S][D]키와 마우스로 캐릭터를 이동하세요." MinLevel="1" MaxLevel="10" FinishTime="2000" Timer="15000" />
+    <HELP id="102" Type="tutorial" Name="NPC 상호작용" Img="{BITMAP name=&quot;eKey&quot; w=186 h=126}" Img2="{BITMAP name=&quot;eKey_r&quot; w=186 h=126}" String="[E]키로 NPC와 대화할 수 있습니다." MinLevel="1" MaxLevel="10" FinishEvent="OnNpcInteraction" FinishTime="3000" Timer="15000" />
+    <!-- 103 tutorial 지도 {BITMAP name=&quot;Map&quot; w=186 h=126} {BITMAP name=&quot;Map_r&quot; w=186 h=126} [M]키로 맵 창을 열어 퀘스트 수행 지역을 확인하세요. 1 10  -->
+    <HELP id="103" Type="tutorial" Name="기본공격" Img="{BITMAP name=&quot;LBtnClk&quot; w=186 h=126}" Img2="{BITMAP name=&quot;LBtnClk_r&quot; w=186 h=126}" String="마우스 왼쪽버튼으로 일반 공격을 할 수 있습니다." MinLevel="1" MaxLevel="10" FinishEvent="OnNomalAttack" FinishTime="3000" Timer="15000" />
+    <HELP id="200" Type="tutorial" Name="스킬사용" Img="{BITMAP name=&quot;SkillBar&quot; w=186 h=126}" Img2="{BITMAP name=&quot;SkillBar_r&quot; w=186 h=126}" String="숫자키로 스킬을 사용할 술 수 있습니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="15000" />
+    <HELP id="104" Type="tutorial" Name="아이템 루팅" Img="{BITMAP name=&quot;eKey&quot; w=186 h=126}" Img2="{BITMAP name=&quot;glean_r&quot; w=186 h=126}" String="[E]키로 쓰러트린 적의 전리품을 획득하세요." MinLevel="1" MaxLevel="10" EventTrigger="OnKillEnemy" EventTriggerString="1" FinishEvent="OnLooting" FinishTime="3000" Timer="15000" />
+    <!-- 106 tutorial 퀘스트 완료 후 이동 {BITMAP name=&quot;Map&quot; w=186 h=126} {BITMAP name=&quot;Map2_r&quot; w=186 h=126} [M]키로 맵 창을 열어 퀘스트 수행 지역을 확인하세요. 1 10  -->
+    <HELP id="105" Type="tutorial" Name="무기뽑기" Img="{BITMAP name=&quot;fKey&quot; w=186 h=126}" Img2="{BITMAP name=&quot;fKey_r&quot; w=186 h=126}" String="[F]키로 무기를 넣고 뺄 수 있습니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="10000" />
+    <HELP id="106" Type="tutorial" Name="마우스 포인터 활성화" Img="{BITMAP name=&quot;Ctrl&quot; w=186 h=126}" Img2="{BITMAP name=&quot;Ctrl_r&quot; w=186 h=126}" String="[Ctrl] 키로 마우스 포인터를 꺼낼 수 있습니다." MinLevel="1" MaxLevel="10" FinishEvent="OnMouseVisible" FinishTime="3000" Timer="15000" />
+    <HELP id="107" Type="tutorial" Name="자동달리기" Img="{BITMAP name=&quot;Run&quot; w=186 h=126}" Img2="{BITMAP name=&quot;Run_r&quot; w=186 h=126}" String="[R] 키로 자동 달리기를 할 수 있습니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="10000" />
+    <!-- 106 tutorial 퀘스트 완료 후 이동 {BITMAP name=&quot;Map&quot; w=186 h=126} {BITMAP name=&quot;Map2_r&quot; w=186 h=126} [M]키로 지도 창을 열어 퀘스트 완료 지역을 확인하세요. 1 10 OnQComplete 109002  -->
+    <HELP id="108" Type="tutorial" Name="퀘스트 표시" Img="{BITMAP name=&quot;QShow&quot; w=186 h=126}" Img2="{BITMAP name=&quot;QShow_r&quot; w=186 h=126}" String="알림창에 등록된 퀘스트를 클릭해 맵에 표시할 수 있습니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="20000" RequiredQuest="109058" />
+    <!-- 111 tutorial 레벨 업 {BITMAP name=&quot;Levelup&quot; w=186 h=126} {BITMAP name=&quot;Levelup_r&quot; w=186 h=126} 레벨 업을 하면 스킬을 배울 수 있습니다. 1 10 OnLevelUp  -->
+    <HELP id="109" Type="tutorial" Name="부위파괴" Img="{BITMAP name=&quot;BP&quot; w=186 h=126}" Img2="{BITMAP name=&quot;BP_r&quot; w=186 h=126}" String="몬스터를 부위파괴하여 아이템을 얻을 수 있습니다." MinLevel="1" MaxLevel="10" FinishTime="3000" LinkHelpID="110" Timer="15000" />
+    <HELP id="110" Type="tutorial" Name="전진공격" Img="{BITMAP name=&quot;Assault&quot; w=186 h=126}" Img2="{BITMAP name=&quot;Assault_r&quot; w=186 h=126}" String="[W] + 마우스 왼쪽버튼으로 전진 공격이 가능합니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="15000" />
+    <!-- 110 tutorial 전진공격 {BITMAP name=&quot;Assault&quot; w=186 h=126} {BITMAP name=&quot;Assault_r&quot; w=186 h=126} [W] + 마우스 왼쪽버튼으로 전진 공격이 가능합니다. 1 10 OnBP2 5  -->
+    <HELP id="111" Type="tutorial" Name="회피공격" Img="{BITMAP name=&quot;Evasion&quot; w=186 h=126}" Img2="{BITMAP name=&quot;Evasion_r&quot; w=186 h=126}" String="[S] + 마우스 왼쪽버튼으로 회피 공격이 가능합니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="15000" />
+    <HELP id="112" Type="tutorial" Name="회피" Img="{BITMAP name=&quot;DodgeKey&quot; w=186 h=126}" Img2="{BITMAP name=&quot;DodgeKey_r&quot; w=186 h=126}" String="회피로 적의 강력한 공격을 피할 수 있습니다." MinLevel="1" MaxLevel="10" FinishEvent="OnMyPlayerDodge" FinishTime="3000" Timer="90000" />
+    <HELP id="113" Type="tutorial" Name="연속기(콤보)" Img="{BITMAP name=&quot;Combo&quot; w=186 h=126}" Img2="{BITMAP name=&quot;Combo_r&quot; w=186 h=126}" String="숫자키를 여러 번 눌러 연속기를 사용할 수 있습니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="15000" />
+    <HELP id="114" Type="tutorial" Name="브레이커블 파츠 루팅" Img="{BITMAP name=&quot;eKey&quot; w=186 h=126}" Img2="{BITMAP name=&quot;BP2_r&quot; w=186 h=126}" String="[E]키로 떨어져 있는 장비를 획득할 수 있습니다." MinLevel="1" MaxLevel="10" FinishTime="3000" Timer="15000" />
+    <HELP id="115" Type="tutorial" Name="방어" Img="{BITMAP name=&quot;GuardKey&quot; w=186 h=126}" Img2="{BITMAP name=&quot;GuardKey_r&quot; w=186 h=126}" String="막기: 막기로 공격을 막으세요" MinLevel="1" MaxLevel="10" FinishEvent="OnMyPlayerGuard" FinishTime="3000" Timer="90000" />
+    <!-- 108 tutorial 스킬 {BITMAP name=&quot;SkillBar&quot; w=186 h=126} {BITMAP name=&quot;SkillBar_r&quot; w=186 h=126} 스킬: 팔레트에 등록된 스킬을 사용하세요 1 10  -->
+    <!-- 110 tutorial 전진공격 {BITMAP name=&quot;Assault&quot; w=186 h=126} {BITMAP name=&quot;Assault_r&quot; w=186 h=126} 전진공격: 전진공격은 적을 경직시킵니다 1 10  -->
+    <!-- 111 tutorial 회피공격 {BITMAP name=&quot;Evasion&quot; w=186 h=126} {BITMAP name=&quot;Evasion_r&quot; w=186 h=126} 회피공격: 무기에 따라 다른 회피공격을 할 수 있습니다 1 10  -->
+    <!-- 113 tutorial 제작 {BITMAP name=&quot;Craft&quot; w=186 h=126} {BITMAP name=&quot;Craft_r&quot; w=186 h=126} 제작: 장비는 제작을 통해서만 얻을 수 있습니다 1 10  -->
+    <!-- 팝업 도움말 : 좌측 상단에 이미지와 함께 나오는 도움말  -->
+    <!-- 1 popup 퀘스트 저널 {BITMAP name=&quot;Tutorial03&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100} [J]키{/COLOR}를 눌러 수락한 {COLOR r=50 g=200 b=50}퀘스트{/COLOR}를 확인할 수 있습니다. 2  -->
+    <!-- 1 popup 이동키 {BITMAP name=&quot;Tutorial01&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[W,S,A,D]키{/COLOR}를 이용해 {COLOR r=50 g=200 b=50}이동{/COLOR}할 수 있습니다. 2  -->
+    <!-- 1 popup NPC와 대화 {BITMAP name=&quot;eKey_r&quot; w=186 h=126}{CR}{CR}{COLOR r=220 g=220 b=100}[E]{/COLOR}키를 사용해 NPC와 대화할 수 있습니다. 2  -->
+    <!-- 1 popup 퀘스트 저널 {BITMAP name=&quot;Tutorial03&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100} [J]키{/COLOR}를 눌러 수락한 {COLOR r=50 g=200 b=50}퀘스트{/COLOR}를 확인할 수 있습니다. 2  -->
+    <!-- 2 popup 퀘스트 수행지역 {BITMAP name=&quot;Tutorial1002&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[M]키{/COLOR}로 지도 창을 열어 {COLOR r=230 g=60 b=60}펼쳐진 두루마리{/COLOR}로 표기된 {COLOR r=220 g=220 b=100}퀘스트 수행지역{/COLOR}을 확인할 수 있습니다.{CR}퀘스트 수행지역은 화면 우측 상단의 미니맵에서도 확인 가능합니다. 2  -->
+    <!-- 3 popup 마우스 커서 활성화 {BITMAP name=&quot;Tutorial02&quot; w=280 h=200}{CR}{CR}{COLOR r=0 g=204 b=0}[Ctrl]키{/COLOR}를 눌러 {COLOR r=50 g=200 b=50}마우스 커서{/COLOR}를 사용할 수 있습니다. 2  -->
+    <!-- 4 popup NPC헤드아이콘 {COLOR r=0 g=204 b=0}NPC의 상태{/COLOR}나 {COLOR r=0 g=204 b=0}퀘스트 진행 상황{/COLOR}에 따라 각각 다른 모양의 아이콘이 {COLOR r=0 g=204 b=0}NPC의 머리 위{/COLOR}에 나타납니다. 2  -->
+    <!-- 4 popup 전투자세 {BITMAP name=&quot;Tutorial04&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[F]키{/COLOR}나 {COLOR r=220 g=220 b=100}[마우스 왼쪽 버튼]{/COLOR}을 눌러{COLOR r=50 g=200 b=50}일반자세{/COLOR}에서 {COLOR r=50 g=200 b=50}전투자세{/COLOR}로 전환할 수 있습니다.{CR}양손 무기의 경우 일반자세와 전투자세의 {COLOR r=50 g=200 b=50}이동속도가 다르다는 것{/COLOR}에 주위하세요. 2  -->
+    <!-- 5 popup 기본 공격 {BITMAP name=&quot;Tutorial05&quot; w=280 h=200}{CR}{CR}전투 자세에서 {COLOR r=220 g=220 b=100}[마우스 왼쪽 버튼]{/COLOR}을 클릭해 {COLOR r=50 g=200 b=50}기본 공격{/COLOR}을 할 수 있습니다. {COLOR r=50 g=200 b=50}기본 공격을 연속으로 사용{/COLOR}하고 싶으면 마우스 왼쪽 버튼을 계속 클릭하거나 누르고 있으면 됩니다. 2  -->
+    <!-- 6 popup 방어 {BITMAP name=&quot;Tutorial06&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[Q]키{/COLOR}나 {COLOR r=220 g=220 b=100}보조액션 키[마우스 우클릭]{/COLOR}를 누른 상태에서 {COLOR r=220 g=220 b=100}[마우스 오른쪽 버튼]{/COLOR}을 누르면 {COLOR r=50 g=200 b=50}방어{/COLOR}를 할 수 있습니다. 2  -->
+    <!-- 7 popup 회피 {BITMAP name=&quot;Tutorial07&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}보조액션 키[마우스 오른쪽 버튼]{/COLOR}를 누른 상태에서 {COLOR r=220 g=220 b=100}방향키[W,A,S,D]{/COLOR}를 누르면 회피를 할 수 있습니다. 2  -->
+    <!-- 5 s_tutorial 부위 파괴1 {BITMAP name=&quot;Tutorial1009&quot; w=280 h=200}{CR}{CR}특정 몬스터들은 {COLOR r=0 g=204 b=0}부위 파괴{/COLOR}가 가능합니다. 3  -->
+    <!-- 5 s_tutorial 부위파괴 {BITMAP name=&quot;BP&quot; w=186 h=126} {BITMAP name=&quot;BP_r&quot; w=186 h=126} 부위파괴: 부서진 적의 신체를 사용할 수 있습니다 1 10  -->
+    <!-- 6 popup 부위 파괴2 {BITMAP name=&quot;Tutorial1008&quot; w=280 h=200}{CR}{CR}{COLOR r=0 g=204 b=0}부위 파괴{/COLOR}나 사망 시 몬스터가 떨어뜨리는 {COLOR r=230 g=60 b=60}무기나 파편{/COLOR}을 획득할 수 있습니다. 3  -->
+    <!-- 35 popup 부위 파괴3 {BITMAP name=&quot;Tutorial1010&quot; w=280 h=200}{CR}{CR}몬스터가 떨어뜨린 {COLOR r=0 g=204 b=0}파편이나 무기{/COLOR}를 입수하면 무기에 맞는 스킬 사용이 가능합니다.{CR}이런 무기는 시간이 흐르거나 {COLOR r=230 g=60 b=60}단축키[5]{/COLOR}를 누르면 사라집니다. 3  -->
+    <!-- 6 popup 앉기로 회복 무기를 넣은 상태에서 {COLOR r=230 g=60 b=60}[Z]키{/COLOR}로 앉을 수 있습니다.{CR}앉아 있으면 생명력, 정신력, 기력이 보다 빨리 회복됩니다. 5  -->
+    <!-- 7 popup 자동달리기 {COLOR r=0 g=204 b=0}[R]키{/COLOR}로 자동 달리기를 할 수 있습니다. 3  -->
+    <!-- 8 popup 스킬 학습 {BITMAP name=&quot;Tutorial08&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[T]키{/COLOR}로 스킬 창을 열고 {COLOR r=220 g=220 b=100}스킬 학습 포인트(LP){/COLOR}를 사용해 원하는 스킬을 익힐 수 있습니다. 스킬 학습 포인트는 레벨이 오를 때 마다 1포인트씩 지급됩니다. 3  -->
+    <!-- 9 popup 부활(영혼석) {BITMAP name=&quot;Tutorial09&quot; w=280 h=200}{CR}{CR}{COLOR r=50 g=200 b=50}영혼석{/COLOR}에 {COLOR r=230 g=60 b=60}영혼 귀속{/COLOR}을 해 놓으면 생명력이 '0'이 되어 행동 불능 상태가 되었을 때 해당 영혼석에서 부활하게 됩니다. 4  -->
+    <!-- 8 popup 아이템 제작 {BITMAP name=&quot;Craft&quot; w=179 h=119}{CR}{CR}레이더즈에 등장하는 대부분의 장비 아이템은 {COLOR r=230 g=60 b=60}장인 NPC{/COLOR}의 {COLOR r=230 g=60 b=60}제작{/COLOR}을 통해서만 입수할 수 있습니다. 5  -->
+    <!-- 10 popup 아이템 제작 레이더즈에 등장하는 모든 장비, 소모 아이템은 {COLOR r=230 g=60 b=60}제작{/COLOR}을 통해서만 입수할 수 있습니다. {COLOR r=50 g=200 b=50}재료{/COLOR}는 사냥이나 채집을 통해 구할 수 있으며 제조 방법인 {COLOR r=50 g=200 b=50}레시피{/COLOR}는 곳곳에 있는 장인에게서 받을 수 있습니다. 획득한 레시피는 {COLOR r=220 g=220 b=100}[J]{/COLOR}키를 눌러 확인할 수 있습니다. 5  -->
+    <!-- 30 popup 몬스터 등급 {COLOR r=230 g=60 b=60}이름 옆에 별이 붙은 몬스터{/COLOR}는 일반적인 몬스터보다 강력한 몬스터입니다. 보다 주의깊게 전투에 임하는 것이 좋습니다. 5  -->
+    <!-- 31 popup 무기 변경 {COLOR r=0 g=204 b=0}[H]키{/COLOR}로 캐릭터 창을 열어 {COLOR r=0 g=204 b=0}두 종류의 무기를 장착{/COLOR}한 후{CR}{COLOR r=0 g=204 b=0}[탭]키{/COLOR}로 무기를 빠르게 변경할 수 있습니다. 5  -->
+    <!-- 33 popup 무기에 따른 스킬 {COLOR r=230 g=60 b=60}장착한 장비 타입{/COLOR}에 따라 사용할 수 있는 스킬이 달라집니다. 5  -->
+    <!-- 34 popup 추락 데미지 높은 곳에서 떨어질 경우 {COLOR r=230 g=60 b=60}다리부상{/COLOR}과 함께 심각한 피해를 입을 수 있습니다. 5  -->
+    <!-- 10 popup 아이템 제작 레이더즈에 등장하는 모든 장비, 소모 아이템은 {COLOR r=230 g=60 b=60}제작{/COLOR}을 통해서만 입수할 수 있습니다. {COLOR r=50 g=200 b=50}재료{/COLOR}는 사냥이나 채집을 통해 구할 수 있으며 제조 방법인 {COLOR r=50 g=200 b=50}레시피{/COLOR}는 곳곳에 있는 장인에게서 받을 수 있습니다. 획득한 레시피는 {COLOR r=220 g=220 b=100}[J]{/COLOR}키를 눌러 확인할 수 있습니다. 5  -->
+    <!-- 36 popup 크라울러 드랍 재료 제작 {COLOR r=230 g=60 b=60}크라울러{/COLOR}와 같은 강력한 몬스터에게서 얻은 아이템은 대부분 {COLOR r=230 g=60 b=60}장비 제작{/COLOR}에 활용되는 아이템입니다.{CR}{COLOR r=0 g=204 b=0}모자 제작자 호아킴{/COLOR}을 통해 크라울러로부터 얻은 아이템으로 장비를 제작할 수 있습니다. 10  -->
+    <!-- 11 popup 자동파티 일부 퀘스트는 퀘스트 수행 지역에 가까이에 갔을 때 자동적으로 같은 퀘스트를 가진 사람들 끼리 파티가 맺어집니다. {CR}이러한 퀘스트는 퀘스트 목록창에서 [자동파티] 라고 따로 표시가 됩니다. 5  -->
+    <!-- 12 popup 레이드 던전 입장 오염된 화원이나 저주받은 납골당 같은 레이드 던전으로 입장하려면 특별한 퀘스트가 필요합니다. 12  -->
+    <!-- 13 popup 역습 포커스 {BITMAP name=&quot;Tutorial13&quot; w=280 h=200}{CR}{CR}디펜더 스타일에 5 포인트를 투자하셨습니다!{CR}이제 여러분은 {COLOR r=230 g=60 b=60}[역습]{/COLOR} 포커스를 사용할 수 있습니다. {CR}[역습]은 {COLOR r=230 g=60 b=60}[돌진] 스킬을 히트{/COLOR}시키면 발동되며{CR}강력한 기능을 가진 특수 스킬들을 사용할 수 있게 됩니다. Def_TP5  -->
+    <!-- 14 popup 광포 포커스 {BITMAP name=&quot;Tutorial14&quot; w=280 h=200}{CR}{CR}버서커 스타일에 5 포인트를 투자하셨습니다!{CR}이제 여러분은 {COLOR r=230 g=60 b=60}[광포]{/COLOR} 포커스를 사용할 수 있습니다. {CR}[광포]는 일정시간동안 {COLOR r=230 g=60 b=60}공격을 여러 번 히트{/COLOR}시키면 발동되며{CR}강력한 기능을 가진 특수 스킬들을 사용할 수 있습니다. Ber_TP5  -->
+    <!-- 15 popup 강신 포커스 {BITMAP name=&quot;Tutorial15&quot; w=280 h=200}{CR}{CR}클레릭 스타일에 5 포인트를 투자하셨습니다!{CR}이제 여러분은 {COLOR r=230 g=60 b=60}[강신]{/COLOR} 포커스를 사용할 수 있습니다. {CR}[강신]은 {COLOR r=230 g=60 b=60}[강신] 스킬을 사용{/COLOR}하면 발동되며{CR}강력한 기능을 가진 특수 스킬들을 사용할 수 있습니다.{CR}{COLOR r=50 g=200 b=50}강신은 단축키창에 놓고 사용{/COLOR}할 수 있습니다. Cle_TP5  -->
+    <!-- 16 popup 중급 갑옷 라이센스  디펜더스타일에 5포인트를 투자하였으면 좀 더 좋은 갑옷을 착용할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}중급갑옷 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}사슬 갑옷{/COLOR}을 착용할 수 있게 됩니다.  -->
+    <!-- 17 popup 중급 갑옷 라이센스  버서커스타일에 5포인트를 투자하였으면 좀 더 좋은 갑옷을 착용할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}중급갑옷 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}사슬 갑옷{/COLOR}을 착용할 수 있게 됩니다.  -->
+    <!-- 18 popup 중급 갑옷 라이센스  클레릭 스타일에 15포인트를 투자하였으면 좀 더 좋은 갑옷을 착용할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}중급갑옷 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}사슬 갑옷{/COLOR}을 착용할 수 있게 됩니다. Cle_TP15  -->
+    <!-- 19 popup 상급 갑옷 라이센스  디펜더 스타일에 15포인트를 투자하였으면 좀 더 좋은 갑옷을 착용할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}상급갑옷 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}판금 갑옷{/COLOR}을 착용할 수 있게 됩니다. Def_TP15  -->
+    <!-- 20 popup 상급 갑옷 라이센스  버서커 스타일에 15포인트를 투자하였으면 좀 더 좋은 갑옷을 착용할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}상급갑옷 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}판금 갑옷{/COLOR}을 착용할 수 있게 됩니다. Ber_TP15  -->
+    <!-- 21 popup 상급 갑옷 라이센스  클레릭 스타일에 30포인트를 투자하였으면 좀 더 좋은 갑옷을 착용할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}상급갑옷 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}판금 갑옷{/COLOR}을 착용할 수 있게 됩니다. Cle_TP30  -->
+    <!-- 22 popup 베기특화 라이센스  디펜더 스타일에 15포인트를 투자하였으면 베기무기에 대한 특화 라이센스를 취득할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}베기특화 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}베기무기 사용시 피해가 증가{/COLOR}합니다.  -->
+    <!-- 23 popup 베기특화 라이센스  버서커 스타일에 15포인트를 투자하셨으면 베기무기에 대한 특화 라이센스를 취득할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}베기특화 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}베기무기 사용시 피해가 증가{/COLOR}합니다.  -->
+    <!-- 24 popup 둔기특화 라이센스  디펜더 스타일에 15포인트를 투자하셨으면 둔기무기에 대한 특화 라이센스를 취득할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}둔기특화 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}둔기무기 사용시 피해가 증가{/COLOR}합니다.  -->
+    <!-- 25 popup 둔기특화 라이센스  버서커 스타일에 15포인트를 투자하셨으면 둔기무기에 대한 특화 라이센스를 취득할 수 있습니다.{CR} 라이센스 트레이너에게 {COLOR r=50 g=200 b=50}둔기특화 라이센스{/COLOR}를 익히세요. 라이센스를 익히면 {COLOR r=230 g=60 b=60}둔기무기 사용시 피해가 증가{/COLOR}합니다.  -->
+    <!-- 26 popup PvP 필드 PVP 필드에서는 반대 진영을 선택한 유저들을 자유롭게 공격할 수 있습니다. 다만 상대방의 이름은 표시가 되지 않습니다. {CR}필드내에서 상대방을 죽이면 묘비석이 나오며 이 묘비석은 {COLOR r=50 g=200 b=50}[패배한 자의 영혼석]{/COLOR}을 드랍합니다. 이 영혼석은 특수 레시피에 사용됩니다. 18  -->
+    <!-- 27 popup 스킬 학습 {BITMAP name=&quot;Tutorial08&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[T]키{/COLOR}로 스킬 창을 열고 {COLOR r=220 g=220 b=100}스킬 학습 포인트(LP){/COLOR}를 사용해 원하는 스킬을 익혀보세요. 스킬 학습 포인트는 레벨이 오를 때 마다 1포인트씩 지급됩니다. 1 2 LevelUp  -->
+    <!-- 28 popup 부활(영혼석) {BITMAP name=&quot;Tutorial09&quot; w=280 h=200}{CR}{CR}{COLOR r=50 g=200 b=50}영혼석{/COLOR}에 {COLOR r=230 g=60 b=60}영혼 귀속{/COLOR}을 해 놓으면 생명력이 '0'이 되어 행동 불능 상태가 되었을 때 해당 영혼석에서 부활하게 됩니다. 1 4 Die  -->
+    <!-- 29 popup 각성 포커스 {BITMAP name=&quot;Tutorial29&quot; w=280 h=200}{CR}{CR}소서러 스타일에 5 포인트를 투자하셨습니다! 이제부터 여러분은 {COLOR r=230 g=60 b=60}[각성]{/COLOR} 포커스를 익힐 수 있습니다. {CR}도시에 있는 {COLOR r=50 g=200 b=50}라이센스 트레이너{/COLOR}를 찾아 가 각성 라이센스를 익히세요.{CR} [각성]은 화염마법으로 인한 [열정]과 냉기마법으로 인한 [냉정]을 동시에 가지고 있을 때 발동시킬 수 있으며 강력한 기능을 가진 특수 스킬들을 사용할 수 있습니다. {COLOR r=50 g=200 b=50}각성은 단축키창에 놓고 사용{/COLOR}할 수 있습니다. Sor_TP5  -->
+    <!-- 시간에 따라 자동으로 등장하는 도움말.  -->
+    <!-- 1001 popup_auto 상호작용 {BITMAP name=&quot;Tutorial1001&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[E]키{/COLOR}를 눌러 NPC, 상자, 몬스터의 시체등과 상호작용을 할 수 있습니다. 2 10  -->
+    <!-- 1002 popup_auto 맵 {BITMAP name=&quot;Tutorial1002&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}[M]키{/COLOR}를 눌러 지도 창을 열 수 있습니다. 지도에서 퀘스트 수행지역, 장인위치, 상인위치 등을 확인할 수 있습니다. 2 10  -->
+    <!-- 1003 popup_auto 음식 {COLOR r=230 g=60 b=60}음식{/COLOR}을 섭취하면 생명력을 회복하거나 다양한 효과의 {COLOR r=50 g=200 b=50}음식섭취버프{/COLOR}를 받을 수 있습니다. 음식은 상인에게서 구입할 수도 있고 레시피를 받아 직접 만들 수도 있습니다. 2 10  -->
+    <!-- 1004 popup_auto 기력 회피, 방어, 스킬 사용등의 특수한 액션을 사용할 때에는 일정량의 기력을 소모합니다. 기력은 자동으로 회복됩니다. 2 10  -->
+    <!-- 1005 popup_auto 전진공격 {BITMAP name=&quot;Tutorial1005&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}전진[W]{/COLOR} 키와 함께 {COLOR r=220 g=220 b=100}[마우스 왼쪽 버튼]{/COLOR}을 클릭하면 {COLOR r=50 g=200 b=50}전진공격{/COLOR}이 발동됩니다. 멀리 있는 적을 가격할 때 유용하지만 일정 기력이 소모됩니다. 2 10  -->
+    <!-- 1006 popup_auto 회피공격 {BITMAP name=&quot;Tutorial1006&quot; w=280 h=200}{CR}{CR}{COLOR r=220 g=220 b=100}후진[S]{/COLOR} 키와 함께 {COLOR r=220 g=220 b=100}[마우스 왼쪽 버튼]{/COLOR}을 클릭하면 {COLOR r=50 g=200 b=50}회피공격{/COLOR}이 발동됩니다. 장착한 무기마다 다른 공격이 발동되니 다양한 선택을 해 보세요. 2 10  -->
+    <!-- 1007 popup_auto 발도 공격 {BITMAP name=&quot;Tutorial1007&quot; w=280 h=200}{CR}{CR}무기를 넣은 상태에서{COLOR r=220 g=220 b=100}[ 마우스 오른쪽 버튼]{/COLOR}을 누른 채로 {COLOR r=220 g=220 b=100}[마우스 왼쪽 버튼]{/COLOR}을 같이 누르면 {COLOR r=50 g=200 b=50}발도 공격{/COLOR}을 할 수 있습니다. 발도 공격이 정확하게 들어가면 상대방을 짧은 시간 동안 경직 시킬 수 있습니다. 2 10  -->
+    <!-- 1008 popup_auto 내구도 장착한 아이템은 사용할 수록 {COLOR r=230 g=60 b=60}내구도가 감소{/COLOR} 됩니다. 내구도가 0%가 되면 재성능을 발휘하지 못하니 가까운 상인에게서 꼭 {COLOR r=50 g=200 b=50}내구도 수리{/COLOR}를 받으시기 바랍니다. 2 10  -->
+    <!-- 1009 popup_auto 앉기 무기를 넣은 상태에서 {COLOR r=220 g=220 b=100}[Z]{/COLOR}키를 누르면 제자리에 앉을 수 있습니다. 앉은 상태에서는 생명력과 정신력, 기력의 회복속도가 빨라집니다. [옵션]창에서 체크하면 전투 자세에서도 앉을 수 있습니다. 2 10  -->
+    <!-- 1010 popup_auto 다리부상 일정 높이 이상에서 {COLOR r=230 g=60 b=60}추락{/COLOR}하면 피해를 입음과 동시에 일정시간 이동속도가 느려지는 {COLOR r=50 g=200 b=50}다리부상 디버프{/COLOR}를 받게 됩니다. 또한 너무 높은 곳에서 떨어지면 즉사하게 되니 조심하시기 바랍니다. 2 10  -->
+    <!-- 1011 popup_auto 채팅 레이더즈에는 {COLOR r=230 g=60 b=60}채팅{/COLOR}에 관련된 다양한 명령어가 있습니다. 예를 들어 채팅창에서  [파티]를 선택하면 파티전용 채팅창으로 변경됩니다. 좀 더 자세한 내용은 도움말을 참조하세요. 2 10  -->
+    <!-- 모험가수첩  -->
+    <!-- 2001 achieve_level 레벨 2 달성 {BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}모험가 수첩{CR}{COLOR r=220 g=220 b=100}성장 기록{/COLOR} 추가!  -->
+    <HELP id="2002" Type="achieve_level" Name="레벨 5 달성" String="{BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}성장 기록{/COLOR} 추가!{/INDENT}" Timer="10000" />
+    <HELP id="2003" Type="achieve_level" Name="레벨 10 달성" String="{BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}성장 기록{/COLOR} 추가!{/INDENT}" Timer="10000" />
+    <HELP id="2004" Type="achieve_level" Name="레벨 11 달성" String="{BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}성장 기록{/COLOR} 추가!{/INDENT}" Timer="10000" />
+    <!-- 2007 achieve_level 레벨 35 달성 {BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}성장 기록{/COLOR} 추가!{/INDENT}  -->
+    <!-- 3001 entry_map 부러진 돛대 진입 {BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}모험가 수첩{CR} {COLOR r=220 g=220 b=100}모험 기록{/COLOR} 추가!  -->
+    <HELP id="3003" Type="entry_map" Name="테레스 평원 진입" String="{BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}모험 기록{/COLOR} 추가!{/INDENT}" Timer="10000" />
+    <HELP id="3004" Type="entry_map" Name="렌고트 부락" String="{BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}모험 기록{/COLOR} 추가!{/INDENT}" Timer="10000" />
+    <HELP id="3005" Type="entry_map" Name="영웅의 오솔길" String="{BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}모험 기록{/COLOR} 추가!{/INDENT}" Timer="10000" />
+    <HELP id="3006" Type="entry_map" Name="에다산" String="{BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}{CR h=5}{INDENT dent=50}모험가 수첩{CR h=18}{COLOR r=220 g=220 b=100}모험 기록{/COLOR} 추가!{/INDENT}" Timer="10000" />
+    <!-- 3007 entry_map 마코트 부락 {BITMAP name=&quot;guidebook_icon_journal&quot; w=42 h=42}모험가 수첩{CR} {COLOR r=220 g=220 b=100}모험 기록{/COLOR} 추가!  -->
+</maiet>

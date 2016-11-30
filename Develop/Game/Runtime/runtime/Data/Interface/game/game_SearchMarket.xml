@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_SearchMarket.lua" />
+
+  <Panel name="pnlSearchMarket" parent="pgSearchMarket">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+      <OnLoaded></OnLoaded>
+    </Event>
+    <Controls>
+
+      <ListCtrl name="lcSearchItemsList">
+        <Look>lookDefListCtrlLargeIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="45" />
+          <Size w="970" h="470" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <AddColumn align="hcenter,vcenter" width="570">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">level</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">quantity</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="200">minprice</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaSearchMarket:InitlcSearchItemsListUI();
+          </OnLoaded>
+          <OnSelChange></OnSelChange>
+          <OnItemClick></OnItemClick>
+          <OnDrawItemBkgrnd>luaTradeMarket:OnDrawItemBkgrndPrice( luaSearchMarket.COLUMN.PRICE, lcSearchItemsList );</OnDrawItemBkgrnd>
+          <OnPreDrawItem>return luaTradeMarket:OnPreDrawItemPrice( luaSearchMarket.COLUMN.PRICE );</OnPreDrawItem>
+          <OnToolTip>luaSearchMarket:ToolTipSearchItem();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+      <TextView name="tvwSearchSortName">
+        <Layout>
+          <Location x="10" y="45" />
+          <Size w="480" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnClick>luaSearchMarket:SearchSortName();</OnClick>
+        </Event>
+      </TextView>
+
+      <TextView name="tvwSearchSortLevel">
+        <Layout>
+          <Location x="10" y="45" />
+          <Size w="480" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnClick>luaSearchMarket:SearchSortLevel();</OnClick>
+        </Event>
+      </TextView>
+
+      <TextView name="tvwSearchSortAmount">
+        <Layout>
+          <Location x="10" y="45" />
+          <Size w="480" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnClick>luaSearchMarket:SearchSortAmount();</OnClick>
+        </Event>
+      </TextView>
+
+      <TextView name="tvwSearchSortPrice">
+        <Layout>
+          <Location x="10" y="45" />
+          <Size w="480" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnClick>luaSearchMarket:SearchSortPrice();</OnClick>
+        </Event>
+      </TextView>
+      
+      <TextView name="tvwSearchResult">
+        <Layout>
+          <Location x="0" y="250" />
+          <Size w="%100" h="60" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntBold\"}{COLOR r=160 g=120 b=55}{ALIGN hor=\"center\" ver=\"center\"}" .. STR( "UI_TRADEMAKET_SEARCH_RESULT_TEXT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buy1 Btn -->
+      <Button name="btnBuy1">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="84" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 0 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy2 Btn -->
+      <Button name="btnBuy2">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="128" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 1 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy3 Btn -->
+      <Button name="btnBuy3">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="172" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 2 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy4 Btn -->
+      <Button name="btnBuy4">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="216" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 3 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy5 Btn -->
+      <Button name="btnBuy5">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="260" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 4 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy6 Btn -->
+      <Button name="btnBuy6">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="304" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 5 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy7 Btn -->
+      <Button name="btnBuy7">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="348" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 6 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy8 Btn -->
+      <Button name="btnBuy8">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="392" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 7 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy9 Btn -->
+      <Button name="btnBuy9">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="436" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY") );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 8 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buy10 Btn -->
+      <Button name="btnBuy10">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="900" y="480" />
+          <Size w="70" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SHOP_BUY" ) );</OnLoaded>
+          <OnClick>luaSearchMarket:SearchListBtnClick( 9 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 검색 -->
+      <Panel name="pnlTradeMarketSearch">
+        <Layout>
+          <Location x="0" y="60" />
+          <Size w="%100" h="28" />
+        </Layout>
+        <Event>
+          <OnUpdate>luaSearchMarket:OnOnUpdatepnlTradeMarketSearch();</OnUpdate>
+        </Event>
+        
+        <Controls>
+
+          <!-- Search Seperate Bar -->
+          <Picture name="picTradeMarketSearchSeperateBar">
+            <Layout>
+              <Location x="0" y="0"/>
+              <Size w="%100" h="2" />
+            </Layout>
+            <Image>bmpDefSeperateBarHor</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+          <Button name="btnItemSearch">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="110" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_BTN_SEARCH" ) );</OnLoaded>
+              <OnClick>luaSearchMarket:SearchItem();</OnClick>
+            </Event>
+          </Button>
+
+          <Label name="lbSearchName">
+            <Look>lookDefLabel</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="20" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_SEARCH_NAME" ) );</OnLoaded>
+            </Event>
+          </Label>
+
+          <Edit name="edtSearchMinLevel">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="40" h="23" />
+            </Layout>
+            <Shape>
+              <Number>true</Number>
+              <LimitText>3</LimitText>
+            </Shape>
+            <Event>
+              <OnLoaded></OnLoaded>
+              <OnValueChanged>luaTradeMarket:OnValueChangedConfirmNumberEdit( edtSearchMinLevel, 3 );</OnValueChanged>
+              <OnSetFocus></OnSetFocus>>
+              <OnKillFocus></OnKillFocus>>
+              <OnOK>luaSearchMarket:SearchItem();</OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <Edit name="edtSearchMaxLevel">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="40" h="23" />
+            </Layout>
+            <Shape>
+              <Number>true</Number>
+              <LimitText>3</LimitText>
+            </Shape>
+            <Event>
+              <OnLoaded></OnLoaded>
+              <OnValueChanged>luaTradeMarket:OnValueChangedConfirmNumberEdit( edtSearchMaxLevel, 3 );</OnValueChanged>
+              <OnSetFocus></OnSetFocus>>
+              <OnKillFocus></OnKillFocus>>
+              <OnOK>luaSearchMarket:SearchItem();</OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <Edit name="edtSearchName">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="200" h="23" />
+            </Layout>
+            <Shape>
+              <LimitText></LimitText>
+            </Shape>
+            <Event>
+              <OnLoaded></OnLoaded>
+              <OnValueChanged></OnValueChanged>
+              <OnSetFocus></OnSetFocus>>
+              <OnKillFocus></OnKillFocus>>
+              <OnOK>luaSearchMarket:SearchItem();</OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <LabelEx name="lbLevelRange">
+            <Look>lookDefLabel</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="20" h="20" />
+            </Layout>
+            <Shape>
+              <Align>hcenter,top</Align>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( "~" );</OnLoaded>
+            </Event>
+          </LabelEx>
+
+          <Label name="lbSearchLevel">
+            <Look>lookDefLabel</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="20" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_SEARCH_LEVEL" ) );</OnLoaded>
+            </Event>
+          </Label>
+
+        </Controls>
+      </Panel>
+
+      <!-- 페이지 -->
+      <Panel name="pnlSearchPage">
+        <Layout>
+          <Location x="0" y="537" />
+          <Size w="%100" h="30" />
+        </Layout>
+        <Controls>
+
+          <Button name="btnSearchFirstPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="270" y="0" />
+                <Size w="90" h="25" />
+              </de_DE>
+              <Location x="300" y="0" />
+              <Size w="70" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_FIRSTPAGE" ) );</OnLoaded>
+              <OnClick>luaSearchMarket:PageBtnClick( "btnFirstPage" );</OnClick>
+            </Event>
+          </Button>
+
+          <TextView name="tvwSearchPage">
+            <Layout>
+              <Location x="400" y="0" />
+              <Size w="200" h="25" />
+            </Layout>
+            <Shape>
+              <ShowBorder>false</ShowBorder>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <DragAndDrop>true</DragAndDrop>
+            </Shape>
+            <Event>
+            </Event>
+          </TextView>
+
+          <Button name="btnSearchPrevPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="370" y="0" />
+                <Size w="90" h="25" />
+              </de_DE>
+              <Location x="380" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_PREVPAGE" ) );</OnLoaded>
+              <OnClick>luaSearchMarket:PageBtnClick( "btnPrevPage" );</OnClick>
+            </Event>
+          </Button>
+
+          <Button name="btnSearchNextPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="560" y="0" />
+                <Size w="80" h="25" />
+              </de_DE>
+              <Location x="560" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_NEXTPAGE" ) );</OnLoaded>
+              <OnClick>luaSearchMarket:PageBtnClick( "btnNextPage" );</OnClick>
+            </Event>
+          </Button>
+
+        </Controls>
+      </Panel>
+      
+    </Controls>
+
+  </Panel>
+
+  <!-- Frame : Confirm Buy item -->
+  <Frame name="frmConfirmBuyItem" parent="frmTradeMarket">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="500" h="215" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_SHOP_BUY") );
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="485" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmBuyItem:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmBuyItem">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="40" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_BUY_ITEM") );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="85" />
+          <Size w="470" h="80" />
+        </Layout>
+      </Group>
+
+      <!-- Item Image -->
+      <TextView name="tvwConfirmBuyItemImage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="20" y="95" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <!-- Item Name -->
+      <TextView name="tvwConfirmBuyItemName">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="80" y="95" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "sfsdf" );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Item Buy Num -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="80" y="117" />
+          <Size w="60" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "QUANTITY") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <Edit name="edtBuyItemNum">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="140" y="120" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Shape>
+          <LimitText>5</LimitText>
+          <Number>true</Number>
+          <Align>right,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaSearchMarket:OnValueChangedConfirmNum();</OnValueChanged>
+        </Event>
+      </Edit>
+      
+      <!-- Item SalesNum -->
+      <TextView name="tvwConfirmBuyitemNum">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="140" y="120" />
+          <Size w="40" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Item Unit Price -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="210" y="117" />
+          <Size w="80" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_UNITPRICE") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- Item Unit Price -->
+      <TextView name="tvwConfirmBuyItemUnitPrice">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="320" y="120" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Item Total Price -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="210" y="137" />
+          <Size w="80" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_BUY_TOTALPRICE") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- Item Total Price -->
+      <TextView name="tvwConfirmBuyItemTotalPrice">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="320" y="140" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : OK -->
+      <Button name="btnBuyOk">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="230" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            luaSearchMarket:btnClickBuyItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button name="btnBuyCancel">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="250" y="170" />
+          <Size w="230" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL") );</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            frmConfirmBuyItem:Show( false );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : OK -->
+      <Button name="btnBoughtOk">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="135" y="170" />
+          <Size w="230" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK") );</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            frmConfirmBuyItem:Show( false );
+          </OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+  
+</UI>

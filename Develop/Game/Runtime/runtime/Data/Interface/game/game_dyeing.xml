@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_dyeing.lua" />
+
+
+  <!-- Frame : Dyeing -->
+  <Frame name="frmDyeing" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="360" h="510" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_DYEING"));
+        luaGame:RegisterWindow( frmDyeing);
+      </OnLoaded>
+      <OnShow>luaDyeing:OnShowDyeingFrame();</OnShow>
+      <OnTimer>luaDyeing:OnTimerDyeingFrame();</OnTimer>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="345" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmDyeing:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background image -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="350" h="370" />
+        </Layout>
+        <Image>bmpDyeBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Dye target item -->
+      <Picture name="picDyeTargetItem">
+        <Layout>
+          <Location x="155" y="82" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Dye item -->
+      <Picture name="picDyeItem">
+        <Layout>
+          <Location x="155" y="215" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Dye colors -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="280" />
+          <Size w="%100" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DYEING_AVAILABLEDYECOLOR"));</OnLoaded>
+        </Event>
+      </LabelEx>
+      
+      <ListCtrl name="lcDyeingColors">
+        <Look>lookDefColorListCtrl</Look>
+        <Layout>
+          <Location x="0" y="300" />
+          <Size w="100" h="100" />
+        </Layout>
+        <Shape>
+          <Static>true</Static>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <AddColumn align="left,vcenter" width="10">a</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnDrawItemBkgrnd>luaDyeing:OnDrawItemBkgrndDyeingColorsListCtrl();</OnDrawItemBkgrnd>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="55" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- TextView : Message -->
+      <TextView name="tvwDyeMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="402" />
+          <Size w="330" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+      
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="450" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Do dyeing -->
+      <Button name="btnDoDyeing">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_APPLY"));</OnLoaded>
+          <OnClick>luaDyeing:OnClickDoDyeing();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="180" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmDyeing:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmDyeingProgress" parent="frmInventory">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="80" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnShow>luaDyeing:OnShowDyeingProgress();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DYEING_DYEINGITEM"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- ProgressCtrl : Dyeing progress bar -->
+      <ProgressCtrl name="pcDyeingProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="100"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaDyeing:OnUpdateDyeingProgressBar();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+    </Controls>
+  </Frame>
+  
+</UI>

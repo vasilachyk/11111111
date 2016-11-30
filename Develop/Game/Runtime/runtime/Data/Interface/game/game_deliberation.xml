@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_deliberation.lua" />
+
+  <!-- Game info -->
+  <Picture name="GameDeliberationLogo" parent="layerGame3">
+    <Layout>
+      <Location x="1014" y="30" base="TOPRIGHT" />
+      <Size w="263" h="150" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Image>bmpdeliberation</Image>
+    <Shape>
+      <Stretch>true</Stretch>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnShow>luaDeliberation:OnShowGameDeliberationLogo();</OnShow>
+      <OnLoaded>this:Show( false );</OnLoaded>
+      <OnTimer>luaDeliberation:OnTimerGameDeliberationLogo();</OnTimer>
+      <OnUpdate>luaDeliberation:OnUpdateGameDeliberationLogo();</OnUpdate>
+    </Event>
+  </Picture>
+
+  <!-- Presentation box -->
+  <PresentationBox name="pbDeliberationPresentation" parent="layerGame3">
+    <Look type="text">lookDefPresentationText1</Look>
+    <Layout>
+      <Location x="0" y="215" />
+      <Size w="%100" h="60" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <FadeSecond>0.5</FadeSecond>
+      <ShowRect>false</ShowRect>
+    </Shape>
+  </PresentationBox>
+  
+</UI>

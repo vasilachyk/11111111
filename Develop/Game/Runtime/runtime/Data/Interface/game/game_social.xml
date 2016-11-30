@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_social.lua" />
+
+
+
+  <!-- Frame : Social -->
+  <Frame name="frmSocial" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="550" y="60" />
+      <Size w="400" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+  	  <Icon>iconSocial</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_SOCIAL"));
+        luaGame:RegisterWindow( frmSocial, btnHoldSocial);
+      </OnLoaded>
+      <OnShow>luaSocial:OnShowSocialFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then
+
+            luaGame:RestoreUIPosition( frmSocial);
+
+            if ( gamefunc:GetAccountParam( "frmSocial", "hold") ~= nil)  then  btnHoldSocial:SetCheck( true);
+            end
+
+        elseif ( arg == "RECORD_UI")  then
+
+            luaGame:RecordUIPosition( frmSocial);
+
+            if ( btnHoldSocial:GetCheck() == true)  then  gamefunc:SetAccountParam( "frmSocial", "hold", "1");
+            end
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Hold buttons -->
+      <Button name="btnHoldSocial">
+        <Look>lookDefHoldButton</Look>
+        <Layout>
+          <Location x="360" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <Check>false</Check>
+        </Shape>
+      </Button>
+      
+      
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />" />
+        </Layout>
+        <Event>
+          <OnClick>frmSocial:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="55" base="BOTTOMLEFT" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TabCtrl -->
+      <TabCtrl name="tbcSocialTabCtrl">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="%100" h="560" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcSocialTabCtrl:SetTabName( 0, STR( "UI_PARTY"));
+            tbcSocialTabCtrl:SetTabName( 1, STR( "UI_GUILD"));
+            tbcSocialTabCtrl:SetTabName( 2, STR( "UI_FRIENDS"));
+            tbcSocialTabCtrl:SetTabName( 3, STR( "UI_SEARCH"));
+          </OnLoaded>
+          <OnSelChange>
+            luaParty:RefreshParty();
+            luaGuild:RefreshGuild();
+          </OnSelChange>
+        </Event>
+        
+        <TabPages>
+          
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="90" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="tpgSocialParty">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="565" />
+              </Layout>
+            </Page>
+          </TabPage>
+
+          
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="90" y="0" />
+                <Size w="90" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="tpgSocialGuild">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="565" />
+              </Layout>
+            </Page>
+          </TabPage>
+          
+
+          <!-- Tab 3 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="180" y="0" />
+                <Size w="90" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="tpgSocialFriends">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="565" />
+              </Layout>
+            </Page>
+          </TabPage>
+          
+
+          <!-- Tab 4 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="270" y="0" />
+                <Size w="100" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="tpgSocialSearch">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="565" />
+              </Layout>
+            </Page>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Frame>
+
+
+</UI>

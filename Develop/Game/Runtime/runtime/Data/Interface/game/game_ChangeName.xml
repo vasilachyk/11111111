@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_ChangeName.lua" />
+
+
+  
+  <Frame name="frmChangeName" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText(STR("UI_CHANGENAME_DLG"));
+        luaGame:RegisterWindow( frmChangeName);
+      </OnLoaded>
+      <!--<OnShow>luaGame:ShowWindow( frmChangeName);</OnShow>-->
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmChangeName:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwChangeName">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText(STR("UI_CHANGENAME_DLG_DESC"));
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <Edit name="edtCharacterName">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="60" y="85" />
+          <Size w="200" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>10</LimitText>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            local nMinKor, nMaxKor = gamefunc:GetCharacterNameLengthKor();
+            local nMinEng, nMaxEng = gamefunc:GetCharacterNameLengthEng();
+            local strToolTip = FORMAT( "UI_SELCHAR_TOOLTIPENTERNAME", nMinKor .. "~" .. nMaxKor);
+            this:SetToolTip( strToolTip);
+          </OnLoaded>
+          <OnValueChanged>luaChangeName:CheckCharacterNameValidate();</OnValueChanged>
+          <OnSetFocus>luaChangeName:CheckCharacterNameValidate();</OnSetFocus>>
+          <OnKillFocus>luaChangeName:CheckCharacterNameValidate();</OnKillFocus>>
+          <OnOK>frmChangeName:SetFocus();</OnOK>
+          <OnCancel>frmChangeName:Show( false);</OnCancel>
+        </Event>
+      </Edit>
+
+      <TextView name="twvCharacterNameValidate">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="85" />
+          <Size w="200" h="23" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnUpdate>twvCharacterNameValidate:SetOpacity( 0.8 + 0.2 * math.sin( gamefunc:GetUpdateTime() * 0.005));</OnUpdate>
+        </Event>
+      </TextView>
+
+      <Button name="btnDuplicate">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="270" y="85" />
+          <Size w="150" h="24" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>this:SetText(STR("UI_CHANGENAME_DUPLICATE"));</OnLoaded>
+          <OnClick>luaChangeName:FindMatchUser(edtCharacterName:GetText());</OnClick>
+        </Event>
+      </Button>
+
+      <TextView name="tvwAvableUserName">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="130" />
+          <Size w="280" h="50" />
+        </Layout>
+      </TextView>
+      
+      <Button name="btnChangeNameOK">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="110" y="165" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaChangeName:OnOK();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+  <Frame name="frmConfirmChangeName" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText(STR("UI_CONFIRM"));
+        luaGame:RegisterWindow( frmConfirmChangeName);
+      </OnLoaded>
+      <OnShow>luaGame:ShowWindow( frmConfirmChangeName);</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmChangeName:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmChangeName">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="40" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText(STR("UI_CHANGENAME_CONFIRM"));
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <TextView name="tvwChangeNameID">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="75" />
+          <Size w="280" h="23" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaChangeName:OnConfirmOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmChangeName:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  
+
+  <Frame name="frmConfirmCheckChangeName" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <Showrect>false</Showrect>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaChangeName:CloseConfirmCheckChangeName();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="64" h="64" />
+        </Layout>
+        <Image>iconDefCaution</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwCheckChangeName">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="80" y="35" />
+          <Size w="340" h="135" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CHANGENAME_CHECK"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+           <HotKey>Y</HotKey> 
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaChangeName:OnCheckChangeNameOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+           <HotKey>N</HotKey> 
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaChangeName:CloseConfirmCheckChangeName();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+  
+  
+  
+
+  <Frame name="frmChangeNameSucess" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="200" y="200" />
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmChangeNameSucess);
+      </OnLoaded>
+      <OnShow>luaChangeName:OnShowfrmChangeNameSucess();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>
+            frmChangeNameSucess:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR("UI_CHANGENAME_SUCESS"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="110" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            frmChangeNameSucess:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+  
+</UI>

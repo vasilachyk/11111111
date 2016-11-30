@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_actionprogressbar.lua" />
+
+
+  <!-- Frame : Inventory -->
+  <Frame name="frmActionProgressBar" parent="layerGame2">
+    <Layout>
+      <Location x="362" y="550" />
+      <Size w="300" h="60" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <ShowBorder>false</ShowBorder>
+      <ShowTitleBar>false</ShowTitleBar>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <Static>true</Static>
+    </Shape>
+    <Event>
+      <OnPosition>luaActionProgressBar:OnPositionActionProgressBar();</OnPosition>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx name="lbActionProgressMsg">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="230" g="230" b="230" />
+          <Align>hcenter,vcenter</Align>
+          <Text></Text>
+        </Shape>
+      </LabelEx>
+      
+      
+      <!-- Gauge : Action progressBar -->
+      <Gauge name="pcActionProgressBar">
+        <Look>lookDefActionProgressBar</Look>
+        <Layout>
+          <Location x="5" y="25" />
+          <Size w="290" h="15" />
+        </Layout>
+        <Event>
+          <OnUpdate>luaActionProgressBar:OnUpdateActionProgressBar();</OnUpdate>
+        </Event>
+      </Gauge>
+
+    </Controls>
+  </Frame>
+
+</UI>

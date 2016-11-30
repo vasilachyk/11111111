@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_GMSearch.lua" />
+
+  <!-- 메인 -->
+  <Panel name="pnlSearchMain" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="100" />
+      <Size w="%100" h="150" />
+    </Layout>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="148"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TabCtrl Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="38"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TabCtrl name="tbcGMSearch">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            luaGMSearch:OnLoadedGMSearchTabCtrl();
+          </OnLoaded>
+          <OnSelChange>
+            luaGMSearch:OnSelChangeGMSearchTabCtrl();
+          </OnSelChange>
+        </Event>
+        <TabPages>
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgGMSearch_Contants">
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+              </Controls>
+            </Page>
+          </TabPage>
+
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgGMSearch_PC">
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+              </Controls>
+            </Page>
+          </TabPage>
+        </TabPages>
+      </TabCtrl>
+      
+    </Controls>
+  </Panel>
+
+  <!-- 정보 기본 -->
+  <Panel name="pnlSearchInfoBase" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="250" />
+      <Size w="%100" h="450" />
+    </Layout>
+    <Controls>
+    </Controls>
+  </Panel>
+
+  <!-- 컨텐츠 정보 -->
+  <Panel name="pnlSearchInfoContants" parent="pnlSearchInfoBase">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- 아이템 검색 리스트 -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( "[ ITEM ]" );</OnLoaded>
+        </Event>
+      </Label>
+      
+      <ListCtrl name="lcGMSearch_Item">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="310" h="400" />
+        </Layout>
+        <Shape>
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </ListCtrl>
+
+      <!-- NPC 검색 리스트 -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="340" y="5" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( "[ NPC ]" );</OnLoaded>
+        </Event>
+      </Label>
+
+      <ListCtrl name="lcGMSearch_NPC">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="340" y="30" />
+          <Size w="310" h="400" />
+        </Layout>
+        <Shape>
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </ListCtrl>
+
+      <!-- Recipe 검색 리스트 -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="665" y="5" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( "[ RECIPE ]" );</OnLoaded>
+        </Event>
+      </Label>
+
+      <ListCtrl name="lcGMSearch_Recipe">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="670" y="30" />
+          <Size w="310" h="400" />
+        </Layout>
+        <Shape>
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </ListCtrl>
+
+    </Controls>
+  </Panel>
+
+  <!-- PC 정보 -->
+  <Panel name="pnlSearchInfoPC" parent="pnlSearchInfoBase">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Play Character -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="200" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( "[ Play Character ]" );</OnLoaded>
+        </Event>
+      </Label>
+      
+    </Controls>
+  </Panel>
+
+  <!-- Contants 찾기 탭 -->
+  <Panel parent="pgGMSearch_Contants">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+    </Event>
+    <Controls>
+
+      <!-- 입력 -->
+      <Edit name="edtGMSearch_Contants">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="20" y="20" />
+          <Size w="300" h="25" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnOK>luaGMSearch:OnClickGMSearch();</OnOK>
+          <OnCancel></OnCancel>
+        </Event>
+      </Edit>
+
+      <!-- 찾기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="340" y="20" />
+          <Size w="80" h="25" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SEARCH"));</OnLoaded>
+          <OnClick>luaGMSearch:OnClickGMSearch();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Panel>
+
+  <!-- PC 찾기 탭 -->
+  <Panel parent="pgGMSearch_PC">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+    </Event>
+    <Controls>
+
+      <!-- 입력 -->
+      <Edit name="edtGMSearch_PC">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="20" y="20" />
+          <Size w="300" h="25" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnOK>luaGMSearch:OnClickGMSearch();</OnOK>
+          <OnCancel></OnCancel>
+        </Event>
+      </Edit>
+
+      <!-- 찾기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="340" y="20" />
+          <Size w="80" h="25" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SEARCH"));</OnLoaded>
+          <OnClick>luaGMSearch:OnClickGMSearch();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Panel>
+  
+</UI>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+
+  <!-- Presentation box -->
+  <PresentationBox name="pbPresentationUpper" parent="layerGame2">
+    <Look type="text">lookDefPresentationText1</Look>
+    <Layout>
+      <Location x="0" y="90" />
+      <Size w="%100" h="70" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <FadeSecond>1.0</FadeSecond>
+    </Shape>
+  </PresentationBox>
+  
+
+  <!-- Presentation box -->
+  <PresentationBox name="pbPresentationLower" parent="layerGame2">
+    <Look type="text">lookDefPresentationText2</Look>
+    <Layout>
+      <Location x="0" y="570" />
+      <Size w="%100" h="35" />
+      <Anchor left="true" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <FadeSecond>0.2</FadeSecond>
+    </Shape>
+  </PresentationBox>
+
+
+  <!-- MapSign box -->
+  <PresentationBox name="pbMapSign" parent="layerGame2">
+    <Look type="text">lookDefMapSignText</Look>
+    <Layout>
+      <Location x="0" y="150" />
+      <Size w="%100" h="35" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <FadeSecond>3.0</FadeSecond>
+    </Shape>
+  </PresentationBox>
+  
+</UI>

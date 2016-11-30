@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_GMMoveBattle.lua" />
+
+  <!-- 메인 -->
+  <Panel name="pnlMoveBattleMain" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="100" />
+      <Size w="%100" h="600" />
+    </Layout>
+    <Controls>
+
+      <!-- 자살/부활등 내캐릭터 관련 모음 -->
+      <Panel>
+        <Layout>
+          <Location x="50" y="30" />
+          <Size w="400" h="120" />
+        </Layout>
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+            <Shape>
+              <Opacity>1.0</Opacity>
+            </Shape>
+          </Group>
+
+          <!-- 자살 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="30" y="20" />
+              <Size w="150" h="30" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_GMTOOL_DIE") );</OnLoaded>
+              <OnClick>luaGMMoveBattle:KillMe();</OnClick>
+            </Event>
+          </Button>
+
+          <!-- 쿨타임 리셋 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="30" y="70" />
+              <Size w="150" h="30" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_GMTOOL_RESETCOOLTIME") );</OnLoaded>
+              <OnClick>luaGMMoveBattle:ResetAllCoolTime();</OnClick>
+            </Event>
+          </Button>
+
+          <!-- 내 캐릭터 부활 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="220" y="20" />
+              <Size w="150" h="30" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_GMTOOL_REBIRTH") );</OnLoaded>
+              <OnClick>luaGMMoveBattle:Rebirth();</OnClick>
+            </Event>
+          </Button>
+
+          <!-- 모든 장비 수리 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="220" y="70" />
+              <Size w="150" h="30" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_GMTOOL_REPAIR") );</OnLoaded>
+              <OnClick>luaGMMoveBattle:ItemRepairAll();</OnClick>
+            </Event>
+          </Button>
+
+        </Controls>
+      </Panel>
+
+      <!-- 내캐릭터 회복 -->
+      <Panel>
+        <Layout>
+          <Location x="50" y="170" />
+          <Size w="400" h="155" />
+        </Layout>
+                
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+            <Shape>
+              <Opacity>1.0</Opacity>
+            </Shape>
+          </Group>
+
+          <!-- hp 회복 입력 -->
+          <Edit name="edtGMBattle_HPRecover">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="20" y="20" />
+              <Size w="150" h="25" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                luaGMMoveBattle:OnLoadededtGMBattle_HPRecover();
+              </OnLoaded>
+              <OnOK>luaGMMoveBattle:OnClickHPRecorver();</OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <!-- hp 회복 버튼 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="180" y="20" />
+              <Size w="100" h="25" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( "HP " .. STR( "UI_GMTOOL_RECOVER") );</OnLoaded>
+              <OnClick>luaGMMoveBattle:OnClickHPRecorver();</OnClick>
+            </Event>
+          </Button>
+
+          <!-- mp 회복 입력 -->
+          <Edit name="edtGMBattle_MPRecover">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="20" y="65" />
+              <Size w="150" h="25" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                luaGMMoveBattle:OnLoadededtGMBattle_MPRecover();
+              </OnLoaded>
+              <OnOK>luaGMMoveBattle:OnClickMPRecorver();</OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <!-- mp 회복 버튼 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="180" y="65" />
+              <Size w="100" h="25" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( "MP " .. STR( "UI_GMTOOL_RECOVER") );</OnLoaded>
+              <OnClick>luaGMMoveBattle:OnClickMPRecorver();</OnClick>
+            </Event>
+          </Button>
+
+          <!-- sp 회복 입력 -->
+          <Edit name="edtGMBattle_SPRecover">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="20" y="110" />
+              <Size w="150" h="25" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                luaGMMoveBattle:OnLoadededtGMBattle_SPRecover();
+              </OnLoaded>
+              <OnOK>luaGMMoveBattle:OnClickSPRecorver();</OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <!-- sp 회복 버튼 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="180" y="110" />
+              <Size w="100" h="25" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( "SP " .. STR( "UI_GMTOOL_RECOVER") );</OnLoaded>
+              <OnClick>luaGMMoveBattle:OnClickSPRecorver();</OnClick>
+            </Event>
+          </Button>
+
+          <!-- 모든 회복 버튼 -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="300" y="20" />
+              <Size w="80" h="115" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_GMTOOL_RECOVERALL" ) );</OnLoaded>
+              <OnClick>luaGMMoveBattle:OnClickAllRecorver();</OnClick>
+            </Event>
+          </Button>
+
+        </Controls>
+      </Panel>
+
+      <!-- 영역 -->
+      <Panel>
+        <Layout>
+          <Location x="50" y="345" />
+          <Size w="400" h="110" />
+        </Layout>
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+            <Shape>
+              <Opacity>1.0</Opacity>
+            </Shape>
+          </Group>
+
+          <!-- Kill 범위 입력 -->
+          <Edit name="edtGMBattle_Kill">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="20" y="20" />
+              <Size w="200" h="25" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                luaGMMoveBattle:OnLoadededtGMBattle_Kill();
+              </OnLoaded>
+              <OnOK></OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <!-- Kill -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="240" y="20" />
+              <Size w="100" h="25" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( "KILL" );</OnLoaded>
+              <OnClick>luaGMMoveBattle:OnClickKill();</OnClick>
+            </Event>
+          </Button>
+
+          <!-- BPart 범위 입력 -->
+          <Edit name="edtGMBattle_BPart">
+            <Look>lookDefEdit</Look>
+            <Layout>
+              <Location x="20" y="65" />
+              <Size w="200" h="25" />
+            </Layout>
+            <Shape>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                luaGMMoveBattle:OnLoadededtGMBattle_BPart();
+              </OnLoaded>
+              <OnOK></OnOK>
+              <OnCancel></OnCancel>
+            </Event>
+          </Edit>
+
+          <!-- BPart -->
+          <Button>
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="240" y="65" />
+              <Size w="100" h="25" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_GMTOOL_BPART" ) );</OnLoaded>
+              <OnClick>luaGMMoveBattle:OnClickBPart();</OnClick>
+            </Event>
+          </Button>
+
+        </Controls>
+      </Panel>
+
+      <!-- 영역 
+      <Panel>
+        <Layout>
+          <Location x="50" y="465" />
+          <Size w="400" h="100" />
+        </Layout>
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+            <Shape>
+              <Opacity>1.0</Opacity>
+            </Shape>
+          </Group>
+
+        </Controls>
+      </Panel>-->
+      
+    </Controls>
+  </Panel>
+
+</UI>

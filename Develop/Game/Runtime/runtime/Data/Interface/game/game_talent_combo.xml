@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_talent_combo.lua" />
+
+  <TalentComboViewer name="tcvTalentComboViewer" parent="layerGame0">
+    <Look>lookDefTalentComboViewer</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true" />
+    </Layout>
+  </TalentComboViewer>
+  
+  
+</UI>

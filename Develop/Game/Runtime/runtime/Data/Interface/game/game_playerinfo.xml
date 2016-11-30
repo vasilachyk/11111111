@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_playerinfo.lua" />
+
+  <Frame name="frmPlayerInfo" parent="layerGame0">
+    <Look>lookDefResizableFrame</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="300" h="100" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>true</Visible>
+      <Resize>true</Resize>
+      <Movable>true</Movable>
+      <ShowBorder>false</ShowBorder>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnUpdate>luaPlayerInfo:OnUpdatePlayerInfo();</OnUpdate>
+      <OnDraw>luaPlayerInfo:OnDrawPlayerInfo();</OnDraw>
+      <OnEnter>frmPlayerInfo:ShowBorder( true);</OnEnter>
+      <OnLeave>frmPlayerInfo:ShowBorder( false);</OnLeave>
+      <OnSize>return luaPlayerInfo:OnSizePlayerInfo();</OnSize>
+      <OnNcHitTest>return luaPlayerInfo:OnNcHitTestPlayerInfo();</OnNcHitTest>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaPlayerInfo:RestoreUIPosition();
+        elseif ( arg == "RECORD_UI")  then    luaPlayerInfo:RecordUIPosition();
+        end
+      </OnUserArgument>
+    </Event>
+  </Frame>
+
+</UI>

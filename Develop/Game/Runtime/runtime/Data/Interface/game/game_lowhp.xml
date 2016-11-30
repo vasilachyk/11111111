@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_lowhp.lua" />
+
+  <!-- TextView : LowHP -->
+  <Group name="frmLowHP" parent="layerGame0">
+
+    <!-- Look : LoWHPBox -->
+    <Look>lookDefLowHPBox</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true" />
+    </Layout>
+    
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <ShowScrollBar>hide</ShowScrollBar>
+
+    </Shape>
+     
+    <Event>
+      <OnUpdate>luaLowHP:OnUpdateLowHPFrame();</OnUpdate>
+      <OnTimer>luaLowHP:OnTimerLowHPSound();</OnTimer>
+    </Event> 
+    
+  </Group>
+</UI>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_trade.lua" />
+  
+  
+  
+  <!-- Frame : Trade -->
+  <Frame name="frmTrade" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="130" y="100" />
+      <Size w="570" h="430" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_TRADE"));
+        luaGame:RegisterWindow( frmTrade);
+      </OnLoaded>
+      <OnShow>luaTrade:OnShowTradeFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmTrade);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmTrade);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="555" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmTrade:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Other trade items -->
+      <LabelEx name="labTradeOtherName">
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="540" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntLarge</Font>
+          <FontColor r="160" g="120" b="55"/>
+          <Align>left,bottom</Align>
+          <Text></Text>
+        </Shape>
+      </LabelEx>
+
+      <ListCtrl name="lcOtherTradeItems">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="55" />
+          <Size w="255" h="234" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="190">name</AddColumn>
+          <AddColumn align="left,vcenter" width="100">quantity</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnToolTip>luaTrade:OnToolTipOtherTradeItem();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Message -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="300" />
+          <Size w="265" h="70" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwTradeMessageOther">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="305" />
+          <Size w="255" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+      
+      
+
+      <!-- My trade items -->
+      <LabelEx>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="540" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntLarge</Font>
+          <FontColor r="160" g="120" b="55"/>
+          <Align>right,bottom</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADE_MYTRADEITEMS"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcMyTradeItems">
+        <Look>lookDefListCtrlCustom</Look>
+        <Layout>
+          <Location x="295" y="55" />
+          <Size w="255" h="234" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="190">name</AddColumn>
+          <AddColumn align="left,vcenter" width="100">quantity</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnDragBegin>return luaTrade:OnDragBeginMyTradeItem();</OnDragBegin>
+          <OnDragEnd>luaTrade:OnDragEndMyTradeItem();</OnDragEnd>
+          <OnDrop>return luaTrade:OnDropMyTradeItem();</OnDrop>
+          <OnToolTip>luaTrade:OnToolTipMyTradeItem();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Message -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="290" y="300" />
+          <Size w="265" h="70" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwTradeMessageMe">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="295" y="305" />
+          <Size w="255" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+      
+      <!-- Button : Ready to trade -->      
+      <Button name="btnReadyToTrade">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="95" y="380" />
+          <Size w="180" h="30" />
+        </Layout>
+        <Shape>
+          <Icon w="28" h="28">iconOK</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADE_REQUESTTRADE"));</OnLoaded>
+          <OnClick>luaTrade:OnClickReadyToTrade();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Close -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="285" y="380" />
+          <Size w="180" h="30" />
+        </Layout>
+        <Shape>
+          <Icon w="28" h="28">iconCancel</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CLOSE"));</OnLoaded>
+          <OnClick>frmTrade:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+</UI>

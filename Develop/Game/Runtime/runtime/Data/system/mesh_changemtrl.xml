@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <MODEL name="dinner_barbecue">
+        <MSTATE name="babecue_mode1">
+            <ACTORNODE name="dinner_barbecue_meat">
+                <MATERIAL MaterialID="1" name="at_dinner_barbecue1" blendingTime="3.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="dinner_barbecue_fire">
+                <MATERIAL MaterialID="1" name="at_dinner_barbecue1" blendingTime="3.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="dinner_drink">
+        <MSTATE name="drink_mode1">
+            <ACTORNODE name="soup">
+                <MATERIAL MaterialID="1" name="at_Teress_soup_k02" blendingTime="3.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="harpy">
+        <MSTATE name="highwind">
+            <ACTORNODE name="harpy">
+                <MATERIAL MaterialID="1" name="at_harpypurple" blendingTime="1.000000" />
+            </ACTORNODE>
+        </MSTATE>
+        <MSTATE name="redgreen">
+            <ACTORNODE name="harpy">
+                <MATERIAL MaterialID="1" name="at_harpyred" blendingTime="1.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="kobold_chief">
+        <MSTATE name="kobold_ogre">
+            <ACTORNODE name="b_parts_01">
+                <MATERIAL MaterialID="1" name="at_kobold_Chief_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="b_parts_02">
+                <MATERIAL MaterialID="1" name="at_kobold_Chief_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="kobold_Chief_w_w">
+                <MATERIAL MaterialID="1" name="at_kobold_Chief_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="kobold_Chief">
+                <MATERIAL MaterialID="1" name="at_kobold_Chief_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="kobold_commander">
+        <MSTATE name="kobold_ogre">
+            <ACTORNODE name="b_parts_01">
+                <MATERIAL MaterialID="1" name="kobold_Commander_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="b_parts_02">
+                <MATERIAL MaterialID="1" name="kobold_Commander_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="kobold_Commander_01">
+                <MATERIAL MaterialID="1" name="kobold_Commander_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="kobold_mage">
+        <MSTATE name="kobold_ogre">
+            <ACTORNODE name="kobold_Mage_w">
+                <MATERIAL MaterialID="1" name="at_kobold_Mage_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="b_parts_01">
+                <MATERIAL MaterialID="1" name="at_kobold_Mage_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="at_kobold_Mage">
+                <MATERIAL MaterialID="1" name="at_kobold_Mage_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="kobold_pawn">
+        <MSTATE name="kobold_ogre">
+            <ACTORNODE name="kobold_Pawn">
+                <MATERIAL MaterialID="1" name="at_cobold_Pawn_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="kobold_ranger">
+        <MSTATE name="kobold_ogre">
+            <ACTORNODE name="kobold_Pawn">
+                <MATERIAL MaterialID="1" name="at_cobold_Pawn_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="b_parts_01">
+                <MATERIAL MaterialID="1" name="at_cobold_Pawn_bk" blendingTime="0.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+    <MODEL name="wolf_boss">
+        <MSTATE name="wolf_boss">
+            <ACTORNODE name="wolf_boss">
+                <MATERIAL MaterialID="1" name="at_wolf_boss_w" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="b_parts_03">
+                <MATERIAL MaterialID="1" name="at_wolf_boss_w" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="b_parts_02">
+                <MATERIAL MaterialID="1" name="at_wolf_boss_w" blendingTime="0.000000" />
+            </ACTORNODE>
+            <ACTORNODE name="b_parts_01">
+                <MATERIAL MaterialID="1" name="at_wolf_boss_w" blendingTime="0.000000" />
+            </ACTORNODE>
+        </MSTATE>
+    </MODEL>
+</maiet>

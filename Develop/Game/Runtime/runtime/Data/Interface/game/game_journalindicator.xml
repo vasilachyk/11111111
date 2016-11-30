@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_Journalindicator.lua" />
+  
+  
+  <!-- Frame : Journal indicator -->
+  <Frame name="frmJournalIndicator" parent="layerGame0">
+    <Look>lookDefResizableFrame</Look>
+    <Layout>
+      <Location x="804" y="210" />
+      <Size w="220" h="540" />
+      <Anchor left="false" top="true" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>true</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+      <Static>true</Static>
+    </Shape>
+    <!--
+    <Event>
+      <OnNcHitTest>return luaJournalIndicator:OnNcHitTestJournalIndicator();</OnNcHitTest>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaJournalIndicator:RestoreUIPosition();
+        elseif ( arg == "RECORD_UI")  then    luaJournalIndicator:RecordUIPosition();
+        end
+      </OnUserArgument>
+    </Event>
+    -->
+    <Controls>
+
+      <!-- Journal indicator -->
+      <JournalIndicator name="jiJournalIndicator">
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Look type="text">lookDefJournalIndicatorText</Look>
+        <Look type="button">lookDefDeleteButton</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="215" h="470" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>luaJournalIndicator:OnLoadedJournalIndicator();</OnLoaded>
+          <OnItemRClick>luaJournalIndicator:OnItemRClickJournalIndicator();</OnItemRClick>
+        </Event>
+      </JournalIndicator>
+
+    </Controls>
+  </Frame>
+
+</UI>

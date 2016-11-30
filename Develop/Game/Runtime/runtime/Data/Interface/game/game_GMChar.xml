@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_GMChar.lua" />
+
+  <!-- 메인 -->
+  <Panel name="pnlCharMain" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="100" />
+      <Size w="%100" h="135" />
+    </Layout>
+    <Shape>
+      <!--<ShowRect>true</ShowRect>-->
+    </Shape>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="%50" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 캐릭터 이름 -->
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="10" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Shape>
+          <Align>hcenter,vcenter</Align>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "NAME") );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Edit name="edtGMChar_Name">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="130" y="10" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>
+          </OnLoaded>
+          <OnOK>
+          </OnOK>
+        </Event>
+      </Edit>
+      
+      <!--
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="300" y="10" />
+          <Size w="80" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_CHANGE" ) );</OnLoaded>
+          <OnClick>
+          </OnClick>
+        </Event>
+      </Button>
+      -->
+
+      <!-- 캐릭터 레벨 -->
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Shape>
+          <Align>hcenter,vcenter</Align>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "LEVEL") );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Edit name="edtGMChar_Level">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="130" y="40" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+          </OnLoaded>
+          <OnOK>
+            luaGMChar:GMCharSetLevel();
+          </OnOK>
+        </Event>
+      </Edit>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="300" y="40" />
+          <Size w="80" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_CHANGE" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:GMCharSetLevel();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 캐릭터 스킬 포인트 -->
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="70" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Shape>
+          <Align>hcenter,vcenter</Align>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "TALENTPOINT") );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Edit name="edtGMChar_TP">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="130" y="70" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+          </OnLoaded>
+          <OnOK>
+            luaGMChar:GMCharSetTP();
+          </OnOK>
+        </Event>
+      </Edit>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="300" y="70" />
+          <Size w="80" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_CHANGE" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:GMCharSetTP();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 캐릭터 소지금액 -->
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="100" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Shape>
+          <Align>hcenter,vcenter</Align>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "MONEY") );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Edit name="edtGMChar_Money">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="130" y="100" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+          </OnLoaded>
+          <OnOK>
+            luaGMChar:GMCharSetMoney();
+          </OnOK>
+        </Event>
+      </Edit>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="300" y="100" />
+          <Size w="80" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_CHANGE" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:GMCharSetMoney();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 갱신 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="400" y="40" />
+          <Size w="80" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMCHAR_REFRESH" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:RefreshGMCharInfo();
+            luaGMChar:RefreshGMCharGrade();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 권한 설정 -->
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="550" y="10" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_SETGRADE" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+      
+      <Selector name="selGMChar_Grade">
+        <Look>lookDefSelector</Look>
+        <Layout>
+          <Location x="560" y="50" />
+          <Size w="300" h="18" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            luaGMChar:OnLoadedselGMChar_Grade();
+          </OnLoaded>
+          <OnSelChange>
+            luaGMChar:OnSelChangeselGMChar_Grade();
+          </OnSelChange>
+        </Event>
+      </Selector>
+
+      <!-- Ghost -->
+      <Button name="btnFilterGhost">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="550" y="100" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "UI_GMTOOL_GHOST"));
+          </OnLoaded>
+          <OnValueChanged>
+            luaGMChar:GMCharSetGhost();
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+  <!-- 작업창 -->
+  <Panel name="pnlCharWorks" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="235" />
+      <Size w="%100" h="380" />
+    </Layout>
+    <Shape>
+      <!--<ShowRect>true</ShowRect>-->
+    </Shape>
+    <Controls>
+      
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="38"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TabCtrl name="tbcCharListTab">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaGMChar:OnLoadedCharListTab();
+          </OnLoaded>
+          <OnSelChange>
+            luaGMChar:OnSelChangeGMCharListTab();
+          </OnSelChange>
+        </Event>
+        <TabPages>
+          
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgGMChar_Item">
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+              </Controls>
+            </Page>
+          </TabPage>
+
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgGMChar_Skill">
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+              </Controls>
+            </Page>
+          </TabPage>
+
+          <!-- Tab 3 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgGMChar_AddQuest">
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+              </Controls>
+            </Page>
+          </TabPage>
+
+          <!-- Tab 4 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgGMChar_CompleteQuest">
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+              </Controls>
+            </Page>
+          </TabPage>
+
+        </TabPages>
+
+      </TabCtrl>
+      
+    </Controls>
+  </Panel>
+
+  <Panel parent="pgGMChar_Item">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+      <OnLoaded></OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="%50" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 검색 입력 -->
+      <Edit name="edtGMChar_ItemSearch">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="20" y="20" />
+          <Size w="270" h="25" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnOK>
+            luaGMChar:GMCharSearchItem();
+          </OnOK>
+        </Event>
+      </Edit>
+
+      <!-- 찾기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="310" y="20" />
+          <Size w="80" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SEARCH" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:GMCharSearchItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 검색 리스트 -->
+      <ListCtrl name="lcGMChar_SearchItem">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="50" />
+          <Size w="%48" h="%74" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_SearchItemRClick();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 등록 리스트 -->
+      <ListCtrl name="lcGMChar_AddItem">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="510" y="10" />
+          <Size w="%30" h="321" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_DeleteAddItem();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 넣기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="20" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMCHAR_GIVEITEM" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:GiveItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 목록삭제 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="110" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ALLCLEAR" ) );</OnLoaded>
+          <OnClick>
+            lcGMChar_AddItem:DeleteAllItems();
+          </OnClick>
+        </Event>
+      </Button>
+
+     </Controls>
+  </Panel>
+
+  <Panel parent="pgGMChar_Skill">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+      <OnLoaded></OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="%50" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 검색 입력 -->
+      <Edit name="edtGMChar_SkillSearch">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="20" y="20" />
+          <Size w="270" h="25" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnOK>
+            luaGMChar:GMCharSearchSkill();
+          </OnOK>
+        </Event>
+      </Edit>
+
+      <!-- 찾기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="310" y="20" />
+          <Size w="80" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SEARCH"));</OnLoaded>
+          <OnClick>
+            luaGMChar:GMCharSearchSkill();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 검색 리스트 -->
+      <ListCtrl name="lcGMChar_SearchSkill">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="50" />
+          <Size w="%48" h="%74" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_SearchSkillRClick();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 등록 리스트 -->
+      <ListCtrl name="lcGMChar_AddSkill">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="510" y="10" />
+          <Size w="%30" h="321" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_DeleteAddSkill();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 추가 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="20" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ADD" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:AddTalent();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 목록삭제 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="110" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ALLCLEAR" ) );</OnLoaded>
+          <OnClick>
+            lcGMChar_AddSkill:DeleteAllItems();
+          </OnClick>
+        </Event>
+      </Button>
+
+     </Controls>
+  </Panel>
+
+  <Panel parent="pgGMChar_AddQuest">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+      <OnLoaded></OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="%50" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 검색 입력 -->
+      <Edit name="edtGMChar_QuestSearch">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="20" y="20" />
+          <Size w="270" h="25" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnOK>
+            luaGMChar:GMCharSearchQuest();
+          </OnOK>
+        </Event>
+      </Edit>
+
+      <!-- 찾기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="310" y="20" />
+          <Size w="80" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SEARCH"));</OnLoaded>
+          <OnClick>
+            luaGMChar:GMCharSearchQuest();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 검색 리스트 -->
+      <ListCtrl name="lcGMChar_SearchQuest">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="50" />
+          <Size w="%48" h="%74" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_SearchQuestRClick();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 등록 리스트 -->
+      <ListCtrl name="lcGMChar_AddQuest">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="510" y="10" />
+          <Size w="%30" h="321" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_DeleteAddQuest();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 추가 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="20" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ADD" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:AddQuest();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 목록삭제 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="110" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ALLCLEAR" ) );</OnLoaded>
+          <OnClick>
+            lcGMChar_AddQuest:DeleteAllItems();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+  <Panel parent="pgGMChar_CompleteQuest">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+      <OnLoaded></OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="%50" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      <!-- 검색 리스트 -->
+      <ListCtrl name="lcGMChar_SearchMyQuest">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="%48" h="321" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_SearchMyQuestRClick();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 등록 리스트 -->
+      <ListCtrl name="lcGMChar_AddMyQuest">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="510" y="10" />
+          <Size w="%30" h="321" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ViewStyle>list</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+        </Shape>
+        <Event>
+          <OnItemRClick>
+            luaGMChar:GMChar_DeleteAddMyQuest();
+          </OnItemRClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 완료 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="20" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMCHAR_COMPLETE" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:CompleteQuest();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 목록삭제 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="850" y="110" />
+          <Size w="100" h="60" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ALLCLEAR" ) );</OnLoaded>
+          <OnClick>
+            lcGMChar_AddMyQuest:DeleteAllItems();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlCharBottom" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="615" />
+      <Size w="%100" h="75" />
+    </Layout>
+    <Shape>
+      <!--<ShowRect>true</ShowRect>-->
+    </Shape>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="%50" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 안내문구 -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="%38" h="%65" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ADDREALSE_INFOTEXT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- 인벤토리 초기화 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="530" y="20" />
+          <Size w="120" h="40" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMCHAR_INVENCLEAR" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:InvenClear();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 스킬 초기화 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="680" y="20" />
+          <Size w="120" h="40" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMCHAR_SKILLCLEAR" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:ResetTalent();
+          </OnClick>
+        </Event>
+      </Button>
+      
+      <!-- 퀘스트 초기화-->
+      <Button name="btnQuestClear">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="830" y="20" />
+          <Size w="120" h="40" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMCHAR_QUESTCLEAR" ) );</OnLoaded>
+          <OnClick>
+            luaGMChar:ResetQuest();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+  
+</UI>

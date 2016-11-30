@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Frame -->
+  <Frame name="frmEmblem" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="500" y="100" />
+      <Size w="340" h="300" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_EMBLEM"));
+        luaGame:RegisterWindow( frmEmblem);
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="325" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+          <Anchor left="false" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <Text></Text>
+        </Shape>
+        <Event>
+          <OnClick>frmEmblem:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+</UI>

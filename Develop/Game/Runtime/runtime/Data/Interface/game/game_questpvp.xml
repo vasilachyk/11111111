@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_questpvp.lua" />
+
+
+  <!-- Frame -->
+  <Frame name="frmQuestPVP" parent="layerGame0">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Location x="%100" y="%100" base="BOTTOMRIGHT"/>
+      <Size w="200" h="100" />
+      <Anchor left="true" top="true" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <Opacity>1.0</Opacity>
+      <ShowTitleBar>false</ShowTitleBar>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <!--  <OnEnter>frmQuestPVP:SetOpacity( 1.0);</OnEnter>
+      <OnLeave>frmQuestPVP:SetOpacity( 1.0);</OnLeave>-->
+      <OnNcHitTest>return luaQuestPVP:OnNcHitTestQuestPVPFrame();</OnNcHitTest>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmQuestPVP);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmQuestPVP);
+        elseif ( arg == "RESET_UI")  then     luaQuestPVP:ResetUI();
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture name="picQuestPVP">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpQuestPVP</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- TextView : Message -->
+      <TextView name="tvwQuestPVPMsgTeam1">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="20" y="0" />
+          <Size w="80" h="100" />
+        </Layout>
+        <Shape>
+          <Static>true</Static>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnDraw>luaQuestPVP:OnDrawHPInfoTeam1();</OnDraw>
+        </Event>
+      </TextView>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwQuestPVPMsgTeam2">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="100" y="0" />
+          <Size w="80" h="100" />
+        </Layout>
+        <Shape>
+          <Static>true</Static>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnDraw>luaQuestPVP:OnDrawHPInfoTeam2();</OnDraw>
+        </Event>
+      </TextView>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="90" y="9" />
+          <Size w="20" h="30" />
+        </Layout>
+        <Image>bmpQuestPVP_C</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+  <!-- Group : KILL EFFECT UI -->
+  <Panel name="frmQPVPKillEffect" parent="layerGame0">
+
+    <!-- Look : TextView -->
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true" />
+    </Layout>
+
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <Opacity>1.0</Opacity>
+      <ShowTitleBar>false</ShowTitleBar>
+      <ShowBorder>false</ShowBorder>
+      <Static>false</Static>
+    </Shape>
+
+    
+    <Controls>
+      
+      <!-- TextView : Message -->
+      <TextView name="tvwQPVPKillEffect">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Shape>
+          <Visible>true</Visible>
+          <Resize>false</Resize>
+          <Movable>false</Movable>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnDraw>luaQuestPVP:OnDrawKillEffect();</OnDraw>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Panel>
+</UI>

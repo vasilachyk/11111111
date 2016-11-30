@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_guidebook.lua" />
+
+  <!-- Panel : GuideBook -->
+  <Panel parent="tpgJournalGuideBook">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="490" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- CategoryCtrl : GuideBook list -->
+      <CategoryCtrl name="ctvGuideBookList">
+        <Look>lookDefCategoryCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <ko_KR>
+            <Location x="5" y="5" />
+            <Size w="335" h="480" />
+          </ko_KR>
+          <Location x="5" y="5" />
+          <Size w="435" h="480" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowRootItem>false</ShowRootItem>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="210">name</AddColumn>
+          <AddColumn align="right,vcenter" width="80">make</AddColumn>
+        </Shape>
+        <Event>
+          <OnSelChange>luaGuideBook:OnSelChangeGuideBookList();</OnSelChange>
+        </Event>
+      </CategoryCtrl>
+
+    </Controls>
+  </Panel>
+ 

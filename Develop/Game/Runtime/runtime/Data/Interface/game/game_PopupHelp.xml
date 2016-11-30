@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_PopupHelp.lua" />
+ 
+
+  <!-- Panel : PopupHelp frame -->
+  <Panel name="pnlPopupHelpFrame" parent="layerGame0">
+    <Layout>
+      <Location x="0" y="200" />
+      <Size w="400" h="200" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Static>true</Static>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <OnShow>luaPopupHelp:OnShowPopupHelpFrame();</OnShow>
+      <OnUpdate>luaPopupHelp:OnUpdatePopupHelpFrame();</OnUpdate>
+      <OnTimer>luaPopupHelp:OnTimerPopupHelpFrame();</OnTimer>
+    </Event>
+    <Controls>
+
+      <!-- Background image -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="200" h="165" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpGradationNone</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Opacity>0.95</Opacity>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="200" y="25" />
+          <Size w="200" h="165" />
+          <Anchor left="false" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpGradationLeft</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Opacity>0.95</Opacity>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="-400" y="15" />
+          <Size w="800" h="17" />
+          <Anchor left="false" top="true" right="true" bottom="false" />
+        </Layout>
+        <Image>bmpGlowBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="-200" y="17" />
+          <Size w="400" h="13" />
+          <Anchor left="false" top="true" right="true" bottom="false" />
+        </Layout>
+        <Image>bmpGlowBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="-400" y="200" base="BOTTOMLEFT" />
+          <Size w="800" h="17" />
+          <Anchor left="false" top="false" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpGlowBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="-200" y="198" base="BOTTOMLEFT" />
+          <Size w="400" h="13" />
+          <Anchor left="false" top="false" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpGlowBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- LabelEx : Title -->
+      <LabelEx>
+        <Layout>
+          <Location x="10" y="0" />
+          <Size w="%100" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntRegularStrong</Font>
+          <FontColor r="230" g="230" b="230" />
+          <Align>left,bottom</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TUTORIAL"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+       <!-- TextView : Message -->
+      <TextView name="tvwPopupHelpMsg">
+        <Look>lookHelpTextView</Look>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="300" h="140" />
+          <Anchor left="true" top="true" right="false" bottom="true" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+      <!-- Picture : Help Img -->
+      <Picture name="ImgHelp">
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="610 " h="208" />
+        </Layout>
+        <Image></Image>
+      </Picture>
+
+    </Controls>
+  </Panel>
+</UI>

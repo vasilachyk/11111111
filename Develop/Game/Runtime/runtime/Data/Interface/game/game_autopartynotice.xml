@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_autopartynotice.lua" />
+
+  <Group name="frmAutoPartyNotice" parent="layerGame0">
+    <Look>lookDefGroupBox</Look>
+    <Layout>
+      <Location x="834" y="670" />
+      <Size w="172" h="40" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <Opacity>0.8</Opacity>
+      <ShowTitleBar>false</ShowTitleBar>
+      <Static>false</Static>
+      <EnableFocus>true</EnableFocus>
+    </Shape>
+    <Event>
+      <!--<OnEnter>frmAutoPartyNotice:SetOpacity( 1.0);</OnEnter>-->
+      <!--<OnLeave>frmAutoPartyNotice:SetOpacity( 0.8);</OnLeave>-->
+      <!--<OnClick>luaTrayAutoParty:OnClick();</OnClick>-->
+      <OnTimer>luaAutoParty:OnTimerAutoPartyNoticeFrame();</OnTimer>
+      <!--<OnNcHitTest>return luaAutoParty:OnNcHitTestAutoPartyNoticeFrame();</OnNcHitTest>-->
+      <!--<OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmAutoPartyNotice);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmAutoPartyNotice);
+        end
+      </OnUserArgument>-->
+    </Event>
+    <Controls>
+
+    </Controls>
+  </Group>
+
+
+  <!-- TextView : Message -->
+  <TextView name="tvwAddPartyMemberMsg" parent="frmAutoPartyNotice">
+    <!--<Look>lookDefTextView</Look>-->
+    <Layout>
+      <Location x="2" y="5" />
+      <Size w="168" h="30" />
+    </Layout>
+    <Shape>
+      <Static>false</Static>
+      <ShowBorder>false</ShowBorder>
+      <ShowScrollBar>hide</ShowScrollBar>
+    </Shape>
+    <Event>
+      <OnClick>luaTrayAutoParty:OnClick();</OnClick>
+    </Event>
+  </TextView>
+  
+</UI>

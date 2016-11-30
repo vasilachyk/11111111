@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_expo.lua" />
+
+
+  <!-- Resource -->
+  <Resource>
+    <Bitmap name="bmpHelpKey" file="Data/Interface/game/resource/img_helpkey.tga" />
+  </Resource>
+
+
+  <!-- Picture : Help key -->
+  <Picture name="picHelpKey" parent="layerGame0">
+    <Layout>
+      <Location x="%100" y="%90" base="BOTTOMRIGHT"/>
+      <Size w="140" h="78" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Image>bmpHelpKey</Image>
+    <Shape>
+      <Visible>false</Visible>
+      <Opacity>0.5</Opacity>
+      <Stretch>true</Stretch>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        if ( gamefunc:IsServerModeExpo() == true)  then  picHelpKey:Show( true);
+        end
+      </OnLoaded>
+    </Event>
+  </Picture>
+
+</UI>
+

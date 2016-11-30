@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_chattingbox.lua" />
+
+
+  <!-- PopupMenu : Prefix selector -->
+  <PopupMenu name="pmChattingPrefixSelector">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="100" h="125" />
+    </Layout>
+    <Controls>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_GENERALMSG"));</OnLoaded>
+          <OnClick>cmwChattingBox:SetPrefix( 0, STR( "UI_CHATTING_GENERALMSG"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_ALLMSG"));</OnLoaded>
+          <OnClick>cmwChattingBox:SetPrefix( 1, STR( "UI_CHATTING_ALLMSG"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="50" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_FIELDMSG"));</OnLoaded>
+          <OnClick>cmwChattingBox:SetPrefix( 2, STR( "UI_CHATTING_FIELDMSG"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="75" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOUTS"));</OnLoaded>
+          <OnClick>cmwChattingBox:SetPrefix( 3, STR( "UI_CHATTING_SHOUTS"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="100" />
+          <Size w="100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_PARTYMSG"));</OnLoaded>
+          <OnClick>cmwChattingBox:SetPrefix( 4, STR( "UI_CHATTING_PARTYMSG"));</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Chatting message box -->
+  <ChattingBox name="cmwChattingBox" parent="layerGame0">
+    <Look>lookDefChatBox</Look>
+    <Look type="edit">lookChatEdit</Look>
+    <Look type="small_text">lookDefSmallChatMsg</Look>
+    <Look type="normal_text">lookDefNormalChatMsg</Look>
+    <Look type="large_text">lookDefLargeChatMsg</Look>
+    <Look type="tab">lookDefChatBoxTab</Look>
+    <Look type="adder">lookDefAddButton</Look>
+    <Look type="remover">lookDefDeleteButton</Look>
+    <Look type="property">lookDefChattingBoxProperty</Look>
+    <Look type="scrollbar">lookDefScrollBar</Look>
+    <Look type="endlinebtn">lookDefChatEndLine</Look>
+    <Layout>
+      <Location x="5" y="500" />
+      <Size w="350" h="180" />
+    </Layout>
+    <Shape>
+      <HeaderHeight>30</HeaderHeight>
+      <ThumbLength>26</ThumbLength>
+      <AdderSize w="12" h="12"/>
+      <RemoverSize w="12" h="12"/>
+      <PropertySize w="16" h="16"/>
+      <PrefixSelector>pmChattingPrefixSelector</PrefixSelector>
+    </Shape>
+    <Event>
+      <OnLoaded>cmwChattingBox:SetPrefix( 0, STR( "UI_CHATTING_GENERALMSG"));</OnLoaded>
+      <OnItemClick>luaChattingBox:OnItemClickChattingBox();</OnItemClick>
+      <OnItemRClick>luaChattingBox:OnItemRClickChattingBox();</OnItemRClick>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaChattingBox:RestoreChattingBox();
+        elseif ( arg == "RECORD_UI")  then    luaChattingBox:RecordChattingBox();
+        end
+      </OnUserArgument>
+    </Event>
+  </ChattingBox>
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Frame : Chatting box property -->
+  <Frame name="frmChatBoxProperty" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="400" h="560" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_SETTINGS"));</OnLoaded>
+      <OnShow>luaChattingBox:OnShowChatBoxPropertyFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmChatBoxProperty:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="495" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- Chatting tab options -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Image>bmpContentBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_CHATTINGTABSETTING"));</OnLoaded>
+        </Event>
+      </Label>
+      
+      
+      <!-- Edit : Chatting box name -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="70" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_DISPLAYNAME"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Edit name="edtChatBoxName">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="110" y="70" />
+          <Size w="260" h="23" />
+        </Layout>
+        <Shape>
+        </Shape>
+      </Edit>
+
+
+      <!-- Text size -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="105" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_TEXTSIZE"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Selector name="selChatTextSize">
+        <Look>lookDefSelector</Look>
+        <Layout>
+          <Location x="120" y="105" />
+          <Size w="240" h="18" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            selChatTextSize:ResetContent();
+            selChatTextSize:AddItem( "", 0);
+            selChatTextSize:AddItem( "", 1);
+            selChatTextSize:AddItem( "", 2);
+          </OnLoaded>
+        </Event>
+      </Selector>
+
+      <LabelEx>
+        <Layout>
+          <Location x="80" y="125" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Shape>
+          <Font>fntSmallStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_FONTSIZESMALL"));</OnLoaded>
+        </Event>
+      </LabelEx>
+      
+      <LabelEx>
+        <Layout>
+          <Location x="190" y="125" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_FONTSIZEMIDDLE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <LabelEx>
+        <Layout>
+          <Location x="300" y="125" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Shape>
+          <Font>fntRegularStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_FONTSIZELARGE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- Button : Filtering general chatting messages -->
+      <Button name="btnChatFilterGeneral">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="150" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWGENERALMSG"));</OnLoaded>
+        </Event>
+      </Button>
+      
+
+      <!-- Button : Filtering system chatting messages -->
+      <Button name="btnChatFilterSystem">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="175" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWSYSTEMMSG"));</OnLoaded>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Filtering whisper chatting messages -->
+      <Button name="btnChatFilterWhisper">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="200" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWWHISPERMSG"));</OnLoaded>
+        </Event>
+      </Button>
+
+
+      <Button name="btnChatFilterField">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="225" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWFIELDMSG"));</OnLoaded>
+        </Event>
+      </Button>
+
+      <!-- Button : Filtering shouting messages -->
+      <Button name="btnChatFilterShouting">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="250" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWSHOUTSMSG"));</OnLoaded>
+        </Event>
+      </Button>
+      
+      
+      <!-- Button : Filtering party chatting messages -->
+      <Button name="btnChatFilterParty">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="275" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWPARTYMSG"));</OnLoaded>
+        </Event>
+      </Button>
+      
+
+      <!-- Button : Filtering guild chatting messages -->
+      <Button name="btnChatFilterGuild">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="300" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWGUILDMSG"));</OnLoaded>
+        </Event>
+      </Button>
+
+      
+      <!-- Button : Filtering auction chatting messages -->
+      <Button name="btnChatFilterAuction">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="325" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWAUCTIONMSG"));</OnLoaded>
+        </Event>
+      </Button>
+      
+
+      <!-- Button : Filtering channel chatting messages -->
+      <Button name="btnChatFilterChannel">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="325" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWPRIVATECHAT"));</OnLoaded>
+        </Event>
+      </Button>
+
+      
+      <!-- Button : Filtering battle chatting messages -->
+      <Button name="btnChatFilterBattle">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="350" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_SHOWBATTLECHAT"));</OnLoaded>
+        </Event>
+      </Button>
+
+
+
+      
+      <!-- Chatting box options -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="400" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Image>bmpContentBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="400" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_CHATBOXSETTINGS"));</OnLoaded>
+        </Event>
+      </Label>
+
+
+      <!-- Button : Fixed chatting box -->
+      <Button name="btnFixedChattingBox">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="435" />
+          <Size w="360" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_LOCKCHATTINGBOX"));</OnLoaded>
+        </Event>
+      </Button>
+      
+      
+      <!-- Opacity -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="465" />
+          <Size w="120" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_TRANSPARENCY"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Slider name="sldChattingBoxOpacity">
+        <Look>lookDefSlider</Look>
+        <Layout>
+          <Location x="130" y="465" />
+          <Size w="240" h="23" />
+        </Layout>
+        <Shape>
+          <Style>horizontal</Style>
+          <ScrollRange min="0" max="100"/>
+          <ScrollValue>50</ScrollValue>
+        </Shape>
+      </Slider>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="500" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Reset -->
+      <Button>
+        <Look>lookDefNoticeButton</Look>
+        <Layout>
+          <Location x="10" y="510" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_RESET"));</OnLoaded>
+          <OnClick>
+            luaChattingBox:Reset();
+            frmChatBoxProperty:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+      
+      
+      <!-- Button : Apply -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="150" y="510" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_APPLY"));</OnLoaded>
+          <OnClick>
+            luaChattingBox:ApplyChatBoxProperty();
+            frmChatBoxProperty:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Button : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="270" y="510" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmChatBoxProperty:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Popup menu -->
+  <PopupMenu name="pmChattingBoxPopupMenu">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="150" h="75" />
+    </Layout>
+    <Controls>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SETTINGS"));</OnLoaded>
+          <OnClick>luaChattingBox:PopupMenuChangeProperty();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnChatBoxFixed">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHATTING_LOCKCHATTINGBOX"));</OnLoaded>
+          <OnClick>cmwChattingBox:SetFixed( not cmwChattingBox:IsFixed());</OnClick>
+        </Event>
+      </Button>
+      
+      <Picture>
+        <Layout>
+          <Location x="0" y="49" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="50" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DELETE"));</OnLoaded>
+          <OnClick>luaChattingBox:PopupMenuDeleteChatTab();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+
+</UI>

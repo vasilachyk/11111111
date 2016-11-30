@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_MyMarket.lua" />
+
+  <Panel name="pnlMyMarket" parent="pgMyMarket">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Event>
+      <OnLoaded>luaMyMarket:OnLoadedMyMarket();</OnLoaded>
+    </Event>
+    <Controls>
+      
+      <!-- Register Text
+      <TextView>
+        <Layout>
+          <Location x="110" y="20" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntBold\"}{COLOR r= 160 g= 120  b= 55 }{ALIGN hor=\"left\" ver=\"center\"}" ..  FORMAT( "UI_TRADEMAKET_REGISTER_TEXT", gamefunc:GetRegisteredMaxCnt() ) );</OnLoaded>
+        </Event>
+      </TextView>
+       -->
+
+      <!-- 등록 물품 갯수 출력용 -->
+      <TextView name="RegisteredCnt">
+        <Layout>
+          <Location x="10" y="500" />
+          <Size w="200" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+      <!-- 물품등록 버튼 -->
+      <Button name="btnRegister">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <de_DE>
+            <Location x="820" y="75" />
+            <Size w="175" h="30" />
+          </de_DE>
+          <Location x="820" y="75" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_REGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:ClickRegister();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 상단 바 
+      <Picture name="picMyMarketTopSeperateBar">
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      -->
+
+      <!-- 판매 관리 텍스트 -->
+      <TextView name="tvwSalesMng">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <de_DE>
+            <Location x="10" y="190" />
+            <Size w="360" h="25" />
+          </de_DE>
+          <Location x="10" y="200" />
+          <Size w="360" h="20" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntLarge\"}{COLOR r= 160 g= 120  b= 55 }" .. STR( "UI_TRADEMAKET_SALES_MANAGEMENT") );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- 판매 관리 리스트 -->
+      <ListCtrl name="lcSalesManagement">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="100" />
+          <Size w="970" h="185" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <!--
+          <AddColumn align="hcenter,vcenter" width="430">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="90">level</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="90">quantity</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="170">uintprice</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">expiry</AddColumn>
+          -->
+
+          <AddColumn align="hcenter,vcenter" width="370">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="60">level</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="80">quantity</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="170">price</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">expiry</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">sailes state</AddColumn>
+          
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMyMarket:InitSalesManagement();</OnLoaded>
+          <OnSelChange></OnSelChange>
+          <OnDrawItemBkgrnd>luaTradeMarket:OnDrawItemBkgrndPrice( luaMyMarket.REGISTERED_COLUMN.UINTPRICE, lcSalesManagement );</OnDrawItemBkgrnd>
+          <OnPreDrawItem>return luaTradeMarket:OnPreDrawItemPrice( luaMyMarket.REGISTERED_COLUMN.UINTPRICE );</OnPreDrawItem>
+          <OnToolTip>luaMyMarket:ToolTipRegisteredItem();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+      <!-- Cancel1 Btn -->
+      <Button name="btnCancel1">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 0 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel2 Btn -->
+      <Button name="btnCancel2">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 1 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel3 Btn -->
+      <Button name="btnCancel3">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 2 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel4 Btn -->
+      <Button name="btnCancel4">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 3 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel5 Btn -->
+      <Button name="btnCancel5">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 4 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel6 Btn -->
+      <Button name="btnCancel6">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 5 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel7 Btn -->
+      <Button name="btnCancel7">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 6 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel8 Btn -->
+      <Button name="btnCancel8">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 7 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel9 Btn -->
+      <Button name="btnCancel9">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 8 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Cancel10 Btn -->
+      <Button name="btnCancel10">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="500" y="500" />
+          <Size w="60" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_UNREGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:UnregisterItem( 9 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 페이지 -->
+      <Panel name="pnlRegisteredPage">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="30" />
+        </Layout>
+        <Controls>
+
+          <Button name="btnRegisteredFirstPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="250" y="0" />
+                <Size w="90" h="25" />
+              </de_DE>
+              <Location x="320" y="0" />
+              <Size w="70" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_FIRSTPAGE" ) );</OnLoaded>
+              <OnClick>luaMyMarket:RegisteredPageBtnClick( "btnFirstPage" );</OnClick>
+            </Event>
+          </Button>
+
+          <Button name="btnRegisteredPrevPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="350" y="0" />
+                <Size w="90" h="25" />
+              </de_DE>
+              <Location x="400" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_PREVPAGE" ) );</OnLoaded>
+              <OnClick>luaMyMarket:RegisteredPageBtnClick( "btnPrevPage" );</OnClick>
+            </Event>
+          </Button>
+
+          <TextView name="tvwRegisteredPage">
+            <Layout>
+              <de_DE>
+                <Location x="450" y="0" />
+                <Size w="60" h="25" />
+              </de_DE>
+              <Location x="470" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Shape>
+              <ShowBorder>false</ShowBorder>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <DragAndDrop>true</DragAndDrop>
+            </Shape>
+            <Event>
+            </Event>
+          </TextView>
+
+          <Button name="btnRegisteredNextPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="520" y="0" />
+                <Size w="80" h="25" />
+              </de_DE>
+              <Location x="540" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_NEXTPAGE" ) );</OnLoaded>
+              <OnClick>luaMyMarket:RegisteredPageBtnClick( "btnNextPage" );</OnClick>
+            </Event>
+          </Button>
+
+        </Controls>
+      </Panel>
+
+      <!-- Search Seperate Bar -->
+      <Picture name="picMyMarketSeperateBar">
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      <!-- 정산 텍스트 -->
+      <TextView name="tvwCalculate">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <de_DE>
+            <Location x="10" y="190" />
+            <Size w="360" h="25" />
+          </de_DE>
+          <Location x="10" y="200" />
+          <Size w="360" h="20" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntLarge\"}{COLOR r= 160 g= 120  b= 55 }" .. STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <ListCtrl name="lcCalculate">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="100" />
+          <Size w="970" h="185" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <AddColumn align="hcenter,vcenter" width="430">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="90">level</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="90">quantity</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="170">uintprice</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">expiry</AddColumn>
+          <!--
+          <AddColumn align="hcenter,vcenter" width="380">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="60">level</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="80">quantity</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="170">price</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">expiry</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">sailes state</AddColumn>
+          -->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMyMarket:InitCalculateList()</OnLoaded>
+          <OnSelChange></OnSelChange>
+          <OnItemClick></OnItemClick>
+          <OnDrawItemBkgrnd>luaTradeMarket:OnDrawItemBkgrndPrice( luaMyMarket.CALULATE_COLUMN.PRICE, lcCalculate );</OnDrawItemBkgrnd>
+          <OnPreDrawItem>return luaTradeMarket:OnPreDrawItemPrice( luaMyMarket.CALULATE_COLUMN.PRICE );</OnPreDrawItem>
+          <OnToolTip>luaMyMarket:ToolTipCalculateItem();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+      <!-- 모두 정산하기 -->
+      <Button name="btnAllCalculateItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="430" y="490" />
+          <Size w="140" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_CACULATE_ALL") );</OnLoaded>
+          <OnClick>luaMyMarket:AllCalculateItem();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 정산 or 회수 -->
+      <Button name="btnCalculateItem1">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="905" y="63" />
+          <Size w="70" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+          <OnClick>luaMyMarket:CalculateItem( 0 );</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnCalculateItem2">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="905" y="89" />
+          <Size w="70" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+          <OnClick>luaMyMarket:CalculateItem( 1 );</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnCalculateItem3">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="905" y="115" />
+          <Size w="70" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+          <OnClick>luaMyMarket:CalculateItem( 2 );</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnCalculateItem4">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="905" y="141" />
+          <Size w="70" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+          <OnClick>luaMyMarket:CalculateItem( 3 );</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnCalculateItem5">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="905" y="141" />
+          <Size w="70" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+          <OnClick>luaMyMarket:CalculateItem( 4 );</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnCalculateItem6">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="905" y="141" />
+          <Size w="70" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+          <OnClick>luaMyMarket:CalculateItem( 5 );</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnCalculateItem7">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="905" y="141" />
+          <Size w="70" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TAB_CALCULATE") );</OnLoaded>
+          <OnClick>luaMyMarket:CalculateItem( 6 );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 페이지 -->
+      <Panel name="pnlCalculatePage">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="30" />
+        </Layout>
+        <Controls>
+
+          <Button name="btnCalculateFirstPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="270" y="0" />
+                <Size w="90" h="25" />
+              </de_DE>
+              <Location x="320" y="0" />
+              <Size w="70" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_FIRSTPAGE" ) );</OnLoaded>
+              <OnClick>luaMyMarket:CalulatePageBtnClick( "btnFirstPage" );</OnClick>
+            </Event>
+          </Button>
+
+          <Button name="btnCalculatePrevPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="370" y="0" />
+                <Size w="90" h="25" />
+              </de_DE>
+              <Location x="400" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_PREVPAGE" ) );</OnLoaded>
+              <OnClick>luaMyMarket:CalulatePageBtnClick( "btnPrevPage" );</OnClick>
+            </Event>
+          </Button>
+
+          <TextView name="tvwCalculatePage">
+            <Layout>
+              <Location x="470" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Shape>
+              <ShowBorder>false</ShowBorder>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <DragAndDrop>true</DragAndDrop>
+            </Shape>
+            <Event>
+            </Event>
+          </TextView>
+
+          <Button name="btnCalculateNextPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <de_DE>
+                <Location x="540" y="0" />
+                <Size w="80" h="25" />
+              </de_DE>
+              <Location x="540" y="0" />
+              <Size w="60" h="25" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_NEXTPAGE" ) );</OnLoaded>
+              <OnClick>luaMyMarket:CalulatePageBtnClick( "btnNextPage" );</OnClick>
+            </Event>
+          </Button>
+
+        </Controls>
+      </Panel>
+      
+    </Controls>
+  </Panel>
+
+  <!-- Frame : Confirm UnRegister item -->
+  <Frame name="frmConfirmUnRegisterItem" parent="frmTradeMarket">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="500" h="235" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CANCEL"));
+        this:Show( false );
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="485" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmUnRegisterItem:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmUnRegisterItem">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="40" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_CONFIRM_UNREGISTER_ITEM") );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <TextView>
+        <Layout>
+          <Location x="0" y="80" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntBold\"}{COLOR r=160 g=120 b=55}{ALIGN hor=\"center\" ver=\"center\"}" .. STR( "UI_TRADEMAKET_CONFIRM_UNREGISTER_TEXT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="105" />
+          <Size w="470" h="80" />
+        </Layout>
+      </Group>
+
+      <!-- Item Image -->
+      <TextView name="tvwConfirmUnRegisteredItemImage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="20" y="115" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+      <!-- Item Name -->
+      <TextView name="tvwConfirmUnRegisteredItemName">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="80" y="115" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Item SalesNum -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="80" y="137" />
+          <Size w="60" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "QUANTITY") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- Item SalesNum -->
+      <TextView name="tvwConfirmUnRegisteredSalesNum">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="140" y="140" />
+          <Size w="40" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Item Unit Price -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="210" y="137" />
+          <Size w="80" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_UNITPRICE") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- Item Unit Price -->
+      <TextView name="tvwConfirmUnRegisteredUnitPrice">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="320" y="140" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Item Total Price -->
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="210" y="157" />
+          <Size w="80" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TOTALPRICE") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- Item Total Price -->
+      <TextView name="tvwConfirmUnRegisteredTotalPrice">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="320" y="160" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="190" />
+          <Size w="230" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            luaMyMarket:ShowfrmConfirmUnRegisterItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="250" y="190" />
+          <Size w="230" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            frmConfirmUnRegisterItem:Show( false );
+          </OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+  <!-- 물품 등록 창 -->
+  <Frame name="frmRegisterItem" parent="frmTradeMarket">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="330" h="400" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_TRADEMAKET_ITEM_REGISTER" ) );
+        this:Show( false );
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- 종료 버튼 -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="315" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaMyMarket:ClosefrmRegisterItem();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 등록아이템 베이스 -->
+      <Picture name="RegisterItemImageBase">
+        <Layout>
+          <Location x="100" y="80" />
+          <Size w="60" h="60" />
+        </Layout>
+        <Image>bmpEmblemSlot</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 이미지 -->
+      <Picture name="RegisterItemImage">
+        <Layout>
+          <Location x="105" y="85" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+        <Event>
+        </Event>
+      </Picture>
+
+      <!-- Drag and Drop 용 -->
+      <TextView name="tvwDropArea">
+        <Layout>
+          <Location x="80" y="60" />
+          <Size w="70" h="70" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnDrop>luaMyMarket:OnDropItem();</OnDrop>
+          <OnToolTip>luaMyMarket:ToolTipRegisterItem();</OnToolTip>
+          <OnDblClick>luaMyMarket:ReleaseRegisterItem();</OnDblClick>
+          <OnRClick>luaMyMarket:ReleaseRegisterItem();</OnRClick>
+        </Event>
+      </TextView>
+
+
+      <!-- 등록 물품 이름 -->
+      <TextView name="tvwRegisterItemName">
+        <Layout>
+          <Location x="0" y="150" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntBold\"}{ALIGN hor=\"center\" ver=\"center\"}" .. "등록 물품 이름" );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- 상단 바 -->
+      <Picture name="picRegisterItemTopSeperateBar">
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 개당 가격 텍스트 -->
+      <Label name ="lbRegisterUnitPrice">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="80" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_UNITPRICE") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- GP 입력 -->
+      <Edit name="edtPriceGP">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="70" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>6</LimitText>
+          <Number>true</Number>
+          <Align>right,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaMyMarket:OnValueChangedConfirmPriceGP();</OnValueChanged>
+        </Event>
+      </Edit>
+
+      <!-- SP 입력 -->
+      <Edit name="edtPriceSP">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="350" y="80" />
+          <Size w="35" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>3</LimitText>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaMyMarket:OnValueChangedConfirmPriceSP();</OnValueChanged>
+        </Event>
+      </Edit>
+
+      <!-- CP 입력 -->
+      <Edit name="edtPriceCP">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="400" y="80" />
+          <Size w="35" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>3</LimitText>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaMyMarket:OnValueChangedConfirmPriceCP();</OnValueChanged>
+        </Event>
+      </Edit>
+
+      <!-- GP 텍스트 -->
+      <TextView name="tvwRegisterGPText">
+        <Layout>
+          <Location x="330" y="80" />
+          <Size w="17" h="23" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{COLOR r=230 g=180 b=20}{FONT name=\"fntSmall\"}{COLUMN h=22}{ALIGN ver=\"bottom\"}" .. STR( "GOLDPOINT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- SP 텍스트 -->
+      <TextView name="tvwRegisterSPText">
+        <Layout>
+          <Location x="380" y="80" />
+          <Size w="17" h="23" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{COLOR r=200 g=200 b=200}{FONT name=\"fntSmall\"}{COLUMN h=22}{ALIGN ver=\"bottom\"}" .. STR( "SILVERPOINT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- CP 텍스트 -->
+      <TextView name="tvwRegisterCPText">
+        <Layout>
+          <Location x="430" y="80" />
+          <Size w="17" h="23" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{COLOR r=200 g=120 b=60}{FONT name=\"fntSmall\"}{COLUMN h=22}{ALIGN ver=\"bottom\"}" .. STR( "COPPERPOINT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- 판매 갯수 텍스트 -->
+      <Label name ="lbRegisterAmount">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="80" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "QUANTITY") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- 판매 갯수 입력 -->
+      <Edit name="edtRegisterAmount">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="70" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>5</LimitText>
+          <Number>true</Number>
+          <Align>right,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnValueChanged>
+            luaMyMarket:OnValueChangedConfirmNum();
+            luaMyMarket:UpdateRegisterInfo();
+          </OnValueChanged>
+        </Event>
+      </Edit>
+
+      <!-- 총가격 텍스트 -->
+      <Label name="lbTotalPrice">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_TOTALPRICE") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- 총가격 출력 -->
+      <TextView name="tvwTotalPrice">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="180" h="23" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+      <!-- 수수료 텍스트 -->
+      <Label name="lbRegisterCommition">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="490" y="110" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_COMMITION") );</OnLoaded>
+        </Event>
+      </Label>
+
+      <!-- 수수료 출력 -->
+      <TextView name="tvwCommition">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="180" h="23" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+      <!-- 하단 바 -->
+      <Picture name="picRegisterItemBtmSeperateBar">
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 수수료 안내 -->
+      <TextView name="tvwRegisterCommition">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%95" h="80" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntScript\"}{COLOR r=160 g=120 b=55}{ALIGN hor=\"left\" ver=\"center\"}" .. STR( "UI_TRADEMAKET_CHARGE_TEXT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- 등록 확인 버튼 -->
+      <Button name="btnRegisterOk">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="350" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_ITEM_REGISTER") );</OnLoaded>
+          <OnClick>luaMyMarket:ConfirmRegisterItem();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 등록 취소 버튼 -->
+      <Button name="btnRegisterCancel">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="200" y="350" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL") );</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            luaMyMarket:ClosefrmRegisterItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+
+    </Controls>
+  </Frame>
+
+
+</UI>

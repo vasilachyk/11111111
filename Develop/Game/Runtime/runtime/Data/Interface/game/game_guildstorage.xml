@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_guildstorage.lua" />
+
+
+
+
+  <Frame name="frmGuildStorage" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="160" y="80" />
+      <Size w="356" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Text>길드보관함</Text>
+      <Icon>iconDefExclamation1</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmGuildStorage);</OnLoaded>
+      <OnShow>luaGuildStorage:OnShowFrame();</OnShow>
+      <OnSetFocus>lcGuildStorage:SetFocus();</OnSetFocus>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then     luaGame:RestoreUIPosition( frmGuildStorage);
+        elseif ( arg == "RECORD_UI")  then  luaGame:RecordUIPosition( frmGuildStorage);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="341" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmGuildStorage:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="515" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- ListCtrl : lcGuildStorage -->
+      <ListCtrl name="lcGuildStorage">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="25" />
+          <Size w="336" h="464" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="300">name</AddColumn>
+          <AddColumn align="left,vcenter" width="100">quantity</AddColumn>
+          <AddColumn align="left,vcenter" width="1">type</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ToolTip offset_x="42" offset_y="42" ></ToolTip>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnDrawItem>luaGuildStorage:OnDrawItemListCtrl();</OnDrawItem>
+          <OnItemRClick>luaGuildStorage:OnItemRClickListCtrl();</OnItemRClick>
+          <OnItemDblClick>luaGuildStorage:OnItemDblClickListCtrl();</OnItemDblClick>
+          <OnSelChange>luaGuildStorage:OnSelChangeListCtrl();</OnSelChange>
+          <OnDragBegin>return luaGuildStorage:OnDragBeginListCtrl();</OnDragBegin>
+          <OnDragEnd>return luaGuildStorage:OnDragEndListCtrl();</OnDragEnd>
+          <OnDrop>return luaGuildStorage:OnDropListCtrl();</OnDrop>
+          <OnToolTip>luaGuildStorage:OnToolTipListCtrl();</OnToolTip>
+        </Event>
+      </ListCtrl>
+      
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="490" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Item count -->
+      <LabelEx name="labGuildStorageItemCount">
+        <Layout>
+          <Location x="0" y="500" />
+          <Size w="%100" h="30" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetToolTip( STR( "UI_INVEN_ITEMCOUNTTOOLTIP"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="540" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Money -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="326" h="30" />
+        </Layout>
+      </Group>
+
+      <Picture>
+        <Layout>
+          <Location x="15" y="553" />
+          <Size w="24" h="24" />
+        </Layout>
+        <Image>iconCoin</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TextView name="tvwGuildStorageMoney">
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="326" h="30" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnDragBegin>return luaGuildStorage:OnDragBeginMoney();</OnDragBegin>
+          <OnDrop>return luaGuildStorage:OnDropMoney();</OnDrop>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+
+  <!-- Frame : Confirm item quantity -->
+  <Frame name="frmConfirmGuildStorageItemQuantity" parent="frmGuildStorage">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="260" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaGuildStorage:CloseConfirmItemQuantityFrame();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmGuildStorageItemQuantityMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+          <Text>아이템 개수를 입력하시기 바랍니다.</Text>
+        </Shape>
+      </TextView>
+
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="110" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmGuildStorageItemQuantityDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Quantity -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="145" />
+          <Size w="410" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="160" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Shape>
+          <Text>개수 :</Text>
+        </Shape>
+      </Label>
+
+      <Edit name="edtConfirmGuildStorageItemQuantity">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaGuildStorage:OnValueChangedConfirmItemQuantity();</OnValueChanged>
+          <OnOK>luaGuildStorage:DoConfirmItemQuantity();</OnOK>
+          <OnCancel>luaGuildStorage:CloseConfirmItemQuantityFrame();</OnCancel>
+        </Event>
+      </Edit>
+
+      <SpinCtrl>
+        <Look>lookDefSpinCtrl</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="15" h="23" />
+        </Layout>
+        <Shape>
+          <Buddy>edtConfirmStorageItemQuantity</Buddy>
+        </Shape>
+      </SpinCtrl>
+
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <Text>확인</Text>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaGuildStorage:DoConfirmItemQuantity();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <Text>취소</Text>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaGuildStorage:CloseConfirmItemQuantityFrame();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

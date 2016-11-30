@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_interaction_pc.lua" />
+
+  
+  
+  <!-- Frame : Interaction -->
+  <Frame name="frmInteractionPc" parent="layerGame1">
+    <Look>lookDefDialogFrame</Look>
+    <Layout>
+      <Location x="570" y="90" />
+      <Size w="430" h="200" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmInteractionPc);</OnLoaded>
+      <OnShow>luaInteractionPc:OnShowInteractionPcFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="398" y="6" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmInteractionPc:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- TextView : Interaction PC -->
+      <TextView name="tvwInteractionPc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="50" />
+          <Size w="400" h="450" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <Wrap>false</Wrap>
+         </Shape>
+        <Event>
+          <OnItemClick>luaInteractionPc:OnItemClickInteractionPc();</OnItemClick>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+
+</UI>

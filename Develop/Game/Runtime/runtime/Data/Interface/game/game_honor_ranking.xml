@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_honor_ranking.lua" />
+
+
+  <!-- Panel : ranking -->
+  <Panel parent="tpgSocialHonorRanking">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <Combobox name="cmbHonorRankingFilter">
+        <Look>lookDefComboButton</Look>
+        <Look type="listbox">lookDefComboListBox</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="130" h="25" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <DroppedWidth>60</DroppedWidth>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            cmbHonorRankingFilter:ResetContent();
+
+            local nIndex = cmbHonorRankingFilter:AddString( STR( "RANKING_ONE_TO_ONE"));
+            cmbHonorRankingFilter:SetItemData( nIndex, 0);
+            nIndex = cmbHonorRankingFilter:AddString( STR( "RANKING_GUILD"));
+            cmbHonorRankingFilter:SetItemData( nIndex, 1);
+
+            cmbHonorRankingFilter:SetCurSel( 0);
+          </OnLoaded>
+          <OnSelChange>
+            luaHonorRanking:OnSelChangeHonorRankingFilter();
+          </OnSelChange>
+        </Event>
+      </Combobox>
+
+      <Combobox name="cmbHonorRankingDateFilter">
+        <Look>lookDefComboButton</Look>
+        <Look type="listbox">lookDefComboListBox</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="150" y="10" />
+          <Size w="330" h="25" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <DroppedWidth>150</DroppedWidth>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaHonorRanking:RefreshSeasonList();
+          </OnLoaded>
+          <OnSelChange>
+            luaHonorRanking:OnSelChangeHonorRankingDateFilter();
+          </OnSelChange>
+        </Event>
+      </Combobox>
+      
+      
+      
+      <!-- Ranking list -->
+      <ListCtrl name="lcHonorRankingList">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="45" />
+          <Size w="470" h="465" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="450">name</AddColumn>
+          <AddColumn align="left,vcenter" width="200">grade</AddColumn>
+          <AddColumn align="left,vcenter" width="200">state</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+        </Shape>
+        <Event>
+          <OnSelChange>luaHonorRanking:RefreshControls();</OnSelChange>
+          <OnDrawItem>luaHonorRanking:OnDrawHonorRankerInfo();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+      
+    </Controls>
+  </Panel>
+
+</UI>

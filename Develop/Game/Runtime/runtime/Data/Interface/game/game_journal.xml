@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_journal.lua" />
+
+
+  
+  <!-- Frame : Journal -->
+  <Frame name="frmJournal" parent="layerGame1">
+    <Look>lookDefScrollFrame</Look>
+    <Layout>
+      <Location x="40" y="80" />
+      <Size w="749" h="555" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Icon>iconJournal</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_JOURNAL"));
+        luaGame:RegisterWindow( frmJournal, btnHoldJournal);
+      </OnLoaded>
+      <OnShow>luaJournal:OnShowJournalFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then
+
+            luaGame:RestoreUIPosition( frmJournal);
+
+            if ( gamefunc:GetAccountParam( "frmJournal", "hold") ~= nil)  then  btnHoldJournal:SetCheck( true);
+            end
+
+        elseif ( arg == "RECORD_UI")  then
+
+            luaGame:RecordUIPosition( frmJournal);
+
+            if ( btnHoldJournal:GetCheck() == true)  then  gamefunc:SetAccountParam( "frmJournal", "hold", "1");
+            end
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+      
+      <!-- Button : Hold buttons -->
+      <Button name="btnHoldJournal">
+        <Look>lookDefHoldButton</Look>
+        <Layout>
+          <Location x="315" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <Check>false</Check>
+        </Shape>
+      </Button>
+      
+      
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="340" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmJournal:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="55" base="BOTTOMLEFT" />
+          <Size w="345" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TabCtrl -->
+      <TabCtrl name="tbcJournalTabCtrl">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="345" h="515" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcJournalTabCtrl:SetTabName( 0, STR( "QUEST"));
+            tbcJournalTabCtrl:SetTabName( 1, STR( "RECIPE"));
+          </OnLoaded>
+            <OnSelChange>luaJournal:RefreshJournal();</OnSelChange>
+        </Event>
+        <TabPages>
+          
+          <!-- Tab 1 : Quest -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="150" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="tpgJournalQuest">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="490" />
+              </Layout>
+            </Page>
+          </TabPage>
+
+
+          <!-- Tab 2 : Recipe -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="150" y="0" />
+                <Size w="150" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="tpgJournalRecipe">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="490" />
+              </Layout>
+            </Page>
+          </TabPage>
+    
+        </TabPages>
+      </TabCtrl>
+
+
+      <!-- Frame -->
+      <Frame>
+        <Layout>
+          <Location x="345" y="0" />
+          <Size w="400" h="545" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowTitleBar>false</ShowTitleBar>
+          <Visible>true</Visible>
+          <Resize>false</Resize>
+          <Movable>false</Movable>
+        </Shape>
+        <Controls>
+
+          <!-- Picture : Scroll paper -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="10" />
+              <Size w="400" h="525" />
+            </Layout>
+            <Image>bmpScrollPaper</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+
+          <!-- TextView : Journal description -->
+          <TextView name="tvwJournalDesc">
+            <Look>lookDefScrollTextView</Look>
+            <Look type="scrollbar">lookDefScrollBar</Look>
+            <Layout>
+              <Location x="25" y="15" />
+              <Size w="355" h="495" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>show</ShowScrollBar>
+              <ThumbLength>26</ThumbLength>
+              <Wrap>false</Wrap>
+            </Shape>
+            <Event>
+              <OnItemClick>luaJournal:OnItemClickJournalDesciption();</OnItemClick>
+              <OnToolTip>luaJournal:OnToolTipJournalDesciption();</OnToolTip>
+            </Event>
+          </TextView>
+
+
+          <!-- Picture : Scroll head/tail -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollHead</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="%100" base="BOTTOMLEFT"/>
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollTail</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+        </Controls>
+      </Frame>
+
+    </Controls>
+  </Frame>
+  
+</UI>

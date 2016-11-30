@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+  
+  <!-- Include script -->
+  <Script file="tray/tray_gamemenu.lua" />
+
+
+  <!-- Popup menu -->
+  <PopupMenu name="pmTrayGameMunuPopupMenu">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="150" h="250" />
+    </Layout>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="24" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      <Picture>
+        <Layout>
+          <Location x="0" y="174" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Menu -->
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>메인 메뉴</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmMainMenu:Show( not frmMainMenu:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>캐릭터 창</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmCharacter:Show( not frmCharacter:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="50" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>소지품 창</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmInventory:Show( not frmInventory:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="75" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>저널 창</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmJournal:Show( not frmJournal:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="100" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>탤런트 창</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmTalent:Show( not frmTalent:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="125" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>사회 창</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmSocial:Show( not frmSocial:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="150" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>지도</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmMap:Show( not frmMap:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="175" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>도움말</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmHelpMessage:Show( not frmHelpMessage:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="200" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>조작키 안내</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmControlsHelp1:Show( not frmControlsHelp1:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="225" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+          <Text>기본 동작 안내</Text>
+        </Shape>
+        <Event>
+          <OnClick>frmControlsHelp2:Show( not frmControlsHelp2:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+  
+</UI>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_partyindicator.lua" />
+
+  
+  <!-- Frame : Party indicator -->
+  <Frame name="frmPartyIndicator" parent="layerGame0">
+    <Look>lookDefResizableFrame</Look>
+    <Layout>
+      <Location x="0" y="100" />
+      <Size w="192" h="100" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnLoaded>frmPartyIndicator:SetTimer( 1000, 0);</OnLoaded>
+      <OnTimer>luaPartyIndicator:OnTimerPartyIndicator();</OnTimer>
+      <OnDraw>luaPartyIndicator:OnDrawPartyIndicator();</OnDraw>
+      <OnDblClick>luaPartyIndicator:OnDblClickPartyIndicator();</OnDblClick>
+      <OnNcHitTest>return luaPartyIndicator:OnNcHitTestPartyIndicator();</OnNcHitTest>
+      <OnPosition>luaPartyIndicator:OnPositionPartyIndicator();</OnPosition>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmPartyIndicator);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmPartyIndicator);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+       <!-- Button : Leave party -->
+      <Button name="btnIndLeaveParty">
+        <Look>lookDefGlowButton</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="80" h="23" />
+        </Layout>
+        <Shape>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LEAVE"));</OnLoaded>
+          <OnClick>frmConfirmLeaveParty:Show( true);</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+  
+</UI>

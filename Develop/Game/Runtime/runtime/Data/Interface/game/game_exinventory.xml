@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_exinventory.lua" />
+
+
+
+  <!-- Frame : Inventory -->
+  <Frame name="frmExInventory" parent="layerGame2">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="625" y="80" />
+      <Size w="356" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Icon>iconInventory</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_EXINVENTORY"));
+        luaGame:RegisterWindow( frmExInventory, btnHoldExInventory);
+      </OnLoaded>
+      <OnShow>luaExInventory:OnShowInventoryFrame();</OnShow>
+      <OnSetFocus>lcInventory:SetFocus();</OnSetFocus>
+      <OnUserArgument>luaExInventory:OnUserArgument();</OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Hold buttons -->
+      <Button name="btnHoldExInventory">
+        <Look>lookDefHoldButton</Look>
+        <Layout>
+          <Location x="316" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <Check>false</Check>
+        </Shape>
+      </Button>
+
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="341" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmExInventory:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="515" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="55" base="BOTTOMLEFT" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- TabCtrl : Filtering -->
+      <TabCtrl name="tbcExInvenTypeFilter">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>luaExInventory:OnLoadedInvenFilterTabCtrl();</OnLoaded>
+        </Event>
+        <TabPages>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="50" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+          
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <Location x="50" y="0" />
+                <Size w="50" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+          
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <Location x="100" y="0" />
+                <Size w="50" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <Location x="150" y="0" />
+                <Size w="50" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <Location x="200" y="0" />
+                <Size w="50" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+          <TabPage>
+            <Tab>
+              <Look>lookDefSmallTabBtn</Look>
+              <Layout>
+                <Location x="250" y="0" />
+                <Size w="50" h="25" />
+              </Layout>
+              <Shape>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page/>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+          
+      
+      <!-- ListCtrl : Inventory -->
+      <ListCtrl name="lcExInventory">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="55" />
+          <Size w="336" h="464" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter">name</AddColumn>
+          <AddColumn align="left,vcenter">image</AddColumn>
+          <AddColumn align="left,vcenter">quantity</AddColumn>
+          <AddColumn align="left,vcenter">equipment</AddColumn>
+          <AddColumn align="left,vcenter">usable</AddColumn>
+          <AddColumn align="left,vcenter">recipe</AddColumn>
+          <AddColumn align="left,vcenter">quest</AddColumn>
+          <AddColumn align="left,vcenter">etc</AddColumn>
+          <AddColumn align="left,vcenter">disabled</AddColumn>
+          <AddColumn align="left,vcenter">EnchantAble</AddColumn>
+          <AddColumn align="left,vcenter">Period</AddColumn>
+          <AddColumn align="left,vcenter">CraftCustome</AddColumn>
+          <AddColumn align="left,vcenter">CraftWeaponCustome</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ToolTip offset_x="42" offset_y="42" ></ToolTip>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnDrawItem>luaExInventory:OnDrawItemInvenListCtrl();</OnDrawItem>
+          <OnItemDblClick>luaExInventory:OnItemDblClickInvenListCtrl();</OnItemDblClick>
+          <OnItemRClick>luaExInventory:OnItemRClickInvenListCtrl();</OnItemRClick>
+          <OnSelChange>luaExInventory:OnSelChangeInvenListCtrl();</OnSelChange>
+          <OnDragBegin>return luaExInventory:OnDragBeginInvenListCtrl();</OnDragBegin>
+          <OnDragEnd>return luaExInventory:OnDragEndInvenListCtrl();</OnDragEnd>
+          <OnDrop>return luaExInventory:OnDropInvenListCtrl();</OnDrop>
+          <OnToolTip>luaExInventory:OnToolTipInvenListCtrl();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Item count -->
+      <LabelEx name="labExInvenItemCount">
+        <Layout>
+          <Location x="%30" y="515" />
+          <Size w="%40" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetToolTip( STR( "UI_INVEN_ITEMCOUNTTOOLTIP"));</OnLoaded>
+        </Event>
+      </LabelEx>
+            
+      
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="540" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+        
+
+      <!-- time -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="265" h="30" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <Opacity>0.25</Opacity>
+        </Shape>
+      </Group>
+
+      <!--<Picture>
+        <Layout>
+          <Location x="230" y="553" />
+          <Size w="24" h="24" />
+        </Layout>
+        <Image>iconCoin</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>-->
+
+      <TextView name="tvwExInvenTime">
+        <Look>lookDefSmallChatMsg</Look>
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="280" h="30" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnUpdate>luaExInventory:RefreshTime();</OnUpdate>
+        </Event>
+      </TextView>
+
+      <Button name="btnArrangeExInventory">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="285" y="550" />
+          <Size w="50" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "UI_INVEN_ARRANGE" ) );
+          </OnLoaded>
+          <OnClick>luaExInventory:OnClickbtnArrangeInventory();</OnClick>
+          <OnTimer>luaExInventory:OnTimerArrangeInventory();</OnTimer>
+          <OnUpdate>luaExInventory:OnRefleshArrangeInventoryToolTip();</OnUpdate>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+ 
+</UI>

@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="char">
+
+  <!-- Include script -->
+  <Script file="character_select.lua" />
+  
+  <!-- 캐릭터 목록 -->
+  <Panel name="pnlCharList" parent="layerCharSelect">
+    <Layout>
+      <Location x="484" y="0"/>
+      <Size w="540" h="1010" />
+      <Anchor left="false" top="false" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Base Image2 -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="50" />
+          <Size w="%100" h="960" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameMain2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+      
+      <!-- Picture : Base Image -->
+      <Picture>
+        <Layout>
+          <Location x="158" y="50" />
+          <Size w="382" h="960" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameMain</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : World Name -->
+      <Picture>
+        <Layout>
+          <Location x="316" y="10" />
+          <Size w="180" h="40" />
+        </Layout>
+        <Image>bmpCharFrameWorld</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : World Name -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="316" y="20" />
+          <Size w="180" h="40" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{ALIGN hor=\"center\" ver=\"center\" }{FONT name=\"fntRegular\"}{COLOR r=237 g=219 b=197}" .. "Hope" );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Picture : Base Image -->
+      <Picture name="picSelectMainCycle" >
+        <Layout>
+          <Location x="300" y="220" />
+          <Size w="220" h="220" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpCharFrameMainCycle1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnUpdate>luaCharacterSelect:UpdateMainCycle();</OnUpdate>
+        </Event>
+      </Picture>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="355" y="305" />
+          <Size w="110" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{ALIGN hor=\"center\" ver=\"center\" }{FONT name=\"fntTitle\"}{COLOR r=230 g=230 b=230}" .. STR( "UI_SELCHAR"));
+          </OnLoaded>
+        </Event>
+      </TextView>
+      
+      <!-- Button : Character -->
+      <Button name="btnCharacterName0">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="40" y="205" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnClick>luaCharacterSelect:OnClickCharacterSel( 0);</OnClick>
+          <OnDblClick>luaCharacterSelect:OnDblClickCharacterSel( 0);</OnDblClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Character -->
+      <Button name="btnCharacterName1">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="30" y="255" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnClick>luaCharacterSelect:OnClickCharacterSel( 1);</OnClick>
+          <OnDblClick>luaCharacterSelect:OnDblClickCharacterSel( 1);</OnDblClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Character -->
+      <Button name="btnCharacterName2">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="20" y="305" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnClick>luaCharacterSelect:OnClickCharacterSel( 2);</OnClick>
+          <OnDblClick>luaCharacterSelect:OnDblClickCharacterSel( 2);</OnDblClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Character -->
+      <Button name="btnCharacterName3">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="30" y="355" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnClick>luaCharacterSelect:OnClickCharacterSel( 3);</OnClick>
+          <OnDblClick>luaCharacterSelect:OnDblClickCharacterSel( 3);</OnDblClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Character -->
+      <Button name="btnCharacterName4">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="40" y="405" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnClick>luaCharacterSelect:OnClickCharacterSel( 4);</OnClick>
+          <OnDblClick>luaCharacterSelect:OnDblClickCharacterSel( 4);</OnDblClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Panel>
+  
+  <!-- 캐릭터 선택 하단 -->
+  <Panel name="pnlCharSelBottom" parent="layerCharSelect">
+    <Layout>
+      <Location x="0" y="687"/>
+      <Size w="%100" h="80" />
+      <Anchor left="true" top="false" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Base Image -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="23" />
+          <Size w="%100" h="34" />
+          <Anchor left="true" top="false" right="true" bottom="false" />
+        </Layout>
+        <Image>bmpCharFrameBottom</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- Buttons : Delete character -->
+      <Button name="btnDeleteCharacter">
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="20" y="20" />
+          <Size w="130" h="40" />
+
+          <Anchor left="true" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DELETE"));</OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickDeleteCharacter();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Create character -->
+      <Button name="btnCreateCharacter">
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="160" y="20" />
+          <Size w="130" h="40" />
+          <Anchor left="true" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATENEW" ) );</OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickCreateCharacter();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Enter game -->
+      <Button name="btnEnterGame">
+        <Look>lookDefCharFrameLButton</Look>
+        <Layout>
+          <Location x="392" y="0" />
+          <Size w="300" h="80" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Shape>
+          <HotKey>E</HotKey>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "UI_SELCHAR_CONNECT"));
+            local width, height = btnEnterGame:GetParent():GetSize();
+            local x, y, w, h = btnEnterGame:GetRect();
+            btnEnterGame:SetPosition( (width - w) * 0.5, y);
+          </OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickEnterGame();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Credit -->
+      <Button name="btnCredit">
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="724" y="20" />
+          <Size w="130" h="40" />
+          <Anchor left="false" top="false" right="true" bottom="true" />
+        </Layout>
+        <Shape>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CREDIT"));</OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickCredit();</OnClick>
+        </Event>
+      </Button>
+   <Button name="btnLogoutGame">
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="724" y="20" />
+          <Size w="130" h="40" />
+          <Anchor left="false" top="false" right="true" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText("Logout");</OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickLogoutCharacterSel();</OnClick>
+        </Event>
+      </Button>
+      <!-- Buttons : Exit character screen -->
+      <Button name="btnExitGame">
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="874" y="20" />
+          <Size w="130" h="40" />
+          <Anchor left="false" top="false" right="true" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_QUIT"));</OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickExitCharacterSel();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+  <!-- 캐릭터 정보 -->
+  <Panel parent="layerCharSelect">
+    <Layout>
+      <Location x="280" y="550"/>
+      <Size w="370" h="150" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        local width, height = this:GetParent():GetSize();
+        local x, y, w, h = this:GetRect();
+        this:SetPosition( (width - w) * 0.5, y);
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- 좌 회전 -->
+      <Button>
+        <Look>lookDefCharFrameLRotBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="60" h="60" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Event>
+          <OnLButtonDown>
+          </OnLButtonDown>
+          <OnLButtonUp>
+          </OnLButtonUp>
+        </Event>
+      </Button>
+
+      <!-- 우 회전 -->
+      <Button>
+        <Look>lookDefCharFrameRRotBtn</Look>
+        <Layout>
+          <Location x="310" y="0" />
+          <Size w="60" h="60" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Event>
+          <OnLButtonDown>
+          </OnLButtonDown>
+          <OnLButtonUp>
+          </OnLButtonUp>
+        </Event>
+      </Button>
+
+      <!-- Picture : Base Image -->
+      <Picture>
+        <Layout>
+          <Location x="60" y="70" />
+          <Size w="250" h="80" />
+          <Anchor left="true" top="false" right="true" bottom="false" />
+        </Layout>
+        <Image>bmpCharFrameBottom2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <TextView name="twvCharState">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="90" />
+          <Size w="250" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+      
+    </Controls>
+  </Panel>
+  
+  <!-- Panel : PCCafe  LeftTop -->
+  <Panel name="TextViewPCCafeLogo" parent="layerCharSelect">
+    <Layout>
+      <Location x="13" y="65" />
+      <Size w="132" h="106" />
+    </Layout>
+    <Controls>
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpPcCafeLogo</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+    </Controls>
+  </Panel>
+
+  <!-- Frame -->
+  <Frame name="frmConfirmDeleteCharacter" parent="layerCharSelect">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="200" y="200" />
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Resize>false</Resize>
+      <Visible>false</Visible>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+      <OnShow>luaCharacterSelect:OnShowCharacterDeleteFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Text></Text>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmDeleteCharacter:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CONFIRMDELETECHAR"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <Edit name="edtDeleteCharacterName">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="60" y="80" />
+          <Size w="310" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>20</LimitText>
+        </Shape>
+        <Event>
+          <OnToolTip></OnToolTip>
+          <OnOK>luaCharacterSelect:OnClickCharacterDelete();</OnOK>
+        </Event>
+      </Edit>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickCharacterDelete();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmConfirmDeleteCharacter:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmDeleteCharacterAgain" parent="layerCharSelect">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="200" y="200" />
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Resize>false</Resize>
+      <Visible>false</Visible>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+      <OnShow>luaCharacterSelect:OnShowCharacterDeleteFrameAgain();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Text></Text>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmDeleteCharacterAgain:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CONFIRMDELETECHAR_AGAIN"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaCharacterSelect:OnClickCharacterDeleteAgain();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmDeleteCharacterAgain:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+ 
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmQuitGame" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+      </OnLoaded>
+      <OnShow>
+        if ( frmConfirmQuitGame:GetShow() == true)  then
+
+        local width, height = frmConfirmQuitGame:GetParent():GetSize();
+        local x, y, w, h = frmConfirmQuitGame:GetRect();
+        frmConfirmQuitGame:SetPosition( (width - w) * 0.5, (height - h) * 0.5);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmQuitGame:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAINMENU_CONFIRMQUITGAME"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>gamefunc:Quit();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmQuitGame:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  <!-- Panel : PC Benefit -->
+  <Panel name="pnlPCBenefit" parent="layerCharSelect">
+    <Layout>
+      <Location x="10" y="80"/>
+      <Size w="256" h="280" />
+      <Anchor left="true" top="true" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+      </OnLoaded>
+    </Event>
+    <Controls>
+      
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpPCBenefitCharBG</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Title -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="196" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{FONT name=\"fntRegular\"}{COLOR r=255 g=255 b=255}" .. STR( "UI_PC_BENEFIT_TITLE" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : Content -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="30" y="45" />
+          <Size w="196" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{FONT name=\"fntScript\"}{COLOR r=255 g=255 b=255}" .. STR( "UI_PC_BENEFIT_CONTENT" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Picture : Icon1 Base -->
+      <Picture>
+        <Layout>
+          <Location x="30" y="111" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Image>bmpPCBenefitIconBase</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Icon1 -->
+      <Picture>
+        <Layout>
+          <Location x="34" y="115" />
+          <Size w="28" h="28" />
+        </Layout>
+        <Image>bmpPCBenefitIcon1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Icon1 Text -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="80" y="120" />
+          <Size w="156" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{FONT name=\"fntScript\"}{COLOR r=255 g=255 b=255}" .. STR( "UI_PC_BENEFIT_ICON1_NAME" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : Icon1 Tooltip Area -->
+      <TextView name="tvwPCBenefitIcon1" >
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="30" y="111" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnToolTip>luaCharacterSelect:OnToolTipPCBenefitIcon1();</OnToolTip>
+        </Event>
+      </TextView>
+
+      <!-- Picture : Icon2 Base -->
+      <Picture>
+        <Layout>
+          <Location x="30" y="149" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Image>bmpPCBenefitIconBase</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Icon2 -->
+      <Picture>
+        <Layout>
+          <Location x="34" y="153" />
+          <Size w="28" h="28" />
+        </Layout>
+        <Image>bmpPCBenefitIcon2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Icon2 Text -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="80" y="158" />
+          <Size w="156" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{FONT name=\"fntScript\"}{COLOR r=255 g=255 b=255}" .. STR( "UI_PC_BENEFIT_ICON2_NAME" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : Icon2 Tooltip Area -->
+      <TextView name="tvwPCBenefitIcon2" >
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="30" y="149" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnToolTip>luaCharacterSelect:OnToolTipPCBenefitIcon2();</OnToolTip>
+        </Event>
+      </TextView>
+      
+      <!-- Picture : Icon3 Base -->
+      <Picture>
+        <Layout>
+          <Location x="30" y="187" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Image>bmpPCBenefitIconBase</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Icon3 -->
+      <Picture>
+        <Layout>
+          <Location x="34" y="191" />
+          <Size w="28" h="28" />
+        </Layout>
+        <Image>bmpPCBenefitIcon3</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Icon3 Text -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="80" y="196" />
+          <Size w="156" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{FONT name=\"fntScript\"}{COLOR r=255 g=255 b=255}" .. STR( "UI_PC_BENEFIT_ICON3_NAME" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : Icon3 Tooltip Area -->
+      <TextView name="tvwPCBenefitIcon3" >
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="30" y="187" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnToolTip>luaCharacterSelect:OnToolTipPCBenefitIcon3();</OnToolTip>
+        </Event>
+      </TextView>
+      
+      
+      <!-- Picture : Icon4 Base -->
+      <Picture>
+        <Layout>
+          <Location x="30" y="225" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Image>bmpPCBenefitIconBase</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      <!-- Picture : Icon4 -->
+      <Picture>
+        <Layout>
+          <Location x="34" y="229" />
+          <Size w="28" h="28" />
+        </Layout>
+        <Image>bmpPCBenefitIcon4</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Icon4 Text -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="80" y="234" />
+          <Size w="156" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{FONT name=\"fntScript\"}{COLOR r=255 g=255 b=255}" .. STR( "UI_PC_BENEFIT_ICON4_NAME" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- TextView : Icon4 Tooltip Area -->
+      <TextView name="tvwPCBenefitIcon4" >
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="30" y="225" />
+          <Size w="36" h="36" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnToolTip>luaCharacterSelect:OnToolTipPCBenefitIcon4();</OnToolTip>
+        </Event>
+      </TextView>
+      
+    </Controls>
+  </Panel>
+      
+</UI>

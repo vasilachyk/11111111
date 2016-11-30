@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_mainmenu.lua" />
+
+
+
+  <!-- Panel : Main menu -->
+  <Frame name="frmMainMenu" parent="layerGame2">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="300" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Static>true</Static>
+      <Movable>false</Movable>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmMainMenu);</OnLoaded>
+      <OnShow>luaMainMenu:OnShowMainMenuFrame();</OnShow>
+      <OnUpdate>luaMainMenu:OnUpdateMainMenuFrame();</OnUpdate>
+      <OnDraw>luaMainMenu:OnDrawMainMenuFrame();</OnDraw>
+    </Event>
+    <Controls>
+
+      <!-- Button : Character -->
+      <Button name="btnCharacter">
+        <Look>lookDefButton</Look>
+        <Shape>
+          <Icon w="50" h="50">iconCharacter</Icon>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMainMenu:OnLoadedMainMenuButtons( btnCharacter, STR( "UI_CHARACTER"), "CHARACTER");</OnLoaded>
+          <OnClick>
+            frmMainMenu:Show( false);
+            frmCharacter:Show( not frmCharacter:GetShow());
+          </OnClick>
+          <OnDraw>luaMainMenu:OnDrawMainMenuButtons();</OnDraw>
+        </Event>
+      </Button>
+
+      <!-- Button : Inventory -->
+      <Button name="btnInventory">
+        <Look>lookDefButton</Look>
+        <Shape>
+          <Icon w="50" h="50">iconInventory</Icon>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMainMenu:OnLoadedMainMenuButtons( btnInventory, STR( "UI_INVENTORY"), "INVENTORY");</OnLoaded>
+          <OnClick>
+            frmMainMenu:Show( false);
+            frmInventory:Show( not frmInventory:GetShow());
+          </OnClick>
+          <OnDraw>luaMainMenu:OnDrawMainMenuButtons();</OnDraw>
+        </Event>
+      </Button>
+
+      <!-- Button : Journal -->
+      <Button name="btnJournal">
+        <Look>lookDefButton</Look>
+        <Shape>
+          <Icon w="50" h="50">iconJournal</Icon>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMainMenu:OnLoadedMainMenuButtons( btnJournal, STR( "UI_JOURNAL"), "JOURNAL");</OnLoaded>
+          <OnClick>
+            frmMainMenu:Show( false);
+            frmJournal:Show( not frmJournal:GetShow());
+          </OnClick>
+          <OnDraw>luaMainMenu:OnDrawMainMenuButtons();</OnDraw>
+        </Event>
+      </Button>
+
+      <!-- Button : Talent -->
+      <Button name="btnTalent">
+        <Look>lookDefButton</Look>
+        <Shape>
+          <Icon w="50" h="50">iconTalent</Icon>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMainMenu:OnLoadedMainMenuButtons( btnTalent, STR( "UI_TALENT"), "TALENT");</OnLoaded>
+          <OnClick>
+            frmMainMenu:Show( false);
+            frmTalent:Show( not frmTalent:GetShow());
+          </OnClick>
+          <OnDraw>luaMainMenu:OnDrawMainMenuButtons();</OnDraw>
+        </Event>
+      </Button>
+
+      <!-- Button : Social -->
+      <Button name="btnSocial">
+        <Look>lookDefButton</Look>
+        <Shape>
+          <Icon w="50" h="50">iconSocial</Icon>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMainMenu:OnLoadedMainMenuButtons( btnSocial, STR( "UI_SOCIAL"), "SOCIAL");</OnLoaded>
+          <OnClick>
+            frmMainMenu:Show( false);
+            frmSocial:Show( not frmSocial:GetShow());
+          </OnClick>
+          <OnDraw>luaMainMenu:OnDrawMainMenuButtons();</OnDraw>
+        </Event>
+      </Button>
+
+      <!-- Button : Map -->
+      <Button name="btnMap">
+        <Look>lookDefButton</Look>
+        <Shape>
+          <Icon w="50" h="50">iconMap</Icon>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMainMenu:OnLoadedMainMenuButtons( btnMap, STR( "UI_MAP"), "MAP");</OnLoaded>
+          <OnClick>
+            frmMainMenu:Show( false);
+            frmMap:Show( not frmMap:GetShow());
+          </OnClick>
+          <OnDraw>luaMainMenu:OnDrawMainMenuButtons();</OnDraw>
+        </Event>
+      </Button>
+
+      <!-- Button : System menu -->
+      <Button name="btnSystem">
+        <Look>lookDefButton</Look>
+        <Shape>
+          <Icon w="50" h="50">iconOption</Icon>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnLoaded>luaMainMenu:OnLoadedMainMenuButtons( btnSystem, STR( "UI_SYSTEM"), nil);</OnLoaded>
+          <OnClick>
+            frmMainMenu:Show( false);
+            frmSystemMenu:Show( not frmMap:GetShow());
+          </OnClick>
+          <OnDraw>luaMainMenu:OnDrawMainMenuButtons();</OnDraw>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmSystemMenu" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="300" y="100" />
+      <Size w="280" h="285" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_SYSTEM"));
+        luaGame:RegisterWindow( frmSystemMenu);
+      </OnLoaded>
+      <OnShow>
+        if ( frmSystemMenu:GetShow() == true)  then
+
+          local width, height = frmSystemMenu:GetParent():GetSize();
+          local w, h = frmSystemMenu:GetSize();
+          frmSystemMenu:SetPosition( (width - w) * 0.5, (height - h) * 0.5);
+        end
+
+        luaGame:ShowWindow( frmSystemMenu);
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="265" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmSystemMenu:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Option -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="250" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OPTION"));</OnLoaded>
+          <OnClick>
+            frmSystemMenu:Show( false);
+            frmOption:Show( not frmOption:GetShow());
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Select character -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="75" />
+          <Size w="250" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TOSELCHARACTER"));</OnLoaded>
+          <OnClick>
+            frmSystemMenu:Show( false);
+            frmConfirmExitToSelChar:Show( true);
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Help -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="115" />
+          <Size w="250" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_HELP"));</OnLoaded>
+          <OnClick>
+            frmSystemMenu:Show( false);
+            frmHelpMessage:Show( not frmHelpMessage:GetShow());
+          </OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="155" />
+          <Size w="250" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_HELPCONTROLKEYS"));</OnLoaded>
+          <OnClick>
+            frmSystemMenu:Show( false);
+            frmControlsHelp1:Show( not frmControlsHelp1:GetShow());
+          </OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="195" />
+          <Size w="250" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_HELPBASICCONTROLS"));</OnLoaded>
+          <OnClick>
+            frmSystemMenu:Show( false);
+            frmControlsHelp2:Show( not frmControlsHelp2:GetShow());
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Quit -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="235" />
+          <Size w="250" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_QUIT"));</OnLoaded>
+          <OnClick>
+            frmSystemMenu:Show( false);
+            frmConfirmQuitGame:Show( true);
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmExitToSelChar" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmConfirmExitToSelChar);
+      </OnLoaded>
+      <OnShow>
+        if ( frmConfirmExitToSelChar:GetShow() == true)  then
+
+          local width, height = frmConfirmExitToSelChar:GetParent():GetSize();
+          local x, y, w, h = frmConfirmExitToSelChar:GetRect();
+          frmConfirmExitToSelChar:SetPosition( (width - w) * 0.5, (height - h) * 0.5);
+        end
+
+        luaGame:ShowWindow( frmConfirmExitToSelChar);
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmExitToSelChar:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAINMENU_CONFIRMEXITTOSELCHAR"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>gamefunc:ExitToCharSelection();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmExitToSelChar:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Frame -->
+  <Frame name="frmConfirmQuitGame" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmConfirmQuitGame);
+      </OnLoaded>
+      <OnShow>
+        if ( frmConfirmQuitGame:GetShow() == true)  then
+
+          local width, height = frmConfirmQuitGame:GetParent():GetSize();
+          local x, y, w, h = frmConfirmQuitGame:GetRect();
+          frmConfirmQuitGame:SetPosition( (width - w) * 0.5, (height - h) * 0.5);
+        end
+
+        luaGame:ShowWindow( frmConfirmQuitGame);
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmQuitGame:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAINMENU_CONFIRMQUITGAME"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>gamefunc:Quit();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmQuitGame:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

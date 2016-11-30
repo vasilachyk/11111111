@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_crosshair.lua" />
+
+
+  <Panel name="pnlCrossHair" parent="layerGame2">
+    <Layout>
+      <Location x="1" y="1" base="TOPRIGHT" />
+      <Size w="64" h="64" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Controls>
+
+      <Picture name="picCrossHair">
+        <Layout>
+          <Size w="64" h="64" />
+        </Layout>
+        <Shape>
+          <Stretch>false</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+    </Controls>
+  </Panel>
+      
+</UI>

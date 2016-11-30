@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<maiet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RESULT key="0" string="Failed." />
+  <RESULT key="1" string="Success!" />
+  <RESULT key="11" string="Invalid player UID." />
+  <RESULT key="12" string="Invalid NPC UID." />
+  <RESULT key="13" string="Invalid talent ID." />
+  <RESULT key="14" string="Invalid item ID." />
+  <RESULT key="15" string="Not a positive amount." />
+  <RESULT key="17" string="Invalid soulstone ID." />
+  <RESULT key="18" string="Invalid field ID." />
+  <RESULT key="19" string="Invalid marker ID." />
+  <RESULT key="20" string="Error: The field does not exist in the server fieldlist.xml or fieldlist_debug.xml." />
+  <RESULT key="21" string="You can only have one unique item at a time." />
+  <RESULT key="22" string="Durability is 0." />
+  <RESULT key="24" string="This talent has not been learned." />
+  <RESULT key="25" string="The other player is in an interaction." />
+  <RESULT key="26" string="The other player is trading." />
+  <RESULT key="27" string="The other player is looting." />
+  <RESULT key="28" string="The other player is watching a cutscene." />
+  <RESULT key="29" string="The other player is in a combat." />
+  <RESULT key="30" string="The other player is in combat." />
+  <RESULT key="31" string="Insufficient space in inventory." />
+  <RESULT key="32" string="Maximum gold limit exceeded." />
+  <RESULT key="33" string="Item does not exist." />
+  <RESULT key="34" string="Name is too short." />
+  <RESULT key="35" string="Name is too long." />
+  <RESULT key="36" string="Recipient's name cannot contain numbers or spaces." />
+  <RESULT key="37" string="A name cannot have complex or special characters." />
+  <RESULT key="38" string="A name cannot be a combination of Korean and English characters." />
+  <RESULT key="39" string="Recipient's name cannot consist of only numbers." />
+  <RESULT key="40" string="The name is inappropriate." />
+  <RESULT key="41" string="Recipient's name cannot contain special characters." />
+  <RESULT key="42" string="You do not have enough money." />
+  <RESULT key="43" string="You do not have enough money in the storage box." />
+  <RESULT key="44" string="Exceeded deposit limit." />
+  <RESULT key="45" string="Exceeded withdrawal limit." />
+  <RESULT key="999" string="Connection to server has been lost." />
+  <RESULT key="1001" string="Server and client version do not match." />
+  <RESULT key="1002" string="Login failed." />
+  <RESULT key="1003" string="Failed to move to server." />
+  <RESULT key="1004" string="(Retrying...)" />
+  <RESULT key="1005" string="Failed to connect to game. Cannot find server." />
+  <RESULT key="1006" string="Login DB request failed." />
+  <RESULT key="1007" string="User does not exist." />
+  <RESULT key="1008" string="Selected character information is not valid." />
+  <RESULT key="1009" string="Server is running. Please try connecting again later." />
+  <RESULT key="1010" string="This account has been logged in from another location. Closing connection." />
+  <RESULT key="1011" string="Processing duplicate login connection. Please wait a few moments while auto login is being processed. This may take a few minutes. Click [Close] to exit the game." />
+  <RESULT key="1012" string="World server is full. Please try to connect later." />
+  <RESULT key="1013" string="Player's world information is incorrect. Please connect again." />
+  <RESULT key="1014" string="Not a stand-alone server. Please check your connection status." />
+  <RESULT key="1015" string="Invalid user ID or password." />
+  <RESULT key="1016" string="This account is prohibited from logging in." />
+  <RESULT key="1017" string="This region is off limits for log-in." />
+  <RESULT key="1018" string="BETA key is required." />
+  <RESULT key="1019" string="Failed to log in (1)" />
+  <RESULT key="1020" string="Failed to log in (2)" />
+  <RESULT key="1021" string="Failed to login (3" />
+  <RESULT key="1022" string="Failed to process the dual login. Please try again later." />
+  <RESULT key="1023" string="Character list could not be loaded." />
+  <RESULT key="1101" string="Failed to move to selected field." />
+  <RESULT key="1102" string="Cannot enter selected field. Field is in battle." />
+  <RESULT key="1103" string="Cannot enter selected field. Field is unavailable." />
+  <RESULT key="1104" string="You cannot exit the field while in combat." />
+  <RESULT key="1105" string="Not enough field tokens." />
+  <RESULT key="1106" string="Field token has been used." />
+  <RESULT key="1107" string="You cannot kill your character while in the current field." />
+  <RESULT key="1201" string="This name is already in use." />
+  <RESULT key="1202" string="No more characters can be created." />
+  <RESULT key="1203" string="Game server connection has already been reserved." />
+  <RESULT key="1204" string="The character selection request has timed out." />
+  <RESULT key="1205" string="There is unusable character information." />
+  <RESULT key="1206" string="Cannot access character creation DB." />
+  <RESULT key="1207" string="Guild leader characters cannot be deleted. Transfer the guild leadership to another player." />
+  <RESULT key="1301" string="You do not meet the conditions for equipping this item." />
+  <RESULT key="1302" string="Cannot be equipped because you do not have the proper Skill." />
+  <RESULT key="1303" string="The slot is incorrect for this item." />
+  <RESULT key="1304" string="This item is already equipped." />
+  <RESULT key="1401" string="Conditions for learning this talent have not been met." />
+  <RESULT key="1402" string="This talent has already been learned." />
+  <RESULT key="1403" string="You do not have enough TP to learn this." />
+  <RESULT key="1404" string="Your level is not high enough to learn this." />
+  <RESULT key="1405" string="You must learn the previous talent line to learn this." />
+  <RESULT key="1406" string="You do not have enough TP invested in style to learn this." />
+  <RESULT key="1407" string="This talent has not been trained." />
+  <RESULT key="1408" string="You need to learn the previous talent to learn the selected talent." />
+  <RESULT key="1409" string="There is a higher ranked talent." />
+  <RESULT key="1410" string="You can only learn this through an item." />
+  <RESULT key="1411" string="You cannot delete a talent that does not use TP." />
+  <RESULT key="1412" string="This talent cannot be reset." />
+  <RESULT key="1413" string="You do not have hybrid mastery to learn this." />
+  <RESULT key="1501" string="Cannot pick up more items, inventory is full." />
+  <RESULT key="1502" string="Cannot retrieve more items than are currently in the Trade window." />
+  <RESULT key="1503" string="You cannot load more gold than you possess." />
+  <RESULT key="1504" string="No trade in progress." />
+  <RESULT key="1505" string="You have reached the maximum number of items in the Trade window." />
+  <RESULT key="1506" string="You need to get closer to the player to trade." />
+  <RESULT key="1507" string="The other player cannot receive the trade request." />
+  <RESULT key="1508" string="This item cannot be traded." />
+  <RESULT key="1509" string="The other player's inventory has insufficient space, or the item is untradeable." />
+  <RESULT key="1510" string="Gold has exceeded the other player's maximum gold capacity." />
+  <RESULT key="1601" string="You cannot buy this item from the merchant NPC." />
+  <RESULT key="1602" string="You cannot sell more items than you possess to the merchant NPC." />
+  <RESULT key="1603" string="You must get closer to the merchant NPC to trade." />
+  <RESULT key="1604" string="You cannot sell items not existing in the inventory." />
+  <RESULT key="1605" string="Insufficient gold." />
+  <RESULT key="1606" string="No trading is in progress with the merchant NPC." />
+  <RESULT key="1607" string="You cannot trade with NPCs who are not merchants." />
+  <RESULT key="1608" string="Trading conditions have not been met." />
+  <RESULT key="1609" string="This merchant NPC cannot repair your items." />
+  <RESULT key="1610" string="You cannot sell this item to the merchant NPC." />
+  <RESULT key="1611" string="This item cannot be repaired." />
+  <RESULT key="1701" string="Party is full." />
+  <RESULT key="1702" string="You are not the party leader." />
+  <RESULT key="1703" string="Party is invalid." />
+  <RESULT key="1704" string="You are not in a party." />
+  <RESULT key="1705" string="The other player is not in a party." />
+  <RESULT key="1706" string="You are already in a party." />
+  <RESULT key="1707" string="The other player is already in a party." />
+  <RESULT key="1708" string="You cannot invite yourself." />
+  <RESULT key="1709" string="You are not in the same party." />
+  <RESULT key="1710" string="The other player has declined your party invitation." />
+  <RESULT key="1711" string="The other player has declined your party invitation." />
+  <RESULT key="1712" string="You cannot banish yourself." />
+  <RESULT key="1713" string="You cannot promote the current leader as new leader." />
+  <RESULT key="1714" string="The other player cannot receive the party invitation." />
+  <RESULT key="1715" string="You cannot invite players that are dueling." />
+  <RESULT key="1716" string="You cannot invite players that are in a PvP zone." />
+  <RESULT key="1717" string="You cannot invite players that are in the battlefield." />
+  <RESULT key="1718" string="You cannot invite players while dueling." />
+  <RESULT key="1719" string="You cannot invite players from inside a PvP zone." />
+  <RESULT key="1720" string="You cannot invite players while being in a battlefield." />
+  <RESULT key="1721" string="You cannot respond to a party invitation while dueling." />
+  <RESULT key="1722" string="You cannot respond to party invites from inside a PvP zone." />
+  <RESULT key="1723" string="You cannot respond to a party invitation while being in a battlefield." />
+  <RESULT key="1724" string="You cannot send a party invitation." />
+  <RESULT key="1725" string="You cannot respond to a party invitation while engaged in other activities." />
+  <RESULT key="1726" string="You cannot invite a player that is in a challenge field." />
+  <RESULT key="1727" string="Incorrect party settings." />
+  <RESULT key="1728" string="You cannot invite this character." />
+  <RESULT key="1729" string="You cannot leave your party during a duel." />
+  <RESULT key="1801" string="There are no items to loot." />
+  <RESULT key="1802" string="You are not close enough to loot this object." />
+  <RESULT key="1803" string="No looting in progress." />
+  <RESULT key="1804" string="Another player is already looting." />
+  <RESULT key="1805" string="Another player is already gathering." />
+  <RESULT key="1806" string="No loot item exists." />
+  <RESULT key="1809" string="Master looting is not possible for this loot item." />
+  <RESULT key="1810" string="Only masters can use master looting." />
+  <RESULT key="1811" string="You cannot give this item through master looting to the player." />
+  <RESULT key="1812" string="Master is too far away to distribute the item." />
+  <RESULT key="1814" string="You need a gathering tool to start gathering." />
+  <RESULT key="1815" string="You need to read the explorer's manual to start gathering." />
+  <RESULT key="1816" string="You need to read the advanced explorer's manual." />
+  <RESULT key="1901" string="Player has not logged on or name is incorrect." />
+  <RESULT key="1902" string="The same channel name already exists." />
+  <RESULT key="1903" string="You cannot use this command on the current channel." />
+  <RESULT key="1904" string="You are not the host." />
+  <RESULT key="1905" string="You have not been banished." />
+  <RESULT key="1906" string="You cannot enter. You have been banished from this channel." />
+  <RESULT key="1907" string="The selected player cannot be found." />
+  <RESULT key="1908" string="The selected channel cannot be found." />
+  <RESULT key="1909" string="You have already entered the channel." />
+  <RESULT key="1910" string="You have not entered this channel." />
+  <RESULT key="1911" string="Incorrect target." />
+  <RESULT key="1912" string="Channel name is too long." />
+  <RESULT key="1913" string="You can no longer enter a private channel." />
+  <RESULT key="1914" string="Contains an improper word." />
+  <RESULT key="1915" string="Trade chat can only be used once every minute." />
+  <RESULT key="1916" string="Enchant error: This is not an increasing material." />
+  <RESULT key="1917" string="You can use the Field chat only once every 5 seconds." />
+  <RESULT key="2001" string="Item does not exist in your inventory." />
+  <RESULT key="2002" string="Please wait a while to use this item." />
+  <RESULT key="2003" string="You cannot throw this item out." />
+  <RESULT key="2004" string="You cannot acquire more than the maximum number of stacks at once." />
+  <RESULT key="2005" string="This item cannot be used yet." />
+  <RESULT key="2006" string="Items could not be arranged." />
+  <RESULT key="2007" string="Extended inventory is already in use." />
+  <RESULT key="2101" string="There is no NPC to interact with." />
+  <RESULT key="2102" string="You cannot interact with a dead NPC." />
+  <RESULT key="2201" string="You cannot use this talent." />
+  <RESULT key="2202" string="Please wait a while to use this talent." />
+  <RESULT key="2203" string="Your health is too low to use this talent." />
+  <RESULT key="2204" string="Your energy is too low to use this talent." />
+  <RESULT key="2205" string="Your stamina is too low to use this talent." />
+  <RESULT key="2206" string="You cannot use a passive talent." />
+  <RESULT key="2207" string="You do not have the necessary focus to use this talent." />
+  <RESULT key="2208" string="The talent is already in use." />
+  <RESULT key="2209" string="You cannot use a talent now." />
+  <RESULT key="2210" string="Your movement speed is not fast enough to use this talent." />
+  <RESULT key="2211" string="This talent can only be used while not in combat." />
+  <RESULT key="2212" string="This talent can only be used by a GM." />
+  <RESULT key="2213" string="You cannot use that skill here." />
+  <RESULT key="2214" string="You do not have enough buffs required for using this talent." />
+  <RESULT key="2302" string="This quest cannot be repeated." />
+  <RESULT key="2304" string="This quest is not in progress." />
+  <RESULT key="2305" string="This quest is not completed." />
+  <RESULT key="2306" string="This quest is not available." />
+  <RESULT key="2308" string="This is a failed quest." />
+  <RESULT key="2310" string="The reward cannot be selected." />
+  <RESULT key="2311" string="You cannot cancel this quest." />
+  <RESULT key="2312" string="You do not have the item needed to receive the reward." />
+  <RESULT key="2313" string="You cannot receive the shared quest." />
+  <RESULT key="2314" string="You have too many quests to receive a new one." />
+  <RESULT key="2401" string="You are already in a guild." />
+  <RESULT key="2402" string="A guild exists by that name." />
+  <RESULT key="2403" string="Guild name is too long." />
+  <RESULT key="2404" string="Guild name is too short." />
+  <RESULT key="2405" string="You do not have enough gold to create a guild." />
+  <RESULT key="2406" string="You are not in a guild." />
+  <RESULT key="2407" string="You are not the guild leader." />
+  <RESULT key="2408" string="You do not have any guild invitations." />
+  <RESULT key="2409" string="You must transfer guild leadership to another player before leaving the guild." />
+  <RESULT key="2410" string="Maximum guild members allowed has been reached." />
+  <RESULT key="2411" string="You cannot use this guild name." />
+  <RESULT key="2412" string="You cannot invite a hostile player to your guild." />
+  <RESULT key="2413" string="You cannot invite a player that is dueling to your guild." />
+  <RESULT key="2414" string="You cannot invite a player that is in a PvP zone to your guild." />
+  <RESULT key="2415" string="You cannot invite a player that is in the battlefield to your guild." />
+  <RESULT key="2416" string="You cannot respond to a guild invitation during a duel." />
+  <RESULT key="2417" string="You cannot respond to party invites from inside a PvP zone." />
+  <RESULT key="2418" string="You cannot respond to a party invitation while being in a battlefield." />
+  <RESULT key="2419" string="There must be no guild members." />
+  <RESULT key="2420" string="Bound items cannot be moved to the guild storage box." />
+  <RESULT key="2421" string="Timed items cannot be moved to the guild storage box." />
+  <RESULT key="2422" string="A guild member has used the guild storage box." />
+  <RESULT key="2423" string="The player is unable to receive guild invitations." />
+  <RESULT key="2424" string="You must go to a Guild Master to disband your guild." />
+  <RESULT key="2425" string="No more than two unique items can be stored in a Guild Storage Box." />
+  <RESULT key="2426" string="Untradeable items cannot be stored in the Guild Storage Box." />
+  <RESULT key="2501" string="You are already in a duel." />
+  <RESULT key="2502" string="The other player is already in a duel." />
+  <RESULT key="2503" string="You cannot duel in this area." />
+  <RESULT key="2504" string="You cannot request a duel while in combat." />
+  <RESULT key="2505" string="The other player is in a duel." />
+  <RESULT key="2506" string="You cannot request a duel while engaged in other activities." />
+  <RESULT key="2507" string="The other player cannot receive the duel request." />
+  <RESULT key="2508" string="You cannot duel with yourself." />
+  <RESULT key="2509" string="You are already hostile to the target." />
+  <RESULT key="2606" string="You can only register active talents to the palette." />
+  <RESULT key="2607" string="You can only register usable items to the palette." />
+  <RESULT key="2650" string="The amulet is full of souls." />
+  <RESULT key="2701" string="You need to be in a party to participate in the arena." />
+  <RESULT key="2702" string="The participating group is already registered." />
+  <RESULT key="2703" string="The participating group is not registered." />
+  <RESULT key="2704" string="Participating groups already in the tournament cannot be canceled." />
+  <RESULT key="2801" string="You cannot send a mail to yourself." />
+  <RESULT key="2802" string="Subject is too long." />
+  <RESULT key="2803" string="Body is too long." />
+  <RESULT key="2804" string="Current server cannot send mail." />
+  <RESULT key="2805" string="Currently unable to send mail containing apostrophes." />
+  <RESULT key="2806" string="Cannot confirm status of recipient." />
+  <RESULT key="2807" string="Current server cannot confirm status of recipient." />
+  <RESULT key="2808" string="Cannot find recipient." />
+  <RESULT key="2809" string="You cannot send mail to a GM." />
+  <RESULT key="2810" string="The recipient's inbox is full." />
+  <RESULT key="2811" string="Insufficient gold for attachments." />
+  <RESULT key="2812" string="An item cannot be attached." />
+  <RESULT key="2813" string="Item not in inventory." />
+  <RESULT key="2814" string="Insufficient quantity to attach." />
+  <RESULT key="2815" string="Insufficient quantity attached." />
+  <RESULT key="2816" string="Bound items cannot be attached." />
+  <RESULT key="2818" string="Timed items cannot be attached." />
+  <RESULT key="2819" string="You cannot attach items being used by other functions." />
+  <RESULT key="2820" string="No mail interaction is in progress." />
+  <RESULT key="2821" string="Current server cannot retrieve mail attachments." />
+  <RESULT key="2822" string="Cannot find selected mail." />
+  <RESULT key="2823" string="Cannot find attached game money." />
+  <RESULT key="2824" string="Mail fare is insufficient." />
+  <RESULT key="2825" string="Enchanted items cannot be attached." />
+  <RESULT key="2826" string="You cannot receive any more game money. Your maximum amount has been reached." />
+  <RESULT key="2901" string="Enchant failed: Insufficient level." />
+  <RESULT key="2902" string="Enchant failed: Equipment part cannot be enchanted." />
+  <RESULT key="2903" string="Enchant failed: Cannot enchant this weapon." />
+  <RESULT key="2904" string="Enchant failed: There are no slots to enchant." />
+  <RESULT key="2905" string="Enchant failed: Incorrect enchant ingredient." />
+  <RESULT key="2906" string="Enchant failed: You cannot attach items being used by other functions." />
+  <RESULT key="2907" string="Enhancement failed: Cannot enhance this armor." />
+  <RESULT key="2908" string="Enchant failed: Enchantment grade low" />
+  <RESULT key="2909" string="Enchant failed" />
+  <RESULT key="2910" string="Enchant error: There is nothing to enchant." />
+  <RESULT key="2911" string="Enchant error: Non-enchantable" />
+  <RESULT key="2912" string="Enchant error: There is no enchanting material." />
+  <RESULT key="2913" string="Enchant error: This is not an enchanting material." />
+  <RESULT key="2914" string="Enchant error: Different level of enchanting material" />
+  <RESULT key="2915" string="Enchant error: There is no increasing material." />
+  <RESULT key="2916" string="Enchant error: There is no increasing material." />
+  <RESULT key="2917" string="Enchant error: This is not an increasing material." />
+  <RESULT key="2918" string="Enchant error: Different level of increasing material" />
+  <RESULT key="2919" string="Enchant error: There is no stabilizer." />
+  <RESULT key="2920" string="Enchant error: This is not a stabilizer." />
+  <RESULT key="2921" string="Enchant error: Different level of stabilizer" />
+  <RESULT key="2922" string="Enchant error: You do not have enough money for enchanting." />
+  <RESULT key="2923" string="Enchant error: Stopping the enchantment. (DB error)" />
+  <RESULT key="2924" string="Enchant error: There is nothing to calculate the enchantment rate for." />
+  <RESULT key="2925" string="Enchant error: The item to calculate the enchantment rate for is non-enchantable." />
+  <RESULT key="2926" string="Enchant error: There is no enchantment rate for the item." />
+  <RESULT key="2927" string="Enchant error: There is no enchantment rate for the increasing material." />
+  <RESULT key="2928" string="Enchant error: There is no enchantment rate for the stabilizer." />
+  <RESULT key="2929" string="Enchant Failed: Incorrect enchant stone." />
+  <RESULT key="3001" string="Searching for available game server." />
+  <RESULT key="3002" string="Moving to game server." />
+  <RESULT key="3003" string="Logging on to game server." />
+  <RESULT key="3004" string="Verification in progress..." />
+  <RESULT key="3005" string="Verification successful." />
+  <RESULT key="3006" string="Entering the world." />
+  <RESULT key="3101" string="Cannot move to character selection screen." />
+  <RESULT key="3102" string="The Character Selection screen is unavailable during your current activities." />
+  <RESULT key="3103" string="Cannot go to the Character Select screen during combat." />
+  <RESULT key="3104" string="Processing time was exceeded, the request has been canceled." />
+  <RESULT key="3105" string="Redirecting to the Select Character screen…" />
+  <RESULT key="3201" string="Currently unable to change channels." />
+  <RESULT key="3202" string="Changing channels is unavailable during your current activities." />
+  <RESULT key="3203" string="Changing channels is unavailable during combat." />
+  <RESULT key="3204" string="The selected channel is full." />
+  <RESULT key="3205" string="Channel no longer exists." />
+  <RESULT key="3206" string="Unable to move to the current channel." />
+  <RESULT key="3207" string="Unable to change channels in this area." />
+  <RESULT key="3208" string="Changing channels..." />
+  <RESULT key="3209" string="Invalid time to request channel change." />
+  <RESULT key="3301" string="Failed Item Registration ? DB task reset failed." />
+  <RESULT key="3302" string="Failed Item Registration ? Quantity" />
+  <RESULT key="3303" string="Failed Item Upload to Market ? DB Error" />
+  <RESULT key="3304" string="You've tried to upload an item from the inventory to the market but the item does not exist in the inventory." />
+  <RESULT key="3305" string="You've tried to upload an item from the inventory to the market but its quantity is incorrect." />
+  <RESULT key="3306" string="It is too cheap to upload to the market (impossible to calculate the Fee)." />
+  <RESULT key="3307" string="{ani=talk1}Use a variety of colors to show off your own unique style! How can I help you?" />
+  <RESULT key="3308" string="Failed Processing: Item purchase has failed." />
+  <RESULT key="3309" string="This item cannot be received. ? It was not uploaded by you." />
+  <RESULT key="3310" string="Item quantity has changed. Collect the money for the items sold before canceling this sale." />
+  <RESULT key="3311" string="There is not enough room in your inventory." />
+  <RESULT key="3312" string="The item was not received because the market was crowded. ? Error in DB" />
+  <RESULT key="3313" string="You are carrying too much money" />
+  <RESULT key="3314" string="Calculations cannot be done because the market is crowded." />
+  <RESULT key="3315" string="You attempted a calculation, but you are carrying too much money." />
+  <RESULT key="3316" string="Calculation DB Error" />
+  <RESULT key="3317" string="Calculate All DB Error" />
+  <RESULT key="3318" string="Cannot be calculated. ? It either does not belong to you or does not match the quantity." />
+  <RESULT key="3319" string="The purchase quantity does not match that of the market item." />
+  <RESULT key="3320" string="This item cannot be purchased. ? Either its price is out of scope or it expired." />
+  <RESULT key="3321" string="This item is no longer available." />
+  <RESULT key="3401" string="Timed items cannot be moved to the storage box." />
+  <RESULT key="3501" string="You cannot ride a mount during combat." />
+  <RESULT key="3502" string="You cannot transform during a battle." />
+  <RESULT key="3601" string="Connection was ended by the Game Master." />
+  <RESULT key="3701" string="You can only have up to 50 recipes in your Journal." />
+  <RESULT key="3801" string="Invalid character name or user is logged off." />
+  <RESULT key="3802" string="Already added as a friend." />
+  <RESULT key="3803" string="That user is not registered as a friend." />
+  <RESULT key="3804" string="No more friends can be added." />
+  <RESULT key="3805" string="Friend function failed due to a database error." />
+  <RESULT key="3806" string="You cannot invite yourself as a friend." />
+  <RESULT key="3807" string="User not found." />
+  <RESULT key="3808" string="Your friend request has been turned down." />
+  <RESULT key="3809" string="You cannot delete yourself." />
+  <RESULT key="3901" string="Banned from connection." />
+  <RESULT key="3902" string="You are banned from trading." />
+  <RESULT key="3903" string="That user is banned from trade." />
+  <RESULT key="3904" string="You are banned from the Trade Market." />
+  <RESULT key="3905" string="You are banned from chatting." />
+  <RESULT key="4000" string="Cannot purchase item. Cash inventory is full." />
+  <RESULT key="4001" string="Not enough cash. Purchase cash?" />
+  <RESULT key="4002" string="The server is experiencing issues. Try again later." />
+  <RESULT key="4003" string="Item does not exist. Close the shop and try again." />
+  <RESULT key="4004" string="Cannot transfer item. Inventory is full." />
+  <RESULT key="4005" string="Cannot send gift. The user's cash inventory is full." />
+  <RESULT key="4007" string="User not found" />
+  <RESULT key="4008" string="User exists." />
+  <RESULT key="4009" string="Select a user to send the gift to." />
+  <RESULT key="4010" string="You cannot send a gift to yourself." />
+  <RESULT key="4101" string="No such box information." />
+  <RESULT key="4102" string="There is an error in the box rate information." />
+  <RESULT key="4103" string="No such prize information." />
+  <RESULT key="4104" string="Insufficient space in inventory." />
+  <RESULT key="4105" string="Database request failed." />
+  <RESULT key="4106" string="Disconnected from the database." />
+  <RESULT key="4201" string="Failed to synchronize the character information with the database." />
+  <RESULT key="4202" string="Failed to synchronize the item information with the database." />
+  <RESULT key="4203" string="Database processing failed." />
+  <RESULT key="4301" string="Already registered at the arena." />
+  <RESULT key="4302" string="Unable to cancel, because no registration has been made at the arena." />
+  <RESULT key="4303" string="Your Brune's Glory confirmation has timed out." />
+  <RESULT key="4304" string="You have declined to enter Brune's Glory." />
+  <RESULT key="4305" string="Not enough players have gathered to start a game." />
+  <RESULT key="4306" string="Brune can't let you use that item in his arena." />
+  <RESULT key="4307" string="You cannot send Brune's Glory requests while in combat." />
+  <RESULT key="4308" string="You cannot send Brune's Glory requests while dead." />
+  <RESULT key="4401" string="Abnormal player status." />
+  <RESULT key="10000" string="Debugging starts here, do not send to server --------------------------------------" />
+  <RESULT key="10001" string="D) Talent has been cancelled upon request." />
+  <RESULT key="10002" string="D) Item talent has been cancelled upon request." />
+  <RESULT key="10003" string="D) Skill has been cancelled because 'move mofac' is in progress." />
+  <RESULT key="10004" string="D) Talent in progress has been cancelled because the player moved." />
+  <RESULT key="1024" string="The login server is busy. Please try again." />
+  <RESULT key="1025" string="Block players from logging in 5 minutes before shutting down game server." />
+  <RESULT key="4501" string="Suicide is not allowed in PVP zone" />
+  <RESULT key="20000" string="Failed" />
+  <RESULT key="20001" string="Succeeded" />
+  <RESULT key="20100" string="Wrong version of command" />
+  <RESULT key="20101" string="Log-in request was not accepted." />
+  <RESULT key="20102" string="World ID is incorrect" />
+  <RESULT key="20103" string="You're already logged on at the server." />
+  <RESULT key="2941" string="Jewel removal has failed: The item is being used by another feature." />
+  <RESULT key="2942" string="Jewel removal has failed: The slot is empty." />
+  <RESULT key="2943" string="Jewel removal has failed: Item information of the slot to remove the jewel from is incorrect." />
+  <RESULT key="2944" string="Jewel removal has failed: DB request failure." />
+  <RESULT key="2945" string="Jewel removal has failed: The item is being used by another feature." />
+  <RESULT key="2946" string="Jewel removal has failed: The slot is empty." />
+  <RESULT key="2947" string="Jewel removal has failed: Item information of the slot to remove the jewel from is incorrect." />
+  <RESULT key="2948" string="Jewel removal has failed: DB request failure." />
+  <RESULT key="1414" string="Only the newly created characters can learn the this style" />
+  <RESULT key="2427" string="You do not have the authority to proceed this command" />
+  <RESULT key="2428" string="You cannot promote yourself to guild leader." />
+  <RESULT key="2429" string="You cannot promote yourself to a higher rank." />
+  <RESULT key="2430" string="You cannot change your own rank." />
+  <RESULT key="2431" string="You cannot change to the same rank." />
+  <RESULT key="2432" string="You cannot change the rank of an equal or higher rank guild member." />
+  <RESULT key="2433" string="You have exceeded the length limit." />
+  <RESULT key="2434" string="You cannot remove yourself." />
+  <RESULT key="2435" string="You cannot remove an equal or higher rank guild member." />
+  <RESULT key="2436" string="You cannot invite that character name." />
+  <RESULT key="2437" string="The player has refused the guild invitation." />
+  <RESULT key="2705" string="Access hours for Brune's Glory have ended." />
+  <RESULT key="2930" string="Enchantment error: You have no reducing agent for Enchantment fall" />
+  <RESULT key="2931" string="Enchantment error: It is not a reducing agent for Enchantment fall" />
+  <RESULT key="2932" string="Enchantment error: The level of reducing agent for Enchantment fall is different" />
+  <RESULT key="4309" string="Brune's Glory is not available right now. See the signup window for available times." />
+  <RESULT key="1730" string="You cannot send a party request when the Battle Arena is in progress." />
+  <RESULT key="1731" string="You cannot leave your party during a Guild Battle." />
+  <RESULT key="1732" string="You cannot banish a party member during a Guild Battle." />
+  <RESULT key="1733" string="You cannot invite the enemy to your party in PvP areas." />
+  <RESULT key="2008" string="This item is only available in battlefields." />
+  <RESULT key="2438" string="You cannot leave your guild during a Guild Battle." />
+  <RESULT key="2439" string="You cannot remove a guild member during a Guild Battle." />
+  <RESULT key="3402" string="Only cash and costume items can be stored." />
+  <RESULT key="4310" string="There is no information about the 1v1 rankings." />
+  <RESULT key="4311" string="There is no information about the guild rankings." />
+  <RESULT key="4312" string="There is no list for the the Hall of Fame." />
+  <RESULT key="4313" string="There is no information about the Hall of Fame rankings." />
+  <RESULT key="4314" string="There is no information about the Hall of Fame ranking for this date." />
+  <RESULT key="4315" string="You are already using the Battle Arena." />
+  <RESULT key="4316" string="You are not in a guild" />
+  <RESULT key="4317" string="You are not in a party" />
+  <RESULT key="4318" string="Only the leader of the party can request guild war" />
+  <RESULT key="4319" string="Only 3 people can request guild war" />
+  <RESULT key="4320" string="Currently the party member is not logged in" />
+  <RESULT key="4321" string="You cannot check the information of the party member " />
+  <RESULT key="4322" string="You can only request when the party member is the same guild member" />
+  <RESULT key="4323" string="Only the leader of the party can cancel guild war" />
+  <RESULT key="4324" string="Someone in the guild member has logged out" />
+  <RESULT key="4325" string="You have exceeded the number of people who can participate in guild war" />
+  <RESULT key="4326" string="There is no guild list for the Hall of Fame of Battle Arena." />
+  <RESULT key="4327" string="There is no information about the guild's Hall of Fame ranking of Battle Arena" />
+  <RESULT key="4328" string="There is no information about the guild's Hall of Fame ranking of Battle Arena in this date" />
+  <RESULT key="4329" string="Someone in the party member is already using Battle Arena" />
+  <RESULT key="4502" string="You will be withdrawn from the party if you enter the PVP area" />
+  <RESULT key="4601" string="You do not have the license." />
+  <RESULT key="4602" string="You do not have enough Bellpesos." />
+  <RESULT key="4701" string="You cannot use the Makeover Salon now." />
+  <RESULT key="4702" string="You are not using the Makeover Salon now." />
+  <RESULT key="4703" string="You do not have enough Bellpesos." />
+  <RESULT key="4704" string="You do not have a Makeover Coupon." />
+  <RESULT key="4705" string="The selected look is not available to you." />
+  <RESULT key="4706" string="The selected tattoo is not available to you." />
+  <RESULT key="4707" string="Failed to apply the data correctly." />
+  <RESULT key="4708" string="You do not have enough funds." />
+  <RESULT key="9001" string="Undefined tier grade." />
+  <RESULT key="1817" string="Failed to loot items since you have waited too long before looting the gathered items." />
+  <RESULT key="1026" string="Invalid parameter." />
+  <RESULT key="1027" string="Invalid token." />
+  <RESULT key="1028" string="Too frequent login attempts." />
+  <RESULT key="46" string="That player is currently using the Makeover Salon." />
+  <RESULT key="2950" string="Enhancement Error: Element Stone missing" />
+  <RESULT key="2951" string="Enhancement Error: Element Stone missing" />
+  <RESULT key="4107" string="Key is missing." />
+  <RESULT key="4108" string="You need a key." />
+</maiet>

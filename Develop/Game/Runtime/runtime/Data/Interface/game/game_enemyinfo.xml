@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_enemyinfo.lua" />
+
+
+  <!-- Frame : Enemy info -->
+  <Frame name="frmEnemyInfo" parent="layerGame0">
+    <Look>lookDefResizableFrame</Look>
+    <Layout>
+      <Location x="337" y="0" />
+      <Size w="350" h="70" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnTimer>luaEnemyInfo:OnTimerEnemyInfo();</OnTimer>
+      <OnShow>luaEnemyInfo:OnShowEnemyInfo();</OnShow>
+      <OnDraw>luaEnemyInfo:OnDrawEnemyInfo();</OnDraw>
+      <OnNcHitTest>return luaEnemyInfo:OnNcHitTestEnemyInfo();</OnNcHitTest>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmEnemyInfo);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmEnemyInfo);
+        end
+      </OnUserArgument>
+    </Event>
+  </Frame>
+
+</UI>

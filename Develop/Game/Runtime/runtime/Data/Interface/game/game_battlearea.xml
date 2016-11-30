@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_battlearea.lua" />
+
+  <Panel name = "pnBattleArenaScore"  parent="layerGame1">
+    <Layout>
+      <Anchor left="false" top="false" right="false" bottom="false" />
+      <Size type="abs" w="163" h="28" />
+      <Location type="abs" x="%50" y="60"/>
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Controls>
+
+      <Label name="labBattleArenaScore">
+        <Look>lookDefLabelScoreColor</Look>
+        <Layout>
+          <Size type="abs" w="%100" h="%100" />
+          <Location type="abs" x="0" y="0" />
+        </Layout>
+        <Shape>
+          <Text>*** VS ***</Text>
+        </Shape>
+      </Label>
+      
+    </Controls>
+  </Panel>
+
+</UI>

@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_gemenchant.lua" />
+
+
+  <!-- Frame -->
+  <Frame name="frmGemEnchant" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="360" h="510" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_GEMENCHANT"));
+        luaGame:RegisterWindow( this);
+      </OnLoaded>
+      <OnShow>luaGemEnchant:OnShowGemEnchantFrame();</OnShow>
+      <OnTimer>luaGemEnchant:OnTimerGemEnchantFrame();</OnTimer>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="345" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmGemEnchant:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Picture : Background image -->
+      <Picture name="picGemEnchantBkgrnd">
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="350" h="370" />
+        </Layout>
+        <Image>bmpEnchantBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture name="picGemEnchantArrowLeft">
+        <Layout>
+          <Location x="40" y="256" />
+          <Size w="105" h="106" />
+        </Layout>
+        <Image>bmpEnchantArrowL</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture name="picGemEnchantArrowRight">
+        <Layout>
+          <Location x="205" y="256" />
+          <Size w="105" h="106" />
+        </Layout>
+        <Image>bmpEnchantArrowR</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- GemEnchant item -->
+      <Picture name="picGemEnchantItem">
+        <Layout>
+          <Location x="155" y="150" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- GemEnchant stone slots -->
+      <Picture name="picGemEnchantGemSlot0">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <Stretch>true</Stretch>
+          <EnableFocus>true</EnableFocus>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickGemSlot(0);</OnClick>
+        </Event>
+      </Picture>
+      
+      <Picture name="picGemEnchantStone0">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picGemEnchantGemSlot1">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <Stretch>true</Stretch>
+          <EnableFocus>true</EnableFocus>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickGemSlot(1);</OnClick>
+        </Event>
+      </Picture>
+      
+      <Picture name="picGemEnchantStone1">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picGemEnchantGemSlot2">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <Stretch>true</Stretch>
+          <EnableFocus>true</EnableFocus>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickGemSlot(2);</OnClick>
+        </Event>
+      </Picture>
+      
+      <Picture name="picGemEnchantStone2">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picGemEnchantGemSlot3">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <Stretch>true</Stretch>
+          <EnableFocus>true</EnableFocus>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickGemSlot(3);</OnClick>
+        </Event>
+      </Picture>
+      
+      <Picture name="picGemEnchantStone3">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picGemEnchantGemSlot4">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <Stretch>true</Stretch>
+          <EnableFocus>true</EnableFocus>
+          <Visible>false</Visible>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickGemSlot(4);</OnClick>
+        </Event>
+      </Picture>
+
+      <Picture name="picGemEnchantStone4">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+
+      <!-- 제거, 추출 선택햇을시 이미지 -->
+      <Picture name="picGemEnchantSeleteSlot">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="60" h="60" />
+        </Layout>
+        <Image>bmpEnchantTarget</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+          <Resize>false</Resize>
+        </Shape>
+      </Picture>
+
+      
+      <!-- Picture : GemEnchant target slot -->
+      <Picture name="picGemEnchantTargetSlot">
+        <Layout>
+          <Location x="145" y="241" />
+          <Size w="60" h="60" />
+        </Layout>
+        <Image>bmpEnchantTarget</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- GemEnchant stone item -->
+      <Picture name="picGemEnchantGemItem">
+        <Layout>
+          <Location x="50" y="312" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <LabelEx name="labGemEnchantGemItem">
+        <Layout>
+          <Location x="30" y="360" />
+          <Size w="80" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "GEMENCHANTSTONE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+      
+
+      <!-- GemEnchant agent item -->
+      <Picture name="picGemEnchantAgentItem">
+        <Layout>
+          <Location x="260" y="312" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <Stretch>true</Stretch>
+          <EnableFocus>true</EnableFocus>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickPopupAgentItem();</OnClick>
+        </Event>
+      </Picture>
+
+      <LabelEx name="labGemEnchantAgentItem">
+        <Layout>
+          <Location x="240" y="361" />
+          <Size w="80" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "GEMENCHANTAGENT"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      
+      <!-- Button : Select agent item -->
+      <Button name="btnSelAgentItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="313" y="327" />
+          <Size w="25" h="25" />
+        </Layout>
+        <Shape>
+          <Text>...</Text>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickPopupAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- TextView : Success ratio -->
+      <TextView name="tvwGemEnchantSuccessRatio">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="125" y="315" />
+          <Size w="100" h="40" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="55" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwGemEnchantMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="402" />
+          <Size w="330" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="450" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Do GemEnchant -->
+      <Button name="btnDoingGemEnchant">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_APPLY"));</OnLoaded>
+          <OnClick>luaGemEnchant:OnClickDoGemEnchant();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="180" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            frmGemEnchant:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  
+  
+  
+  
+  
+
+
+  <!-- Popup menu -->
+  <PopupMenu name="pmGemEnchantAgentItem">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="150" h="175" />
+    </Layout>
+    <Controls>
+
+      <!-- Menu -->
+      <Button name="btnGemEnchantAgentItem0">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnGemEnchantAgentItem1">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="35" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnGemEnchantAgentItem2">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="70" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnGemEnchantAgentItem3">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="105" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnGemEnchantAgentItem4">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="140" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaGemEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmGemEnchantProgress" parent="frmInventory">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="80" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnShow>luaGemEnchant:OnShowGemEnchantProgress();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx name="labGemEnchantDoingProgress">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GEMENCHANT_DOINGITEM"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- ProgressCtrl : GemEnchant progress bar -->
+      <ProgressCtrl name="pcGemEnchantProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="100"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaGemEnchant:OnUpdateGemEnchantProgressBar();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+    </Controls>
+  </Frame>
+
+</UI>

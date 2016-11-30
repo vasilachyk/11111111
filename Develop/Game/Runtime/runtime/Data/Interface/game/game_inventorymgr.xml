@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_inventorymgr.lua" />
+
+
+
+  <Panel name="frmInventoryMgr" parent="layerGame2">
+    <Layout>
+      <Size w="70" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Static>true</Static>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Controls>
+
+      <!--<Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpGradationNone</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>-->
+      
+      <Button>
+        <Layout>
+          <Location x="10" y="20" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnClick>frmInventory:Show( true);</OnClick>
+        </Event>
+      </Button>
+
+      <Picture>
+        <Layout>
+          <Location x="10" y="20" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Image>iconInventoryOpen</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Button>
+        <Layout>
+          <Location x="10" y="80" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnClick>frmExInventory:Show( not frmExInventory:GetShow() )</OnClick>
+        </Event>
+      </Button>
+
+      <Picture name="picExinven">
+        <Layout>
+          <Location x="10" y="80" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Image>iconInventoryClose</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+    </Controls>
+  </Panel>
+  
+</UI>

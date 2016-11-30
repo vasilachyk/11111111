@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_crafting_costume.lua" />
+
+
+  <!-- Frame : CraftingCostume -->
+  <Frame name="frmCraftingCostume" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="360" h="510" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CRAFTING_COSTUME"));
+        luaGame:RegisterWindow( frmCraftingCostume);
+      </OnLoaded>
+      <OnShow>luaCraftingCostume:OnShowCraftingCostumeFrame();</OnShow>
+      <OnTimer>luaCraftingCostume:OnTimerCraftingCostumeFrame();</OnTimer>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="345" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCraftingCostume:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background image -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="350" h="370" />
+        </Layout>
+        <Image>bmpDyeBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Crafting Costume target item -->
+      <Picture name="picCraftingCostumeTargetItem">
+        <Layout>
+          <Location x="155" y="82" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Crafting Costume item -->
+      <Picture name="picCraftingCostumeItem">
+        <Layout>
+          <Location x="155" y="215" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+     
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="55" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- TextView : Message -->
+      <TextView name="tvwCraftingCostumeMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="402" />
+          <Size w="330" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+      
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="450" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Do Crafting Costume -->
+      <Button name="btnDoCraftingCostume">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_APPLY"));</OnLoaded>
+          <OnClick>luaCraftingCostume:OnClickDoCraftingCostume();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="180" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            frmCraftingCostume:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmCraftingCostumeProgress" parent="frmInventory">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="80" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnShow>luaCraftingCostume:OnShowCraftingCostumeProgress();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CRAFTING_COSTUME_CRAFTINGITEM"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- ProgressCtrl : Crafting Costume progress bar -->
+      <ProgressCtrl name="pcCraftingCostumeProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="100"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaCraftingCostume:OnUpdateCraftingCostumeProgressBar();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+    </Controls>
+  </Frame>
+  
+</UI>

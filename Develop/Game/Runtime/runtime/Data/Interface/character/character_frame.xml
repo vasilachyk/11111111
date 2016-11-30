@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="char">
+
+  <!-- Include script -->
+  <Script file="character_frame.lua" />
+
+  <!-- Presentation box -->
+  <PresentationBox name="pCharPresentation">
+    <Look type="text">lookDefPresentationText1</Look>
+    <Layout>
+      <Location x="0" y="90" />
+      <Size w="%100" h="90" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <FadeSecond>1.0</FadeSecond>
+      <ShowRect>false</ShowRect>
+    </Shape>
+  </PresentationBox>
+
+  <Picture name="CharDeliberationLogo">
+    <Layout>
+      <Location x="1014" y="30" base="TOPRIGHT" />
+      <Size w="263" h="150" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Image>bmpdeliberation</Image>
+    <Shape>
+      <Stretch>true</Stretch>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnShow>luaCharacterFrame:OnShowGameDeliberationLogo();</OnShow>
+      <OnLoaded>this:Show( false );</OnLoaded>
+      <OnTimer>luaCharacterFrame:OnTimerGameDeliberationLogo();</OnTimer>
+      <OnUpdate>luaCharacterFrame:OnUpdateGameDeliberationLogo();</OnUpdate>
+    </Event>
+  </Picture>
+
+  <!-- Presentation box -->
+  <PresentationBox name="CharDeliberationPresentation">
+    <Look type="text">lookDefPresentationText1</Look>
+    <Layout>
+      <Location x="0" y="180" />
+      <Size w="%100" h="60" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <FadeSecond>0.5</FadeSecond>
+      <ShowRect>false</ShowRect>
+    </Shape>
+  </PresentationBox>
+  
+  <!-- Frame -->
+  <Frame name="frmCharacterErrorMsgBox" parent="layerCharFrame">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="200" y="200" />
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_ERROR"));</OnLoaded>
+      <OnShow>
+        if ( frmCharacterErrorMsgBox:GetShow() == true)  then
+
+          local x = ( gamefunc:GetWindowWidth() - frmCharacterErrorMsgBox:GetWidth()) * 0.5;
+          local y = ( gamefunc:GetWindowHeight() - frmCharacterErrorMsgBox:GetHeight()) * 0.5;
+          frmCharacterErrorMsgBox:SetPosition( x, y);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCharacterErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefStop</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwCharacterErrorMsg">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+      
+
+      <!-- Buttons : OK -->
+      <Button name="btnCharacterErrorOk" >
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="150" y="110" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaCharacterFrame:OnClickCharacterError();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+  
+  
+
+
+  <!-- Paint : Character black screen -->
+  <Paint name="pntCharBlackScreen" parent="layerCharFrame">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true"/>
+    </Layout>
+    <Shape>
+      <Color r="0" g="0" b="0" />
+    </Shape>
+    <Event>
+      <OnUpdate>luaCharacterFrame:OnUpdateCharBlackScreen();</OnUpdate>
+    </Event>
+  </Paint>
+
+
+
+
+
+  
+  <!-- Frame : World enter progress -->
+  <Frame name="frmWorldEnter" parent="layerCharFrame">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="80" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx name="labWorldEnterProgressMsg">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_ENTERWORLD"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      
+      <!-- ProgressCtrl : Progress of entering -->
+      <ProgressCtrl name="pcWorldEnterProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Pos>100</Pos>
+        </Shape>
+      </ProgressCtrl>
+      
+    </Controls>
+  </Frame>
+
+
+
+  <!-- Frame : Model Loading progress -->
+  <Frame name="frmModelLoading" parent="layerCharFrame">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="250" h="50" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx name="labModelLoadingProgressMsg">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_MODEL_LOADING"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+    </Controls>
+  </Frame>
+
+
+  <!-- Quick option -->
+  <!-- Button : Quick option button -->
+  <Button name="btnCharQuickOption">
+    <Layout>
+      <Location x="1019" y="5" base="TOPRIGHT"/>
+      <Size w="32" h="32" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Icon w="32" h="32">iconGear</Icon>
+      <Opacity>0.75</Opacity>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetToolTip( STR( "UI_OPTION")); this:Show( false );</OnLoaded>
+      <OnEnter>btnCharQuickOption:SetOpacity( 1.0);</OnEnter>
+      <OnLeave>btnCharQuickOption:SetOpacity( 0.75);</OnLeave>
+      <OnClick>btnCharQuickOption:TrackPopupMenu( "pmQuickOption");</OnClick>
+    </Event>
+  </Button>
+
+  <!-- Popup menu : Quick option menu -->
+  <PopupMenu name="pmQuickOption">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="300" h="320" />
+    </Layout>
+    <Controls>
+
+      <!-- Option : Low performance system -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="290" h="100" />
+        </Layout>
+      </Group>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="280" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_LOGIN_LOWPERFORMANCE") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_LOGIN_DESCLOWPERFORMANCE");
+            this:SetText( strText);
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Option : Midium performance system -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="110" />
+          <Size w="290" h="100" />
+        </Layout>
+      </Group>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="115" />
+          <Size w="280" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_LOGIN_MEDIUMPERFORMANCE") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_LOGIN_DESCMEDIUMPERFORMANCE");
+            this:SetText( strText);
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Option : High performance system -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="215" />
+          <Size w="290" h="100" />
+        </Layout>
+      </Group>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="220" />
+          <Size w="280" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_LOGIN_HIGHPERFORMANCE") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_LOGIN_DESCHIGHPERFORMANCE");
+            this:SetText( strText);
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Button : Option menu 1 -->
+      <Button>
+        <Look>lookDefSelectBtn</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="290" h="100" />
+        </Layout>
+        <Event>
+          <OnClick>
+            gameoption:SettingLowPerformance();
+
+            gameoption:SaveOption();
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Option menu 2 -->
+      <Button>
+        <Look>lookDefSelectBtn</Look>
+        <Layout>
+          <Location x="5" y="110" />
+          <Size w="290" h="100" />
+        </Layout>
+        <Event>
+          <OnClick>
+            gameoption:SettingMediumPerformance();
+
+            gameoption:SaveOption();
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Option menu 3 -->
+      <Button>
+        <Look>lookDefSelectBtn</Look>
+        <Layout>
+          <Location x="5" y="215" />
+          <Size w="290" h="100" />
+        </Layout>
+        <Event>
+          <OnClick>
+            gameoption:SettingHighPerformance();
+
+            gameoption:SaveOption();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+  
+</UI>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_playerstate.lua" />
+
+
+  <!-- Panel : Player state viewer -->
+  <Panel name="pnlPlayerState" parent="layerGame0">
+    <Layout>
+      <Location x="0" y="720" base="BOTTOMLEFT" />
+      <Size w="%100" h="100" />
+      <Anchor left="true" top="false" right="true" bottom="true" />
+    </Layout>
+    <Event>
+      <OnLoaded>luaPlayerState:OnLoadedPlayerStateViewer();</OnLoaded>
+      <OnUpdate>luaPlayerState:OnUpdatePlayerStateViewer();</OnUpdate>
+      <OnDraw>luaPlayerState:OnDrawPlayerStateViewer();</OnDraw>
+    </Event>
+  </Panel>
+
+</UI>

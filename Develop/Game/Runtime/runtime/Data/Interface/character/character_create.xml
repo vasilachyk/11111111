@@ -1,0 +1,2053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="char">
+
+  <!-- Include script -->
+  <Script file="character_create.lua" />
+
+  <!-- 오른쪽 -->
+  <Panel name="pnlCharCreate" parent="layerCharCreate">
+    <Layout>
+      <Location x="484" y="0"/>
+      <Size w="540" h="960" />
+      <Anchor left="false" top="false" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      
+      <OnLoaded>
+        luaCharacterFrame:SwitchScene( luaCharacter.SwitchToCharCreate);
+      </OnLoaded>
+      
+    </Event>
+    <Controls>
+
+      <!-- Picture : Base Image2 -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameMain2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Base Image -->
+      <Picture>
+        <Layout>
+          <Location x="158" y="0" />
+          <Size w="382" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameMain</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Base Image -->
+      <Picture name="picCreateMainCycle" >
+        <Layout>
+          <Location x="300" y="170" />
+          <Size w="220" h="220" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpCharFrameMainCycle1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnUpdate>luaCharacterCreate:UpdateMainCycle();</OnUpdate>
+        </Event>
+      </Picture>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="355" y="255" />
+          <Size w="110" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( "{ALIGN hor=\"center\" ver=\"center\" }{FONT name=\"fntTitle\"}{COLOR r=230 g=230 b=230}" .. STR( "UI_SELCHAR_CREATE_TITLE" ) );
+          </OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Button : CreateStyle -->
+      <Button name="btnCreateStyle">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="40" y="155" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaCharacterCreate:OnLoadedCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_STYLE, btnCreateStyle, true, -30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_STYLE" ) );</OnLoaded>
+          <OnValueChanged>
+            luaCharacterCreate:OnClickCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_STYLE );
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Button : CreatFace -->
+      <Button name="btnCreatFace">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="30" y="205" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaCharacterCreate:OnLoadedCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_MAKEFACE, btnCreatFace, false, 30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_MAKEFACE" ) );</OnLoaded>
+          <OnValueChanged>
+            luaCharacterCreate:OnClickCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_MAKEFACE );
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Button : CreateHead -->
+      <Button name="btnCreateHead">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="20" y="255" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaCharacterCreate:OnLoadedCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_HEAD, btnCreateHead, false, 30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_HEAD" ) );</OnLoaded>
+          <OnValueChanged>
+            luaCharacterCreate:OnClickCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_HEAD );
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Button : CreateTattoo -->
+      <Button name="btnCreateTattoo">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="30" y="305" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaCharacterCreate:OnLoadedCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_TATTOO, btnCreateTattoo, false, 30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO" ) );</OnLoaded>
+          <OnValueChanged>
+            luaCharacterCreate:OnClickCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_TATTOO );
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <!-- Button : CreateETC -->
+      <Button name="btnCreateETC">
+        <Look>lookDefCharFrameSelButton</Look>
+        <Layout>
+          <Location x="40" y="355" />
+          <Size w="250" h="50" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaCharacterCreate:OnLoadedCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_ETC, btnCreateETC, false, -30.0 );
+            this:SetText( STR( "UI_SELCHAR_CREATE_ETC" ) );</OnLoaded>
+          <OnValueChanged>
+            luaCharacterCreate:OnClickCreateTagBtn( luaCharacterCreate.CREATETAG.CREATETAG_ETC );
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+  <!-- Panel -->
+  <Panel parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="0" base="TOPLEFT"/>
+      <Size w="500" h="%100" />
+      <Anchor left="true" top="true" right="false" bottom="true" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameLeftBase</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+      
+    </Controls>
+  </Panel>
+  
+  <!-- Panel -->
+  <Panel name="pnlCreateStyle" parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="30" base="TOPLEFT"/>
+      <Size w="320" h="640" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaCharacterCreate:OnLoadedCreateTagPnl( luaCharacterCreate.CREATETAG.CREATETAG_STYLE, pnlCreateStyle );
+      </OnLoaded>
+      <OnUpdate>luaCharacterCreate:OnNcHitTestpicMainSkill();</OnUpdate>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        luaCharacterCreate:CreateLeftPanelRefresh( this );
+        lcCharacterPreviewEquip:SetCurSel( lcCharacterStyle:GetCurSel() + 1);
+        else
+        luaCharacterCreate:CloseMovie();
+        end
+      </OnShow>
+      
+    </Event>
+    <Controls>
+
+      <!-- 스타일 선택 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_STYLE" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+      
+      <ListCtrl name="lcCharacterStyle">
+        <Look>lookDefListCtrlCharCreateLargeIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="280" h="250" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="hcenter,bottom" width="180">style</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharStyleListCtrl();</OnLoaded>
+          <OnSelChange>luaCharacterCreate:OnSelChangelcCharacterStyle();</OnSelChange>
+          <OnDrawItemBkgrnd>luaCharacterCreate:OnDrawItemBkgrndlcCharacterStyle();</OnDrawItemBkgrnd>
+        </Event>
+      </ListCtrl>
+      
+      <!-- 남/여 선택 -->
+      <ListCtrl name="lcCharacterSex">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="200" y="50" />
+          <Size w="100" h="50" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedlcCharacterSex();</OnLoaded>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( true );</OnSelChange>
+          <OnDrawItem>luaCharacterCreate:OnDrawItemlcCharacterSex();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+      <Panel>
+        <Layout>
+          <Location x="20" y="320" />
+          <Size w="280" h="310" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <Visible>true</Visible>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+        </Event>
+        <Controls>
+
+          <!--
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+          </Group>
+-->
+          <TextView name="tvwStyleDesc">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="5" y="5" />
+              <Size w="%95" h="150" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <!--<Wrap>false</Wrap>-->
+              <ShowRect>false</ShowRect>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_SELCHAR_DEFENDER_DESC" ) );</OnLoaded>
+            </Event>
+          </TextView>
+
+          <TextView name="tvwMainSkill">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="5" y="170" />
+              <Size w="%95" h="20" />
+              <Anchor left="true" top="false" right="false" bottom="true" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <!--<Wrap>false</Wrap>-->
+              <ShowRect>false</ShowRect>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_SELCHAR_MAIN_SKILL" ) );</OnLoaded>
+            </Event>
+          </TextView>
+          
+          <!-- 스타일 선택 -->
+          <Picture name="picMainSkill1Base">
+            <Layout>
+              <Location x="25" y="195" />
+              <Size w="60" h="60" />
+            </Layout>
+            <Image>bmpPCBenefitIconBase</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+          
+          <Picture name="picMainSkill1">
+            <Layout>
+              <Location x="30" y="200" />
+              <Size w="50" h="50" />
+            </Layout>
+            <Image></Image>
+            <Shape>
+              <Stretch>true</Stretch>
+              <ShowRect>false</ShowRect>
+            </Shape>
+            <Event>
+              <OnLoaded>picMainSkill1:SetImage( gamefunc:GetTalentImage( 52780 ) );</OnLoaded>
+              <OnNcHitTest></OnNcHitTest>
+            </Event>
+          </Picture>
+
+          <Picture name="picMainSkill2Base">
+            <Layout>
+              <Location x="95" y="195" />
+              <Size w="60" h="60" />
+            </Layout>
+            <Image>bmpPCBenefitIconBase</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+          
+          <Picture name="picMainSkill2">
+            <Layout>
+              <Location x="100" y="200" />
+              <Size w="50" h="50" />
+            </Layout>
+            <Image></Image>
+            <Shape>
+              <Stretch>true</Stretch>
+              <ShowRect>false</ShowRect>
+            </Shape>
+            <Event>
+              <OnLoaded>picMainSkill1:SetImage( gamefunc:GetTalentImage( 52750 ) );</OnLoaded>
+              <OnNcHitTest></OnNcHitTest>
+            </Event>
+          </Picture>
+
+          <Picture name="picMainSkill3Base">
+            <Layout>
+              <Location x="165" y="195" />
+              <Size w="60" h="60" />
+            </Layout>
+            <Image>bmpPCBenefitIconBase</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+          
+          <Picture name="picMainSkill3">
+            <Layout>
+              <Location x="170" y="200" />
+              <Size w="50" h="50" />
+            </Layout>
+            <Image></Image>
+            <Shape>
+              <Stretch>true</Stretch>
+              <ShowRect>false</ShowRect>
+            </Shape>
+            <Event>
+              <OnLoaded>picMainSkill1:SetImage( gamefunc:GetTalentImage( 54000 ) );</OnLoaded>
+              <OnNcHitTest></OnNcHitTest>
+            </Event>
+          </Picture>
+
+          <TextView name="tvwMainSkilDesc">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="5" y="260" />
+              <Size w="%95" h="40" />
+              <Anchor left="true" top="false" right="false" bottom="true" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <!--<Wrap>false</Wrap>-->
+              <ShowRect>false</ShowRect>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_SELCHAR_MAIN_SKILL_DESC" ) );</OnLoaded>
+            </Event>
+          </TextView>
+          
+        </Controls>
+      </Panel>
+      
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlCreateFace" parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="50" base="TOPLEFT"/>
+      <Size w="300" h="610" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaCharacterCreate:OnLoadedCreateTagPnl( luaCharacterCreate.CREATETAG.CREATETAG_MAKEFACE, pnlCreateFace );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        luaCharacterCreate:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 얼굴 모양 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+     <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_FACE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterFace">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="260" h="150" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharFaceListCtrl();</OnLoaded>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+          <OnDrawItem>luaCharacterCreate:OnDrawItemCharFaceListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+      <!-- 피부 색 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="210" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="220" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_SKINCOLOR"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterSkinColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="250" />
+          <Size w="260" h="120" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharSkinColorListCtrl();</OnLoaded>
+          <OnDrawItemBkgrnd>luaCharacterCreate:OnDrawItemBkgrndCharSkinColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+        </Event>
+      </ListCtrl>
+
+      <!-- 화장 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="380" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+    
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="390" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_MAKEUP"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterMakeUp">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="420" />
+          <Size w="260" h="50" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharMakeUpListCtrl();</OnLoaded>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+          <OnDrawItem>luaCharacterCreate:OnDrawItemCharMakeUpListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+      <!-- 눈동자 색상 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="480" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="490" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_EYECOLOR" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterEyeColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="520" />
+          <Size w="260" h="70" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharEyeColorListCtrl();</OnLoaded>
+          <OnDrawItemBkgrnd>luaCharacterCreate:OnDrawItemBkgrndCharEyeColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+        </Event>
+      </ListCtrl>
+      
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlCreateHead" parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="100" base="TOPLEFT"/>
+      <Size w="300" h="470" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaCharacterCreate:OnLoadedCreateTagPnl( luaCharacterCreate.CREATETAG.CREATETAG_HEAD, pnlCreateHead );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        luaCharacterCreate:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 머리 모양 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_HAIR" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterHair">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="260" h="250" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharHairListCtrl();</OnLoaded>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+          <OnDrawItem>luaCharacterCreate:OnDrawItemCharHairListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+      <!-- 머리 색 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="310" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="320" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_HAIRCOLOR"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterHairColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="350" />
+          <Size w="250" h="120" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharHairColorListCtrl();</OnLoaded>
+          <OnDrawItemBkgrnd>luaCharacterCreate:OnDrawItemBkgrndCharHairColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+        </Event>
+      </ListCtrl>
+      
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlCreateTattoo" parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="100" base="TOPLEFT"/>
+      <Size w="300" h="600" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaCharacterCreate:OnLoadedCreateTagPnl( luaCharacterCreate.CREATETAG.CREATETAG_TATTOO, pnlCreateTattoo );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        luaCharacterCreate:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 문신 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterTattoo">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="280" h="180" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharTattooListCtrl();</OnLoaded>
+          <OnDrawItem>luaCharacterCreate:OnDrawItemCharTattooListCtrl();</OnDrawItem>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+        </Event>
+      </ListCtrl>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="230" />
+          <Size w="280" h="116" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Group>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="15" y="240" />
+          <Size w="96" h="96" />
+        </Layout>
+        <Shape>
+          <Opacity>0.5</Opacity>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Group>
+
+      <Picture name="picTattooHeadGrid">
+        <Layout>
+          <Location x="18" y="243" />
+          <Size w="90" h="90" />
+        </Layout>
+        <Image>bmpHeadGrid</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Static>false</Static>
+          <EnableFocus>true</EnableFocus>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLButtonDown>
+            luaCharacterCreate:SetTattooPos( EventArgs:GetCursorPos());
+            luaCharacterCreate:RefreshCharacter( false );
+          </OnLButtonDown>
+          <OnLButtonUp>
+            luaCharacterCreate:SetTattooPos( EventArgs:GetCursorPos());
+            luaCharacterCreate:RefreshCharacter( false );
+          </OnLButtonUp>
+          <OnMouseMove>
+            local _wnd = EventArgs:GetOwner();
+            if ( _wnd:IsCapture() == true)  then
+
+            luaCharacterCreate:SetTattooPos( EventArgs:GetCursorPos());
+            luaCharacterCreate:RefreshCharacter( false );
+            end
+          </OnMouseMove>
+          <OnDraw>luaCharacterCreate:OnDrawTattooHeadGrid();</OnDraw>
+        </Event>
+      </Picture>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="120" y="240" />
+          <Size w="160" h="55" />
+        </Layout>
+        <Shape>
+          <Opacity>0.5</Opacity>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Group>
+
+      <Picture>
+        <Layout>
+          <Location x="147" y="266" />
+          <Size w="2" h="5" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="200" y="266" />
+          <Size w="2" h="5" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="250" y="266" />
+          <Size w="2" h="5" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Slider name="sldTattoScale">
+        <Look>lookDefSlider</Look>
+        <Layout>
+          <Location x="140" y="250" />
+          <Size w="120" h="23" />
+        </Layout>
+        <Shape>
+          <Style>horizontal</Style>
+          <ScrollRange min="0" max="10"/>
+          <ScrollValue>5</ScrollValue>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaCharacterCreate:RefreshCharacter( false );</OnValueChanged>
+        </Event>
+      </Slider>
+
+      <LabelEx>
+        <Layout>
+          <Location x="97" y="272" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_SMALL"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <LabelEx>
+        <Layout>
+          <Location x="200" y="272" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_LARGE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="305" />
+          <Size w="120" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TATOO_RESET"));</OnLoaded>
+          <OnClick>
+            sldTattoScale:SetScrollValue( 5);
+            luaCharacterCreate.TATTOO.x = 0;
+            luaCharacterCreate.TATTOO.y = 0;
+            luaCharacterCreate:RefreshCharacter( false );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 문신 색상 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="370" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="380" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_COLOR" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Label name="lbCharacterTatooColorNone">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="410" />
+          <Size w="%100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_TATTOO_NOCOLOR" ) );</OnLoaded>
+        </Event>
+      </Label>
+      
+      <ListCtrl name="lcCharacterTatooColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="410" />
+          <Size w="280" h="70" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharTatooColorListCtrl();</OnLoaded>
+          <OnDrawItemBkgrnd>luaCharacterCreate:OnDrawItemBkgrndCharTatooColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+        </Event>
+      </ListCtrl>
+      
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlCreateETC" parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="100" base="TOPLEFT"/>
+      <Size w="300" h="280" />
+      <Anchor left="true" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Visible>true</Visible>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaCharacterCreate:OnLoadedCreateTagPnl( luaCharacterCreate.CREATETAG.CREATETAG_ETC, pnlCreateETC );
+      </OnLoaded>
+      <OnShow>
+        if( this:GetShow() == true)  then
+        lcCharacterPreviewEquip:SetCurSel( 0 );
+        luaCharacterCreate:CreateLeftPanelRefresh( this );
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- 의상 
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_CLOTHES" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterEquipment">
+        <Look>lookDefListCtrlLargeSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="300" h="50" />
+        </Layout>
+        <Shape>
+          <Visible>true</Visible>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharEquipmentListCtrl();</OnLoaded>
+          <OnSelChange>
+            lcCharacterPreviewEquip:SetCurSel( 0);
+            luaCharacterCreate:RefreshCharacter( false );
+          </OnSelChange>
+          <OnDrawItem>luaCharacterCreate:OnDrawItemCharEquipmentListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+-->
+      <!-- 의상 색상 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="10" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_CLOTHESCOLOR" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterEquipColor">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="50" />
+          <Size w="280" h="120" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="1"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <AddColumn align="left,vcenter" width="10">r</AddColumn>
+          <AddColumn align="left,vcenter" width="10">g</AddColumn>
+          <AddColumn align="left,vcenter" width="10">b</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharEquipColorListCtrl();</OnLoaded>
+          <OnDrawItemBkgrnd>luaCharacterCreate:OnDrawItemBkgrndCharEquipColorListCtrl();</OnDrawItemBkgrnd>
+          <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+        </Event>
+      </ListCtrl>
+
+      <!-- 목소리 -->
+      <Picture>
+        <Layout>
+          <Location x="15" y="180" />
+          <Size w="260" h="40" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameCreateTab</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="30" y="190" />
+          <Size w="260" h="20" />
+        </Layout>
+        <Shape>
+          <FontColor r="239" g="239" b="239"/>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_VOICE" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <ListCtrl name="lcCharacterVoice">
+        <Look>lookDefListCtrlSquareIcon</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="20" y="220" />
+          <Size w="280" h="50" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="2" vert="2"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowBorder>false</ShowBorder>
+          <AddColumn align="left,vcenter" width="10">num</AddColumn>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>luaCharacterCreate:OnLoadedCharVoiceListCtrl();</OnLoaded>
+          <OnSelChange>luaCharacterCreate:OnSelChangeCharVoiceListCtrl();</OnSelChange>
+          <OnDrawItem>luaCharacterCreate:OnDrawItemCharVoiceListCtrl();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+      
+    </Controls>
+  </Panel>
+  
+  <!-- 캐릭터 선택 하단 -->
+  <Panel name="pnlCharCreateBottom" parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="687"/>
+      <Size w="%100" h="80" />
+      <Anchor left="true" top="false" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Base Image -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="23" />
+          <Size w="%100" h="34" />
+          <Anchor left="true" top="false" right="true" bottom="false" />
+        </Layout>
+        <Image>bmpCharFrameBottom</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- Buttons : RnadomModel -->
+      <Button>
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="30" y="20" />
+          <Size w="130" h="40" />
+          <Anchor left="true" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_RANDOMSETTINGS" ) );</OnLoaded>
+          <OnClick>luaCharacterCreate:SetRandomModel();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : ConfirmCreate -->
+      <Button name="btnCharacterConfirmCreate">
+        <Look>lookDefCharFrameLButton</Look>
+        <Layout>
+          <Location x="392" y="0" />
+          <Size w="300" h="80" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Shape>
+          <Icon w="40" h="40"></Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "UI_SELCHAR_CREATE"));
+            local width, height = pnlCharCreateBottom:GetParent():GetSize();
+            local x, y, w, h = btnCharacterConfirmCreate:GetRect();
+            btnCharacterConfirmCreate:SetPosition( (width - w) * 0.5, y);
+          </OnLoaded>
+          <OnClick>luaCharacterCreate:OpenConfirmCreateCharacter();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="874" y="20" />
+          <Size w="130" h="40" />
+          <Anchor left="false" top="false" right="true" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_out" );
+            luaCharacterFrame:SwitchScene( luaCharacter.SwitchToCharSelect);
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+  
+  <!-- 이름 입력 + 회전 -->
+  <Panel name="pnlCreateName" parent="layerCharCreate">
+    <Layout>
+      <Location x="340" y="555"/>
+      <Size w="370" h="150" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnLoaded>
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- 좌 회전 -->
+      <Button>
+        <Look>lookDefCharFrameLRotBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="60" h="60" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Event>
+          <OnLButtonDown>
+            luaCharacterCreate:OnClickCharTurn( -10.0 );
+          </OnLButtonDown>
+          <OnLButtonUp>
+            luaCharacterCreate:OnClickCharTurn( 0.0 );
+          </OnLButtonUp>
+        </Event>
+      </Button>
+
+      <!-- 우 회전 -->
+      <Button>
+        <Look>lookDefCharFrameRRotBtn</Look>
+        <Layout>
+          <Location x="310" y="0" />
+          <Size w="60" h="60" />
+          <Anchor left="false" top="false" right="false" bottom="false" />
+        </Layout>
+        <Event>
+          <OnLButtonDown>
+            luaCharacterCreate:OnClickCharTurn( 10.0 );
+          </OnLButtonDown>
+          <OnLButtonUp>
+            luaCharacterCreate:OnClickCharTurn( 0.0 );
+          </OnLButtonUp>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Base Image -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="90" />
+          <Size w="%100" h="40" />
+          <Anchor left="true" top="false" right="true" bottom="false" />
+        </Layout>
+        <Image>bmpCharFrameBottom3</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+
+      <!-- 이름 -->
+      <Edit name="edtCharacterName">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="40" y="98" />
+          <Size w="290" h="24" />
+        </Layout>
+        <Shape>
+          <ko_KR>
+            <LimitText>10</LimitText>
+          </ko_KR>
+          <en_US>
+            <LimitText>15</LimitText>
+          </en_US>
+          <LimitText>20</LimitText>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaCharacterCreate:edtCharacterNameOnLoaded();
+          </OnLoaded>
+          <OnValueChanged>luaCharacterCreate:CheckCharacterNameValidate();</OnValueChanged>
+          <OnSetFocus>luaCharacterCreate:CheckCharacterNameValidate();</OnSetFocus>>
+          <OnKillFocus>luaCharacterCreate:CheckCharacterNameValidate();</OnKillFocus>>
+          <OnOK>layerCharCreate:SetFocus();</OnOK>
+          <OnCancel>layerCharCreate:SetFocus();</OnCancel>
+        </Event>
+      </Edit>
+
+      <TextView name="twvCharacterNameValidate">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="40" y="98" />
+          <Size w="290" h="24" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnUpdate>twvCharacterNameValidate:SetOpacity( 0.8 + 0.2 * math.sin( gamefunc:GetUpdateTime() * 0.005));</OnUpdate>
+        </Event>
+      </TextView>
+
+      <!-- 중복확인 
+      <Button name="btnNameDuplicate">
+        <Look>lookDefCharFrameButton</Look>
+        <Layout>
+          <Location x="330" y="17" />
+          <Size w="130" h="40" />
+          <Anchor left="false" top="false" right="true" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHANGENAME_DUPLICATE" ) );</OnLoaded>
+          <OnClick>
+            luaCharacterCreate:OnClickCheckNameDuplicate();
+          </OnClick>
+        </Event>
+      </Button>-->
+      
+    </Controls>
+  </Panel>
+  
+  <!-- 스킬 동영상 -->
+  <Panel name="pnlVideoSkill" parent="layerCharCreate">
+    <Layout>
+      <Location x="0" y="0"/>
+      <Size w="420" h="420" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+    </Event>
+    <Controls>
+
+      <Video name="videoSkill">
+        <Look>lookDefFieldMap</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="400" h="400" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+        </Event>
+      </Video>
+
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Image>bmpCharFrameVideoFrame</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Picture>
+      
+    </Controls>
+  </Panel>
+  
+  
+
+  <!-- 중복확인창 -->
+  <Frame name="frmNameDuplicate"  parent="layerCharFrame">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="250" h="50" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_MODEL_LOADING"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+    </Controls>
+  </Frame>
+
+  <!-- Style description 
+  <TextView name="tvwStyleDesc" parent="layerCharCreate">
+    <Look>lookDefTextView</Look>
+    <Layout>
+      <Location x="10" y="100" />
+      <Size w="300" h="300" />
+    </Layout>
+    <Shape>
+      <ShowScrollBar>hide</ShowScrollBar>
+      <Static>true</Static>
+      <Opacity>0.7</Opacity>
+    </Shape>
+    <Event>
+      <OnUpdate>
+        local fElapsed = gamefunc:GetUpdateTime() - luaCharacterCreate.slidingtimer;
+        local fRatio = math.min( 1.0, fElapsed / 400);
+        local x, y = this:GetPosition();
+        this:SetPosition( 10 + 70 * math.pow( 1.0 - fRatio, 3),  y);
+        this:SetOpacity( fRatio);
+      </OnUpdate>
+    </Event>
+  </TextView>
+
+
+  <!-- Stance 
+  <Label parent="layerCharCreate">
+    <Look>lookDefLabel</Look>
+    <Layout>
+      <Location x="10" y="683" />
+      <Size w="100" h="20" />
+      <Anchor left="true" top="false" right="false" bottom="true" />
+    </Layout>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_STANCE"));</OnLoaded>
+    </Event>
+  </Label>
+
+  <Picture name="picCharStanceBattle" parent="layerCharCreate">
+    <Layout>
+      <Location x="10" y="708" />
+      <Size w="45" h="45" />
+      <Anchor left="true" top="false" right="false" bottom="true" />
+    </Layout>
+    <Image>iconStanceNormal</Image>
+    <Shape>
+      <Stretch>true</Stretch>
+    </Shape>
+  </Picture>
+
+  <Button name="btnCharStanceBattle" parent="layerCharCreate">
+    <Look>lookDefButton</Look>
+    <Layout>
+      <Location x="10" y="708" />
+      <Size w="45" h="45" />
+      <Anchor left="true" top="false" right="false" bottom="true" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Type>pushbutton</Type>
+      <Check>false</Check>
+    </Shape>
+    <Event>
+      <OnValueChanged>
+        local strImage = "iconStanceNormal";
+        if ( btnCharStanceBattle:GetCheck() == true)  then  strImage = "iconStanceBattle";  end
+        picCharStanceBattle:SetImage( strImage);
+
+        luaCharacterCreate:RefreshCharacter( false );
+      </OnValueChanged>
+    </Event>
+  </Button>
+-->
+
+  <!-- Preview equipments 
+  <Label parent="layerCharCreate">
+    <Look>lookDefLabel</Look>
+    <Layout>
+      <Location x="100" y="683" />
+      <Size w="300" h="20" />
+      <Anchor left="true" top="false" right="false" bottom="true" />
+    </Layout>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE_PREVIEW"));</OnLoaded>
+    </Event>
+  </Label>-->
+
+  <ListCtrl name="lcCharacterPreviewEquip" parent="layerCharCreate">
+    <Look>lookDefListCtrlLargeSquareIcon</Look>
+    <Look type="scrollbar">lookDefScrollBar</Look>
+    <Layout>
+      <Location x="100" y="708" />
+      <Size w="300" h="50" />
+      <Anchor left="true" top="false" right="false" bottom="true" />
+    </Layout>
+    <Shape>
+      <ViewStyle>icon</ViewStyle>
+      <ItemMargin horz="2" vert="2"/>
+      <MultipleSel>false</MultipleSel>
+      <ShowBorder>false</ShowBorder>
+      <AddColumn align="left,vcenter" width="10">num</AddColumn>
+      <ShowScrollBar>hide</ShowScrollBar>
+      <ThumbLength>26</ThumbLength>
+      <AlwaysSel>true</AlwaysSel>
+    </Shape>
+    <Event>
+      <OnLoaded>luaCharacterCreate:OnLoadedCharPreviewEquipListCtrl();</OnLoaded>
+      <OnSelChange>luaCharacterCreate:RefreshCharacter( false );</OnSelChange>
+      <OnDrawItem>luaCharacterCreate:OnDrawItemCharPreviewEquipListCtrl();</OnDrawItem>
+    </Event>
+  </ListCtrl>
+
+
+  
+  
+
+  <!-- Buttons : Confirm create
+  <Button name="btnCharacterConfirmCreate" parent="layerCharCreate">
+    <Look>lookDefButton</Look>
+    <Layout>
+      <Location x="1005" y="753" base="BOTTOMRIGHT" />
+      <Size w="320" h="50" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Icon w="40" h="40">iconOK</Icon>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_SELCHAR_CREATE"));</OnLoaded>
+      <OnClick>luaCharacterCreate:OpenConfirmCreateCharacter();</OnClick>
+    </Event>
+  </Button>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmCreateCharacter" parent="frmCharacterCreate">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="170" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCharacterCreate:CloseConfirmCreateCharacter();</OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="85" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_CONFIRMCREATE"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="110" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="120" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaCharacterCreate:OnClickConfirmCharCreateOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="120" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaCharacterCreate:CloseConfirmCreateCharacter();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmErrorMsgBox" parent="layerCharCreate">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="170" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_ERROR"));</OnLoaded>
+      <OnShow>
+        if ( frmErrorMsgBox:GetShow() == true)  then
+
+          local x = ( gamefunc:GetWindowWidth() - frmErrorMsgBox:GetWidth()) * 0.5;
+          local y = ( gamefunc:GetWindowHeight() - frmErrorMsgBox:GetHeight()) * 0.5;
+          frmErrorMsgBox:SetPosition( x, y);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="85" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefStop</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwErrorMsg">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="110" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="120" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            frmErrorMsgBox:Show( false );
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

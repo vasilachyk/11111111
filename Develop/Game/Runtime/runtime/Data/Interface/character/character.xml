@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="char">
+
+  <!-- Include global script -->
+  <Script file="../common/global.lua" />
+  
+  <!-- Common Resource -->
+  <Include>../common/com_resource.xml</Include>
+
+  <!-- Common Template -->
+  <Include>../common/com_template.xml</Include>
+
+  <!-- Character Resource -->
+  <Include>character_resource.xml</Include>
+  
+  <!-- Character Template -->
+  <Include>character_template.xml</Include>
+  
+  
+  
+  <!-- Include script -->
+  <Script file="character.lua" />
+
+
+  
+  <!-- Layer : Select character -->
+  <Layer name="layerCharSelect">
+  </Layer>
+
+  
+  <!-- Layer : Create character -->
+  <Layer name="layerCharCreate">
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+  </Layer>
+
+  
+  <!-- Layer : Frame -->
+  <Layer name="layerCharFrame">
+  </Layer>
+
+
+  <!-- Layer : Credit -->
+  <Layer name="layerCharCredit">
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+  </Layer>
+
+  <!-- Include character UI XMLs -->
+  <Include>character_frame.xml</Include>            <!-- Character frame -->
+  <Include>character_select.xml</Include>           <!-- Select character -->
+  <Include>character_create.xml</Include>           <!-- Create character -->
+  <Include>character_credit.xml</Include>             <!-- Credit -->
+  <Include>character_expo.xml</Include>             <!-- Expo -->
+  
+</UI>

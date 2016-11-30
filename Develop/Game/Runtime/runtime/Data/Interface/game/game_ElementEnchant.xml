@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+    <!-- Include script -->
+    <Script file="game_ElementEnchant.lua" />
+
+    <!-- Element Enchant Frame -->
+    <Frame name="frmElementEnchant" parent="layerGame2">
+        <Look>lookDefFrame</Look>
+        <Layout>
+            <Size w="356" h="600" />
+        </Layout>
+        <Shape>
+            <Visible>false</Visible>
+            <Resize>false</Resize>
+            <Movable>true</Movable>
+        </Shape>
+        <Event>
+            <OnLoaded>
+                this:SetText( STR( "UI_ENCHANT" ) );
+                luaGame:RegisterWindow( frmElementEnchant );
+            </OnLoaded>
+            <OnUpdate>luaElementEnchant:OnUpdateFrame();</OnUpdate>
+            <OnShow>luaElementEnchant:OnShowEnchantFrame();</OnShow>
+        </Event>
+        <Controls>
+
+            <!-- 닫기 버튼 -->
+            <Button>
+                <Look>lookDefCloseBtn</Look>
+                <Layout>
+                    <Location x="341" y="-1" base="TOPRIGHT" />
+                    <Size w="27" h="26" />
+                </Layout>
+                <Shape>
+                    <HotKey>ESC</HotKey>
+                </Shape>
+                <Event>
+                    <OnClick>luaElementEnchant:OnCloseEnchantFrame();</OnClick>
+                </Event>
+            </Button>
+
+            <!-- 배경 이미지 -->
+            <Picture>
+                <Layout>
+                    <Location x="0" y="25" />
+                    <Size w="%100" h="410" />
+                </Layout>
+                <Image>bmpElement_Enchant_BG</Image>
+                <Shape>
+                    <Stretch>true</Stretch>
+                </Shape>
+            </Picture>
+
+
+            <!-- 타겟아이템 묶음( 이미지 + 이름 ) -->
+            <Panel name="pnlElementEnchantTarget" parent="frmElementEnchant">
+                <Layout>
+                    <Location x="48" y="40" />
+                    <Size w="250" h="105" />
+                </Layout>
+                <Shape>
+                    <ShowRect>false</ShowRect>
+                </Shape>
+                <Event></Event>
+                <Controls>
+
+                    <!-- 타겟아이템 Drag and Drop 용 -->
+                    <TextView name="tvwElementEnchantTargetDropArea">
+                        <Layout>
+                            <Location x="90" y="0" />
+                            <Size w="70" h="70" />
+                        </Layout>
+                        <Shape>
+                            <ShowBorder>false</ShowBorder>
+                            <ShowScrollBar>hide</ShowScrollBar>
+                            <DragAndDrop>true</DragAndDrop>
+                            <ShowRect>false</ShowRect>
+                        </Shape>
+                        <Event>
+                            <OnDragBegin>return luaElementEnchant:OnDragBeginEnchantItem();</OnDragBegin>
+                            <OnDragEnd>return luaElementEnchant:OnDragEndEnchantItem();</OnDragEnd>
+                            <OnDrop>luaElementEnchant:OnDropEnchantItem();</OnDrop>
+                            <OnToolTip>luaElementEnchant:ToolTipEnchantItem();</OnToolTip>
+                            <OnDblClick>luaElementEnchant:OnDblClickEnchantItem();</OnDblClick>
+                            <OnRClick>luaElementEnchant:OnRClickEnchantItem();</OnRClick>
+                        </Event>
+                    </TextView>
+
+                    <!-- 타겟아이템 이미지 묶음 -->
+                    <Panel name="pnlElementEnchantTargetImage">
+                        <Layout>
+                            <Location x="93" y="0" />
+                            <Size w="64" h="64" />
+                        </Layout>
+                        <Controls>
+
+                            <!-- 타겟아이템 슬롯 이미지 -->
+                            <Picture name="picElementEnchantTargetSlot">
+                                <Layout>
+                                    <Size w="%100" h="%100" />
+                                </Layout>
+                                <Image>bmpEnchantItemSlotOff</Image>
+                                <Shape>
+                                    <Stretch>true</Stretch>
+                                </Shape>
+                            </Picture>
+
+                            <!-- 타겟아이템 아이템 이미지 -->
+                            <Picture name="picElementEnchantTargetItem">
+                                <Layout>
+                                    <Location x="10" y="10" />
+                                    <Size w="42" h="42" />
+                                </Layout>
+                                <Image>bmpWeapon2HBlunt</Image>
+                                <Shape>
+                                    <Stretch>true</Stretch>
+                                </Shape>
+                            </Picture>
+
+                        </Controls>
+                    </Panel>
+
+                    <!-- 타겟아이템 이름 묶음 -->
+                    <Panel name="pnlElementEnchantTargetName">
+                        <Layout>
+                            <Location x="0" y="60" />
+                            <Size w="%100" h="40" />
+                        </Layout>
+                        <Controls>
+                            <!-- 타겟아이템 이름 텍스트 -->
+                            <TextView name="tvwElementEnchantTargetItemNameText">
+                                <Look>lookDefTextView</Look>
+                                <Layout>
+                                    <Location x="0" y="4" />
+                                    <Size w="%100" h="%100" />
+                                </Layout>
+                                <Shape>
+                                    <ShowScrollBar>hide</ShowScrollBar>
+                                    <!--<Wrap>false</Wrap>-->
+                                    <ShowRect>false</ShowRect>
+                                </Shape>
+                                <Event>
+                                    <OnLoaded>this:SetText( "{FONT name=\"fntScript\"}{ALIGN hor=\"center\" ver=\"center\"}" .. "+7 고대 제국 영웅의 양손 둔기" );</OnLoaded>
+                                </Event>
+                            </TextView>
+
+                        </Controls>
+                    </Panel>
+
+                </Controls>
+            </Panel>
+
+            <!-- 타겟 화살표 -->
+            <Picture name="picElementEnchantTargetArrow">
+                <Layout>
+                    <Location x="160" y="144" />
+                    <Size w="26" h="38" />
+                </Layout>
+                <Image>bmpEnchantTargetArrowOff</Image>
+                <Shape>
+                    <Stretch>true</Stretch>
+                    <ShowRect>false</ShowRect>
+                </Shape>
+            </Picture>
+
+            <!-- 결과 화살표 -->
+            <Picture name="picElementEnchantResultArrow">
+                <Layout>
+                    <Location x="160" y="267" />
+                    <Size w="26" h="38" />
+                </Layout>
+                <Image>bmpEnchantResultArrowOff</Image>
+                <Shape>
+                    <Stretch>true</Stretch>
+                    <ShowRect>false</ShowRect>
+                </Shape>
+            </Picture>
+
+            <!-- 원소석 묶음( 이미지 + 이름 ) -->
+            <Panel name="pnlElementEnchantGem" parent="frmElementEnchant">
+                <Layout>
+                    <Location x="87" y="180" />
+                    <Size w="170" h="90" />
+                </Layout>
+                <Shape>
+                    <!--<ShowRect>true</ShowRect>-->
+                </Shape>
+                <Event></Event>
+                <Controls>
+
+                    <!-- Drag and Drop 용 -->
+                    <TextView name="tvwElementEnchantGemItemDropArea">
+                        <Layout>
+                            <Location x="50" y="0" />
+                            <Size w="70" h="70" />
+                        </Layout>
+                        <Shape>
+                            <ShowBorder>false</ShowBorder>
+                            <ShowScrollBar>hide</ShowScrollBar>
+                            <DragAndDrop>true</DragAndDrop>
+                            <!--<ShowRect>true</ShowRect>-->
+                        </Shape>
+                        <Event>
+                            <OnDragBegin>return luaElementEnchant:OnDragBeginEnchantItem();</OnDragBegin>
+                            <OnDragEnd>return luaElementEnchant:OnDragEndEnchantItem();</OnDragEnd>
+                            <OnDrop>luaElementEnchant:OnDropEnchantItem();</OnDrop>
+                            <OnToolTip>luaElementEnchant:ToolTipEnchantItem();</OnToolTip>
+                            <OnDblClick>luaElementEnchant:OnDblClickEnchantItem();</OnDblClick>
+                            <OnRClick>luaElementEnchant:OnRClickEnchantItem();</OnRClick>
+                        </Event>
+                    </TextView>
+
+                    <!-- 원소석 이미지 묶음 -->
+                    <Panel name="pnlElementEnchantGemImage">
+                        <Layout>
+                            <Location x="55" y="0" />
+                            <Size w="64" h="64" />
+                        </Layout>
+                        <Controls>
+
+                            <!-- 원소석 슬롯 이미지 -->
+                            <Picture name="picElementEnchantGemSlot">
+                                <Layout>
+                                    <Size w="%100" h="%100" />
+                                </Layout>
+                                <Image>bmpEnchantAgentSlotOff</Image>
+                                <Shape>
+                                    <Stretch>true</Stretch>
+                                </Shape>
+                            </Picture>
+
+                            <!-- 원소석 아이템 이미지 -->
+                            <Picture name="picElementEnchantGemItemImage">
+                                <Layout>
+                                    <Location x="10" y="10" />
+                                    <Size w="42" h="42" />
+                                </Layout>
+                                <Image>bmpWeapon2HBlunt</Image>
+                                <Shape>
+                                    <Stretch>true</Stretch>
+                                </Shape>
+                            </Picture>
+
+                        </Controls>
+                    </Panel>
+
+                    <!-- 원소석 이름 묶음 -->
+                    <Panel name="pnlElementEnchantGemName">
+                        <Layout>
+                            <Location x="0" y="60" />
+                            <Size w="%100" h="23" />
+                        </Layout>
+                        <Controls>
+                            <!-- 원소석 이름 텍스트 -->
+                            <TextView name="tvwElementEnchantGemItemNameText">
+                                <Look>lookDefTextView</Look>
+                                <Layout>
+                                    <Location x="0" y="4" />
+                                    <Size w="%100" h="%100" />
+                                </Layout>
+                                <Shape>
+                                    <ShowScrollBar>hide</ShowScrollBar>
+                                    <!--<Wrap>false</Wrap>-->
+                                </Shape>
+                                <Event>
+                                    <OnLoaded>this:SetText( "{FONT name=\"fntScript\"}{ALIGN hor=\"center\" ver=\"center\"}" .. "원소석" );</OnLoaded>
+                                </Event>
+                            </TextView>
+
+                        </Controls>
+                    </Panel>
+
+                </Controls>
+            </Panel>
+
+            <!-- 결과아이템 묶음( 이미지 + 이름 ) -->
+            <Panel name="pnlElementEnchantResult" parent="frmElementEnchant">
+                <Layout>
+                    <Location x="48" y="305" />
+                    <Size w="250" h="100" />
+                </Layout>
+                <Shape>
+                    <ShowRect>false</ShowRect>
+                </Shape>
+                <Event></Event>
+                <Controls>
+
+                    <!-- Drag and Drop 용 -->
+                    <TextView name="tvwElementEnchantResultDropArea">
+                        <Layout>
+                            <Location x="90" y="0" />
+                            <Size w="70" h="70" />
+                        </Layout>
+                        <Shape>
+                            <ShowBorder>false</ShowBorder>
+                            <ShowScrollBar>hide</ShowScrollBar>
+                            <DragAndDrop>true</DragAndDrop>
+                            <ShowRect>false</ShowRect>
+                        </Shape>
+                        <Event>
+                            <OnToolTip>luaElementEnchant:ToolTipEnchantItem();</OnToolTip>
+                        </Event>
+                    </TextView>
+
+
+                    <!-- 결과아이템 이미지 묶음 -->
+                    <Panel name="pnlElementEnchantResultImage">
+                        <Layout>
+                            <Location x="94" y="0" />
+                            <Size w="64" h="64" />
+                        </Layout>
+                        <Controls>
+
+                            <!-- 결과아이템 슬롯 이미지 -->
+                            <Picture name="picElementEnchantResultSlot">
+                                <Layout>
+                                    <Size w="%100" h="%100" />
+                                </Layout>
+                                <Image>bmpEnchantItemSlotOff</Image>
+                                <Shape>
+                                    <Stretch>true</Stretch>
+                                </Shape>
+                            </Picture>
+
+                            <!-- 결과아이템 아이템 이미지 -->
+                            <Picture name="picElementEnchantResultItem">
+                                <Layout>
+                                    <Location x="10" y="10" />
+                                    <Size w="42" h="42" />
+                                </Layout>
+                                <Image>bmpWeapon2HBlunt</Image>
+                                <Shape>
+                                    <Stretch>true</Stretch>
+                                </Shape>
+                            </Picture>
+
+                        </Controls>
+                    </Panel>
+
+                    <!-- 결과아이템 이름 묶음 -->
+                    <Panel name="pnlElementEnchantResultName">
+                        <Layout>
+                            <Location x="0" y="60" />
+                            <Size w="%100" h="40" />
+                        </Layout>
+                        <Controls>
+                            <!-- 결과아이템 이름 텍스트 -->
+                            <TextView name="tvwElementEnchantResultItemNameText">
+                                <Look>lookDefTextView</Look>
+                                <Layout>
+                                    <Location x="0" y="4" />
+                                    <Size w="%100" h="%100" />
+                                </Layout>
+                                <Shape>
+                                    <ShowScrollBar>hide</ShowScrollBar>
+                                    <!--<Wrap>false</Wrap>-->
+                                    <ShowRect>false</ShowRect>
+                                </Shape>
+                                <Event>
+                                    <OnLoaded>this:SetText( "{FONT name=\"fntScript\"}{ALIGN hor=\"center\" ver=\"center\"}" .. "+8 고대 제국 영웅의 양손 둔기" );</OnLoaded>
+                                </Event>
+                            </TextView>
+
+                        </Controls>
+                    </Panel>
+
+                </Controls>
+            </Panel>
+
+            <!-- 필요금액 묶음 -->
+            <Panel parent="pnlElementEnchantPrice">
+                <Layout>
+                    <Location x="90" y="400" />
+                    <Size w="250" h="30" />
+                </Layout>
+                <Controls>
+                    <!-- 필요 금액 앞에 있는 금화 아이콘 -->
+                    <Picture>
+                        <Layout>
+                            <Location x="10" y="8" />
+                            <Size w="18" h="18" />
+                        </Layout>
+                        <Image>iconCoin</Image>
+                        <Shape>
+                            <Stretch>true</Stretch>
+                        </Shape>
+                    </Picture>
+
+                    <!-- 필요 금액 텍스트 -->
+                    <TextView>
+                        <Layout>
+                            <Location x="35" y="10" />
+                            <Size w="80" h="20" />
+                        </Layout>
+                        <Shape>
+                            <ShowBorder>false</ShowBorder>
+                            <ShowScrollBar>hide</ShowScrollBar>
+                        </Shape>
+                        <Event>
+                            <OnLoaded>this:SetText( "{FONT name=\"fntScript\"}{ALIGN hor=\"left\" ver=\"bottom\"}" .. STR( "UI_ENCHANT_PRICE" ) );</OnLoaded>
+                        </Event>
+                    </TextView>
+
+                    <!-- 필요 금액 숫자 -->
+                    <TextView name="tvwElementEnchantPrice">
+                        <Layout>
+                            <Location x="100" y="3" />
+                            <Size w="150" h="%100" />
+                        </Layout>
+                        <Shape>
+                            <ShowBorder>false</ShowBorder>
+                            <ShowScrollBar>hide</ShowScrollBar>
+                        </Shape>
+                        <Event>
+                            <OnLoaded>this:SetText( "{FONT name=\"fntScript\"}{ALIGN hor=\"right\" ver=\"center\"}" .. "sdfsdfdsf" );</OnLoaded>
+                        </Event>
+                    </TextView>
+
+                </Controls>
+            </Panel>
+
+
+            <!-- Picture : Background 메시지 뒷배경 이미지 -->
+            <Picture>
+                <Layout>
+                    <Location x="0" y="435" />
+                    <Size w="%100" h="105" />
+                </Layout>
+                <Image>bmpContentBkgrnd</Image>
+                <Shape>
+                    <Stretch>true</Stretch>
+                </Shape>
+            </Picture>
+
+            <!-- Seperate Bar -->
+            <Picture>
+                <Layout>
+                    <Location x="0" y="435" />
+                    <Size w="%100" h="2" />
+                </Layout>
+                <Image>bmpDefSeperateBarHor</Image>
+                <Shape>
+                    <Stretch>true</Stretch>
+                </Shape>
+            </Picture>
+
+
+            <!-- 메세지 첫번째 -->
+            <TextView name="tvwElementEnchantMessage1">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                    <Location x="10" y="445" />
+                    <Size w="330" h="40" />
+                </Layout>
+                <Shape>
+                    <Font>fntScript</Font>
+                    <ShowBorder>false</ShowBorder>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+                <Event>
+                    <OnLoaded>this:SetText( "메세지 출력 공간1-1{CR}메세지 출력 공간1-2" );</OnLoaded>
+                </Event>
+            </TextView>
+
+            <!-- 메세지 두번째 -->
+            <TextView name="tvwElementEnchantMessage2">
+                <Look>lookDefTextView</Look>
+                <Layout>
+                    <Location x="10" y="490" />
+                    <Size w="330" h="40" />
+                </Layout>
+                <Shape>
+                    <ShowBorder>false</ShowBorder>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                </Shape>
+                <Event>
+                    <OnLoaded>this:SetText( "메세지 출력 공간2-1{CR}메세지 출력 공간2-2" );</OnLoaded>
+                </Event>
+            </TextView>
+
+
+            <!-- Frame bottom -->
+            <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                    <Location x="0" y="540" />
+                    <Size w="%100" h="50" />
+                </Layout>
+            </Group>
+
+
+            <!-- Button : Do GemEnchant -->
+            <Button name="btnDoElementEnchant">
+                <Look>lookDefButton</Look>
+                <Layout>
+                    <Location x="10" y="550" />
+                    <Size w="160" h="30" />
+                </Layout>
+                <Event>
+                    <OnLoaded>this:SetText( STR( "UI_ENCHANT" ) );</OnLoaded>
+                    <OnClick>
+                        gamefunc:PlaySound( "button_agree" );
+                        luaElementEnchant:OnClickEnchant();
+                    </OnClick>
+                </Event>
+            </Button>
+
+            <!-- Button : Cancel -->
+            <Button name="btnCancelElementEnchant">
+                <Look>lookDefButton</Look>
+                <Layout>
+                    <Location x="180" y="550" />
+                    <Size w="160" h="30" />
+                </Layout>
+                <Event>
+                    <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+                    <OnClick>
+                        gamefunc:PlaySound( "button_out" );
+                        luaElementEnchant:OnCloseEnchantFrame();
+                    </OnClick>
+                </Event>
+            </Button>
+
+            <!-- Button : Confirm -->
+            <Button name="btnConfirmElementEnchant">
+                <Look>lookDefButton</Look>
+                <Layout>
+                    <Location x="180" y="550" />
+                    <Size w="160" h="30" />
+                </Layout>
+                <Event>
+                    <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+                    <OnClick>
+                        gamefunc:PlaySound( "button_agree" );
+                        luaElementEnchant:InitEnchant();
+                    </OnClick>
+                </Event>
+            </Button>
+
+            <!-- Button : Redo -->
+            <Button name="btnRedoElementEnchant">
+                <Look>lookDefButton</Look>
+                <Layout>
+                    <Location x="10" y="550" />
+                    <Size w="160" h="30" />
+                </Layout>
+                <Event>
+                    <OnLoaded>this:SetText( STR( "UI_ENCHANT_REDO") );</OnLoaded>
+                    <OnClick>
+                        gamefunc:PlaySound( "button_agree" );
+                        luaElementEnchant:RedoEnchant();
+                    </OnClick>
+                </Event>
+            </Button>
+
+        </Controls>
+    </Frame>
+
+    <!-- 강화 진행중 그래프 -->
+    <Frame name="frmElementEnchantProgress">
+        <Look>lookDefMiniFrame</Look>
+        <Layout>
+            <Size w="370" h="80" />
+        </Layout>
+        <Shape>
+            <Visible>false</Visible>
+            <Resize>false</Resize>
+            <Movable>true</Movable>
+            <ShowTitleBar>false</ShowTitleBar>
+        </Shape>
+        <Event>
+            <OnShow>luaElementEnchant:OnShowEnchantProgress();</OnShow>
+        </Event>
+        <Controls>
+
+            <!-- 진행중 메세지 -->
+            <LabelEx>
+                <Layout>
+                    <Location x="0" y="10" />
+                    <Size w="%100" h="25" />
+                </Layout>
+                <Shape>
+                    <Font>fntScriptStrong</Font>
+                    <FontColor r="230" g="230" b="230"/>
+                    <Align>hcenter,vcenter</Align>
+                </Shape>
+                <Event>
+                    <OnLoaded>this:SetText( STR( "UI_GEMENCHANT_DOINGITEM"));</OnLoaded>
+                </Event>
+            </LabelEx>
+
+
+            <!-- 진행 바 -->
+            <ProgressCtrl name="pcElementEnchantProgress">
+                <Look>lookDefProgressCtrl</Look>
+                <Layout>
+                    <Location x="20" y="40" />
+                    <Size w="330" h="23" />
+                </Layout>
+                <Shape>
+                    <Range lower="0" upper="100"/>
+                </Shape>
+                <Event>
+                    <OnUpdate>luaElementEnchant:OnUpdateEnchantProgressBar();</OnUpdate>
+                </Event>
+            </ProgressCtrl>
+
+        </Controls>
+    </Frame>
+
+    <!-- 경고 메시지 Frame -->
+    <Frame name="frmCautionMsgBox" parent="layerBeautyParlor">
+        <Look>lookDefFrame</Look>
+        <Layout>
+            <Size w="440" h="200" />
+        </Layout>
+        <Shape>
+            <Visible>false</Visible>
+            <Resize>false</Resize>
+            <Movable>false</Movable>
+        </Shape>
+        <Event>
+            <OnLoaded>this:SetText( STR( "UI_ERROR"));</OnLoaded>
+            <OnShow>
+                if ( frmCautionMsgBox:GetShow() == true)  then
+                local x = ( gamefunc:GetWindowWidth()  - frmCautionMsgBox:GetWidth()) * 0.5;
+                local y = ( gamefunc:GetWindowHeight() - frmCautionMsgBox:GetHeight()) * 0.5;
+                frmCautionMsgBox:SetPosition( x, y);
+                end
+            </OnShow>
+        </Event>
+        <Controls>
+
+            <!-- Button : Close Buttons -->
+            <Button>
+                <Look>lookDefCloseBtn</Look>
+                <Layout>
+                    <Location x="425" y="-1" base="TOPRIGHT" />
+                    <Size w="27" h="26" />
+                </Layout>
+                <Shape>
+                    <HotKey>ESC</HotKey>
+                </Shape>
+                <Event>
+                    <OnClick>frmCautionMsgBox:Show( false);</OnClick>
+                </Event>
+            </Button>
+
+
+            <!-- Picture : Background -->
+            <Picture>
+                <Layout>
+                    <Location x="0" y="25" />
+                    <Size w="%100" h="115" />
+                </Layout>
+                <Image>bmpContentBkgrnd</Image>
+                <Shape>
+                    <Stretch>true</Stretch>
+                </Shape>
+            </Picture>
+
+
+            <!-- Picture : Icon -->
+            <Picture>
+                <Layout>
+                    <Location x="10" y="35" />
+                    <Size w="40" h="40" />
+                </Layout>
+                <Image>iconDefStop</Image>
+                <Shape>
+                    <Stretch>true</Stretch>
+                </Shape>
+            </Picture>
+
+
+            <!-- TextView : Message -->
+            <TextView name="tvwCautionMsg">
+                <Look>lookDefTextView</Look>
+                <Look type="scrollbar">lookDefScrollBar</Look>
+                <Layout>
+                    <Location x="60" y="35" />
+                    <Size w="360" h="100" />
+                </Layout>
+                <Shape>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                    <!--<Wrap>false</Wrap>-->
+                </Shape>
+            </TextView>
+
+
+            <!-- Frame bottom -->
+            <Group>
+                <Look>lookDefFrameBottomBox</Look>
+                <Layout>
+                    <Location x="0" y="140" />
+                    <Size w="%100" h="50" />
+                </Layout>
+            </Group>
+
+
+            <!-- Buttons : OK -->
+            <Button>
+                <Look>lookDefButton</Look>
+                <Layout>
+                    <Location x="100" y="150" />
+                    <Size w="100" h="30" />
+                </Layout>
+                <Shape>
+                    <HotKey>ENTER</HotKey>
+                </Shape>
+                <Event>
+                    <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+                    <OnClick>
+                        gamefunc:PlaySound( "button_agree" );
+                        frmCautionMsgBox:Show( false );
+                        luaElementEnchant:DoEnchant();
+
+                    </OnClick>
+                </Event>
+            </Button>
+
+            <!-- Buttons : Cancle -->
+            <Button>
+                <Look>lookDefButton</Look>
+                <Layout>
+                    <Location x="230" y="150" />
+                    <Size w="100" h="30" />
+                </Layout>
+                <Shape>
+                    <HotKey>ESC</HotKey>
+                </Shape>
+                <Event>
+                    <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+                    <OnClick>
+                        gamefunc:PlaySound( "button_agree" );
+                        frmCautionMsgBox:Show( false );
+                    </OnClick>
+                </Event>
+            </Button>
+
+        </Controls>
+    </Frame>
+
+</UI>

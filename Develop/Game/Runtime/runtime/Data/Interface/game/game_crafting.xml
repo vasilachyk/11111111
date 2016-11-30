@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_crafting.lua" />
+  
+  
+  
+  <!-- Frame : Crafting -->
+  <Frame name="frmCrafting" parent="layerGame1">
+    <Look>lookDefScrollFrame</Look>
+    <Layout>
+      <Location x="70" y="100" />
+	    <Size w="699" h="555" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+	    <Icon>iconCrafting</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmCrafting);</OnLoaded>
+      <OnShow>luaCrafting:OnShowCraftingFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmCrafting);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmCrafting);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="290" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCrafting:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="295" h="470" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- ListCtrl : Craft item list -->
+      <ListCtrl name="lcCrafting">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="25" />
+          <Size w="285" h="464" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="280">name</AddColumn>
+          <AddColumn align="left,vcenter" width="120">cost</AddColumn>
+          <AddColumn align="left,vcenter" width="150">quantity</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnSelChange>luaCrafting:OnSelChangeCraftingListCtrl();</OnSelChange>
+          <OnDblClick>luaCrafting:OnClickGetRecipe();</OnDblClick>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Frame : Crafting item recipe description info -->
+      <Frame>
+        <Layout>
+          <Location x="295" y="0" />
+          <Size w="400" h="545" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowTitleBar>false</ShowTitleBar>
+          <Visible>true</Visible>
+          <Resize>false</Resize>
+          <Movable>false</Movable>
+        </Shape>
+        <Controls>
+
+          <!-- Picture : Scroll paper -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="10" />
+              <Size w="400" h="525" />
+            </Layout>
+            <Image>bmpScrollPaper</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+
+          <!-- TextView : Crafting item recipe info -->
+          <TextView name="tvwCraftingRecipeInfo">
+            <Look>lookDefScrollTextView</Look>
+            <Look type="scrollbar">lookDefScrollBar</Look>
+            <Layout>
+              <Location x="25" y="15" />
+              <Size w="355" h="495" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>show</ShowScrollBar>
+              <ThumbLength>26</ThumbLength>
+              <Wrap>false</Wrap>
+            </Shape>
+            <Event>
+              <OnToolTip>luaCrafting:OnToolTipCraftingRecipeInfo();</OnToolTip>
+            </Event>
+          </TextView>
+
+
+          <!-- Picture : Scroll head/tail -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollHead</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="%100" base="BOTTOMLEFT"/>
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollTail</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+        </Controls>
+      </Frame>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="495" />
+          <Size w="295" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Get a recipe -->
+      <Button name="btnCraftingGetRecipe">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="505" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CRAFTING_GETRECIPE"));</OnLoaded>
+          <OnClick>luaCrafting:OnClickGetRecipe();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Crafting item -->
+      <Button name="btnCraftingMakeItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="155" y="505" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CRAFTING_CRAFTINGITEM"));</OnLoaded>
+          <OnClick>luaCrafting:OnClickMakeItem();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  <!-- Frame : Confirm make crafting item -->
+  <Frame name="frmConfirmMakeCraftingItem" parent="frmCrafting">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="380" h="400" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="365" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCrafting:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="315" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="310" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CRAFTING_CONFIRMCRAFTINGITEM"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Making item info -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="85" />
+          <Size w="360" h="240" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwMakeCraftingItemDesc">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="350" h="230" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnToolTip>luaCrafting:OnToolTipCraftingItemInfo();</OnToolTip>
+        </Event>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="340" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="350" />
+          <Size w="170" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaCrafting:OnMakeCraftingItemOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="190" y="350" />
+          <Size w="170" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmMakeCraftingItem:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmCraftingErrorMsgBox" parent="frmCrafting">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_ERROR"));</OnLoaded>
+      <OnShow>
+        if ( frmCraftingErrorMsgBox:GetShow() == true)  then
+
+          local x, y = frmCraftingErrorMsgBox:GetParent():GetPosition();
+          local w, h = frmCraftingErrorMsgBox:GetSize();
+          local width, height = gamefunc:GetWindowSize();
+          frmCraftingErrorMsgBox:SetPosition( (width - w) * 0.5 - x, (height - h) * 0.5 - y);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmCraftingErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwCraftingErrorMsg">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="70" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+      
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="115" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>frmCraftingErrorMsgBox:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

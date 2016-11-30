@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_help.lua" />
+
+  
+  <!-- Frame : Help message -->
+  <Frame name="frmHelpMessage" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="40" y="80" />
+      <Size w="760" h="560" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_HELP"));
+        luaGame:RegisterWindow( frmHelpMessage);
+      </OnLoaded>
+      <OnShow>luaHelp:OnShowMainMenuFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="745" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmHelpMessage:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <CategoryCtrl name="ctvHelp">
+        <Look>lookDefCategoryCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="40" />
+          <Size w="350" h="510" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <ShowRootItem>false</ShowRootItem>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="220">name</AddColumn>
+          <AddColumn align="right,vcenter" width="70">type</AddColumn>
+        </Shape>
+        <Event>
+          <OnSelChange>luaHelp:OnSelChange();</OnSelChange>
+        </Event>
+      </CategoryCtrl>
+      
+      <!--<ListCtrl name="lcHelp">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="40" />
+          <Size w="350" h="510" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="280">name</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnSelChange>luaHelp:OnSelChange();</OnSelChange>
+        </Event>
+      </ListCtrl>-->      
+      
+      <!-- TextView : Message -->
+      <TextView name="tvwHelpMsg">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="370" y="40" />
+          <Size w="370" h="510" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Frame : Controls help 1 -->
+  <Frame name="frmControlsHelp1" parent="layerGame2">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="1024" h="768" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Resize>false</Resize>
+      <Static>true</Static>
+      <Visible>false</Visible>
+      <Movable>false</Movable>
+      <Opacity>0.75</Opacity>
+    </Shape>
+    <Event>
+      <OnShow>
+        if ( frmControlsHelp1:GetShow() == true)  then
+        
+            frmControlsHelp2:Show( false);
+
+            local w, h = frmControlsHelp1:GetSize();
+            frmControlsHelp1:SetPosition( (gamefunc:GetWindowWidth() - w) * 0.5,  (gamefunc:GetWindowHeight() - h) * 0.5);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Controls key map -->
+      <Picture>
+        <Layout>
+          <Location x="50" y="192" />
+          <Size w="920" h="410" />
+        </Layout>
+        <Image>bmpControlsHelp1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+    </Controls>
+  </Frame>
+  
+  
+  <!-- Frame : Controls help 2 -->
+  <Frame name="frmControlsHelp2" parent="layerGame2">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="1024" h="768" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <Resize>false</Resize>
+      <Static>true</Static>
+      <Visible>false</Visible>
+      <Movable>false</Movable>
+      <Opacity>0.75</Opacity>
+    </Shape>
+    <Event>
+      <OnShow>
+        if ( frmControlsHelp2:GetShow() == true)  then
+
+            frmControlsHelp1:Show( false);
+
+            local w, h = frmControlsHelp2:GetSize();
+            frmControlsHelp2:SetPosition( (gamefunc:GetWindowWidth() - w) * 0.5,  (gamefunc:GetWindowHeight() - h) * 0.5);
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Controls key map -->
+      <Picture>
+        <Layout>
+          <Location x="204" y="174" />
+          <Size w="616" h="420" />
+        </Layout>
+        <Image>bmpControlsHelp2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+    </Controls>
+  </Frame>
+</UI>

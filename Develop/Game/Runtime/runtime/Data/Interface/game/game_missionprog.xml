@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_missionprog.lua" />
+
+
+  <!-- Frame -->
+  <Frame name="frmMissionProgress" parent="layerGame0">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Location x="5" y="5" />
+      <Size w="120" h="50" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <Opacity>0.5</Opacity>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnEnter>frmMissionProgress:SetOpacity( 1.0);</OnEnter>
+      <OnLeave>frmMissionProgress:SetOpacity( 0.5);</OnLeave>
+      <OnTimer>luaMissionProgress:OnTimerMissionProgressFrame();</OnTimer>
+      <OnNcHitTest>return luaMissionProgress:OnNcHitTestMissionProgressFrame();</OnNcHitTest>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmMissionProgress);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmMissionProgress);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+      
+
+      <!-- TextView : Message -->
+      <TextView name="tvwMissionProgressMsg">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="2" y="2" />
+          <Size w="116" h="46" />
+        </Layout>
+        <Shape>
+          <Static>true</Static>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+</UI>

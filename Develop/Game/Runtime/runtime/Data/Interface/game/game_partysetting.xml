@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_partysetting.lua" />
+
+  <Frame name="frmPartySetting" parent="frmSocial">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="500" y="120" />
+      <Size w="480" h="260" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_SOCIAL_PARTYSETTINGS"));
+        luaGame:RegisterWindow( frmPartySetting);
+      </OnLoaded>
+      <OnShow>luaPartySetting:OnShowPartySettingFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="465" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Text></Text>
+        </Shape>
+        <Event>
+          <OnClick>frmPartySetting:Show(false);</OnClick>
+        </Event>
+      </Button>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="200" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTYLEADER"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Combobox name="cmbPartyLeader">
+        <Look>lookDefComboButton</Look>
+        <Look type="listbox">lookDefComboListBox</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="215" y="35" />
+          <Size w="230" h="23" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <DroppedWidth>120</DroppedWidth>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnSelChange>btnParty:Enable(true);</OnSelChange>
+        </Event>
+      </Combobox>
+      
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="450" h="115" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SOCIAL_LOOTINGRULES"));</OnLoaded>
+        </Event>
+      </Group>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="100" />
+          <Size w="220" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SOCIAL_COMMONITEM"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Combobox name="cmbLootingRuleCommon">
+        <Look>lookDefComboButton</Look>
+        <Look type="listbox">lookDefComboListBox</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="215" y="100" />
+          <Size w="230" h="23" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <DroppedWidth>80</DroppedWidth>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnSelChange>btnParty:Enable(true);</OnSelChange>
+        </Event>
+      </Combobox>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="135" />
+          <Size w="235" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SOCIAL_RAREITEM"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Combobox name="cmbLootingRuleRare">
+        <Look>lookDefComboButton</Look>
+        <Look type="listbox">lookDefComboListBox</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="215" y="135" />
+          <Size w="230" h="23" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <DroppedWidth>80</DroppedWidth>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnSelChange>btnParty:Enable(true);</OnSelChange>
+        </Event>
+      </Combobox>
+
+      <Label>
+        <Look>lookDefLabelRA</Look>
+        <Layout>
+          <Location x="120" y="170" />
+          <Size w="90" h="20" />
+        </Layout>
+        <Shape>
+          <Text> ~ </Text>
+          <ToolTip></ToolTip>
+        </Shape>
+      </Label>
+
+      <Combobox name="cmbLootingRuleRareFor">
+        <Look>lookDefComboButton</Look>
+        <Look type="listbox">lookDefComboListBox</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="215" y="170" />
+          <Size w="230" h="23" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <DroppedWidth>80</DroppedWidth>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnSelChange>btnParty:Enable(true);</OnSelChange>
+        </Event>
+      </Combobox>
+
+      <Button name="btnParty">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="335" y="220" />
+          <Size w="125" h="30" />
+          <Anchor left="false" top="true" right="true" bottom="false" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_APPLY"));</OnLoaded>
+          <OnClick>luaPartySetting:ChangePartySetting();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnDismissParty">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="220" />
+          <Size w="125" h="30" />
+          <Anchor left="true" top="true" right="false" bottom="false" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmPartySetting:Show(false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  </UI>

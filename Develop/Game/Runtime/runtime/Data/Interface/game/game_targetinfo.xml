@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_targetinfo.lua" />
+
+  
+  <!-- Frame : Target info -->
+  <Frame name="frmTargetInfo" parent="layerGame0">
+    <Look>lookDefResizableFrame</Look>
+    <Layout>
+      <Location x="%90" y="%75" base="BOTTOMRIGHT" />
+      <Size w="230" h="75" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <Static>true</Static>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnShow>luaTargetInfo:OnShowTargetInfo();</OnShow>
+      <OnDraw>luaTargetInfo:OnDrawTargetInfo();</OnDraw>
+    </Event>
+  </Frame>
+  
+</UI>

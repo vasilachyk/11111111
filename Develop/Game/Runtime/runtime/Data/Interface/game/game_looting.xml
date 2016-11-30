@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_looting.lua" />
+
+
+  
+  <!-- Frame : Looting -->
+  <Frame name="frmLooting" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="50" y="120" />
+      <Size w="410" h="430" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_LOOTING"));
+        luaGame:RegisterWindow( frmLooting);
+      </OnLoaded>
+      <OnShow>luaLooting:OnShowLootingFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmLooting);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmLooting);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="395" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Text></Text>
+        </Shape>
+        <Event>
+          <OnClick>
+            gamefunc:RequestLootingEnd();
+            frmLooting:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="345" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+     
+      
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="380" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOOTING_MSG"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- ListCtrl : Looting -->
+      <ListCtrl name="lcLooting">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="75" />
+          <Size w="380" h="280" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>true</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="390">name</AddColumn>
+          <AddColumn align="left,vcenter" width="100">quantity</AddColumn>
+          <AddColumn align="left,vcenter" width="100">tier</AddColumn>
+          <AddColumn align="left,vcenter" width="100">looter</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnSelChange>luaLooting:RefreshControls();</OnSelChange>
+          <OnItemDblClick>luaLooting:OnItemDblClickLootingListCtrl();</OnItemDblClick>
+          <OnToolTip>luaLooting:OnToolTipLootingListCtrl();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="370" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Get item -->
+      <Button name="btnGetLootingItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="380" />
+          <Size w="185" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOOTING_LOOTINGONE"));</OnLoaded>
+          <OnClick>luaLooting:OnClickGetItem();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Get all items -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="205" y="380" />
+          <Size w="185" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>E</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOOTING_LOOTINGALL"));</OnLoaded>
+          <OnClick>luaLooting:OnClickGetAllItems();</OnClick>
+        </Event>
+      </Button>
+  
+    </Controls>
+  </Frame>
+
+</UI>

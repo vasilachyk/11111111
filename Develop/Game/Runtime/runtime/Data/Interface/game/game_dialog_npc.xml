@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_dialog_npc.lua" />
+
+  
+  
+  <!-- Frame : Dialog -->
+  <Frame name="frmDialogNpc" parent="layerGame1">
+    <Look>lookDefDialogFrame</Look>
+    <Layout>
+      <Location x="560" y="90" />
+      <Size w="430" h="200" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmDialogNpc);</OnLoaded>
+      <OnShow>luaDialogNpc:OnShowDialogNpcFrame();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="402" y="3" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmDialogNpc:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwDialgMessageNpc">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="15" y="50" />
+          <Size w="400" h="145" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnItemClick>luaDialogNpc:OnItemClickAnswer();</OnItemClick>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+</UI>

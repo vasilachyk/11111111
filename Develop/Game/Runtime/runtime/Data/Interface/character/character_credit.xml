@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="char">
+  <Script file="character_credit.lua"/>
+  
+  <!-- Panel : Layer 0 -->
+  <Panel name="pnlCharCredit" parent="layerCharCredit">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <OnUpdate>luaCredit:OnUpdateCredit();</OnUpdate>
+    </Event>
+    <Controls>
+
+		  <Paint name="CreditBackground">
+			  <Layout>
+			    <Location x="0" y="0" />
+			    <Size w="%100" h="%100" />
+			    <Anchor left="true" top="true" right="true" bottom="true" />
+			  </Layout>
+			  <Shape>
+			    <Visible>true</Visible>
+			    <Color r="0" g="0" b="0" />
+          <ShowRect>false</ShowRect>
+			  </Shape>
+		   </Paint>
+
+      <!-- 이미지 + 그라데이션 묶음용 -->
+      <Panel name="pnlImage">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="960" h="770" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Controls>
+          
+          <!-- 이미지 -->
+          <Picture name="picCreditImage">
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+            <Shape>
+              <Stretch>true</Stretch>
+              <ShowRect>false</ShowRect>
+            </Shape>
+          </Picture>
+
+          <!-- Picture : Gradation Left
+          <Picture name="picGradationLeft">
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="100" h="%100" />
+            </Layout>
+            <Image>bmpGradationLeft</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture> -->
+
+          <!-- Picture : Gradation Right
+          <Picture name="picGradationRight">
+            <Layout>
+              <Location x="1500" y="0" />
+              <Size w="100" h="%100" />
+            </Layout>
+            <Image>bmpGradationRight</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture> -->
+
+        </Controls>
+      </Panel>
+
+		  <!-- 스텝롤 -->
+		  <TextView name="StepRollTextView">
+			<Look>lookDefTextView</Look>
+			<Layout>
+			  <Location x="0" y="0"/>
+			  <Size w="400" h="%100" />
+			  <Anchor left="false" top="true" right="true" bottom="true" />
+			</Layout>
+			<Shape>
+			  <ShowBorder>false</ShowBorder>
+			  <Static>true</Static>
+			  <ShowScrollBar>hide</ShowScrollBar>
+			  <!--<Wrap>false</Wrap>-->
+			  <Visible>true</Visible>
+			  <ShowRect>false</ShowRect>
+			</Shape>
+			<Event>
+				<OnLoaded>luaCredit:SetupCreditText();</OnLoaded>
+			  <OnUpdate>luaCredit:OnUpdate();</OnUpdate>
+			</Event>
+		  </TextView>
+
+      <!-- Picture : Gradation Top -->
+          <Picture name="picGradationTop">
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="100" />
+            </Layout>
+            <Image>bmpGradationTop</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+              <ShowRect>false</ShowRect>
+            </Shape>
+          </Picture>
+
+      <!-- Picture : Gradation Bottom -->
+          <Picture name="picGradationBottom">
+            <Layout>
+              <Location x="0" y="650" />
+              <Size w="%100" h="100" />
+            </Layout>
+            <Image>bmpGradationBottom</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+              <ShowRect>false</ShowRect>
+            </Shape>
+          </Picture>
+
+		  <Button>
+			<Look>lookDefCloseBtn</Look>
+			<Layout>
+			  <Location x="-1" y="-1" base="TOPRIGHT" />
+			  <Size w="27" h="26" />
+			</Layout>
+			<Shape>
+			  <HotKey>ESC</HotKey>
+			</Shape>
+			<Event>
+			  <OnClick>luaCredit:LeaveToCharSelect();</OnClick>
+			</Event>
+		  </Button>
+
+	  </Controls>
+	</Panel>
+
+
+  <Panel name="pnlGameVideo" parent="layerCharCredit">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+    <Event>
+      <OnShow>luaCharacterSelect:OnSizeVideo();</OnShow>
+    </Event>
+    <Controls>
+
+      <Paint name="CreditBackground">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+          <Anchor left="true" top="true" right="true" bottom="true" />
+        </Layout>
+        <Shape>
+          <Visible>true</Visible>
+          <Color r="0" g="0" b="0" />
+          <ShowRect>false</ShowRect>
+        </Shape>
+      </Paint>
+
+      <Video name="gamevideo">
+        <Look>lookDefFieldMap</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="1280" h="720" />
+        </Layout>
+        <Event>
+          <OnUpdate>luaCharacterSelect:EndVideo();</OnUpdate>
+        </Event>
+      </Video>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="20" y="20" />
+          <Size w="250" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SELCHAR_SKIPVIDEO" ) );</OnLoaded>
+        </Event>
+      </TextView>
+      
+    </Controls>
+  </Panel>
+  
+</UI>

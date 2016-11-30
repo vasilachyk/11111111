@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_map.lua" />
+
+
+
+  <!-- Frame : Map -->
+  <Frame name="frmMap" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="60" y="50" />
+      <Size w="480" h="570" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+  	  <Icon>iconMap</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_MAP"));
+        luaGame:RegisterWindow( frmMap, btnHoldMap);
+      </OnLoaded>
+      <OnShow>luaMap:OnShowMapFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then
+
+            luaGame:RestoreUIPosition( frmMap);
+
+            local _scale = gamefunc:GetAccountParam( "mapFieldMap", "scale")  or  1.0;
+            mapFieldMap:SetScale( _scale);
+            
+            if ( gamefunc:GetAccountParam( "frmMap", "hold") ~= nil)  then  btnHoldMap:SetCheck( true);
+            end
+            
+            if ( gamefunc:GetAccountParam( "mapFieldMap", "fullscale") ~= nil)  then  mapFieldMap:SetFullScale( true);
+            end
+
+        elseif ( arg == "RECORD_UI")  then
+
+            luaGame:RecordUIPosition( frmMap);
+
+            gamefunc:SetAccountParam( "mapFieldMap", "scale", mapFieldMap:GetScale());
+
+            if ( btnHoldMap:GetCheck() == true)  then  gamefunc:SetAccountParam( "frmMap", "hold", "1");
+            end
+           
+            if ( mapFieldMap:IsFullScale() == true)  then  gamefunc:SetAccountParam( "mapFieldMap", "fullscale", "1");
+            end
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Hold buttons -->
+      <Button name="btnHoldMap">
+        <Look>lookDefHoldButton</Look>
+        <Layout>
+          <Location x="440" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <Check>true</Check>
+        </Shape>
+      </Button>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="465" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmMap:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="55" base="BOTTOMLEFT" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- TabCtrl -->
+      <TabCtrl name="tbcMapTabCtrl">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="470" h="540" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcMapTabCtrl:SetTabName( 0, STR( "UI_FIELDMAP"));
+            tbcMapTabCtrl:SetTabName( 1, STR( "UI_WORLDMAP"));
+          </OnLoaded>
+          <OnSelChange>luaMap:RefreshMapInfo()</OnSelChange>
+        </Event>
+        <TabPages>
+          
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="150" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="515" />
+              </Layout>
+              <Controls>
+
+                <!-- Combobox : Field list -->
+                <Combobox name="cmbFieldList">
+                  <Look>lookDefComboButton</Look>
+                  <Look type="listbox">lookDefComboListBox</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="10" y="10" />
+                    <Size w="235" h="23" />
+                  </Layout>
+                  <Shape>
+                    <DroppedWidth>310</DroppedWidth>
+                    <ShowScrollBar>show</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Event>
+                    <OnSelChange>luaMap:OnSelChangeFieldList();</OnSelChange>
+                  </Event>
+                </Combobox>
+
+
+                <!-- Button : Move to my location -->
+                <Button>
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="250" y="9" />
+                    <Size w="100" h="25" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_MAP_TOMYLOCATION"));</OnLoaded>
+                    <OnClick>luaMap:OnClickMoveToMyLocation();</OnClick>
+                  </Event>
+                </Button>
+                
+                <Button name="btnShowIcon">
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="360" y="9" />
+                    <Size w="100" h="25" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_SETTINGS"));</OnLoaded>
+                    <OnClick>luaMap:OnClickFieldMapOption();</OnClick>
+                  </Event>
+                </Button>
+                
+                <!-- Field map -->
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="5" y="40" />
+                    <Size w="460" h="460" />
+                  </Layout>
+                </Group>
+                
+                <FieldMap name="mapFieldMap">
+                  <Look>lookDefFieldMap</Look>
+                  <Layout>
+                    <Location x="10" y="45" />
+                    <Size w="450" h="450" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>
+                    </OnLoaded>
+                  </Event>
+                </FieldMap>
+                
+              </Controls>
+            </Page>
+          </TabPage>
+
+          
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="150" y="0" />
+                <Size w="150" h="25" />
+              </Layout>
+              <Action>
+                <Enabled>false</Enabled>
+              </Action>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="515" />
+              </Layout>
+              <Controls>
+
+              </Controls>
+            </Page>
+          </TabPage>
+        </TabPages>
+      </TabCtrl>
+      
+    </Controls>
+  </Frame>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- PopupMenu : Field map options -->
+  <PopupMenu name="pmFieldMapOption">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="210" h="105" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+    </Shape>
+    <Event>
+      <OnUpdate>
+        if ( pmFieldMapOption:IsFocus() == false)  and  ( btnShowCraftIcon:IsFocus() == false)  and
+           ( btnShowShopIcon:IsFocus() == false)  and  ( btnShoQuestIcon:IsFocus() == false)  and
+           ( btnShowAreaIcon:IsFocus() == false)  then
+
+          pmFieldMapOption:Show( false);
+        end
+      </OnUpdate>
+    </Event>
+    <Controls>
+
+      <Button name="btnShowCraftIcon">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="200" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+          <Check>true</Check>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAP_SHOWARTISAN"));</OnLoaded>
+          <OnValueChanged>
+            btnShowCraftIcon:SetCheck( gameoption:ShowCraftIcon( btnShowCraftIcon:GetCheck() ));
+            gameoption:SaveOption();
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <Button name="btnShowShopIcon">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="5" y="30" />
+          <Size w="200" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+          <Check>true</Check>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAP_SHOWMERCHANT"));</OnLoaded>
+          <OnValueChanged>
+            btnShowShopIcon:SetCheck( gameoption:ShowShopIcon( btnShowShopIcon:GetCheck() ));
+            gameoption:SaveOption();
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <Button name="btnShoQuestIcon">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="5" y="55" />
+          <Size w="200" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+          <Check>true</Check>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAP_SHOWQUEST"));</OnLoaded>
+          <OnValueChanged>
+            btnShoQuestIcon:SetCheck( gameoption:ShowQuestIcon( btnShoQuestIcon:GetCheck() ));
+            gameoption:SaveOption();
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+      <Button name="btnShowAreaIcon">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="5" y="80" />
+          <Size w="200" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+          <Check>true</Check>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MAP_SHOWREGIONNAMES"));</OnLoaded>
+          <OnValueChanged>
+            btnShowAreaIcon:SetCheck( gameoption:ShowAreaIcon( btnShowAreaIcon:GetCheck() ));
+            gameoption:SaveOption();
+          </OnValueChanged>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+  
+</UI>

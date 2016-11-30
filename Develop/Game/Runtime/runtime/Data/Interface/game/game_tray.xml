@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_tray.lua" />
+
+
+  <!-- include tray script files -->
+  <Include>tray/tray_main.xml</Include>
+
+
+
+
+  <!-- Tray -->
+<!-- 
+  <Tray name="trTray0" parent="layerGame2">
+    <Look>lookDefTray</Look>
+    <Layout>
+      <Location x="972" y="757" base="BOTTOMLEFT" />
+      <Size w="40" h="40" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Event>
+      <OnUserArgument>luaTray:OnUserArgumentTray( "luaTrayGameMenu");</OnUserArgument>
+    </Event>
+  </Tray>
+
+  <Tray name="trTray1" parent="layerGame2">
+    <Look>lookDefTray</Look>
+    <Layout>
+      <Location x="926" y="757" base="BOTTOMLEFT" />
+      <Size w="40" h="40" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Event>
+      <OnUserArgument>luaTray:OnUserArgumentTray( "luaTrayMailBox");</OnUserArgument>
+    </Event>
+  </Tray>
+
+  <Tray name="trTray2" parent="layerGame2">
+    <Look>lookDefTray</Look>
+    <Layout>
+      <Location x="880" y="757" base="BOTTOMLEFT" />
+      <Size w="40" h="40" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Event>
+      <OnUserArgument>
+
+        luaTray:OnUserArgumentTray( "luaTrayDurability");
+      </OnUserArgument>
+    </Event>
+  </Tray>
+
+  <Tray name="trTray3" parent="layerGame2">
+    <Look>lookDefTray</Look>
+    <Layout>
+      <Location x="834" y="757" base="BOTTOMLEFT" />
+      <Size w="40" h="40" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Event>
+      <OnUserArgument>
+        luaTray:OnUserArgumentTray( "luaTrayAutoParty");
+      </OnUserArgument>
+    </Event>
+  </Tray>
+-->
+
+</UI>

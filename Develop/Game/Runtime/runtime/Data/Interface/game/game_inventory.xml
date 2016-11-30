@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_inventory.lua" />
+
+
+
+  <!-- Frame : Inventory -->
+  <Frame name="frmInventory" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="625" y="80" />
+      <Size w="356" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Icon>iconInventory</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_INVENTORY"));
+        luaGame:RegisterWindow( frmInventory, btnHoldInventory);
+      </OnLoaded>
+      <OnShow>luaInventory:OnShowInventoryFrame();</OnShow>
+      <OnSetFocus>lcInventory:SetFocus();</OnSetFocus>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then
+
+          luaGame:RestoreUIPosition( frmInventory);
+
+          if ( gamefunc:GetAccountParam( "frmInventory", "hold") ~= nil)  then  btnHoldInventory:SetCheck( true);
+          end
+
+        elseif ( arg == "RECORD_UI")  then
+
+          luaGame:RecordUIPosition( frmInventory);
+
+          if ( btnHoldInventory:GetCheck() == true)  then  gamefunc:SetAccountParam( "frmInventory", "hold", "1");
+          end
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Hold buttons -->
+      <Button name="btnHoldInventory">
+        <Look>lookDefHoldButton</Look>
+        <Layout>
+          <Location x="316" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <Check>false</Check>
+        </Shape>
+      </Button>
+
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="341" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmInventory:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="515" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- ListCtrl : Inventory -->
+      <ListCtrl name="lcInventory">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="25" />
+          <Size w="336" h="464" />
+        </Layout>
+        <Shape>
+          <ViewStyle>icon</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="300">name</AddColumn>
+          <AddColumn align="left,vcenter" width="100">quantity</AddColumn>
+          <AddColumn align="left,vcenter" width="1">type</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ToolTip offset_x="42" offset_y="42" ></ToolTip>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnDrawItem>luaInventory:OnDrawItemInvenListCtrl();</OnDrawItem>
+          <OnItemRClick>luaInventory:OnItemRClickInvenListCtrl();</OnItemRClick>
+          <OnItemDblClick>luaInventory:OnItemDblClickInvenListCtrl();</OnItemDblClick>
+          <OnSelChange>luaInventory:OnSelChangeInvenListCtrl();</OnSelChange>
+          <OnDragBegin>return luaInventory:OnDragBeginInvenListCtrl();</OnDragBegin>
+          <OnDragEnd>return luaInventory:OnDragEndInvenListCtrl();</OnDragEnd>
+          <OnDrop>return luaInventory:OnDropInvenListCtrl();</OnDrop>
+          <OnToolTip>luaInventory:OnToolTipInvenListCtrl();</OnToolTip>
+        </Event>
+      </ListCtrl>
+      
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="490" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- Item count -->
+      <LabelEx name="labInvenItemCount">
+        <Layout>
+          <Location x="0" y="500" />
+          <Size w="%100" h="30" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetToolTip( STR( "UI_INVEN_ITEMCOUNTTOOLTIP"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- Buttons : Filtering inventory item type -->
+      <Button name="btnFilterInvenItemType">
+        <Look>lookDefIconButton</Look>
+        <Layout>
+          <Location x="10" y="500" />
+          <Size w="32" h="32" />
+        </Layout>
+        <Shape>
+          <Icon w="32" h="32">iconSort</Icon>
+        </Shape>
+        <Event>
+          <OnClick>btnFilterInvenItemType:TrackPopupMenu( "pmInvenFilterPopupMenu");</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : Drop item -->
+      <Button name="btnDropInvenItem">
+        <Look>lookDefIconButton</Look>
+        <Layout>
+          <Location x="303" y="500" />
+          <Size w="32" h="32" />
+        </Layout>
+        <Shape>
+          <Icon w="32" h="32">iconTrashCan</Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaInventory:OpenConfirmDropInvenItem();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="540" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+        
+
+      <!-- Money -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="326" h="30" />
+        </Layout>
+        <Shape>
+          <Opacity>0.25</Opacity>
+        </Shape>
+      </Group>
+
+      <Picture>
+        <Layout>
+          <Location x="15" y="553" />
+          <Size w="24" h="24" />
+        </Layout>
+        <Image>iconCoin</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TextView name="tvwMoney">
+        <Layout>
+          <Location x="10" y="550" />
+          <Size w="326" h="30" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnDragBegin>return luaInventory:OnDragBeginMoney();</OnDragBegin>
+          <OnDrop>return luaInventory:OnDropMoney();</OnDrop>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Popup menu -->
+  <PopupMenu name="pmInvenPopupMenu">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="150" h="75" />
+    </Layout>
+    <Controls>
+
+      <Button name="btnInvenMenuUse">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_USE"));</OnLoaded>
+          <OnClick>
+            local nCurSel = lcInventory:GetCurSel();
+            local nIndex = lcInventory:GetItemData( nCurSel);
+            luaInventory:DoUseInvenItem( nIndex);
+          </OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnInvenMenuEquip">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_EQUIP"));</OnLoaded>
+          <OnClick>
+            local nCurSel = lcInventory:GetCurSel();
+            local nIndex = lcInventory:GetItemData( nCurSel);
+            luaInventory:DoEquipInvenItem( nIndex);
+          </OnClick>
+        </Event>
+      </Button>
+
+      <Picture>
+        <Layout>
+          <Location x="0" y="49" />
+          <Size w="150" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Button name="btnInvenMenuDrop">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="50" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DROP"));</OnLoaded>
+          <OnClick>luaInventory:OpenConfirmDropInvenItem();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+
+
+
+
+
+
+
+
+  <!-- Popup menu -->
+  <PopupMenu name="pmInvenFilterPopupMenu">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="200" h="125" />
+    </Layout>
+    <Controls>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Icon w="15" h="15">iconSort</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ALL"));</OnLoaded>
+          <OnClick>luaInventory:OnClickFilterInvenItemTypeMenu( luaInventory.FILTER_TYPE.NONE, "iconSort", STR( "UI_ALL"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Icon w="15" h="15">iconUsableItem</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_SHOWUSABLE"));</OnLoaded>
+          <OnClick>luaInventory:OnClickFilterInvenItemTypeMenu( luaInventory.FILTER_TYPE.USABLE, "iconUsableItem", STR( "UI_INVEN_SHOWUSABLE"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="50" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Icon w="15" h="15">iconEquipItem</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_SHOWEQIUPMENT"));</OnLoaded>
+          <OnClick>luaInventory:OnClickFilterInvenItemTypeMenu( luaInventory.FILTER_TYPE.EQUIPMENT, "iconEquipItem", STR( "UI_INVEN_SHOWEQIUPMENT"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="75" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Icon w="15" h="15">iconQuestItem</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_SHOWQUESTITEM"));</OnLoaded>
+          <OnClick>luaInventory:OnClickFilterInvenItemTypeMenu( luaInventory.FILTER_TYPE.QUEST, "iconQuestItem", STR( "UI_INVEN_SHOWQUESTITEM"));</OnClick>
+        </Event>
+      </Button>
+
+      <Button>
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="100" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Icon w="15" h="15">iconRecipeItem</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_SHOWRECIPEITEM"));</OnLoaded>
+          <OnClick>luaInventory:OnClickFilterInvenItemTypeMenu( luaInventory.FILTER_TYPE.RECIPE, "iconRecipeItem", STR( "UI_INVEN_SHOWRECIPEITEM"));</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmDropInvenItem" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaInventory:CloseConfirmDropInvenItem();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_CONFIRMDROPITEM"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Drop item description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="60" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwInvenDropItemDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaInventory:OnDropInvenItemOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaInventory:CloseConfirmDropInvenItem();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame : Confirm item quantity -->
+  <Frame name="frmConfirmItemQuantity" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="260" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaInventory:CloseConfirmItemQuantityFrame();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmItemQuantityMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_SPECITEMQTY"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="110" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmItemQuantityDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Quantity -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="145" />
+          <Size w="410" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="160" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "QUANTITY") .. " :");</OnLoaded>
+        </Event>
+      </Label>
+
+      <Edit name="edtConfirmItemQuantity">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaInventory:OnValueChangedConfirmItemQuantity();</OnValueChanged>
+          <OnOK>luaInventory:DoConfirmItemQuantity();</OnOK>
+          <OnCancel>luaInventory:CloseConfirmItemQuantityFrame();</OnCancel>
+        </Event>
+      </Edit>
+
+      <SpinCtrl>
+        <Look>lookDefSpinCtrl</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="15" h="23" />
+        </Layout>
+        <Shape>
+          <Buddy>edtConfirmItemQuantity</Buddy>
+        </Shape>
+      </SpinCtrl>
+
+      
+      <!-- Price -->
+      <TextView name="tvwConfirmItemPriceDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="220" y="160" />
+          <Size w="100" h="23" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+      
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaInventory:DoConfirmItemQuantity();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>luaInventory:CloseConfirmItemQuantityFrame();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame : Confirm money amount -->
+  <Frame name="frmConfirmMoneyAmount" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="260" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaInventory:ClosConfirmMoneyAmountFrame();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_SPECMONEY"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="110" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwConfirmMoneyAmountDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Amount -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="145" />
+          <Size w="410" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="20" y="160" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "MONEY") .. " : ");</OnLoaded>
+        </Event>
+      </Label>
+
+      <Edit name="edtConfirmMoneyAmountGold">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="50" h="23" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaInventory:OnValueChangedConfirmMoneyAmountGold();</OnValueChanged>
+          <OnOK>luaInventory:DoConfirmMoneyAmount();</OnOK>
+          <OnCancel>luaInventory:ClosConfirmMoneyAmountFrame();</OnCancel>
+        </Event>
+      </Edit>
+
+      <SpinCtrl>
+        <Look>lookDefSpinCtrl</Look>
+        <Layout>
+          <Location x="90" y="160" />
+          <Size w="20" h="23" />
+        </Layout>
+        <Shape>
+          <Buddy>edtConfirmMoneyAmountGold</Buddy>
+        </Shape>
+      </SpinCtrl>
+
+      <LabelEx>
+        <Layout>
+          <Location x="160" y="160" />
+          <Size w="40" h="23" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="230" g="180" b="20"/>
+          <Align>left,bottom</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "GOLDPOINT"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Edit name="edtConfirmMoneyAmountSilver">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="200" y="160" />
+          <Size w="50" h="23" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaInventory:OnValueChangedConfirmMoneyAmountSilver();</OnValueChanged>
+          <OnOK>luaInventory:DoConfirmMoneyAmount();</OnOK>
+          <OnCancel>luaInventory:ClosConfirmMoneyAmountFrame();</OnCancel>
+        </Event>
+      </Edit>
+
+      <SpinCtrl>
+        <Look>lookDefSpinCtrl</Look>
+        <Layout>
+          <Location x="200" y="160" />
+          <Size w="50" h="23" />
+        </Layout>
+        <Shape>
+          <Buddy>edtConfirmMoneyAmountSilver</Buddy>
+        </Shape>
+      </SpinCtrl>
+
+      <LabelEx>
+        <Layout>
+          <Location x="270" y="160" />
+          <Size w="40" h="23" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="200" g="200" b="200"/>
+          <Align>left,bottom</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "SILVERPOINT"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Edit name="edtConfirmMoneyAmountCopper">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="310" y="160" />
+          <Size w="50" h="23" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaInventory:OnValueChangedConfirmMoneyAmountCopper();</OnValueChanged>
+          <OnOK>luaInventory:DoConfirmMoneyAmount();</OnOK>
+          <OnCancel>luaInventory:ClosConfirmMoneyAmountFrame();</OnCancel>
+        </Event>
+      </Edit>
+
+      <SpinCtrl>
+        <Look>lookDefSpinCtrl</Look>
+        <Layout>
+          <Location x="310" y="160" />
+          <Size w="50" h="23" />
+        </Layout>
+        <Shape>
+          <Buddy>edtConfirmMoneyAmountCopper</Buddy>
+        </Shape>
+      </SpinCtrl>
+
+      <LabelEx>
+        <Layout>
+          <Location x="380" y="160" />
+          <Size w="40" h="23" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="180" g="100" b="50"/>
+          <Align>left,bottom</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "COPPERPOINT"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>luaInventory:DoConfirmMoneyAmount();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="210" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>luaInventory:ClosConfirmMoneyAmountFrame();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmClaimInvelItem" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="220" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="415" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaInventory:CloseConfirmClaimInvenItem();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="370" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_INVEN_CONFIRMCLAIMITEM"));</OnLoaded>
+        </Event>
+      </TextView>
+      
+
+      <!-- Item description -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="90" />
+          <Size w="410" h="60" />
+        </Layout>
+      </Group>
+
+      <TextView name="tvwClaimItemDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="95" />
+          <Size w="400" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>
+            luaInventory:OnClaimInvenItemOK();
+            luaInventory:CloseConfirmClaimInvenItem();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="170" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaInventory:CloseConfirmClaimInvenItem();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

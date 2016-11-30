@@ -1,0 +1,1148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="character">
+      <UniqueIdentifier>{62eb2a67-98f2-459e-994d-59012ea2ce15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{db2da541-9658-49a8-b1a6-72318e4361cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\tray">
+      <UniqueIdentifier>{98bc4c50-ccc4-445f-91c8-a6328c9b2fc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\GM">
+      <UniqueIdentifier>{ed9d30be-8985-43a7-ba40-e532ebedd7f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="login">
+      <UniqueIdentifier>{8f5651d9-9803-4e79-ac9b-73c9dbdba77b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="login\EN_US">
+      <UniqueIdentifier>{417a883a-d85d-4a0d-92c8-c6c554abc5a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{620db50d-e8e9-4305-80ad-d4bdc94d9c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cutscene">
+      <UniqueIdentifier>{184787f2-3193-4db9-b2cc-7b9d6217aee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang">
+      <UniqueIdentifier>{9109e9ef-6f48-4c7a-bfd2-499e39b5327f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\lang_GB">
+      <UniqueIdentifier>{047e77d4-c438-47e5-8c72-c36bc92d0b7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\lang_ko">
+      <UniqueIdentifier>{f33d0d2e-988a-46e1-b8b6-39c0d4a976c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\lang_US">
+      <UniqueIdentifier>{2cd8925f-6139-486f-80af-6392e1e35148}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\lang_DE">
+      <UniqueIdentifier>{242ae000-f9e9-4227-aa0b-1ad8f55e4f48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\lang_en_GB">
+      <UniqueIdentifier>{530f2d68-e38b-4d38-9efe-6ee8fbabb37b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\lang_en_US">
+      <UniqueIdentifier>{2377eff9-98f0-4286-aca0-e8a4ef068b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang_JP">
+      <UniqueIdentifier>{05e41e05-ed9d-4e7c-826f-8272da7eee7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang_PL">
+      <UniqueIdentifier>{168c7dd4-62b9-4d4d-94c9-228234c18950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang_DE">
+      <UniqueIdentifier>{a927606b-51fa-45ff-bdf0-2d065a22f52f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BeautyShop">
+      <UniqueIdentifier>{767c8cb4-2230-4f8e-b1f8-549f50e6aed3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="character\character.lua">
+      <Filter>character</Filter>
+    </None>
+    <None Include="character\character_create.lua">
+      <Filter>character</Filter>
+    </None>
+    <None Include="character\character_credit.lua">
+      <Filter>character</Filter>
+    </None>
+    <None Include="character\character_frame.lua">
+      <Filter>character</Filter>
+    </None>
+    <None Include="character\character_select.lua">
+      <Filter>character</Filter>
+    </None>
+    <None Include="game\game.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_accept_quest.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_actionprogressbar.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_arena.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_assignlooting.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_autopartynotice.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_battlearea.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_buffviewer.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_cashshop.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_challengerquest.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_ChangeName.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_channel.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_character.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_chattingbox.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_crafting.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_crafting_costume.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_crosshair.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_defines.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_deliberation.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_dialog_npc.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_dyeing.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_ElementEnchant.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_enchant.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_exinventory.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_expprogress.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_friends.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_gemenchant.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_guidebook.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_guild.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_guildstorage.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_help.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_honor_ranking.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_interaction_npc.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_interaction_pc.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_interaction_viewer.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_inventory.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_inventorymgr.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_ItemPreview.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_journal.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_journalindicator.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_loading.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_looting.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_lowhp.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_mailbox.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_mainmenu.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_map.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_messagebox.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_minimap.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_missionprog.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_MyMarket.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_option.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_palette.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_party.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_partyindicator.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_PartyMatching.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_partysetting.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_playerinfo.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_playerstate.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_PopupHelp.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_popupmsg.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_quest.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_questpvp.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_randombox_effect.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_ranking.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_rebirth.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_recipe.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_reward_quest.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_SearchMarket.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_shop.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_skill.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_skillmgr.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_social.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_storage.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_talent_combo.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_targetinfo.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_tooltip.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_trade.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_trademarket.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_tray.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_tutorial.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_web.lua">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\tray\tray_autoparty.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\tray\tray_clock.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\tray\tray_cursor.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\tray\tray_durability.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\tray\tray_gamemenu.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\tray\tray_mailbox.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\tray\tray_main.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\tray\tray_stance.lua">
+      <Filter>game\tray</Filter>
+    </None>
+    <None Include="game\game_GMBan.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="game\game_GMCategory.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="game\game_GMChar.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="game\game_GMEtc.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="game\game_GMMoveBattle.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="game\game_GMSearch.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="game\game_GMSpawn.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="game\game_GMTool.lua">
+      <Filter>game\GM</Filter>
+    </None>
+    <None Include="login\login.lua">
+      <Filter>login</Filter>
+    </None>
+    <None Include="login\login_connect.lua">
+      <Filter>login</Filter>
+    </None>
+    <None Include="login\login_frame.lua">
+      <Filter>login</Filter>
+    </None>
+    <None Include="login\login_loading.lua">
+      <Filter>login</Filter>
+    </None>
+    <None Include="common\global.lua">
+      <Filter>common</Filter>
+    </None>
+    <None Include="cutscene\cutscene.lua">
+      <Filter>cutscene</Filter>
+    </None>
+    <None Include="game\game_BeautyParlor.lua">
+      <Filter>BeautyShop</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="character\character.xml">
+      <Filter>character</Filter>
+    </Xml>
+    <Xml Include="character\character_create.xml">
+      <Filter>character</Filter>
+    </Xml>
+    <Xml Include="character\character_credit.xml">
+      <Filter>character</Filter>
+    </Xml>
+    <Xml Include="character\character_frame.xml">
+      <Filter>character</Filter>
+    </Xml>
+    <Xml Include="character\character_resource.xml">
+      <Filter>character</Filter>
+    </Xml>
+    <Xml Include="character\character_select.xml">
+      <Filter>character</Filter>
+    </Xml>
+    <Xml Include="character\character_template.xml">
+      <Filter>character</Filter>
+    </Xml>
+    <Xml Include="game\game.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_accept_quest.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_actionprogressbar.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_arena.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_assignlooting.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_autopartynotice.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_battlearea.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_buffviewer.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_cashshop.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_challengerquest.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_ChangeName.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_channel.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_character.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_chattingbox.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_crafting.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_crafting_costume.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_crosshair.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_deliberation.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_dialog_npc.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_dyeing.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_ElementEnchant.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_emblem.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_enchant.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_exinventory.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_expprogress.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_friends.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_gemenchant.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_guidebook.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_guild.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_guildstorage.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_help.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_honor_ranking.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_interaction_npc.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_interaction_pc.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_interaction_viewer.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_inventory.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_inventorymgr.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_ItemPreview.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_journal.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_journalindicator.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_loading.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_looting.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_lowhp.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_mailbox.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_mainmenu.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_map.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_messagebox.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_minimap.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_missionprog.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_MyMarket.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_option.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_palette.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_party.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_partyindicator.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_PartyMatching.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_partysetting.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_playerinfo.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_playerstate.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_PopupHelp.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_popupmsg.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_presentation.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_quest.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_questpvp.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_randombox_effect.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_ranking.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_rebirth.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_recipe.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_resource.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_reward_quest.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_SearchMarket.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_shop.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_skill.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_skillmgr.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_social.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_storage.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_talent_combo.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_targetinfo.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_template.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_trade.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_trademarket.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_tray.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_tutorial.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\game_web.xml">
+      <Filter>game</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_autoparty.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_clock.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_cursor.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_durability.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_gamemenu.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_mailbox.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_main.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\tray\tray_stance.xml">
+      <Filter>game\tray</Filter>
+    </Xml>
+    <Xml Include="game\game_GMBan.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="game\game_GMCategory.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="game\game_GMChar.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="game\game_GMEtc.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="game\game_GMMoveBattle.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="game\game_GMSearch.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="game\game_GMSpawn.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="game\game_GMTool.xml">
+      <Filter>game\GM</Filter>
+    </Xml>
+    <Xml Include="login\login.xml">
+      <Filter>login</Filter>
+    </Xml>
+    <Xml Include="login\login_connect.xml">
+      <Filter>login</Filter>
+    </Xml>
+    <Xml Include="login\login_frame.xml">
+      <Filter>login</Filter>
+    </Xml>
+    <Xml Include="login\login_loading.xml">
+      <Filter>login</Filter>
+    </Xml>
+    <Xml Include="login\login_resource.xml">
+      <Filter>login</Filter>
+    </Xml>
+    <Xml Include="login\EN_US\login_connect.xml">
+      <Filter>login\EN_US</Filter>
+    </Xml>
+    <Xml Include="common\com_resource.xml">
+      <Filter>common</Filter>
+    </Xml>
+    <Xml Include="common\com_template.xml">
+      <Filter>common</Filter>
+    </Xml>
+    <Xml Include="cutscene\cutscene.xml">
+      <Filter>cutscene</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\guidebook.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\help.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\interface.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\local.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_area.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_buff.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_dialog.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_enchant.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_faction.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_fieldlist.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_guidebook.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_help.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_npc.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_quest.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_setitem.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_talent.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\name_xitem.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\result.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\result_sound.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\strings.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\system_msg.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\tip.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_GB\word.xml">
+      <Filter>lang\lang_GB</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\interface.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\local.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_area.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_buff.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_dialog.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_faction.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_fieldlist.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_npc.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_quest.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_talent.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\name_xitem.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\result.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\result_sound.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\strings.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\system_msg.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\tip.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ko_KR\word.xml">
+      <Filter>lang\lang_ko</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\guidebook.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\help.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\interface.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\local.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_area.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_buff.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_dialog.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_enchant.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_faction.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_fieldlist.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_guidebook.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_help.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_npc.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_quest.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_setitem.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_talent.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\name_xitem.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\result.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\result_sound.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\strings.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\system_msg.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\tip.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\en_US\word.xml">
+      <Filter>lang\lang_US</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\interface.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\local.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_area.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_buff.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_cashproduct.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_dialog.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_enchant.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_faction.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_fieldlist.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_guidebook.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_help.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_npc.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_quest.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_setitem.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_talent.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\name_xitem.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\result.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\result_sound.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\strings.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\system_msg.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\tip.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\de_DE\word.xml">
+      <Filter>lang\lang_DE</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\guidebook.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\help.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\interface.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\local.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_area.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_buff.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_CashProduct.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_dialog.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_enchant.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_faction.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_fieldlist.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_guidebook.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_help.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_npc.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_quest.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_setitem.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_talent.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\name_xitem.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\result.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\result_sound.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\strings.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\system_msg.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\tip.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\ja_JP\word.xml">
+      <Filter>lang_JP</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\interface.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\local.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_area.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_buff.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_cashproduct.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_dialog.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_enchant.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_faction.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_fieldlist.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_guidebook.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_help.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_npc.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_quest.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_setitem.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_talent.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\name_xitem.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\result.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\result_sound.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\strings.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\system_msg.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\tip.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="..\system\lang\pl_PL\word.xml">
+      <Filter>lang_PL</Filter>
+    </Xml>
+    <Xml Include="game\game_BeautyParlor.xml">
+      <Filter>BeautyShop</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\system\lang\en_GB\abuse.txt">
+      <Filter>lang\lang_en_GB</Filter>
+    </Text>
+    <Text Include="..\system\lang\en_US\abuse.txt">
+      <Filter>lang\lang_en_US</Filter>
+    </Text>
+    <Text Include="..\system\lang\ja_JP\abuse.txt">
+      <Filter>lang_JP</Filter>
+    </Text>
+    <Text Include="..\system\lang\pl_PL\abuse.txt">
+      <Filter>lang_PL</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

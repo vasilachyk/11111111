@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_interaction_npc.lua" />
+
+  
+  
+  <!-- Frame : Interaction -->
+  <Frame name="frmInteractionNpc" parent="layerGame1">
+    <Look>lookDefDialogFrame</Look>
+    <Layout>
+      <Location x="570" y="90" />
+      <Size w="430" h="200" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmInteractionNpc);</OnLoaded>
+      <OnShow>luaInteractionNpc:OnShowInteractionNpcFrame();</OnShow>
+    </Event>
+    <Controls>
+      
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="396" y="3" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmInteractionNpc:Show( false);</OnClick>
+        </Event>
+      </Button>
+      
+      
+      <!-- TextView : Interaction NPC -->
+      <TextView name="tvwInteractionNpc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="50" />
+          <Size w="400" h="450" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnItemClick>luaInteractionNpc:OnItemClickInteractionNpc();</OnItemClick>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Frame>
+
+</UI>

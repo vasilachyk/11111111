@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_GMTool.lua" />
+
+  <Frame name="frmGMTool" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="1000" h="700" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_GMTOOL" ) );
+        luaGame:RegisterWindow( frmGMTool );
+      </OnLoaded>
+      <OnShow>
+        luaGMTool:OnShowGMToolFrame();
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="985" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmGMTool:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

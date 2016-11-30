@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_randombox_effect.lua" />
+
+
+
+  <Frame name="frmRandomBoxEffect" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="300" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaGame:RegisterWindow( frmRandomBoxEffect);
+      </OnLoaded>
+      <OnUpdate>
+        luaRandomBoxEffect:UpdateRandomBoxEffect();
+      </OnUpdate>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmRandomBoxEffect:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture name="picRandomBoxItemShape">
+        <Layout>
+          <Location x="165" y="65" />
+          <Size w="110" h="110" />
+        </Layout>
+        <Image>bmpBestItem</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Icon -->
+      <Picture name="picRandomBoxItemImg" >
+        <Layout>
+          <Location x="190" y="90" />
+          <Size w="60" h="60" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwRandomBoxItemName">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="180" />
+          <Size w="%100" h="150" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- ProgressCtrl : Progress bar -->
+      <ProgressCtrl name="pcRandomBoxProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="55" y="210" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="5000"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaRandomBoxEffect:OnUpdateRandomBoxProgress();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+      <Picture name="picRandomBoxItemHide1" >
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="215" />
+        </Layout>
+        <Image>bmpWhiteGlow1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Opacity>0.0</Opacity>
+        </Shape>
+      </Picture>
+
+      <Picture name="picRandomBoxItemHide2" >
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="215" />
+        </Layout>
+        <Image>bmpWhiteGlow2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Opacity>0.0</Opacity>
+        </Shape>
+      </Picture>
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="240" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="120" y="250" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmRandomBoxEffect:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+
+  <Frame name="frmRandomBoxResult" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="300" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_RANDOMBOX_RESULT"));
+        luaGame:RegisterWindow( frmRandomBoxResult);
+      </OnLoaded>
+      <OnUpdate>
+        luaRandomBoxEffect:UpdateRandomBoxResultEffect();
+      </OnUpdate>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmRandomBoxResult:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwRandomBoxResult">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="60" />
+          <Size w="%100" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "{FONT name=\"fntBoldStrong\"}{COLOR r=230 g=230 b=230}{ALIGN hor=\"center\" ver=\"center\"}" .. STR( "UI_RANDOMBOX_RESULT_MESSAGE"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- ListCtrl : RandomBoxResult -->
+      <ListCtrl name="lcRandomBoxResult">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="30" y="100" />
+          <Size w="380" h="96" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>true</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="390">name</AddColumn>
+          <AddColumn align="left,vcenter" width="150">quantity</AddColumn>
+          <AddColumn align="left,vcenter" width="150">tier</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnSelChange></OnSelChange>
+          <OnItemDblClick></OnItemDblClick>
+          <OnToolTip>luaRandomBoxEffect:OnToolTipRandomBoxResultCtrl();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <Picture name="picRandomBoxResultHide1" >
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="215" />
+        </Layout>
+        <Image>bmpWhiteGlow1</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Opacity>1.0</Opacity>
+        </Shape>
+      </Picture>
+
+      <Picture name="picRandomBoxResultHide2" >
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="215" />
+        </Layout>
+        <Image>bmpWhiteGlow2</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Opacity>1.0</Opacity>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="240" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="120" y="250" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>frmRandomBoxResult:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

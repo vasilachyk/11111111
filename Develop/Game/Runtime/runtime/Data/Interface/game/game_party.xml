@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_party.lua" />
+
+
+  <!-- Panel : Party -->
+  <Panel parent="tpgSocialParty">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="485" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- Group -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="380" h="50" />
+        </Layout>
+      </Group>
+
+
+      <!-- Party leader -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTYLEADER"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Label name="labPartyLeader">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="110" y="10" />
+          <Size w="270" h="20" />
+        </Layout>
+      </Label>
+
+
+      <!-- Party member count -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTYMEMBER"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Label name="labPartyMemberCount">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="110" y="30" />
+          <Size w="270" h="20" />
+        </Layout>
+      </Label>
+      
+
+      <!-- Party members -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="130" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Image>bmpContentBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="130" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTYMEMBER"));</OnLoaded>
+        </Event>
+      </Label>
+
+
+      <!-- Party members list -->
+      <ListCtrl name="lcPartyList">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="165" />
+          <Size w="370" h="234" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="350">name</AddColumn>
+          <AddColumn align="left,vcenter" width="150">grade</AddColumn>
+          <AddColumn align="left,vcenter" width="150">state</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+        </Shape>
+        <Event>
+          <OnSelChange>luaParty:RefreshControls();</OnSelChange>
+        </Event>
+      </ListCtrl>
+      
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="485" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+
+      <!-- Button : Party setting -->
+      <Button name="btnPartySetting">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="495" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SETTINGS"));</OnLoaded>
+          <OnClick>luaParty:OnClickPartySetting();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Disband party member -->
+      <Button name="btnDisbandPartyMember">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="495" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DISBAND"));</OnLoaded>
+          <OnClick>luaParty:OnClickDisbandPartyMember();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Leave party -->
+      <Button name="btnLeaveParty">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="270" y="495" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LEAVE"));</OnLoaded>
+          <OnClick>frmConfirmLeaveParty:Show( true);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmLeaveParty" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmConfirmLeaveParty);
+      </OnLoaded>
+      <OnShow>
+        if ( frmConfirmLeaveParty:GetShow() == true)  then
+
+          local width, height = frmConfirmLeaveParty:GetParent():GetSize();
+          local x, y, w, h = frmConfirmLeaveParty:GetRect();
+          frmConfirmLeaveParty:SetPosition( (width - w) * 0.5, (height - h) * 0.5);
+        end
+
+        luaGame:ShowWindow( frmConfirmLeaveParty);
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmLeaveParty:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SOCIAL_CONFIRMLEAVEPARTY"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>
+            frmConfirmLeaveParty:Show( false);
+            
+            if ( gamefunc:GetPartyMemberCount() > 0)  then  gamefunc:LeaveParty();
+            end
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmLeaveParty:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

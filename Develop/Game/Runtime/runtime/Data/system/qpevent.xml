@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<QPEVENT id="1" title="$$ESCORT_TROLL_PRIST_TITLE" >
+		<BEGIN> 
+			<NOTICE text="$$ESCORT_TROLL_PRIST_MISSION1" />
+			<NOTICE text="$$ESCORT_TROLL_PRIST_MISSION2" />
+			<NOTICE text="$$ESCORT_TROLL_PRIST_MISSION3" />
+			
+			<SPAWN id="102150"/>
+		</BEGIN>
+		
+		<END winnerteam = "1">
+			<NOTICE text="$$ESCORT_TROLL_PRIST_WIN" />
+			
+			<SPAWN id="102160" delaytime="10" despawntime="1200" />
+
+			<DESPAWN npcid="102154, 102155, 102156, 102157, 102158, 102159, 102166, 102167, 102168, 102169, 102171" />
+			
+			<REWARD money="300" >
+				<ITEM id ="90000" amount="1"/>
+			</REWARD>
+		</END>
+		
+		<END winnerteam = "2">
+			<NOTICE text="$$ESCORT_TROLL_PRIST_LOSE" />
+			
+			<SPAWN id="102161" delaytime="10" despawntime="1200" />
+
+			<DESPAWN npcid="102154, 102155, 102156, 102157, 102158, 102159, 102166, 102167, 102168, 102169, 102171" />
+			
+			<REWARD money="300" >
+				<ITEM id ="90000" amount="1"/>
+			</REWARD>
+		</END>		
+	</QPEVENT>	
+	
+	<QPEVENT id="2" title="$$ESCORT_OGRE_PRIST_TITLE" >
+		<BEGIN> 
+			<NOTICE text="$$ESCORT_OGRE_PRIST_MISSION1" />
+			<NOTICE text="$$ESCORT_OGRE_PRIST_MISSION2" />
+			<NOTICE text="$$ESCORT_OGRE_PRIST_MISSION3" />
+			
+			<SPAWN id="102151"/>						
+		</BEGIN>
+		
+		<END winnerteam = "1">
+			<NOTICE text="$$ESCORT_OGRE_PRIST_LOSE" />			
+			
+			<SPAWN id="102160" delaytime="10" despawntime="1200" />
+
+			<DESPAWN npcid="102154, 102155, 102156, 102157, 102158, 102159, 102166, 102167, 102168, 102169, 102171" />
+			
+			<REWARD money="300" >
+				<ITEM id ="90000" amount="1"/>
+			</REWARD>
+		</END>
+		
+		<END winnerteam = "2">
+			<NOTICE text="$$ESCORT_OGRE_PRIST_WIN" />
+			
+			
+			<SPAWN id="102161" delaytime="10" despawntime="1200" />
+
+			<DESPAWN npcid="102154, 102155, 102156, 102157, 102158, 102159, 102166, 102167, 102168, 102169, 102171" />
+			
+			<REWARD money="300" >
+				<ITEM id ="90000" amount="1"/>
+			</REWARD>
+		</END>		
+	</QPEVENT>
+	
+	<QPEVENT id="102001" title="$$EPIC_EDAWAR_TITLE" >
+		<BEGIN> 
+			<NOTICE text="$$EPIC_EDAWAR_MISSION1" />			
+			<SPAWN id="7102150"/>
+			<SPAWN id="7102151"/>
+			<SPAWN id="102152"/>
+			<SPAWN id="102153"/>
+			<SPAWN id="102154"/>
+			<SPAWN id="102155"/>
+			<SPAWN id="7102195"/>
+			<SPAWN id="7102197"/>
+			<SPAWN id="7102194"/>
+			<SPAWN id="7102232"/>
+			<SPAWN id="7102234"/>
+			<SPAWN id="7102000"/>
+			<SPAWN id="710223501"/>
+			<SPAWN id="710223502"/>
+			<SPAWN id="710223503"/>
+			<SPAWN id="710223504"/>
+			<DESPAWN npcid="7102196" />
+		</BEGIN>
+		
+		<END winnerteam = "1">
+			<SPAWN id="7102163" delaytime="10" despawntime="7200" />
+			<SPAWN id="7102198" delaytime="10" despawntime="7200" />
+			<SPAWN id="7102200" delaytime="10" despawntime="7200" />
+			<DESPAWN npcid="7102000,7102150, 7102151, 7102152, 7102153, 7102154, 7102155, 7102195, 7102197, 7102194, 7102165, 7102199, 7102241,7102242,7102243,7102244,7102245,7102246,7102247,7102248,7102235,7102236,7102237,7102238" />
+
+			<REWARD team="1" money="100" >
+				<ITEM id ="34400" amount="15"/>
+				<ITEM id ="34401" amount="60"/>
+			</REWARD>
+			
+			<REWARD team="2" money="25" >
+				<ITEM id ="34400" amount="5"/>
+				<ITEM id ="34401" amount="20"/>
+			</REWARD>
+		</END>	
+		
+		<END winnerteam = "2">
+			<SPAWN id="7102165" delaytime="10" despawntime="7200" />
+			<SPAWN id="7102199" delaytime="10" despawntime="7200" />
+			<SPAWN id="7102201" delaytime="10" despawntime="7200" />
+			<DESPAWN npcid="7102000,7102150, 7102151, 7102152, 7102153, 7102154, 7102155, 7102195, 7102197, 7102194, 7102163, 7102198, 7102241,7102242,7102243,7102244,7102245,7102246,7102247,7102248,7102235,7102236,7102237,7102238" />
+			
+			<REWARD team="1" money="25" >
+				<ITEM id ="34400" amount="5"/>
+				<ITEM id ="34401" amount="20"/>
+			</REWARD>
+			
+			<REWARD team="2" money="100" >
+				<ITEM id ="34400" amount="15"/>
+				<ITEM id ="34401" amount="60"/>
+			</REWARD>
+		</END>
+	</QPEVENT>	
+	
+	<QPEVENT id="8010" title="아란바스 화산지대" >
+		<BEGIN> 
+			<NOTICE text="리그 경기가 시작되었습니다." />
+			
+			<SPAWN id="8"/>
+			<SPAWN id="9"/>
+			<SPAWN id="22"/>
+			<SPAWN id="23"/>
+			<SPAWN id="30"/>
+			<SPAWN id="31"/>
+			<SPAWN id="32"/>
+			<SPAWN id="33"/>
+		</BEGIN>
+		
+		<END winnerteam = "1">
+			<NOTICE text="물의 정령 거점이 부서졌습니다." />
+			<NOTICE text="불의 정령 팀이 승리하였습니다." />
+			
+			<DESPAWN npcid="116603, 116604, 116618, 116619, 116613, 116614" />
+			
+			<REWARD money="300" >
+
+			</REWARD>
+		</END>
+		
+		<END winnerteam = "2">
+			<NOTICE text="불의 정령 거점이 부서졌습니다." />
+			<NOTICE text="물의 정령 팀이 승리하였습니다." />
+			
+			
+			<DESPAWN npcid="116603, 116604, 116618, 116619, 116613, 116614" />
+			
+			<REWARD money="300" >
+
+			</REWARD>
+		</END>		
+	</QPEVENT>
+	
+	<QPEVENT id="103" title="$$KOWEN_QuestPVP_Title" >
+		<BEGIN> 
+			<NOTICE text="$$KOWEN_QuestPVP_Start" />
+			
+			<SPAWN id="36, 58, 71, 84, 147"/>
+		</BEGIN>
+		
+		<END winnerteam = "1">
+			<NOTICE text="$$KOWEN_QuestPVP_AhKheron_Win_1" />
+			<NOTICE text="$$KOWEN_QuestPVP_AhKheron_Win_2" />
+			
+			<SPAWN id="44"/>
+			<DESPAWN npcid="103615,103609,103610,103617,103618" />
+			
+			<REWARD money="300" >
+
+			</REWARD>
+		</END>
+		
+		<END winnerteam = "2">
+			<NOTICE text="$$KOWEN_QuestPVP_ToGat_Win_1" />
+			<NOTICE text="$$KOWEN_QuestPVP_ToGat_Win_2" />
+			
+			<SPAWN id="45"/>
+			<DESPAWN npcid="103615,103609,103610,103617,103618" />
+			
+			<REWARD money="300" >
+
+			</REWARD>
+		</END>
+	</QPEVENT>
+
+</maiet>

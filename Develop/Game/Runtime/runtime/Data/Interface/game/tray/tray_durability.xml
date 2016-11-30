@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+  
+  <!-- Include script -->
+  <Script file="tray/tray_durability.lua" />
+
+  
+  <!-- Popup menu -->
+  <PopupMenu name="pmTrayDurabilityPopupMenu">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="250" h="180" />
+    </Layout>
+    <Controls>
+
+      <!-- TextView : Durability -->
+      <TextView name="tvwTrayDurability">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="240" h="170" />
+        </Layout>
+        <Shape>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+      </TextView>
+      
+    </Controls>
+  </PopupMenu>
+  
+</UI>

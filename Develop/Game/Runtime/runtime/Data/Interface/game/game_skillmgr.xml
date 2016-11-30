@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_skillmgr.lua" />
+
+
+
+  <Frame name="frmTalentMgr" parent="layerGame2">
+    <Layout>
+      <Size w="70" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Static>true</Static>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Controls>
+
+      <Button>
+        <Layout>
+          <Location x="10" y="20" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnClick>luaTalentmgr:OnClickTalent1Button( );</OnClick>
+        </Event>
+      </Button>
+
+      <Picture name="picTalent">
+        <Layout>
+          <Location x="10" y="20" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Image>iconSkillSetUnselect_d</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Button>
+        <Layout>
+          <Location x="10" y="80" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnClick>luaTalentmgr:OnClickTalent2Button( );</OnClick>
+        </Event>
+      </Button>
+
+      <Picture name="picExTalent">
+        <Layout>
+          <Location x="10" y="80" />
+          <Size w="50" h="50" />
+        </Layout>
+        <Image>iconSkillSetUnselect_d</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+    </Controls>
+  </Frame>
+
+  <Frame name="frmSwitchSkillSet" parent="layerGame2">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="200" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmSwitchSkillSet);
+      </OnLoaded>
+      <OnShow>luaGame:ShowWindow( frmSwitchSkillSet);</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaTalentmgr:CloseSwitchSkillSet();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+     <TextView name="tvSkillSetSwitch">
+      <Look>lookDefTextView</Look>
+      <Layout>
+        <Location x="60" y="35" />
+        <Size w="360" h="150" />
+      </Layout>
+      <Shape>
+        <ShowScrollBar>hide</ShowScrollBar>
+        <!--<Wrap>false</Wrap>-->
+      </Shape>
+    </TextView>
+
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="150" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaTalentmgr:OnSwitchSkillSetOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="150" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaTalentmgr:CloseSwitchSkillSet();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+  
+</UI>

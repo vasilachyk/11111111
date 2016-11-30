@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_GMBan.lua" />
+
+  <!-- 메인 -->
+  <Panel name="pnlBanMain" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="100" />
+      <Size w="%100" h="300" />
+    </Layout>
+    <Controls>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Shape>
+          <Opacity>1.0</Opacity>
+        </Shape>
+      </Group>
+
+      <!-- Test -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "제재 메인창" );</OnLoaded>
+        </Event>
+      </TextView>
+      
+    </Controls>
+  </Panel>
+
+  <!-- 정보 기본 -->
+  <Panel name="pnlBanInfoBase" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="400" />
+      <Size w="%100" h="300" />
+    </Layout>
+    <Controls>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Shape>
+          <Opacity>1.0</Opacity>
+        </Shape>
+      </Group>
+
+      <!-- Test -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "제재 기본 정보창" );</OnLoaded>
+        </Event>
+      </TextView>
+      
+    </Controls>
+  </Panel>
+  
+</UI>

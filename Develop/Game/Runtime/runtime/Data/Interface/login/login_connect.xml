@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="login">
+
+  <!-- Include script -->
+  <Script file="login_connect.lua" />
+
+
+  <!-- Picture : Background -->
+  <Picture name="picloginBackground" parent="layerLogin">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="1600" h="1000" />
+    </Layout>
+    <Image>bmpBackground</Image>
+    <Shape>
+      <Stretch>true</Stretch>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaLoginConnect:OnLoadedBackground();
+      </OnLoaded>
+    </Event>
+  </Picture>
+
+
+
+
+
+  <Frame name="frmLoginID" parent="layerLogin">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="560" y="180" />
+      <Size w="330" h="180" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_LOGIN_LOGINWINDOW_TITLE"));
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="40" />
+          <Size w="110" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOGIN_STATIC_ID"));</OnLoaded>
+        </Event>
+      </Label>
+      
+      <Edit name="edtID">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="130" y="40" />
+          <Size w="170" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>16</LimitText>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetToolTip( STR( "UI_LOGIN_INPUT_TOOLTIP_ID"));
+          </OnLoaded>
+          <OnOK>edtPassward:SetFocus();</OnOK>
+		  <OnKeyDown>luaLoginConnect:OnKeyDown_EditID();</OnKeyDown>
+        </Event>
+      </Edit>
+
+      <Label>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="70" />
+          <Size w="110" h="23" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOGIN_STATIC_PASSWORD"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Edit name="edtPassward">
+        <Look>lookDefEditPassward</Look>
+        <Layout>
+          <Location x="130" y="70" />
+          <Size w="170" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>16</LimitText>
+          <Password>true</Password>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetToolTip( STR( "UI_LOGIN_INPUT_TOOLTIP_PASSWORD"));
+          </OnLoaded>
+          <OnOK>luaLoginConnect:IDLogin();</OnOK>
+		  <OnKeyDown>luaLoginConnect:OnKeyDown_EditPassword();</OnKeyDown>
+        </Event>
+      </Edit>
+
+      <Button name="btnRememberID">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="10" y="100" />
+          <Size w="290" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOGIN_CHECKBOX_REMEMBER_ID"));</OnLoaded>
+          <OnValueChanged>
+            btnRememberID:SetCheck( gameoption:RememberID( btnRememberID:GetCheck() ));
+            gameoption:SaveOption();
+          </OnValueChanged>
+          <OnToolTip>this:SetToolTip( STR( "UI_LOGIN_CHECKBOX_REMEMBER_ID"));</OnToolTip>
+        </Event>
+      </Button>
+      
+      <!-- Button : Connect -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="70" y="130" />
+          <Size w="195" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOGIN_CONNECT"));</OnLoaded>
+          <OnClick>luaLoginConnect:IDLogin();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+  
+      <!-- Frame : Login connect -->
+  <Frame name="frmLogin" parent="layerLogin">
+    <Look>lookDefNSFrame</Look>
+    <Layout>
+      <Location x="560" y="180" />
+      <Size w="430" h="420" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnShow>
+        if( frmLogin:GetShow() == true)  then
+
+        local x = ( gamefunc:GetWindowWidth() - frmLogin:GetWidth()) * 0.5;
+        local y = ( gamefunc:GetWindowHeight() - frmLogin:GetHeight()) * 0.5;
+        frmLogin:SetPosition( x, y );
+
+        end
+      </OnShow>
+      
+      <OnLoaded>
+        this:SetText( STR( "UI_LOGIN_SELECTWORLD") );
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="335" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- Server list -->
+      <ListCtrl name="lcWorldList">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="400" h="320" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="hcenter,vcenter" width="180">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">state</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="120"></AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <AlwaysSel>true</AlwaysSel>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            lcWorldList:SetColumnText( 0, "World"  );
+            lcWorldList:SetColumnText( 1, STR( "STATE" ) );
+            lcWorldList:SetColumnText( 2, "Type" );
+          </OnLoaded>
+          <OnSelChange>luaLoginConnect:RefreshControls();</OnSelChange>
+          <OnItemDblClick>luaLoginConnect:Login();</OnItemDblClick>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="360" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+
+      <!-- Button : Connect -->
+      <Button name="btnLoginConnect">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="117" y="370" />
+          <Size w="98" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOGIN_CONNECT"));</OnLoaded>
+          <OnClick>luaLoginConnect:Login();</OnClick>
+        </Event>
+      </Button>
+	  
+	  <!-- Button : Connect -->
+      <Button name="btnLoginRefresh">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="219" y="370" />
+          <Size w="196" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText("Refresh");</OnLoaded>
+          <OnClick>luaLoginConnect:RefreshServerList();</OnClick>
+			</Event>
+		  </Button>
+
+    </Controls>
+  </Frame>
+
+  <Panel name="frmLoginBtm" parent="layerLogin">
+    <Layout>
+      <Location x="560" y="180" />
+      <Size w="430" h="50" />
+    </Layout>
+    <Shape>
+      <ShowRect>false</ShowRect>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnShow>
+        if( frmLoginBtm:GetShow() == true)  then
+
+        local x = ( gamefunc:GetWindowWidth() - frmLoginBtm:GetWidth() - 10);
+        local y = ( gamefunc:GetWindowHeight() - frmLoginBtm:GetHeight() - 10 );
+        frmLoginBtm:SetPosition( x, y );
+
+        end
+      </OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : HomePage -->
+      <Button name="btnHomePage">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="0" />
+          <Size w="195" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText("Back to Login");</OnLoaded>
+          <OnClick>luaLogin:OnEventUI("BEGIN", "", "");</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Exit -->
+      <Button name="btnLoginExit">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="0" />
+          <Size w="195" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_QUIT"));</OnLoaded>
+          <OnClick>gamefunc:Quit();</OnClick>
+        </Event>
+     </Button>
+      
+    </Controls>
+  </Panel>
+
+  <!-- Frame : Login error message box -->
+  <Frame name="frmLoginErrorMsgBox" parent="layerLogin">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="200" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded></OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaLoginConnect:OnClickLoginErrorClose();</OnClick>
+        </Event>
+      </Button>
+      
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="115" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- TextView : Message -->
+      <TextView name="tvwLoginErrorMsg">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="100" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="140" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Buttons : OK -->
+      <Button name="btnLoginErrorMsgBoxOK" >
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="150" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            luaLoginConnect:OnClickLoginErrorClose();
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

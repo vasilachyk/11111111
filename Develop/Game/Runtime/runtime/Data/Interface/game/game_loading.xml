@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_loading.lua" />
+
+  
+  <!-- Panel : Game loading frame 1 -->
+  <Panel name="pnlGameLoadingFrame1" parent="layerGameLoading">
+    <Layout>
+      <Location x="-256" y="49" />
+      <Size w="1536" h="670" />
+      <Anchor left="false" top="false" right="true" bottom="true" />
+    </Layout>
+    <Event>
+      <OnPosition>
+        local x, y, w, h = pnlGameLoadingFrame1:GetRect();
+        x = ( gamefunc:GetWindowWidth() - w) * 0.5;
+        y = ( gamefunc:GetWindowHeight() - h) * 0.5;
+        pnlGameLoadingFrame1:SetPosition( x, y);
+      </OnPosition>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Field image -->
+      <Picture name="picGameLoadingFieldImage">
+        <Layout>
+          <Location x="256" y="20" />
+          <Size w="1024" h="425" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Picture : Gradation -->
+      <Picture>
+        <Layout>
+          <Location x="256" y="20" />
+          <Size w="200" h="425" />
+        </Layout>
+        <Image>bmpGradationLeft</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="1280" y="20" base="TOPRIGHT" />
+          <Size w="200" h="425" />
+        </Layout>
+        <Image>bmpGradationRight</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Picture : Frame bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="1536" h="24" />
+        </Layout>
+        <Image>bmpFrameBarTop</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture>
+        <Layout>
+          <Location x="0" y="440" />
+          <Size w="1536" h="24" />
+        </Layout>
+        <Image>bmpFrameBarBottom</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- TextView : Field description -->
+      <TextView name="tvwGameLoadingFieldDesc">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="298" y="470" />
+          <Size w="540" h="200" />
+        </Layout>
+        <Shape>
+          <Wrap>false</Wrap>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+
+      <!-- TextView : Contents -->
+      <TextView name="tvwGameLoadingContents">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="918" y="470" />
+          <Size w="300" h="200" />
+        </Layout>
+        <Shape>
+          <Wrap>false</Wrap>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+    </Controls>
+  </Panel>
+
+
+
+  <!-- Panel : Game loading frame 2 -->
+  <Panel name="pnlGameLoadingFrame2" parent="layerGameLoading">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="false" top="true" right="true" bottom="true" />
+    </Layout>
+    <Event>
+      <OnPosition>
+        local x, y, w, h = pnlGameLoadingFrame2:GetRect();
+        x = ( gamefunc:GetWindowWidth() - w) * 0.5;
+        pnlGameLoadingFrame2:SetPosition( x, y);
+      </OnPosition>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Game logo -->
+      <Picture>
+        <Layout>
+          <Location x="256" y="0" />
+          <Size w="512" h="128" />
+          <Anchor left="true" top="true" right="false" bottom="false" />
+        </Layout>
+        <Image>bmpLogo</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Loading progress bar -->
+      <LabelEx name="lbGameLoadingTipMsg">
+        <Layout>
+          <Location x="62" y="710" />
+          <Size w="900" h="25" />
+          <Anchor left="true" top="false" right="false" bottom="true" />
+        </Layout>
+        <Shape>
+          <Font>fntScript</Font>
+          <FontColor r="230" g="230" b="230" />
+          <Align>hcenter,bottom</Align>
+        </Shape>
+      </LabelEx>
+
+
+      <!-- Gauge : Loading progress -->
+      <Gauge name="pcGameLoadingProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="62" y="740" />
+          <Size w="900" h="23" />
+          <Anchor left="true" top="false" right="false" bottom="true" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="1000" />
+        </Shape>
+        <Event>
+          <OnUpdate>luaGameLoading:OnUpdateLoadingProgress();</OnUpdate>
+        </Event>
+      </Gauge>
+
+    </Controls>
+  </Panel>
+
+
+  <!-- Game info -->
+  <Picture parent="layerGameLoading">
+    <Layout>
+      <Location x="1014" y="10" base="TOPRIGHT" />
+      <Size w="100" h="118" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Image>bmpYear15</Image>
+    <Shape>
+      <Stretch>true</Stretch>
+    </Shape>
+  </Picture>
+
+</UI>

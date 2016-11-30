@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_channel.lua" />
+  
+  
+  
+  <!-- Frame : Channel -->
+  <Frame name="frmChannel" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="300" y="200" />
+      <Size w="360" h="440" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CHANNEL"));
+        luaGame:RegisterWindow( frmChannel);
+      </OnLoaded>
+      <OnShow>luaChannel:OnShowChannelFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmChannel);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmChannel);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="345" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmChannel:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="355" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- Time line -->
+      <ProgressCtrl name="pcChannelRemainedTime">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="5" y="35" />
+          <Size w="340" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="1000"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaChannel:OnUpdateRemainedTimeProgress();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+      <LabelEx name="lbChannelRemainedTime">
+        <Layout>
+          <Location x="5" y="35" />
+          <Size w="340" h="23" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+      </LabelEx>
+
+
+      <!-- ListCtrl : Channel list -->
+      <ListCtrl name="lcChannel">
+        <Look>lookDefListCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="65" />
+          <Size w="330" h="250" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>show</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="230">channel</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="100">state</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            lcChannel:SetColumnText( 0, STR( "CHANNEL"));
+            lcChannel:SetColumnText( 1, STR( "STATE"));
+          </OnLoaded>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwChannelMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="325" />
+          <Size w="330" h="60" />
+        </Layout>
+        <Shape>
+          <Wrap>false</Wrap>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="380" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+
+
+      <!-- Button : Move to channel -->
+      <Button name="btnMoveToChannel">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="390" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MOVE"));</OnLoaded>
+          <OnUpdate>luaChannel:OnUpdateMoveToChannelButton();</OnUpdate>
+          <OnClick>luaChannel:OpenShowMoveToChannelFrame();</OnClick>
+        </Event>
+      </Button>
+      
+      
+      <!-- Button : Refresh channel list -->
+      <Button name="btnRefreshChannelList">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="180" y="390" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_REFRESH"));</OnLoaded>
+          <OnClick>luaChannel:OnClickRefreshChannelList();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmMoveToChannel" parent="layerGame1">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="120" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnShow>btnChannel:Enable( not frmMoveToChannel:GetShow());</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CHANNEL_WAITINGMOVE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+      
+      
+      <!-- ProgressCtrl : Progress bar -->
+      <ProgressCtrl name="pcMoveToChannelProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="10000"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaChannel:OnUpdateMoveToChannelProgress();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="115" y="75" />
+          <Size w="150" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>
+            luaChannel:CancelMoveToChannel();
+
+            frmMoveToChannel:Show( false);
+            btnChannel:Enable( true);
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

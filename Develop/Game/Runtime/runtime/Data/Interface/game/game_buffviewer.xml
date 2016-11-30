@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_buffviewer.lua" />
+
+
+
+  <!-- buff viewer -->
+  <BuffViewer name="bfvBuffViewer" parent="layerGame0">
+    <Look>lookDefBuffViewer</Look>
+    <Layout>
+      <Location x="320" y="20" />
+      <Size w="500" h="150" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+  </BuffViewer>
+
+</UI>

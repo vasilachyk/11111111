@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_challengerquest.lua" />
+
+
+
+  <!-- Frame : ChallengerQuest -->
+  <Frame name="frmChallengerQuest" parent="layerGame1">
+    <Look>lookDefScrollFrame</Look>
+    <Layout>
+      <Location x="70" y="100" />
+      <Size w="699" h="555" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Icon>iconJournal</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmChallengerQuest);</OnLoaded>
+      <OnShow>luaChallengerQuest:OnShow();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="290" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmChallengerQuest:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="295" h="470" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- ListCtrl : Challenger Quest list -->
+      <ListCtrl name="lcChallengerQuest">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="25" />
+          <Size w="285" h="464" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <AddColumn align="left,vcenter" width="280">name</AddColumn>
+          <AddColumn align="left,vcenter" width="120">cost</AddColumn>
+          <AddColumn align="left,vcenter" width="150">quantity</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnSelChange>luaChallengerQuest:OnSelChangeChallengerQuestlc();</OnSelChange>
+          <OnToolTip>luaChallengerQuest:OnToolTipChangeChallengerQuestlc();</OnToolTip>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Frame : ChallengerQuest info -->
+      <Frame>
+        <Layout>
+          <Location x="295" y="0" />
+          <Size w="400" h="545" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowTitleBar>false</ShowTitleBar>
+          <Visible>true</Visible>
+          <Resize>false</Resize>
+          <Movable>false</Movable>
+        </Shape>
+        <Controls>
+
+          <!-- Picture : Scroll paper -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="10" />
+              <Size w="400" h="525" />
+            </Layout>
+            <Image>bmpScrollPaper</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+
+          <!-- TextView : ChallengerQuest item recipe info -->
+          <TextView name="tvwChallengerQuestInfo">
+            <Look>lookDefScrollTextView</Look>
+            <Layout>
+              <Location x="25" y="15" />
+              <Size w="355" h="495" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Wrap>false</Wrap>
+            </Shape>
+            <Event>
+              <!--<OnToolTip>luaChallengerQuest:OnToolTipCraftingRecipeInfo();</OnToolTip>-->
+            </Event>
+          </TextView>
+
+
+          <!-- Picture : Scroll head/tail -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollHead</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="%100" base="BOTTOMLEFT"/>
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollTail</Image>
+            <Shape>
+              <Stretch>true</Stretch>
+            </Shape>
+          </Picture>
+
+        </Controls>
+      </Frame>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="495" />
+          <Size w="295" h="50" />
+        </Layout>
+      </Group>
+      
+
+      <!-- Button : Get ChallengerQuest -->
+      <Button name="btnGetChallengerQuest">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="155" y="505" />
+          <Size w="130" h="30" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ACCEPT"));</OnLoaded>
+          <OnClick>luaChallengerQuest:OnClickGetChallengerQuest();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

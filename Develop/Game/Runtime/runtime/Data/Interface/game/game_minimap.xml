@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_minimap.lua" />
+
+
+  <!-- Channel -->
+  <Panel name="pnlChannel" parent="layerGame0">
+    <Layout>
+      <Size w="105" h="34" />
+    </Layout>
+    <Shape>
+      <Static>true</Static>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Controls>
+
+      <Picture name="picChannel">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpDecoBox</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <LabelEx name="labChannel">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="75" y="1" />
+          <Size w="28" h="28" />
+        </Layout>
+        <Shape>
+          <Font>fntRegular</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+      </LabelEx>
+
+      <Button name="btnChannel">
+        <Look>lookDefSmallBtn</Look>
+        <Layout>
+          <Location x="0" y="-1" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnTimer>luaMiniMap:OnTimerChannel();</OnTimer>
+          <OnDraw>luaMiniMap:OnDrawChannel();</OnDraw>
+          <OnClick>luaMiniMap:OnClickChannel();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+
+
+  <!-- Time and weather -->
+  <SlideShow name="sdsTimeWeather" parent="layerGame0">
+    <Layout>
+      <Size w="36" h="36" />
+    </Layout>
+    <Shape>
+      <Image>bmpTimeWeather</Image>
+      <SliceScene row="5" col="3"></SliceScene>
+    </Shape>
+    <Event>
+      <OnLoaded>luaMiniMap:RefreshTimeAndWeather();</OnLoaded>
+    </Event>
+  </SlideShow>
+
+
+  <!-- Auto party indicator -->
+  <Button name="indicatorAutoParty" parent="layerGame0">
+    <Layout>
+      <Size w="36" h="36" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetToolTip( STR( "UI_MINIMAP_TOOLTIPAUTOPARTY"));</OnLoaded>
+      <OnDraw>luaMiniMap:OnDrawAutoPartyIndicator();</OnDraw>
+      <OnClick>luaMiniMap:OnClickAutoPartyIndicator();</OnClick>
+    </Event>
+  </Button>
+
+
+  <!-- Mail indicator -->
+  <Button name="indicatorMail" parent="layerGame0">
+    <Layout>
+      <Size w="36" h="36" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <OnLoaded>indicatorMail:SetTimer( 1000, 0);</OnLoaded>
+      <OnTimer>luaMiniMap:OnTimerMailIndicator();</OnTimer>
+      <OnDraw>luaMiniMap:OnDrawMailIndicator();</OnDraw>
+    </Event>
+  </Button>
+
+
+  <!-- Durability indicator-->
+  <Button name="indicatorDurability" parent="layerGame0">
+    <Layout>
+      <Size w="36" h="36" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetToolTip( STR( "UI_MINIMAP_TOOLTIPDURABILITY"));
+        indicatorDurability:SetTimer( 1000, 0);
+      </OnLoaded>
+      <OnTimer>luaMiniMap:OnTimerDurabilityIndicator();</OnTimer>
+      <OnDraw>luaMiniMap:OnDrawDurabilityIndicator();</OnDraw>
+    </Event>
+  </Button>
+
+
+  <!-- SlideShow : Fatigue -->
+  <SlideShow name="sdsFatigue" parent="layerGame0">
+    <Layout>
+      <Location x="827" y="173" />
+      <Size w="27" h="27" />
+    </Layout>
+    <Shape>
+      <Image>bmpFatigue</Image>
+      <SliceScene row="4"></SliceScene>
+      <Visible>false</Visible>
+    </Shape>
+    <Event>
+      <OnLoaded>luaMiniMap:RefreshFatigue();</OnLoaded>
+    </Event>
+  </SlideShow>
+
+  
+  <!-- Button : Zoom in/out -->
+  <Button name="btnMiniMapZoomIn" parent="layerGame0">
+    <Look>lookDefZoomInBtn</Look>
+    <Layout>
+      <Size w="16" h="16" />
+    </Layout>
+    <Event>
+      <OnClick>mapMiniMap:ZoomIn();</OnClick>
+    </Event>
+  </Button>
+
+  <Button name="btnMiniMapZoomOut" parent="layerGame0">
+    <Look>lookDefZoomOutBtn</Look>
+    <Layout>
+      <Size w="16" h="16" />
+    </Layout>
+    <Event>
+      <OnClick>mapMiniMap:ZoomOut();</OnClick>
+    </Event>
+  </Button>
+
+  
+
+  <!-- Fame : Mini map -->
+  <Frame name="frmMiniMap" parent="layerGame0">
+    <Look>lookDefResizableFrame</Look>
+    <Layout>
+      <Location x="834" y="0" />
+      <Size w="190" h="210" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>true</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        luaMiniMap:RePositionMiniMapFrame();
+        luaMiniMap:RefreshField();
+      </OnLoaded>
+      <OnNcHitTest>return luaMiniMap:OnNcHitTestMiniMapFrame();</OnNcHitTest>
+      <OnPosition>luaMiniMap:RePositionMiniMapFrame();</OnPosition>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then       luaGame:RestoreUIPosition( frmMiniMap);
+        elseif ( arg == "RECORD_UI")  then    luaGame:RecordUIPosition( frmMiniMap);
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Mini map -->
+      <MiniMap name="mapMiniMap">
+        <Look>lookDefMiniMap</Look>
+        <Layout>
+          <Size w="160" h="160" />
+        </Layout>
+        <Event>
+          <OnUserArgument>
+            local arg = EventArgs:GetUserArgument();
+            if ( arg == "RESTORE_UI")  then
+
+              local _scale = gamefunc:GetAccountParam( "mapMiniMap", "scale")  or  1.0;
+              mapMiniMap:SetScale( _scale);
+
+              if ( gamefunc:GetAccountParam( "mapMiniMap", "rotate") ~= nil)  then  mapMiniMap:RotateMap( true);
+              end
+
+            elseif ( arg == "RECORD_UI")  then
+
+              gamefunc:DeleteAccountParam( "mapMiniMap");
+              gamefunc:SetAccountParam( "mapMiniMap", "scale", mapMiniMap:GetScale());
+
+              if ( mapMiniMap:IsRotateMap() == true)  then  gamefunc:SetAccountParam( "mapMiniMap", "rotate", "1");
+              end
+            end
+          </OnUserArgument>
+          <OnNcHitTest>return luaMiniMap:OnNcHitTestMiniMap();</OnNcHitTest>
+        </Event>
+      </MiniMap>
+
+
+      <!-- Field info -->
+      <Picture name="picFieldName">
+        <Layout>
+          <Size w="190" h="32" />
+        </Layout>
+        <Image>bmpFieldInfo</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Button name="btnFieldName">
+        <Look>lookDefSmallBtn</Look>
+        <Layout>
+          <Size w="190" h="32" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+        </Shape>
+        <Event>
+          <OnClick>frmMap:Show( not frmMap:GetShow());</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+  <!-- Frame : Confirm leave dynamic channel -->
+  <Frame name="frmConfirmLeaveDynamicChannel" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmLeaveDynamicChannel:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwLeaveDynamicChannel">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="50" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_MINIMAP_CONFIRMLEAVEINSTANCEFIELD"));</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : Yes -->
+      <Button name ="btnLeaveDynamicChannelOK">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnUpdate>btnLeaveDynamicChannelOK:Enable( not gamefunc:IsCombat());</OnUpdate>
+          <OnClick>
+            gamefunc:LeaveDynamicField();
+            frmConfirmLeaveDynamicChannel:Show( false);
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="110" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>frmConfirmLeaveDynamicChannel:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+</UI>

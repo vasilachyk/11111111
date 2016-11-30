@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_rebirth.lua" />
+
+  
+  <!-- Frame : Rebirth -->
+  <Frame name="frmRebirth" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="300" y="200"/>
+      <Size w="460" h="480" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_REBIRTH"));
+      </OnLoaded>
+      <OnShow>luaRebirth:OnShowRebirthFrame();</OnShow>
+      <OnTimer>luaRebirth:OnTimerRebirthFrame();</OnTimer>
+    </Event>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="%100" h="395" />
+          <Anchor left="false" top="true" right="false" bottom="true" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="430" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_REBIRTH_MESSAGE"));</OnLoaded>
+        </Event>
+      </TextView>
+
+
+      <!-- Picture : Seperate bar-->
+      <Picture>
+        <Layout>
+          <Location x="0" y="90" base="TOPLEFT" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- Time line -->
+      <ProgressCtrl name="pcAutoRebirthProgressBar">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="10" y="100" />
+          <Size w="430" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="300"/>
+        </Shape>
+      </ProgressCtrl>
+
+      <LabelEx name="lbRebirthTime">
+        <Layout>
+          <Location x="10" y="100" />
+          <Size w="430" h="23" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+      </LabelEx>
+
+
+      <!-- Rebirth at near soul binding -->
+      <Panel name="pnlNearSoulBinding">
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="130" />
+          <Size w="430" h="86" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <EnableFocus>true</EnableFocus>
+        </Shape>
+        <Event>
+          <OnClick>luaRebirth:OnClickRebirthMenu( pnlNearSoulBinding);</OnClick>
+        </Event>
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+          </Group>
+
+          <Picture>
+            <Layout>
+              <Location x="3" y="3" />
+              <Size w="80" h="80" />
+            </Layout>
+            <Image>bmpRebirth1</Image>
+          </Picture>
+
+          <TextView>
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="90" y="5" />
+              <Size w="330" h="75" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <Wrap>false</Wrap>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_REBIRTH_REBIRTH1") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_REBIRTH_REBIRTHDESC1");
+                this:SetText( strText);
+              </OnLoaded>
+            </Event>
+          </TextView>
+
+        </Controls>
+      </Panel>
+
+      
+      <!-- Rebirth at soul binding -->
+      <Panel name="pnlSoulBinding">
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="130" />
+          <Size w="430" h="86" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <EnableFocus>true</EnableFocus>
+        </Shape>
+        <Event>
+          <OnClick>luaRebirth:OnClickRebirthMenu( pnlSoulBinding);</OnClick>
+        </Event>
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+          </Group>
+
+          <Picture>
+            <Layout>
+              <Location x="3" y="3" />
+              <Size w="80" h="80" />
+            </Layout>
+            <Image>bmpRebirth1</Image>
+          </Picture>
+
+          <TextView>
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="90" y="5" />
+              <Size w="330" h="75" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <Wrap>false</Wrap>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_REBIRTH_REBIRTH2") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_REBIRTH_REBIRTHDESC2");
+                this:SetText( strText);
+              </OnLoaded>
+            </Event>
+          </TextView>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="90" y="53" />
+              <Size w="330" h="24" />
+            </Layout>
+          </Group>
+
+          <TextView name="tvxSoulBindField">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="95" y="55" />
+              <Size w="320" h="20" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <Wrap>false</Wrap>
+            </Shape>
+          </TextView>
+        
+        </Controls>
+      </Panel>
+      
+
+      <!-- Rebirth at safety zone -->
+      <Panel name="pnlSafetyZone">
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="225" />
+          <Size w="430" h="86" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <EnableFocus>true</EnableFocus>
+        </Shape>
+        <Event>
+          <OnClick>luaRebirth:OnClickRebirthMenu( pnlSafetyZone);</OnClick>
+        </Event>
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+          </Group>
+
+          <Picture>
+            <Layout>
+              <Location x="3" y="3" />
+              <Size w="80" h="80" />
+            </Layout>
+            <Image>bmpRebirth2</Image>
+          </Picture>
+
+          <TextView>
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="90" y="5" />
+              <Size w="330" h="75" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <Wrap>false</Wrap>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_REBIRTH_REBIRTH3") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_REBIRTH_REBIRTHDESC3");
+                this:SetText( strText);
+              </OnLoaded>
+            </Event>
+          </TextView>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="90" y="53" />
+              <Size w="330" h="24" />
+            </Layout>
+          </Group>
+
+          <TextView name="tvxCheckPointField">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="95" y="55" />
+              <Size w="320" h="20" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <Wrap>false</Wrap>
+            </Shape>
+          </TextView>
+          
+        </Controls>
+      </Panel>
+
+      
+      <!-- Rebirth at current position -->
+      <Panel name="pnlCurrentPosition">
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="320" />
+          <Size w="430" h="86" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <EnableFocus>true</EnableFocus>
+        </Shape>
+        <Event>
+          <OnClick>luaRebirth:OnClickRebirthMenu( pnlCurrentPosition);</OnClick>
+        </Event>
+        <Controls>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="%100" h="%100" />
+            </Layout>
+          </Group>
+
+          <Picture>
+            <Layout>
+              <Location x="3" y="3" />
+              <Size w="80" h="80" />
+            </Layout>
+            <Image>bmpRebirth3</Image>
+          </Picture>
+
+          <TextView name="tvCurrentPositionRebirth">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="90" y="5" />
+              <Size w="330" h="75" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <Wrap>false</Wrap>
+            </Shape>
+            <Event>
+              <OnLoaded>
+                local strText = "{FONT name=\"fntLarge\"}{COLOR r=160 g=128 b=64}" .. STR( "UI_REBIRTH_REBIRTH4") .. "{/COLOR}\n{FONT name=\"fntScript\"}" .. STR( "UI_REBIRTH_REBIRTHDESC4");
+                this:SetText( strText);
+              </OnLoaded>
+            </Event>
+          </TextView>
+
+          <Group>
+            <Look>lookDefGroupBox</Look>
+            <Layout>
+              <Location x="90" y="53" />
+              <Size w="330" h="24" />
+            </Layout>
+          </Group>
+          
+          <TextView name="tvxRebirthItem">
+            <Look>lookDefTextView</Look>
+            <Layout>
+              <Location x="95" y="55" />
+              <Size w="320" h="20" />
+            </Layout>
+            <Shape>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <Static>true</Static>
+              <Wrap>false</Wrap>
+            </Shape>
+          </TextView>
+          
+        </Controls>
+      </Panel>
+
+      
+      <!-- Group : Selection marker -->
+      <Group name="boxSelMarkerRebirth">
+        <Look>lookDefSelectBox</Look>
+        <Layout>
+          <Location x="10" y="130" />
+          <Size w="84" h="84" />
+        </Layout>
+        <Shape>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+          <OnUpdate>
+            local fOpacity = 1.0 + 0.3 * math.sin( gamefunc:GetUpdateTime() * 0.01);
+            boxSelMarkerRebirth:SetOpacity( math.min( 1.0, fOpacity));
+          </OnUpdate>
+        </Event>
+      </Group>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="420" />
+          <Size w="%100" h="50" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Rebirth -->
+      <Button name="btnRebirth">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="110" y="430" />
+          <Size w="230" h="30" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_REBIRTH"));</OnLoaded>
+          <OnClick>luaRebirth:OnClickRebirthBtn();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+</UI>

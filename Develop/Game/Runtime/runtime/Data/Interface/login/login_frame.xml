@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="login">
+
+  <!-- Include script -->
+  <Script file="login_frame.lua" />
+
+
+  <!-- Picture : Switch screen -->
+  <Paint name="pntLoginBlackScreen" parent="layerLoginFrame">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true"/>
+    </Layout>
+    <Shape>
+      <Color r="0" g="0" b="0" />
+    </Shape>
+    <Event>
+      <OnUpdate>luaLoginFrame:OnUpdateLoginBlackScreen();</OnUpdate>
+    </Event>
+  </Paint>
+
+  <Picture name="LoginDeliberationLogo">
+    <Layout>
+      <Location x="1014" y="30" base="TOPRIGHT" />
+      <Size w="263" h="150" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Image>bmpdeliberation</Image>
+    <Shape>
+      <Stretch>true</Stretch>
+      <ShowRect>false</ShowRect>
+    </Shape>
+    <Event>
+      <OnShow>luaLoginFrame:OnShowGameDeliberationLogo();</OnShow>
+      <OnLoaded>this:Show( false );</OnLoaded>
+      <OnTimer>luaLoginFrame:OnTimerGameDeliberationLogo();</OnTimer>
+      <OnUpdate>luaLoginFrame:OnUpdateGameDeliberationLogo();</OnUpdate>
+    </Event>
+  </Picture>
+
+  <!-- Presentation box -->
+  <PresentationBox name="LoginDeliberationPresentation">
+    <Look type="text">lookDefPresentationText1</Look>
+    <Layout>
+      <Location x="0" y="180" />
+      <Size w="%100" h="60" />
+      <Anchor left="true" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <FadeSecond>0.5</FadeSecond>
+      <ShowRect>false</ShowRect>
+    </Shape>
+  </PresentationBox>
+
+  
+  
+  <Frame name="frmServerEnter" parent="layerLoginFrame">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="80" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx name="labserverEnterProgressMsg">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LOGIN_SERVERCONNECT"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- ProgressCtrl : Progress of entering -->
+      <ProgressCtrl name="pcServerEnterProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Pos>100</Pos>
+        </Shape>
+      </ProgressCtrl>
+
+    </Controls>
+  </Frame>
+  
+</UI>

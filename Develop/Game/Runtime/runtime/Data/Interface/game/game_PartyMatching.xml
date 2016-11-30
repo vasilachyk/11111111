@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_PartyMatching.lua" />
+
+  <!-- Frame : PartyMatching -->
+  <Frame name="frmPartyMatching" parent="layerGame2">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="50" y="60" />
+      <Size w="500" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Icon>iconSocial</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaPartyMatching:OnLoadedPartyMatching();</OnLoaded>
+      <OnShow>luaPartyMatching:OnShowPartyMatching();</OnShow>
+      <OnUserArgument>luaPartyMatching:OnUserArgumentPartyMatching();</OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Hold buttons -->
+      <Button name="btnHoldPartyMatching">
+        <Look>lookDefHoldButton</Look>
+        <Layout>
+          <Location x="460" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <Check>false</Check>
+        </Shape>
+      </Button>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="485" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmPartyMatching:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Party Matching list -->
+      <ListCtrl name="lcPartyMatchingList">
+        <Look>lookDefListCtrlCustomPartyMatching</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="470" h="425" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ItemMargin horz="1" vert="3"/>
+          <AddColumn align="hcenter,vcenter" width="250">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="150">grade</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="70">state</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>luaPartyMatching:OnLoadedlcPartyMatchingList();</OnLoaded>
+          <OnSelChange>luaPartyMatching:OnSelChangelcPartyMatchingList();</OnSelChange>
+          <OnItemClick>luaPartyMatching:OpenPartyMatchInfo();</OnItemClick>
+        </Event>
+      </ListCtrl>
+
+      <!-- 페이지 -->
+      <Panel>
+        <Layout>
+          <Location x="0" y="465" />
+          <Size w="%100" h="40" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Controls>
+
+          <Button name="btnPartyMatchingFirstPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="60" y="7" />
+              <Size w="70" h="26" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_FIRSTPAGE" ) );</OnLoaded>
+              <OnClick>luaPartyMatching:OnClickPartyMatchingFirstPage();</OnClick>
+            </Event>
+          </Button>
+
+          <Button name="btnPartyMatchingPrevPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="140" y="7" />
+              <Size w="60" h="26" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_PREVPAGE" ) );</OnLoaded>
+              <OnClick>luaPartyMatching:OnClickPartyMatchingPrevPage();</OnClick>
+            </Event>
+          </Button>
+
+          <TextView name="tvwPartyMatchingPage">
+            <Layout>
+              <Location x="210" y="7" />
+              <Size w="80" h="26" />
+            </Layout>
+            <Shape>
+              <ShowBorder>false</ShowBorder>
+              <ShowScrollBar>hide</ShowScrollBar>
+              <DragAndDrop>true</DragAndDrop>
+              <ShowRect>false</ShowRect>
+            </Shape>
+            <Event>
+              <OnLoaded>this:SetText( "{FONT name=\"fntBold\"}{COLUMN h=22}{ALIGN hor=\"center\" ver=\"center\"}999/999" );</OnLoaded>
+            </Event>
+          </TextView>
+
+          <Button name="btnPartyMatchingNextPage">
+            <Look>lookDefButton</Look>
+            <Layout>
+              <Location x="300" y="7" />
+              <Size w="60" h="26" />
+            </Layout>
+            <Event>
+              <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_NEXTPAGE" ) );</OnLoaded>
+              <OnClick>luaPartyMatching:OnClickPartyMatchingNextPage();</OnClick>
+            </Event>
+          </Button>
+          
+        </Controls>
+      </Panel>
+      <!-- 페이지 -->
+
+      <!-- Level Text 
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="510" />
+          <Size w="40" h="25" />
+        </Layout>
+      </Group>
+
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="512" />
+          <Size w="40" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "LEVEL" ) );</OnLoaded>
+          <OnToolTip>this:SetToolTip( STR( "PARTY_MATCHING_REARCH_LEVEL_TOOLTIP" ) );</OnToolTip>
+        </Event>
+      </TextView>
+
+      <Edit name="edtPartyMatchingSearchMinLv">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="48" y="510" />
+          <Size w="40" h="25" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+          <LimitText>3</LimitText>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+          <OnValueChanged>luaPartyMatching:OnValueChangedConfirmNumberEdit( edtPartyMatchingSearchMinLv, 3 );</OnValueChanged>
+          <OnSetFocus></OnSetFocus>>
+          <OnKillFocus></OnKillFocus>>
+          <OnOK></OnOK>
+          <OnCancel></OnCancel>
+          <OnToolTip>this:SetToolTip( STR( "PARTY_MATCHING_REARCH_LEVEL_TOOLTIP" ) );</OnToolTip>
+        </Event>
+      </Edit> 
+      
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="89" y="510" />
+          <Size w="10" h="20" />
+        </Layout>
+        <Shape>
+          <Align>hcenter,top</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( "~" );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Edit name="edtPartyMatchingSearchMaxLv">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="100" y="510" />
+          <Size w="40" h="25" />
+        </Layout>
+        <Shape>
+          <Number>true</Number>
+          <LimitText>3</LimitText>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+          <OnValueChanged>luaPartyMatching:OnValueChangedConfirmNumberEdit( edtPartyMatchingSearchMaxLv, 3 );</OnValueChanged>
+          <OnSetFocus></OnSetFocus>>
+          <OnKillFocus></OnKillFocus>>
+          <OnOK></OnOK>
+          <OnCancel></OnCancel>
+          <OnToolTip>this:SetToolTip( STR( "PARTY_MATCHING_REARCH_LEVEL_TOOLTIP" ) );</OnToolTip>
+        </Event>
+      </Edit>
+-->
+      <Edit name="edtPartyMatchingSearchString">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="25" y="510" />
+          <Size w="370" h="25" />
+        </Layout>
+        <Shape>
+          <LimitText>50</LimitText>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+          <OnValueChanged>luaPartyMatching:CheckSearchString();</OnValueChanged>
+          <OnSetFocus>luaPartyMatching:CheckSearchString();</OnSetFocus>>
+          <OnKillFocus>luaPartyMatching:CheckSearchString();</OnKillFocus>>
+          <OnOK>luaPartyMatching:PartySearch();</OnOK>
+          <OnCancel></OnCancel>
+        </Event>
+      </Edit>
+
+      <TextView name="twvPartyMatchingSearchStringDefault">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="25" y="512" />
+          <Size w="370" h="25" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYSEARCHSTRINGDEFAULT" ) );</OnLoaded>
+          <OnUpdate>twvPartyMatchingSearchStringDefault:SetOpacity( 0.6 );</OnUpdate>
+        </Event>
+      </TextView>
+
+      <!-- Btn Party Search -->
+      <Button name="btnPartySearch">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="400" y="508" />
+          <Size w="55" h="29" />
+          <ShowRect>false</ShowRect>
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYSEARCH" ) );</OnLoaded>
+          <OnClick>luaPartyMatching:PartySearch();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Btn Party List Refresh -->
+      <Button name="btnPartyListRefresh">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="120" y="550" />
+          <Size w="120" h="30" />
+          <ShowRect>false</ShowRect>
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_LISTREFRESH" ) );</OnLoaded>
+          <OnClick>
+            luaPartyMatching:OnClickPartyListRefresh();
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- Btn Search Reset -->
+      <Button name="btnSearchReset">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="250" y="550" />
+          <Size w="120" h="30" />
+          <ShowRect>false</ShowRect>
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_SEARCH_RESET" ) );</OnLoaded>
+          <OnClick>luaPartyMatching:OnClickPartyListSearchReset();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+  <!-- Frame : PartyMatching 
+  <Frame name="frmPartyMatchRegist" parent="frmPartyMatching">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="50" y="60" />
+      <Size w="460" h="230" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>luaPartyMatching:OnLoadedPartyMatchRegist();</OnLoaded>
+      <OnShow></OnShow>
+      <OnUserArgument></OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button 
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="445" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmPartyMatchRegist:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHINGLIST_TITLE" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <!-- EditCtrl : Content 
+      <EditCtrl name="edtPartyMatchingString">
+        <Look>lookDefEditCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="60" />
+          <Size w="430" h="80" />
+        </Layout>
+        <Shape>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaPartyMatching:RefreshPartyMatchingString();</OnValueChanged>
+          <OnSetFocus>luaPartyMatching:RefreshPartyMatchingString();</OnSetFocus>>
+          <OnKillFocus>luaPartyMatching:RefreshPartyMatchingString();</OnKillFocus>>
+        </Event>
+      </EditCtrl>
+
+      <TextView name="twvPartyMatchingStringDefault">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="60" />
+          <Size w="430" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYSEARCHSTRINGDEFAULT" ) );</OnLoaded>
+          <OnUpdate>this:SetOpacity( 0.6 );</OnUpdate>
+        </Event>
+      </TextView>
+
+      <LabelEx name="labPartyMatchingStringChar">
+        <Layout>
+          <Location x="10" y="140" />
+          <Size w="430" h="30" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>right,vcenter</Align>
+        </Shape>
+      </LabelEx>
+
+      <!-- Btn Regist Match 
+      <Button name="btnDoRegistMatch">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="170" y="175" />
+          <Size w="120" h="30" />
+          <ShowRect>false</ShowRect>
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYREGISTMATCH" ) );</OnLoaded>
+          <OnClick></OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+-->
+  
+  <!-- Frame : PartyMatching -->
+  <Frame name="frmPartyMatchInfo" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="500" y="60" />
+      <Size w="460" h="470" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnUpdate>luaPartyMatching:OnUpdateMatchingInfo();</OnUpdate>
+      <OnLoaded>luaPartyMatching:OnLoadedPartyMatchInfo();</OnLoaded>
+      <OnShow></OnShow>
+      <OnUserArgument></OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="445" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmPartyMatchInfo:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+      <LabelEx>
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="10" y="30" />
+          <Size w="100" h="30" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <Align>left,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHINGLIST_TITLE" ) );</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="60" />
+          <Size w="430" h="90" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+        </Shape>
+      </Group>
+      
+      <TextView name="twvPartyMatchTitle" >
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="15" y="65" />
+          <Size w="420" h="85" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <ShowRect>false</ShowRect>
+        </Shape>
+        <Event>
+          <OnLoaded></OnLoaded>
+        </Event>
+      </TextView>
+      
+      <!-- EditCtrl : Content 
+      <EditCtrl name="edtPartyMatchInfo">
+        <Look>lookDefEditCtrl</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="60" />
+          <Size w="430" h="80" />
+        </Layout>
+        <Shape>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaPartyMatching:RefreshPartyMatchInfo();</OnValueChanged>
+          <OnSetFocus>luaPartyMatching:RefreshPartyMatchInfo();</OnSetFocus>>
+          <OnKillFocus>luaPartyMatching:RefreshPartyMatchInfo();</OnKillFocus>>
+        </Event>
+      </EditCtrl>
+    
+      
+      <TextView name="twvPartyMatchInfoDefault">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="60" />
+          <Size w="430" h="80" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYSEARCHSTRINGDEFAULT" ) );</OnLoaded>
+          <OnUpdate>this:SetOpacity( 0.6 );</OnUpdate>
+        </Event>
+      </TextView>
+
+      <LabelEx name="labPartyMatchInfoChar">
+        <Layout>
+          <Location x="10" y="140" />
+          <Size w="430" h="30" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <Font>fntScript</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>right,vcenter</Align>
+        </Shape>
+      </LabelEx>
+-->
+      <!-- Party Member list 
+      <ListCtrl name="lcPartyMemberList">
+        <Look>lookDefListCtrlCustomPartyMatching</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="430" h="185" />
+        </Layout>
+        <Shape>
+          <ShowRect>false</ShowRect>
+          <ViewStyle>report</ViewStyle>
+          <MultipleSel>false</MultipleSel>
+          <ItemMargin horz="1" vert="3"/>
+          <AddColumn align="hcenter,vcenter" width="170">name</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="60">level</AddColumn>
+          <AddColumn align="hcenter,vcenter" width="200">pos</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>luaPartyMatching:OnLoadedPartyMemberList();</OnLoaded>
+          <OnSelChange></OnSelChange>
+        </Event>
+      </ListCtrl>
+-->
+
+      <ListCtrl name="lcPartyMemberList">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="170" />
+          <Size w="430" h="234" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="350">name</AddColumn>
+          <AddColumn align="left,vcenter" width="150">grade</AddColumn>
+          <AddColumn align="left,vcenter" width="150">state</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+        </Shape>
+        <Event>
+          <OnSelChange></OnSelChange>
+        </Event>
+      </ListCtrl>
+      
+      <!-- Btn Whisper -->
+      <Button name="btnWhisperPartyMatchingInfo">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="105" y="420" />
+          <Size w="120" h="30" />
+          <ShowRect>false</ShowRect>
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_WHISPER_TO_FRIEND" ) );</OnLoaded>
+          <OnClick>luaPartyMatching:OnClickhisperPartyMatchingInfo();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Btn Info Edit -->
+      <Button name="btnPartyMatchingJoin">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="235" y="420" />
+          <Size w="120" h="30" />
+          <ShowRect>false</ShowRect>
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYMATCHINFO_REQUESTPARTY" ) );</OnLoaded>
+          <OnClick>luaPartyMatching:OnClickPartyMatchingJoin();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+  <!-- Frame : PartyMatching -->
+  <Frame name="frmRecivePartyMatch" parent="layerGame3">
+      <Look>lookDefFrame</Look>
+      <Layout>
+        <Location x="200" y="200" />
+        <Size w="440" h="300" />
+      </Layout>
+      <Shape>
+        <Resize>false</Resize>
+        <Visible>false</Visible>
+        <Movable>true</Movable>
+      </Shape>
+      <Event>
+        <OnLoaded>this:SetText( STR( "UI_CONFIRM" ) );</OnLoaded>
+        <OnUpdate>luaPartyMatching:OnUpdatefrmRecivePartyMatch();</OnUpdate>
+      </Event>
+      <Controls>
+
+        <!-- Button : Close Buttons -->
+        <Button>
+          <Look>lookDefCloseBtn</Look>
+          <Layout>
+            <Location x="425" y="-1" base="TOPRIGHT" />
+            <Size w="27" h="26" />
+          </Layout>
+          <Shape>
+            <Text></Text>
+          </Shape>
+          <Event>
+            <OnClick>luaPartyMatching:JoinQuestionRespond( false );</OnClick>
+          </Event>
+        </Button>
+
+        <!-- TextView : Message -->
+        <TextView>
+          <Look>lookDefTextView</Look>
+          <Layout>
+            <Location x="10" y="35" />
+            <Size w="410" h="70" />
+          </Layout>
+          <Shape>
+            <ShowScrollBar>hide</ShowScrollBar>
+            <!--<Wrap>false</Wrap>-->
+            <ShowRect>false</ShowRect>
+          </Shape>
+          <Event>
+            <OnLoaded>this:SetText( STR( "PARTY_MATCHING_CONFIRM_RECIVEPARTYMATCHING" ) );</OnLoaded>
+          </Event>
+        </TextView>
+
+        <!-- Picture : Icon -->
+        <Picture name="picRecivePartyMatchInfoStyle">
+          <Layout>
+            <Location x="10" y="120" />
+            <Size w="80" h="80" />
+          </Layout>
+          <Image>iconDefQuestion</Image>
+          <Shape>
+            <Stretch>true</Stretch>
+            <ShowRect>false</ShowRect>
+          </Shape>
+        </Picture>
+
+        <LabelEx name="labRecivePartyMatchInfoName">
+          <Layout>
+            <Location x="100" y="110" />
+            <Size w="320" h="30" />
+          </Layout>
+          <Shape>
+            <ShowRect>false</ShowRect>
+            <Font>fntRegular</Font>
+            <FontColor r="160" g="160" b="160"/>
+            <Align>left,vcenter</Align>
+          </Shape>
+          <Event>
+            <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYMEMBERINFO_NAME" ) .. " : " );</OnLoaded>
+          </Event>
+        </LabelEx>
+        
+        <LabelEx name="labRecivePartyMatchInfoLevel">
+          <Layout>
+            <Location x="100" y="140" />
+            <Size w="320" h="30" />
+          </Layout>
+          <Shape>
+            <ShowRect>false</ShowRect>
+            <Font>fntRegular</Font>
+            <FontColor r="160" g="160" b="160"/>
+            <Align>left,vcenter</Align>
+          </Shape>
+          <Event>
+            <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYMEMBERINFO_LEVEL" ) .. " : " );</OnLoaded>
+          </Event>
+        </LabelEx>
+
+        <LabelEx name="labRecivePartyMatchInfoStyle">
+          <Layout>
+            <Location x="100" y="170" />
+            <Size w="320" h="30" />
+          </Layout>
+          <Shape>
+            <ShowRect>false</ShowRect>
+            <Font>fntRegular</Font>
+            <FontColor r="160" g="160" b="160"/>
+            <Align>left,vcenter</Align>
+          </Shape>
+          <Event>
+            <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYMEMBERINFO_STYLE" ) .. " : " );</OnLoaded>
+          </Event>
+        </LabelEx>
+
+        <LabelEx name="labRecivePartyMatchInfoPos">
+          <Layout>
+            <Location x="100" y="200" />
+            <Size w="320" h="30" />
+          </Layout>
+          <Shape>
+            <ShowRect>false</ShowRect>
+            <Font>fntRegular</Font>
+            <FontColor r="160" g="160" b="160"/>
+            <Align>left,vcenter</Align>
+          </Shape>
+          <Event>
+            <OnLoaded>this:SetText( STR( "PARTY_MATCHING_PARTYMEMBERINFO_POS" ) .. " : " );</OnLoaded>
+          </Event>
+        </LabelEx>
+
+        <!-- Buttons : Yes -->
+        <Button>
+          <Look>lookDefButton</Look>
+          <Layout>
+            <Location x="10" y="250" />
+            <Size w="200" h="30" />
+          </Layout>
+          <Shape>
+            <HotKey>Y</HotKey>
+          </Shape>
+          <Event>
+            <OnLoaded>this:SetText( STR( "UI_YES" ) );</OnLoaded>
+            <OnClick>luaPartyMatching:JoinQuestionRespond( true );</OnClick>
+          </Event>
+        </Button>
+
+        <!-- Buttons : No -->
+        <Button>
+          <Look>lookDefButton</Look>
+          <Layout>
+            <Location x="220" y="250" />
+            <Size w="200" h="30" />
+          </Layout>
+          <Shape>
+            <HotKey>N</HotKey>
+          </Shape>
+          <Event>
+            <OnLoaded>this:SetText( STR( "UI_NO" ) );</OnLoaded>
+            <OnClick>luaPartyMatching:JoinQuestionRespond( false );</OnClick>
+          </Event>
+        </Button>
+
+      </Controls>
+    </Frame>
+  
+</UI>

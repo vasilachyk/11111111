@@ -1,0 +1,1592 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<maiet>
+<!-- /////////////////////////////////////////////////////////////////////////
+ 원래는 motion.xml이 각 모델또는 애니메이션 세트마다 하나씩 있어야 하지만
+ 엔진에서 캐릭터 애니메이션이 정리되지 않은 관계로 당분간 motion.xml 하나에서 
+ 모든 모션을 다 관리하도록 합니다. 그래서 우선 플레이어와 NPC로 구분해 놓았습니다.
+ 플레이어도 나중에 갖고 있는 무기마다 애니메이션이 바뀌어야 하므로 구조가 바뀔 수 있습니다. - bird(2006/05/16)
+-->
+
+<!--
+ 	<MOTION name="" stance="기본값:all" loop="기본값:false" cancelEnabled="기본값:true" cameraLook="기본값:false">
+		<Default>
+			//<Sequence ani="idle" speed="기본값:1" frameover="기본값:0" timeout="기본값:0" />
+		</Default>
+	</MOTION>
+-->
+  
+<!-- 
+ 이벤트 설명
+ gravity_down : 하강 시작시
+ event_landed : 땅에 착지시
+ 
+ speed : 애니메이션 속도
+ timeout : 해당 시간이 지나면 다음 씨퀀스로 넘어감
+ frameover : 해당 프레임이 넘어가면 다음 씨퀀스로 넘어감
+-->
+
+<!-- /////////////////////////////////////////////////////////////////////////
+ NPC 스킬 모션 
+--> 
+  <MOTION name="NS_200242" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="roar" speed="1.0" frameover="11670" />
+      <Sequence ani="atk_s" speed="1.0" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="NS_200244" loop="false" cancelEnabled="false">
+    <Default>
+	  <Sequence ani="roar" speed="1.0" frameover="11670" />
+      <Sequence ani="atk_r" speed="2" frameover="6500" />
+      <Sequence ani="atk_l" speed="2" frameover="5500" />
+      <Sequence ani="atk_r" speed="2" frameover="6500" />
+      <Sequence ani="atk_l" speed="2" frameover="5500" />
+      <Sequence ani="atk_s" speed="1.0" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="NS_200247" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="special " speed="1.3"/>
+      <Sequence ani="atk_d" speed="1.3"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_200254" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="roar" speed="1.0" frameover="10000" />
+      <Sequence ani="atk_l" speed="2" frameover="3000" />
+      <Sequence ani="atk_r" speed="2" frameover="3600" />
+      <Sequence ani="atk_s" speed="1.0" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="NS_200257" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="special " speed="1.3"/>
+      <Sequence ani="atk_d" speed="1.3"/>
+    </Default>
+  </MOTION>
+  
+  <!-- Buffalo Dash Attack #1 - 15m -->
+  <MOTION name="NS_200364" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="idle1" speed="1.2"/>
+      <Sequence ani="atk1_run" speed="1.0"/>
+	  <Sequence ani="atk1_run_stop" speed="1.0"/>
+    </Default>
+  </MOTION>
+  <!-- Buffalo Dash Attack #2 - 30m -->
+  <MOTION name="NS_200365" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="idle1" speed="1.2"/>
+	  <Sequence ani="idle2" speed="1.3"/>
+      <Sequence ani="atk1_run" speed="1.0"/>
+	  <Sequence ani="atk1_run_stop" speed="1.0"/>
+    </Default>
+  </MOTION>
+
+  <!-- 드라곤리치 샘플 공격 -->
+  <MOTION name="NS_200805" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="neglect2" speed="3.0" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="NS_200813" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="air_landing" speed="2.0" />
+      <Sequence ani="atk_r" speed="2.0" />
+    </Default>
+  </MOTION>
+
+  <!-- 새끼 드라곤리치 샘플 공격 -->
+  <MOTION name="NS_200815" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="neglect2" speed="3.0" />
+    </Default>
+  </MOTION>
+
+  <!-- 메리온 암살자 땅파기 -->
+  <MOTION name="NS_200932" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="burrow_atk1" speed="1.0" />
+      <Sequence ani="burrow_atk2" speed="1.0" />
+    </Default>
+  </MOTION>
+
+  <!-- 인간형 1hs 발도 공격 -->
+  <MOTION name="NS_100" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk_start" speed="1.0" />
+      <Sequence ani="atk_start_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+  
+  <!-- 인간형 1hb 발도 공격 -->
+  <MOTION name="NS_1hb_atk_start" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hb_atk_start" speed="1.0" />
+      <Sequence ani="1hb_atk_start_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+  <!-- 인간형 1hb 1타 -->
+  <MOTION name="NS_1hb_atk1" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hb_atk1" speed="1.0" />
+      <Sequence ani="1hb_atk1_r" speed="1.0" />  
+    </Default>
+  </MOTION>  
+  
+  <!-- 인간형 1hb 2연타 -->
+  <MOTION name="NS_1hb_atk1_2" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hb_atk1" speed="1.0" />
+      <Sequence ani="1hb_atk2" speed="1.0" />
+      <Sequence ani="1hb_atk2_r" speed="1.0" />
+    </Default>
+  </MOTION>
+  
+  <!-- 인간형 1hb 3연타 -->
+  <MOTION name="NS_1hb_atk1_2_3" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hb_atk1" speed="1.0" />
+      <Sequence ani="1hb_atk2" speed="1.0" />
+      <Sequence ani="1hb_atk3" speed="1.0" />
+      <Sequence ani="1hb_atk3_r" speed="1.0" />
+    </Default>
+  </MOTION>
+
+  <!-- 인간형 1hb 전진공격 -->
+  <MOTION name="NS_1hb_atk1f" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hb_atk1f" speed="1.0" />
+      <Sequence ani="1hb_atk1f_r" speed="1.0" />  
+    </Default>
+  </MOTION>
+  
+ 
+ <!-- 지팡이 마법사 공용 마법시전 모션 --> 
+  <MOTION name="NS_sta_area_cast" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="sta_spell_area_cast" speed="1.5" />
+    </Default>
+  </MOTION>
+  
+  <!-- 지팡이 마법사 공용 마법시전중 모션 --> 
+  <MOTION name="NS_sta_area_idle" loop="true" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="sta_spell_area_idle" speed="1.0" />
+    </Default>
+  </MOTION>
+  
+  <!-- 지팡이 마법사 공용 마법발사 모션 --> 
+  <MOTION name="NS_sta_area_fire" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="sta_spell_area_fire" speed="1.8" />
+    </Default>
+  </MOTION>
+  
+  <!-- 단검 1,2 평타 --> 
+  <MOTION name="NS_dwp_atk1_2" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="dwp_atk1" speed="1" />
+	  <Sequence ani="dwp_atk2" speed="1" />
+	  <Sequence ani="dwp_atk2_r" speed="1" />
+    </Default>
+  </MOTION>
+  
+  <!-- 무력화 선풍각 -->  
+  <MOTION name="NS_dwp_DodgeCutCombo" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="dwp_active403" frameover="2511" speed="1" />
+	  <Sequence ani="dwp_active404" speed="1" />
+    </Default>
+  </MOTION>
+ 
+    <!-- 인간형 1hs 발도 공격 -->
+  <MOTION name="NS_14000" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_atk_start" speed="1.0" />
+      <Sequence ani="1hs_atk_start_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+      <!-- 인간형 1hs 1타 -->
+  <MOTION name="NS_14001" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_atk1" speed="1.0" />
+      <Sequence ani="1hs_atk1_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+  <!-- 인간형 1hs 2연타 -->
+  <MOTION name="NS_14002" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_atk1" speed="1.0" />
+      <Sequence ani="1hs_atk2" speed="1.0" />
+      <Sequence ani="1hs_atk2_r" speed="1.0" />
+    </Default>
+  </MOTION>
+  
+  <!-- 인간형 1hs 1hs 3연타 -->
+  <MOTION name="NS_14003" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_atk1" speed="1.0" />
+      <Sequence ani="1hs_atk2" speed="1.0" />
+      <Sequence ani="1hs_atk3" speed="1.0" />
+      <Sequence ani="1hs_atk3_r" speed="1.0" />
+    </Default>
+  </MOTION>
+
+   <!-- 인간형 1hs 전진공격 -->
+  <MOTION name="NS_14004" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_atk1f" speed="1.0" />
+      <Sequence ani="1hs_atk1f_r" speed="1.0" />  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_14005" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_atk2" speed="1.0" />
+      <Sequence ani="1hs_atk2_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+  <MOTION name="NS_14006" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_atk3" speed="1.0" />
+      <Sequence ani="1hs_atk3_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+  <!-- 파멸의 일격 + 방패가격 콤보 -->
+  <MOTION name="NS_1hs_SpinStrikeCombo" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="1hs_active4"  frameover="3500" speed="1.0" />
+      <Sequence ani="1hs_active3" speed="1.0" />  
+    </Default>
+  </MOTION> 
+    
+   <!-- 인간형 몬스터 1hs 띄우기 연타 -->
+  <MOTION name="NS_110" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk1" speed="1.2" />
+      <Sequence ani="atk_upper" speed="1.0" />
+      <Sequence ani="atk_air" speed="1.0" />	  
+    </Default>
+  </MOTION>  
+
+  
+   <!-- 인간형 몬스터 1hs 웃은다음 칼 뽑기 -->
+  <MOTION name="NS_111" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="laugh" speed="1.0" />
+      <Sequence ani="start" speed="1.0" />	  
+    </Default>
+  </MOTION>  
+  
+  <!-- 인간형 몬스터 1hs 무릎 꿇고 있다가 칼 뽑기 -->
+  <MOTION name="NS_112" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="none_loot_end" speed="1.0" />
+      <Sequence ani="1hs_start" speed="1.0" />  
+    </Default>
+  </MOTION>    
+  
+  <!-- 인간형 2hd 발도 공격 -->
+  <MOTION name="NS_400" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="2hd_end" speed="1.0" />
+      <Sequence ani="2hd_atk_start" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+  <!-- 인간형 2hd 1타 -->
+  <MOTION name="NS_401" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk1" speed="1.0" />
+      <Sequence ani="atk1_r" speed="1.0" />	  
+    </Default>
+  </MOTION>    
+  
+  <!-- 인간형 2hd 2연타 -->
+  <MOTION name="NS_402" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk1" speed="1.0" />
+      <Sequence ani="atk2" speed="1.0" />
+      <Sequence ani="atk2_r" speed="1.0" />	  
+    </Default>
+  </MOTION>    
+  
+  <!-- 인간형 2hd 3타 -->
+  <MOTION name="NS_403" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk3" speed="1.0" />
+      <Sequence ani="atk3_r" speed="1.0" />	  
+    </Default>
+  </MOTION>    
+  
+   <!-- 인간형 2hd 전진 공격 -->
+  <MOTION name="NS_404" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk1f" speed="1.0" />
+      <Sequence ani="atk1f_r" speed="1.0" />  
+    </Default>
+  </MOTION>    
+  
+  <!-- 인간형 2hd 발도 공격 -->
+  <MOTION name="NS_14400" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_atk_start" speed="1.0" />
+      <Sequence ani="2hd_atk_start_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+  
+  <!-- 인간형 2hd 1타 -->
+  <MOTION name="NS_14401" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_atk1" speed="1.0" />
+      <Sequence ani="2hd_atk1_r" speed="1.0" />	  
+    </Default>
+  </MOTION>    
+  
+  <!-- 인간형 2hd 2연타 -->
+  <MOTION name="NS_14402" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_atk1" speed="1.0" />
+      <Sequence ani="2hd_atk2" speed="1.0" />
+      <Sequence ani="2hd_atk2_r" speed="1.0" />	  
+    </Default>
+  </MOTION>    
+  
+  <!-- 인간형 2hd 3타 -->
+  <MOTION name="NS_14403" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_atk3" speed="1.0" />
+      <Sequence ani="2hd_atk3_r" speed="1.0" />	  
+    </Default>
+  </MOTION>    
+  
+   <!-- 인간형 2hd 전진 공격 -->
+  <MOTION name="NS_14404" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_atk1f" speed="1.0" />
+      <Sequence ani="2hd_atk1f_r" speed="1.0" />  
+    </Default>
+  </MOTION>    
+ 
+   <!-- 인간형 2hd 후진 공격 -->
+  <MOTION name="NS_14405" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_atksp" speed="1.0" />
+      <Sequence ani="2hd_atksp_r" speed="1.0" />  
+    </Default>
+  </MOTION> 
+
+
+  <MOTION name="NS_260721305" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="atk1" speed="1.0" frameover="3500" />	  
+    </Default>
+  </MOTION>
+
+
+  <!-- 607501 -->
+  <MOTION name="NS_260750150" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active113" speed="1.0" frameover="1933" />	  
+    </Default>
+  </MOTION>
+
+  <MOTION name="NS_260750151" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active102" speed="1.0" frameover="7659" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750152" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active103" speed="1.0" frameover="6228" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750153" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active104" speed="1.0" frameover="4412" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750154" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active105" speed="1.0" frameover="8649" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750155" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active112" speed="1.0" frameover="2857" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_rage_fire" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_rage_fire" speed="2.2" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750157" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active101" speed="1.0" frameover="5995" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_front_dash" loop="false" cameraLook="false" postfix="true" usable_upper="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active117"  frameover="2881"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750162" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active111" speed="1.0" frameover="5288" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750164" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active114" speed="1.0" frameover="4796" />	  
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750165" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_active107" speed="1.0" frameover="4096" />	  
+    </Default>
+  </MOTION> 
+
+  <MOTION name="NS_260790120" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="talent_magic_1" speed="1.2" />	  
+    </Default>
+  </MOTION> 
+  <MOTION name="NS_260790121" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="talent_magic_1" speed="2" />	  
+    </Default>
+  </MOTION> 
+  
+  
+  <MOTION name="NS_escape" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="2hd_dodge_b" frameover="2881"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_260750167" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="2hd_atk1" speed="1.0" />
+      <Sequence ani="2hd_atk2" speed="1.0" />
+	  <Sequence ani="2hd_atk3" speed="1.0" />
+      <Sequence ani="2hd_atk3_r" speed="1.0" />	  
+    </Default>
+  </MOTION>
+  
+   <!-- 인간 마법사 지팡이 마법 공격(발사체)-->
+ <MOTION name="NS_15001" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_spell_area_cast" speed="1"/>
+		<Sequence ani="sta_spell_area_fire" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 인간 마법사 지팡이 마법 공격 (pb)-->
+ <MOTION name="NS_15002" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_spell_pb_cast" speed="1"/>
+		<Sequence ani="sta_spell_pb_fire" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+  <!-- 인간 마법사 지팡이 마법 공격 (pb)-->
+ <MOTION name="NS_15003" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_spell_pb_cast" speed="1"/>
+		<Sequence ani="sta_spell_pb_idle" speed="1"/>
+		<Sequence ani="sta_spell_pb_fire" speed="1"/>
+    </Default>
+ </MOTION>
+ 
+  
+  <!-- 인간형 arc 활공격 -->
+  <MOTION name="NS_801" loop="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="aiming" speed="1.0" />
+      <Sequence ani="aiming_middle" speed="2.0" />	  
+      <Sequence ani="atk1" speed="1.0" />	  
+    </Default>
+  </MOTION>   
+
+  <!-- 인간형 arc 차지샷 -->
+  <MOTION name="NS_810" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="aiming" speed="0.5" />
+      <Sequence ani="aiming_middle" speed="1.0" />
+      <Sequence ani="atk1" speed="1.0" />	  
+    </Default>
+  </MOTION>   
+
+  <!-- 고블린 병정 2연타  -->
+  <MOTION name="NS_10001" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk1" speed="1.0" frameover="5000" />
+      <Sequence ani="atk2" speed="1.0" />	  
+    </Default>
+  </MOTION>  
+  
+   <!-- 고블린 병정 강타  -->
+  <MOTION name="NS_10002" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk3" speed="0.5" />  
+    </Default>
+  </MOTION>  
+  
+   <!-- 고블린 호위병 2연타  -->
+  <MOTION name="NS_10003" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk1" speed="1.0" frameover="4481" />  
+      <Sequence ani="atk_s" speed="1.0" />  	  
+    </Default>
+  </MOTION>  
+  
+  <!-- 지휘관 타리비 2연타  -->
+  <MOTION name="NS_10004" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk1" speed="1.2" frameover="5400" />  
+      <Sequence ani="atk2" speed="1.0" />  	  
+    </Default>
+  </MOTION>  
+  
+  <!-- 어미 거미 위협  -->
+  <MOTION name="NS_200305801" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="talent" speed="1.3" frameover="11360" />  	  
+    </Default>
+  </MOTION>    
+  
+  <!-- 브레비 연속 동작  -->
+  <MOTION name="NS_211002510" loop="false" cancelEnabled="true">
+    <Default>
+	  <Sequence ani="atk1" speed="1.0" />
+	  <Sequence ani="atk2" speed="1.0" />
+      <Sequence ani="atk3" speed="1.0" />
+      <Sequence ani="atk4" speed="1.0" />
+      <Sequence ani="atk_s" speed="1.0" />
+    </Default>
+  </MOTION>  
+
+  <!-- 갈거미 -->
+  <MOTION name="NS_210700307" loop="false" cancelEnabled="true">
+    <Default>
+	  <Sequence ani="spell_cast_notloop" speed="1.5"/>
+	  <Sequence ani="atk_1" speed="1.0" />
+    </Default>
+  </MOTION>
+
+  <!-- 아레크 먹기 성공-->
+  <MOTION name="NS_112001" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="eat_success" speed="1.0"/>
+      <Sequence ani="eat_chew"  speed="1.0" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_22301" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="grip_start" speed="1.0"/>
+      <Sequence ani="grip_idle"  speed="1.0" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_211603056" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="pain_2_down" speed="1.0"/>
+      <Sequence ani="pain_2_idle"  speed="1.0" />	  
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />	
+      <Sequence ani="pain_2_idle"  speed="1.0" />	  
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_idle"  speed="1.0" />
+      <Sequence ani="pain_2_up"  speed="0.7" />	  
+    </Default>
+  </MOTION> 
+
+  <MOTION name="NS_211651201" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="spell_buff_cast1" speed="1.0" frameover="5800" />
+      <Sequence ani="spell_buff_cast2" speed="1.0" />
+    </Default>
+  </MOTION>  
+  
+  <MOTION name="NS_211651601" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="atk_d" speed="1.0" />
+      <Sequence ani="atk_d" speed="1.0" />
+      <Sequence ani="atk_d" speed="1.0" />	  
+    </Default>
+  </MOTION>  
+  
+ <!-- 늑대샘플 전투뻘짓 -->
+  <MOTION name="NS_13001" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="taunt" speed="1.5"/>
+    </Default>
+  </MOTION>
+
+ <!-- 베스피오단 잔당 찌르기 -->
+ <MOTION name="NS_10703601" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="atk2" speed="1"/>
+		<Sequence ani="atk2_r" speed="1"/>
+    </Default>
+  </MOTION> 
+  
+  <!-- 베스피오단 잔당 연속 찌르기 -->
+ <MOTION name="NS_10703603" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="atk2" speed="1"/>
+		<Sequence ani="atk3" speed="1"/>
+		<Sequence ani="atk3_r" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+  <!-- 베스피오단 잔당 연속 찌르기 -->
+ <MOTION name="NS_10703604" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="atk3" speed="1"/>
+		<Sequence ani="atk3_r" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 베스피오단 잔당 전진공격 -->
+ <MOTION name="NS_10703605" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="atk1f" speed="1"/>
+		<Sequence ani="atk1f_r" speed="1"/>
+    </Default>
+ </MOTION> 
+
+ <!-- 인간 마법사 지팡이 공격 1타-->
+ <MOTION name="NS_10702001" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_atk1" speed="1"/>
+		<Sequence ani="sta_atk1_r" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 인간 마법사 지팡이 2타 공격 -->
+ <MOTION name="NS_10702002" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_atk2" speed="1"/>
+		<Sequence ani="sta_atk2_r" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 인간 마법사 지팡이 공격 1타 단타-->
+  <MOTION name="NS_10702003" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_atk1" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 인간 마법사 지팡이 2연타 공격 -->
+ <MOTION name="NS_10702004" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_atk1" speed="1"/>
+		<Sequence ani="sta_atk2" speed="1"/>
+		<Sequence ani="sta_atk2_r" speed="1"/>
+    </Default>
+ </MOTION> 
+
+ <!-- 인간 마법사 지팡이 전진공격-->
+ <MOTION name="NS_10702005" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_atk1f" speed="1"/>
+		<Sequence ani="sta_atk1f_r" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 인간 마법사 지팡이 후진공격-->
+ <MOTION name="NS_10702006" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_atk1b" speed="1"/>
+		<Sequence ani="sta_atk1b_r" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 인간 마법사 지팡이 후진공격-->
+ <MOTION name="NS_10702007" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_spell_area_cast" speed="1"/>
+		<Sequence ani="sta_spell_area_fire" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 인간 마법사 지팡이 무릎꿇고 있다가 일어나서 공격-->
+ <MOTION name="NS_10702008" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="loot_end" speed="1" />
+		<Sequence ani="sta_atk1" speed="1"/>
+    </Default>
+ </MOTION> 
+
+ <!-- 인간 수호사제 한손 둔기 발사마법 -->
+ <MOTION name="NS_11714019" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="1hb_spell_area_cast" speed="1"/>
+		<Sequence ani="1hb_spell_area_fire" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+  <!-- 스켈레톤 아처 활쏘기-->
+<MOTION name="NS_11301601" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="aim" speed="1"/>
+		<Sequence ani="atk1" speed="1"/>
+    </Default>
+ </MOTION> 
+
+<!-- 스켈레톤 아처 활쏘기(약간느린버젼)--> 
+ <MOTION name="NS_11301602" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="aim" speed="0.7"/>
+		<Sequence ani="atk1" speed="1"/>
+    </Default>
+ </MOTION> 
+
+<!-- 스켈레톤 아처 활쏘기(속사버전)-->  
+ <MOTION name="NS_11301603" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="aim" speed="2.0"/>
+		<Sequence ani="atk1" speed="1.5"/>
+    </Default>
+ </MOTION>
+ 
+ <!-- 스켈레톤 아처 활쏘기(많이 느린 버전)-->  
+ <MOTION name="NS_11301604" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="aim" speed="0.5"/>
+		<Sequence ani="atk1" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 스켈레톤 아처 활쏘기(약간느린버젼)--> 
+ <MOTION name="NS_11001903" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="atk_r" frameover="6454" speed="1.3"/>
+		<Sequence ani="atk_r" frameover="6454" speed="1.3"/>
+		<Sequence ani="atk_r" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 화원의 주인 활력 -->
+ <MOTION name="NS_12101929" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="mode1_buff_idle" speed="1"/>
+		<Sequence ani="mode1_buff_idle" speed="1"/>
+		<Sequence ani="mode1_buff_idle" speed="1"/>
+		<Sequence ani="mode1_buff_idle" speed="1"/>
+		<Sequence ani="mode1_buff_end" speed="1"/>
+    </Default>
+ </MOTION> 
+ 
+ <!-- 타일런트 좀비 잡기 -->
+  <MOTION name="NS_11308304" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="grip_success" speed="1.0"/>
+      <Sequence ani="grip_loop"  speed="1.0" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="NS_11308324" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="mode1_grip_success" speed="1.0"/>
+      <Sequence ani="mode1_grip_loop"  speed="1.0" />
+    </Default>
+  </MOTION>
+
+<!-- 타일런트 좀비 모드 변환-->
+  <MOTION name="NS_11308310" loop="false" cancelEnabled="false" auto_prefix="false">
+    <Default>
+      <Sequence ani="roar" speed="1.0"/>
+    </Default>
+  </MOTION>
+  <MOTION name="NS_11308311" loop="false" cancelEnabled="false" auto_prefix="false">
+    <Default>
+      <Sequence ani="roar" speed="1.0"/>
+      <Sequence ani="mode1_pain_1"  speed="1.0" />
+	  <Sequence ani="mode1_pain_2"  speed="1.0" />
+    </Default>
+  </MOTION>
+  
+<!-- 디아고 얼음 던지기 -->
+	<MOTION name="NS_10211019" loop="false" cancelEnabled="true" auto_prefix="false">
+		<Default>
+			<Sequence ani="iceball_cast" speed="1.2"/>
+			<Sequence ani="iceball_fire"  speed="1.2" />
+		</Default>
+	</MOTION>
+	
+ <!-- 크라울러 레이저 발사 -->
+	<MOTION name="NS_10910012" loop="false" cancelEnabled="true" auto_prefix="false">
+		<Default>
+			<Sequence ani="laser_cast" speed="1"/>
+			<Sequence ani="laser_idle" speed="1"/>
+			<Sequence ani="laser_fire"  speed="1" />
+		</Default>
+	</MOTION>
+	
+ <!-- 해골 궁수, 활쏘기-->
+<MOTION name="NS_10923301" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="aim" speed="0.9"/>
+		<Sequence ani="atk1" speed="1"/>
+    </Default>
+ </MOTION> 
+
+<!-- 해골 궁수, 활쏘기(약간느린버젼)--> 
+ <MOTION name="NS_10923302" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="aim" speed="0.6"/>
+		<Sequence ani="atk1" speed="1"/>
+    </Default>
+ </MOTION> 
+	
+<!-- 하피 발톱강하1-->
+<MOTION name="NS_10210600" loop="false" >
+    <Default>
+      <Sequence ani="atk_1" speed="1.0"/>
+      <Sequence ani="atk_1_r"  speed="1.0" />
+    </Default>
+</MOTION>
+
+<!-- 하피 발톱강하1-->
+<MOTION name="NS_10210601" loop="false" >
+    <Default>
+      <Sequence ani="atk_1" speed="1.0"/>
+      <Sequence ani="atk_2"  speed="1.0" />
+    </Default>
+</MOTION>
+
+<!--엘렉트라 감전 비명-->
+  <MOTION name="NS_210313004" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="atk_5" speed="2"/>
+    </Default>
+  </MOTION>
+
+ <!--불/물의 정령 연속기-->
+  <MOTION name="NS_211611301" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="atk1" speed="1.5"/>
+    </Default>
+  </MOTION>
+  <MOTION name="NS_211611302" loop="false" cancelEnabled="false">
+    <Default>
+       <Sequence ani="atk2" speed="1.5"/>
+    </Default>
+  </MOTION>
+  
+<!-- 처형 집행인 -->
+<MOTION name="NS_50100213" loop="false" >
+    <Default>
+		<Sequence ani="special1_1" speed="1.0" />
+		<Sequence ani="special1_2"  speed="1.0" />
+    </Default>
+</MOTION>
+<MOTION name="NS_50100214" loop="false" >
+    <Default>
+		<Sequence ani="tired_start" speed="1.0" />
+		<Sequence ani="tired_idle" speed="1.0" />
+		<Sequence ani="tired_idle" speed="1.0" />
+		<Sequence ani="tired_idle" speed="1.0" />
+		<Sequence ani="tired_end" speed="1.0" />
+    </Default>
+</MOTION>
+<MOTION name="NS_50100216" loop="false" auto_prefix="false" >
+    <Default>
+		<Sequence ani="special1_1" speed="1.0" />
+		<Sequence ani="special2_2" speed="1.0" />
+    </Default>
+</MOTION>
+<MOTION name="NS_50100221" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="mode1_end" speed="1.0" />
+		<Sequence ani="mode1_start" speed="1.0" />
+    </Default>
+</MOTION>
+<MOTION name="NS_50100230" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="mode2_start"  frameover="7597"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_50100321" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="blink_idle" speed="1.0"/>
+		<Sequence ani="blink_idle" speed="1.0"/>
+		<Sequence ani="blink_end" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_50111321" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+		<Sequence ani="sta_spell_buff_cast" speed="1"/>
+		<Sequence ani="sta_spell_buff_fire" speed="1"/>
+    </Default>
+ </MOTION>
+
+ 
+<!-- 이리스 -->
+<MOTION name="NS_210100222" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="shift_end" speed="1.0"/>
+		<Sequence ani="shift_end" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_210100216" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_210100232" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+		<Sequence ani="fountain_idle" speed="1.0"/>
+    </Default>
+</MOTION>
+<!-- 물방울 먹기 성공-->
+<MOTION name="NS_210100302" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+		<Sequence ani="grip2_start" speed="1.0"/>
+		<Sequence ani="grip2_end"  speed="1.0" />
+    </Default>
+</MOTION>
+
+<!-- 물방울 먹기 실패-->
+<MOTION name="NS_210100303" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+      <Sequence ani="grip2_fail" speed="1.0"/>
+      <Sequence ani="grip2_stop"  speed="1.0" />
+    </Default>
+</MOTION>
+
+<!-- 물방울 먹기 성공-->
+<MOTION name="NS_Grip_Fail" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+		<Sequence ani="grip"  speed="1.0" frameover="1000"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_Grip_Succeed" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+		<Sequence ani="grip"  speed="1.0" />
+		<Sequence ani="idle"  speed="1.0" />
+    </Default>
+</MOTION>
+<MOTION name="NS_Grip_Throw" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+		<Sequence ani="throw"  speed="1.0" frameover="1"/>
+    </Default>
+</MOTION>
+
+<!-- 볼락 -->
+<MOTION name="NS_210300322" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk3" speed="1.5"/>
+		<Sequence ani="atk3_r" speed="1.5"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_210300323" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk3" speed="1.0"/>
+		<Sequence ani="atk4" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_210300324" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_clap" speed="1.5"/>
+    </Default>
+</MOTION>
+
+
+<!-- 베이누스 -->
+<MOTION name="NS_250802076" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="step" speed="2.0"/>
+    </Default>
+</MOTION>
+
+<!-- 젬버 -->
+<MOTION name="NS_260500161" loop="false" cancelEnabled="false">
+	<Default>
+		<Sequence ani="trap_cast" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_end" speed="1.0" />
+	</Default>
+</MOTION>
+<MOTION name="NS_260500162" loop="false" cancelEnabled="false">
+	<Default>
+		<Sequence ani="trap_cast" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_end" speed="1.0" />
+	</Default>
+</MOTION>
+<MOTION name="NS_260500163" loop="false" cancelEnabled="false">
+	<Default>
+		<Sequence ani="trap_cast" speed="1.0" />
+		<Sequence ani="trap_end" speed="1.0" />
+	</Default>
+</MOTION>
+
+<!-- 엘소디아 -->
+<MOTION name="NS_260400117" loop="false" cancelEnabled="false">
+	<Default>
+		<Sequence ani="trap_cast" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_end" speed="1.0" />
+	</Default>
+</MOTION>
+<MOTION name="NS_260400118" loop="false" cancelEnabled="false">
+	<Default>
+		<Sequence ani="trap_cast" speed="1.0" />
+		<Sequence ani="trap_idle" speed="1.0" />
+		<Sequence ani="trap_end" speed="1.0" />
+	</Default>
+</MOTION>
+<MOTION name="NS_260400119" loop="false" cancelEnabled="false">
+	<Default>
+		<Sequence ani="trap_cast" speed="1.0" />
+		<Sequence ani="trap_end" speed="1.0" />
+	</Default>
+</MOTION>
+
+
+<!-- 칼로스 -->
+<MOTION name="NS_210400120" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="firewall_start2" speed="1.0"/>
+		<Sequence ani="firewall_fire" speed="1.0"/>
+		<Sequence ani="firewall_fire" speed="1.0"/>
+		<Sequence ani="firewall_fire" speed="1.0"/>
+		<Sequence ani="firewall_fire" speed="1.0"/>
+		<Sequence ani="firewall_fire" speed="1.0"/>
+		<Sequence ani="firewall_end" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_210400121" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="firewall_start4" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_end3" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_210400123" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="firewall_start3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire3" speed="1.0"/>
+		<Sequence ani="firewall_fire4" speed="1.0"/>
+		<Sequence ani="firewall_fire4" speed="1.0"/>
+		<Sequence ani="firewall_fire4" speed="1.0"/>
+		<Sequence ani="firewall_fire4" speed="1.0"/>
+		<Sequence ani="firewall_end3" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_210400200" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="n_start" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_fire" speed="1.0"/>
+		<Sequence ani="n_end" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_210400201" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="l_start" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_fire" speed="1.0"/>
+		<Sequence ani="l_end" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_210400202" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="r_start" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_fire" speed="1.0"/>
+		<Sequence ani="r_end" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_210400203" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="t_start" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_fire" speed="1.0"/>
+		<Sequence ani="t_end" speed="1.0"/>
+    </Default>
+</MOTION>
+
+
+<!-- 파이어 만기루스 : 골렘 -->
+<MOTION name="NS_211601010" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+      <Sequence ani="atk_1" speed="1.0"/>
+      <Sequence ani="atk_1_r"  speed="1.0" />
+    </Default>
+</MOTION>
+<MOTION name="NS_211601011" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+      <Sequence ani="atk_1" speed="1.0"/>
+      <Sequence ani="atk_2"  speed="1.0" />
+    </Default>
+</MOTION>
+
+<MOTION name="NS_211601015" loop="false" cancelEnabled="true" auto_prefix="false">
+	<Default>
+      <Sequence ani="grip_success" speed="1.0"/>
+      <Sequence ani="grip_idle" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<!-- 하프메인 -->
+
+<MOTION name="NS_211602020" loop="false" cancelEnabled="true">
+	<Default>
+      <Sequence ani="absorb_start" speed="1.0"/>
+      <Sequence ani="absorb_idle"  speed="1.0" />
+    </Default>
+</MOTION>
+
+
+<!-- 아레크 -->
+<MOTION name="NS_211603017" loop="false" cancelEnabled="false" auto_prefix="false">
+	<Default>
+      <Sequence ani="change_mode_atk" speed="1.5"/>
+      <Sequence ani="change_mode0" speed="2.5"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_211603016" loop="false" cancelEnabled="false" auto_prefix="false">
+	<Default>
+      <Sequence ani="sleep_2" speed="1.5"/>
+      <Sequence ani="roar_1" speed="1"/>
+    </Default>
+</MOTION>
+
+<!-- 마리옹 거인 -->
+<MOTION name="NS_211700613" loop="false" cancelEnabled="false" auto_prefix="false">
+	<Default>
+      <Sequence ani="atk4_1" speed="1.0"/>
+      <Sequence ani="atk4_strike" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_211700614" loop="false" cancelEnabled="false" auto_prefix="false">
+	<Default>
+      <Sequence ani="atk4" speed="1.0"/>
+      <Sequence ani="atk4_throw" speed="1.0"/>
+    </Default>
+</MOTION>
+
+
+<MOTION name="NS_250110325" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="sta_spell_area_fire" speed="1.8" />
+    </Default>
+</MOTION>
+
+
+<!-- 집사 다르엘 : 책 -->
+<MOTION name="NS_252001101" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk" speed="1.0"/>
+		<Sequence ani="spawn" speed="0.1"/>
+		<Sequence ani="spawn" speed="0.1"/>
+		<Sequence ani="stop" speed="0.4"/>
+		<Sequence ani="start" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<!-- 집사 다르엘 : 공중부유 -->
+<MOTION name="NS_252001052" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="levitation2_atk" speed="1.0"/>
+		<Sequence ani="levitation2_atk" speed="1.0"/>
+		<Sequence ani="levitation2_atk" speed="1.0"/>
+		<Sequence ani="levitation2_atk" speed="1.0"/>
+    </Default>
+</MOTION>
+
+
+<!-- 쿨드 -->
+<MOTION name="NS_250800116" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="move_l" speed="1.0"/>
+		<Sequence ani="move_r" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_250800140" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="summon" speed="1.0"/>
+		<Sequence ani="summon" speed="1.0"/>
+		<Sequence ani="summon" speed="1.0"/>
+		<Sequence ani="summon" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_250800118" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="summon" speed="1.0"/>
+		<Sequence ani="summon" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<!-- 프로로기 -->
+<MOTION name="NS_250800212" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="oilbreath_cast" speed="1.0"/>
+		<Sequence ani="oilbreath_idle" speed="1"/>
+		<Sequence ani="oilbreath_fire" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_250800220" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="oilbreath_cast" speed="1.5"/>
+		<Sequence ani="oilbreath_fire" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<!-- 지그니프 -->
+<MOTION name="NS_210100023" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_4_3_1" speed="1.0"/>
+		<Sequence ani="atk_4_3_2" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<!-- 베이누스 -->
+<MOTION name="NS_250802010" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_1" speed="1.0"/>
+		<Sequence ani="atk_1r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_250802020" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_1" speed="1.0"/>
+		<Sequence ani="atk_1_r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_250802021" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_1" speed="1.0"/>
+		<Sequence ani="atk_2" speed="1.0"/>
+		<Sequence ani="atk_2_r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_250802022" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_1" speed="1.0"/>
+		<Sequence ani="atk_2" speed="1.0"/>
+		<Sequence ani="atk_3" speed="1.0"/>
+		<Sequence ani="atk_3_r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_250802023" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="fast_atk_1" speed="1.0"/>
+		<Sequence ani="fast_atk_1_r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_250802024" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="fast_atk_1" speed="1.0"/>
+		<Sequence ani="fast_atk_2" speed="1.0"/>
+		<Sequence ani="fast_atk_2_r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_250802025" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="fast_atk_1" speed="1.0"/>
+		<Sequence ani="fast_atk_2" speed="1.0"/>
+		<Sequence ani="fast_atk_3" speed="1.0"/>
+		<Sequence ani="fast_atk_3_r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+
+
+
+<MOTION name="NS_210401012" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="summon_bat_cast" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_idle" speed="1.0"/>
+		<Sequence ani="summon_bat_fire" speed="1.0"/>
+    </Default>
+</MOTION>
+
+  <MOTION name="NS_210923501" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="mode_change" speed="1.3" frameover="9123" />
+      <Sequence ani="MF_KB3" speed="1.0" />	 	  
+    </Default>
+  </MOTION>
+  <MOTION name="NS_210923502" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="mode_change" speed="1.0" frameover="9123" />
+      <Sequence ani="MF_KB3" speed="1.0" />	  
+    </Default>
+  </MOTION>
+  <MOTION name="NS_210923503" loop="false" cancelEnabled="false">
+    <Default>
+      <Sequence ani="atk3" speed="1.2" frameover="6226" />
+      <Sequence ani="atk2" speed="1.5" frameover="8388" />
+      <Sequence ani="atk1" speed="1.5" />	  
+    </Default>
+  </MOTION>  
+
+<MOTION name="NS_211610204" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="breath2" speed="2.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_211610205" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="breath3" speed="2.0"/>
+    </Default>
+</MOTION>
+
+ <!-- 키메라 -->
+ <MOTION name="NS_251100070" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="high_flying_landing" speed="1.0"/>
+		<Sequence ani="flying_atk_d" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_251100081" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="flying_landing" speed="1"/>
+		<Sequence ani="roar" speed="1"/>
+    </Default>
+ </MOTION>
+ 
+<MOTION name="NS_251100082" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="high_flying_landing" speed="1"/>
+		<Sequence ani="flying_landing" speed="1"/>
+		<Sequence ani="roar" speed="1"/>
+    </Default>
+ </MOTION>
+ 
+
+<MOTION name="NS_ronin_atk_1" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_1" frameover="6000" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_ronin_atk_2" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_2" frameover="6000" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<MOTION name="NS_210305010" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="atk_2" frameover="6000" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<!-- 어쌔신 -->
+<MOTION name="NS_800410010" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="dwp_atk1f" speed="1.0"/>
+		<Sequence ani="dwp_atk2" speed="1.0"/>
+		<Sequence ani="dwp_atk3" speed="1.0"/>
+		<Sequence ani="dwp_atk4" speed="1.0"/>
+		<Sequence ani="dwp_atk5" speed="1.0"/>
+		<Sequence ani="dwp_atk5_r" speed="1.0"/>
+    </Default>
+</MOTION>
+
+<!--
+관통 0.45
+칼날 0.6
+회전 선풍각 0.6
+-->
+
+<MOTION name="NS_800410020" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="dwp_active410" frameover="2171" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_800410021" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="dwp_active407" frameover="2890" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_800410022" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="dwp_active404" frameover="2896" speed="1.0"/>
+    </Default>
+</MOTION>
+
+
+<!--
+혼돈 0.45
+칼날 0.87
+-->
+
+<MOTION name="NS_800410030" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="dwp_active410" frameover="2150" speed="1.0"/>
+    </Default>
+</MOTION>
+<MOTION name="NS_800410031" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="dwp_active405" frameover="4185" speed="1.0"/>
+    </Default>
+</MOTION>
+
+
+<!--
+도려내기 0.52
+-->
+
+<MOTION name="NS_800410043" loop="false" auto_prefix="false">
+    <Default>
+		<Sequence ani="dwp_active403" frameover="2509" speed="1.0"/>
+    </Default>
+</MOTION>
+
+
+<MOTION name="NS_800410050" loop="false" auto_prefix="false">
+	<Default>
+		<Sequence ani="dwp_potion" speed="3.0"/>
+	</Default>
+</MOTION>
+
+<MOTION name="NS_800410042" loop="false" auto_prefix="false">
+    <Default>
+      <Sequence ani="dwp_warcry_fire" speed="2" />
+    </Default>
+</MOTION>
+
+
+
+
+
+<MOTION name="NS_KNOCKBACK" loop="false" cancelEnabled="true">
+	<Default>
+		<Sequence ani="MF_KB1"/>
+		<Sequence ani="MF_KB2"/>
+		<Sequence ani="MF_KB3"/>
+	</Default>
+</MOTION>
+
+  <MOTION name="mail_open">
+    <Default>
+      <Sequence ani="open"/>
+      <Sequence ani="open_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="mail_close">
+    <Default>
+      <Sequence ani="close"/>
+    </Default>
+  </MOTION>
+  
+</maiet>
+ 

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_GMCategory.lua" />
+
+  <!-- 카테고리 -->
+  <Panel name="pnlCategory" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="25" />
+      <Size w="%100" h="75" />
+    </Layout>
+    <Controls>
+
+      <!-- TabCtrl Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="73"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 찾기 버튼 -->
+      <Button name="btnSearch">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="20" />
+          <Size w="100" h="35" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SEARCH") );</OnLoaded>
+          <OnClick>
+            luaGMTool:ChangeCategory( luaGMTool.CATEGORY.GMT_SEARCH );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 소환 버튼 -->
+      <Button name="btnSpawn">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="120" y="20" />
+          <Size w="100" h="35" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMSPAWN") );</OnLoaded>
+          <OnClick>
+            luaGMTool:ChangeCategory( luaGMTool.CATEGORY.GMT_SPAWN );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 이동/전투 버튼 -->
+      <Button name="btnMoveBattle">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="230" y="20" />
+          <Size w="100" h="35" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMMOVEBATTLE") );</OnLoaded>
+          <OnClick>
+            luaGMTool:ChangeCategory( luaGMTool.CATEGORY.GMT_MOVEBATTLE );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 캐릭터 변경 버튼 -->
+      <Button name="btnChar">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="340" y="20" />
+          <Size w="100" h="35" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMCHAR") );</OnLoaded>
+          <OnClick>
+            luaGMTool:ChangeCategory( luaGMTool.CATEGORY.GMT_CHAR );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 제재 버튼 -->
+      <Button name="btnBan">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="450" y="20" />
+          <Size w="100" h="35" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMBAN") );</OnLoaded>
+          <OnClick>
+            luaGMTool:ChangeCategory( luaGMTool.CATEGORY.GMT_BAN );
+          </OnClick>
+        </Event>
+      </Button>
+
+      <!-- 기타 버튼 -->
+      <Button name="btnEtc">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="560" y="20" />
+          <Size w="100" h="35" />
+        </Layout>
+        <Action>
+          <Enabled>false</Enabled>
+        </Action>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMETC") );</OnLoaded>
+          <OnClick>
+            luaGMTool:ChangeCategory( luaGMTool.CATEGORY.GMT_ETC );
+          </OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+  
+</UI>

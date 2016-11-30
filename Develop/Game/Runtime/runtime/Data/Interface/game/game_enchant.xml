@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_enchant.lua" />
+
+
+  <!-- Frame -->
+  <Frame name="frmEnchant" parent="frmInventory">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="360" h="510" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_ENCHANTING"));
+        luaGame:RegisterWindow( frmDyeing);
+      </OnLoaded>
+      <OnShow>luaEnchant:OnShowEnchantFrame();</OnShow>
+      <OnTimer>luaEnchant:OnTimerEnchantFrame();</OnTimer>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="345" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmEnchant:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+      
+      <!-- Picture : Background image -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="25" />
+          <Size w="350" h="370" />
+        </Layout>
+        <Image>bmpEnchantBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture name="picEnchantArrowLeft">
+        <Layout>
+          <Location x="40" y="256" />
+          <Size w="105" h="106" />
+        </Layout>
+        <Image>bmpEnchantArrowL</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Picture name="picEnchantArrowRight">
+        <Layout>
+          <Location x="205" y="256" />
+          <Size w="105" h="106" />
+        </Layout>
+        <Image>bmpEnchantArrowR</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      
+      <!-- Enchant item -->
+      <Picture name="picEnchantItem">
+        <Layout>
+          <Location x="155" y="150" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      
+      <!-- Enchant stone slots -->
+      <Picture name="picEnchantStoneSlot0">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+      
+      <Picture name="picEnchantStone0">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picEnchantStoneSlot1">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+      
+      <Picture name="picEnchantStone1">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picEnchantStoneSlot2">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+      
+      <Picture name="picEnchantStone2">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picEnchantStoneSlot3">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+      
+      <Picture name="picEnchantStone3">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picEnchantStoneSlot4">
+        <Layout>
+          <Size w="60" h="60" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      <Picture name="picEnchantStone4">
+        <Layout>
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+          <Visible>false</Visible>
+        </Shape>
+      </Picture>
+
+      
+      <!-- Picture : Enchant target slot -->
+      <Picture name="picEnchantTargetSlot">
+        <Layout>
+          <Location x="145" y="241" />
+          <Size w="60" h="60" />
+        </Layout>
+        <Image>bmpEnchantTarget</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- Enchant stone item -->
+      <Picture name="picEnchantStoneItem">
+        <Layout>
+          <Location x="50" y="312" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <LabelEx>
+        <Layout>
+          <Location x="30" y="360" />
+          <Size w="80" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ENCHANTSTONE"));</OnLoaded>
+        </Event>
+      </LabelEx>
+      
+
+      <!-- Enchant agent item -->
+      <Picture name="picEnchantAgentItem">
+        <Layout>
+          <Location x="260" y="312" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Shape>
+          <Static>false</Static>
+          <Stretch>true</Stretch>
+          <EnableFocus>true</EnableFocus>
+        </Shape>
+        <Event>
+          <OnClick>luaEnchant:OnClickPopupAgentItem();</OnClick>
+        </Event>
+      </Picture>
+
+      <LabelEx>
+        <Layout>
+          <Location x="240" y="361" />
+          <Size w="80" h="20" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="160" g="160" b="160"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "ENCHANTAGENT"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+      
+      <!-- Button : Select agent item -->
+      <Button name="btnSelAgentItem">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="313" y="327" />
+          <Size w="25" h="25" />
+        </Layout>
+        <Shape>
+          <Text>...</Text>
+        </Shape>
+        <Event>
+          <OnClick>luaEnchant:OnClickPopupAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- TextView : Success ratio -->
+      <TextView name="tvwEnchantSuccessRatio">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="125" y="315" />
+          <Size w="100" h="40" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="55" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="395" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwEnchantMessage">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="402" />
+          <Size w="330" h="50" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+        </Shape>
+      </TextView>
+
+
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="450" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Do enchanting -->
+      <Button name="btnDoEnchanting">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_APPLY"));</OnLoaded>
+          <OnClick>luaEnchant:OnClickDoEnchanting();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Button : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="180" y="460" />
+          <Size w="160" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmEnchant:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+
+
+
+
+  
+  
+  
+  
+  
+
+
+  <!-- Popup menu -->
+  <PopupMenu name="pmEnchantAgentItem">
+    <Look>lookDefPopupMenu</Look>
+    <Layout>
+      <Size w="150" h="175" />
+    </Layout>
+    <Controls>
+
+      <!-- Menu -->
+      <Button name="btnEnchantAgentItem0">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnEnchantAgentItem1">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="35" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnEnchantAgentItem2">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="70" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnEnchantAgentItem3">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="105" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+      <Button name="btnEnchantAgentItem4">
+        <Look>lookDefPopupMenuBtn</Look>
+        <Layout>
+          <Location x="0" y="140" />
+          <Size w="150" h="35" />
+        </Layout>
+        <Shape>
+          <Icon w="24" h="24"></Icon>
+        </Shape>
+        <Event>
+          <OnClick>luaEnchant:OnClickSelectAgentItem();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </PopupMenu>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+
+
+  <!-- Frame -->
+  <Frame name="frmEnchantProgress" parent="frmInventory">
+    <Look>lookDefMiniFrame</Look>
+    <Layout>
+      <Size w="370" h="80" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+      <ShowTitleBar>false</ShowTitleBar>
+    </Shape>
+    <Event>
+      <OnShow>luaEnchant:OnShowEnchantProgress();</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- LabelEx : Message -->
+      <LabelEx>
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Shape>
+          <Font>fntScriptStrong</Font>
+          <FontColor r="230" g="230" b="230"/>
+          <Align>hcenter,vcenter</Align>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_ENCHANT_ENCHANTINGITEM"));</OnLoaded>
+        </Event>
+      </LabelEx>
+
+
+      <!-- ProgressCtrl : Enchanting progress bar -->
+      <ProgressCtrl name="pcEnchantProgress">
+        <Look>lookDefProgressCtrl</Look>
+        <Layout>
+          <Location x="20" y="40" />
+          <Size w="330" h="23" />
+        </Layout>
+        <Shape>
+          <Range lower="0" upper="100"/>
+        </Shape>
+        <Event>
+          <OnUpdate>luaEnchant:OnUpdateEnchantProgressBar();</OnUpdate>
+        </Event>
+      </ProgressCtrl>
+
+    </Controls>
+  </Frame>
+
+</UI>

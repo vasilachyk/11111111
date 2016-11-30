@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include global script -->
+  <Script file="../common/global.lua" />
+  
+  <!-- Common Resource -->
+  <Include>../common/com_resource.xml</Include>
+
+  <!-- Common Template -->
+  <Include>../common/com_template.xml</Include>
+
+  <!-- Game Resource -->
+  <Include>game_resource.xml</Include>
+
+  <!-- Game Template -->
+  <Include>game_template.xml</Include>
+
+  
+  
+  
+  
+  <!-- Game layer 0 -->
+  <Layer name="layerGame0">
+  </Layer>
+
+
+  <!-- Game layer 1 -->
+  <Layer name="layerGame1">
+  </Layer>
+
+
+  <!-- Game layer 2 -->
+  <Layer name="layerGame2">
+  </Layer>
+
+  
+  <!-- Game loading layer -->
+  <Layer name="layerGameLoading">
+    <Shape>
+      <Visible>false</Visible>
+    </Shape>
+  </Layer>
+
+  
+  
+  
+  
+  <!-- Reset sheet -->
+  <Reset name="game">
+    <Shape>
+      <DragAndDrop>true</DragAndDrop>
+    </Shape>
+    <Event>
+      <OnDrop>
+        local _sender = _G[ DragEventArgs:GetSender():GetName()];
+        if ( _sender == nil)  then  return false;
+        end
+        
+        if ( _sender == lcInventory)  then
+        
+        		if ( luaDyeing.m_bDyeing == false)  and  ( luaEnchant.m_bEnchanting == false)  then
+            
+                luaInventory:OpenConfirmDropInvenItem();
+                return true;
+        		end
+            
+        elseif ( _sender == lcStorage) then
+
+            luaStorage:OpenConfirmDropItem();
+            return true;
+        
+        elseif ( _sender == isFace)  or  ( _sender == isHead)     or  ( _sender == isBody)        or  ( _sender == isHands)    or  ( _sender == isFeet)   or
+               ( _sender == isLeg)   or  ( _sender == isEarring)  or  ( _sender == isNecklace)    or  ( _sender == isRingR)    or  ( _sender == isRingL)  or
+               ( _sender == isWeapon1)  or  ( _sender == isWeapon1Sub)  or  ( _sender == isWeapon2)  or  ( _sender == isWeapon2Sub)  then
+               
+            luaCharacter:OnDragOutEquippedItemSlot();
+            return true;
+            
+
+        elseif ( _sender == psPalette0)  or  ( _sender == psPalette1)  or  ( _sender == psPalette2)  or  ( _sender == psPalette3)  or  ( _sender == psPalette4)  or
+               ( _sender == psPalette5)  or  ( _sender == psPalette6)  or  ( _sender == psPalette7)  or  ( _sender == psPalette8)  or  ( _sender == psPalette9)  then
+               
+            luaPalette:OnDragOutPaletteSlot();
+            return true;
+        end
+
+        return false;
+      </OnDrop>
+    </Event>
+  </Reset>
+  
+  
+  
+  
+  
+  <!-- Include script -->
+  <Script file="game.lua" />
+  <Script file="game_defines.lua" />
+  <Script file="game_tooltip.lua" />
+
+
+  
+  
+  <!-- Include Game UI XMLs -->
+  <Include>game_expo.xml</Include>           	  <!-- game_expo (E3) -->
+  
+  <Include>game_tutorial.xml</Include>            <!-- Tutorial -->
+  <Include>game_PopupHelp.xml</Include>           <!-- PopupHelp -->
+  <Include>game_loading.xml</Include>             <!-- Loading screen -->
+  <Include>game_mainmenu.xml</Include>            <!-- Main menu -->
+  <Include>game_character.xml</Include>           <!-- Character -->
+  <Include>game_inventory.xml</Include>           <!-- Inventory -->
+  <Include>game_journal.xml</Include>             <!-- Journal -->
+  <Include>game_journalindicator.xml</Include>    <!-- Journal indicator -->
+  <Include>game_quest.xml</Include>               <!-- Quest -->
+  <Include>game_recipe.xml</Include>              <!-- Recipe -->
+  <Include>game_shop.xml</Include>                <!-- Shop -->
+  <Include>game_mailbox.xml</Include>             <!-- Mail Box -->
+  <Include>game_trade.xml</Include>               <!-- Trade -->
+  <Include>game_interaction_pc.xml</Include>      <!-- Interaction with PC -->
+  <Include>game_interaction_npc.xml</Include>     <!-- Interaction with NPC -->
+  <Include>game_dialog_npc.xml</Include>          <!-- Dialog with NPC-->
+  <Include>game_accept_quest.xml</Include>        <!-- Accept quest -->
+  <Include>game_reward_quest.xml</Include>        <!-- Reward quest -->
+  <Include>game_messagebox.xml</Include>          <!-- Message box manager -->
+  <Include>game_looting.xml</Include>             <!-- Looting -->
+  <Include>game_assignlooting.xml</Include>       <!-- Assign looting -->
+  <Include>game_crafting.xml</Include>            <!-- Crafting -->
+  <Include>game_partyindicator.xml</Include>      <!-- Party indicator -->
+  <Include>game_enemyinfo.xml</Include>           <!-- Enemy info-->
+  <Include>game_targetinfo.xml</Include>          <!-- Target info-->
+  <Include>game_actionprogressbar.xml</Include>   <!-- Action progressbar -->
+  <Include>game_social.xml</Include>              <!-- Social -->
+  <Include>game_party.xml</Include>               <!-- Party -->
+  <Include>game_guild.xml</Include>               <!-- Guild -->
+  <Include>game_emblem.xml</Include>              <!-- Emblem -->
+  <Include>game_talent.xml</Include>              <!-- Talent -->
+  <Include>game_map.xml</Include>                 <!-- Map -->
+  <Include>game_tray.xml</Include>                <!-- Tray -->
+  <Include>game_minimap.xml</Include>             <!-- MiniMap -->
+  <Include>game_palette.xml</Include>             <!-- Palette -->
+  <Include>game_playerinfo.xml</Include>          <!-- Player info -->
+  <Include>game_chattingbox.xml</Include>         <!-- Chatting box -->
+  <Include>game_buffviewer.xml</Include>          <!-- Buff viewer -->
+  <Include>game_presentation.xml</Include>        <!-- Presentation box -->
+  <Include>game_option.xml</Include>              <!-- Option -->
+  <Include>game_channel.xml</Include>             <!-- Channel -->
+  <Include>game_battlearea.xml</Include>          <!-- Battle Area-->
+  <Include>game_rebirth.xml</Include>             <!-- Rebirth -->
+  <Include>game_expprogress.xml</Include>         <!-- Exp -->
+  <Include>game_partysetting.xml</Include>        <!-- Party setting -->
+  <Include>game_challengerquest.xml</Include>     <!-- Challenger Quest -->
+  <Include>game_help.xml</Include>                <!-- Help -->
+  <Include>game_enchant.xml</Include>             <!-- Enchant -->
+  <Include>game_dyeing.xml</Include>              <!-- Dyeing -->
+  <Include>game_missionprog.xml</Include>         <!-- Mission progress -->
+  <Include>game_autopartynotice.xml</Include>     <!-- AutoParty -->
+  <Include>game_playerstate.xml</Include>         <!-- Player state viewer -->
+  <Include>game_crosshair.xml</Include>           <!-- Crosshair -->
+  <Include>game_storage.xml</Include>             <!-- -->
+  <Include>game_guildstorage.xml</Include>             <!-- -->
+  <Include>game_popupmsg.xml</Include>            <!-- Popup message box -->
+
+</UI>

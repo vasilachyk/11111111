@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_guild.lua" />
+
+
+  <!-- Panel : Guild -->
+  <Panel parent="tpgSocialGuild">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="485" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+
+      <!-- Group -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="5" y="5" />
+          <Size w="380" h="70" />
+        </Layout>
+      </Group>
+
+
+      <!-- Guild emblem -->
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="60" h="60" />
+        </Layout>
+      </Group>
+
+      <Picture name="picGuildEmblem">
+        <Layout>
+          <Location x="11" y="11" />
+          <Size w="58" h="58" />
+        </Layout>
+        <Image></Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- Guild name -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="75" y="10" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "NAME"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Label name="labGuildName">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="175" y="10" />
+          <Size w="205" h="20" />
+        </Layout>
+      </Label>
+
+
+      <!-- Guild leader -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="75" y="30" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "GUILDLEADER"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Label name="labGuildLeader">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="175" y="30" />
+          <Size w="205" h="20" />
+        </Layout>
+      </Label>
+
+
+      <!-- Guild member count -->
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="75" y="50" />
+          <Size w="100" h="20" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "GUILDMEMBER"));</OnLoaded>
+        </Event>
+      </Label>
+
+      <Label name="labGuildMemberCount">
+        <Look>lookDefLabel</Look>
+        <Layout>
+          <Location x="175" y="50" />
+          <Size w="205" h="20" />
+        </Layout>
+      </Label>
+
+
+      <!-- Guild members -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="130" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Image>bmpContentBar</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <Label>
+        <Look>lookDefLabelHigh</Look>
+        <Layout>
+          <Location x="10" y="130" />
+          <Size w="%100" h="25" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "GUILDMEMBER"));</OnLoaded>
+        </Event>
+      </Label>
+      
+
+      <!-- Guild members list -->
+      <ListCtrl name="lcGuildList">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="165" />
+          <Size w="370" h="280" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="350">name</AddColumn>
+          <AddColumn align="left,vcenter" width="150">grade</AddColumn>
+          <AddColumn align="left,vcenter" width="150">state</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>true</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+        </Shape>
+        <Event>
+          <OnSelChange>luaGuild:RefreshControls();</OnSelChange>
+        </Event>
+      </ListCtrl>
+
+
+      <!-- Button : Show offline member -->
+      <Button name="btnShowOffLine">
+        <Look>lookDefCheckBox</Look>
+        <Layout>
+          <Location x="5" y="450" />
+          <Size w="380" h="23" />
+        </Layout>
+        <Shape>
+          <Type>checkbutton</Type>
+          <Check>true</Check>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SOCIAL_DISPLAYOFFLINE"));</OnLoaded>
+          <OnValueChanged>luaGuild:RefreshGuildMemberList();</OnValueChanged>
+        </Event>
+      </Button>
+
+      
+      <!-- Frame bottom -->
+      <Group>
+        <Look>lookDefFrameBottomBox</Look>
+        <Layout>
+          <Location x="0" y="485" />
+          <Size w="%100" h="50" />
+        </Layout>
+      </Group>
+      
+      
+      <!-- Button : Delegate guild leader -->
+      <Button name="btnDelegateGuildLeader">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="495" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DELEGATE"));</OnLoaded>
+          <OnClick>luaGuild:OnShowfrmConfirmGuild("Delegate");</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Disband guild member -->
+      <Button name="btnDisbandGuildMember">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="140" y="495" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_DISBAND"));</OnLoaded>
+          <OnClick>luaGuild:OnShowfrmConfirmGuild("Disband");</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Button : Leave guild -->
+      <Button name="btnLeaveGuild">
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="270" y="495" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_LEAVE"));</OnLoaded>
+          <OnClick>luaGuild:OnShowfrmConfirmGuild("Leave");</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+      
+
+  
+  
+  
+
+
+
+
+  <Frame name="frmMakeGuild" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="200" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmMakeGuild);
+      </OnLoaded>
+      <OnShow>luaGame:ShowWindow( frmMakeGuild);</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaGuild:CloseMakeGuild();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+     
+      <!-- TextView : Message -->
+      <TextView name="tvGuildCreate">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+      <Edit name="edtGuildName">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="60" y="115" />
+          <Size w="280" h="23" />
+        </Layout>
+        <Shape>
+          <LimitText>16</LimitText>
+        </Shape>
+        <Event>
+          <OnValueChanged>luaGuild:OnValueChangeGuildName();</OnValueChanged>
+          <OnCancel>luaGuild:CloseMakeGuild();</OnCancel>
+          <OnToolTip>luaGuild:OnToolTipGuildName();</OnToolTip>
+        </Event>
+      </Edit>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="150" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaGuild:OnMakeGuildOK();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="150" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaGuild:CloseMakeGuild();</OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  <Frame name="frmConfirmGuild" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="170" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        luaGame:RegisterWindow( frmConfirmGuild);
+      </OnLoaded>
+      <OnShow>luaGame:ShowWindow( frmConfirmGuild);</OnShow>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaGuild:OnCloseConfirmGuild();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmGuild">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="360" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Wrap>false</Wrap>
+        </Shape>
+      </TextView>
+
+      <!-- Buttons : Yes -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="120" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>Y</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_YES"));</OnLoaded>
+          <OnClick>luaGuild:OnOKConfirmGuild();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : No -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="220" y="120" />
+          <Size w="200" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>N</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_NO"));</OnLoaded>
+          <OnClick>luaGuild:OnCloseConfirmGuild();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

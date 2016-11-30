@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_trademarket.lua" />
+
+
+
+  <!-- Frame : TradeMarket -->
+  <Frame name="frmTradeMarket" parent="layerGame1">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="1000" h="630" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_TRADEMAKET" ) );
+        luaGame:RegisterWindow( frmTradeMarket );
+      </OnLoaded>
+      <OnShow>
+        luaTradeMarket:OnShowTradeMarketFrame();
+      </OnShow>
+      <OnSetFocus></OnSetFocus>
+      <OnUserArgument>
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Money -->
+      <Panel name="pnlTradeMarketMoney">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="250" h="30" />
+        </Layout>
+      </Panel>
+
+      <!-- Button : Close Buttons -->
+      <Button name="btnCloseTradeMarket">
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="760" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmTradeMarket:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- TabCtrl Seperate Bar -->
+      <Picture name="picTradeMarketTabCtrlSeperateBar">
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Bottom Seperate Bar -->
+      <Picture name="picTradeMarketBtmSeperateBar">
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+      <!-- TabCtrl -->
+      <TabCtrl name="tbcTradeMarketTabCtrl">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Event>
+          <OnLoaded>luaTradeMarket:OnLoadedTradeMarketFilterTabCtrl();</OnLoaded>
+          <OnSelChange>
+            luaTradeMarket:RefreshTradeMarketTabCtrl();
+          </OnSelChange>
+        </Event>
+
+        <TabPages>
+
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgSearchMarket">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls></Controls>
+            </Page>
+          </TabPage>
+
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="pgMyMarket">
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="%100" />
+              </Layout>
+            </Page>
+          </TabPage>
+
+        </TabPages>
+          
+      </TabCtrl>
+      
+    </Controls>
+  </Frame>
+  
+  <!-- Money -->
+  <Panel parent="pnlTradeMarketMoney">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <Group>
+        <Look>lookDefGroupBox</Look>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Shape>
+          <Opacity>0.25</Opacity>
+        </Shape>
+      </Group>
+
+      <Picture>
+        <Layout>
+          <Location x="5" y="3" />
+          <Size w="24" h="24" />
+        </Layout>
+        <Image>iconCoin</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <TextView name="tvwTradeMarketMoney">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Shape>
+          <ShowBorder>false</ShowBorder>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <DragAndDrop>true</DragAndDrop>
+        </Shape>
+        <Event>
+        </Event>
+      </TextView>
+
+    </Controls>
+  </Panel>
+
+  <!-- Frame : Confirm TradeMarket -->
+  <Frame name="frmConfirmTradeMarket" parent="layerGame3">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="400" h="160" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CONFIRM"));
+        this:Show( false );
+      </OnLoaded>
+    </Event>
+    <Controls>
+
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>frmConfirmTradeMarket:Show( false );</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Picture : Icon -->
+      <Picture>
+        <Layout>
+          <Location x="10" y="35" />
+          <Size w="40" h="40" />
+        </Layout>
+        <Image>iconDefExclamation</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- TextView : Message -->
+      <TextView name="tvwConfirmTradeMarket">
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="60" y="35" />
+          <Size w="320" h="60" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>hide</ShowScrollBar>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_TRADEMAKET_REGISTER_PRICEMAX_TEXT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Buttons : OK -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="130" y="110" />
+          <Size w="120" h="30" />
+        </Layout>
+        <Shape>
+          <HotKey>ENTER</HotKey>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_OK"));</OnLoaded>
+          <OnClick>
+            gamefunc:PlaySound( "button_agree" );
+            frmConfirmTradeMarket:Show( false );
+          </OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Frame>
+
+  <!-- Paint : TradeMarket Black Screen -->
+  <Paint name="pntTradeMarketBlackScreen" parent="frmTradeMarket">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true"/>
+    </Layout>
+    <Shape>
+      <Color r="0" g="0" b="0" />
+    </Shape>
+    <Event>
+      <OnUpdate></OnUpdate>
+      <OnTimer>luaTradeMarket:OnTimerSearchMarket();</OnTimer>
+    </Event>
+  </Paint>
+  
+</UI>

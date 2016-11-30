@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_ranking.lua" />
+
+
+  <!-- Panel : ranking -->
+  <Panel parent="tpgSocialRanking">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+    </Layout>
+    <Controls>
+
+      <!-- Picture : Background -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Image>bmpContentBkgrnd</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <Combobox name="cmbRankingFilter">
+        <Look>lookDefComboButton</Look>
+        <Look type="listbox">lookDefComboListBox</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="130" h="25" />
+          <Anchor left="true" top="true" right="true" bottom="false" />
+        </Layout>
+        <Shape>
+          <DroppedWidth>60</DroppedWidth>
+          <ShowScrollBar>show</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            cmbRankingFilter:ResetContent();
+
+            local nIndex = cmbRankingFilter:AddString( STR( "RANKING_ONE_TO_ONE"));
+            cmbRankingFilter:SetItemData( nIndex, 0);
+            nIndex = cmbRankingFilter:AddString( STR( "RANKING_GUILD"));
+            cmbRankingFilter:SetItemData( nIndex, 1);
+
+            cmbRankingFilter:SetCurSel( 0);
+          </OnLoaded>
+          <OnSelChange>
+            luaRanking:RefreshRanking();
+          </OnSelChange>
+        </Event>
+      </Combobox>
+
+
+      <!-- My Ranking list -->
+      <ListCtrl name="lcMyRanking">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="45" />
+          <Size w="470" h="48" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="450">name</AddColumn>
+          <ShowScrollBar>false</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+          <Static>true</Static>
+        </Shape>
+        <Event>
+          <OnSelChange>
+            <!--luaRanking:RefreshControls();-->
+          </OnSelChange>
+          <OnDrawItem>luaRanking:OnDrawMyRankerInfo();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+      
+      
+      <!-- Ranking list -->
+      <ListCtrl name="lcRankingList">
+        <Look>lookDefListCtrlCustom</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="10" y="105" />
+          <Size w="470" h="372" />
+        </Layout>
+        <Shape>
+          <ViewStyle>report</ViewStyle>
+          <ItemMargin horz="1" vert="3"/>
+          <MultipleSel>false</MultipleSel>
+          <AddColumn align="left,vcenter" width="450">name</AddColumn>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <ThumbLength>26</ThumbLength>
+          <DragAndDrop>false</DragAndDrop>
+          <ShowColumnHeader>false</ShowColumnHeader>
+        </Shape>
+        <Event>
+          <OnSelChange>
+            <!--luaRanking:RefreshControls();-->
+          </OnSelChange>
+          <OnDrawItem>luaRanking:OnDrawRankerInfo();</OnDrawItem>
+        </Event>
+      </ListCtrl>
+
+
+      <TextView name="tvwRankingSeasonDesc">
+        <Look>lookDefTextView</Look>
+        <Look type="scrollbar">lookDefScrollBar</Look>
+        <Layout>
+          <Location x="5" y="485" />
+          <Size w="%97" h="65" />
+        </Layout>
+        <Shape>
+          <ShowScrollBar>auto</ShowScrollBar>
+          <Static>false</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>
+            this:SetText( STR( "RANKING_SEASON_DESC"));
+          </OnLoaded>
+        </Event>
+      </TextView>
+      
+    </Controls>
+  </Panel>
+
+</UI>

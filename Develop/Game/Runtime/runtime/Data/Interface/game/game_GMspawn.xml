@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_GMSpawn.lua" />
+
+  <!-- 소환 검색창 -->
+  <Panel name="pnlSpawnSearch" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="100" />
+      <Size w="%40" h="520" />
+    </Layout>
+    <Shape>
+      <!--<ShowRect>true</ShowRect>-->
+    </Shape>
+    <Controls>
+
+      <TabCtrl name="tbcSpawnSearch">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            luaGMSpawn:OnLoadedGMSpawnSearchTab();
+          </OnLoaded>
+          <OnSelChange>
+            luaGMSpawn:OnSelChangeGMSpawnSearchTab();
+          </OnSelChange>
+        </Event>
+        <TabPages>
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+
+                <ListCtrl name="lcGMSpawn_SearchNpc">
+                  <Look>lookDefListCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="10" y="50" />
+                    <Size w="%95" h="%81" />
+                  </Layout>
+                  <Shape>
+                    <!--<ShowRect>true</ShowRect>-->
+                    <ViewStyle>list</ViewStyle>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ShowColumnHeader>false</ShowColumnHeader>
+                    <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+                  </Shape>
+                  <Event>
+                    <OnItemRClick>luaGMSpawn:SearchNpcListItemRClick();</OnItemRClick>
+                    <OnLoaded></OnLoaded>
+                  </Event>
+                </ListCtrl>
+                
+              </Controls>
+            </Page>
+          </TabPage>
+
+          <!-- Tab 2 
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page name="">
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+              </Controls>
+            </Page>
+          </TabPage>
+          -->
+        </TabPages>
+        
+      </TabCtrl>
+
+      <!-- TabCtrl Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="38"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 검색 입력 -->
+      <Edit name="edtGMSpawnSearch">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="10" y="50" />
+          <Size w="270" h="25" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnOK>luaGMSpawn:GMSpawn_SearchNpc();</OnOK>
+        </Event>
+      </Edit>
+      
+      <!-- 찾기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="300" y="50" />
+          <Size w="80" h="25" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_SEARCH"));</OnLoaded>
+          <OnClick>luaGMSpawn:GMSpawn_SearchNpc();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Panel>
+
+  <!-- 소환 작업창 -->
+  <Panel name="pnlSpawnWorks" parent="frmGMTool">
+    <Layout>
+      <Location x="%40" y="100" />
+      <Size w="%60" h="520" />
+    </Layout>
+    <Shape>
+      <!--<ShowRect>true</ShowRect>-->
+    </Shape>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 소환 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="450" y="150" />
+          <Size w="100" h="80" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMSPAWN"));</OnLoaded>
+          <OnClick>luaGMSpawn:SpawnNpcList();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- 리스트 전부 비우기 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="450" y="280" />
+          <Size w="100" h="80" />
+          <Anchor left="false" top="false" right="false" bottom="true" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ALLCLEAR"));</OnLoaded>
+          <OnClick>luaGMSpawn:DeleteAllSpawnList();</OnClick>
+        </Event>
+      </Button>
+
+      <TabCtrl name="tbcSpawnSet">
+        <Layout>
+          <Location x="0" y="10" />
+          <Size w="%100" h="%100" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            luaGMSpawn:OnLoadedGMSpawnSet();
+          </OnLoaded>
+          <OnSelChange>
+          </OnSelChange>
+        </Event>
+        <TabPages>
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+                
+                <!-- 소환1 리스트 -->
+                <ListCtrl name="lcGMSpawn_list1">
+                  <Look>lookDefListCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="12" y="10" />
+                    <Size w="%65" h="%89" />
+                  </Layout>
+                  <Shape>
+                    <ViewStyle>list</ViewStyle>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ShowColumnHeader>false</ShowColumnHeader>
+                    <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+                  </Shape>
+                  <Event>
+                    <OnItemRClick>luaGMSpawn:NpcListItemRClick();</OnItemRClick>
+                  </Event>
+                </ListCtrl>
+                
+              </Controls>
+            </Page>
+          </TabPage>
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+
+                <!-- 소환2 리스트 -->
+                <ListCtrl name="lcGMSpawn_list2">
+                  <Look>lookDefListCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="12" y="10" />
+                    <Size w="%65" h="530" />
+                  </Layout>
+                  <Shape>
+                    <ViewStyle>list</ViewStyle>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ShowColumnHeader>false</ShowColumnHeader>
+                    <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+                  </Shape>
+                  <Event>
+                    <OnLoaded></OnLoaded>
+                  </Event>
+                </ListCtrl>
+
+              </Controls>
+            </Page>
+          </TabPage>
+          <!-- Tab 3 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+
+                <!-- 소환3 리스트 -->
+                <ListCtrl name="lcGMSpawn_list3">
+                  <Look>lookDefListCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="12" y="10" />
+                    <Size w="%65" h="530" />
+                  </Layout>
+                  <Shape>
+                    <ViewStyle>list</ViewStyle>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ShowColumnHeader>false</ShowColumnHeader>
+                    <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+                  </Shape>
+                  <Event>
+                    <OnLoaded></OnLoaded>
+                  </Event>
+                </ListCtrl>
+
+              </Controls>
+            </Page>
+          </TabPage>
+          <!-- Tab 4 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+
+                <!-- 소환4 리스트 -->
+                <ListCtrl name="lcGMSpawn_list4">
+                  <Look>lookDefListCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="12" y="10" />
+                    <Size w="%65" h="530" />
+                  </Layout>
+                  <Shape>
+                    <ViewStyle>list</ViewStyle>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ShowColumnHeader>false</ShowColumnHeader>
+                    <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+                  </Shape>
+                  <Event>
+                    <OnLoaded></OnLoaded>
+                  </Event>
+                </ListCtrl>
+
+              </Controls>
+            </Page>
+          </TabPage>
+          <!-- Tab 5 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="0" h="30" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="30" />
+                <Size w="%100" h="%100" />
+              </Layout>
+              <Controls>
+
+                <!-- 소환5 리스트 -->
+                <ListCtrl name="lcGMSpawn_list5">
+                  <Look>lookDefListCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="12" y="10" />
+                    <Size w="%65" h="530" />
+                  </Layout>
+                  <Shape>
+                    <ViewStyle>list</ViewStyle>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ShowColumnHeader>false</ShowColumnHeader>
+                    <AddColumn align="left,vcenter" width="%100">name</AddColumn>
+                  </Shape>
+                  <Event>
+                    <OnLoaded></OnLoaded>
+                  </Event>
+                </ListCtrl>
+
+              </Controls>
+            </Page>
+          </TabPage>
+        </TabPages>
+      </TabCtrl>
+
+      <!-- TabCtrl Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="38"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+      
+    </Controls>
+  </Panel>
+
+  <Panel name="pnlpnlSpawnBottom" parent="frmGMTool">
+    <Layout>
+      <Location x="0" y="620" />
+      <Size w="%100" h="80" />
+    </Layout>
+    <Shape>
+      <!--<ShowRect>true</ShowRect>-->
+    </Shape>
+    <Controls>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="%40" y="0" base="TOPLEFT" />
+          <Size w="2" h="%100" />
+        </Layout>
+        <Image>bmpDefSeperateBarVer</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="0"/>
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+      <!-- 안내문구 -->
+      <TextView>
+        <Look>lookDefTextView</Look>
+        <Layout>
+          <Location x="10" y="10" />
+          <Size w="%38" h="%65" />
+        </Layout>
+        <Shape>
+          <!--<ShowRect>true</ShowRect>-->
+          <ShowScrollBar>hide</ShowScrollBar>
+          <Static>true</Static>
+          <!--<Wrap>false</Wrap>-->
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_ADDREALSE_INFOTEXT" ) );</OnLoaded>
+        </Event>
+      </TextView>
+
+      <!-- Despawn 범위 -->
+      <Edit name="edtGMSpawn_DespawnRange">
+        <Look>lookDefEdit</Look>
+        <Layout>
+          <Location x="480" y="30" />
+          <Size w="150" h="25" />
+        </Layout>
+        <Shape>
+        </Shape>
+        <Event>
+          <OnLoaded>
+            luaGMSpawn:OnLoadededDespawnRange();
+          </OnLoaded>
+          <OnOK>
+            luaGMSpawn:OnClickDespawn();
+          </OnOK>
+          <OnCancel></OnCancel>
+        </Event>
+      </Edit>
+
+      <!-- Despawn 버튼 -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="660" y="25" />
+          <Size w="100" h="35" />
+        </Layout>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_GMTOOL_DESPAWN" ) );</OnLoaded>
+          <OnClick>
+            luaGMSpawn:OnClickDespawn();
+          </OnClick>
+        </Event>
+      </Button>
+      
+    </Controls>
+  </Panel>
+  
+</UI>

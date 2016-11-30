@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_reward_quest.lua" />
+
+  
+  
+  <!-- Frame : Reward quest -->
+  <Frame name="frmRewardQuest" parent="layerGame1">
+    <Layout>
+      <Location x="570" y="70" />
+      <Size w="400" h="600" />
+      <Anchor left="false" top="true" right="true" bottom="false" />
+    </Layout>
+    <Shape>
+      <ShowBorder>false</ShowBorder>
+      <ShowTitleBar>false</ShowTitleBar>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>false</Movable>
+      <Static>true</Static>
+    </Shape>
+    <Event>
+      <OnLoaded>luaGame:RegisterWindow( frmRewardQuest);</OnLoaded>
+      <OnShow>luaRewardQuest:OnShowRewardQuestFrame();</OnShow>
+      <OnUpdate>luaRewardQuest:OnUpdateRewardQuestFrame();</OnUpdate>
+    </Event>
+    <Controls>
+
+      <!-- Panel : Scroll -->
+      <Panel name="pnlRewardQuestScroll">
+        <Layout>
+          <Location x="0" y="0" />
+          <Size w="%100" h="560" />
+        </Layout>
+        <Controls>
+
+          <!-- Panel : Text -->
+          <Panel>
+            <Layout>
+              <Location x="0" y="5" />
+              <Size w="%100" h="540" />
+              <Anchor left="true" top="true" right="true" bottom="true" />
+            </Layout>
+            <Controls>
+
+              <!-- Picture : Scroll paper -->
+              <Picture>
+                <Layout>
+                  <Location x="0" y="0" />
+                  <Size w="400" h="540" />
+                </Layout>
+                <Image>bmpScrollPaper</Image>
+              </Picture>
+
+
+              <!-- TextView : Reward quest -->
+              <TextView name="tvwRewardQuest">
+                <Look>lookDefScrollTextView</Look>
+                <Look type="scrollbar">lookDefScrollBar</Look>
+                <Layout>
+                  <Location x="25" y="25" />
+                  <Size w="355" h="495" />
+                </Layout>
+                <Shape>
+                  <ShowScrollBar>show</ShowScrollBar>
+                  <ThumbLength>26</ThumbLength>
+                  <Wrap>false</Wrap>
+                </Shape>
+                <Event>
+                  <OnItemClick>luaRewardQuest:OnItemClickRewardQuest();</OnItemClick>
+                  <OnToolTip>luaRewardQuest:OnToolTipRewardQuest();</OnToolTip>
+                </Event>
+              </TextView>
+
+            </Controls>
+          </Panel>
+
+
+          <!-- Picture : Scroll head/tail -->
+          <Picture>
+            <Layout>
+              <Location x="0" y="0" />
+              <Size w="400" h="70" />
+            </Layout>
+            <Image>bmpScrollHead</Image>
+          </Picture>
+
+          <Picture>
+            <Layout>
+              <Location x="0" y="%100" base="BOTTOMLEFT"/>
+              <Size w="400" h="70" />
+              <Anchor left="false" top="false" right="false" bottom="true" />
+            </Layout>
+            <Image>bmpScrollTail</Image>
+          </Picture>
+
+        </Controls>
+      </Panel>
+
+
+      <!-- Buttons : Reward quest -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="20" y="560" />
+          <Size w="230" h="30" />
+        </Layout>
+        <Shape>
+          <Icon w="28" h="28">iconOK</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_COMPLETE"));</OnLoaded>
+          <OnClick>luaAcceptQuest:OnClickRewardQuest();</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Buttons : Cancel -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="270" y="560" />
+          <Size w="110" h="30" />
+        </Layout>
+        <Shape>
+          <Icon w="28" h="28">iconCancel</Icon>
+        </Shape>
+        <Event>
+          <OnLoaded>this:SetText( STR( "UI_CANCEL"));</OnLoaded>
+          <OnClick>frmRewardQuest:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+  
+  
+
+
+  
+  
+  <!-- Picture : Marker to select reward item -->
+  <Picture name="picSelItemMarker" parent="tvwRewardQuest">
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="80" h="80" />
+    </Layout>
+    <Image>iconOK</Image>
+    <Shape>
+      <Visible>false</Visible>
+      <Stretch>true</Stretch>
+    </Shape>
+    <Event>
+      <OnUpdate>luaRewardQuest:OnUpdateSelItemMarker();</OnUpdate>
+    </Event>
+  </Picture>
+
+</UI>

@@ -1,0 +1,1991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI>
+
+  <!-- Resource -->
+  <Resource>
+
+    <!-- Small Button look -->
+    <ButtonLook name="lookDefSmallBtn">
+      <Image>bmpDefButton</Image>
+      <Font>fntScript</Font>
+      <TextOffset x="0" y="1" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="210" g="210" b="210" />
+          <Assign type="1"  x="32"   y="0"   w="5"   h="5"  />
+          <Assign type="2"  x="37"   y="0"   w="22"  h="5"  />
+          <Assign type="3"  x="59"   y="0"   w="5"   h="5"  />
+          <Assign type="4"  x="32"   y="5"   w="5"   h="22" />
+          <Assign type="0"  x="37"   y="5"   w="22"  h="22" />
+          <Assign type="5"  x="59"   y="5"   w="5"   h="22" />
+          <Assign type="6"  x="32"   y="27"  w="5"   h="5"  />
+          <Assign type="7"  x="37"   y="27"  w="22"  h="5"  />
+          <Assign type="8"  x="59"   y="27"  w="5"   h="5"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="32"   y="0"   w="5"   h="5"  />
+          <Assign type="2"  x="37"   y="0"   w="22"  h="5"  />
+          <Assign type="3"  x="59"   y="0"   w="5"   h="5"  />
+          <Assign type="4"  x="32"   y="5"   w="5"   h="22" />
+          <Assign type="0"  x="37"   y="5"   w="22"  h="22" />
+          <Assign type="5"  x="59"   y="5"   w="5"   h="22" />
+          <Assign type="6"  x="32"   y="27"  w="5"   h="5"  />
+          <Assign type="7"  x="37"   y="27"  w="22"  h="5"  />
+          <Assign type="8"  x="59"   y="27"  w="5"   h="5"  />
+        </States>
+        <States state="down">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="64"   y="0"   w="5"   h="5"  />
+          <Assign type="2"  x="69"   y="0"   w="22"  h="5"  />
+          <Assign type="3"  x="91"   y="0"   w="5"   h="5"  />
+          <Assign type="4"  x="64"   y="5"   w="5"   h="22" />
+          <Assign type="0"  x="69"   y="5"   w="22"  h="22" />
+          <Assign type="5"  x="91"   y="5"   w="5"   h="22" />
+          <Assign type="6"  x="64"   y="27"  w="5"   h="5"  />
+          <Assign type="7"  x="69"   y="27"  w="22"  h="5"  />
+          <Assign type="8"  x="91"   y="27"  w="5"   h="5"  />
+        </States>
+        <States state="disable">
+          <FontColor r="120" g="120" b="120" />
+          <Assign type="1"  x="96"   y="0"   w="5"   h="5"  />
+          <Assign type="2"  x="101"  y="0"   w="22"  h="5"  />
+          <Assign type="3"  x="123"  y="0"   w="5"   h="5"  />
+          <Assign type="4"  x="96"   y="5"   w="5"   h="22" />
+          <Assign type="0"  x="101"  y="5"   w="22"  h="22" />
+          <Assign type="5"  x="123"  y="5"   w="5"   h="22" />
+          <Assign type="6"  x="96"   y="27"  w="5"   h="5"  />
+          <Assign type="7"  x="101"  y="27"  w="22"  h="5"  />
+          <Assign type="8"  x="123"  y="27"  w="5"   h="5"  />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- Glow Button look -->
+    <ButtonLook name="lookDefGlowButton">
+      <Image>bmpGlowButton</Image>
+      <Font>fntScript</Font>
+      <TextOffset x="0" y="1" />
+      <BkgrndRectOffset left="5" top="1" right="5" bottom="1" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="210" g="210" b="210" />
+          <Assign type="2"  x="0"    y="0"   w="32"  h="4"  />
+          <Assign type="0"  x="0"    y="4"   w="32"  h="24" />
+          <Assign type="7"  x="0"    y="28"  w="32"  h="4"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="2"  x="0"    y="0"   w="32"  h="4"  />
+          <Assign type="0"  x="0"    y="4"   w="32"  h="24" />
+          <Assign type="7"  x="0"    y="28"  w="32"  h="4"  />
+        </States>
+        <States state="down">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="2"  x="0"    y="0"   w="32"  h="4"  />
+          <Assign type="0"  x="0"    y="4"   w="32"  h="24" />
+          <Assign type="7"  x="0"    y="28"  w="32"  h="4"  />
+        </States>
+        <States state="disable">
+          <FontColor r="120" g="120" b="120" />
+          <Assign type="2"  x="0"    y="0"   w="32"  h="4"  />
+          <Assign type="0"  x="0"    y="4"   w="32"  h="24" />
+          <Assign type="7"  x="0"    y="28"  w="32"  h="4"  />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- Small Check Button look -->
+    <ButtonLook name="lookDefSmallCheckBox">
+      <Image>bmpDefCheckBox</Image>
+      <Font>fntRegular</Font>
+      <TextOffset x="0" y="1" />
+      <TextAlign>left,vcenter</TextAlign>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160"/>
+          <Assign type="0"  x="0"  y="0"   w="23"  h="23"/>
+        </States>
+        <States state="focus">
+          <FontColor r="230" g="230" b="230"/>
+          <Assign type="0"  x="0"  y="0"   w="23"  h="23"/>
+        </States>
+        <States state="down">
+          <FontColor r="160" g="160" b="160"/>
+          <Assign type="0"  x="0"  y="23"  w="23"  h="23"/>
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60"/>
+          <Assign type="0"  x="0"  y="46"  w="23"  h="23"/>
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- Default Control key box look -->
+    <Look name="lookDefControlKey">
+      <Image>bmpDefGroupBox</Image>
+      <Font>fntScript</Font>
+      <BkgrndRectOffset left="1" top="1" right="1" bottom="1" />
+      <WorkRectOffset left="-1" top="-1" right="-1" bottom="-1" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="1"  x="0"   y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="4"   w="4"   h="24" />
+          <Assign type="0"  x="4"   y="4"   w="24"  h="24" />
+          <Assign type="5"  x="28"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="0"   y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="28"  w="4"   h="4"  />
+        </States>
+        <States state="focus">
+          <FontColor r="230" g="230" b="230" />
+        </States>
+      </Parts>
+    </Look>
+
+    
+    <!-- Custom Frame look : Resizable frame -->
+    <ResizableFrameCustomLook name="lookDefResizableFrame">
+      <Image>bmpDefResizableFrame</Image>
+      <BkgrndRectOffset left="4" top="4" right="4" bottom="4" />
+      <MagneticRectOffset left="0" top="0" right="0" bottom="0" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="0"   w="25"  h="25" />
+          <Assign type="2"  x="25"  y="0"   w="14"  h="25" />
+          <Assign type="3"  x="39"  y="0"   w="25"  h="25" />
+          <Assign type="4"  x="0"   y="25"  w="25"  h="14" />
+          <Assign type="0"  x="25"  y="25"  w="14"  h="14" />
+          <Assign type="5"  x="39"  y="25"  w="25"  h="14" />
+          <Assign type="6"  x="0"   y="39"  w="25"  h="25" />
+          <Assign type="7"  x="25"  y="39"  w="14"  h="25" />
+          <Assign type="8"  x="39"  y="39"  w="25"  h="25" />
+        </States>
+      </Parts>
+    </ResizableFrameCustomLook>
+
+
+    <!-- Scroll frame look -->
+    <FrameLook name="lookDefScrollFrame">
+      <Image>bmpDefFrame</Image>
+      <Font>fntTitle</Font>
+      <TitlebarHeight>27</TitlebarHeight>
+      <TitleOffset x="62" y="1" />
+      <TitleShadow>true</TitleShadow>
+      <TextAlign>left,vcenter</TextAlign>
+      <IconRect x="12" y="-24" w="56" h="56" />
+      <BkgrndRectOffset left="9" top="4" right="-385" bottom="10" />
+      <WorkRectOffset left="-5" top="-5" right="0" bottom="-5" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="1"  x="0"    y="0"   w="60"  h="60"   />
+          <Assign type="2"  x="60"   y="0"   w="136" h="60"   />
+          <Assign type="3"  x="196"  y="0"   w="60"  h="60"   />
+          <Assign type="4"  x="0"    y="60"  w="60"  h="156"  />
+          <Assign type="0"  x="60"   y="60"  w="136" h="156"  />
+          <Assign type="5"  x="196"  y="60"  w="60"  h="156"  />
+          <Assign type="6"  x="0"    y="216" w="60"  h="40"   />
+          <Assign type="7"  x="60"   y="216" w="136" h="40"   />
+          <Assign type="8"  x="196"  y="216" w="60"  h="40"   />
+        </States>
+        <States state="focus">
+          <Assign type="1"  x="0"    y="0"   w="60"  h="60"   />
+          <Assign type="2"  x="60"   y="0"   w="136" h="60"   />
+          <Assign type="3"  x="196"  y="0"   w="60"  h="60"   />
+          <Assign type="4"  x="0"    y="60"  w="60"  h="156"  />
+          <Assign type="0"  x="60"   y="60"  w="136" h="156"  />
+          <Assign type="5"  x="196"  y="60"  w="60"  h="156"  />
+          <Assign type="6"  x="0"    y="216" w="60"  h="40"   />
+          <Assign type="7"  x="60"   y="216" w="136" h="40"   />
+          <Assign type="8"  x="196"  y="216" w="60"  h="40"   />
+        </States>
+        <States state="disable">
+          <Assign type="1"  x="0"    y="0"   w="60"  h="60"   />
+          <Assign type="2"  x="60"   y="0"   w="136" h="60"   />
+          <Assign type="3"  x="196"  y="0"   w="60"  h="60"   />
+          <Assign type="4"  x="0"    y="60"  w="60"  h="156"  />
+          <Assign type="0"  x="60"   y="60"  w="136" h="156"  />
+          <Assign type="5"  x="196"  y="60"  w="60"  h="156"  />
+          <Assign type="6"  x="0"    y="216" w="60"  h="40"   />
+          <Assign type="7"  x="60"   y="216" w="136" h="40"   />
+          <Assign type="8"  x="196"  y="216" w="60"  h="40"   />
+        </States>
+      </Parts>
+      <Parts part="titlebar">
+        <States state="normal">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="0"  x="0" y="0" w="0" h="0" />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="0"  x="0" y="0" w="0" h="0" />
+        </States>
+        <States state="disable">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="0" y="0" w="0" h="0" />
+        </States>
+      </Parts>
+      <Event>
+        <OnShow>
+          if ( EventArgs:GetOwner():GetShow() == true)  then    gamefunc:PlaySound( "item_paper_up");
+          else                                                  gamefunc:PlaySound( "item_paper_down");
+          end
+        </OnShow>
+      </Event>
+    </FrameLook>
+
+
+    <!-- Dialog frame look -->
+    <FrameLook name="lookDefDialogFrame">
+      <Image>bmpDialogBox</Image>
+      <Font>fntHeadline</Font>
+      <TitlebarHeight>22</TitlebarHeight>
+      <TitleOffset x="7" y="6" />
+      <TitleShadow>true</TitleShadow>
+      <TextAlign>left,vcenter</TextAlign>
+      <BkgrndRectOffset left="3" top="3" right="3" bottom="47" />
+      <MagneticRectOffset left="3" top="3" right="3" bottom="3" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="1"  x="30"  y="30"  w="75"  h="35"/>
+          <Assign type="2"  x="105" y="30"  w="3"   h="35"/>
+          <Assign type="3"  x="108" y="30"  w="20"  h="35"/>
+          <Assign type="4"  x="30"  y="65"  w="75"  h="10"/>
+          <Assign type="0"  x="105" y="65"  w="3"   h="10"/>
+          <Assign type="5"  x="108" y="65"  w="20"  h="10"/>
+          <Assign type="6"  x="30"  y="75"  w="75"  h="58"/>
+          <Assign type="7"  x="105" y="75"  w="3"   h="58"/>
+          <Assign type="8"  x="108" y="75"  w="20"  h="58"/>
+        </States>
+        <States state="focus">
+        </States>
+        <States state="disable">
+        </States>
+      </Parts>
+      <Parts part="titlebar">
+        <States state="normal">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="0"  x="0" y="0" w="0" h="0" />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+    </FrameLook>
+
+
+    <!-- Color list ctrl look -->
+    <ListCtrlLook name="lookDefColorListCtrl">
+      <Image>bmpDefListCtrl</Image>
+      <ItemHeight>32</ItemHeight>
+      <BkgrndRectOffset left="6" top="3" right="6" bottom="3" />
+      <WorkRectOffset left="0" top="-3" right="0" bottom="-1" />
+      <SmallIconSize w="30" h="30" />
+      <LargeIconSize w="30" h="30" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="4"   w="4"   h="24" />
+          <Assign type="0"  x="4"   y="4"   w="24"  h="24" />
+          <Assign type="5"  x="28"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="0"   y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="28"  w="4"   h="4"  />
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="1"  x="32"  y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="36"  y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="60"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="32"  y="4"   w="4"   h="24" />
+          <Assign type="0"  x="36"  y="4"   w="24"  h="24" />
+          <Assign type="5"  x="60"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="32"  y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="36"  y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="60"  y="28"  w="4"   h="4"  />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="1"  x="64"  y="0"   w="8"   h="8"  />
+          <Assign type="2"  x="72"  y="0"   w="16"  h="8"  />
+          <Assign type="3"  x="88"  y="0"   w="8"   h="8"  />
+          <Assign type="4"  x="64"  y="8"   w="8"   h="16" />
+          <Assign type="0"  x="72"  y="8"   w="16"  h="16" />
+          <Assign type="5"  x="88"  y="8"   w="8"   h="16" />
+          <Assign type="6"  x="64"  y="24"  w="8"   h="8"  />
+          <Assign type="7"  x="72"  y="24"  w="16"  h="8"  />
+          <Assign type="8"  x="88"  y="24"  w="8"   h="8"  />
+        </States>
+      </Parts>
+      <Parts part="columnheader">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+      </Parts>
+    </ListCtrlLook>
+
+
+    <!-- Custom list ctrl look -->
+    <ListCtrlCustomLook name="lookDefListCtrlCustom">
+      <Image>bmpDefListCtrl</Image>
+      <Font>fntRegular</Font>
+      <SmallFont>fntScriptStrong</SmallFont>
+      <ItemHeight>46</ItemHeight>
+      <ColumnHeaderHeight>20</ColumnHeaderHeight>
+      <BkgrndRectOffset left="6" top="1" right="6" bottom="4" />
+      <WorkRectOffset left="0" top="-3" right="0" bottom="-1" />
+      <SmallIconSize w="40" h="40" />
+      <LargeIconSize w="40" h="40" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="1"  x="0"   y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="4"   w="4"   h="24" />
+          <Assign type="0"  x="4"   y="4"   w="24"  h="24" />
+          <Assign type="5"  x="28"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="0"   y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="28"  w="4"   h="4"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="32"  y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="36"  y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="60"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="32"  y="4"   w="4"   h="24" />
+          <Assign type="0"  x="36"  y="4"   w="24"  h="24" />
+          <Assign type="5"  x="60"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="32"  y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="36"  y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="60"  y="28"  w="4"   h="4"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="1"  x="64"  y="0"   w="8"   h="8"  />
+          <Assign type="2"  x="72"  y="0"   w="16"  h="8"  />
+          <Assign type="3"  x="88"  y="0"   w="8"   h="8"  />
+          <Assign type="4"  x="64"  y="8"   w="8"   h="16" />
+          <Assign type="0"  x="72"  y="8"   w="16"  h="16" />
+          <Assign type="5"  x="88"  y="8"   w="8"   h="16" />
+          <Assign type="6"  x="64"  y="24"  w="8"   h="8"  />
+          <Assign type="7"  x="72"  y="24"  w="16"  h="8"  />
+          <Assign type="8"  x="88"  y="24"  w="8"   h="8"  />
+        </States>
+      </Parts>
+      <Parts part="columnheader">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="1"  x="0"   y="32"  w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="32"  w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="32"  w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="36"  w="4"   h="24" />
+          <Assign type="0"  x="4"   y="36"  w="24"  h="24" />
+          <Assign type="5"  x="28"  y="36"  w="4"   h="24" />
+          <Assign type="6"  x="0"   y="60"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="60"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="60"  w="4"   h="4"  />
+        </States>
+        <States state="focus">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+        <States state="down">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+        <States state="disable">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="1"  x="32"  y="32"  w="7"   h="7"  />
+          <Assign type="2"  x="39"  y="32"  w="28"  h="7"  />
+          <Assign type="3"  x="67"  y="32"  w="7"   h="7"  />
+          <Assign type="4"  x="32"  y="39"  w="7"   h="28" />
+          <Assign type="0"  x="39"  y="39"  w="28"  h="28" />
+          <Assign type="5"  x="67"  y="39"  w="7"   h="28" />
+          <Assign type="6"  x="32"  y="67"  w="7"   h="7"  />
+          <Assign type="7"  x="39"  y="67"  w="28"  h="7"  />
+          <Assign type="8"  x="67"  y="67"  w="7"   h="7"  />
+        </States>
+      </Parts>
+    </ListCtrlCustomLook>
+
+
+    <!-- Custom category ctrl look -->
+    <CategoryCtrlCustomLook name="lookDefCategoryCtrlCustom">
+      <Image>bmpDefCategory</Image>
+      <Font>fntRegularStrong</Font>
+      <SmallFont>fntScriptStrong</SmallFont>
+      <Indent>10</Indent>
+      <CategoryHeight>36</CategoryHeight>
+      <ItemHeight>46</ItemHeight>
+      <ExpandIconSize w="16" h="16" />
+      <ImageSize w="40" h="40" />
+      <ColumnHeaderHeight>20</ColumnHeaderHeight>
+      <BkgrndRectOffset left="6" top="1" right="6" bottom="4" />
+      <WorkRectOffset left="0" top="-3" right="0" bottom="-1" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="1"  x="0"   y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="4"   w="4"   h="24" />
+          <Assign type="0"  x="4"   y="4"   w="24"  h="24" />
+          <Assign type="5"  x="28"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="0"   y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="28"  w="4"   h="4"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+      <Parts part="category">
+        <States state="normal">
+          <FontColor r="160" g="120" b="55" />
+          <Assign type="1"  x="0"   y="68"  w="10"  h="9"  />
+          <Assign type="2"  x="10"  y="68"  w="12"  h="9"  />
+          <Assign type="3"  x="22"  y="68"  w="10"  h="9"  />
+          <Assign type="4"  x="0"   y="77"  w="10"  h="16" />
+          <Assign type="0"  x="10"  y="77"  w="12"  h="16" />
+          <Assign type="5"  x="22"  y="77"  w="10"  h="16" />
+          <Assign type="6"  x="0"   y="93"  w="10"  h="8"  />
+          <Assign type="7"  x="10"  y="93"  w="12"  h="8"  />
+          <Assign type="8"  x="22"  y="93"  w="10"  h="8"  />
+        </States>
+        <States state="focus">
+          <FontColor r="160" g="120" b="55" />
+          <Assign type="1"  x="0"   y="68"  w="10"  h="9"  />
+          <Assign type="2"  x="10"  y="68"  w="12"  h="9"  />
+          <Assign type="3"  x="22"  y="68"  w="10"  h="9"  />
+          <Assign type="4"  x="0"   y="77"  w="10"  h="16" />
+          <Assign type="0"  x="10"  y="77"  w="12"  h="16" />
+          <Assign type="5"  x="22"  y="77"  w="10"  h="16" />
+          <Assign type="6"  x="0"   y="93"  w="10"  h="8"  />
+          <Assign type="7"  x="10"  y="93"  w="12"  h="8"  />
+          <Assign type="8"  x="22"  y="93"  w="10"  h="8"  />
+        </States>
+        <States state="disable">
+          <FontColor r="160" g="120" b="55" />
+          <Assign type="1"  x="0"   y="68"  w="10"  h="9"  />
+          <Assign type="2"  x="10"  y="68"  w="12"  h="9"  />
+          <Assign type="3"  x="22"  y="68"  w="10"  h="9"  />
+          <Assign type="4"  x="0"   y="77"  w="10"  h="16" />
+          <Assign type="0"  x="10"  y="77"  w="12"  h="16" />
+          <Assign type="5"  x="22"  y="77"  w="10"  h="16" />
+          <Assign type="6"  x="0"   y="93"  w="10"  h="8"  />
+          <Assign type="7"  x="10"  y="93"  w="12"  h="8"  />
+          <Assign type="8"  x="22"  y="93"  w="10"  h="8"  />
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="32"  y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="36"  y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="60"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="32"  y="4"   w="4"   h="24" />
+          <Assign type="0"  x="36"  y="4"   w="24"  h="24" />
+          <Assign type="5"  x="60"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="32"  y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="36"  y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="60"  y="28"  w="4"   h="4"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="32"  w="8"   h="8"  />
+          <Assign type="2"  x="8"   y="32"  w="16"  h="8"  />
+          <Assign type="3"  x="24"  y="32"  w="8"   h="8"  />
+          <Assign type="4"  x="0"   y="40"  w="8"   h="16" />
+          <Assign type="0"  x="8"   y="40"  w="16"  h="16" />
+          <Assign type="5"  x="24"  y="40"  w="8"   h="16" />
+          <Assign type="6"  x="0"   y="56"  w="8"   h="8"  />
+          <Assign type="7"  x="8"   y="56"  w="16"  h="8"  />
+          <Assign type="8"  x="24"  y="56"  w="8"   h="8"  />
+        </States>
+      </Parts>
+      <Parts part="expand">
+        <States state="normal">
+          <Assign type="0"  x="33"  y="74"  w="16"  h="16" />
+        </States>
+      </Parts>
+      <Parts part="collapsed">
+        <States state="normal">
+          <Assign type="0"  x="50"  y="74"  w="16"  h="16" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="1"  x="32"  y="32"  w="7"   h="7"  />
+          <Assign type="2"  x="39"  y="32"  w="28"  h="7"  />
+          <Assign type="3"  x="67"  y="32"  w="7"   h="7"  />
+          <Assign type="4"  x="32"  y="39"  w="7"   h="28" />
+          <Assign type="0"  x="39"  y="39"  w="28"  h="28" />
+          <Assign type="5"  x="67"  y="39"  w="7"   h="28" />
+          <Assign type="6"  x="32"  y="67"  w="7"   h="7"  />
+          <Assign type="7"  x="39"  y="67"  w="28"  h="7"  />
+          <Assign type="8"  x="67"  y="67"  w="7"   h="7"  />
+        </States>
+      </Parts>
+    </CategoryCtrlCustomLook>
+
+
+    <!-- EquippedItemSlotLook : Equipped item slot look -->
+    <EquippedItemSlotLook name="lookDefEquippedItemSlot">
+      <Image>bmpItemSlot</Image>
+      <Font>fntRegularStrong</Font>
+      <SmallFont>fntSubScriptStrong</SmallFont>
+      <TextAlign>left,bottom</TextAlign>
+      <BkgrndRectOffset left="2" top="2" right="2" bottom="2" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="0"   y="0"   w="42"  h="42" />
+        </States>
+        <States state="focus">
+          <FontColor r="210" g="64" b="64" />
+          <Assign type="0"  x="0"   y="0"   w="42"  h="42" />
+        </States>
+      </Parts>
+    </EquippedItemSlotLook>
+
+
+    <!-- PaletteSlotLook : Palette slot look -->
+    <PaletteSlotLook name="lookDefPaletteSlot">
+      <Image>bmpPaletteSlot</Image>
+      <Font>fntScriptStrong</Font>
+      <LargeFont>fntRegularStrong</LargeFont>
+      <SmallFont>fntSubScriptStrong</SmallFont>
+      <BkgrndRectOffset left="7" top="7" right="7" bottom="7" />
+      <CooltimeImage>bmpCooltime</CooltimeImage>
+      <SliceCellCooltimeImg row="8" col="7" />
+      <CooltimeImgCellCount>50</CooltimeImgCellCount>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="255" g="210" b="0" />
+          <Assign type="0"  x="54"  y="0"   w="54"  h="54" />
+        </States>
+        <States state="focus">
+          <FontColor r="255" g="255" b="0" a="128" />
+          <Assign type="0"  x="108" y="0"   w="54"  h="54" />
+        </States>
+        <States state="down">
+          <FontColor r="255" g="255" b="255" a="160" />
+          <Assign type="0"  x="108" y="0"   w="54"  h="54" />
+        </States>
+        <States state="disable">
+          <FontColor r="255" g="255" b="255" a="32 "/>
+          <Assign type="0"  x="0"   y="0"   w="54"  h="54" />
+        </States>
+      </Parts>
+    </PaletteSlotLook>
+
+
+    <!-- Button : Palette slot button look -->
+    <ButtonLook name="lookDefPaletteSlotBtn">
+      <Image>bmpPaletteSlot</Image>
+      <Font>fntRegular</Font>
+      <BkgrndRectOffset left="7" top="7" right="7" bottom="7" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="54"  y="0"   w="54"  h="54" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="108" y="0"   w="54"  h="54" />
+        </States>
+        <States state="down">
+          <Assign type="0"  x="108" y="0"   w="54"  h="54" />
+        </States>
+        <States state="disable">
+          <Assign type="0"  x="54"  y="0"   w="54"  h="54" />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- Palette set Up Button look -->
+    <ButtonLook name="lookDefPaletteSetUpBtn">
+      <Image>bmpPaletteSetUpBtn</Image>
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="14"   h="14" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="14"  y="0"   w="14"   h="14" />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+    <!-- Palette set  Down Button look -->
+    <ButtonLook name="lookDefPaletteSetDownBtn">
+      <Image>bmpPaletteSetDownBtn</Image>
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="14"   h="14" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="14"  y="0"   w="14"   h="14" />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- TrayLook : Tray look -->
+    <Look name="lookDefTray">
+      <Image>bmpPaletteSlot</Image>
+      <Font>fntRegular</Font>
+      <BkgrndRectOffset left="7" top="7" right="7" bottom="7" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="54"  y="0"   w="54"  h="54" />
+        </States>
+        <States state="focus">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="108"  y="0"   w="54"  h="54" />
+        </States>
+        <States state="disable">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="0"   y="0"   w="54"  h="54" />
+        </States>
+      </Parts>
+    </Look>
+
+
+    <!-- TalentSlotLook : Talent slot look -->
+    <TalentSlotLook name="lookDefTalentSlot">
+      <Image>bmpTalentSlot</Image>
+      <GlowImage>bmpTalentSlotGlow</GlowImage>
+      <Font>fntRegularStrong</Font>
+      <SmallFont>fntSubScriptStrong</SmallFont>
+      <BkgrndRectOffset left="6" top="6" right="6" bottom="6" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="120" g="120" b="120" />
+          <Assign type="0"  x="0"   y="0"   w="52"  h="52" />
+        </States>
+        <States state="focus">
+          <FontColor r="40" g="180" b="70" />
+          <Assign type="0"  x="52"   y="0"   w="52"  h="52" />
+        </States>
+        <States state="down">
+          <FontColor r="230" g="190" b="30" />
+          <Assign type="0"  x="104"   y="0"   w="52"  h="52" />
+        </States>
+        <States state="disable">
+          <FontColor r="70" g="70" b="70" />
+          <Assign type="0"  x="156"   y="0"   w="52"  h="52" />
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="214"   y="6"   w="40"  h="40" />
+        </States>
+      </Parts>
+    </TalentSlotLook>
+
+
+    <!-- Default Small Edit look -->
+    <EditLook name="lookDefSmallEdit">
+      <Image>bmpDefEdit</Image>
+      <Font>fntScript</Font>
+      <WorkRectOffset left="-2" top="-1" right="2" bottom="1" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="1"  x="0"  y="0"   w="2"   h="2" />
+          <Assign type="2"  x="2"  y="0"   w="28"  h="2" />
+          <Assign type="3"  x="30" y="0"   w="2"   h="2" />
+          <Assign type="4"  x="0"  y="2"   w="2"   h="22" />
+          <Assign type="0"  x="2"  y="2"   w="28"  h="22" />
+          <Assign type="5"  x="30" y="2"   w="2"   h="22" />
+          <Assign type="6"  x="0"  y="24"  w="2"   h="8" />
+          <Assign type="7"  x="2"  y="24"  w="28"  h="8" />
+          <Assign type="8"  x="30" y="24"  w="2"   h="8" />
+        </States>
+        <States state="focus">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="1"  x="32"  y="0"   w="2"   h="1"  />
+          <Assign type="2"  x="34"  y="0"   w="28"  h="1"  />
+          <Assign type="3"  x="62"  y="0"   w="2"   h="1"  />
+          <Assign type="4"  x="32"  y="1"   w="2"   h="30" />
+          <Assign type="0"  x="34"  y="1"   w="28"  h="30" />
+          <Assign type="5"  x="62"  y="1"   w="2"   h="30" />
+          <Assign type="6"  x="32"  y="31"  w="2"   h="1"  />
+          <Assign type="7"  x="34"  y="31"  w="28"  h="1"  />
+          <Assign type="8"  x="62"  y="31"  w="2"   h="1"  />
+        </States>
+      </Parts>
+      <Parts part="imecaret">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="32"  w="1"   h="2"  />
+          <Assign type="2"  x="1"   y="32"  w="30"  h="2"  />
+          <Assign type="3"  x="31"  y="32"  w="1"   h="2"  />
+          <Assign type="4"  x="0"   y="34"  w="1"   h="28" />
+          <Assign type="0"  x="1"   y="34"  w="30"  h="28" />
+          <Assign type="5"  x="31"  y="34"  w="1"   h="28" />
+          <Assign type="6"  x="0"   y="62"  w="1"   h="2"  />
+          <Assign type="7"  x="1"   y="62"  w="30"  h="2"  />
+          <Assign type="8"  x="31"  y="62"  w="1"   h="2"  />
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="32"  y="32"  w="2"   h="2"  />
+          <Assign type="2"  x="34"  y="32"  w="28"  h="2"  />
+          <Assign type="3"  x="62"  y="32"  w="2"   h="2"  />
+          <Assign type="4"  x="32"  y="34"  w="2"   h="28" />
+          <Assign type="0"  x="34"  y="34"  w="28"  h="28" />
+          <Assign type="5"  x="62"  y="34"  w="2"   h="28" />
+          <Assign type="6"  x="32"  y="62"  w="2"   h="2"  />
+          <Assign type="7"  x="34"  y="62"  w="28"  h="2"  />
+          <Assign type="8"  x="62"  y="62"  w="2"   h="2"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+        </States>
+        <States state="disable">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+      </Parts>
+    </EditLook>
+
+
+    <!-- GaugeLook : Player HP gauge look -->
+    <GaugeLook name="lookDefPlayerHPGauge">
+      <Image>bmpPlayerHPGauge</Image>
+      <Font>fntScriptStrong</Font>
+      <SmallFont>fntSmallStrong</SmallFont>
+      <TextAlign>right,vcenter</TextAlign>
+      <BkgrndRectOffset left="5" top="3" right="5" bottom="3" />
+      <TextViewStyle>progress</TextViewStyle>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="210" g="210" b="210" a="200" />
+          <Assign type="4"  x="2"   y="2"   w="5"   h="21"  />
+          <Assign type="0"  x="7"   y="2"   w="220" h="21" />
+          <Assign type="5"  x="230" y="2"   w="5"   h="21"  />
+        </States>
+      </Parts>
+      <Parts part="progressbar">
+        <States state="normal">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="26"  w="445"   h="15" />
+        </States>
+        <States state="focus">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="43"  w="445"   h="15" />
+        </States>
+        <States state="disable">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="60"  w="445"   h="15" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="0"  x="2"   y="77"  w="39"    h="39" />
+        </States>
+      </Parts>
+    </GaugeLook>
+
+
+    <!-- GaugeLook : Player EN gauge look -->
+    <GaugeLook name="lookDefPlayerENGauge">
+      <Image>bmpPlayerENGauge</Image>
+      <Font>fntScriptStrong</Font>
+      <SmallFont>fntSmallStrong</SmallFont>
+      <TextAlign>right,vcenter</TextAlign>
+      <BkgrndRectOffset left="5" top="3" right="5" bottom="3" />
+      <TextViewStyle>progress</TextViewStyle>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="210" g="210" b="210" a="200" />
+          <Assign type="4"  x="2"   y="2"   w="5"   h="17"  />
+          <Assign type="0"  x="7"   y="2"   w="220" h="17" />
+          <Assign type="5"  x="230" y="2"   w="5"   h="17"  />
+        </States>
+      </Parts>
+      <Parts part="progressbar">
+        <States state="normal">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="26"  w="445"   h="11" />
+        </States>
+        <States state="focus">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="43"  w="445"   h="11" />
+        </States>
+        <States state="disable">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="60"  w="445"   h="11" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="0"  x="2"   y="77"  w="39"    h="39" />
+        </States>
+      </Parts>
+    </GaugeLook>
+
+
+    <!-- GaugeLook : Player STA gauge look -->
+    <GaugeLook name="lookDefPlayerSTAGauge">
+      <Image>bmpPlayerSTAGauge</Image>
+      <Font>fntScriptStrong</Font>
+      <SmallFont>fntSmallStrong</SmallFont>
+      <TextAlign>right,vcenter</TextAlign>
+      <BkgrndRectOffset left="5" top="3" right="5" bottom="3" />
+      <TextViewStyle>progress</TextViewStyle>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="210" g="210" b="210" a="200" />
+          <Assign type="4"  x="2"   y="2"   w="5"   h="17"  />
+          <Assign type="0"  x="7"   y="2"   w="220" h="17" />
+          <Assign type="5"  x="230" y="2"   w="5"   h="17"  />
+        </States>
+      </Parts>
+      <Parts part="progressbar">
+        <States state="normal">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="26"  w="445"   h="11" />
+        </States>
+        <States state="focus">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="43"  w="445"   h="11" />
+        </States>
+        <States state="disable">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="0"  x="2"   y="60"  w="445"   h="11" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="0"  x="2"   y="77"  w="39"    h="39" />
+        </States>
+      </Parts>
+    </GaugeLook>
+
+
+    <!-- ProgressCtrlLook : Enemy HP gauge look -->
+    <ProgressCtrlLook name="lookDefEnemyHPGauge">
+      <Image>bmpNpcHPGauge</Image>
+      <Font>fntSmallStrong</Font>
+      <TextAlign>right,vcenter</TextAlign>
+      <TextViewStyle>none</TextViewStyle>
+      <BkgrndRectOffset left="4" top="4" right="4" bottom="4" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="230" g="230" b="230" a="180" />
+          <Assign type="1"  x="1"   y="1"   w="5"   h="5"  />
+          <Assign type="2"  x="10"  y="1"   w="1"   h="5"  />
+          <Assign type="3"  x="26"  y="1"   w="5"   h="5"  />
+          <Assign type="4"  x="1"   y="10"  w="5"   h="1"  />
+          <Assign type="0"  x="6"   y="6"   w="20"  h="20" />
+          <Assign type="5"  x="26"  y="10"  w="5"   h="1"  />
+          <Assign type="6"  x="1"   y="26"  w="5"   h="5"  />
+          <Assign type="7"  x="10"  y="26"  w="1"   h="5"  />
+          <Assign type="8"  x="26"  y="26"  w="5"   h="5"  />
+        </States>
+      </Parts>
+      <Parts part="progressbar">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="37"  y="5"   w="22"  h="22" />
+        </States>
+      </Parts>
+    </ProgressCtrlLook>
+
+
+    <!-- GaugeLook : Action progressbar gauge look -->
+    <GaugeLook name="lookDefActionProgressBar">
+      <Image>bmpActionProgress</Image>
+      <Font>fntScript</Font>
+      <SmallFont>fntSmallStrong</SmallFont>
+      <TextAlign>right,vcenter</TextAlign>
+      <BkgrndRectOffset left="4" top="4" right="4" bottom="4" />
+      <TextViewStyle>none</TextViewStyle>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="230" g="230" b="230" a="180" />
+          <Assign type="1"  x="1"   y="1"   w="5"   h="5"  />
+          <Assign type="2"  x="10"  y="1"   w="1"   h="5"  />
+          <Assign type="3"  x="26"  y="1"   w="5"   h="5"  />
+          <Assign type="4"  x="1"   y="10"  w="5"   h="1"  />
+          <Assign type="0"  x="6"   y="6"   w="20"  h="20" />
+          <Assign type="5"  x="26"  y="10"  w="5"   h="1"  />
+          <Assign type="6"  x="1"   y="26"  w="5"   h="5"  />
+          <Assign type="7"  x="10"  y="26"  w="1"   h="5"  />
+          <Assign type="8"  x="26"  y="26"  w="5"   h="5"  />
+        </States>
+      </Parts>
+      <Parts part="progressbar">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="37"  y="5"   w="22"  h="22" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="0"   y="32"  w="32"  h="32" />
+        </States>
+      </Parts>
+    </GaugeLook>
+
+
+    <!-- Chatting box look -->
+    <Look name="lookDefChatBox">
+      <Image>bmpChattingBox</Image>
+      <Font>fntScriptStrong</Font>
+      <WorkRectOffset left="-2" top="0" right="-2" bottom="-5" />
+      <BkgrndRectOffset left="5" top="-23" right="5" bottom="5" />
+      <HeaderHeight>25</HeaderHeight>
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="0"   w="7"   h="7"/>
+          <Assign type="2"  x="7"   y="0"   w="50"  h="7"/>
+          <Assign type="3"  x="57"  y="0"   w="7"   h="7"/>
+          <Assign type="4"  x="0"   y="7"   w="7"   h="33"/>
+          <Assign type="0"  x="7"   y="7"   w="50"  h="33"/>
+          <Assign type="5"  x="57"  y="7"   w="7"   h="33"/>
+          <Assign type="6"  x="0"   y="40"  w="7"   h="24"/>
+          <Assign type="7"  x="7"   y="40"  w="50"  h="24"/>
+          <Assign type="8"  x="57"  y="40"  w="7"   h="24"/>
+        </States>
+      </Parts>
+    </Look>
+    
+
+    <!-- Chatting Edit look -->
+    <EditLook name="lookChatEdit">
+      <Image>bmpChatEdit</Image>
+      <Font>fntRegular</Font>
+      <WorkRectOffset left="-42" top="-2" right="-2" bottom="-2" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="1"  x="0"  y="0"   w="40"  h="2" />
+          <Assign type="2"  x="45" y="0"   w="10"  h="2" />
+          <Assign type="3"  x="62" y="0"   w="2"   h="2" />
+          <Assign type="4"  x="0"  y="2"   w="40"  h="22" />
+          <Assign type="0"  x="45" y="2"   w="10"  h="22" />
+          <Assign type="5"  x="62" y="2"   w="2"   h="22" />
+          <Assign type="6"  x="0"  y="24"  w="40"  h="8" />
+          <Assign type="7"  x="45" y="24"  w="10"  h="8" />
+          <Assign type="8"  x="62" y="24"  w="2"   h="8" />
+        </States>
+        <States state="focus">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="1"  x="64"  y="0"   w="2"   h="1"  />
+          <Assign type="2"  x="66"  y="0"   w="28"  h="1"  />
+          <Assign type="3"  x="94"  y="0"   w="2"   h="1"  />
+          <Assign type="4"  x="64"  y="1"   w="2"   h="30" />
+          <Assign type="0"  x="66"  y="1"   w="28"  h="30" />
+          <Assign type="5"  x="94"  y="1"   w="2"   h="30" />
+          <Assign type="6"  x="64"  y="31"  w="2"   h="1"  />
+          <Assign type="7"  x="66"  y="31"  w="28"  h="1"  />
+          <Assign type="8"  x="94"  y="31"  w="2"   h="1"  />
+        </States>
+      </Parts>
+      <Parts part="imecaret">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="32"  w="1"   h="2"  />
+          <Assign type="2"  x="1"   y="32"  w="30"  h="2"  />
+          <Assign type="3"  x="31"  y="32"  w="1"   h="2"  />
+          <Assign type="4"  x="0"   y="34"  w="1"   h="28" />
+          <Assign type="0"  x="1"   y="34"  w="30"  h="28" />
+          <Assign type="5"  x="31"  y="34"  w="1"   h="28" />
+          <Assign type="6"  x="0"   y="62"  w="1"   h="2"  />
+          <Assign type="7"  x="1"   y="62"  w="30"  h="2"  />
+          <Assign type="8"  x="31"  y="62"  w="1"   h="2"  />
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="32"  y="32"  w="2"   h="2"  />
+          <Assign type="2"  x="34"  y="32"  w="28"  h="2"  />
+          <Assign type="3"  x="62"  y="32"  w="2"   h="2"  />
+          <Assign type="4"  x="32"  y="34"  w="2"   h="28" />
+          <Assign type="0"  x="34"  y="34"  w="28"  h="28" />
+          <Assign type="5"  x="62"  y="34"  w="2"   h="28" />
+          <Assign type="6"  x="32"  y="62"  w="2"   h="2"  />
+          <Assign type="7"  x="34"  y="62"  w="28"  h="2"  />
+          <Assign type="8"  x="62"  y="62"  w="2"   h="2"  />
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+        </States>
+        <States state="disable">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+      </Parts>
+    </EditLook>
+    
+
+    <!-- Chatting box tab look -->
+    <ButtonLook name="lookDefChatBoxTab">
+      <Image>bmpChattingBoxTab</Image>
+      <Font>fntScriptStrong</Font>
+      <TextAlign>left,vcenter</TextAlign>
+      <TextOffset x="0" y="-2" />
+      <WorkRectOffset left="-8" top="-3" right="-8" bottom="0" />
+      <BkgrndRectOffset left="1" top="0" right="1" bottom="0" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="100" g="100" b="100" />
+          <Assign type="1"  x="0"   y="0"   w="8"   h="16"/>
+          <Assign type="2"  x="16"  y="0"   w="1"   h="16"/>
+          <Assign type="3"  x="24"  y="0"   w="8"   h="16"/>
+          <Assign type="4"  x="0"   y="16"  w="8"   h="1"/>
+          <Assign type="0"  x="16"  y="16"  w="1"   h="1"/>
+          <Assign type="5"  x="24"  y="16"  w="8"   h="1"/>
+          <Assign type="6"  x="0"   y="27"  w="8"   h="5"/>
+          <Assign type="7"  x="16"  y="27"  w="1"   h="5"/>
+          <Assign type="8"  x="24"  y="27"  w="8"   h="5"/>
+        </States>
+        <States state="focus">
+          <FontColor r="200" g="200" b="200" />
+          <Assign type="1"  x="0"   y="0"   w="8"   h="16"/>
+          <Assign type="2"  x="16"  y="0"   w="1"   h="16"/>
+          <Assign type="3"  x="24"  y="0"   w="8"   h="16"/>
+          <Assign type="4"  x="0"   y="16"  w="8"   h="1"/>
+          <Assign type="0"  x="16"  y="16"  w="1"   h="1"/>
+          <Assign type="5"  x="24"  y="16"  w="8"   h="1"/>
+          <Assign type="6"  x="0"   y="27"  w="8"   h="5"/>
+          <Assign type="7"  x="16"  y="27"  w="1"   h="5"/>
+          <Assign type="8"  x="24"  y="27"  w="8"   h="5"/>
+        </States>
+        <States state="down">
+          <FontColor r="200" g="200" b="200" />
+          <Assign type="1"  x="32"  y="0"   w="8"   h="16"/>
+          <Assign type="2"  x="40"  y="0"   w="16"  h="16"/>
+          <Assign type="3"  x="56"  y="0"   w="8"   h="16"/>
+          <Assign type="4"  x="32"  y="16"  w="8"   h="1"/>
+          <Assign type="0"  x="40"  y="16"  w="16"  h="1"/>
+          <Assign type="5"  x="56"  y="16"  w="8"   h="1"/>
+          <Assign type="6"  x="32"  y="27"  w="8"   h="5"/>
+          <Assign type="7"  x="40"  y="27"  w="16"  h="5"/>
+          <Assign type="8"  x="56"  y="27"  w="8"   h="5"/>
+        </States>
+        <States state="disable">
+          <FontColor r="200" g="200" b="200" a="64" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- Chatting box property button look -->
+    <ButtonLook name="lookDefChattingBoxProperty">
+      <Image>bmpChattingBoxProperty</Image>
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="16"  h="16"/>
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="16"  y="0"   w="16"  h="16"/>
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+
+    <!-- Chatting end line button look -->
+    <ButtonLook name="lookDefChatEndLine">
+      <Image>bmpChatEndLine</Image>
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="15"  h="15"/>
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="15"  y="0"   w="15"  h="15"/>
+        </States>
+        <States state="down">
+          <Assign type="0"  x="15"  y="0"   w="15"  h="15"/>
+        </States>
+        <States state="disable">
+          <Assign type="0"  x="30"  y="0"   w="15"  h="15"/>
+        </States>
+      </Parts>
+    </ButtonLook>
+
+    
+    <!-- Chatting message look -->
+    <TextViewLook name="lookDefSmallChatMsg">
+      <Image>bmpDefGroupBox</Image>
+      <Font>fntSmallStrong</Font>
+      <ParagraphSpacing>0</ParagraphSpacing>
+      <LineSpacing>0</LineSpacing>
+      <WorkRectOffset left="0" top="0" right="0" bottom="0" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="0"   y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="4"   w="4"   h="24" />
+          <Assign type="0"  x="4"   y="4"   w="24"  h="24" />
+          <Assign type="5"  x="28"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="0"   y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="28"  w="4"   h="4"  />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+    </TextViewLook>
+
+    <TextViewLook name="lookDefNormalChatMsg">
+      <Image>bmpDefGroupBox</Image>
+      <Font>fntScriptStrong</Font>
+      <ParagraphSpacing>0</ParagraphSpacing>
+      <LineSpacing>0</LineSpacing>
+      <WorkRectOffset left="0" top="0" right="0" bottom="0" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="0"   y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="4"   w="4"   h="24" />
+          <Assign type="0"  x="4"   y="4"   w="24"  h="24" />
+          <Assign type="5"  x="28"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="0"   y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="28"  w="4"   h="4"  />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+    </TextViewLook>
+
+    <TextViewLook name="lookDefLargeChatMsg">
+      <Image>bmpDefGroupBox</Image>
+      <Font>fntRegularStrong</Font>
+      <ParagraphSpacing>0</ParagraphSpacing>
+      <LineSpacing>0</LineSpacing>
+      <WorkRectOffset left="0" top="0" right="0" bottom="0" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+        <States state="focus">
+          <FontColor r="250" g="250" b="250" />
+          <Assign type="1"  x="0"   y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="4"   y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="28"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="0"   y="4"   w="4"   h="24" />
+          <Assign type="0"  x="4"   y="4"   w="24"  h="24" />
+          <Assign type="5"  x="28"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="0"   y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="4"   y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="28"  y="28"  w="4"   h="4"  />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+    </TextViewLook>
+
+
+    <!-- Presentation textview look -->
+    <TextViewLook name="lookDefPresentationText1">
+      <Image>bmpDefTextView</Image>
+      <Font>fntHeadline</Font>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="230" g="180" b="50" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+        <States state="focus">
+          <FontColor r="230" g="180" b="50" />
+        </States>
+        <States state="disable">
+          <FontColor r="230" g="180" b="50" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+    </TextViewLook>
+
+    <TextViewLook name="lookDefPresentationText2">
+      <Image>bmpDefTextView</Image>
+      <Font>fntLargeStrong</Font>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="208" g="152" b="5" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+    </TextViewLook>
+
+
+    <!-- MapSign textview look -->
+    <TextViewLook name="lookDefMapSignText">
+      <Image>bmpDefTextView</Image>
+      <Font>fntHeadline</Font>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="100" g="230" b="50" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+        <States state="focus">
+          <FontColor r="100" g="230" b="50" />
+        </States>
+        <States state="disable">
+          <FontColor r="100" g="230" b="50" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+    </TextViewLook>
+
+
+    <!-- Journal indicator textview look -->
+    <TextViewLook name="lookDefJournalIndicatorText">
+      <Image>bmpDefListCtrl</Image>
+      <Font>fntScriptStrong</Font>
+      <TextAlign>left,bottom</TextAlign>
+      <ParagraphSpacing>0</ParagraphSpacing>
+      <LineSpacing>0</LineSpacing>
+      <WorkRectOffset left="-2" top="-2" right="-2" bottom="-3" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="230" g="230" b="230" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+        <States state="focus">
+          <FontColor r="230" g="230" b="230" />
+          <Assign type="1"  x="32"  y="0"   w="4"   h="4"  />
+          <Assign type="2"  x="36"  y="0"   w="24"  h="4"  />
+          <Assign type="3"  x="60"  y="0"   w="4"   h="4"  />
+          <Assign type="4"  x="32"  y="4"   w="4"   h="24" />
+          <Assign type="0"  x="36"  y="4"   w="24"  h="24" />
+          <Assign type="5"  x="60"  y="4"   w="4"   h="24" />
+          <Assign type="6"  x="32"  y="28"  w="4"   h="4"  />
+          <Assign type="7"  x="36"  y="28"  w="24"  h="4"  />
+          <Assign type="8"  x="60"  y="28"  w="4"   h="4"  />
+        </States>
+        <States state="down">
+          <FontColor r="230" g="230" b="230" />
+          <Assign type="1"  x="64"  y="0"   w="8"   h="8"  />
+          <Assign type="2"  x="72"  y="0"   w="16"  h="8"  />
+          <Assign type="3"  x="88"  y="0"   w="8"   h="8"  />
+          <Assign type="4"  x="64"  y="8"   w="8"   h="16" />
+          <Assign type="0"  x="72"  y="8"   w="16"  h="16" />
+          <Assign type="5"  x="88"  y="8"   w="8"   h="16" />
+          <Assign type="6"  x="64"  y="24"  w="8"   h="8"  />
+          <Assign type="7"  x="72"  y="24"  w="16"  h="8"  />
+          <Assign type="8"  x="88"  y="24"  w="8"   h="8"  />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="quest">
+        <States state="normal">
+          <FontColor r="255" g="200" b="130" />
+        </States>
+      </Parts>
+      <Parts part="recipe">
+        <States state="normal">
+          <FontColor r="150" g="210" b="255" />
+        </States>
+      </Parts>
+    </TextViewLook>
+
+
+    <!-- Help TextView look -->
+    <TextViewLook name="lookHelpTextView">
+      <Image>bmpDefTextView</Image>
+      <Font>fntScript</Font>
+      <WorkRectOffset left="0" top="0" right="0" bottom="0" />
+      <ParagraphSpacing>5</ParagraphSpacing>
+      <LineSpacing>5</LineSpacing>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="0"  x="0" y="0" w="0" h="0"/>
+          <!-- Do not draw -->
+        </States>
+        <States state="focus">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+        <States state="down">
+          <FontColor r="160" g="160" b="160" />
+        </States>
+        <States state="disable">
+          <FontColor r="60" g="60" b="60" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="1"   y="1"   w="30"  h="30"/>
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="32"  w="8"   h="8"  />
+          <Assign type="2"  x="8"   y="32"  w="16"  h="8"  />
+          <Assign type="3"  x="24"  y="32"  w="8"   h="8"  />
+          <Assign type="4"  x="0"   y="40"  w="8"   h="16" />
+          <Assign type="0"  x="8"   y="40"  w="16"  h="16" />
+          <Assign type="5"  x="24"  y="40"  w="8"   h="16" />
+          <Assign type="6"  x="0"   y="56"  w="8"   h="8"  />
+          <Assign type="7"  x="8"   y="56"  w="16"  h="8"  />
+          <Assign type="8"  x="24"  y="56"  w="8"   h="8"  />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+      </Parts>
+    </TextViewLook>
+
+
+    <!-- Balloon text box look -->
+    <BalloonTextBoxLook name="lookDefBalloonTextBox">
+      <Image>bmpBalloonTextBox</Image>
+      <Font>fntScript</Font>
+      <ParagraphSpacing>4</ParagraphSpacing>
+      <LineSpacing>2</LineSpacing>
+      <BkgrndRectOffset left="8" top="8" right="8" bottom="32" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="160" g="160" b="160" />
+          <Assign type="1"  x="0"   y="0"   w="8"   h="8"/>
+          <Assign type="2"  x="8"   y="0"   w="144" h="8"/>
+          <Assign type="3"  x="152" y="0"   w="8"   h="8"/>
+          <Assign type="4"  x="0"   y="8"   w="8"   h="60"/>
+          <Assign type="0"  x="8"   y="8"   w="144" h="60"/>
+          <Assign type="5"  x="152" y="8"   w="8"   h="60"/>
+          <Assign type="6"  x="0"   y="68"  w="8"   h="32"/>
+          <Assign type="7"  x="8"   y="68"  w="144" h="32"/>
+          <Assign type="8"  x="152" y="68"  w="8"   h="32"/>
+        </States>
+      </Parts>
+    </BalloonTextBoxLook>
+
+
+    <!-- Scroll textview look -->
+    <TextViewLook name="lookDefScrollTextView">
+      <Image>bmpDefTextView</Image>
+      <Font>fntRegularWeak</Font>
+      <ParagraphSpacing>10</ParagraphSpacing>
+      <LineSpacing>5</LineSpacing>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="65" g="65" b="65" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+        </States>
+        <States state="focus">
+          <FontColor r="65" g="65" b="65" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+        </States>
+        <States state="down">
+          <FontColor r="65" g="65" b="65" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+        </States>
+        <States state="disable">
+          <FontColor r="120" g="120" b="120" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="1"  x="0"   y="32"  w="8"   h="8"  />
+          <Assign type="2"  x="8"   y="32"  w="16"  h="8"  />
+          <Assign type="3"  x="24"  y="32"  w="8"   h="8"  />
+          <Assign type="4"  x="0"   y="40"  w="8"   h="16" />
+          <Assign type="0"  x="8"   y="40"  w="16"  h="16" />
+          <Assign type="5"  x="24"  y="40"  w="8"   h="16" />
+          <Assign type="6"  x="0"   y="56"  w="8"   h="8"  />
+          <Assign type="7"  x="8"   y="56"  w="16"  h="8"  />
+          <Assign type="8"  x="24"  y="56"  w="8"   h="8"  />
+        </States>
+      </Parts>
+      <Parts part="caret">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+      </Parts>
+      <Event>
+        <OnShow>
+          if ( EventArgs:GetOwner():GetShow() == true)  then    gamefunc:PlaySound( "item_paper_up");
+          else                                                  gamefunc:PlaySound( "item_paper_down");
+          end
+        </OnShow>
+      </Event>
+    </TextViewLook>
+
+
+    <!-- Message box look -->
+    <TextViewLook name="lookDefMessageBox">
+      <Image>bmpMiniFrame</Image>
+      <Font>fntScriptStrong</Font>
+      <TextAlign>hcenter,bottom</TextAlign>
+      <ParagraphSpacing>4</ParagraphSpacing>
+      <LineSpacing>2</LineSpacing>
+      <WorkRectOffset left="-10" top="-5" right="-10" bottom="-5" />
+      <BkgrndRectOffset left="2" top="2" right="2" bottom="2" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="180" g="180" b="180" />
+          <Assign type="1"  x="0"   y="0"   w="24"  h="24"/>
+          <Assign type="2"  x="24"  y="0"   w="16"  h="24"/>
+          <Assign type="3"  x="40"  y="0"   w="24"  h="24"/>
+          <Assign type="4"  x="0"   y="24"  w="24"  h="16"/>
+          <Assign type="0"  x="24"  y="24"  w="16"  h="16"/>
+          <Assign type="5"  x="40"  y="24"  w="24"  h="16"/>
+          <Assign type="6"  x="0"   y="40"  w="24"  h="24"/>
+          <Assign type="7"  x="24"  y="40"  w="16"  h="24"/>
+          <Assign type="8"  x="40"  y="40"  w="24"  h="24"/>
+        </States>
+        <States state="focus">
+          <FontColor r="180" g="180" b="180" />
+        </States>
+        <States state="disable">
+          <FontColor r="80" g="80" b="80" />
+        </States>
+      </Parts>
+      <Parts part="itembkgrnd">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+      <Parts part="selectbar">
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0"/>
+          <!-- Do not draw -->
+        </States>
+      </Parts>
+    </TextViewLook>
+
+
+    <!-- Default Popup message box look -->
+    <TextViewLook name="lookDefPopupMsg">
+      <Image>bmpPopupMsg</Image>
+      <Font>fntScriptWeak</Font>
+      <ParagraphSpacing>2</ParagraphSpacing>
+      <LineSpacing>2</LineSpacing>
+      <BkgrndRectOffset left="3" top="3" right="3" bottom="3" />
+      <WorkRectOffset left="-2" top="-1" right="-2" bottom="-1" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="64" g="64" b="64" />
+          <Assign type="1"  x="0"  y="0"   w="8"   h="8"/>
+          <Assign type="2"  x="8"  y="0"   w="34"  h="8"/>
+          <Assign type="3"  x="42" y="0"   w="8"   h="8"/>
+          <Assign type="4"  x="0"  y="8"   w="8"   h="34"/>
+          <Assign type="0"  x="8"  y="8"   w="34"  h="34"/>
+          <Assign type="5"  x="42" y="8"   w="8"   h="34"/>
+          <Assign type="6"  x="0"  y="42"  w="8"   h="8"/>
+          <Assign type="7"  x="8"  y="42"  w="34"  h="8"/>
+          <Assign type="8"  x="42" y="42"  w="8"   h="8"/>
+        </States>
+      </Parts>
+    </TextViewLook>
+    
+
+    <!-- MiniMapLook : Mini map look -->
+    <MiniMapLook name="lookDefMiniMap">
+      <Image>bmpFieldMap</Image>
+      <MaskImage>bmpMiniMapMask</MaskImage>
+      <Font>fntScriptStrong</Font>
+      <SmallFont>fntSmall</SmallFont>
+      <BkgrndRectOffset left="18" top="18" right="18" bottom="18" />
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="210" g="210" b="210" a="255" />
+          <Assign type="0"  x="18"  y="173"  w="220" h="220" />
+        </States>
+        <States state="focus">
+          <FontColor r="230" g="180" b="30" a="255" />
+          <Assign type="0"  x="18"  y="173"  w="220" h="220" />
+        </States>
+      </Parts>
+      <Parts part="north">
+        <!-- North -->
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="player">
+        <!-- Player -->
+        <States state="normal">
+          <Assign type="0"  x="33"  y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="party">
+        <!-- Party -->
+        <States state="normal">
+          <Assign type="0"  x="66"  y="0"   w="32"  h="32" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="99"  y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="questobj">
+        <!-- Quest objective -->
+        <States state="normal">
+          <Assign type="0"  x="132" y="0"   w="32"  h="32" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="165" y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="quest">
+        <!-- Quest -->
+        <States state="normal">
+          <Assign type="0"  x="0"   y="33"  w="32"  h="32" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="33"  y="33"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="merchant">
+        <!-- Merchant -->
+        <States state="common">
+          <Assign type="0"  x="66"  y="33"  w="32"  h="32" />
+        </States>
+        <States state="license">
+          <Assign type="0"  x="99"  y="33"  w="32"  h="32" />
+        </States>
+        <States state="repair">
+          <Assign type="0"  x="132" y="33"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="artisan">
+        <!-- Artisan -->
+        <States state="weapon">
+          <Assign type="0"  x="0"   y="66"  w="32"  h="32" />
+        </States>
+        <States state="armor">
+          <Assign type="0"  x="33"  y="66"  w="32"  h="32" />
+        </States>
+        <States state="usable">
+          <Assign type="0"  x="66"  y="66"  w="32"  h="32" />
+        </States>
+        <States state="food">
+          <Assign type="0"  x="99"  y="66"  w="32"  h="32" />
+        </States>
+        <States state="accessory">
+          <Assign type="0"  x="132" y="66"  w="32"  h="32" />
+        </States>
+        <States state="housing">
+          <Assign type="0"  x="165" y="66"  w="32"  h="32" />
+        </States>
+        <States state="inventory">
+          <Assign type="0"  x="198" y="66"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="indicator1">
+        <!-- Indicator 1 -->
+        <States state="normal">
+          <Assign type="0"  x="0"   y="99"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="indicator2">
+        <!-- Indicator 2 -->
+        <States state="normal">
+          <Assign type="0"  x="33"  y="99"  w="32"  h="32" />
+        </States>
+      </Parts>
+    </MiniMapLook>
+
+
+    <!-- Full scale button -->
+    <ButtonLook name="lookDefFullScaleBtn">
+      <Image>bmpFullScale</Image>
+      <Font>fntRegular</Font>
+      <TextOffset x="0" y="0" />
+      <BkgrndRectOffset left="4" top="4" right="4" bottom="4" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="0"    y="0"   w="24"  h="24" />
+        </States>
+        <States state="down">
+          <Assign type="0"  x="24"   y="0"   w="24"  h="24"  />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+    
+    <!-- Zoom-in minimap button -->
+    <ButtonLook name="lookDefZoomInBtn">
+      <Image>bmpZoomIn</Image>
+      <Font>fntRegular</Font>
+      <TextOffset x="0" y="0" />
+      <BkgrndRectOffset left="4" top="4" right="4" bottom="4" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="0"    y="0"   w="24"  h="24" />
+        </States>
+        <States state="down">
+          <Assign type="0"  x="24"   y="0"   w="24"  h="24"  />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- Zoom-out minimap button -->
+    <ButtonLook name="lookDefZoomOutBtn">
+      <Image>bmpZoomOut</Image>
+      <Font>fntRegular</Font>
+      <TextOffset x="0" y="0" />
+      <BkgrndRectOffset left="4" top="4" right="4" bottom="4" />
+      <Parts part="border">
+        <States state="normal">
+          <Assign type="0"  x="0"    y="0"   w="24"  h="24" />
+        </States>
+        <States state="down">
+          <Assign type="0"  x="24"   y="0"   w="24"  h="24"  />
+        </States>
+      </Parts>
+    </ButtonLook>
+
+
+    <!-- FieldMapLook : Field map look -->
+    <FieldMapLook name="lookDefFieldMap">
+      <Image>bmpFieldMap</Image>
+      <Font>fntScriptStrong</Font>
+      <LargeFont>fntLarge</LargeFont>
+
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="210" g="210" b="210" a="255" />
+          <Assign type="0"  x="18"  y="123"  w="220" h="220" />
+        </States>
+        <States state="focus">
+          <FontColor r="230" g="180" b="30" a="255" />
+          <Assign type="0"  x="18"  y="123"  w="220" h="220" />
+        </States>
+      </Parts>
+      <Parts part="north">
+        <!-- North -->
+        <States state="normal">
+          <Assign type="0"  x="0"   y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="player">
+        <!-- Player -->
+        <States state="normal">
+          <Assign type="0"  x="33"  y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="party">
+        <!-- Party -->
+        <States state="normal">
+          <Assign type="0"  x="66"  y="0"   w="32"  h="32" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="99"  y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="questobj">
+        <!-- Quest objective -->
+        <States state="normal">
+          <Assign type="0"  x="132" y="0"   w="32"  h="32" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="165" y="0"   w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="quest">
+        <!-- Quest -->
+        <States state="normal">
+          <Assign type="0"  x="0"   y="33"  w="32"  h="32" />
+        </States>
+        <States state="focus">
+          <Assign type="0"  x="33"  y="33"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="merchant">
+        <!-- Merchant -->
+        <States state="common">
+          <Assign type="0"  x="66"  y="33"  w="32"  h="32" />
+        </States>
+        <States state="license">
+          <Assign type="0"  x="99"  y="33"  w="32"  h="32" />
+        </States>
+        <States state="repair">
+          <Assign type="0"  x="132" y="33"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="artisan">
+        <!-- Artisan -->
+        <States state="weapon">
+          <Assign type="0"  x="0"   y="66"  w="32"  h="32" />
+        </States>
+        <States state="armor">
+          <Assign type="0"  x="33"  y="66"  w="32"  h="32" />
+        </States>
+        <States state="usable">
+          <Assign type="0"  x="66"  y="66"  w="32"  h="32" />
+        </States>
+        <States state="food">
+          <Assign type="0"  x="99"  y="66"  w="32"  h="32" />
+        </States>
+        <States state="accessory">
+          <Assign type="0"  x="132" y="66"  w="32"  h="32" />
+        </States>
+        <States state="housing">
+          <Assign type="0"  x="165" y="66"  w="32"  h="32" />
+        </States>
+        <States state="inventory">
+          <Assign type="0"  x="198" y="66"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="floor">
+        <!-- Floor button -->
+        <States state="normal">
+          <FontColor r="100" g="100" b="100" />
+          <Assign type="0"  x="165" y="33"  w="32"  h="24" />
+        </States>
+        <States state="focus">
+          <FontColor r="200" g="200" b="200" />
+          <Assign type="0"  x="198" y="33"  w="32"  h="24" />
+        </States>
+        <States state="down">
+          <FontColor r="250" g="250" b="0" />
+          <Assign type="0"  x="198" y="33"  w="32"  h="24" />
+        </States>
+      </Parts>
+      <Parts part="fullscale">
+        <!-- Full scale -->
+        <States state="normal">
+          <Assign type="0"  x="231" y="0"   w="16"  h="16" />
+        </States>
+        <States state="down">
+          <Assign type="0"  x="231" y="17"  w="16"  h="16" />
+        </States>
+      </Parts>
+      <Parts part="scaletrack">
+        <!-- Scale slider track -->
+        <States state="normal">
+          <Assign type="0"  x="231" y="34"  w="16"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="scalethumb">
+        <!-- Scale slider thumb -->
+        <States state="normal">
+          <Assign type="0"  x="231" y="67"  w="16"  h="6" />
+        </States>
+      </Parts>
+      <Parts part="indicator1">
+        <!-- Indicator 1 -->
+        <States state="normal">
+          <Assign type="0"  x="0"   y="99"  w="32"  h="32" />
+        </States>
+      </Parts>
+      <Parts part="indicator2">
+        <!-- Indicator 2 -->
+        <States state="normal">
+          <Assign type="0"  x="33"  y="99"  w="32"  h="32" />
+        </States>
+      </Parts>
+    </FieldMapLook>
+
+
+    <!-- BuffViewerLook : Buff viewer look -->
+    <BuffViewerLook name="lookDefBuffViewer">
+      <Font>fntSmallStrong</Font>
+      <SmallFont>fntSmallStrong</SmallFont>
+      <IconSize w="32" h="32" />
+      <CooltimeImage>bmpCooltime</CooltimeImage>
+      <SliceCellCooltimeImg row="8" col="7" />
+      <CooltimeImgCellCount>50</CooltimeImgCellCount>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="245" g="230" b="0" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+        <States state="focus">
+          <FontColor r="170" g="80" b="230" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+        <States state="disable">
+          <FontColor r="80" g="180" b="220" />
+          <Assign type="0"  x="0"   y="0"   w="0"   h="0" />
+        </States>
+      </Parts>
+      <Parts part="title">
+        <States state="normal">
+          <FontColor r="230" g="230" b="230" />
+        </States>
+      </Parts>
+    </BuffViewerLook>
+
+
+    <LabelLook name="lookDefLabelScoreColor">
+      <Font>fntHeadline</Font>
+      <TextAlign>hcenter,vcenter</TextAlign>
+      <Parts part="border">
+        <States state="normal">
+          <FontColor r="229" g="208" b="24" />
+        </States>
+      </Parts>
+    </LabelLook>
+
+  </Resource>
+</UI>

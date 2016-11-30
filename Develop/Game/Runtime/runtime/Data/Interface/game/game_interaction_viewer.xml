@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_interaction_viewer.lua" />
+
+  <InteractionViewer name="tcvInteractionViewer" parent="layerGame0">
+    <Look>lookDefInteractionViewer</Look>
+    <Layout>
+      <Location x="0" y="0" />
+      <Size w="%100" h="%100" />
+      <Anchor left="true" top="true" right="true" bottom="true" />
+    </Layout>
+  </InteractionViewer>
+  
+  
+</UI>

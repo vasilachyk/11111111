@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_character.lua" />
+
+
+
+  <!-- Frame : Character -->
+  <Frame name="frmCharacter" parent="layerGame1">
+    <Look>lookDefFrameIconAttached</Look>
+    <Layout>
+      <Location x="220" y="80" />
+      <Size w="400" h="600" />
+      <Anchor left="false" top="false" right="false" bottom="false" />
+    </Layout>
+    <Shape>
+      <Icon>iconCharacter</Icon>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>
+        this:SetText( STR( "UI_CHARACTER"));
+        luaGame:RegisterWindow( frmCharacter, btnHoldCharacter);
+      </OnLoaded>
+      <OnShow>luaCharacter:OnShowCharacterFrame();</OnShow>
+      <OnUserArgument>
+        local arg = EventArgs:GetUserArgument();
+        if ( arg == "RESTORE_UI")  then
+
+            luaGame:RestoreUIPosition( frmCharacter);
+
+            if ( gamefunc:GetAccountParam( "frmCharacter", "hold") ~= nil)  then  btnHoldCharacter:SetCheck( true);
+            end
+
+        elseif ( arg == "RECORD_UI")  then
+
+            luaGame:RecordUIPosition( frmCharacter);
+
+            if ( btnHoldCharacter:GetCheck() == true)  then  gamefunc:SetAccountParam( "frmCharacter", "hold", "1");
+            end
+        end
+      </OnUserArgument>
+    </Event>
+    <Controls>
+
+      <!-- Button : Hold buttons -->
+      <Button name="btnHoldCharacter">
+        <Look>lookDefHoldButton</Look>
+        <Layout>
+          <Location x="360" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <Type>pushbutton</Type>
+          <Check>false</Check>
+        </Shape>
+      </Button>
+      
+
+      <!-- Button : Close button -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="385" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Event>
+          <OnClick>frmCharacter:Show( false);</OnClick>
+        </Event>
+      </Button>
+
+
+      <!-- Seperate Bar -->
+      <Picture>
+        <Layout>
+          <Location x="0" y="55" base="BOTTOMLEFT" />
+          <Size w="%100" h="2" />
+        </Layout>
+        <Image>bmpDefSeperateBarHor</Image>
+        <Shape>
+          <Stretch>true</Stretch>
+        </Shape>
+      </Picture>
+
+
+      <!-- TabCtrl -->
+      <TabCtrl name="tbcCharacterTabCtrl">
+        <Layout>
+          <Location x="0" y="30" />
+          <Size w="%100" h="560" />
+        </Layout>
+        <Event>
+          <OnLoaded>
+            tbcCharacterTabCtrl:SetTabName( 0, STR( "UI_CHARACTER"));
+            tbcCharacterTabCtrl:SetTabName( 1, STR( "UI_FACTION"));
+            tbcCharacterTabCtrl:SetTabName( 2, STR( "UI_LEARNEDTALENTS"));
+          </OnLoaded>
+          <OnSelChange>luaCharacter:RefreshCharacter();</OnSelChange>
+        </Event>
+        <TabPages>
+          
+          <!-- Tab 1 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="0" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="535" />
+              </Layout>
+              <Controls>
+
+                <!-- Picture : Character -->
+                <Picture name="picCharacter">
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="%100" h="%100" />
+                  </Layout>
+                  <Image></Image>
+                </Picture>
+                
+
+                <!-- Emblem -->
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="8" y="8" />
+                    <Size w="68" h="68" />
+                  </Layout>
+                </Group>
+
+                <Picture name="picEmblem">
+                  <Layout>
+                    <Location x="10" y="10" />
+                    <Size w="64" h="64" />
+                  </Layout>
+                  <Image>iconEmblem</Image>
+                  <Shape>
+                    <Stretch>true</Stretch>
+                  </Shape>
+                </Picture>
+
+                <Button name="btnChangeEmblem">
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="20" y="100" />
+                    <Size w="80" h="30" />
+                  </Layout>
+                  <Shape>
+                    <Visible>false</Visible>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "EMBLEM"));</OnLoaded>
+                    <OnClick>
+                      if ( frmEmblem:GetShow() == true)  then
+                      
+                          frmEmblem:Show( false);
+                          
+                      else
+                      
+                          frmEmblem:Show( true);
+                          frmEmblem:BringToTop();
+                          frmEmblem:SetFocus();
+                      end
+                    </OnClick>
+                  </Event>
+                </Button>
+
+
+
+                <!-- Label : Name -->
+                <LabelEx name="labName">
+                  <Layout>
+                    <Location x="80" y="10" />
+                    <Size w="300" h="25" />
+                  </Layout>
+                  <Shape>
+                    <Font>fntHeadline</Font>
+                    <FontColor r="160" g="120" b="55"/>
+                    <Align>left,top</Align>
+                    <Text>-</Text>
+                  </Shape>
+                </LabelEx>
+                
+                
+                <!-- Basic info :
+
+                        Level
+                        Guild name
+                        Talent point
+                -->
+                <TextView name="tvwBasicInfo">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="80" y="35" />
+                    <Size w="300" h="50" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                  </Shape>
+                </TextView>
+
+
+                <!-- Status info :
+                        
+                        Maximum Heart power
+                        Maximum Enchantment
+                        Maximum Stemina
+                        Armor point                        
+                        Strength
+                        Dexterity
+                        Intelligence
+                        Constitution
+                        Charisma
+                -->
+                <Label>
+                  <Look>lookDefLabelLarge</Look>
+                  <Layout>
+                    <Location x="10" y="90" />
+                    <Size w="130" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_CHAR_STATS"));</OnLoaded>
+                  </Event>
+                </Label>
+
+
+                <TextView name="tvwStatusInfo">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="10" y="120" />
+                    <Size w="130" h="300" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                  </Shape>
+                  <Event>
+                    <OnToolTip>luaCharacter:OnToolTipCharStatusInfo();</OnToolTip>
+                  </Event>
+                </TextView>
+
+
+                <!-- Resistance :
+                          Fire
+                          Cold
+                          Lightning
+                          Poison
+                          Holy
+                          Unholy
+                -->
+                <Label>
+                  <Look>lookDefLabelLarge</Look>
+                  <Layout>
+                    <Location x="10" y="350" />
+                    <Size w="130" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_CHAR_RESISTANCE"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <TextView name="tvwResistanceInfo">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="10" y="380" />
+                    <Size w="130" h="300" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                  </Shape>
+                  <Event>
+                    <OnToolTip>luaCharacter:OnToolTipCharResistanceInfo();</OnToolTip>
+                  </Event>
+                </TextView>
+
+                
+                <!-- Armor item slot -->
+                <EquippedItemSlot name="isFace">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="165" y="95" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>face</SlotType>
+                  <DefaultImage>iconArmorFace</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+                <EquippedItemSlot name="isHead">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="325" y="95" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>head</SlotType>
+                  <DefaultImage>iconArmorHead</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+                <EquippedItemSlot name="isBody">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="245" y="173" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>body</SlotType>
+                  <DefaultImage>iconArmorBody</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+                
+                <EquippedItemSlot name="isHands">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="165" y="273" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>hands</SlotType>
+                  <DefaultImage>iconArmorHands</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+                <EquippedItemSlot name="isLeg">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="245" y="273" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>leg</SlotType>
+                  <DefaultImage>iconArmorLegs</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+                
+                <EquippedItemSlot name="isFeet">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="245" y="423" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>feet</SlotType>
+                  <DefaultImage>iconArmorFeet</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+
+                <!-- Accessories item slot -->
+                <EquippedItemSlot name="isNecklace">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="165" y="145" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>neck</SlotType>
+                  <DefaultImage>iconAccsNecklace</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+                
+                <EquippedItemSlot name="isEarring">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="325" y="145" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>charm</SlotType>
+                  <DefaultImage>iconAccsEarring</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+                
+                <EquippedItemSlot name="isRingR">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="165" y="223" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>rfinger</SlotType>
+                  <DefaultImage>iconAccsRing</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+                
+                <EquippedItemSlot name="isRingL">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="325" y="223" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>lfinger</SlotType>
+                  <DefaultImage>iconAccsRing</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+                
+                <!-- weapon1 item slot -->
+                <EquippedItemSlot name="isWeapon1">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="165" y="373" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>rweapon</SlotType>
+                  <DefaultImage>iconWeaponSword</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+                <EquippedItemSlot name="isWeapon1Sub">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="165" y="423" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>lweapon</SlotType>
+                  <DefaultImage>iconWeaponShield</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+                
+                
+                <!-- weapon2 item slot -->
+                <EquippedItemSlot name="isWeapon2">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="325" y="373" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>rweapon2</SlotType>
+                  <DefaultImage>iconWeaponSword</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+                <EquippedItemSlot name="isWeapon2Sub">
+                  <Look>lookDefEquippedItemSlot</Look>
+                  <Layout>
+                    <Location x="325" y="423" />
+                    <Size w="40" h="40" />
+                  </Layout>
+                  <SlotType>lweapon2</SlotType>
+                  <DefaultImage>iconWeaponShield</DefaultImage>
+                  <Event>
+                    <OnDblClick>luaCharacter:OnDblClickEquippedItemSlot();</OnDblClick>
+                    <OnDragBegin>return luaCharacter:OnDragBeginEquippedItemSlot();</OnDragBegin>
+                    <OnDrop>return luaCharacter:OnDropEquippedItemSlot();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipEquippedItemSlot();</OnToolTip>
+                  </Event>
+                </EquippedItemSlot>
+
+              </Controls>
+            </Page>
+          </TabPage>
+
+          
+          <!-- Tab 2 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="130" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="535" />
+              </Layout>
+              <Controls>
+
+                <!-- Picture : Background -->
+                <Picture>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="%100" h="485" />
+                  </Layout>
+                  <Image>bmpContentBkgrnd</Image>
+                  <Shape>
+                    <Stretch>true</Stretch>
+                  </Shape>
+                </Picture>
+
+
+                <!-- ListCtrl : Factions -->
+                <ListCtrl name="lcFactions">
+                  <Look>lookDefListCtrl</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="10" y="5" />
+                    <Size w="370" h="340" />
+                  </Layout>
+                  <Shape>
+                    <ViewStyle>report</ViewStyle>
+                    <MultipleSel>false</MultipleSel>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <AddColumn align="left,vcenter" width="170">name</AddColumn>
+                    <AddColumn align="hcenter,vcenter" width="200">faction</AddColumn>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>
+                      lcFactions:SetColumnText( 0, STR( "NAME"));
+                      lcFactions:SetColumnText( 1, STR( "FACTION"));
+                    </OnLoaded>
+                    <OnSelChange>luaCharacter:OnSelChangeFaction();</OnSelChange>
+                    <OnDrawItemBkgrnd>luaCharacter:OnDrawItemBkgrndFaction();</OnDrawItemBkgrnd>
+                    <OnPreDrawItem>return luaCharacter:OnPreDrawItemFaction();</OnPreDrawItem>
+                  </Event>
+                </ListCtrl>
+
+                
+                <!-- Clan info -->
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="5" y="360" />
+                    <Size w="380" h="110" />
+                  </Layout>
+                </Group>
+
+                <TextView name="tvwFactionClanInfo">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="10" y="365" />
+                    <Size w="370" h="110" />
+                  </Layout>
+                  <Shape>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                  </Shape>
+                </TextView>
+
+
+                <!-- Frame bottom -->
+                <Group>
+                  <Look>lookDefFrameBottomBox</Look>
+                  <Layout>
+                    <Location x="0" y="485" />
+                    <Size w="%100" h="50" />
+                  </Layout>
+                </Group>
+                
+
+                <!-- Buttons : Change at war -->
+                <Button name="btnChangeAtWar">
+                  <Look>lookDefButton</Look>
+                  <Layout>
+                    <Location x="195" y="495" />
+                    <Size w="185" h="30" />
+                  </Layout>
+                  <Action>
+                    <Enabled>false</Enabled>
+                  </Action>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_CHAR_CHANGECOMBATSTATUS"));</OnLoaded>
+                    <OnClick>luaCharacter:OpenConfirmChangeAtWar();</OnClick>
+                  </Event>
+                </Button>
+
+              </Controls>
+            </Page>
+          </TabPage>
+		  
+		  
+          <!-- Tab 3 -->
+          <TabPage>
+            <Tab>
+              <Look>lookDefTabBtn</Look>
+              <Layout>
+                <Location x="260" y="0" />
+                <Size w="130" h="25" />
+              </Layout>
+              <Shape>
+                <Visible>true</Visible>
+                <Type>pushbutton</Type>
+              </Shape>
+            </Tab>
+            <Page>
+              <Layout>
+                <Location x="0" y="25" />
+                <Size w="%100" h="535" />
+              </Layout>
+              <Controls>
+
+                <!-- Picture : Background -->
+                <Picture>
+                  <Layout>
+                    <Location x="0" y="0" />
+                    <Size w="%100" h="485" />
+                  </Layout>
+                  <Image>bmpContentBkgrnd</Image>
+                  <Shape>
+                    <Stretch>true</Stretch>
+                  </Shape>
+                </Picture>
+                
+
+                <!-- filter -->
+                <Label>
+                  <Look>lookDefLabel</Look>
+                  <Layout>
+                    <Location x="10" y="10" />
+                    <Size w="130" h="20" />
+                  </Layout>
+                  <Event>
+                    <OnLoaded>this:SetText( STR( "UI_TYPE"));</OnLoaded>
+                  </Event>
+                </Label>
+
+                <Combobox name="cmbLearnedTalentFilter">
+                  <Look>lookDefComboButton</Look>
+                  <Look type="listbox">lookDefComboListBox</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="140" y="10" />
+                    <Size w="240" h="25" />
+                    <Anchor left="true" top="true" right="true" bottom="false" />
+                  </Layout>
+                  <Shape>
+                    <DroppedWidth>220</DroppedWidth>
+                    <ShowScrollBar>show</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                  </Shape>
+                  <Event>
+                    <OnLoaded>
+                      cmbLearnedTalentFilter:ResetContent();
+
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "UI_ALL"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.NONE);
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "STYLE_DEFENDER"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.DEFENDER);
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "STYLE_BERSERKER"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.BERSERKER);
+                      --[[
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "ASSASSIN"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.ASSASSIN);
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "STYLE_RANGER"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.RANGER);
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "STYLE_SORCERER"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.SORCERER);
+                      --]]
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "STYLE_CLERIC"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.CLERIC);
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "TALENT_COMMON"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.COMMON);
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "TALENT_LICENSE"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.LICENSE);
+                      local nIndex = cmbLearnedTalentFilter:AddString( STR( "TALENT_GESTURE"));
+                      cmbLearnedTalentFilter:SetItemData( nIndex, TALENT_TYPE.GESTURE);
+
+                      cmbLearnedTalentFilter:SetCurSel( 0);
+                    </OnLoaded>
+                    <OnSelChange>luaCharacter:OnSelChangeLearnedTalentListCtrl();</OnSelChange>
+                  </Event>
+                </Combobox>
+                
+
+                <!-- CategoryCtrl : Learned talent -->
+                <CategoryCtrl name="ctcLearnedTalent">
+                  <Look>lookDefCategoryCtrlCustom</Look>
+                  <Look type="scrollbar">lookDefScrollBar</Look>
+                  <Layout>
+                    <Location x="10" y="40" />
+                    <Size w="370" h="430" />
+                  </Layout>
+                  <Shape>
+                    <ItemMargin horz="1" vert="3"/>
+                    <ShowScrollBar>auto</ShowScrollBar>
+                    <ThumbLength>26</ThumbLength>
+                    <ShowRootItem>false</ShowRootItem>
+                    <MultipleSel>false</MultipleSel>
+                    <DragAndDrop>true</DragAndDrop>
+                    <AddColumn align="left,vcenter" width="350">name</AddColumn>
+                    <AddColumn align="left,vcenter" width="100">rank</AddColumn>
+                    <AddColumn align="left,vcenter" width="120">style</AddColumn>
+                    <AddColumn align="left,vcenter" width="120">passive</AddColumn>
+                  </Shape>
+                  <Event>
+                    <OnDragBegin>return luaCharacter:OnDragBeginLearnedTalentListCtrl();</OnDragBegin>
+                    <OnDrop>luaCharacter:OnDropLearnedTalentListCtrl();</OnDrop>
+                    <OnToolTip>luaCharacter:OnToolTipLearnedTalentListCtrl();</OnToolTip>
+                  </Event>
+                </CategoryCtrl>
+
+
+                <!-- Frame bottom -->
+                <Group>
+                  <Look>lookDefFrameBottomBox</Look>
+                  <Layout>
+                    <Location x="0" y="485" />
+                    <Size w="%100" h="50" />
+                  </Layout>
+                </Group>
+
+
+                <!-- List item count -->
+                <Group>
+                  <Look>lookDefGroupBox</Look>
+                  <Layout>
+                    <Location x="10" y="495" />
+                    <Size w="370" h="30" />
+                  </Layout>
+                  <Shape>
+                    <Opacity>0.25</Opacity>
+                  </Shape>
+                </Group>
+
+                <TextView name="tvwLearnedTalentCount">
+                  <Look>lookDefTextView</Look>
+                  <Layout>
+                    <Location x="10" y="495" />
+                    <Size w="370" h="30" />
+                  </Layout>
+                  <Shape>
+                    <ShowBorder>false</ShowBorder>
+                    <ShowScrollBar>hide</ShowScrollBar>
+                    <DragAndDrop>true</DragAndDrop>
+                  </Shape>
+                </TextView>
+
+              </Controls>
+            </Page>
+          </TabPage>
+
+        </TabPages>
+      </TabCtrl>
+
+    </Controls>
+  </Frame>
+
+
+  
+  
+  
+  
+
+
+
+  <!-- Frame -->
+  <Frame name="frmConfirmChangeAtWar" parent="frmCharacter">
+    <Look>lookDefFrame</Look>
+    <Layout>
+      <Size w="440" h="230" />
+    </Layout>
+    <Shape>
+      <Visible>false</Visible>
+      <Resize>false</Resize>
+      <Movable>true</Movable>
+    </Shape>
+    <Event>
+      <OnLoaded>this:SetText( STR( "UI_CONFIRM"));</OnLoaded>
+    </Event>
+    <Controls>
+
+      <!-- Button : Close Buttons -->
+      <Button>
+        <Look>lookDefCloseBtn</Look>
+        <Layout>
+          <Location x="425" y="-1" base="TOPRIGHT" />
+          <Size w="27" h="26" />
+        </Layout>
+        <Shape>
+          <HotKey>ESC</HotKey>
+        </Shape>
+        <Event>
+          <OnClick>luaCharacter:CloseConfirmChangeAtWar();</OnClick>
+        </Event>
+      </Button>
+
+      <!-- Buttons : Close -->
+      <Button>
+        <Look>lookDefButton</Look>
+        <Layout>
+          <Location x="10" y="180" />
+          <Size w="410" h="30" />
+        </Layout>
+        <Event>
+          <OnLodaded>this:SetText( STR( "UI_CLOSE"));</OnLodaded>
+          <OnClick>luaCharacter:CloseConfirmChangeAtWar();</OnClick>
+        </Event>
+      </Button>
+
+    </Controls>
+  </Frame>
+  
+</UI>

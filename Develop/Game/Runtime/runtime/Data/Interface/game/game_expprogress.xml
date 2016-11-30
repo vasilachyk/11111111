@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI sheet="game">
+
+  <!-- Include script -->
+  <Script file="game_expprogress.lua" />
+
+
+  <!-- Frame : EXP bar -->
+  <Frame name="frmExpProgressBar" parent="layerGame0">
+    <Layout>
+      <Location x="0" y="%100" base="BOTTOMLEFT" />
+      <Size w="%100" h="10" />
+      <Anchor left="true" top="false" right="true" bottom="true" />
+    </Layout>
+    <Shape>
+      <Visible>true</Visible>
+      <Resize>false</Resize>
+      <Static>true</Static>
+      <Movable>false</Movable>
+      <ShowBorder>false</ShowBorder>
+    </Shape>
+    <Event>
+      <OnDraw>luaExpProgress:OnDrawExpProgressBar();</OnDraw>
+    </Event>
+  </Frame>
+
+</UI>

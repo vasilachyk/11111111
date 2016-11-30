@@ -1,0 +1,1985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<maiet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <STR key="ABS" string="Damage Absorption" />
+  <STR key="ADDQUEST" string="Add Quest" />
+  <STR key="AFK" string="AFK" />
+  <STR key="AP" string="P. Def" />
+  <STR key="ARENA_BLUETEAM" string="Blue Team" />
+  <STR key="ARENA_CANCEL" string="Cancel Match" />
+  <STR key="ARENA_CANCEL_REGISTER_INFO_MSG" string="Closing the window won't cancel your request." />
+  <STR key="ARENA_CANCEL_REGISTER_SELETE_MSG" string="Brune's Glory request accepted.{CR}Looking for a match..." />
+  <STR key="ARENA_CANNOT_USE_ITEM" string="Items cannot be used in the battle arena." />
+  <STR key="ARENA_CHANNEL_EXIT" string="Leaving the Arena..." />
+  <STR key="ARENA_EXIT" string="Leave" />
+  <STR key="ARENA_EXIT_TOOLTIP" string="Return to your previous field." />
+  <STR key="ARENA_FINISH_INFO" string="Results" />
+  <STR key="ARENA_GUILD" string="3v3 Guild Battle" />
+  <STR key="ARENA_GUILD_RECORD" string="Guild War Record" />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_ARENA_USING" string="You cannot send the 3v3 Guild Battle request because {0} is already using the Battle Arena." />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_DEAD" string="You cannot send the 3v3 Guild Battle request because {0} cannot use the Battle Arena." />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_DYNAMICFIEDL" string="You cannot send the 3v3 Guild Battle request because {0} is in a field that cannot use the Battle Arena." />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_GUILDMEMBER" string="You cannot send the 3v3 Guild Battle request because {0} is not a member of the guild." />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_LEVEL" string="You cannot send the 3v3 Guild Battle request because {0} is below the required level (30)." />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_OFFLINE" string="You cannot send the 3v3 Guild Battle request because {0} is not logged in." />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_PARTYLEADER" string="Only the leader of the party can send the 3v3 Guild Battle request." />
+  <STR key="ARENA_GUILD_REGISTER_ERROR_PARTYMEMBER_COUNT" string="You can only send the 3v3 Guild Battle request when there are 3 party members." />
+  <STR key="ARENA_GUILD_SCORE" string="Guild War Score" />
+  <STR key="ARENA_INVITE" string="A Brune's Glory match has been found." />
+  <STR key="ARENA_INVITE_CONFIRM" string="Do you want to accept the Brune's Glory invite? " />
+  <STR key="ARENA_LOSE" string=" L" />
+  <STR key="ARENA_ONE_TO_ONE" string="1v1 Battle" />
+  <STR key="ARENA_RANKING" string="Rank" />
+  <STR key="ARENA_RECORD" string="Total" />
+  <STR key="ARENA_REDTEAM" string="Red Team" />
+  <STR key="ARENA_REGISTER_CONFIRM" string="Do you want to cancel your Brune's Glory registration?" />
+  <STR key="ARENA_REGISTER_INVITE_ENTER_MSG" string="Entering Battle Arena…" />
+  <STR key="ARENA_REGISTER_INVITE_WAITING_MSG" string="Waiting for the other player(s)..." />
+  <STR key="ARENA_REMATCH_FRONT" string="Request" />
+  <STR key="ARENA_REMATCH_REAR" string="Rematch" />
+  <STR key="ARENA_REMATCH_TOOLTIP" string="Leave the Arena and request a rematch." />
+  <STR key="ARENA_REQUEST_INVITE_MSG" string="A match has been found.{CR}Do you want to accept the match?{CR}{CR}You will be {COLOR r=0 g=204 b=0}removed from your current party{/COLOR}.{CR}{COLOR r=0 g=204 b=0}To cancel your request{/COLOR}, select Cancel Match or simply wait about one minute." />
+  <STR key="ARENA_REQUEST_REGISTER" string="Brune's Glory Request" />
+  <STR key="ARENA_REQUEST_REGISTER_SELETE_MSG" string="Select a Battle type." />
+  <STR key="ARENA_RESULT_ALIVE" string="Survived" />
+  <STR key="ARENA_RESULT_KILL" string="Kills" />
+  <STR key="ARENA_RESULT_LEVEL" string="Level" />
+  <STR key="ARENA_RESULT_NAME" string="Player" />
+  <STR key="ARENA_RESULT_RESULT" string="Points" />
+  <STR key="ARENA_RESULT_SCORE" string="Score" />
+  <STR key="ARENA_RESULT_TIME" string="Playtime" />
+  <STR key="ARENA_SCORE" string="Score" />
+  <STR key="ARENA_SCREENSHOT_ERROR" string="You cannot take screenshots during the battle in the Battle Arena." />
+  <STR key="ARENA_THREE_TO_THREE" string="3v3 Battle - Unscored" />
+  <STR key="ARENA_TIME_AVAILABLE" string="Brune's Glory is available at these times:" />
+  <STR key="ARENA_TYPE_1VS1" string="1v1 Battle" />
+  <STR key="ARENA_TYPE_3VS3" string="3v3 Battle" />
+  <STR key="ARENA_TYPE_GUILD" string="Guild Battle" />
+  <STR key="ARENA_TYPE_NULL" string="" />
+  <STR key="ARENA_USE_COUNT_INFO" string="The number of people using the Battle Arena is displayed inside the bracket." />
+  <STR key="ARENA_WIN" string=" W;" />
+  <STR key="ARMOR" string="Armor" />
+  <STR key="ARMOR_ACCESSORY" string="Accessory" />
+  <STR key="ARMOR_CHAINMAIL" string="Chain" />
+  <STR key="ARMOR_CLOTH" string="Cloth" />
+  <STR key="ARMOR_LEATHER" string="Leather" />
+  <STR key="ARMOR_PLATE" string="Plate" />
+  <STR key="ARMOR_SHIELD" string="Shield" />
+  <STR key="ATTACK_SPEED" string="Attack Speed" />
+  <STR key="BATTLEARENA_AREAWINRULE" string="The first one to earn {0} points wins." />
+  <STR key="BATTLEARENA_BEGIN" string="An arena battle has begun. You are on the {0} Team." />
+  <STR key="BATTLEARENA_BLUETEAM" string="Blue Team" />
+  <STR key="BATTLEARENA_DEFEATED" string="'{0}' has lost against '{1}' and has been eliminated." />
+  <STR key="BATTLEARENA_END" string="The arena battle has ended." />
+  <STR key="BATTLEARENA_ENTERINGAREA" string="An arena battle begins in {0} second(s)." />
+  <STR key="BATTLEARENA_OPPONENTFOUND" string="You have found an opponent inside the arena." />
+  <STR key="BATTLEARENA_PROGRESS" string="An arena battle is in progress. You are on the {0} Team." />
+  <STR key="BATTLEARENA_REDTEAM" string="Red Team" />
+  <STR key="BATTLEARENA_REGISTERCANCELLED" string="Your registration at the arena has been cancelled." />
+  <STR key="BATTLEARENA_REGISTERED" string="You have registered at the arena." />
+  <STR key="BATTLEMOVINGSPEED" string="Speed while in combat" />
+  <STR key="BEATEN" string="Hit" />
+  <STR key="BEATENWEIGHT" string="Hit Resistance" />
+  <STR key="BLUNTDMGAMP" string="Mace Damage Modifier" />
+  <STR key="BROKENEDGEMENCHANTSLOT" string="Broken Jewel Enchantment Slot" />
+  <STR key="BROKENEDSPECIALGEMENCHANTSLOT" string="Broken Special Jewel Enchantment Slot" />
+  <STR key="CAPTION_ABSORB" string="Absorb" />
+  <STR key="CAPTION_AVOID" string="Dodge" />
+  <STR key="CAPTION_DEFENCESUCCESS" string="Successful Defense" />
+  <STR key="CAPTION_DISPEL" string="Immune" />
+  <STR key="CAPTION_DODGE" string="Missed" />
+  <STR key="CAPTION_FULLRESISTANCE" string="Full Resistance" />
+  <STR key="CAPTION_MISS" string="Missed" />
+  <STR key="CAPTION_RESISTANCE" string="Resistance" />
+  <STR key="CAPTION_RIPOSTE" string="Riposte" />
+  <STR key="CAST_SPEED" string="Cast Speed" />
+  <STR key="CAST_TIME" string="Cast Time " />
+  <STR key="CFS_LOWVALUE" string="- Faction with {0} less than {1}{CR}" />
+  <STR key="CFS_LOWVALUE_USEFAIL" string="This item can be used only when {0}'s Faction is {1} or lower." />
+  <STR key="CFS_VALUE" string="- {0} Faction Reputation: {1} or greater{CR}" />
+  <STR key="CFS_VALUE_USEFAIL" string="This item can be used only when {0}'s faction is {1} or higher." />
+  <STR key="CHA" string="Charm" />
+  <STR key="CHALLENGERQUEST_COMPLETED" string="Challenger Quest Completed" />
+  <STR key="CHALLENGERQUEST_EXITFIELD" string="In {0:{1} second(s);$ minute(s)}, you will leave the current field. To leave now, click the 'Leave' button." />
+  <STR key="CHANNEL" string="Ch." />
+  <STR key="CHANNEL_CANCELLED" string="Channel change has been cancelled." />
+  <STR key="CHATTING" string="Chat" />
+  <STR key="CHATTING_ALL" string="All" />
+  <STR key="CHATTING_AUCTION" string="Auction" />
+  <STR key="CHATTING_CHANNEL" string="Channel" />
+  <STR key="CHATTING_CHANNELBANISHED" string="You have been banned from Chat Channel {0}." />
+  <STR key="CHATTING_CHANNELBANISHEDMBER" string="{1} has been banned from Chat Channel {0}." />
+  <STR key="CHATTING_CHANNELCHANGEDHOST" string="The host of Chat Channel {0} has changed to {1}." />
+  <STR key="CHATTING_CHANNELENTERED" string="You have entered Chat Channel {0}." />
+  <STR key="CHATTING_CHANNELENTEREDMEMBER" string="{1} has entered Chat Channel {0}." />
+  <STR key="CHATTING_CHANNELLEFT" string="You have left the chat channel." />
+  <STR key="CHATTING_CHANNELLEFTMEMBER" string="{1} has left Chat Channel {0}." />
+  <STR key="CHATTING_CHANNELUNBANISHED" string="The chat channel has lifted its ban on {0}." />
+  <STR key="CHATTING_FIELD" string="Field" />
+  <STR key="CHATTING_GM" string="GM" />
+  <STR key="CHATTING_NARRATION" string="Narration" />
+  <STR key="CHATTING_NEW" string="New Chat" />
+  <STR key="CHATTING_NOTICE" string="Notice" />
+  <STR key="CHATTING_PARTY" string="Party" />
+  <STR key="CHATTING_REGION" string="Region" />
+  <STR key="CHATTING_SAY" string="[Normal][{0}]: {1}" />
+  <STR key="CHATTING_SHOUTS" string="[Shout][{0}]: {1}" />
+  <STR key="CHATTING_SYSTEM" string="System" />
+  <STR key="CHATTING_WHISPER" string="Whisper" />
+  <STR key="CHATTING_WHISPERFROM" string="{0} whispers:  {1}" />
+  <STR key="CHATTING_WHISPERTO" string="Whisper to {0}: {1}" />
+  <STR key="CINNS_NOTREGIST" string="- {0} Being Unregistered{CR}" />
+  <STR key="CINNS_REGIST" string="- {0} Being Registered{CR}" />
+  <STR key="CIS_EQUIP" string="- {0} Item Equipped{CR}" />
+  <STR key="CIS_EQUIP_USEFAIL" string="This item can be used when Item {0} is equipped." />
+  <STR key="CIS_FEWITEM" string="- Quantity of Item {0} in Possession is Fewer Than {1}{CR}" />
+  <STR key="CIS_FEWITEM_USEFAIL" string="This item can be used when the number of Item {0} in possession is {1} or below." />
+  <STR key="CIS_ITEM" string="- {0} Item in Possession{CR}" />
+  <STR key="CIS_ITEM_USEFAIL" string="This item can be used when Item {0} is in possession." />
+  <STR key="CIS_MANYITEM" string="- - Quantity of Item {0} in Possession is Greater Than %d{CR}" />
+  <STR key="CIS_MANYITEM_USEFAIL" string="This item can be used when the number of Item {0} in possession is {1} or above." />
+  <STR key="CIS_NOITEM" string="- {0} Item Not in Possession{CR}" />
+  <STR key="CIS_NOITEM_USEFAIL" string="This item can be used when Item {0} is not in possession." />
+  <STR key="CK_HAS" string="- You must defeat {0} first.{CR}" />
+  <STR key="CK_HAS_USEFAIL" string="This item can be used only after defeating {0}." />
+  <STR key="CK_INNSAVE_USEFAIL" string="This item can be used only after designating an inn to return to." />
+  <STR key="CLS_ITEMUSEFAIL" string="This item can be used only in {0}." />
+  <STR key="CLS_MAX" string="- Level {0} and above{CR}" />
+  <STR key="CLS_MIN" string="- Level {0} or below{CR}" />
+  <STR key="CLS_MINMAX" string="- Between Level {0} and Level {1}{CR}" />
+  <STR key="COLDDMGAMP" string="Ice Damage Modifier" />
+  <STR key="CON" string="Vitality" />
+  <STR key="CONTROLS_JOYPAD_CAN_NOT_CHANGE_MOVEKEY" string="Move key cannot be changed." />
+  <STR key="CONTROLS_JOYPAD_CAN_NOT_CLEAR_MOVEKEY" string="Move key cannot be removed." />
+  <STR key="COOLTIME" string="Cooldown" />
+  <STR key="COPPERPOINT" string="CP" />
+  <STR key="COST" string="Cost" />
+  <STR key="COSTUME" string="Costume Item" />
+  <STR key="COUNT" string="Quantity" />
+  <STR key="CQS_ACTIVE" string="Currently not in use.{CR}" />
+  <STR key="CQS_COMPLETE" string="Complete" />
+  <STR key="CQS_COMPLETE_EXT" string="If Solved" />
+  <STR key="CQS_DONE" string="Complete" />
+  <STR key="CQS_DONE_EXT" string="When Finished" />
+  <STR key="CQS_EXIST" string="In Progress" />
+  <STR key="CQS_EXIST_EXT" string="When in Progress" />
+  <STR key="CQS_ITEMUSEFAIL" string="This item can only be used when the '{0}' quest is {1}." />
+  <STR key="CQS_NOTCOMPLETE" string="Incomplete" />
+  <STR key="CQS_NOTDONE" string="When Not Finished" />
+  <STR key="CQS_NOTEXIST" string="When Not in Progress" />
+  <STR key="CQS_OBJECTIVE_COMPLETE" string="- Objective {1} of Quest {0} Is Completed{CR}" />
+  <STR key="CQS_OBJECTIVE_COMPLETE_ITEMUSEFAIL" string="This item can be used when Objective {1} of Quest {0} has been completed." />
+  <STR key="CQS_OBJECTIVE_INCOMPLETE" string="- When Objective {1} of Quest {0} Is Not Completed{CR}" />
+  <STR key="CQS_OBJECTIVE_INCOMPLETE_ITEMUSEFAIL" string="This item can be used when Objective {1} of Quest {0} has not been completed." />
+  <STR key="CQS_QUEST" string="- {1} Quest: {0}{CR}" />
+  <STR key="CQS_VAR" string="- {0} Quest in Progress{CR}" />
+  <STR key="CQS_VAR_ITEMUSEFAIL" string="You cannot use this item here." />
+  <STR key="CRAFTING" string="Craft" />
+  <STR key="CRITICAL_MAGIC_AMP" string="Magic Critical Rate" />
+  <STR key="CRITICAL_MAGIC_DAMAGE" string="Magic Critical Rate" />
+  <STR key="CRITICAL_MAGIC_DAMAGE_AMP" string="M. Crit Damage" />
+  <STR key="CRITICAL_MAGIC_DAMAGE_AMP_FORME" string="M. Crit Barrier" />
+  <STR key="CRITICAL_MAGIC_FORME" string="M. Crit Resist" />
+  <STR key="CRITICAL_MELLE_DAMAGE" string="Melee Critical Rate" />
+  <STR key="CRITICAL_PHYSIC_AMP" string="Physical Critical Rate" />
+  <STR key="CRITICAL_PHYSIC_DAMAGE_AMP" string="P. Crit Damage" />
+  <STR key="CRITICAL_PHYSIC_DAMAGE_AMP_FORME" string="P. Crit Barrier" />
+  <STR key="CRITICAL_PHYSIC_FORME" string="P. Crit Resist" />
+  <STR key="CRITICAL_RANGE_DAMAGE" string="Ranged Critical Rate" />
+  <STR key="CRITICALMAGICAMP" string="Magic Critical Rate Modifier" />
+  <STR key="CRITICALMELLEAMP" string="Melee Critical Rate Modifier" />
+  <STR key="CRITICALRANGEAMP" string="Ranged Critical Rate Modifier" />
+  <STR key="CRS_HUMAN" string="- Race: Human{CR}" />
+  <STR key="CRS_HUMAN_USEFAIL" string="This item can be used only by Humans." />
+  <STR key="CRS_NEBIT" string="- Race: Nevit{CR}" />
+  <STR key="CRS_NEBIT_USEFAIL" string="This item can be used only by Nevits." />
+  <STR key="CRS_VOLO" string="- Race: Volo{CR}" />
+  <STR key="CRS_VOLO_USEFAIL" string="This item can be used only by Volos." />
+  <STR key="CSS_SEX" string="- Gender: {0}{CR}" />
+  <STR key="CSS_SEX_FEMALE_USEFAIL" string="This item can be used only by females." />
+  <STR key="CSS_SEX_MALE_USEFAIL" string="This item can be used only by males." />
+  <STR key="CSS_SEX_SEXLESS_USEFAIL" string="This item can be used only by the sexless." />
+  <STR key="CT_ALREADY_HAS_BUFF" string="You already have {0} buff." />
+  <STR key="CT_AND" string="" />
+  <STR key="CT_DATE" string="- Valid from {1}/{2}/{0} through {3}{CR}" />
+  <STR key="CT_DATE_USEFAIL" string="This item can be used from {1}/{2}/{0} through {1}/{3}/{0}." />
+  <STR key="CT_NEED_BUFF" string="{0} buff is required." />
+  <STR key="CT_OR" string="One of the following conditions has to be met:{CR}" />
+  <STR key="CT_PC_CAFE_ONLY_USE" string="Can only be used at an Internet Cafe." />
+  <STR key="CT_TALENT" string="- {0} Skill{CR}" />
+  <STR key="CT_TALENT_STYLE_TP" string="- - {0} Style {1} Skill Point(s) or above{CR}" />
+  <STR key="CT_TALENT_STYLE_TP_USEFAIL" string="This item can be used only when you have {1} Skill Points or more in the {0} Style." />
+  <STR key="CT_TALENT_USEFAIL" string="This item can be used only when Skill {0} is in use." />
+  <STR key="DAY" string="d" />
+  <STR key="DAYTIME" string="Time" />
+  <STR key="DAYTIME_DAWN" string="Dawn" />
+  <STR key="DAYTIME_DAYTIME" string="Daytime" />
+  <STR key="DAYTIME_NIGHT" string="Night" />
+  <STR key="DAYTIME_SUNSET" string="Dusk" />
+  <STR key="DEFLECT" string="Deflect" />
+  <STR key="DEFLECTWEIGHT" string="Deflect Resistance" />
+  <STR key="DEX" string="Agility" />
+  <STR key="DISTANCE" string="Distance" />
+  <STR key="DMAGAE_REFLECT" string="Damage Reflection" />
+  <STR key="DODGEAMP" string="Dodge Modifier" />
+  <STR key="DOGEMENCHANT" string="Jewel" />
+  <STR key="DUEL_BEGIN" string="Start Combat" />
+  <STR key="DUEL_BEGINAFTERSEC" string="Combat begins in {0} second(s)." />
+  <STR key="DUEL_MERCERNARY" string="{0}'s Mercenary" />
+  <STR key="DUEL_PARTYWINNER" string="The {COLOR r=50 g=200 b=50}{0}{/COLOR} Party won a duel against the {COLOR r=50 g=200 b=50}{1}{/COLOR} Party." />
+  <STR key="DUEL_WINNER" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} defeated {COLOR r=50 g=200 b=50}{1}{/COLOR} in a duel." />
+  <STR key="DURABILITY" string="Durability" />
+  <STR key="DYEING" string="Dyeing" />
+  <STR key="DYESOLUTION" string="Dye Solution" />
+  <STR key="EFFECT" string="Effects" />
+  <STR key="EMBLEM" string="Emblem" />
+  <STR key="EN" string="Energy" />
+  <STR key="EN_CONSUME" string="Energy Cost" />
+  <STR key="EVENT_DESE_99995" string="I've prepared  {COLOR r=249 g=173 b=129}a special gift{/COLOR} for this Easter.{CR} But monsters took all the gifts! What do I do?{CR}You will get {COLOR r=249 g=173 b=129}Egg Set{/COLOR} if you teach those monsters a lesson.{CR}And don't worry about giving it back to me. I prepared them for you anyway.{CR}{CR}{COLOR r=109 g=207 b=246}Location: Any where{/COLOR}" />
+  <STR key="EVENT_DESE_99996" string="During all the memorable historical events such as Ingen Independence War or foundation of Rendel Kingdom, supporters of the dark, {COLOR r=141 g=198 b=63}Assassins{/COLOR} were always there. {CR}{CR}{COLOR r=244 g=154 b=193}※{/COLOR}{COLOR r=161 g=134 b=190}Burning Time Event {/COLOR}{COLOR r=249 g=173 b=129}for commemorating Assassin Update!{/COLOR}{CR}{COLOR r=109 g=207 b=246}Time: Jan 22 to Feb 26 from 12PM to 2 PM, 8PM to 10PM{CR}Buffs: Increased EXP gain, Increased character stats, Increases Life and Energy regen speed" />
+  <STR key="EVENT_DESE_99997" string="Now, we're finally ready for the New Year's day!{CR}{COLOR r=244 g=154 b=193}Various event quests and items{/COLOR} are waiting for you.{CR}It'll be like a {COLOR r=161 g=134 b=190}New Year's gift package{/COLOR}! Haha!{CR}{CR}Ahh... If you have some spare time, {COLOR r=249 g=173 b=129}could you help us? We're having a hard time because of the New Year's gang.{/COLOR}{CR}I'm not really scared of them, but it'd be just nice if you could have helped.{CR}{CR}{COLOR r=109 g=207 b=246}Location: Ingen Port{/COLOR}" />
+  <STR key="EVENT_DESE_99998" string="Santa Domings from the snowy lands of the north have come to Ingen.{CR}However, instead of delivering presents to the children, they are drinking their sorrows away at Timot's Inn.{CR}You must help liven up their spirits so that Ingen will have a happy Christmas!{CR}{CR}{COLOR r=109 g=207 b=246}Location: Ingen Port{/COLOR}" />
+  <STR key="EVENT_DESE_99999" string="{COLOR r=249 g=173 b=129}'Trick or Treat!'{/COLOR}{CR}Give me Halloween candy! Give me festival pumpkins!!{CR}These will be available {COLOR r=244 g=154 b=193}only during the event period!{/COLOR}{CR}Are you ready to collect them and trade for cool items?{CR}{COLOR r=249 g=173 b=129}The Hell Road event is waiting for you, so don't hesitate to challenge the Ghost Rider!{/COLOR}{CR}{CR}{COLOR r=109 g=207 b=246}Location: Ingen{/COLOR}{CR}{COLOR r=124 g=197 b=118}You are invited to the HALLOWEEN PARTY!{/COLOR}" />
+  <STR key="EVENT_TITLE_99995" string="{COLOR r=255 g=245 b=104} Gift From Rosaline!{/COLOR}" />
+  <STR key="EVENT_TITLE_99996" string="{COLOR r=255 g=245 b=104} Assassins, ones with extreme body strength.{/COLOR}" />
+  <STR key="EVENT_TITLE_99997" string="{COLOR r=255 g=245 b=104} Today is- the New Year's Day!{/COLOR}" />
+  <STR key="EVENT_TITLE_99998" string="{COLOR r=255 g=245 b=104} Happy Holiday with Santa Domings{/COLOR}" />
+  <STR key="EVENT_TITLE_99999" string="{COLOR r=255 g=245 b=104} Happy Halloween Event {/COLOR}" />
+  <STR key="EXP" string="EXP" />
+  <STR key="FACTION" string="Faction" />
+  <STR key="FACTION_BAD" string="Hostile" />
+  <STR key="FACTION_EXCELLENT" string="Very Friendly" />
+  <STR key="FACTION_GOOD" string="Friendly" />
+  <STR key="FACTION_NONE" string="none" />
+  <STR key="FACTION_NORMAL" string="Neutral" />
+  <STR key="FACTION_TRUSTY" string="Trustworthy" />
+  <STR key="FACTION_WORST" string="Very Hostile" />
+  <STR key="FATIGUE" string="Fatigue" />
+  <STR key="FATIGUE_CHANGEDTOBAD" string="Your condition has changed to Bad." />
+  <STR key="FATIGUE_CHANGEDTOBEST" string="Your condition has changed to Very Good." />
+  <STR key="FATIGUE_CHANGEDTOGOOD" string="Your condition has changed to Good." />
+  <STR key="FATIGUE_CHANGEDTONORMAL" string="Your condition has changed to Normal." />
+  <STR key="FATIGUE_CHANGEDTOWORST" string="Your condition has changed to Very Bad." />
+  <STR key="FEMALE" string="Female" />
+  <STR key="FIELD_ENTERED" string="You have entered {0}." />
+  <STR key="FIELD_MOVE_FAILED_TOKEN" string="You need one {1} to move to {0}." />
+  <STR key="FIREDMGAMP" string="Fire Damage Modifier" />
+  <STR key="FOCUS" string="Focus" />
+  <STR key="FOCUS_ASSASSIN" string="Hiding" />
+  <STR key="FOCUS_BERSERKER" string="Outrage" />
+  <STR key="FOCUS_CLERIC" string="Possession" />
+  <STR key="FOCUS_DEFENDER" string="Counterattack" />
+  <STR key="FOCUS_RANGER" string="Sniping" />
+  <STR key="FOCUS_SORCERER" string="Awakening" />
+  <STR key="FRIENDS" string="Friends" />
+  <STR key="FRIENDS_ACCEPTINVITATION" string="The other player has accepted your friend request." />
+  <STR key="FRIENDS_ADDED" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has been added to your friends list." />
+  <STR key="FRIENDS_DELETED" string="Your friend {COLOR r=50 g=200 b=50}{0}{/COLOR} has deleted you from their friends list." />
+  <STR key="FRIENDS_INVITED" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} wants to be your friend." />
+  <STR key="FRIENDS_OFFLINEMEMBER" string="Your friend {COLOR r=50 g=200 b=50}{0}{/COLOR} has logged off." />
+  <STR key="FRIENDS_ONLINEMEMBER" string="Your friend {COLOR r=50 g=200 b=50}{0}{/COLOR} has logged on." />
+  <STR key="FRIENDS_REJECT_BY_OPTION" string="You have declined a friend request from {COLOR r=50 g=200 b=50}{0}{/COLOR} because the Decline Friend Requests option is enabled." />
+  <STR key="FRIENDSMEMBER" string="Friends List" />
+  <STR key="FRIENDSOFFLINE" string="Offline" />
+  <STR key="FRIENDSONLINE" string="Online" />
+  <STR key="GAMEPAD_MOUNT" string="Game pad has been mounted." />
+  <STR key="GAMEPAD_UNMOUNT" string="Game pad has been detached." />
+  <STR key="GEMENCHANTAGENT" string="Jewel Dust" />
+  <STR key="GEMENCHANTEFFECT" string="Equip Effect" />
+  <STR key="GEMENCHANTSLOT" string="Jewel Enchantment Slot" />
+  <STR key="GEMENCHANTSTONE" string="Jewel" />
+  <STR key="GEMENCHANTSUCCESSRATE" string="Success Rate" />
+  <STR key="GEMENCHATABLE" string="Attach to" />
+  <STR key="GEMEXTRACTAGENT" string="Jewel Extractor" />
+  <STR key="GEMEXTRACTSUCCESSRATE" string="Jewel Extraction Success Rate" />
+  <STR key="GEMREMOVEAGENT" string="Jewel Remover" />
+  <STR key="GEMREMOVESUCCESSRATE" string="Jewel Removal Success Rate" />
+  <STR key="GOLDPOINT" string="GP" />
+  <STR key="GRADE" string="Grade" />
+  <STR key="GUARD_CAN_NOT_AVOID" string="Unavoidable" />
+  <STR key="GUARD_CRASH_LEVEL_ABSOLUTE" string="Unblockable" />
+  <STR key="GUARD_CRASH_LEVEL_ALL" string="Unblockable" />
+  <STR key="GUARD_CRASH_LEVEL_PARTIAL" string="Defense Possible" />
+  <STR key="GUARD_CRASH_LEVEL_PERFECT" string="Shield Defense Possible" />
+  <STR key="GUARDRATE" string="Defense Rate " />
+  <STR key="GUIDEBOOK" string="Logbook" />
+  <STR key="GUILD" string="Guild" />
+  <STR key="GUILD_BANISHED" string="You have been kicked from the {COLOR r=50 g=200 b=50}{0}{/COLOR} guild." />
+  <STR key="GUILD_BANISHEDMEMBER" string="{0} has been kicked from the guild." />
+  <STR key="GUILD_CANCELINVITED" string="You received a guild invitation but the invitation has been cancelled because you are currently declining invitations." />
+  <STR key="GUILD_CHANGEDGUILDMASTER" string="Guild leader has changed from {COLOR r=50 g=200 b=50}{0}{/COLOR} to {COLOR r=50 g=200 b=50}{1}{/COLOR}." />
+  <STR key="GUILD_CREATED" string="The guild has been created." />
+  <STR key="GUILD_DISBANDED" string="The guild has been disbanded." />
+  <STR key="GUILD_ENTERED" string="You have joined the guild." />
+  <STR key="GUILD_ENTEREDMEMBER" string="{0} has joined the guild." />
+  <STR key="GUILD_GRADE_CHANGE" string="Change Rank" />
+  <STR key="GUILD_GRADE_ELITE_MEMBER" string="Elite Member" />
+  <STR key="GUILD_GRADE_MASTER" string="Guild Leader" />
+  <STR key="GUILD_GRADE_NEWCOMER_MEMBER" string="New Member" />
+  <STR key="GUILD_GRADE_NORMAL_MEMBER" string="Normal Member" />
+  <STR key="GUILD_GRADE_SUB_MASTER" string="Assistant Leader" />
+  <STR key="GUILD_INFORMATION" string="Information" />
+  <STR key="GUILD_INVITED" string="You have received a guild invitation." />
+  <STR key="GUILD_INVITED_REJECT" string="{0} has declined the guild invitation." />
+  <STR key="GUILD_LEFT" string="You have left the guild." />
+  <STR key="GUILD_LEFTMEMBER" string="{0} has left the guild." />
+  <STR key="GUILD_LOGOUT" string="Last Login" />
+  <STR key="GUILD_MASTER_DELEGATE" string="Delegate Guild Leader" />
+  <STR key="GUILD_MEMBER" string="Members" />
+  <STR key="GUILD_MEMBER_BANISH" string="Banish Guild Member" />
+  <STR key="GUILD_MEMBER_GRADE" string="Guild Member Rank" />
+  <STR key="GUILD_MEMBER_GRADE_CHANGE" string="Change Member Rank" />
+  <STR key="GUILD_MEMBER_INVITE" string="Invite New Member" />
+  <STR key="GUILD_MEMBER_LIST" string="Member List" />
+  <STR key="GUILD_MEMBER_NOTICE_MODIFY" string="Edit Note" />
+  <STR key="GUILD_MEMBER_NOTICE_MODIFY_TEXT" string="Enter New Note Text" />
+  <STR key="GUILD_NOTCORRECTGUILDNAME" string="The guild name is incorrect." />
+  <STR key="GUILD_NOTICE" string="Guild Announcement" />
+  <STR key="GUILD_NOTICE_EDIT" string="Edit Announcement" />
+  <STR key="GUILD_NOTICE_MODIFY" string="Modify" />
+  <STR key="GUILD_NOTICE_MODIFY_TEXT" string="Enter New Announcement" />
+  <STR key="GUILD_OFFLINEMEMBER" string="Guild member {COLOR r=50 g=200 b=50}{0}{/COLOR} has logged off." />
+  <STR key="GUILD_ONLINEMEMBER" string="Guild member {COLOR r=50 g=200 b=50}{0}{/COLOR} has logged on." />
+  <STR key="GUILD_POWER" string="Power" />
+  <STR key="HAVE_COUNT_MAX" string="Maximum number of possessions" />
+  <STR key="HAVE_QUANTITY" string="Number of possessions" />
+  <STR key="HITRATEAMP" string="Hit Rate Modifier" />
+  <STR key="HOLYDMGAMP" string="Holy Damage Modifier" />
+  <STR key="HOUR" string="h" />
+  <STR key="HP" string="Health" />
+  <STR key="HP_CONSUME" string="Health drain" />
+  <STR key="HUMAN" string="Human" />
+  <STR key="INT" string="Intelligence" />
+  <STR key="ISUFFIXT_QUEST_COMPLETE" string="Complete" />
+  <STR key="ISUFFIXT_QUEST_DOING" string="In Progress" />
+  <STR key="IT_CHALLENGERQUEST" string="Challenger Quest" />
+  <STR key="IT_CRAFT" string="Artisan" />
+  <STR key="IT_DIALOG" string="Dialog" />
+  <STR key="IT_DIALOG_FOR_HELP" string="Help" />
+  <STR key="IT_GATHER_1" string="" />
+  <STR key="IT_GATHER_10" string="" />
+  <STR key="IT_GATHER_2" string="" />
+  <STR key="IT_GATHER_3" string="" />
+  <STR key="IT_GATHER_4" string="" />
+  <STR key="IT_GATHER_5" string="" />
+  <STR key="IT_GATHER_6" string="" />
+  <STR key="IT_GATHER_7" string="" />
+  <STR key="IT_GATHER_8" string="" />
+  <STR key="IT_GATHER_9" string="" />
+  <STR key="IT_GUILD_CREATE" string="Guild" />
+  <STR key="IT_GUILD_DESTROY" string="Guild" />
+  <STR key="IT_GUILD_STORAGE" string="Guild" />
+  <STR key="IT_INN_SLEEP" string="" />
+  <STR key="IT_LOOT_IMMORTAL" string="" />
+  <STR key="IT_LOOT_MORTAL" string="" />
+  <STR key="IT_MAILBOX" string="Mail" />
+  <STR key="IT_NPCSHOP" string="Shop" />
+  <STR key="IT_QUEST_BEGIN" string="Quest" />
+  <STR key="IT_QUEST_END" string="Quest" />
+  <STR key="IT_QUEST_INTERACT_IMMORTAL" string="Quest" />
+  <STR key="IT_QUEST_INTERACT_MORTAL" string="Quest" />
+  <STR key="IT_SKILLSET" string="Skillset" />
+  <STR key="IT_SOLDTRADE" string="" />
+  <STR key="IT_SOULBINDING" string="Return Stone" />
+  <STR key="IT_STORAGE" string="Storage" />
+  <STR key="IT_TRADE_MARKET" string="Market" />
+  <STR key="IT_TRIGGER" string="" />
+  <STR key="ITEM" string="Item" />
+  <STR key="ITEM_ARMOR" string="Armor" />
+  <STR key="ITEM_CANCELLED" string="The use of the {0} skill has been canceled." />
+  <STR key="ITEM_CASH" string="Cash Item" />
+  <STR key="ITEM_CLEARD" string="All scrap items have been sold." />
+  <STR key="ITEM_CRAFTED" string="{0} has been successfully crafted." />
+  <STR key="ITEM_CRAFTED_COSTUME" string="Item has changed to the costume item {0}." />
+  <STR key="ITEM_DYE" string="For Dyeing" />
+  <STR key="ITEM_DYED" string="{0} has been Dyed." />
+  <STR key="ITEM_FAILED" string="Failed to use the {0}." />
+  <STR key="ITEM_GAIN" string="You acquired {1} {0}." />
+  <STR key="ITEM_GATHER" string="Collected Item" />
+  <STR key="ITEM_GEMENCHANT" string="For Jewel Enchantment" />
+  <STR key="ITEM_GEMENCHANTFAILED" string="Jewel enchantment has failed." />
+  <STR key="ITEM_GEMENCHANTSUCCESSFUL" string="Jewel successfully attached" />
+  <STR key="ITEM_GEMEXTRACTFAILED" string="Failed to extract the jewel." />
+  <STR key="ITEM_GEMEXTRACTSUCCESSFUL" string="Successfully extracted the jewel." />
+  <STR key="ITEM_GEMREMOVEFAILED" string="Failed to remove the jewel." />
+  <STR key="ITEM_GEMREMOVESUCCESSFUL" string="Successfully removed the jewel." />
+  <STR key="ITEM_HOUSING" string="Furniture" />
+  <STR key="ITEM_INVENTORY" string="General" />
+  <STR key="ITEM_LOST" string="You deleted {1} {0}." />
+  <STR key="ITEM_NOTGEMENCHANTBYLEVEL" string="Unable to enchant the item because you do not meet the level requirement of the jewel." />
+  <STR key="ITEM_NOTTRADEMARKET" string="Cannot be sold at the Trade Market" />
+  <STR key="ITEM_NOTUSEITEMINREGION" string="You cannot use {0} in this region." />
+  <STR key="ITEM_NOTUSEITEMYET" string="You cannot use {0} yet." />
+  <STR key="ITEM_REPAIRED" string="Item {0} has been repaired." />
+  <STR key="ITEM_REQUIREDREPAIR" string="An item needs to be repaired." />
+  <STR key="ITEM_RUNNING_CANCELLED" string="{0} cannot be used while moving." />
+  <STR key="ITEM_SELL" string="You sold {1} {0}." />
+  <STR key="ITEM_USABLE" string="Consumable Item" />
+  <STR key="ITEM_USE" string="You used {1} {0}." />
+  <STR key="ITEM_WEAPON" string="Weapon" />
+  <STR key="ITEMSLOT" string="Equip Location" />
+  <STR key="ITEMSLOT_BODY" string="Torso" />
+  <STR key="ITEMSLOT_EARRING" string="Earring" />
+  <STR key="ITEMSLOT_FACE" string="Face" />
+  <STR key="ITEMSLOT_FEET" string="Feet" />
+  <STR key="ITEMSLOT_HANDS" string="Hands" />
+  <STR key="ITEMSLOT_HEAD" string="Head" />
+  <STR key="ITEMSLOT_LEGS" string="Legs" />
+  <STR key="ITEMSLOT_LOOK_ACCESSARY" string="Accessory" />
+  <STR key="ITEMSLOT_LOOK_BACK" string="Back" />
+  <STR key="ITEMSLOT_LOOK_BELT" string="Belt" />
+  <STR key="ITEMSLOT_LOOK_BODY" string="Costume: Torso" />
+  <STR key="ITEMSLOT_LOOK_CHARM" string="Charm" />
+  <STR key="ITEMSLOT_LOOK_FEET" string="Costume: Feet" />
+  <STR key="ITEMSLOT_LOOK_HANDS" string="Costume: Hands" />
+  <STR key="ITEMSLOT_LOOK_HEAD" string="Costume: Head" />
+  <STR key="ITEMSLOT_LOOK_LEG" string="Costume: Legs" />
+  <STR key="ITEMSLOT_LOOK_LWEAPON" string="Costume Shield" />
+  <STR key="ITEMSLOT_LOOK_RWEAPON" string="Costume Weapon" />
+  <STR key="ITEMSLOT_LOOK_SUBWEAPON1" string="Costume subweapon1" />
+  <STR key="ITEMSLOT_LOOK_SUBWEAPON2" string="Costume subweapon2" />
+  <STR key="ITEMSLOT_LOOK_TITLE" string="Title" />
+  <STR key="ITEMSLOT_LOOK_WEAPON1" string="Costume main weapon1" />
+  <STR key="ITEMSLOT_LOOK_WEAPON2" string="Costume main weapon2" />
+  <STR key="ITEMSLOT_NECKLACE" string="Necklace" />
+  <STR key="ITEMSLOT_RING" string="Ring" />
+  <STR key="ITEMSLOT_SUBWEAPON1" string="Off-Hand 1" />
+  <STR key="ITEMSLOT_SUBWEAPON2" string="Off-Hand 2" />
+  <STR key="ITEMSLOT_SUBWEAPONSET" string="Secondary Weapon" />
+  <STR key="ITEMSLOT_WEAPON1" string="Main Hand 1" />
+  <STR key="ITEMSLOT_WEAPON2" string="Main Hand 2" />
+  <STR key="ITEMSLOT_WEAPONSET" string="Main Weapon" />
+  <STR key="KNOCKBACK" string="Knockback" />
+  <STR key="KNOCKBACKWEIGHT" string="Knockback Resistance" />
+  <STR key="KNOCKDOWN" string="Knockdown" />
+  <STR key="KNOCKDOWNWEIGHT" string="Knockdown Resistance" />
+  <STR key="LEVEL" string="Level" />
+  <STR key="LEVEL_SHORT" string="Lv." />
+  <STR key="LICENSE_HEAVYARMOR" string="Plate Armor Mastery" />
+  <STR key="LICENSE_MEDIUMARMOR" string="Chain Armor Mastery" />
+  <STR key="LIGHTNINGDMGAMP" string="Lightning Damage Modifier" />
+  <STR key="LOOTING_GAINITEM" string="{0} has acquired {2} {1}." />
+  <STR key="LOOTING_GATHER_FALSE" string="Cannot start gathering interaction." />
+  <STR key="LOOTING_LOOTERPROGRESS" string="Looter is distributing Item '{0}'." />
+  <STR key="LOOTING_NEEDGATHERINGTOOL" string="You need a gathering tool to start gathering." />
+  <STR key="LOOTING_NEEDTOREADADVANCEDMANUAL" string="You need to read the advanced explorer's manual." />
+  <STR key="LOOTING_NEEDTOREADMANUAL" string="You need to read the explorer's manual to start gathering." />
+  <STR key="LOOTING_NOTGAINITEM" string="Target is too far to receive {0}." />
+  <STR key="LOOTING_RESULTPOINTROLLDICE" string="{0} rolled a {1}." />
+  <STR key="LOOTING_RESULTROLLDICE" string="Results for rolling {1} time(s) for {0}:" />
+  <STR key="LOOTINGRULE_DESIGNATELOOTER" string="Set " />
+  <STR key="LOOTINGRULE_FREEFORALL" string="Free For All" />
+  <STR key="LOOTINGRULE_ROLLDICE" string="Roll Dice" />
+  <STR key="LOOTINGRULE_ROUNDROBIN" string="Round Robin" />
+  <STR key="MAGIC_AP" string="M. Def" />
+  <STR key="MAGIC_ATK_AMP_FORME" string="M. Barrier" />
+  <STR key="MAGICATKAMP" string="M. Atk" />
+  <STR key="MAGICDAMAGEBONUS" string="Magic Damage" />
+  <STR key="MALE" string="Male" />
+  <STR key="MATERIAL" string="Ingredient" />
+  <STR key="MAXEN" string="Max Energy" />
+  <STR key="MAXHP" string="Max Health" />
+  <STR key="MAXSTA" string="Max Stamina" />
+  <STR key="MELEE_CRI_DMAGAE_LESSEN" string="Critical Damage Reduction" />
+  <STR key="MELLEATKAMP" string="Melee Attack" />
+  <STR key="MINUTE" string="Minute" />
+  <STR key="MISCELLANEOUS" string="Miscellaneous" />
+  <STR key="MONEY" string="Amount" />
+  <STR key="MOVINGSPEED" string="Movement Speed" />
+  <STR key="MSG_CANMOVECAMERABYKEYS" string="Use [W/A/S/D] and the direction keys to move the camera." />
+  <STR key="MSG_CHANGEDTIME" string="Time has changed to {0}." />
+  <STR key="MSG_CHANGEDTIMENWEATHER" string="Time and weather have changed to {0} and {1}." />
+  <STR key="MSG_CHANGEDWEATHER" string="Weather has changed to {0}." />
+  <STR key="MSG_DIE" string="You have died." />
+  <STR key="MSG_DIEOTHER" string="{0:$} has died." />
+  <STR key="MSG_EVENT_RELOAD_RESULT_FAIL" string="Fail to reread an event" />
+  <STR key="MSG_EVENT_RELOAD_RESULT_SUCCESS" string="Success to reread an event" />
+  <STR key="MSG_FAILCONNECTTOSEVER" string="Cannot connect to server." />
+  <STR key="MSG_FAILEDMOVEFIELD" string="Failed to move to field. Please try again later." />
+  <STR key="MSG_LEVELUP" string="You have reached Level {0}." />
+  <STR key="MSG_OFFCONDITIONCHECK" string="ConditionCheck is turned OFF." />
+  <STR key="MSG_ONCONDITIONCHECK" string="ConditionCheck is turned ON." />
+  <STR key="MSG_QPVP_KILL" string="{0} has achieved {1} kill(s)." />
+  <STR key="MSG_REBIRTH" string="You have resurrected." />
+  <STR key="MSG_RECIEVEDDAMAGE" string="You have received {0} damage." />
+  <STR key="MSG_RECIEVEDDAMAGEOTHER" string="{0} has received {1} damage." />
+  <STR key="MSG_RELEASEGHOSTMODE" string="Ghost mode off." />
+  <STR key="MSG_RELEASEGODMODE" string="GOD mode off." />
+  <STR key="MSG_SAVEDCHECKPOINT" string="The checkpoint has been saved." />
+  <STR key="MSG_SAVEDSCREENSHOT" string="Screenshot saved. {0}" />
+  <STR key="MSG_SAVEDSOULPOSITION" string="You are now registered at this inn." />
+  <STR key="MSG_SETGHOSTMODE" string="Ghost mode on." />
+  <STR key="MSG_SETGODMODE" string="GOD mode on." />
+  <STR key="NAME" string="Name" />
+  <STR key="NONCOMBATONLYUSE" string="Cannot be used in battle" />
+  <STR key="NOTDISCARDABLE" string="Cannot be discarded" />
+  <STR key="NOTDYEABLE" string="Undyeable" />
+  <STR key="NOTGEMENCHATABLE" string="Cannot Enchant Jewel" />
+  <STR key="NOTREPAIRABLE" string="Non-repairable" />
+  <STR key="NOTSELLABLE" string="Cannot be sold" />
+  <STR key="NOTTRADABLE" string="Cannot be traded" />
+  <STR key="NUTRALMAGICDMG" string="Natural Magic Damage reduced by {0}%" />
+  <STR key="PARTY" string="Party" />
+  <STR key="PARTY_ACCEPTINVITATION" string="The other player has accepted your party invitation." />
+  <STR key="PARTY_CHANGE_PUBLICPARTY" string="Make Public" />
+  <STR key="PARTY_CHANGEDLEADER" string="The party leader is now {COLOR r=50 g=200 b=50}{0}{/COLOR}." />
+  <STR key="PARTY_DECLINEINVITATIONBYDUEL" string="You have declined a party invitation from {COLOR r=50 g=200 b=50}{0}{/COLOR}. You cannot accept a party invitation while in combat." />
+  <STR key="PARTY_DECLINEINVITATIONBYOPTION" string="You have declined a party invitation from {COLOR r=50 g=200 b=50}{0}{/COLOR} because the Decline Party Requests option is enabled." />
+  <STR key="PARTY_DECLINEREQUESTBYDUEL" string="You have declined a party request from {COLOR r=50 g=200 b=50}{0}{/COLOR}. You cannot accept a party request while in combat." />
+  <STR key="PARTY_DECLINEREQUESTBYOPTION" string="You have declined a party request from {COLOR r=50 g=200 b=50}{0}{/COLOR} because the Decline Party Requests option is enabled." />
+  <STR key="PARTY_ENTERED" string="You have joined the party." />
+  <STR key="PARTY_ENTEREDMEMBER" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has joined the party." />
+  <STR key="PARTY_GENERALLOOTINGRULE" string="{0} has changed the looting rule for low-grade items to {1}." />
+  <STR key="PARTY_LEFT" string="You have left the party." />
+  <STR key="PARTY_LEFTMEMBER" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has left the party." />
+  <STR key="PARTY_MATCHING" string="Find a Party" />
+  <STR key="PARTY_MATCHING_CONFIRM_RECIVEPARTYMATCHING" string="Party membership request received.{CR}Invite the following character to your party?" />
+  <STR key="PARTY_MATCHING_LISTREFRESH" string="Refresh" />
+  <STR key="PARTY_MATCHING_PARTYMATCHINFO" string="Party Info" />
+  <STR key="PARTY_MATCHING_PARTYMATCHINFO_REQUESTPARTY" string="Request to Join" />
+  <STR key="PARTY_MATCHING_PARTYMEMBERINFO_LEVEL" string="Level" />
+  <STR key="PARTY_MATCHING_PARTYMEMBERINFO_NAME" string="Name" />
+  <STR key="PARTY_MATCHING_PARTYMEMBERINFO_POS" string="Location" />
+  <STR key="PARTY_MATCHING_PARTYMEMBERINFO_STYLE" string="Style Summary" />
+  <STR key="PARTY_MATCHING_PARTYSEARCH" string="Search" />
+  <STR key="PARTY_MATCHING_PARTYSEARCHSTRINGDEFAULT" string="Please type search keyword." />
+  <STR key="PARTY_MATCHING_POPMGS_JOINPARTYMATCHING" string="You have joined the party." />
+  <STR key="PARTY_MATCHING_POPMGS_POPUPFULL" string="A party request has been automatically declined because your Alert window is full." />
+  <STR key="PARTY_MATCHING_POPMGS_PRIVATEEPARTY" string="Your party has become private." />
+  <STR key="PARTY_MATCHING_POPMGS_PUBLICPARTY" string="Your party has become public." />
+  <STR key="PARTY_MATCHING_POPMGS_RECIVEPARTYMATCHING" string="Party membership request received." />
+  <STR key="PARTY_MATCHING_POPMGS_REFUSEPARTYMATCHING" string="Your party membership request was denied." />
+  <STR key="PARTY_MATCHING_POPMGS_REQUESTPARTYMATCHING" string="You requested party membership." />
+  <STR key="PARTY_MATCHING_REARCH_LEVEL_TOOLTIP" string="Add party leaders' Levels to your search conditions." />
+  <STR key="PARTY_MATCHING_REQUESTFAIL_MSG" string="The party is not currently available. Press ''Refresh''." />
+  <STR key="PARTY_MATCHING_REQUESTJOIN_TOOLTIP" string="You have a pending party request." />
+  <STR key="PARTY_MATCHING_SEARCH_RESET" string="Reset Search" />
+  <STR key="PARTY_MATCHINGLIST_LEADER" string="Party Leader" />
+  <STR key="PARTY_MATCHINGLIST_MEMBER" string="No." />
+  <STR key="PARTY_MATCHINGLIST_TITLE" string="Party name" />
+  <STR key="PARTY_MATCHINGLIST_TITLE_DEFAULT" string="Party name: 5-50 letters long" />
+  <STR key="PARTY_MEMBERONLINE" string="Party member {COLOR r=50 g=200 b=50}{0}{/COLOR} has logged on." />
+  <STR key="PARTY_PRIVATERULE_SETTING" string="Set to Private" />
+  <STR key="PARTY_PUBLIC_RULE" string="Privacy Settings" />
+  <STR key="PARTY_PUBLICRULE_DESC" string="In the Party Goal text box, state the goals and purpose of your party for potential members." />
+  <STR key="PARTY_PUBLICRULE_SETTING" string="Set to Public" />
+  <STR key="PARTY_RARELOOTINGRULE" string="{0} has changed the looting rule for high-grade items to {1}." />
+  <STR key="PARTY_RARELOOTINGRULEITEM" string="{0} has changed the looting rules to apply to {1} items." />
+  <STR key="PARTY_REQUESTJOIN" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} wants to join your party." />
+  <STR key="PARTY_SINGGLEPARTY" string="Create Party" />
+  <STR key="PARTY_SINGGLEPARTY_CONFIRM_MSG" string="Would you like to create this party?" />
+  <STR key="PARTYLEADER" string="Leader" />
+  <STR key="PARTYMEMBER" string="Members" />
+  <STR key="PHYSIC_ATK_AMP" string="P. Atk" />
+  <STR key="PHYSIC_ATK_AMP_FORME" string="P. Barrier" />
+  <STR key="PHYSICALDAMAGE" string="Physical Damage" />
+  <STR key="PIERCEDMGAMP" string="Pierce Damage Modifier" />
+  <STR key="POISONDMGAMP" string="Poison Damage Modifier" />
+  <STR key="PRICE" string="Price" />
+  <STR key="QUANTITY" string="X" />
+  <STR key="QUEST" string="Quest" />
+  <STR key="QUEST_FAILED" string="You have failed the quest." />
+  <STR key="QUEST_NOTRECIEVEBYALREADYCOMPLETED" string="{0} tried to share a quest with you, but you already completed it." />
+  <STR key="QUEST_NOTRECIEVEBYALREADYHAVE" string="{0} tried to share a quest with you, but you already have it." />
+  <STR key="QUEST_NOTRECIEVEBYREQUIREMENTS" string="{0} tried to share a quest with you, but you do not meet the requirements." />
+  <STR key="QUEST_NOTRECIEVEBYTOOFARAWAY" string="{0} tried to share a quest with you, but you are too far away." />
+  <STR key="QUEST_NOTSHAREBYALREADYCOMPLETED" string="You tried to share a quest with {0}, but they already completed it." />
+  <STR key="QUEST_NOTSHAREBYALREADYHAVE" string="You tried to share a quest with {0}, but they already have it." />
+  <STR key="QUEST_NOTSHAREBYREQUIREMENTS" string="You tried to share a quest with {0}, but they do not meet the requirements." />
+  <STR key="QUEST_NOTSHAREBYTOOFARAWAY" string="You tried to share a quest with {0}, but they are too far away." />
+  <STR key="QUEST_RECIEVED" string="Quest received." />
+  <STR key="QUEST_SHAREDFROMOTHER" string="{0} has shared Quest {1}." />
+  <STR key="QUEST_SHAREDTOOTHER" string="You have shared a quest with {0}." />
+  <STR key="RANGEATKAMP" string="Ranged Attack" />
+  <STR key="RANK" string="Rank" />
+  <STR key="RANKING_GUILD" string="Guild Battle" />
+  <STR key="RANKING_INFO" string="Ranking Info" />
+  <STR key="RANKING_ONE_TO_ONE" string="Individual" />
+  <STR key="RANKING_RECORD" string="Battle" />
+  <STR key="RANKING_SEASON_DESC" string="The ranking updates every morning.{CR}Current 1v1 season ends on:" />
+  <STR key="RANKING_SEASON_GUILD_DESC" string="The ranking updates every morning.{CR}Current Guild War season ends on:" />
+  <STR key="RANKING_WINNING_RATE" string="Winning Rate" />
+  <STR key="RAREFOR_EPIC" string="Epic" />
+  <STR key="RAREFOR_LEGENDARYORBETTER" string="Legendary" />
+  <STR key="RAREFOR_RAREORBETTER" string="Rare" />
+  <STR key="RECIPE" string="Recipe" />
+  <STR key="REGENEN" string="Natural Energy Recovery" />
+  <STR key="REGENHP" string="Natural Health Recovery" />
+  <STR key="REGENSTA" string="Natural Stamina Recovery" />
+  <STR key="REQUIREDHYBRID" string="Style Mastery: {0}" />
+  <STR key="REQUIREDLEVEL" string="Level {0}+" />
+  <STR key="REQUIREDLEVELRANGE" string="Level {0} - Level {1}" />
+  <STR key="REQUIREDTALENTPOINT" string="{0}+" />
+  <STR key="REQUIREMENTS" string="Requirements" />
+  <STR key="REQUIREMENTS_QUEST" string="Quest Requirements " />
+  <STR key="REQUIREMENTSEQUIP" string="Requirement" />
+  <STR key="RESISTANCEFIRE" string="Fire Resistance" />
+  <STR key="RESISTANCEFIREAMP" string="Fire Resistance Modifier" />
+  <STR key="RESISTANCEHOLY" string="Holy Resistance" />
+  <STR key="RESISTANCEHOLYAMP" string="Holy Resistance Modifier" />
+  <STR key="RESISTANCEICE" string="Ice Resistance" />
+  <STR key="RESISTANCEICEAMP" string="Ice Resistance Modifier" />
+  <STR key="RESISTANCELIGHTNING" string="Lightning Resistance" />
+  <STR key="RESISTANCELIGHTNINGAMP" string="Lightning Resistance Modifier" />
+  <STR key="RESISTANCEPOISON" string="Poison Resistance" />
+  <STR key="RESISTANCEPOISONAMP" string="Poison Resistance Modifier" />
+  <STR key="RESISTANCEUNHOLY" string="Dark Resistance" />
+  <STR key="RESISTANCEUNHOLYAMP" string="Dark Resistance Modifier" />
+  <STR key="RESTORE_PERCENT_HP" string="Heal" />
+  <STR key="REUSABLE" string="Reusable" />
+  <STR key="REWARD_QPVP_MAIL_BODY" string="Cannot receive the Battle Arena event reward because your bag is full. Please make a room in your bag and receive the reward again." />
+  <STR key="REWARD_QPVP_MAIL_SENDER" string="System" />
+  <STR key="REWARD_QPVP_MAIL_TITLE" string="Battle Arena event rewards" />
+  <STR key="RIDEMOVINGSPEED" string="Mount Speed" />
+  <STR key="SECOND" string="Second" />
+  <STR key="SILVERPOINT" string="SP" />
+  <STR key="SLASHDMGAMP" string="Slash Damage Modifier" />
+  <STR key="SPECIALGEMENCHANTSLOT" string="Special Jewel Enchantment Slot" />
+  <STR key="SPECIALGEMENCHANTSTONE" string="Special Jewel" />
+  <STR key="STA" string="Stamina" />
+  <STR key="STA_CONSUME" string="Stamina Cost" />
+  <STR key="STATE" string="State" />
+  <STR key="STR" string="Strength" />
+  <STR key="STUN" string="Stun" />
+  <STR key="STUNWEIGHT" string="Stun Resistance" />
+  <STR key="STYLE" string="Style" />
+  <STR key="STYLE_ASSASSIN" string="Assassin" />
+  <STR key="STYLE_BERSERKER" string="Berserker" />
+  <STR key="STYLE_CLERIC" string="Cleric" />
+  <STR key="STYLE_DEFENDER" string="Defender" />
+  <STR key="STYLE_RANGER" string="Ranger" />
+  <STR key="STYLE_SORCERER" string="Sorcerer" />
+  <STR key="TALENT" string="Skill" />
+  <STR key="TALENT_ACTIVE" string="Active" />
+  <STR key="TALENT_CANCELLED" string="The {0} skill has been canceled." />
+  <STR key="TALENT_COMMON" string="Common" />
+  <STR key="TALENT_FAILED" string="Failed to use the {0} skill." />
+  <STR key="TALENT_GESTURE" string="Emotes" />
+  <STR key="TALENT_GETFOCUSEFFECT" string="You have gained the {0} Focus effect." />
+  <STR key="TALENT_GETFOCUSEFFECTOTHER" string="{0} has gained the {1} Focus effect." />
+  <STR key="TALENT_LEARNABLENEW" string="Press {0} to open the Skill Menu and learn a new skill." />
+  <STR key="TALENT_LEARNED" string="You have successfully learned the {0} skill." />
+  <STR key="TALENT_LICENSE" string="License" />
+  <STR key="TALENT_LOSTFOCUSEFFECT" string="You have lost the {0} Focus effect." />
+  <STR key="TALENT_LOSTFOCUSEFFECTOTHER" string="{0} has lost the {1} Focus effect." />
+  <STR key="TALENT_MAGIC" string="Magic" />
+  <STR key="TALENT_MELEE" string="Melee" />
+  <STR key="TALENT_NOTUSEYET" string="You cannot use the {0} skill yet." />
+  <STR key="TALENT_PASSIVE" string="Passive" />
+  <STR key="TALENT_RANGE" string="Ranged" />
+  <STR key="TALENT_RESETALL" string="All skills have been reset." />
+  <STR key="TALENT_RUNNING_CANCELLED" string="The {0} skill cannot be used while moving." />
+  <STR key="TALENTPOINT" string="Skill Point" />
+  <STR key="TARGETINFO_GATHER" string="Gather" />
+  <STR key="TARGETINFO_LOCKTARGET" string="Lock" />
+  <STR key="TARGETINFO_QUEST" string="Quest" />
+  <STR key="TARGETINFO_TAKE" string="Acquire" />
+  <STR key="TARGETINFO_TALK" string="Dialogue" />
+  <STR key="TARGETINFO_TRADE" string="Trade" />
+  <STR key="TARGETINFO_TRIGGER" string="Trigger" />
+  <STR key="TARGETINFO_UNLOCKTARGET" string="Unlock" />
+  <STR key="THROWUP" string="Throw" />
+  <STR key="THROWUPWEIGHT" string="Throw Resistance" />
+  <STR key="TIER" string="Tier" />
+  <STR key="TIER_COMMON" string="Common" />
+  <STR key="TIER_EPIC" string="Epic" />
+  <STR key="TIER_LEGENDARY" string="Legendary" />
+  <STR key="TIER_RARE" string="Uncommon" />
+  <STR key="TIER_RELATEDQUEST" string="Quest Item" />
+  <STR key="TIER_TREASURE" string="Rare" />
+  <STR key="TIER_VERYCOMMON" string="Scrap" />
+  <STR key="TIME" string="Time" />
+  <STR key="TRADE_CANCELEDBYDENY" string="{0} has requested to trade with you, but it was canceled because you are currently declining trades." />
+  <STR key="TRADE_CANCELLED" string="The trade has been canceled." />
+  <STR key="TRADE_CHECKOFF" string="You have canceled the trade request." />
+  <STR key="TRADE_CHECKOFFOTHER" string="The other player has canceled the trade request." />
+  <STR key="TRADE_COMPLETED" string="The trade has been completed." />
+  <STR key="TRADE_STARTING" string="Starting trade." />
+  <STR key="UI_ACCEPT" string="Accept" />
+  <STR key="UI_ACHIEVE_LEVEL" string="New Growth Record!" />
+  <STR key="UI_ADD_FRIEND" string="Add Friend" />
+  <STR key="UI_ALL" string="All" />
+  <STR key="UI_APPLY" string="Apply" />
+  <STR key="UI_ARENA_INFORMATION" string="Brune's Glory" />
+  <STR key="UI_ASSIGNLOOTING_CONFIRMASSIGN" string="As the party leader, you have the authority to determine which of your party members gets which items. Please specify which character gets the following item." />
+  <STR key="UI_ASSIGNLOOTING_DISTRIBUTION" string="Distribution" />
+  <STR key="UI_ASSIGNLOOTING_RANDOMDISTRIBUTION" string="Random Distribution" />
+  <STR key="UI_ASSIGNLOOTING_RECIPIENTS" string="Recipient" />
+  <STR key="UI_BALLOON_HELP_ARENA_EXIT" string="Leave Brune's Glory" />
+  <STR key="UI_BALLOON_HELP_ARENA_LEVELUP" string="You can now make Brune's Glory requests." />
+  <STR key="UI_BALLOON_HELP_CRAFTING_LISTCTRL" string="Select an item to craft." />
+  <STR key="UI_BALLOON_HELP_GET_RECIPE" string="Click this button to add a recipe to your Journal." />
+  <STR key="UI_BASIC_STATS" string="Basic Stats" />
+  <STR key="UI_BATTLE_AND_QUEST" string="Battle Quest" />
+  <STR key="UI_BATTLE_ARENA_MAIL_BODY" string="Thank you for using Battle Arena. Your continued use will be higly appreciated." />
+  <STR key="UI_BATTLE_ARENA_MAIL_SENDER" string="Battle Arena" />
+  <STR key="UI_BATTLE_ARENA_MAIL_TITLE" string="Compensation of Battle Arena" />
+  <STR key="UI_BEAUTYSHOP" string="Makeover Salon" />
+  <STR key="UI_BEAUTYSHOP_ALL_CANCEL" string="Remove All" />
+  <STR key="UI_BEAUTYSHOP_APPLY_LOOK" string="Apply Changes" />
+  <STR key="UI_BEAUTYSHOP_BASKET" string="Shopping Cart" />
+  <STR key="UI_BEAUTYSHOP_BYE_COST" string="Cost" />
+  <STR key="UI_BEAUTYSHOP_CHANGE_COMPLETE" string="Complete Makeover" />
+  <STR key="UI_BEAUTYSHOP_CHANGE_COMPLETE_MESSAGE" string="Your appearance has been successfully changed." />
+  <STR key="UI_BEAUTYSHOP_CURRENT_LOOK" string="Current Look" />
+  <STR key="UI_BEAUTYSHOP_ENTER" string="You will be taken to the {COLOR r=255 g=0 b=0}Makeover Salon{/COLOR} to change your appearance. Would you like to continue?" />
+  <STR key="UI_BEAUTYSHOP_ERROR_LACK_BELPESO" string="You do not have enough Bellpesos." />
+  <STR key="UI_BEAUTYSHOP_ERROR_LACK_TICKET" string="You do not have any Makeover Coupons." />
+  <STR key="UI_BEAUTYSHOP_ERROR_NON_SELETE_LOOK" string="No changes have been selected." />
+  <STR key="UI_BEAUTYSHOP_EXIT" string="Exit Salon" />
+  <STR key="UI_BEAUTYSHOP_EXIT_ASK" string="Do you want to leave the salon?" />
+  <STR key="UI_BEAUTYSHOP_FEATURE" string="The total price is {COLOR r=255 g=0 b=0}{0} Gold Bellpesos{/COLOR}. Would you like to apply the changes?{CR}{CR}If you have a Makeover Coupon, you can use it instead of paying Bellpesos." />
+  <STR key="UI_BEAUTYSHOP_HAS_BELPESO" string="Owned:" />
+  <STR key="UI_BEAUTYSHOP_HELM_SHOW" string="Show Hat" />
+  <STR key="UI_BEAUTYSHOP_HELM_VISIBLE" string="Hide Hat" />
+  <STR key="UI_BEAUTYSHOP_NOTBELPESO" string="You do not have enough {COLOR r=255 g=0 b=0}Gold Bellpesos{/COLOR}." />
+  <STR key="UI_BEAUTYSHOP_SELETE_CANCEL" string="Deselect" />
+  <STR key="UI_BEAUTYSHOP_TIKET_BTN" string="Use Makeover Coupon" />
+  <STR key="UI_BEAUTYSHOP_TIKET_MSG" string="Use {COLOR r=255 g=0 b=0}Makeover Coupon{/COLOR}?" />
+  <STR key="UI_BEAUTYSHOP_TOTAL_BELPESO" string="Total:" />
+  <STR key="UI_CANCEL" string="Cancel" />
+  <STR key="UI_CASHSHOP" string="Cash Shop" />
+  <STR key="UI_CASHSHOP_BESTITEM" string="Top Items" />
+  <STR key="UI_CASHSHOP_BTN_BUY" string="Buy" />
+  <STR key="UI_CASHSHOP_BTN_GIFT" string="Gift" />
+  <STR key="UI_CASHSHOP_BUY" string="Complete the purchase? (No Refunds)" />
+  <STR key="UI_CASHSHOP_BUYSUCCESS" string="You purchased the following item(s)." />
+  <STR key="UI_CASHSHOP_BUYSUCCESS_CRYSTAL" string="You purchased the following item(s)." />
+  <STR key="UI_CASHSHOP_CASH_CHARGE" string="Purchase Zen" />
+  <STR key="UI_CASHSHOP_CASH_TOOLTIP" string="Purchase the item." />
+  <STR key="UI_CASHSHOP_CASHBALACE_SHORT" string="You do not have enough Zen. Would you like to go to the website to purchase Zen?" />
+  <STR key="UI_CASHSHOP_CASHINVEN_SPACE_SHORT" string="Not enough space in Cash Shop Storage." />
+  <STR key="UI_CASHSHOP_CONVENIENCE" string="Convenience" />
+  <STR key="UI_CASHSHOP_CONVENIENCE_CONSUMABLE" string="Consumable" />
+  <STR key="UI_CASHSHOP_CONVENIENCE_FUNCTION" string="Functionality" />
+  <STR key="UI_CASHSHOP_CONVENIENCE_GROWTH" string="Growth" />
+  <STR key="UI_CASHSHOP_CONVENIENCE_POTION" string="Potion" />
+  <STR key="UI_CASHSHOP_CONVENIENCE_SCROLL" string="Scroll" />
+  <STR key="UI_CASHSHOP_COSTUME" string="Costume" />
+  <STR key="UI_CASHSHOP_COSTUME_ACCESSORY" string="Accessory" />
+  <STR key="UI_CASHSHOP_COSTUME_ARMOR" string="Armor" />
+  <STR key="UI_CASHSHOP_COSTUME_FUNCTION" string="Functionality" />
+  <STR key="UI_CASHSHOP_COSTUME_PACKAGE" string="Package" />
+  <STR key="UI_CASHSHOP_COSTUME_WEAPON" string="Weapon" />
+  <STR key="UI_CASHSHOP_CRYSTAL" string="Crystal" />
+  <STR key="UI_CASHSHOP_CRYSTAL_ACCOUNT" string="Total Cost" />
+  <STR key="UI_CASHSHOP_CRYSTAL_BALANCES" string="Balance After" />
+  <STR key="UI_CASHSHOP_CRYSTAL_CRYSTAL" string="Crystal" />
+  <STR key="UI_CASHSHOP_CRYSTAL_HAVE" string="Crystals" />
+  <STR key="UI_CASHSHOP_CRYSTAL_INFO" string="Crystal Transaction Details" />
+  <STR key="UI_CASHSHOP_CRYSTAL_SHORT" string="You don't have enough Crystals." />
+  <STR key="UI_CASHSHOP_CURRENCY" string="Z {0}" />
+  <STR key="UI_CASHSHOP_DETAILINFO" string="View Details" />
+  <STR key="UI_CASHSHOP_DETAILINFO_DLG" string="Displays item info." />
+  <STR key="UI_CASHSHOP_DLG_BUY" string="Purchase Item" />
+  <STR key="UI_CASHSHOP_DLG_GIFT" string="Send a Gift" />
+  <STR key="UI_CASHSHOP_DLG_MOVE" string="Receive Item" />
+  <STR key="UI_CASHSHOP_DLG_STR_BUY" string="Purchase the following item(s)?" />
+  <STR key="UI_CASHSHOP_DLG_STR_GIFT" string="Send a gift to another character. Type their name in the box below." />
+  <STR key="UI_CASHSHOP_DLG_STR_MOVE" string="Receive the following item(s)?" />
+  <STR key="UI_CASHSHOP_EDT_GIFT" string="Enter Manually" />
+  <STR key="UI_CASHSHOP_ENCHANT" string="Enhance" />
+  <STR key="UI_CASHSHOP_ENCHANT_EQUIP" string="Equipment enchantment" />
+  <STR key="UI_CASHSHOP_ENCHANT_GEM" string="Gem enchantment" />
+  <STR key="UI_CASHSHOP_EVENT" string="Event" />
+  <STR key="UI_CASHSHOP_EVENT_LIMIT" string="Limited" />
+  <STR key="UI_CASHSHOP_EXIT" string="Leave" />
+  <STR key="UI_CASHSHOP_GIFT_DLG_MOVE" string="Receive Item Gift" />
+  <STR key="UI_CASHSHOP_GIFT_DLG_MOVE_STR" string="Accept gift? {CR}From:" />
+  <STR key="UI_CASHSHOP_GIFT_ITEM" string="Item to be sent" />
+  <STR key="UI_CASHSHOP_GIFT_TOOLTIP" string="Send the item as a gift." />
+  <STR key="UI_CASHSHOP_GIFT_USER" string="Enter character's name" />
+  <STR key="UI_CASHSHOP_GIFTSUCCESS" string="You gave the following item(s) as a gift." />
+  <STR key="UI_CASHSHOP_INVEN" string="Cash Shop Storage" />
+  <STR key="UI_CASHSHOP_INVEN_SPACE_SHORT" string="Not enough space in inventory." />
+  <STR key="UI_CASHSHOP_INVENTORY" string="Inventory" />
+  <STR key="UI_CASHSHOP_ITEMMOVE" string="Receive" />
+  <STR key="UI_CASHSHOP_MAIN" string="Main" />
+  <STR key="UI_CASHSHOP_MAIN_BEST" string="Best" />
+  <STR key="UI_CASHSHOP_MAIN_HOT" string="Hot" />
+  <STR key="UI_CASHSHOP_MAIN_NEW" string="New" />
+  <STR key="UI_CASHSHOP_MATCH_USER" string="{COLOR r=0 g=250 b=0}User exists.{/COLOR}" />
+  <STR key="UI_CASHSHOP_MYBALANCE" string="My Info" />
+  <STR key="UI_CASHSHOP_NO_ITEM" string="No items in this section." />
+  <STR key="UI_CASHSHOP_PACKAGE" string="Quest" />
+  <STR key="UI_CASHSHOP_PAYMENT_BALANCES" string="Balance After" />
+  <STR key="UI_CASHSHOP_PAYMENTACCOUNT" string="Total Cost" />
+  <STR key="UI_CASHSHOP_PAYMENTINFO" string="Transaction Details" />
+  <STR key="UI_CASHSHOP_PMANG_CASH" string="What is Zen?" />
+  <STR key="UI_CASHSHOP_PMANG_CASH_DESC" string="Zen can be used to purchase items here in the RaiderZ Cash Shop. You can buy Zen by clicking on the button below." />
+  <STR key="UI_CASHSHOP_PMANGCASH" string="Zen" />
+  <STR key="UI_CASHSHOP_PROVISION" string="All purchases are final. The Cash Shop Storage is not shared between characters.{CR}" />
+  <STR key="UI_CASHSHOP_PROVISION_CRYSTAL" string="All purchases are final. Items will be placed directly in your inventory.{CR}" />
+  <STR key="UI_CASHSHOP_RIDE" string="Mount" />
+  <STR key="UI_CASHSHOP_RIDE_RIDE" string="Mount" />
+  <STR key="UI_CASHSHOP_SAME_USER" string="{COLOR r=250 g=0 b=0}You cannot send a gift to yourself.{/COLOR}" />
+  <STR key="UI_CASHSHOP_TERMS" string="Check User Agreement" />
+  <STR key="UI_CASHSHOP_USE" string="Move item?" />
+  <STR key="UI_CHANGENAME_CHECK" string="Once your character's name has been changed, you will be returned to the Character Select screen. Do you want to continue?" />
+  <STR key="UI_CHANGENAME_CONFIRM" string="Do you want to change to the below name?" />
+  <STR key="UI_CHANGENAME_DISUSABLE" string="{COLOR r=250 g=0 b=0}This name is unavailable.{/COLOR}" />
+  <STR key="UI_CHANGENAME_DLG" string="Use Renaming Coupon" />
+  <STR key="UI_CHANGENAME_DLG_DESC" string="Enter a new character name." />
+  <STR key="UI_CHANGENAME_DUPLICATE" string="Check Availability" />
+  <STR key="UI_CHANGENAME_SUCESS" string="Name changed successfully." />
+  <STR key="UI_CHANGENAME_USABLE" string="{COLOR r=0 g=250 b=0}This name is available.{/COLOR}" />
+  <STR key="UI_CHANNEL" string="Channel" />
+  <STR key="UI_CHANNEL_CURRENTCHANNEL" string="You are in Channel {0}. Select from the list above if you want to change Channels." />
+  <STR key="UI_CHANNEL_CURRENTLOCATION" string="Current Location" />
+  <STR key="UI_CHANNEL_REMAINEDTIME" string="You can switch to another channel in {0} second(s)." />
+  <STR key="UI_CHANNEL_STATE_BUSY" string="Crowded" />
+  <STR key="UI_CHANNEL_STATE_FULL" string="Full" />
+  <STR key="UI_CHANNEL_STATE_GOOD" string="Good" />
+  <STR key="UI_CHANNEL_WAITINGMOVE" string="Waiting to change channel." />
+  <STR key="UI_CHAR_CHANGECOMBATSTATUS" string="Change Combat Status" />
+  <STR key="UI_CHAR_COSTUME" string="Costume" />
+  <STR key="UI_CHAR_DESC_ARENA_RECORD" string="Your total record of wins and defeats at Brune's Glory.{CR}*Records reset at the end of each combat season." />
+  <STR key="UI_CHAR_DESC_ARENA_SCORE" string="Your total Brune's Glory score.{CR}*Scores reset at the end of each combat season." />
+  <STR key="UI_CHAR_DESC_ARMOR" string="The amount of damage received from physical and magical attacks diminishes depending on how many armor points you have. You will need superior armor in order to enhance your survivability. If the armor is too heavy, however, your magic skills and agility will suffer." />
+  <STR key="UI_CHAR_DESC_CHA" string="Slightly increases Elemental Defense.{CR}*Bonuses may vary depending on the equipped weapon." />
+  <STR key="UI_CHAR_DESC_CON" string="Increases Max Health. Slightly increases Physical and Magic Attack.{CR}*Bonuses may vary depending on the equipped weapon." />
+  <STR key="UI_CHAR_DESC_DEX" string="Increases Physical and Magic Critical.{CR}*Bonuses may vary depending on the equipped weapon." />
+  <STR key="UI_CHAR_DESC_EN" string="Used for magic skills and some physical skills." />
+  <STR key="UI_CHAR_DESC_HP" string="You will die when your HP reaches 0." />
+  <STR key="UI_CHAR_DESC_INT" string="Increases Magic Attack. Slightly increases Physical Attack and Elemental Defense.{CR}*Bonuses may vary depending on the equipped weapon." />
+  <STR key="UI_CHAR_DESC_MAGIC_CRITICAL" string="Bonus to Magic Critical Rate" />
+  <STR key="UI_CHAR_DESC_MAGIC_DAMAGE" string="Bonus damage to Magic Skills" />
+  <STR key="UI_CHAR_DESC_MAGIC_DEFENCE" string="Decreases damage from Magic Attacks" />
+  <STR key="UI_CHAR_DESC_PHYSIC_CRITICAL" string="Bonus to Physical Critical Rate" />
+  <STR key="UI_CHAR_DESC_PHYSIC_DAMAGE" string="Bonus damage to Physical Skills" />
+  <STR key="UI_CHAR_DESC_PHYSIC_DEFENCE" string="Decreases damage from Physical Attacks" />
+  <STR key="UI_CHAR_DESC_PVP_DEFENCE" string="Increases PvP Defense" />
+  <STR key="UI_CHAR_DESC_PVP_POWER" string="Increases PvP Attack power" />
+  <STR key="UI_CHAR_DESC_STA" string="Used for blocking, dodging, and most Physical Skills." />
+  <STR key="UI_CHAR_DESC_STR" string="Increases Physical Attack. Slightly increases Magic Attack.{CR}*Bonuses may vary depending on the equipped weapon." />
+  <STR key="UI_CHAR_EQUIP" string="Equipment" />
+  <STR key="UI_CHAR_RESISTANCE_FIRE" string="Fire" />
+  <STR key="UI_CHAR_RESISTANCE_HOLY" string="Holy" />
+  <STR key="UI_CHAR_RESISTANCE_ICE" string="Ice" />
+  <STR key="UI_CHAR_RESISTANCE_LIGHTNING" string="Lightning" />
+  <STR key="UI_CHAR_RESISTANCE_MAGIC_MELEE" string="Magic Defense" />
+  <STR key="UI_CHAR_RESISTANCE_MAGIC_POWER" string="Magic Damage" />
+  <STR key="UI_CHAR_RESISTANCE_PHYSICS_MELEE" string="Physical Defense " />
+  <STR key="UI_CHAR_RESISTANCE_PHYSICS_POWER" string="Physical Damage" />
+  <STR key="UI_CHAR_RESISTANCE_POISON" string="Poison" />
+  <STR key="UI_CHAR_RESISTANCE_STATS" string="Attribute Power" />
+  <STR key="UI_CHAR_RESISTANCE_UNHOLY" string="Darkness" />
+  <STR key="UI_CHAR_STATS" string="Stats" />
+  <STR key="UI_CHAR_WEAPON_CHANGE_TOOLTIP" string="Use [Tab] to quickly switch between Weapon 1 and Weapon 2." />
+  <STR key="UI_CHARACTER" string="Character" />
+  <STR key="UI_CHATTING_ALLMSG" string="All" />
+  <STR key="UI_CHATTING_AUCTION" string="Trade" />
+  <STR key="UI_CHATTING_BLOCK" string="Block" />
+  <STR key="UI_CHATTING_BLOCKLIST" string="Chat Block List" />
+  <STR key="UI_CHATTING_BLOCKLISTEMPTY" string="There is no one on your Block List." />
+  <STR key="UI_CHATTING_BLOCKLISTITEM" string="{0}" />
+  <STR key="UI_CHATTING_BLOCKUSER" string="{0}'s chat messages have been blocked." />
+  <STR key="UI_CHATTING_BROADCAST" string="Broadcast" />
+  <STR key="UI_CHATTING_CHATBOXSETTINGS" string="Chat Window Settings" />
+  <STR key="UI_CHATTING_CHATTINGTABSETTING" string="Chat Tab Settings" />
+  <STR key="UI_CHATTING_CONFIRMDELETE" string="{0} Tab will be closed. Continue?" />
+  <STR key="UI_CHATTING_CONFIRMRESET" string="All custom chat window settings will be deleted and default settings will be restored. Continue?" />
+  <STR key="UI_CHATTING_DEFAULT_ALL" string="All" />
+  <STR key="UI_CHATTING_DEFAULT_BATTLE" string="Battle" />
+  <STR key="UI_CHATTING_DEFAULT_GENERAL" string="General" />
+  <STR key="UI_CHATTING_DEFAULT_PARTY" string="Party" />
+  <STR key="UI_CHATTING_DEFAULT_SYSTEM" string="System" />
+  <STR key="UI_CHATTING_DISPLAYNAME" string="Tab Name" />
+  <STR key="UI_CHATTING_FIELDMSG" string="Field" />
+  <STR key="UI_CHATTING_FONTSIZELARGE" string="Large" />
+  <STR key="UI_CHATTING_FONTSIZEMIDDLE" string="Normal" />
+  <STR key="UI_CHATTING_FONTSIZESMALL" string="Small" />
+  <STR key="UI_CHATTING_GENERALMSG" string="Chat" />
+  <STR key="UI_CHATTING_GUILD" string="Guild" />
+  <STR key="UI_CHATTING_LOCKCHATTINGBOX" string="Lock" />
+  <STR key="UI_CHATTING_NEWBIE" string="Beginners" />
+  <STR key="UI_CHATTING_PARTY_MATCHING" string="LFP" />
+  <STR key="UI_CHATTING_PARTYMSG" string="Party" />
+  <STR key="UI_CHATTING_POPUP_BLOCK" string="Do you want to block {0}?" />
+  <STR key="UI_CHATTING_POPUP_INVITEFRIENDS" string="Do you want to add {0} on your friend list?" />
+  <STR key="UI_CHATTING_POPUP_INVITEGUILD" string="Do you want to invite {0} to the guild?" />
+  <STR key="UI_CHATTING_POPUP_INVITEPARTY" string="Do you want to invite {0} to the party?" />
+  <STR key="UI_CHATTING_POPUP_SEND_WISPER" string="Send Whisper to {0}" />
+  <STR key="UI_CHATTING_SHOUTS" string="Shouts" />
+  <STR key="UI_CHATTING_SHOW_BROADCAST_CHAT" string="Show Broadcast Messages" />
+  <STR key="UI_CHATTING_SHOW_NEWBIE_CHAT" string="Show Beginners Messages" />
+  <STR key="UI_CHATTING_SHOW_PARTYMATCHING_CHAT" string="Show Looking for Party Messages" />
+  <STR key="UI_CHATTING_SHOWAUCTIONMSG" string="Show Auction Messages" />
+  <STR key="UI_CHATTING_SHOWBATTLECHAT" string="Show Battle Messages" />
+  <STR key="UI_CHATTING_SHOWFIELDMSG" string="Show Field Chat Messages" />
+  <STR key="UI_CHATTING_SHOWGENERALMSG" string="Show General Chat Messages" />
+  <STR key="UI_CHATTING_SHOWGUILDMSG" string="Show Guild Messages" />
+  <STR key="UI_CHATTING_SHOWPARTYMSG" string="Show Party Messages" />
+  <STR key="UI_CHATTING_SHOWPRIVATECHAT" string="Show Private Chat Messages" />
+  <STR key="UI_CHATTING_SHOWSHOUTSMSG" string="Show Shout Messages" />
+  <STR key="UI_CHATTING_SHOWSYSTEMMSG" string="Show System Messages" />
+  <STR key="UI_CHATTING_SHOWWHISPERMSG" string="Show Whisper Messages" />
+  <STR key="UI_CHATTING_TEXTSIZE" string="Text Size" />
+  <STR key="UI_CHATTING_TRANSPARENCY" string="Transparency" />
+  <STR key="UI_CHATTING_UNBLOCK" string="{0} has been removed from your Chat Block List." />
+  <STR key="UI_CHATTING_UNBLOCKFAILED" string="{0} is not on your Chat Block List." />
+  <STR key="UI_CHATTING_UNLOCKCHATTINGBOX" string="Unlock" />
+  <STR key="UI_CHATTING_WHISPER" string="Whisper" />
+  <STR key="UI_CLOSE" string="Close" />
+  <STR key="UI_COMBAT_DROP_ITEM_RATE" string="Item Drop Rate" />
+  <STR key="UI_COMBAT_MAGIC_COLD_AP" string="Magic Ice Defense" />
+  <STR key="UI_COMBAT_MAGIC_COLD_POWER" string="Magic Ice Damage" />
+  <STR key="UI_COMBAT_MAGIC_CRITICAL" string="M. Crit" />
+  <STR key="UI_COMBAT_MAGIC_DEFENCE_POWER" string="M. Def" />
+  <STR key="UI_COMBAT_MAGIC_FIRE_AP" string="Magic Fire Defense" />
+  <STR key="UI_COMBAT_MAGIC_FIRE_POWER" string="Magic Fire Damage" />
+  <STR key="UI_COMBAT_MAGIC_HOLY_AP" string="Magic Holy Defense" />
+  <STR key="UI_COMBAT_MAGIC_HOLY_POWER" string="Magic Holy Damage" />
+  <STR key="UI_COMBAT_MAGIC_LIGHTNING_AP" string="Magic Lightning Defense" />
+  <STR key="UI_COMBAT_MAGIC_LIGHTNING_POWER" string="Magic Lightning Damage" />
+  <STR key="UI_COMBAT_MAGIC_POISON_AP" string="Magic Poison Defense" />
+  <STR key="UI_COMBAT_MAGIC_POISON_POWER" string="Magic Poison Damage" />
+  <STR key="UI_COMBAT_MAGIC_POWER" string="M. Atk" />
+  <STR key="UI_COMBAT_MAGIC_UNHOLY_AP" string="Magic Dark Defense" />
+  <STR key="UI_COMBAT_MAGIC_UNHOLY_POWER" string="Magic Dark Damage" />
+  <STR key="UI_COMBAT_PHYSICS_COLD_AP" string="Physical Ice Defense" />
+  <STR key="UI_COMBAT_PHYSICS_COLD_POWER" string="Physical Ice Damage" />
+  <STR key="UI_COMBAT_PHYSICS_CRITICAL" string="P. Crit" />
+  <STR key="UI_COMBAT_PHYSICS_DEFENCE_POWER" string="P. Def" />
+  <STR key="UI_COMBAT_PHYSICS_FIRE_AP" string="Physical Fire Defense" />
+  <STR key="UI_COMBAT_PHYSICS_FIRE_POWER" string="Physical Fire Damage" />
+  <STR key="UI_COMBAT_PHYSICS_HOLY_AP" string="Physical Holy Defense" />
+  <STR key="UI_COMBAT_PHYSICS_HOLY_POWER" string="Physical Holy Damage" />
+  <STR key="UI_COMBAT_PHYSICS_LIGHTNING_AP" string="Physical Lightning Defense" />
+  <STR key="UI_COMBAT_PHYSICS_LIGHTNING_POWER" string="Physical Lightning Damage" />
+  <STR key="UI_COMBAT_PHYSICS_POISON_AP" string="Physical Poison Defense" />
+  <STR key="UI_COMBAT_PHYSICS_POISON_POWER" string="Physical Poison Damage" />
+  <STR key="UI_COMBAT_PHYSICS_POWER" string="P. Atk" />
+  <STR key="UI_COMBAT_PHYSICS_UNHOLY_AP" string="Physical Dark Defense" />
+  <STR key="UI_COMBAT_PHYSICS_UNHOLY_POWER" string="Physical Dark Damage" />
+  <STR key="UI_COMBAT_PVP_DEFENCE_POWER" string="PvP Def" />
+  <STR key="UI_COMBAT_PVP_POWER" string="PvP Atk" />
+  <STR key="UI_COMBAT_STATS" string="Combat Stats" />
+  <STR key="UI_COMPLETE" string="Complete" />
+  <STR key="UI_CONFIRM" string="Okay" />
+  <STR key="UI_CONNECT_QUIT" string="Your connection has been terminated." />
+  <STR key="UI_CRAFTING" string="Craft" />
+  <STR key="UI_CRAFTING_BELT" string="Belt" />
+  <STR key="UI_CRAFTING_BODY" string="Torso" />
+  <STR key="UI_CRAFTING_CHARM" string="Charm" />
+  <STR key="UI_CRAFTING_CONFIRMCRAFTING_EQUIPANDHIGHLEVELITEM" string="The {0} you currently have equipped will be consumed to craft {1}, which cannot be used because your level is too low.{CR}Do you still want to craft the item?" />
+  <STR key="UI_CRAFTING_CONFIRMCRAFTING_EQUIPITEM" string="[ {0} ] is an equipped item. {COLOR r=230 g=60 b=60}It will be consumed{/COLOR} if you use it as an ingredient.{CR}{CR}Continue with crafting?" />
+  <STR key="UI_CRAFTING_CONFIRMCRAFTINGITEM" string="Craft the following item?" />
+  <STR key="UI_CRAFTING_CONFIRMGETRECIPE" string="Receive the following recipe?" />
+  <STR key="UI_CRAFTING_CONFIRMREQUIREDMATERIAL" string="The following amount of money and ingredients are required to craft this item." />
+  <STR key="UI_CRAFTING_COSTUME" string="Costume" />
+  <STR key="UI_CRAFTING_COSTUME_AVAILABLE" string="Costume Change Available" />
+  <STR key="UI_CRAFTING_COSTUME_CRAFTINGITEM" string="Crafting item into a costume..." />
+  <STR key="UI_CRAFTING_COSTUME_INVALIDITEM" string="This item cannot be converted into a costume." />
+  <STR key="UI_CRAFTING_COSTUME_MSG1" string="An item turned into a costume {COLOR r=230 g=60 b=60}loses{/COLOR} all of its stats, enchantments, and jewels." />
+  <STR key="UI_CRAFTING_COSTUME_SELECTITEM" string="Select the item that you want to craft into a costume." />
+  <STR key="UI_CRAFTING_CRAFTINGAVAILABLE" string="Available" />
+  <STR key="UI_CRAFTING_CRAFTINGITEM" string="Craft Item" />
+  <STR key="UI_CRAFTING_EARRING" string="Earring" />
+  <STR key="UI_CRAFTING_FEET" string="Feet" />
+  <STR key="UI_CRAFTING_GETRECIPE" string="Receive Recipe" />
+  <STR key="UI_CRAFTING_HANDS" string="Hands" />
+  <STR key="UI_CRAFTING_HAVERECIPE" string="You have already received this recipe." />
+  <STR key="UI_CRAFTING_HEAD" string="Head" />
+  <STR key="UI_CRAFTING_INSUFFICIENTSPACE" string="Insufficient space in inventory." />
+  <STR key="UI_CRAFTING_ITEM_PREVIEW" string="Preview" />
+  <STR key="UI_CRAFTING_ITEMEQUIPPED" string="Equipped" />
+  <STR key="UI_CRAFTING_ITEMINPOSSESSION" string="Possession" />
+  <STR key="UI_CRAFTING_LEG" string="Legs" />
+  <STR key="UI_CRAFTING_MAKE" string="Crafting item..." />
+  <STR key="UI_CRAFTING_MYRECIPE" string="My Recipes" />
+  <STR key="UI_CRAFTING_NECKLACE" string="Necklace" />
+  <STR key="UI_CRAFTING_RECEIVEDRECIPE" string="You have received the recipe for {0}." />
+  <STR key="UI_CRAFTING_RECIPESINPOSSESSION" string="Received Recipe" />
+  <STR key="UI_CRAFTING_RING" string="Ring" />
+  <STR key="UI_CRAFTING_SETITEM" string="Set" />
+  <STR key="UI_CRAFTING_SHOW_CRAFTINGAVAILABLE" string="View Only Available for Crafting" />
+  <STR key="UI_CRAFTING_TITLE" string="Title" />
+  <STR key="UI_CREDIT" string="Credits" />
+  <STR key="UI_CURRENTRANK" string="Current Level" />
+  <STR key="UI_DELEGATE" string="Delegate" />
+  <STR key="UI_DELETE" string="Delete" />
+  <STR key="UI_DELETE_FRIEND" string="Delete Friend" />
+  <STR key="UI_DETAILHELP_CONTROL" string="Controls" />
+  <STR key="UI_DETAILHELP_CONTROL_1" string="Movement &amp; NPC Interaction" />
+  <STR key="UI_DETAILHELP_CONTROL_1_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[W][A][S][D]{/COLOR} to move your character. Use the mouse to move the camera.{CR}{CR}{BITMAP name=wasdKey w=185 h=125}{BITMAP name=wasdKey_r w=185 h=125}{CR}{CR}{CR} Press {COLOR r=0 g=204 b=0}[E]{/COLOR} to talk to NPCs. {CR}{CR}{BITMAP name=eKey w=185 h=125}{BITMAP name=eKey_r w=185 h=125}" />
+  <STR key="UI_DETAILHELP_CONTROL_2" string="Basic Attacks &amp; Item Looting" />
+  <STR key="UI_DETAILHELP_CONTROL_2_DESC" string="{CR} {COLOR r=0 g=204 b=0} [Left-click]{/COLOR} to attack monsters.{CR}{CR}{BITMAP name=LBtnClk w=185 h=125}{BITMAP name=LBtnClk_r w=185 h=125}{CR}{CR}{CR} Press {COLOR r=0 g=204 b=0}[E]{/COLOR} to collect loot items from defeated enemies.{CR}{CR}{BITMAP name=eKey w=185 h=125}{BITMAP name=glean_r w=185 h=125}" />
+  <STR key="UI_DETAILHELP_CONTROL_3" string="Draw/Sheathe Weapon &amp; Cursor Toggle" />
+  <STR key="UI_DETAILHELP_CONTROL_3_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[F]{/COLOR} to draw your weapon or to put it away.{CR}{CR}{BITMAP name=fKey w=185 h=125}{BITMAP name=fKey_r w=185 h=125}{CR}{CR}{CR} Press {COLOR r=0 g=204 b=0}[Ctrl]{/COLOR} to turn the mouse cursor on or off.{CR}{CR}{BITMAP name=Ctrl w=185 h=125}{BITMAP name=Ctrl_r w=185 h=125}" />
+  <STR key="UI_DETAILHELP_CONTROL_4" string="Auto Run &amp; Quest Destination Display" />
+  <STR key="UI_DETAILHELP_CONTROL_4_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[R]{/COLOR} to enable Auto Run.{CR}{CR}{BITMAP name=Run w=185 h=125}{BITMAP name=Run_r w=185 h=125}{CR}{CR}{CR} Click on a quest in the {COLOR r=0 g=204 b=0}Quest Tracker{/COLOR} to {COLOR r=0 g=204 b=0}display the destination on the mini-map{/COLOR}.{CR}{CR}{BITMAP name=QShow w=185 h=125}{BITMAP name=QShow_r w=185 h=125}" />
+  <STR key="UI_DETAILHELP_CONTROL_5" string="Special Attacks" />
+  <STR key="UI_DETAILHELP_CONTROL_5_DESC" string="{CR} {COLOR r=0 g=204 b=0}Press Attack (left-click) immediately after pressing Forward ([W]){/COLOR} for an advancing attack.{CR}{CR}{BITMAP name=Assault w=185 h=125}{BITMAP name=Assault_r w=185 h=125}{CR}{CR}{CR} {COLOR r=0 g=204 b=0}Press Attack (left-click) immediately after pressing Back ([S]) {/COLOR}for a retreating attack.{CR}{CR}{BITMAP name=Evasion w=185 h=125}{BITMAP name=Evasion_r w=185 h=125}" />
+  <STR key="UI_DETAILHELP_CONTROL_6" string="Blocking &amp; Dodging" />
+  <STR key="UI_DETAILHELP_CONTROL_6_DESC" string="{CR} {COLOR r=0 g=204 b=0}[Right-click]{/COLOR} to block enemy attacks.{CR}{CR}{BITMAP name=GuardKey w=185 h=125}{BITMAP name=GuardKey_r w=185 h=125}{CR}{CR}{CR} Dodge enemy attacks by pressing {COLOR r=0 g=204 b=0}[Shift]+[W], [A], [S], or [D]{/COLOR}.{CR}{CR}{BITMAP name=DodgeKey w=185 h=125}{BITMAP name=DodgeKey_r w=185 h=125}" />
+  <STR key="UI_DETAILHELP_CONTROL_7" string="Breakable Parts &amp; Weapon Toggle" />
+  <STR key="UI_DETAILHELP_CONTROL_7_DESC" string="{CR} Monster parts and weapons can be picked up by pressing {COLOR r=0 g=204 b=0}[E]{/COLOR}.{CR}{CR}{BITMAP name=BP w=185 h=125}{BITMAP name=BP_r w=185 h=125}{CR}{CR} Assign a primary and secondary weapon in the {COLOR r=0 g=204 b=0}Character Window{/COLOR} and press {COLOR r=0 g=204 b=0}[Tab]{/COLOR} to switch between the two quickly.{CR}{CR}{BITMAP name=QuickChange w=370 h=125}" />
+  <STR key="UI_DETAILHELP_ETC" string="Other" />
+  <STR key="UI_DETAILHELP_ETC_1" string="Recovery" />
+  <STR key="UI_DETAILHELP_ETC_1_DESC" string="{CR} Restore Health by using recovery items or healing skills. Certain monster parts can restore Health as well. {CR} When not in battle, press {COLOR r=0 g=204 b=0}[Z]{/COLOR} to sit down. While sitting, you will recover Health, Energy, and Stamina more quickly." />
+  <STR key="UI_DETAILHELP_ETC_2" string="Buffs and Debuffs" />
+  <STR key="UI_DETAILHELP_ETC_2_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[Ctrl]{/COLOR} to activate the cursor. Place the cursor over the buff icon in the top right corner of the screen, near the mini-map, to see what effect the buff produces." />
+  <STR key="UI_DETAILHELP_ETC_3" string="Durability and Repairs" />
+  <STR key="UI_DETAILHELP_ETC_3_DESC" string="{CR} The durability of your equipment will fall as you use it, or when you are killed. {CR} The effectiveness of your weapons and armor decreases dramatically when their durability falls below a certain level. {CR} To restore equipment durability, talk to an NPC who can perform repairs and click the {COLOR r=0 g=204 b=0}Repair{/COLOR} button." />
+  <STR key="UI_DETAILHELP_ETC_4" string="Chat" />
+  <STR key="UI_DETAILHELP_ETC_4_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[Enter]{/COLOR} to open the chat window and chat with nearby users. {CR} You can also communicate by entering commands in the dialogue window.{CR}{CR}Chat: {COLOR r=220 g=220 b=100}/s {/COLOR}{CR}Whisper:{COLOR r=220 g=220 b=100} /w, /whisper{/COLOR}{CR}Whisper reply:{COLOR r=220 g=220 b=100} /r, /reply{/COLOR}{CR}Party chat:{COLOR r=220 g=220 b=100} /p, /party{/COLOR}{CR}Guild chat:{COLOR r=220 g=220 b=100} /g, /guild{/COLOR}{CR}Field chat:{COLOR r=220 g=220 b=100} /f, /field{/COLOR}" />
+  <STR key="UI_DETAILHELP_ETC_5" string="Player Interaction" />
+  <STR key="UI_DETAILHELP_ETC_5_DESC" string="{CR} For trades, duels, party formation and friend invitations, approach another player and press {COLOR r=0 g=204 b=0}[E]{/COLOR}.{CR} The following chat commands can also be used to invite players to join your party.{CR}{COLOR r=0 g=204 b=0}/invite [character name]{/COLOR}{CR}{COLOR r=0 g=204 b=0}/i [character name]{/COLOR}" />
+  <STR key="UI_DETAILHELP_ETC_6" string="Resurrection" />
+  <STR key="UI_DETAILHELP_ETC_6_DESC" string="{CR} Resurrection Items: {CR} If you are killed, you can use a resurrection item to return to life on the spot. These items have a cooldown of 30 minutes, so use them wisely! {CR} Soulstones: {CR} You can also choose to resurrect at the nearest Soulstone. Your Health, Energy, and Stamina will be restored by 25%. {CR}Instances: {CR} If you die in an instance, you can resurrect at the most recent checkpoint. Your Health, Energy, and Stamina will be restored by 25%. {CR}{CR}WARNING!{CR} - Dying will reduce the durability of all equipped items by 10%. {CR} - If you are Level 11 or higher and you resurrect at a Soulstone or a checkpoint, you will suffer Extreme Fatigue for a set amount of time." />
+  <STR key="UI_DETAILHELP_INTERFACE" string="Interface" />
+  <STR key="UI_DETAILHELP_INTERFACE_1" string="Character Window" />
+  <STR key="UI_DETAILHELP_INTERFACE_1_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[H]{/COLOR} to open the Character Window. This window displays your {COLOR r=0 g=204 b=0}character status{/COLOR}, {COLOR r=0 g=204 b=0}stats{/COLOR}, and {COLOR r=0 g=204 b=0}equipped items{/COLOR}. {CR} The other two tabs display your status with various {COLOR r=0 g=204 b=0}factions{/COLOR} and any {COLOR r=0 g=204 b=0}skills{/COLOR} you have learned." />
+  <STR key="UI_DETAILHELP_INTERFACE_2" string="Inventory Window" />
+  <STR key="UI_DETAILHELP_INTERFACE_2_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[I]{/COLOR} to open your Inventory. Click on the tabs to categorize your items." />
+  <STR key="UI_DETAILHELP_INTERFACE_3" string="Journal Window" />
+  <STR key="UI_DETAILHELP_INTERFACE_3_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[J]{/COLOR} to open your Journal. This window displays recipes, quests, and information about your character's adventures and development." />
+  <STR key="UI_DETAILHELP_INTERFACE_4" string="Skill Window" />
+  <STR key="UI_DETAILHELP_INTERFACE_4_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[T]{/COLOR} to open the Skill Window. This is where you can spend Skill Points to learn new skills." />
+  <STR key="UI_DETAILHELP_INTERFACE_5" string="Social Window" />
+  <STR key="UI_DETAILHELP_INTERFACE_5_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[P]{/COLOR} to open the Social Window. This window displays your party, your guild, and your friends." />
+  <STR key="UI_DETAILHELP_INTERFACE_6" string="Map Window" />
+  <STR key="UI_DETAILHELP_INTERFACE_6_DESC" string="{CR} {BITMAP name=Tutorial1002 w=280 h=200}{CR}{CR}Press {COLOR r=0 g=204 b=0}[M]{/COLOR} to open the Map. Here you can view a map of the current field, as well as the {COLOR r=0 g=204 b=0}World Map{/COLOR} and the {COLOR r=0 g=204 b=0}Simple Map{/COLOR}.{CR} If you're not sure where to go for a quest, check the {COLOR r=0 g=204 b=0}Map{/COLOR}. You can also open the {COLOR r=0 g=204 b=0}Simple Map{/COLOR} by pressing {COLOR r=0 g=204 b=0}[N]{/COLOR}.{CR}{CR}{BITMAP name=help_quest_01 w=32 h=32} Denotes an available quest {CR}{BITMAP name=help_quest_02 w=32 h=32} Denotes a quest zone {CR}{BITMAP name=help_quest_03 w=32 h=32} Denotes a quest in progress{CR}{BITMAP name=help_quest_04 w=32 h=32} Denotes a quest that can be turned in" />
+  <STR key="UI_DETAILHELP_INTERFACE_7" string="Cash Shop" />
+  <STR key="UI_DETAILHELP_INTERFACE_7_DESC" string="{CR} To access the Cash Shop, press {COLOR r=0 g=204 b=0}[ESC]{/COLOR} to open the main menu and {COLOR r=0 g=204 b=0}click the Cash Shop icon{/COLOR}. {CR} The Cash Shop contains many useful items that will aid you on your adventures!" />
+  <STR key="UI_DETAILHELP_INTERFACE_8" string="System" />
+  <STR key="UI_DETAILHELP_INTERFACE_8_DESC" string="{CR} Press {COLOR r=0 g=204 b=0}[ESC]{/COLOR} to open the main menu and click the {COLOR r=0 g=204 b=0}System icon{/COLOR}.{CR} The System menu allows you to change your Game Options, contact a GM, access this Help menu, and view the Keyboard Guide. You can also return to the Character Select screen or quit the game. " />
+  <STR key="UI_DETAILHELP_INTERFACE_9" string="Miscellaneous Interface" />
+  <STR key="UI_DETAILHELP_INTERFACE_9_DESC" string="{CR} To be added" />
+  <STR key="UI_DETAILHELP_SYSTEM" string="Systems" />
+  <STR key="UI_DETAILHELP_SYSTEM_1" string="Skills and Styles" />
+  <STR key="UI_DETAILHELP_SYSTEM_1_DESC" string="{CR} Style determines what skills and weapons your character uses. Each style has unique features. {CR}{CR} The Defender Style uses a one-handed sword or one-handed mace for increased defense and survival. {CR}{CR} The Berserker Style uses a greatsword or warhammer for explosive attack power. {CR}{CR} The Cleric Style uses a staff, one-handed mace, or warhammer for a combination of magic, physical attacks, and healing. {CR}{CR} The Sorcerer Style uses a staff or one-handed sword for ranged magic attacks, buffs, and debuffs." />
+  <STR key="UI_DETAILHELP_SYSTEM_2" string="Crafting" />
+  <STR key="UI_DETAILHELP_SYSTEM_2_DESC" string="{CR} The majority of weapons and armor in RaiderZ can only be acquired through crafting. {CR} Collect materials by hunting monsters, completing quests, and gathering from resource nodes such as ore deposits or treasure chests. Use those materials to craft weapons and armor through Artisan NPCs." />
+  <STR key="UI_DETAILHELP_SYSTEM_3" string="Breakable Parts" />
+  <STR key="UI_DETAILHELP_SYSTEM_3_DESC" string="{CR} During your battles with monsters and other enemies, you may acquire their weapons, or even parts of the monster itself. {CR} Monster parts give you a variety of buffs and monster weapons let you use different skills temporarily." />
+  <STR key="UI_DETAILHELP_SYSTEM_4" string="Instances" />
+  <STR key="UI_DETAILHELP_SYSTEM_4_DESC" string="{CR} Only members of your party can enter an instance with you. This way, you can complete your objectives without any interference from other players." />
+  <STR key="UI_DETAILHELP_SYSTEM_5" string="Quest PvP" />
+  <STR key="UI_DETAILHELP_SYSTEM_5_DESC" string="{CR} This is a PvP mode in which you can defeat hostile players to accomplish certain objectives. {CR} Victory in PvP can grant you a range of benefits. Some items can only be acquired through quest PvP." />
+  <STR key="UI_DETAILHELP_SYSTEM_6" string="Trade Market" />
+  <STR key="UI_DETAILHELP_SYSTEM_6_DESC" string="{CR} A system of buying and selling items through a trader NPC. There are Trade Markets in Ingen and Rietz. You must pay a fee to sell your items on the Trade Market." />
+  <STR key="UI_DETAILHELP_SYSTEM_7" string="Equipment Enchanting" />
+  <STR key="UI_DETAILHELP_SYSTEM_7_DESC" string="{CR} Enchant your weapons and armor to maximize their attack and defense and increase other stats. Enchanting can increase your equipment's power up to a maximum of 9 levels.{CR} Enchanters can be found in Ingen and Rietz. Certain rare materials are required for enchanting, and you must pay a fee as well." />
+  <STR key="UI_DETAILHELP_SYSTEM_8" string="Jewel Attachment" />
+  <STR key="UI_DETAILHELP_SYSTEM_8_DESC" string="{CR} Place jewels in the sockets of weapons and armor to endow them with your own unique stats.{CR} Jewel attachment is available anywhere as long as you have the right materials. Attaching a jewel to a piece of equipment will automatically bind it to you." />
+  <STR key="UI_DIE" string="Deceased" />
+  <STR key="UI_DISBAND" string="Banish" />
+  <STR key="UI_DROP" string="Discard" />
+  <STR key="UI_DYEING" string="Dyeing" />
+  <STR key="UI_DYEING_AVAILABLEDYECOLOR" string="Possible Results" />
+  <STR key="UI_DYEING_AVAILABLEDYEING" string="This item can be Dyed" />
+  <STR key="UI_DYEING_DYEINGITEM" string="Dyeing in progress" />
+  <STR key="UI_DYEING_DYEINGMSG1" string="This Dye will randomly apply one of the colors shown above." />
+  <STR key="UI_DYEING_DYEINGMSG2" string="Click Apply to Dye the selected armor the color shown above." />
+  <STR key="UI_DYEING_INVALIDITEM" string="This item CANNOT be Dyed" />
+  <STR key="UI_DYEING_RESULT" string="{0} has been dyed." />
+  <STR key="UI_DYEING_RESULT_COLOR" string="Enjoy!" />
+  <STR key="UI_DYEING_SELECTITEM" string="Select an item to dye." />
+  <STR key="UI_ELEMENT" string="{0} Attribute" />
+  <STR key="UI_ELEMENT_COLD_TYPE" string="Ice" />
+  <STR key="UI_ELEMENT_ENCHANT" string="Element Enhancement" />
+  <STR key="UI_ELEMENT_ENCHANT_GEM" string="Element Stone" />
+  <STR key="UI_ELEMENT_ENCHANT_OTHER_ATTRIBUTE" string="Successful Element Enhancement on a weapon already enhanced with another element will remove the existing element.{CR}{CR}Do you want to continue?" />
+  <STR key="UI_ELEMENT_ENCHANT_REGISTERITEM" string="Place the weapon you want to enhance in the 'Item to Enchant' slot." />
+  <STR key="UI_ELEMENT_ENCHANT_RESULT_FAILED_SKIP" string="Element Enhancement has failed." />
+  <STR key="UI_ELEMENT_ENCHANT_RESULT_SUCC" string="Element Enhancement was successful." />
+  <STR key="UI_ELEMENT_FIRE_TYPE" string="Fire" />
+  <STR key="UI_ELEMENT_HOLY_TYPE" string="Holy" />
+  <STR key="UI_ELEMENT_LIGHTING_TYPE" string="Lightning" />
+  <STR key="UI_ELEMENT_NONE_TYPE" string="" />
+  <STR key="UI_ELEMENT_POISON_TYPE" string="Poison" />
+  <STR key="UI_ELEMENT_UNHOLY_TYPE" string="Dark" />
+  <STR key="UI_EMBLEM" string="Emblem" />
+  <STR key="UI_ENCHANT" string="Enchant Equipment" />
+  <STR key="UI_ENCHANT_AGENTERRORPOS" string="It was registered in the wrong location." />
+  <STR key="UI_ENCHANT_AGENTGRADE_ERROR" string="The enchanting material is not right for the registered equipment." />
+  <STR key="UI_ENCHANT_DECREASEPREVENTITEM" string="Decrease Prevent Item" />
+  <STR key="UI_ENCHANT_DESTROYITEM" string="Stabilizer" />
+  <STR key="UI_ENCHANT_ELEMENT_ENCHANT_NOTICE" string="Weapon Element: {0}" />
+  <STR key="UI_ENCHANT_ENCHANTITEM" string="Reagent" />
+  <STR key="UI_ENCHANT_FIRSTTARGETITEM_REGISTER" string="Register equipment to enchant first." />
+  <STR key="UI_ENCHANT_NO_ELEMENT_GEM" string="Place a Gemstone with the desired element in the 'Element Stone' slot." />
+  <STR key="UI_ENCHANT_NOAGENT" string="There is no enchanting material right for the registered equipment." />
+  <STR key="UI_ENCHANT_NOTENOUGHMONEY" string="You do not have enough money to enchant equipment." />
+  <STR key="UI_ENCHANT_OTHER_ELEMENT_GEM" string="Enhancing a weapon with a different element will reset the existing enhancement." />
+  <STR key="UI_ENCHANT_PRICE" string="Cost" />
+  <STR key="UI_ENCHANT_RAREITEM" string="Rate Increase" />
+  <STR key="UI_ENCHANT_READY" string="Press the Enchant Equipment button to start enchanting the equipment." />
+  <STR key="UI_ENCHANT_READYPLUS_DECREASEPREVENT" string="{COLOR r=50 g=200 b=50} grade decrease prevent  {/COLOR}" />
+  <STR key="UI_ENCHANT_READYPLUSBROKEN" string="Destruction rate reducer used. {COLOR r=50 g=200 b=50}Item destruction rate has been decreased{/COLOR}." />
+  <STR key="UI_ENCHANT_READYPLUSSUCC" string="Enchantment success rate booster used. {COLOR r=50 g=200 b=50}Enchantment success rate has been increased{/COLOR}." />
+  <STR key="UI_ENCHANT_REDO" string="Once More" />
+  <STR key="UI_ENCHANT_REGISTERFAILEDELEMENTGEM" string="The current Element Enhancement has reached its maximum level." />
+  <STR key="UI_ENCHANT_REGISTERFAILEDITEM" string="This item cannot be enchanted. Please register enchantable items." />
+  <STR key="UI_ENCHANT_REGISTERITEM" string="Register items to enchant." />
+  <STR key="UI_ENCHANT_RESULT_FAILED_BROKEN" string="The equipment enchantment has failed and the equipment has been destroyed." />
+  <STR key="UI_ENCHANT_RESULT_FAILED_BROKEN_MSG" string="If enchantment fails, the grade of the item may fall or the item may be destroyed." />
+  <STR key="UI_ENCHANT_RESULT_FAILED_DOWN" string="The equipment enchantment has failed and the enchantment grade has fallen." />
+  <STR key="UI_ENCHANT_RESULT_FAILED_DOWN_MSG" string="The grade of the item may drop after a failed equipment enchantment." />
+  <STR key="UI_ENCHANT_RESULT_FAILED_SKIP" string="The equipment enchantment has failed and the enchantment grade remains unchanged." />
+  <STR key="UI_ENCHANT_RESULT_SUCC" string="The equipment enchantment has been completed." />
+  <STR key="UI_ENCHANT_RESULTERROR" string="An error occurred during enchantment. Please try again later." />
+  <STR key="UI_ENCHANT_RESULTITEM" string="Result" />
+  <STR key="UI_ENCHANT_TARGETITEM" string="Item to Enchant" />
+  <STR key="UI_ENCHANTABLE" string="Enchantable" />
+  <STR key="UI_ENCHANTUNABLE" string="Cannot be enchanted" />
+  <STR key="UI_ENTRY_MAP" string="New Adventure Record!" />
+  <STR key="UI_EQUIP" string="Equip" />
+  <STR key="UI_EQUIPPEDITEM" string="Equipped Items" />
+  <STR key="UI_ERROR" string="Error" />
+  <STR key="UI_EXINVENTORY" string="Extended Inventory" />
+  <STR key="UI_EXIT" string="Exit" />
+  <STR key="UI_EXTRACT" string="Extract" />
+  <STR key="UI_FACTION" string="Faction" />
+  <STR key="UI_FAIL" string="Failed" />
+  <STR key="UI_FIELDMAP" string="Field Map" />
+  <STR key="UI_FOCUS_ASSASSIN_DESC" string="Increases {COLOR r=50 g=200 b=50}movement speed{/COLOR} for a short time after dodging. Consume this effect to increase {COLOR r=50 g=200 b=50}Attack{/COLOR}." />
+  <STR key="UI_FOCUS_BERSERKER_DESC" string="{COLOR r=50 g=200 b=50}Increases melee damage and critical hit rate{/COLOR} after 8 successful attacks or use of the Berserk skill." />
+  <STR key="UI_FOCUS_CLERIC_DESC" string="Increases attack power after use of the {COLOR r=50 g=200 b=50}'Possession'{/COLOR} skill, and adds extra effects to {COLOR r=50 g=200 b=50}certain Cleric skills{/COLOR}." />
+  <STR key="UI_FOCUS_DEFENDER_DESC" string="{COLOR r=50 g=200 b=50}Increases Attack{/COLOR} for a short time after full block or use of certain skills. Allows use of additional skills." />
+  <STR key="UI_FOCUS_SORCERER_DESC" string="Increases casting speed after use of the {COLOR r=50 g=200 b=50}'Awakening'{/COLOR} skill, used while ice and fire effects are {COLOR r=50 g=200 b=50}both active{/COLOR}." />
+  <STR key="UI_FRIENDS" string="Friend" />
+  <STR key="UI_GAME_ACTION_CONTINUE" string="In progress..." />
+  <STR key="UI_GAME_ACTION_LOOTING" string="Gathering..." />
+  <STR key="UI_GAME_ACTION_SPELLING" string="Casting a Spell..." />
+  <STR key="UI_GAME_ACTION_USING" string="Item in Use..." />
+  <STR key="UI_GAME_ADDQUESTITEM" string="Quest item {CR} [{0}] acquired" />
+  <STR key="UI_GAME_ADDQUESTITEMS" string="Quest item {CR} [{0}] acquired {1}" />
+  <STR key="UI_GAME_BUFF_INFO" string="Buffs" />
+  <STR key="UI_GAME_CHAR_INFO" string="Character Info" />
+  <STR key="UI_GAME_COMPLETEDQUEST" string="Quest '{0}' complete." />
+  <STR key="UI_GAME_CONFIRM_INVITED_FRIENDS" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has sent a friend request. Accept?" />
+  <STR key="UI_GAME_CONFIRMINVITEDGUILD" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has invited you to join a guild. Accept?" />
+  <STR key="UI_GAME_CONFIRMINVITEDPARTY" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has invited you to join a party. Accept?" />
+  <STR key="UI_GAME_CONFIRMREQUESTEDDUEL" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has made a duel request. Accept?" />
+  <STR key="UI_GAME_CONFIRMREQUESTEDTRADE" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has made a trade request. Accept?" />
+  <STR key="UI_GAME_DELIBERATION_CYCLE_1" string="Warnning Message 1" />
+  <STR key="UI_GAME_DELIBERATION_CYCLE_2" string="Warnning Message 2" />
+  <STR key="UI_GAME_DELIBERATION_CYCLE_3" string="Warnning Message 3" />
+  <STR key="UI_GAME_DELIBERATION_MSG" string="Excessive game-playing can negatively affect your daily life." />
+  <STR key="UI_GAME_DELIBERATION_TIME_MSG" string="You have been player for {0}." />
+  <STR key="UI_GAME_DUELREQUEST" string="Press the {0} key to duel with {1}." />
+  <STR key="UI_GAME_EXISTCRAFTITEMS" string="{0} can now be crafted." />
+  <STR key="UI_GAME_EXISTLOOTITEMS" string="There are {0} loot items." />
+  <STR key="UI_GAME_FAILEDQUEST" string="Quest '{0}' failed." />
+  <STR key="UI_GAME_GIFT" string="You received a gift from {COLOR r=50 g=200 b=50}{0}{/COLOR}." />
+  <STR key="UI_GAME_GUILDINVITATION" string="With the {0} key, you can receive a request from {1} to join the guild." />
+  <STR key="UI_GAME_INGAMECS_ANSWER" string="Your 1:1 Inquiry has been answered." />
+  <STR key="UI_GAME_INTERACTION" string="Press the {0} key for interaction." />
+  <STR key="UI_GAME_INVITE_FRIENDS" string="You sent a friend request to {COLOR r=50 g=200 b=50}{0}{/COLOR}." />
+  <STR key="UI_GAME_INVITE_FRIENDS_MYSELF" string="You cannot make a friend request to yourself." />
+  <STR key="UI_GAME_INVITE_GUILD" string="You invited {COLOR r=50 g=200 b=50}{0}{/COLOR} to join the guild." />
+  <STR key="UI_GAME_INVITE_GUILD_MYSELF" string="You cannot invite yourself to a guild." />
+  <STR key="UI_GAME_INVITE_PARTY" string="You invited {COLOR r=50 g=200 b=50}{0}{/COLOR} to join your party." />
+  <STR key="UI_GAME_INVITE_PARTY_MYSELF" string="You cannot invite yourself to a party." />
+  <STR key="UI_GAME_INVITED_FRIENDS" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has sent you a friend request." />
+  <STR key="UI_GAME_INVITEDGUILD" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has invited you to join a guild." />
+  <STR key="UI_GAME_INVITEDPARTY" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has invited you to join a party." />
+  <STR key="UI_GAME_ITEM_INFO" string="Gear" />
+  <STR key="UI_GAME_LEVELUP" string="You have reached Level {0}. Press the {1} key open the Skill Menu and learn a new skill." />
+  <STR key="UI_GAME_LOOTITEM" string="Press the {0} key to acquire a loot item." />
+  <STR key="UI_GAME_MSG_LEVELUP" string="You can learn a new skill." />
+  <STR key="UI_GAME_PARTYINVITATION" string="With the {0} key, you can receive a request from {1} to join the party." />
+  <STR key="UI_GAME_PC_CAFE_LOGIN" string="You have logged into the RaiderZ Internet Cafe. Take advantage of the available benefits." />
+  <STR key="UI_GAME_PC_CAFE_LOGIN_ALARM" string="You have logged into the RaiderZ Internet Caf?!{CR} Take advantage of the available benefits." />
+  <STR key="UI_GAME_QUESTITEMCOUNT" string="{1} {0}" />
+  <STR key="UI_GAME_RECIPECOUNT" string="{0} and {1} more item(s)" />
+  <STR key="UI_GAME_REQUESTE_DUEL" string="You challenged {COLOR r=50 g=200 b=50}{0}{/COLOR} to a duel." />
+  <STR key="UI_GAME_REQUESTE_PARTYDUEL" string="You challenged {COLOR r=50 g=200 b=50}{0}{/COLOR} to a party duel." />
+  <STR key="UI_GAME_REQUESTE_TRADE" string="You requested to trade with {COLOR r=50 g=200 b=50}{0}{/COLOR}." />
+  <STR key="UI_GAME_REQUESTE_TRADE_MYSELF" string="You cannot trade with yourself." />
+  <STR key="UI_GAME_REQUESTEDDUEL" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has made a duel request." />
+  <STR key="UI_GAME_REQUESTEDTRADE" string="{COLOR r=50 g=200 b=50}{0}{/COLOR} has made a trade request." />
+  <STR key="UI_GAME_SEARCHINGAUTOPARTY" string="Searching for party members to carry out Quest '{0}'.." />
+  <STR key="UI_GAME_SENSOR_FOLLOW" string="Follow" />
+  <STR key="UI_GAME_SENSOR_FOLLOWPARTY" string="{0} is moving to the Trial field.{CR}Do you want to follow?" />
+  <STR key="UI_GAME_SENSOR_SELECTION" string="Which Field do you wish to enter?" />
+  <STR key="UI_GAME_SHAREDQUEST" string="{0} has shared Quest '{1}' with you." />
+  <STR key="UI_GAME_TRADEREQUEST" string="Press the {0} key to trade with {1}." />
+  <STR key="UI_GEMENCHANT" string="Jewel Attaching" />
+  <STR key="UI_GEMENCHANT_AVAILABLEGEMENCHANT" string="Jewel Socket Available" />
+  <STR key="UI_GEMENCHANT_AVAILABLEGEMEXTRACT" string="Jewel Extractable" />
+  <STR key="UI_GEMENCHANT_AVAILABLEGEMREMOVE" string="Jewel Removable" />
+  <STR key="UI_GEMENCHANT_DOINGITEM" string="Attempting to enhance the item" />
+  <STR key="UI_GEMENCHANT_DOINGITEM_EXTRACT" string="Extracting the jewel." />
+  <STR key="UI_GEMENCHANT_DOINGITEM_REMOVE" string="Removing the jewel." />
+  <STR key="UI_GEMENCHANT_INVALIDITEM" string="Jewels cannot be attached to this type of item." />
+  <STR key="UI_GEMENCHANT_INVALIDITEMEXTRACT" string="Jewels can be extracted from weapons, armor, or costumes." />
+  <STR key="UI_GEMENCHANT_INVALIDITEMREMOVE" string="Jewels can be removed from weapons, armor, or costumes." />
+  <STR key="UI_GEMENCHANT_MSG1" string="You have no jewel dust available." />
+  <STR key="UI_GEMENCHANT_MSG2" string="Cannot be attached. Does not meet the level requirements." />
+  <STR key="UI_GEMENCHANT_MSG3" string="Once a Jewel is attached to a piece of equipment it will be automatically bound to you." />
+  <STR key="UI_GEMENCHANT_MSG4" string="The minimum level requirement is higher than the level allowed by the Jewel." />
+  <STR key="UI_GEMENCHANT_MSG5" string="Jewels attached to items can be removed. Select a jewel to remove and click the Remove button." />
+  <STR key="UI_GEMENCHANT_MSG6" string="Jewels attached to items can be extracted. Select a jewel to extract and click the Extract button." />
+  <STR key="UI_GEMENCHANT_NOTEXISTGEMHOLE" string="No empty Jewel Sockets available." />
+  <STR key="UI_GEMENCHANT_NOTEXTRACTGEM" string="There is no jewel to be extracted." />
+  <STR key="UI_GEMENCHANT_NOTREMOVEGEM" string="There is no jewel to be removed." />
+  <STR key="UI_GEMENCHANT_NOTTYPEGEMHOLE" string="This Jewel cannot be attached to this item." />
+  <STR key="UI_GEMENCHANT_SELECTITEM" string="Select an item with an open Jewel Socket" />
+  <STR key="UI_GEMENCHANT_SELECTITEMEXTRACT" string="Please select an item to extract a jewel from." />
+  <STR key="UI_GEMENCHANT_SELECTITEMREMOVE" string="Please select an item to remove a jewel from." />
+  <STR key="UI_GEMEXTRACT" string="Extract Jewel" />
+  <STR key="UI_GEMREMOVE" string="Remove Jewel" />
+  <STR key="UI_GMBAN" string="Penalty" />
+  <STR key="UI_GMCHAR" string="Character" />
+  <STR key="UI_GMCHAR_COMPLETE" string="Finished" />
+  <STR key="UI_GMCHAR_GIVEITEM" string="Insert" />
+  <STR key="UI_GMCHAR_INVENCLEAR" string="Reset Inventory" />
+  <STR key="UI_GMCHAR_QUESTCLEAR" string="Reset Quests" />
+  <STR key="UI_GMCHAR_REFRESH" string="Renew" />
+  <STR key="UI_GMCHAR_SKILLCLEAR" string="Reset Skills" />
+  <STR key="UI_GMETC" string="ETC" />
+  <STR key="UI_GMMOVEBATTLE" string="Battle" />
+  <STR key="UI_GMSPAWN" string="Summon" />
+  <STR key="UI_GMTOOL" string="GM Tool" />
+  <STR key="UI_GMTOOL_ADD" string="Add" />
+  <STR key="UI_GMTOOL_ADDREALSE_INFOTEXT" string="*Right-click to register/cancel." />
+  <STR key="UI_GMTOOL_ALLCLEAR" string="Delete List" />
+  <STR key="UI_GMTOOL_BPART" string="Destroy Part" />
+  <STR key="UI_GMTOOL_CHANGE" string="Change" />
+  <STR key="UI_GMTOOL_COMPLETEQUEST" string="Quest Completed" />
+  <STR key="UI_GMTOOL_CONTANTS" string="Content" />
+  <STR key="UI_GMTOOL_DESPAWN" string="Cancel Summon" />
+  <STR key="UI_GMTOOL_DEVGRADE" string="Developer" />
+  <STR key="UI_GMTOOL_DIE" string="Suicide" />
+  <STR key="UI_GMTOOL_GHOST" string="Ghost" />
+  <STR key="UI_GMTOOL_GMGRADE" string="GM" />
+  <STR key="UI_GMTOOL_NPC" string="NPC" />
+  <STR key="UI_GMTOOL_PC" string="PC" />
+  <STR key="UI_GMTOOL_REBIRTH" string="Resurrect My Character" />
+  <STR key="UI_GMTOOL_RECOVER" string="Change" />
+  <STR key="UI_GMTOOL_RECOVERALL" string="Recover All" />
+  <STR key="UI_GMTOOL_REPAIR" string="Repair All" />
+  <STR key="UI_GMTOOL_RESETCOOLTIME" string="Reset Cool Time" />
+  <STR key="UI_GMTOOL_SETGRADE" string="Authority Settings" />
+  <STR key="UI_GMTOOL_TESTERGRADE" string="Tester" />
+  <STR key="UI_GMTOOL_USERGRADE" string="General" />
+  <STR key="UI_GUILD" string="Guild" />
+  <STR key="UI_GUILD_STORAGE" string="Guild Storage Box" />
+  <STR key="UI_GUILD_STORAGE_CONFIRM_MOVEITEM" string="Move the following items to the guild storage?" />
+  <STR key="UI_GUILD_STORAGE_MONEY" string="Amount Stored by Guild" />
+  <STR key="UI_HELLHOUND" string="Hellhound (Beta)" />
+  <STR key="UI_HELLHOUND_GRADE_A" string="A Grade" />
+  <STR key="UI_HELLHOUND_GRADE_ALL" string="All" />
+  <STR key="UI_HELLHOUND_GRADE_B" string="B Grade" />
+  <STR key="UI_HELLHOUND_GRADE_C" string="C Grade" />
+  <STR key="UI_HELLHOUND_GRADE_D" string="D Grade" />
+  <STR key="UI_HELLHOUND_GRADE_E" string="E Grade" />
+  <STR key="UI_HELLHOUND_GRADE_HELL" string="HELL" />
+  <STR key="UI_HELLHOUND_HAVE_NOT_LICENSE" string="Have No License" />
+  <STR key="UI_HELLHOUND_HAVE_TOKEN" string=" " />
+  <STR key="UI_HELLHOUND_MISSION_CONFIRM_ENTER" string="Do you want to enter the Hellhound mission {0}?" />
+  <STR key="UI_HELLHOUND_MiSSION_ENTER" string="Start Mission" />
+  <STR key="UI_HELLHOUND_MiSSION_RECEIVE" string="Accept Mission" />
+  <STR key="UI_HELLHOUND_MiSSION_REWARE_RECEIVE" string="Receive Reward" />
+  <STR key="UI_HELLHOUND_MISSION_TYPE_BPARTS" string="Destroy Parts" />
+  <STR key="UI_HELLHOUND_MISSION_TYPE_CAPTURE" string="Capture" />
+  <STR key="UI_HELLHOUND_MISSION_TYPE_DESTROY" string="Destroy All" />
+  <STR key="UI_HELLHOUND_MISSION_TYPE_KILL" string="Kill" />
+  <STR key="UI_HELLHOUND_TATLE_1" string="Wild Dog" />
+  <STR key="UI_HELLHOUND_TATLE_2" string="Hound Class 1" />
+  <STR key="UI_HELLHOUND_TATLE_3" string="Hound Class 2" />
+  <STR key="UI_HELLHOUND_TATLE_4" string="Hound Class 3" />
+  <STR key="UI_HELLHOUND_TATLE_5" string="Hound Class 4" />
+  <STR key="UI_HELLHOUND_TATLE_6" string="Hound Class 5" />
+  <STR key="UI_HELLHOUND_TATLE_7" string="Hound Class 6" />
+  <STR key="UI_HELLHOUND_TATLE_HELL" string="Hellhound" />
+  <STR key="UI_HELP" string="Help" />
+  <STR key="UI_HELPCONTROLKEYS" string="Keyboard Guide" />
+  <STR key="UI_HIGH" string="High" />
+  <STR key="UI_HIGHEST" string="Highest" />
+  <STR key="UI_HONOR_RANKING" string="Hall of Fame" />
+  <STR key="UI_IMPOSE_EFFECT" string="Effects" />
+  <STR key="UI_IN_NON_PVPAREA_ONLY_USE_ITEM" string="Unable to use in PVP area" />
+  <STR key="UI_IN_PVPAREA_ONLY_USE_ITEM" string="Can only be used in PVP area" />
+  <STR key="UI_INGAMECS" string="Support" />
+  <STR key="UI_INGAMECS_ANSWER" string="View Response" />
+  <STR key="UI_INTERACTIONPC_INVITEFRIENDS" string="Send Friend Request" />
+  <STR key="UI_INTERACTIONPC_INVITEGUILD" string="Invite to Guild" />
+  <STR key="UI_INTERACTIONPC_INVITEPARTY" string="Invite to Party" />
+  <STR key="UI_INTERACTIONPC_REQUESTDUEL" string="Request Duel" />
+  <STR key="UI_INTERACTIONPC_REQUESTPARTYDUEL" string="Request Party Duel" />
+  <STR key="UI_INTERACTIONPC_REQUESTTRADE" string="Request Trade" />
+  <STR key="UI_INTERACTIONPC_VIEWPLAYERINFO" string="View Player Info" />
+  <STR key="UI_INTERACTIONPC_WELCOME" string="What is your business with me?" />
+  <STR key="UI_INTERFACE" string="Interface" />
+  <STR key="UI_INVEN_ARRANGE" string="Sort" />
+  <STR key="UI_INVEN_ARRANGE_COOLTIME" string="You must wait {0} seconds before using again." />
+  <STR key="UI_INVEN_ARRANGE_ENABLE" string="Sort" />
+  <STR key="UI_INVEN_CONFIRMCLAIMITEM" string="Bind the following items?" />
+  <STR key="UI_INVEN_CONFIRMDROPITEM" string="Delete item? Deleted items cannot be recovered." />
+  <STR key="UI_INVEN_CONFIRMMOVETOINVEN" string="Move the following items to the inventory?" />
+  <STR key="UI_INVEN_CONFIRMPERIODITEM" string="This contains a Timed Item. {COLOR r=160 g=32 b=32}Timed Items start counting down as soon as they are obtained.{/COLOR} Are you sure you want to open this now?" />
+  <STR key="UI_INVEN_CONFIRMSELLITEM" string="Sell the following items?" />
+  <STR key="UI_INVEN_EXINVEN" string="You can use one more extra item inventory for another 30 days." />
+  <STR key="UI_INVEN_EXTIME" string="Extended Inventory has {COLOR r=160 g=32 b=32}{0}{/COLOR} left." />
+  <STR key="UI_INVEN_EXTIME_EXPIRE" string="You may only transfer items out." />
+  <STR key="UI_INVEN_EXTIME_EXPIRE2" string="Extended Inventory has expired." />
+  <STR key="UI_INVEN_ITEM_USE" string="Item {0} has been used." />
+  <STR key="UI_INVEN_ITEMCOUNTTOOLTIP" string="Current Number of Items / Maximum Number of Items" />
+  <STR key="UI_INVEN_SHOWALL" string="All" />
+  <STR key="UI_INVEN_SHOWEQIUPMENT" string="Equip" />
+  <STR key="UI_INVEN_SHOWETC" string="Misc" />
+  <STR key="UI_INVEN_SHOWMETERIAL" string="Ingredients" />
+  <STR key="UI_INVEN_SHOWQUESTITEM" string="Quest" />
+  <STR key="UI_INVEN_SHOWRECIPEITEM" string="Recipe" />
+  <STR key="UI_INVEN_SHOWUSABLE" string="Use" />
+  <STR key="UI_INVEN_SPECITEMQTY" string="Specify the item quantity." />
+  <STR key="UI_INVEN_SPECMONEY" string="Please specify the amount of money that you wish to attach.{CR}Maximum amount is {COLOR r=230 g=190 b=1}40000GP{/COLOR}." />
+  <STR key="UI_INVENTORY" string="Inventory" />
+  <STR key="UI_ITEM_PREVIEW" string="Item Preview" />
+  <STR key="UI_ITEM_PREVIEW_CHANGE_STANCE" string="Change Stance" />
+  <STR key="UI_ITEM_PREVIEW_INTACT" string="Reset" />
+  <STR key="UI_JOURNAL" string="Journal" />
+  <STR key="UI_JOURNAL_ARMORRECIPE" string="Armor Recipes" />
+  <STR key="UI_JOURNAL_CHALLENGEQUEST" string="Challenge Quest" />
+  <STR key="UI_JOURNAL_CHECKREWARD" string="You will receive the following rewards:" />
+  <STR key="UI_JOURNAL_CONFIRMDELRECIPE" string="Do you want to delete this Recipe?" />
+  <STR key="UI_JOURNAL_CONFIRMGIVEUPQUEST" string="You will not receive rewards for abandoned quests. Continue?" />
+  <STR key="UI_JOURNAL_CRAFTINGAVAILABLE" string="Available" />
+  <STR key="UI_JOURNAL_CRAFTINGITEM" string="Crafting Item" />
+  <STR key="UI_JOURNAL_EQUIPPED" string="Equipped" />
+  <STR key="UI_JOURNAL_FIELDGUIDEBOOK" string="Exploration" />
+  <STR key="UI_JOURNAL_GIVEUPQUEST" string="Give Up" />
+  <STR key="UI_JOURNAL_INCREASE" string="{0} Increase" />
+  <STR key="UI_JOURNAL_INDICATEQUEST" string="Show" />
+  <STR key="UI_JOURNAL_INDICATERECIPE" string="Show" />
+  <STR key="UI_JOURNAL_INPOSSESSION" string="In Possession" />
+  <STR key="UI_JOURNAL_ITEMRECIPE" string="Item Recipes" />
+  <STR key="UI_JOURNAL_LEVELCATEGORYNAME_GUIDEBOOK" string="Level {0}" />
+  <STR key="UI_JOURNAL_LEVELGUIDEBOOK" string="Advancement" />
+  <STR key="UI_JOURNAL_LOCATION" string="Click to view location on the map{CR}{CR}NPC location" />
+  <STR key="UI_JOURNAL_NOTINDICATEQUEST" string="Hide" />
+  <STR key="UI_JOURNAL_NOTINDICATERECIPE" string="Hide" />
+  <STR key="UI_JOURNAL_OWNED" string="{0} Owned" />
+  <STR key="UI_JOURNAL_RECIEVESHAREDQUEST" string="Receive" />
+  <STR key="UI_JOURNAL_REQUESTCRAFTING" string="Can be crafted by the following artisan(s):" />
+  <STR key="UI_JOURNAL_REQUESTCRAFTING2" string="Collect the required ingredients and then request the crafting services of the following artisans:" />
+  <STR key="UI_JOURNAL_REWARDITEM" string="Reward" />
+  <STR key="UI_JOURNAL_SELECTONEREWARD" string="You can select one from the following options:" />
+  <STR key="UI_JOURNAL_SHAREDQUEST" string="Shared Quest" />
+  <STR key="UI_JOURNAL_SHAREQUEST" string="Share" />
+  <STR key="UI_JOURNAL_VIEW_GUIDEBOOK" string="Show Detail" />
+  <STR key="UI_JOURNAL_WEAPONRECIPE" string="Weapon Recipes" />
+  <STR key="UI_JOURNALIND_NEWBIEHELP" string="Click on the Quest to indicate the location on the map." />
+  <STR key="UI_JOURNALIND_QUEST_COMPLETE" string="Completed" />
+  <STR key="UI_JOURNALIND_QUEST_FAILED" string="Failed" />
+  <STR key="UI_JOURNALIND_RECIPE_FINISHED" string="Complete" />
+  <STR key="UI_JOURNALIND_SELECTED_TOOLTIP" string="Destination will be displayed on the map." />
+  <STR key="UI_LARGE" string="Far" />
+  <STR key="UI_LARGEST" string="Farthest" />
+  <STR key="UI_LEARNEDTALENTS" string="Skills" />
+  <STR key="UI_LEAVE" string="Leave" />
+  <STR key="UI_LOADING_ACTIVITY" string="Current Session Activity" />
+  <STR key="UI_LOADING_COMPLETEDQUESTS" string="Quests Completed" />
+  <STR key="UI_LOADING_EPICMONSTERSDEFEATED" string="Epic Monsters Defeated" />
+  <STR key="UI_LOADING_MONSTERSDEFEATED" string="Monsters Defeated" />
+  <STR key="UI_LOADING_NEWQUESTS" string="Quests Acquired" />
+  <STR key="UI_LOADING_NEWRECIPES" string="Recipes Acquired" />
+  <STR key="UI_LOADING_USEDRECIPES" string="Recipes Used" />
+  <STR key="UI_LOGIN_CHAR_NUM" string="Character number" />
+  <STR key="UI_LOGIN_CHECKBOX_REMEMBER_ID" string="Remember ID" />
+  <STR key="UI_LOGIN_CONNECT" string="Connect" />
+  <STR key="UI_LOGIN_DESCHIGHPERFORMANCE" string="Suitable for computers above the recommended hardware requirements." />
+  <STR key="UI_LOGIN_DESCLOWPERFORMANCE" string="Suitable for computers which meet the minimum hardware requirements." />
+  <STR key="UI_LOGIN_DESCMEDIUMPERFORMANCE" string="Suitable for computers which meet the recommended hardware requirements." />
+  <STR key="UI_LOGIN_EVENTSERVER" string="Event" />
+  <STR key="UI_LOGIN_HIGHPERFORMANCE" string="High Performance Mode" />
+  <STR key="UI_LOGIN_HOMEPAGE" string="Homepage" />
+  <STR key="UI_LOGIN_HOMEPAGECONFIRM" string="Would you like to open the website?" />
+  <STR key="UI_LOGIN_INPUT_TOOLTIP_ID" string="Enter ID" />
+  <STR key="UI_LOGIN_INPUT_TOOLTIP_PASSWORD" string="Enter password" />
+  <STR key="UI_LOGIN_LOADINGMSG" string="Don't forget to take a break every once in a while! " />
+  <STR key="UI_LOGIN_LOGINWINDOW_TITLE" string="Login" />
+  <STR key="UI_LOGIN_LOWPERFORMANCE" string="Low Performance Mode" />
+  <STR key="UI_LOGIN_MEDIUMPERFORMANCE" string="Medium Performance Mode" />
+  <STR key="UI_LOGIN_SELECTWORLD" string="Select World" />
+  <STR key="UI_LOGIN_SERVERCONNECT" string="Connecting" />
+  <STR key="UI_LOGIN_STATE_BUSY" string="Crowded" />
+  <STR key="UI_LOGIN_STATE_CHECKING" string="Under Maintenance" />
+  <STR key="UI_LOGIN_STATE_FULL" string="Full" />
+  <STR key="UI_LOGIN_STATE_GOOD" string="Good" />
+  <STR key="UI_LOGIN_STATIC_ID" string="ID" />
+  <STR key="UI_LOGIN_STATIC_PASSWORD" string="Password" />
+  <STR key="UI_LOGIN_WELCOME" string="This game is for 15+{CR}and it is not suitable for children or youth below this age{CR}. Also this game concerns of too much violence{CR}so the supervision of the guardian must be needed." />
+  <STR key="UI_LOGIN_WORLDNAME" string="World Name" />
+  <STR key="UI_LOOTING" string="Loot Items" />
+  <STR key="UI_LOOTING_LOOTINGALL" string="Acquire All" />
+  <STR key="UI_LOOTING_LOOTINGONE" string="Acquire" />
+  <STR key="UI_LOOTING_MSG" string="The following loot items can be acquired." />
+  <STR key="UI_LOOTING_PARTYLEADERDISTRIBUTE" string="Party Leader Distribution" />
+  <STR key="UI_LOOTING_RANDOMACQUISITION" string="Roll to Loot" />
+  <STR key="UI_LOW" string="Low" />
+  <STR key="UI_LOWEST" string="Lowest" />
+  <STR key="UI_MAILBOX" string="Mailbox" />
+  <STR key="UI_MAILBOX_APPEND_FAIL_ITEM_BIND" string="Bound items cannot be sent through the mail." />
+  <STR key="UI_MAILBOX_ARRIVEDNEW" string="New mail has arrived." />
+  <STR key="UI_MAILBOX_ATTACHMENT" string="Attachments" />
+  <STR key="UI_MAILBOX_ATTACHMENTMSG" string="Drag and drop money or items you wish to attach." />
+  <STR key="UI_MAILBOX_CHARACTER" string=" Characters" />
+  <STR key="UI_MAILBOX_CLEAR" string="Reset" />
+  <STR key="UI_MAILBOX_CLICK_COMBAT" string="Mail Box cannot be opened during the battle." />
+  <STR key="UI_MAILBOX_CLICK_OPEN" string="Click to open the Mailbox." />
+  <STR key="UI_MAILBOX_CONFIRMATTACHITEM" string="Specify the number of items you wish to attach." />
+  <STR key="UI_MAILBOX_CONFIRMDELETE" string="Do you wish to delete the following mail? Deleted mail cannot be recovered." />
+  <STR key="UI_MAILBOX_DAYLEFT" string="{0} Day(s) Left" />
+  <STR key="UI_MAILBOX_DELETEITEM" string="Remove the attached item." />
+  <STR key="UI_MAILBOX_FULLED" string="Your mailbox is full. To receive and view new mail, please delete some old mail and free up space." />
+  <STR key="UI_MAILBOX_INBOX" string="Inbox" />
+  <STR key="UI_MAILBOX_LESSONEDAY" string="Less than 1 Day" />
+  <STR key="UI_MAILBOX_MAX_5" string="No more than 5 items can be attached." />
+  <STR key="UI_MAILBOX_NOTENOUGHMONEY" string="Not enough money." />
+  <STR key="UI_MAILBOX_POST_FAIL" string="You cannot send this mail." />
+  <STR key="UI_MAILBOX_READ" string="Read" />
+  <STR key="UI_MAILBOX_RECIPIENT" string="To:" />
+  <STR key="UI_MAILBOX_REPLY" string="Reply" />
+  <STR key="UI_MAILBOX_REPLYSENDER" string="Reply to the sender." />
+  <STR key="UI_MAILBOX_SEND" string="Send" />
+  <STR key="UI_MAILBOX_SENDER" string="Sender" />
+  <STR key="UI_MAILBOX_SENDING" string="Sending mail." />
+  <STR key="UI_MAILBOX_TITLE" string="Subject:" />
+  <STR key="UI_MAILBOX_UNTITILED" string="[No Subject]" />
+  <STR key="UI_MAILBOX_WARNATTACHMENT" string="This letter has the following attachments. Click on each item to move it to your inventory." />
+  <STR key="UI_MAILBOX_WRITE" string="Write Mail" />
+  <STR key="UI_MAINMENU_CONFIRMEXITTOSELCHAR" string="Return to the Character Select screen?" />
+  <STR key="UI_MAINMENU_CONFIRMQUITGAME" string="Are you sure you want to close the game?" />
+  <STR key="UI_MAP" string="Map" />
+  <STR key="UI_MAP_CLOSE" string="Close" />
+  <STR key="UI_MAP_SHOWARTISAN" string="Display Artisans" />
+  <STR key="UI_MAP_SHOWMERCHANT" string="Display Other " />
+  <STR key="UI_MAP_SHOWQUEST" string="Display Quests" />
+  <STR key="UI_MAP_SHOWREGIONNAMES" string="Display Region Names" />
+  <STR key="UI_MAP_SIMPLEMAP" string="Simple" />
+  <STR key="UI_MAP_TOMYLOCATION" string="Current" />
+  <STR key="UI_MAP_WORLDMAP" string="World" />
+  <STR key="UI_MINIMAP_AUTOPARTYSEARCHING" string="Searching" />
+  <STR key="UI_MINIMAP_AUTOPARTYSTANDBY" string="Standby" />
+  <STR key="UI_MINIMAP_CONFIRMLEAVEINSTANCEFIELD" string="Do you wish to leave this instance?" />
+  <STR key="UI_MINIMAP_LEAVEINSTANCEFIELD" string="Leave" />
+  <STR key="UI_MINIMAP_POPUPLEAVEINSTANCEFIELD" string="Press this button to leave the instance." />
+  <STR key="UI_MINIMAP_TOOLTIP_ARENA_ILLEGAL_BUFF" string="As a result of your abnormal disconnection, you have been disqualified from the match and temporarily suspended from entering Brune's Glory." />
+  <STR key="UI_MINIMAP_TOOLTIP_ARENA_LIMIT_LEVEL" string="You must be Level {0} or above to enter Brune's Glory." />
+  <STR key="UI_MINIMAP_TOOLTIP_ARENA_MATCHING" string="Matching combatants..." />
+  <STR key="UI_MINIMAP_TOOLTIP_ARENA_MATCHING_INVITED" string="Matching combatants - Complete" />
+  <STR key="UI_MINIMAP_TOOLTIP_ARENA_NONE" string="Brune's Glory - Not Available" />
+  <STR key="UI_MINIMAP_TOOLTIP_ARENA_NORMAL" string="Brune's Glory - Available" />
+  <STR key="UI_MINIMAP_TOOLTIP_CASHSHOP" string="Click to open the Cash Shop." />
+  <STR key="UI_MINIMAP_TOOLTIP_GIFTITEM" string="You have received a gift." />
+  <STR key="UI_MINIMAP_TOOLTIPAUTOPARTY" string="Make a party automatically." />
+  <STR key="UI_MINIMAP_TOOLTIPDURABILITY" string="An item needs to be repaired." />
+  <STR key="UI_MISSIONPROG_REMAINEDTIME" string="Time Remaining" />
+  <STR key="UI_MOVE" string="Move" />
+  <STR key="UI_NEXT" string="Next" />
+  <STR key="UI_NEXTRANK" string="Next Level" />
+  <STR key="UI_NO" string="No" />
+  <STR key="UI_NORMAL" string="Normal" />
+  <STR key="UI_OFF" string="OFF" />
+  <STR key="UI_OFFLINE" string="Offline" />
+  <STR key="UI_OK" string="Okay" />
+  <STR key="UI_ON" string="ON" />
+  <STR key="UI_ONLINE" string="Online" />
+  <STR key="UI_OPTION" string="Game Options" />
+  <STR key="UI_OPTION_AUDIO" string="Audio" />
+  <STR key="UI_OPTION_AUDIO_SOUND" string="Sound Settings" />
+  <STR key="UI_OPTION_AUDIO_SOUND_COMPRESSOR" string="Volume Stabilization" />
+  <STR key="UI_OPTION_AUDIO_SOUND_GUIDEVOICE" string="Audio Guide" />
+  <STR key="UI_OPTION_AUDIO_SOUND_HARDWAREACCEL" string="Hardware Acceleration" />
+  <STR key="UI_OPTION_AUDIO_SOUND_MUTE" string="Mute All" />
+  <STR key="UI_OPTION_AUDIO_SOUND_MUTEBGM" string="Mute BGM" />
+  <STR key="UI_OPTION_AUDIO_SOUND_MUTEDEACTIVATED" string="Mute when in Another Window" />
+  <STR key="UI_OPTION_AUDIO_SOUND_MUTEEFFECT" string="Mute Sound Effects" />
+  <STR key="UI_OPTION_AUDIO_SOUND_MUTEGENERIC" string="Mute Ambient Sound" />
+  <STR key="UI_OPTION_AUDIO_SOUND_REVERB" string="Special Perception Effect" />
+  <STR key="UI_OPTION_AUDIO_SOUND_SPEAKER" string="Speaker Type" />
+  <STR key="UI_OPTION_AUDIO_SOUND_SPEAKER_2SPEAKER" string="Stereo" />
+  <STR key="UI_OPTION_AUDIO_SOUND_SPEAKER_4SPEAKER" string="4.0 Surround Sound" />
+  <STR key="UI_OPTION_AUDIO_SOUND_SPEAKER_6SPEAKER" string="5.1 Surround Sound" />
+  <STR key="UI_OPTION_AUDIO_SOUND_SPEAKER_8SPEAKER" string="7.1 Surround Sound" />
+  <STR key="UI_OPTION_AUDIO_SOUND_SPEAKER_AUTO" string="Auto-Detect" />
+  <STR key="UI_OPTION_AUDIO_VOLUME" string="Volume Settings" />
+  <STR key="UI_OPTION_AUDIO_VOLUME_BGM" string="Background Music" />
+  <STR key="UI_OPTION_AUDIO_VOLUME_EFFECT" string="Sound Effects" />
+  <STR key="UI_OPTION_AUDIO_VOLUME_GENERIC" string="Ambient Sound" />
+  <STR key="UI_OPTION_AUDIO_VOLUME_MASTER" string="Main Volume" />
+  <STR key="UI_OPTION_CONFIRM_INTERFACE_RESET" string="This will cancel all changes made to interface displays and restore default settings.{CR}Proceed?" />
+  <STR key="UI_OPTION_CONTROLS" string="Controls" />
+  <STR key="UI_OPTION_CONTROLS_ERROR" string="The combination “ctrl/alt/shift + direction key” cannot be used." />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD" string="Game pad setting" />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD_CAMERA_SENSITIVITY" string="Sensitivity of game pad camera" />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD_COMBINATION_1" string="Joypad Combination 1" />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD_COMBINATION_2" string="Joypad Combination 2" />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD_COMBINATION_3" string="Joypad Combination 3" />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD_COMBINATION_4" string="Joypad Combination 4" />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD_MOUSE_SENSITIVITY" string="Sensitivity of game pad mouse" />
+  <STR key="UI_OPTION_CONTROLS_JOYPAD_RSTICK_VALUE_CHANGE" string="Change the value of up and down - left and right of camera's view" />
+  <STR key="UI_OPTION_CONTROLS_KEY_CLEAR_TEXT" string="※Key setting of the game pad can be initialized by using the [DELETE] key on the keyboard." />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD" string="Key Bindings" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_ACTION" string="Action" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_ALTACTION" string="Secondary Action" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_AUTORUN" string="Auto Run" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_BACKWARD" string="Backward" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_CHANGEWEAPON" string="Toggle Weapon" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_CHARACTER" string="Character Menu" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_DODGE" string="Dodge" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1" string="2nd Action Bar - {0}" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2" string="3rd Action Bar - {0}" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_FORWARD" string="Forward" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_GUARD" string="Guard" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_GUILD" string="Guild Menu" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_HELPCONTROLKEYS" string="Keyboard Guide" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_INTERACTION" string="Interact" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_INVENTORY" string="Inventory" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_JOURNAL" string="Journal" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_JUMP" string="Jump" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_LEFT" string="Left" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_LOCKTARGET" string="Lock Target" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_MAINMENU" string="Main Menu" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_MAP" string="Map" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_PALETTE" string="1st Action Bar - {0}" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_PALETTESET" string="Main Action Bar {0}" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_PCINTERACTION" string="PC Interaction" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_RIGHT" string="Right" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_SHOWCURSOR" string="Show/Hide Cursor" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_SITDOWN" string="Sit" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_SOCIAL" string="Social Menu" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_STANCE" string="Weapon" />
+  <STR key="UI_OPTION_CONTROLS_KEYBOARD_TALENT" string="Skill Menu" />
+  <STR key="UI_OPTION_CONTROLS_MOUSE" string="Camera Settings" />
+  <STR key="UI_OPTION_CONTROLS_MOUSE_INVERTED" string="Invert Y-Axis" />
+  <STR key="UI_OPTION_CONTROLS_MOUSE_SENSITIVITY" string="Camera Sensitivity" />
+  <STR key="UI_OPTION_DEFAULTSETTING" string="Restore Defaults" />
+  <STR key="UI_OPTION_ETC" string="Miscellaneous" />
+  <STR key="UI_OPTION_ETC_CROSSHAIR" string="Crosshair" />
+  <STR key="UI_OPTION_ETC_FONTSIZE" string="Tracker Font Size" />
+  <STR key="UI_OPTION_ETC_SHOW_ALWAYS_CROSSHAIR" string="Always Show Crosshair" />
+  <STR key="UI_OPTION_GAME" string="Game" />
+  <STR key="UI_OPTION_GAME_ADDEXTENDPALETTE1" string="Add 2nd Action Bar" />
+  <STR key="UI_OPTION_GAME_ADDEXTENDPALETTE2" string="Add 3rd Action Bar" />
+  <STR key="UI_OPTION_GAME_ANILOD" string="Animation LOD" />
+  <STR key="UI_OPTION_GAME_CHARACTER" string="Name Settings" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWMYARENAMARK" string="Show My Brune's Glory Mark" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWMYGUILD" string="Show My Guild" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWMYNAME" string="Show My Name" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWNPCGUILD" string="Show NPC Guilds" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWNPCNAME" string="Show NPC Names" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWOTHERARENAMARK" string="Show Player Brune's Glory Marks" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWOTHERGUILD" string="Show Player Guilds" />
+  <STR key="UI_OPTION_GAME_CHARACTER_SHOWOTHERNAME" string="Show Player Names" />
+  <STR key="UI_OPTION_GAME_COMMUNICATION" string="Social Settings" />
+  <STR key="UI_OPTION_GAME_DECLINEDUELREQUEST" string="Decline Duel Requests" />
+  <STR key="UI_OPTION_GAME_DECLINEFRIENDSREQUEST" string="Decline Friend Requests" />
+  <STR key="UI_OPTION_GAME_DECLINEGUILDINVITATION" string="Decline Guild Requests" />
+  <STR key="UI_OPTION_GAME_DECLINEPARTYINVITATION" string="Decline Party Requests" />
+  <STR key="UI_OPTION_GAME_DECLINETRADEREQUEST" string="Decline Trade Requests" />
+  <STR key="UI_OPTION_GAME_DOUBLE_TAP_DODGE" string="Double-Tap Dodge" />
+  <STR key="UI_OPTION_GAME_FPS" string="Show FPS" />
+  <STR key="UI_OPTION_GAME_FRAME_LIMIT" string="Limit FPS to 60" />
+  <STR key="UI_OPTION_GAME_FUNCTION" string="Feature Settings" />
+  <STR key="UI_OPTION_GAME_FUNCTION_AUTOINDICATORRECIPE" string="Show Recipes Automatically" />
+  <STR key="UI_OPTION_GAME_FUNCTION_AUTOPARTY" string="Allow to Make a Party" />
+  <STR key="UI_OPTION_GAME_FUNCTION_HPWARNING" string="Show HP Warning" />
+  <STR key="UI_OPTION_GAME_FUNCTION_SHOWBUFF" string="Show Buff Names" />
+  <STR key="UI_OPTION_GAME_FUNCTION_SHOWCAPTION" string="Show Buff Names and Damage" />
+  <STR key="UI_OPTION_GAME_FUNCTION_SHOWINDICATOR" string="Show Target Icon" />
+  <STR key="UI_OPTION_GAME_FUNCTION_SHOWNPCHP" string="Show Enemy HP Below Name" />
+  <STR key="UI_OPTION_GAME_FUNCTION_SHOWPARTYHP" string="Display Party Members' HP" />
+  <STR key="UI_OPTION_GAME_FUNCTION_SHOWTUTORIAL" string="Show Tutorial Windows" />
+  <STR key="UI_OPTION_GAME_FUNCTION_TALENT_COMBO" string="Enable Skill Chaining" />
+  <STR key="UI_OPTION_GAME_HEAD_EQUIP_HIDE" string="Hide Head Equipment" />
+  <STR key="UI_OPTION_GAME_REQUEST" string="Request Settings" />
+  <STR key="UI_OPTION_GAME_SHOW_AUCTION_CHATBOX" string="Show Trade Chat" />
+  <STR key="UI_OPTION_GAME_SHOW_BROADCAST_CHATBOX" string="Show Broadcast Chat" />
+  <STR key="UI_OPTION_GAME_SHOW_NEWBIE_CHATBOX" string="Show Beginners Chat" />
+  <STR key="UI_OPTION_GAME_SHOW_PARTYMATCHING_CHATBOX" string="Show the Looking for Party chat window" />
+  <STR key="UI_OPTION_GAME_SHOWBUBBLECHATBOX" string="Show Speech Bubbles" />
+  <STR key="UI_OPTION_GAME_SHOWCHATTING" string="Show General Chat" />
+  <STR key="UI_OPTION_GAME_SHOWGUILDCHAT" string="Show Guild Chat" />
+  <STR key="UI_OPTION_GAME_SHOWPARTYCHAT" string="Show Party Chat" />
+  <STR key="UI_OPTION_GAME_SHOWWHISPER" string="Show Whisper Chat" />
+  <STR key="UI_OPTION_GAME_SITTINGDURINGCOMBAT" string="Allow Sitting during Combat" />
+  <STR key="UI_OPTION_GAME_TIME" string="Display time" />
+  <STR key="UI_OPTION_GAME_USE_DUMMY_CAMERA" string="Fixed Camera for Certain Skills" />
+  <STR key="UI_OPTION_GAMEPAD_CATEGORY" string="Game pad" />
+  <STR key="UI_OPTION_INTERFACE_RESET" string="Interface Reset" />
+  <STR key="UI_OPTION_INTERFACE_RESET_TOOLTIP" string="Restore all interface displays to their default settings and positions." />
+  <STR key="UI_OPTION_KEYBOARD_CATEGORY" string="Keyboard &amp; Mouse" />
+  <STR key="UI_OPTION_REQUIREDREBOOTING" string="Changing certain settings require a game restart to be implemented." />
+  <STR key="UI_OPTION_TOOLTIP_DEFAULTSETTING" string="Return to default settings." />
+  <STR key="UI_OPTION_TOOLTIP_SETTING_CANCEL" string="Cancel the settings made thus far." />
+  <STR key="UI_OPTION_TOOLTIP_SETTING_OK" string="Apply the changed options." />
+  <STR key="UI_OPTION_USE_ATTACK_EFFECT" string="Use Damage Effect Filter" />
+  <STR key="UI_OPTION_VIDEO" string="Video" />
+  <STR key="UI_OPTION_VIDEO_EFFECT_ALPHA" string="Effect Translucency" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS" string="Graphic Settings" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_DETAILTERRAIN" string="Terrain Detail Rendering Distance" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_DISTORTION" string="Distortion Effects" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_DOF" string="Depth of Field" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_FULLSCREEN" string="Full Screen" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_FULLSCREENMODE" string="Full" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_FULLWINSCREENMODE" string="Full Window" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_HDR" string="High Dynamic Range" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_LIGHTING" string="Light Source Effect Quality" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_LIGHTSHIRT" string="Saturation Effect" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_MINPERFORMANCE" string="Minimum Performance" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_MINPERFORMANCE_INFO" string="*Graphics quality will be minimized and all effects disabled. Use this option if your computer is having difficulties running with the current settings." />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_MOTIONBLUR" string="Motion Blur" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_NORMALMAPPING" string="Normal Mapping" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_RESOLUTION" string="Resolution" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_SCREENMODE" string="Screen Mode" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_SHADOW" string="Shadow Quality" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_SOFTPARTICLE" string="Particle Effects" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_SSAO" string="Screen Space Ambient Occlusion" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_TEXTUREREDUCTION" string="Texture Resolution" />
+  <STR key="UI_OPTION_VIDEO_GRAPHICS_WINSCREENMODE" string="Window" />
+  <STR key="UI_OPTION_VIDEO_MOVIE" string="Video Recording Settings" />
+  <STR key="UI_OPTION_VIDEO_MOVIE_ENCORDER" string="Video Compression (*.avi)" />
+  <STR key="UI_OPTION_VIDEO_MOVIE_SHOWUI" string="Show UI in Video" />
+  <STR key="UI_OPTION_VIDEO_MOVIE_SIZE" string="Video Size" />
+  <STR key="UI_OPTION_VIDEO_MOVIE_SIZE_25PERCENT" string="Window Size 25%" />
+  <STR key="UI_OPTION_VIDEO_MOVIE_SIZE_50PERCENT" string="Window Size 50%" />
+  <STR key="UI_OPTION_VIDEO_MOVIE_SIZE_75PERCENT" string="Window Size 75%" />
+  <STR key="UI_OPTION_VIDEO_MOVIE_SIZE_FULL" string="Window Size 100%" />
+  <STR key="UI_OPTION_VIDEO_SCREENSHOT" string="Screenshot Settings" />
+  <STR key="UI_OPTION_VIDEO_SCREENSHOT_FORMAT" string="Image Format" />
+  <STR key="UI_PALETTE_LINKTOWEAPON" string="Link current Main bar to Weapon {0}." />
+  <STR key="UI_PALETTE_NOLINK" string="No Link" />
+  <STR key="UI_PARTY" string="Party" />
+  <STR key="UI_PC_BENEFIT_CONTENT" string="You are not connected from an Internet cafe.{CR}Connect from an Internet cafe and enjoy the following benefits." />
+  <STR key="UI_PC_BENEFIT_ICON1_NAME" string="Powerful Internet Cafe Buffs" />
+  <STR key="UI_PC_BENEFIT_ICON1_TOOLTIP" string="All stats + 10{CR}EXP reward + 10%{CR}Item drop rate + 10%{CR}Game money drop rate + 10%{CR}Health/Energy recovery + 20%" />
+  <STR key="UI_PC_BENEFIT_ICON2_NAME" string="No Resurrection Aftereffects" />
+  <STR key="UI_PC_BENEFIT_ICON2_TOOLTIP" string="No resurrection aftereffects even when resurrecting at a Soulstone" />
+  <STR key="UI_PC_BENEFIT_ICON3_NAME" string="Premium Teleporter" />
+  <STR key="UI_PC_BENEFIT_ICON3_TOOLTIP" string="A special teleporter with more various and convenient services" />
+  <STR key="UI_PC_BENEFIT_ICON4_NAME" string="Internet Cafe Shop" />
+  <STR key="UI_PC_BENEFIT_ICON4_TOOLTIP" string="Loaded with special Internet Cafe items, such as mounts and potions" />
+  <STR key="UI_PC_BENEFIT_TITLE" string="*Notice" />
+  <STR key="UI_PC_CAFE" string="Internet Cafe" />
+  <STR key="UI_PC_CAFE_1" string="Zen" />
+  <STR key="UI_PC_CAFE_1_DESC" string="{CR} In order to buy things from the Cash Shop, you will need Zen. You can add Zen to your account by opening the Cash Shop and clicking the {COLOR r=50 g=200 b=50}Purchase Zen{/COLOR} button in the upper right. {CR} Zen is not unique to each character. If you have Zen added to your account, all of your characters on that account will be able to purchase from the Cash Shop." />
+  <STR key="UI_PC_CAFE_2" string="Cash Shop Storage" />
+  <STR key="UI_PC_CAFE_2_DESC" string="{CR} When you buy an item from the Cash Shop, the item will be placed in your Cash Shop Storage. You must click the {COLOR r=50 g=200 b=50}Receive{/COLOR} button in the lower right to transfer the item to your inventory. {CR} You can also choose to place an item in another player's Cash Shop Storage when you buy it. To do this, click the {COLOR r=50 g=200 b=50}Gift{/COLOR} button and enter the target player's name. {CR} {COLOR r=255 g=0 b=0}NOTE:{/COLOR} Unlike Zen, Cash Shop Storage is unique to each character. If you have multiple characters on one account, only the character who bought that item will be able to transfer it to their inventory." />
+  <STR key="UI_PC_CAFE_3" string="RaiderZ Team Recommendations" />
+  <STR key="UI_PC_CAFE_3_DESC" string="{CR}{CR} {COLOR r=50 g=200 b=50}Book of Oblivion:{/COLOR} Don't like the way your skills are set up? Always wanted to try a different style? Read this book and all your skill points will be reset, leaving you free to customize your character however you want. {CR} {COLOR r=50 g=200 b=50}Scroll of Heroes:{/COLOR} For the truly dedicated mercenary, this scroll can provide a number of useful benefits, such as increased experience gain and reduced enchantment costs. You will even be allowed to use the Premium Teleporters in Ingen and Rietz, who can teleport you directly to field entrances and Epic Monster lairs." />
+  <STR key="UI_PC_CAFE_ADVICE" string="You are logged into RaiderZ Internet Cafe. You can use RaiderZ Internet Cafe Merchants and Teleporters." />
+  <STR key="UI_PC_CAFE_BENEFIT" string="Cash Shop" />
+  <STR key="UI_PC_CAFE_ONLY_USE_ITEM" string="Available at Internet Cafes Only" />
+  <STR key="UI_PLAYERSTATE_DODGE" string="Cannot Dodge" />
+  <STR key="UI_PLAYERSTATE_JUMP" string="Cannot Jump" />
+  <STR key="UI_PLAYERSTATE_MOVE" string="Cannot Move" />
+  <STR key="UI_PLAYERSTATE_SWAP" string="Cannot Swap Weapons" />
+  <STR key="UI_PREV" string="Previous" />
+  <STR key="UI_QUIT" string="Quit" />
+  <STR key="UI_RANDOMBOX_CANNOT_OPEN_KEY_INSUFFICIENT" string="You need {1} {0}." />
+  <STR key="UI_RANDOMBOX_CANNOT_OPEN_KEY_NOEXIST" string="You do not have {0}." />
+  <STR key="UI_RANDOMBOX_RESULT" string="Item Rewards" />
+  <STR key="UI_RANDOMBOX_RESULT_MESSAGE" string="You have obtained the following item:" />
+  <STR key="UI_RANKING" string="Ranking" />
+  <STR key="UI_REBIRTH" string="Resurrect" />
+  <STR key="UI_REBIRTH_BINDINGSITE" string="Binding Site" />
+  <STR key="UI_REBIRTH_CAMPENTRANCE" string="Camp Entrance" />
+  <STR key="UI_REBIRTH_MESSAGE" string="Your character has been killed. Wait for another player to revive you or choose from the following options:" />
+  <STR key="UI_REBIRTH_REBIRTH1" string="Resurrect at the nearest soulstone" />
+  <STR key="UI_REBIRTH_REBIRTH2" string="Resurrect at a bound soulstone" />
+  <STR key="UI_REBIRTH_REBIRTH3" string="Resurrect in a safe area" />
+  <STR key="UI_REBIRTH_REBIRTH4" string="Resurrect at current location" />
+  <STR key="UI_REBIRTH_REBIRTHDESC1" string="You will be resurrected at the nearest soulstone in the current field." />
+  <STR key="UI_REBIRTH_REBIRTHDESC2" string="You will be resurrected at the last soulstone you were bound to." />
+  <STR key="UI_REBIRTH_REBIRTHDESC3" string="You will be resurrected in a safe area." />
+  <STR key="UI_REBIRTH_REBIRTHDESC4" string="You can use this item to resurrect on the spot. " />
+  <STR key="UI_REBIRTH_REMAINEDTIME" string="Will be selected in {0}." />
+  <STR key="UI_REBIRTH_SAFEAREA" string="Safe Area" />
+  <STR key="UI_REFRESH" string="Refresh" />
+  <STR key="UI_REMOVE" string="Remove" />
+  <STR key="UI_REPAIRING" string="Repair Items" />
+  <STR key="UI_RESET" string="Reset" />
+  <STR key="UI_SEARCH" string="Search" />
+  <STR key="UI_SELCHAR" string="Character Select" />
+  <STR key="UI_SELCHAR_ASSASSIN_DESC" string="{COLOR r=64 g=194 b=90}Assassin Style{/COLOR}{CR}{COLOR r=203 g=209 b=215}An offensive style that uses twin daggers.{CR}The Pursuit focus boosts movement speed after rolling, and this can be consumed to grant the Finesse effect, reinforcing attack power. {/COLOR}" />
+  <STR key="UI_SELCHAR_BERSERKER_DESC" string="{COLOR r=199 g=91 b=52}Berserker Style{/COLOR}{CR}{COLOR r=203 g=209 b=215}An offensive style that uses two-handed weapons. Their attacks may be slow, but they can deal immense damage. The Outrage focus can unlock even more devastating attacks.{/COLOR}" />
+  <STR key="UI_SELCHAR_CLERIC_DESC" string="{COLOR r=239 g=239 b=229}Cleric Style{/COLOR}{CR}{COLOR r=203 g=209 b=215}A support style that uses staves and maces. The Possession focus boosts their attack skills and unlocks new abilities for a number of skills.{/COLOR}" />
+  <STR key="UI_SELCHAR_CONFIRMCREATE" string="Do you wish to create this character?" />
+  <STR key="UI_SELCHAR_CONFIRMDELETECHAR" string="Enter this character's name below to begin the deletion process." />
+  <STR key="UI_SELCHAR_CONFIRMDELETECHAR_AGAIN" string="Deleted characters cannot be recovered. Do you wish to delete this character?" />
+  <STR key="UI_SELCHAR_CONNECT" string="Connect" />
+  <STR key="UI_SELCHAR_CREATE" string="Create Character" />
+  <STR key="UI_SELCHAR_CREATE_APPEARANCE" string="Appearance" />
+  <STR key="UI_SELCHAR_CREATE_BASICSETTINGS" string="Basic Settings" />
+  <STR key="UI_SELCHAR_CREATE_CLOTHES" string="Clothes" />
+  <STR key="UI_SELCHAR_CREATE_CLOTHESCOLOR" string="Clothes Color" />
+  <STR key="UI_SELCHAR_CREATE_CLOTHESTYPE" string="Clothes" />
+  <STR key="UI_SELCHAR_CREATE_ETC" string="ETC" />
+  <STR key="UI_SELCHAR_CREATE_EYECOLOR" string="Eye Color" />
+  <STR key="UI_SELCHAR_CREATE_FACE" string="Face Type" />
+  <STR key="UI_SELCHAR_CREATE_HAIR" string="Hair Type" />
+  <STR key="UI_SELCHAR_CREATE_HAIRCOLOR" string="Hair Color" />
+  <STR key="UI_SELCHAR_CREATE_HEAD" string="Head" />
+  <STR key="UI_SELCHAR_CREATE_MAKEFACE" string="Face" />
+  <STR key="UI_SELCHAR_CREATE_MAKEUP" string="Make-up" />
+  <STR key="UI_SELCHAR_CREATE_MAKING" string="Customize" />
+  <STR key="UI_SELCHAR_CREATE_NAME" string="Name" />
+  <STR key="UI_SELCHAR_CREATE_PREVIEW" string="Preview" />
+  <STR key="UI_SELCHAR_CREATE_RANDOMSETTINGS" string="Random" />
+  <STR key="UI_SELCHAR_CREATE_SEX" string="Gender" />
+  <STR key="UI_SELCHAR_CREATE_SKINCOLOR" string="Skin Tone" />
+  <STR key="UI_SELCHAR_CREATE_STANCE" string="Posture" />
+  <STR key="UI_SELCHAR_CREATE_STYLE" string="Style" />
+  <STR key="UI_SELCHAR_CREATE_STYLEDESCRIPTION" string="Style determines what skills your character uses. {CR}You can acquire more than one style and combine them to create your very own unique character class!" />
+  <STR key="UI_SELCHAR_CREATE_TATTOO" string="Tattoo" />
+  <STR key="UI_SELCHAR_CREATE_TATTOO_COLOR" string="Tattoo Color" />
+  <STR key="UI_SELCHAR_CREATE_TATTOO_LARGE" string="Large" />
+  <STR key="UI_SELCHAR_CREATE_TATTOO_NOCOLOR" string="This tattoo's color cannot be changed." />
+  <STR key="UI_SELCHAR_CREATE_TATTOO_SMALL" string="Small" />
+  <STR key="UI_SELCHAR_CREATE_TITLE" string="Create {CR}Character" />
+  <STR key="UI_SELCHAR_CREATE_VOICE" string="Voice" />
+  <STR key="UI_SELCHAR_CREATENEW" string="New" />
+  <STR key="UI_SELCHAR_DEFENDER_DESC" string="{COLOR r=222 g=166 b=35}Defender Style{/COLOR}{CR}{COLOR r=203 g=209 b=215}A well-rounded style that uses one-handed weapons and shields. The Counterattack focus lets them increase their attack power by blocking attacks. Their skills focus on surviving.{/COLOR}" />
+  <STR key="UI_SELCHAR_ENTERNAME" string="Enter a name." />
+  <STR key="UI_SELCHAR_ENTERWORLD" string="You are entering the world." />
+  <STR key="UI_SELCHAR_ERROR_ENTERNAME" string="Please enter a name for your character." />
+  <STR key="UI_SELCHAR_ERROR_INVALIDNAME" string="Invalid character name. Please try again." />
+  <STR key="UI_SELCHAR_ERROR_NOTCREATED" string="Unable to create character. " />
+  <STR key="UI_SELCHAR_ERROR_STYLE" string="Please select a style." />
+  <STR key="UI_SELCHAR_MAIN_SKILL" string="{COLOR r=91 g=155 b=185}Major skill preview{/COLOR}" />
+  <STR key="UI_SELCHAR_MAIN_SKILL_DESC" string="{COLOR r=239 g=239 b=229}Move your mouse over an icon to watch the skill.{/COLOR}" />
+  <STR key="UI_SELCHAR_MODEL_LOADING" string="Loading character model..." />
+  <STR key="UI_SELCHAR_NUMBERING" string="No. {0}" />
+  <STR key="UI_SELCHAR_SKIPVIDEO" string="ESC:SKIP" />
+  <STR key="UI_SELCHAR_SORCERER_DESC" string="{COLOR r=196 g=86 b=161}Sorcerer Style{/COLOR}{CR}{COLOR r=203 g=209 b=215}A ranged attack style that uses one-handed swords and staves to cast fire and ice spells. The Awakening focus allows them to cast spells even faster, becoming a truly great threat.{/COLOR}" />
+  <STR key="UI_SELCHAR_TOOLTIPENTERNAME" string="Character names must be 3-10 characters in length and must not contain numbers, special characters, or spaces." />
+  <STR key="UI_SELECTEDITEM" string="Selected Items" />
+  <STR key="UI_SETTINGS" string="Settings" />
+  <STR key="UI_SHOP" string="Shop" />
+  <STR key="UI_SHOP_BUY" string="Buy" />
+  <STR key="UI_SHOP_CONFIRMBUYITEM" string="Specify the number of items you wish to purchase." />
+  <STR key="UI_SHOP_CONFIRMREPAIR" string="Select the items you wish to repair." />
+  <STR key="UI_SHOP_CONFIRMSELLCOMMONITEMS" string="The following items have no use.{CR}Would you like to sell them all?" />
+  <STR key="UI_SHOP_CONFIRMSELLITEM" string="Specify the number of items to sell." />
+  <STR key="UI_SHOP_ITEM_SELL" string="{1} {0} sold." />
+  <STR key="UI_SHOP_NOT_SELLABLE" string="Non-sale items cannot be sold." />
+  <STR key="UI_SHOP_NOTAVAILABLE" string="Cannot Use" />
+  <STR key="UI_SHOP_REPAIR" string="Repair" />
+  <STR key="UI_SHOP_REPAIRALL" string="Repair All" />
+  <STR key="UI_SHOP_SELLCOMMONITEMS" string="Sell Scrap" />
+  <STR key="UI_SHOP_TOTALCOST" string="Total Cost" />
+  <STR key="UI_SHOP_TOTALPRICE" string="Total Price" />
+  <STR key="UI_SKILL_ASSASSIN_DESC" string="Weapon: {COLOR r=50 g=200 b=50}Daggers{/COLOR}{CR}Characteristics: Deals {COLOR r=50 g=200 b=50}high physical damage{/COLOR} using {COLOR r=50 g=200 b=50}quick short-range attacks{/COLOR}." />
+  <STR key="UI_SKILL_BERSERKER_DESC" string="Weapons: {COLOR r=50 g=200 b=50}2H Sword, 2H Mace{/COLOR}{CR}Characteristics: Deals {COLOR r=50 g=200 b=50}high physical damage{/COLOR} with {COLOR r=50 g=200 b=50}slow and powerful{/COLOR} attacks." />
+  <STR key="UI_SKILL_CLERIC_DESC" string="Weapons: {COLOR r=50 g=200 b=50}1H Mace, 2H Mace, Staff{/COLOR}{CR}Characteristics: Provides {COLOR r=50 g=200 b=50}healing{/COLOR} and {COLOR r=50 g=200 b=50}blessings{/COLOR} for the party." />
+  <STR key="UI_SKILL_DEFENDER_DESC" string="Weapons: {COLOR r=50 g=200 b=50}1H Sword, 1H Mace{/COLOR}{CR}Characteristics: Provides {COLOR r=50 g=200 b=50}defense and survivability{/COLOR} for groups." />
+  <STR key="UI_SKILL_SORCERER_DESC" string="Weapons: {COLOR r=50 g=200 b=50}1H Sword, Staff{/COLOR}{CR}Characteristics: Deals {COLOR r=50 g=200 b=50}high magic damage{/COLOR} with fire, and {COLOR r=50 g=200 b=50}slows down{/COLOR} enemies with ice." />
+  <STR key="UI_SKILLSET_SWITCH" string="Would you like to spend {COLOR r=50 g=200 b=50}10 Gold Bellpesos{/COLOR} to change your skill set? This will {COLOR r=50 g=200 b=50}deactivate{/COLOR} your current set of skills." />
+  <STR key="UI_SKILLSET_SWITCH_SUCCESS" string="Skill set has been successfully changed." />
+  <STR key="UI_SMALL" string="Near" />
+  <STR key="UI_SMALLEST" string="Nearest" />
+  <STR key="UI_SOCIAL" string="Social" />
+  <STR key="UI_SOCIAL_COMMONITEM" string="Low-Grade Items" />
+  <STR key="UI_SOCIAL_CONFIRM_ADD_FRIEND" string="Enter the name of the player you want to add as a friend." />
+  <STR key="UI_SOCIAL_CONFIRM_KICK_FRIEND" string="Delete {COLOR r=50 g=200 b=50}{0}{/COLOR} from Friend List?" />
+  <STR key="UI_SOCIAL_CONFIRMCREATEGUILD" string="You have entered '{0}' as the guild name. Creating a guild costs {1}. Continue?" />
+  <STR key="UI_SOCIAL_CONFIRMDCHANGEGUILDMEMBERGRADE" string="Would you like to change {COLOR r=50 g=200 b=50}{0}{/COLOR}'s rank to {COLOR r=200 g=200 b=50}{1}{/COLOR}?" />
+  <STR key="UI_SOCIAL_CONFIRMDELEGATEGUILDLEADER" string="Would you like to delegate the role of guild leader to {0}?" />
+  <STR key="UI_SOCIAL_CONFIRMDESTROYGUILD" string="Are you sure you want to disband the guild?{CR}You must wait 7 days to use a deleted guild name." />
+  <STR key="UI_SOCIAL_CONFIRMDISBANDGUILDMEMBER" string="Would you like to banish {0} from the guild?" />
+  <STR key="UI_SOCIAL_CONFIRMDISBANDPARTYMEMBER" string="Banish party member {COLOR r=50 g=200 b=50}{0}{/COLOR}?" />
+  <STR key="UI_SOCIAL_CONFIRMLEAVEGUILD" string=": Are you sure you want to leave this guild?" />
+  <STR key="UI_SOCIAL_CONFIRMLEAVEGUILD_NAME" string="Enter the name of the guild that you want to leave." />
+  <STR key="UI_SOCIAL_CONFIRMLEAVEPARTY" string="Would you like to leave the party?" />
+  <STR key="UI_SOCIAL_DEFAULTRULES" string="Basic Settings" />
+  <STR key="UI_SOCIAL_DISPLAY_OFFLINE_FRIENDS" string="Show Offline Friends" />
+  <STR key="UI_SOCIAL_DISPLAYOFFLINE" string="Show Offline Guild Members" />
+  <STR key="UI_SOCIAL_ENTERGUILDNAME" string="Enter 6-12 characters for the name of the new guild. Once created, the guild's name cannot be changed." />
+  <STR key="UI_SOCIAL_LEAVEGUILD" string="Leave Guild" />
+  <STR key="UI_SOCIAL_LOOTINGRULES" string="Looting Rules" />
+  <STR key="UI_SOCIAL_PARTYSETTINGS" string="Party Settings" />
+  <STR key="UI_SOCIAL_RAREITEM" string="High-Grade Items" />
+  <STR key="UI_STANDBY" string="Standby" />
+  <STR key="UI_STORAGE" string="Storage Box" />
+  <STR key="UI_STORAGE_CANNOT_MOVE_ITEM_TO_PREMIUMSTORAGE" string="Only cash, costume, and over +7 enchanted items can be stored." />
+  <STR key="UI_STORAGE_CONFIRM_ITEMQUANTITY" string="Specify the item quantity." />
+  <STR key="UI_STORAGE_CONFIRM_MOVEITEM" string="Move the following items to the storage?" />
+  <STR key="UI_STORAGE_GENERAL" string="General" />
+  <STR key="UI_STORAGE_MONEY" string="Stored Amount" />
+  <STR key="UI_STORAGE_PREMIUM1" string="Premium1" />
+  <STR key="UI_STORAGE_PREMIUM2" string="Premium2" />
+  <STR key="UI_STORAGE_PREMIUM3" string="Premium3" />
+  <STR key="UI_STORAGE_PREMIUMTAB_EXPLAIN" string="Only cash and costume item can be stored" />
+  <STR key="UI_SYSTEM" string="System" />
+  <STR key="UI_TALENT" string="Skill" />
+  <STR key="UI_TALENT_ASSASSIN_DESC" string="The Assassin style focuses on fast hit and run attacks with two daggers.{CR}The Pursuit Focus grants a movement increase when dodging attacks that can be consumed for a short-term attack increase." />
+  <STR key="UI_TALENT_AVAILABLETALENTPOINT" string="Skill Points Available" />
+  <STR key="UI_TALENT_AVAILABLEWEAPON" string="Available Weapons" />
+  <STR key="UI_TALENT_BERSERKER_DESC" string="Berserker is an offense-oriented style centered around two-handed weapons.{CR}Although slow to attack, a Berserker can home in on the enemy's weak points and deal devastating amounts of damage. The Outrage Focus allows the Berserker to deal even greater damage." />
+  <STR key="UI_TALENT_CLERIC_DESC" string="Cleric-style characters not only heal other characters, but also launch magic attacks.{CR}Clerics use a one-handed mace, a warhammer, or a staff, and can use the Possession Focus to temporarily boost their attack skills." />
+  <STR key="UI_TALENT_CONFIRMLEARNTALENT" string="You need 1 skill point to learn this skill. Once used, skill points cannot be recovered. Would you like to learn this skill?" />
+  <STR key="UI_TALENT_CONFIRMSTYLE" string="If you learn this skill, you will need to spend at least 10 points in the {COLOR r=50 g=200 b=50}{0} style{/COLOR} in order to learn skills from the other styles.{CR}{CR}Do you still want to learn this skill?" />
+  <STR key="UI_TALENT_DEFENDER_DESC" string="Defender is a well-rounded style that uses a one-handed weapon and a shield.{CR}Defenders can use the Counterattack Focus to gain the upper hand in a fight after blocking an enemy's attack. Defender skills ensure survival during difficult battles." />
+  <STR key="UI_TALENT_INVESTEDTALENTPOINT" string="Skill Points Used" />
+  <STR key="UI_TALENT_MASTERY" string="Mastery" />
+  <STR key="UI_TALENT_SKILLPOINT" string="Skill Points" />
+  <STR key="UI_TALENT_SORCERER_DESC" string="Sorcerer-style characters launch powerful ranged attacks using ice and fire magic.{CR}Sorcerers use a one-handed sword or staff, and can maximize their magic ability with the Awakening Focus." />
+  <STR key="UI_TATOO_RESET" string="Reset" />
+  <STR key="UI_TIP" string="Tip" />
+  <STR key="UI_TM_MAILTITLE" string="Notice for Trade Market Item Sales" />
+  <STR key="UI_TOOLTIP_ALLWEAPONS" string="All Weapons" />
+  <STR key="UI_TOOLTIP_APPLY_LOOK_WEAPON" string="It is not the same type with the weapon worn." />
+  <STR key="UI_TOOLTIP_AVAILABLE_ON_GUARD" string="Can be used while blocking" />
+  <STR key="UI_TOOLTIP_CHANGESTATS" string="Additional Stats" />
+  <STR key="UI_TOOLTIP_CLAIMED" string="This item is bound." />
+  <STR key="UI_TOOLTIP_DROPNPC" string="Drop List" />
+  <STR key="UI_TOOLTIP_DYEABLE" string="You can use dye solutions to dye costumes. Costume items with &quot;Undyeable&quot; in their descriptions cannot be dyed." />
+  <STR key="UI_TOOLTIP_ELEMENT_ENCHANTABLE" string="Can be used for Element Enhancement." />
+  <STR key="UI_TOOLTIP_ENCHANTABLE" string="Can be used for enchanting equipment." />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_DECREASERATE" string="Prevent decrease" />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_DESTROYRATE" string="Destruction Rate Reduction" />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_GRADE" string="Required Grade" />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_GRADETEXT" string="+{0} - +{1}" />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_LEVEL" string="Enchantable level" />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_LEVELTEXT" string="Equipment below Lv {0} " />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_RATE" string="Success Rate" />
+  <STR key="UI_TOOLTIP_ENCHANTABLE_RATEINCRE" string="Success Rate Up" />
+  <STR key="UI_TOOLTIP_GEMENCHANTABLE" string="Double-click to attach to a corresponding weapon, armor, or costume Jewel Socket." />
+  <STR key="UI_TOOLTIP_GEMENCHANTAGENT" string="Can be used for attaching jewels." />
+  <STR key="UI_TOOLTIP_INVALIDLEVELEQUIP" string="Cannot be equipped due to level differences." />
+  <STR key="UI_TOOLTIP_INVALIDLEVELUSABLE" string="Cannot be used due to level differences." />
+  <STR key="UI_TOOLTIP_INVALIDLICENSE" string="Cannot be equipped because you do not have the proper Skill." />
+  <STR key="UI_TOOLTIP_LEARNTALENTFROMTRAINERS" string="You can purchase focus licenses from license trainers and learn new skills." />
+  <STR key="UI_TOOLTIP_LIST_OF_RANDOMBOX" string="Possible items:" />
+  <STR key="UI_TOOLTIP_NEEDREPAIR" string="A repair is needed." />
+  <STR key="UI_TOOLTIP_NODROPNPC" string="No monsters drop it." />
+  <STR key="UI_TOOLTIP_NON_COMBAT_ONLY" string="Can be used when not in battle" />
+  <STR key="UI_TOOLTIP_QUESTPVP_NONVOLATILED" string="This item cannot be used outside of the PvP area, but it will not be removed from your inventory when you leave." />
+  <STR key="UI_TOOLTIP_QUESTPVP_VOLATILED" string="This item is bound to the current Quest PvP zone.  It will be deleted when you log off or leave the PvP zone." />
+  <STR key="UI_TOOLTIP_RATE" string="{0}%" />
+  <STR key="UI_TOOLTIP_REQ_MAXLEVEL" string="Above level {0}" />
+  <STR key="UI_TOOLTIP_REQ_MINLEVEL" string="Below level {0}" />
+  <STR key="UI_TOOLTIP_REQUIREDFOCUS" string="{0} Focus Required" />
+  <STR key="UI_TOOLTIP_REQUIREDTP" string="Skill Points Used:" />
+  <STR key="UI_TOOLTIP_REQUIREDTP_STYLE" string="Skill Points Used: {0}" />
+  <STR key="UI_TOOLTIP_REQUIRELICENSE" string="Required: {0}" />
+  <STR key="UI_TOOLTIP_SET" string="Set" />
+  <STR key="UI_TOOLTIP_SET_BONUS" string="Set Bonus" />
+  <STR key="UI_TOOLTIP_TALENTCASTINGTIME" string="Available in {0} second(s)" />
+  <STR key="UI_TOOLTIP_TALENTCONSUMES" string="Consumes {0}" />
+  <STR key="UI_TOOLTIP_TALENTPRECASTINGTIME" string="Cast Time {0}" />
+  <STR key="UI_TOOLTIP_TIMELIMIT" string="Remaining Time: {0}" />
+  <STR key="UI_TOOLTIP_TITLE_DESC" string="{0}' title is displayed when equipped." />
+  <STR key="UI_TOOLTIP_WILLCLAIM" string="This item will be bound once equipped." />
+  <STR key="UI_TOSELCHARACTER" string="Character Select" />
+  <STR key="UI_TRADE" string="Trade" />
+  <STR key="UI_TRADE_CANCELED" string="The trade has been canceled." />
+  <STR key="UI_TRADE_COMPLETED" string="Trade complete." />
+  <STR key="UI_TRADE_CONFIRMTRADEITEMS" string="Specify the number of items you wish to trade." />
+  <STR key="UI_TRADE_MARKET_BUYITEM_AMOUNTERROR" string="The number of purchased items is incorrect." />
+  <STR key="UI_TRADE_MARKET_MAIL_HEAD" string="Hello, and thank you for using our trade market.{CR}{CR}" />
+  <STR key="UI_TRADE_MARKET_MAIL_TAIL" string="{CR}{CR}Please visit a trade market and collect your money.{CR}{CR}" />
+  <STR key="UI_TRADE_MARKET_UNABLE_REGISTERITEM" string="The item cannot be registered because the maximum number of items that can be registered ({0}) has been exceeded. Please retrieve any sold items and try again." />
+  <STR key="UI_TRADE_MESSAGE1" string="The other player is ready to trade. Click on the Trade Request button to start the trade." />
+  <STR key="UI_TRADE_MESSAGE2" string="The other player is getting ready to trade. Please wait for the other player to finish." />
+  <STR key="UI_TRADE_MESSAGE3" string="Drag and drop the money and/or items you wish to trade." />
+  <STR key="UI_TRADE_MESSAGE4" string="You have reached the maximum number of items that can be traded." />
+  <STR key="UI_TRADE_MESSAGE5" string="If you are ready to trade, click on the Trade Request button." />
+  <STR key="UI_TRADE_MYTRADEITEMS" string="My Trade Items" />
+  <STR key="UI_TRADE_OTHERTRADEITEMS" string="{0}'s Trade Items" />
+  <STR key="UI_TRADE_REQUESTTRADE" string="Trade Request" />
+  <STR key="UI_TRADEMAKET" string="Trade Market" />
+  <STR key="UI_TRADEMAKET_BOUGHT_ITEM" string="You have purchased [ {0} ].{CR}" />
+  <STR key="UI_TRADEMAKET_BTN_SEARCH" string="Search" />
+  <STR key="UI_TRADEMAKET_BUY_ITEM" string="Would you like to purchase [ {0} ]?{CR}" />
+  <STR key="UI_TRADEMAKET_BUY_TOTALPRICE" string="Total Purchase Price" />
+  <STR key="UI_TRADEMAKET_CACULATE_ALL" string="Collect All" />
+  <STR key="UI_TRADEMAKET_CACULATE_INFO_TEXT" string="*You must collect your money within 30 days after a trade. Any money not collected within 30 days will be deleted." />
+  <STR key="UI_TRADEMAKET_CACULATE_SAILES_STATE" string="Status" />
+  <STR key="UI_TRADEMAKET_CALCULATE_SOLDEDITEM_TEXT" string="You've sold {1} [ {0} ](s){CR}and received {2}." />
+  <STR key="UI_TRADEMAKET_CALCULATE_SOLDEDITEMALL_TEXT" string="You've collected money for {0} item(s) and received {CR}{1}." />
+  <STR key="UI_TRADEMAKET_CALCULATE_UNREGITEM_TEXT" string="You've retrieved {1} [ {0} ](s)." />
+  <STR key="UI_TRADEMAKET_CHARGE_TEXT" string="*A fee is charged at the time of item registration. If you can't afford the fee, you can't register the item." />
+  <STR key="UI_TRADEMAKET_COMMITION" string="Fee" />
+  <STR key="UI_TRADEMAKET_CONFIRM_REGISTER_ITEM" string="[ {0} ]Would you like to register {CR} at the trade market?" />
+  <STR key="UI_TRADEMAKET_CONFIRM_REGISTER_TEXT" string="(*If you register an item, a fee will be charged.)" />
+  <STR key="UI_TRADEMAKET_CONFIRM_UNREGISTER_ITEM" string="Would you like to cancel the registration of [ {0} ]?{CR}" />
+  <STR key="UI_TRADEMAKET_CONFIRM_UNREGISTER_TEXT" string="(*Fees are not refundable.)" />
+  <STR key="UI_TRADEMAKET_EXPIRY" string="Time Left" />
+  <STR key="UI_TRADEMAKET_EXPIRY_LESSONEMIN" string="Less Than 1 Minute" />
+  <STR key="UI_TRADEMAKET_FIRSTPAGE" string="First Page" />
+  <STR key="UI_TRADEMAKET_ITEM_REGISTER" string="Register" />
+  <STR key="UI_TRADEMAKET_ITEM_UNREGISTER" string="Cancel" />
+  <STR key="UI_TRADEMAKET_NEXTPAGE" string="Next" />
+  <STR key="UI_TRADEMAKET_PREVPAGE" string="Previous" />
+  <STR key="UI_TRADEMAKET_REGISTER" string="Register" />
+  <STR key="UI_TRADEMAKET_REGISTER_COMMITIONFAIL_TEXT" string="You do not have enough money to pay the fee." />
+  <STR key="UI_TRADEMAKET_REGISTER_COMMITIONNOT_TEXT" string="Fee(s) must amount to {0} or more." />
+  <STR key="UI_TRADEMAKET_REGISTER_IMPOSSIBLEITEM_TEXT" string="This item cannot be registered." />
+  <STR key="UI_TRADEMAKET_REGISTER_PRICEMAX_TEXT" string="Items with the total sales price of {0} or higher cannot be registered." />
+  <STR key="UI_TRADEMAKET_REGISTER_PRICEMIN_TEXT" string="Items with the total sales price of {0} or lower cannot be registered." />
+  <STR key="UI_TRADEMAKET_REGISTER_TEXT" string="*The maximum number of items you can register is {0}, including the items whose sales have yet to be collected." />
+  <STR key="UI_TRADEMAKET_REGISTERED_COUNT" string="Registered" />
+  <STR key="UI_TRADEMAKET_REGISTERED_ITEM" string="In Progress" />
+  <STR key="UI_TRADEMAKET_SALES_MANAGEMENT" string="Manage Sales" />
+  <STR key="UI_TRADEMAKET_SEARCH_LEVEL" string="Level" />
+  <STR key="UI_TRADEMAKET_SEARCH_MYITEM" string="My Item" />
+  <STR key="UI_TRADEMAKET_SEARCH_NAME" string="Name" />
+  <STR key="UI_TRADEMAKET_SEARCH_NONE_TEXT" string="Set the search conditions and press Search." />
+  <STR key="UI_TRADEMAKET_SEARCH_PRICEMIN" string="Lowest Price" />
+  <STR key="UI_TRADEMAKET_SEARCH_RESULT_TEXT" string="There is no search result.{CR}Set search conditions and press the Search button." />
+  <STR key="UI_TRADEMAKET_TAB_CALCULATE" string="Collect" />
+  <STR key="UI_TRADEMAKET_TAB_MY_MARKET" string="Register Item and Manage Sales" />
+  <STR key="UI_TRADEMAKET_TAB_SEARCH_ITEM" string="Search Item" />
+  <STR key="UI_TRADEMAKET_TOTALPRICE" string="Total Sales Price" />
+  <STR key="UI_TRADEMAKET_UNITPRICE" string="Unit Price" />
+  <STR key="UI_TRADEMAKET_UNREGISTERED_ITEM" string="Sale Ended" />
+  <STR key="UI_TRAY_ALL_DURABILITY" string="Total durability" />
+  <STR key="UI_TRAY_MAILBOX" string="Mailbox" />
+  <STR key="UI_TRAY_MAILBOX_FULL" string="Mailbox is full." />
+  <STR key="UI_TRAY_MAILBOX_READED" string="You have no new mail." />
+  <STR key="UI_TRAY_MAILBOX_UNREAD" string="You have unread mail in your mailbox." />
+  <STR key="UI_TUTORIAL" string="Tutorial" />
+  <STR key="UI_TUTORIAL_MISSION" string="Tutorial Mission" />
+  <STR key="UI_TUTORIAL_MISSION_SKIP" string="Leave Tutorial" />
+  <STR key="UI_TUTORIAL_MISSION_SKIP_CONFIRM" string="Would you like to leave the tutorial?" />
+  <STR key="UI_TYPE" string="Type" />
+  <STR key="UI_USE" string="Use" />
+  <STR key="UI_USE_CONDITION" string="Requirements" />
+  <STR key="UI_USING" string="Use" />
+  <STR key="UI_WARNING" string="Warning" />
+  <STR key="UI_WHISPER_TO_FRIEND" string="Whisper" />
+  <STR key="UI_WORLDMAP" string="World Map" />
+  <STR key="UI_YES" string="Yes" />
+  <STR key="UNHOLYDMGAMP" string="Dark Damage Modifier" />
+  <STR key="UNIQUE" string="Unique" />
+  <STR key="UNIQUE_LIMIT" string="Limit in amount" />
+  <STR key="UNIT_AM" string="AM" />
+  <STR key="UNIT_DAY" string="d" />
+  <STR key="UNIT_DAY_SHORT" string="d" />
+  <STR key="UNIT_HOUR" string="h" />
+  <STR key="UNIT_HOUR_SHORT" string="h" />
+  <STR key="UNIT_MINUTE" string="m" />
+  <STR key="UNIT_MINUTE_SHORT" string="m" />
+  <STR key="UNIT_MONTH" string="Month" />
+  <STR key="UNIT_PM" string="PM" />
+  <STR key="UNIT_SECOND" string="s" />
+  <STR key="UNIT_SECOND_SHORT" string="s" />
+  <STR key="UNIT_YEAR" string="Year" />
+  <STR key="UPPERED" string="Long-distance Throw" />
+  <STR key="UPPEREDWEIGHT" string="Long-distance Throw Resistance" />
+  <STR key="WEAPON" string="Weapon" />
+  <STR key="WEAPON_2BLUNT" string="2H Mace" />
+  <STR key="WEAPON_2HANDED" string="2H Sword" />
+  <STR key="WEAPON_2PIERCE" string="2 Daggers" />
+  <STR key="WEAPON_ARCHERY" string="Bow" />
+  <STR key="WEAPON_BLUNT" string="1H Mace" />
+  <STR key="WEAPON_PIERCE" string="1HD Dagger" />
+  <STR key="WEAPON_SLASH" string="1H Sword" />
+  <STR key="WEAPON_STAFF" string="Staff" />
+  <STR key="WEATHER" string="Weather" />
+  <STR key="WEATHER_CLOUDY" string="Overcast" />
+  <STR key="WEATHER_HEAVY_RAINY" string="Downpour" />
+  <STR key="WEATHER_HEAVY_SNOWY" string="Heavy Snow" />
+  <STR key="WEATHER_RAINY" string="Rain" />
+  <STR key="WEATHER_SNOWY" string="Snow" />
+  <STR key="WEATHER_SUNNY" string="Clear" />
+  <STR key="WEEKDAY" string="Weekday" />
+  <STR key="WEEKEND" string="Weekend" />
+</maiet>
