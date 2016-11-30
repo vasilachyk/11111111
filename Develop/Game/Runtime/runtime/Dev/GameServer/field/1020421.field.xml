@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" minimap_name="map00102" loading_image_name="00102" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="56000" boundary_min_y="30000" boundary_max_x="68000" boundary_max_y="48000" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="22" max_gather_herb="20" max_gather_relic="10" max_gather_lumber="14">
+        <BGM fieldbgm="bgm_field_5">
+            <ENVBGM dawnbgm="amb_snowyfield_dawn" />
+            <ENVBGM daytimebgm="amb_snowyfield_daytime" />
+            <ENVBGM sunsetbgm="amb_snowyfield_sunset" />
+            <ENVBGM nightbgm="amb_snowyfield_night" />
+            <ENVBGM clodybgm="amb_normal_2" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SNW">
+                <ADD weather="SUN" percent="5" />
+                <ADD weather="CLD" percent="5" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="HSW" percent="45" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="marker 시작지점" x="61524.988281" y="34270.386719" z="2824.965088" dir_x="0.224952" dir_y="0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102140" name="QM 유령늑대 샤디즈" x="62567.210938" y="40276.179688" z="3157.688965" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="sensor 부활지점" local="false" x="61523.734375" y="34320.914063" z="2822.457520" radius="1000.000000" enabled="true" checkpoint="1" groupname="none" />
+        <AREA id="102140" name="샤디즈 출몰지" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="62909.941406" y="40216.019531" z="2289.344727" radius="8000.000000" height="2000.000000" />
+        </AREA>
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

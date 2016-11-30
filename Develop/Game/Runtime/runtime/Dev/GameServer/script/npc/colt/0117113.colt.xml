@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="마이코니드 미니온" npcid="117113">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711303" rate="40" desc="박치기" />
+				<ACTION type="talent" param1="211711302" rate="40" desc="포자떨구기" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711300" rate="30" />
+				<ACTION type="talent" param1="211711301" rate="30" />
+				<ACTION type="nothing" param1="2" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

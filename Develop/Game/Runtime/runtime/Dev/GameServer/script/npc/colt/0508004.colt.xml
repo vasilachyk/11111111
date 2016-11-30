@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="쿨드소환수" npcid="508004">	
+		
+		<COMBAT mode="0" comment="Peace mode">
+			<DEFAULT> 
+				<ACTION type="talent" param1="250800401" rate="50" duration="2" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0" rate="1"/>			
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

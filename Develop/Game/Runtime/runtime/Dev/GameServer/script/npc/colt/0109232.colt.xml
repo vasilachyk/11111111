@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 해골 전사	
+210923200	idle2
+210923201	점프공격
+210923202	우측강타
+210923203	연타
+210923204	어께치기
+210923205	발차기
+-->
+<maiet>
+	<COLT name="해골 전사" npcid="109232" >
+		<COMBAT max_duration="-1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210923202" desc="우측강타" cycle="15" rate="30" />				
+				<ACTION type="talent" param1="210923203" desc="연타" rate="50" />
+				<ACTION type="talent" param1="210923204" desc="어께치기" rate="20" />
+				<ACTION type="talent" param1="210923205" desc="발차기" cycle="5" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" >
+				<ACTION type="talent" param1="210923201" desc="점프공격" duration="-1" cycle="10" rate="50" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923200" desc="idle2" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

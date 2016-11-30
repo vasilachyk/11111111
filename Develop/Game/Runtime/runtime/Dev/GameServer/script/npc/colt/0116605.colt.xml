@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 부족 용병 (인간형 양손검 기본)	
+211660501	1타
+211660502	2타
+211660503	3타
+211660504	회피베기
+211660505	돌진
+211660506	전진공격
+211660507	모드0전환(칼뽑기)
+211660508	모드1전환(칼넣기)
+211660509	회피L
+211660510	회피R
+211660511	광포 포커스
+211660512	후진공격
+211660513	분쇄
+-->
+<maiet>
+	<COLT name="불의 정령 용병(남)" >
+		<COMBAT victory="211660508">
+			<DEFAULT>
+				<!--<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>-->
+				
+				<ACTION desc="1타" type="talent" param1="211660501" rate="50" cycle="6"/>
+				<ACTION desc="2타" type="talent" param1="211660502" rate="30" />
+				<ACTION desc="3타" type="talent" param1="211660503" rate="30" />
+				<ACTION desc="후진공격" type="talent" param1="211660512" rate="20" cycle="6"/>
+				<ACTION desc="분쇄" type="talent" param1="211660513" rate="3"/>
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION desc="돌진" type="talent" param1="211660505" rate="100" cycle="6"/>
+				<ACTION type="distance" param1="300" param2="350" rate="10" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION desc="광포 포커스" type="talent" param1="211660511" rate="100" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION desc="돌진" type="talent" param1="211660505" rate="5" cycle="10"/>
+				<ACTION desc="전진공격" type="talent" param1="211660506" rate="100" />
+			</CHECK>
+
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="100" >
+					<ACTION desc="회피베기" type="talent" param1="211660504" rate="100" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION desc="모드0전환(칼뽑기)" type="talent" param1="211660507" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+						
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

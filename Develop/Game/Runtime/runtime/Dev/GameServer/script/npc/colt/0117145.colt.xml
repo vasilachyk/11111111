@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 세뇌된 연금술사	
+# 인간형 지팡이 기본	
+211714401	지팡이휘두르기
+211714402	전진공격
+211714403	후진공격
+211714404	화염채찍
+211714405	지팡이2연타
+211714406	화염구
+211714407	프레임게이저
+211714408	모드0전환(칼뽑기)
+211714409	모드1전환(칼넣기)
+-->
+<maiet>
+	<COLT name="세뇌된 연금술사(여자)">
+		<COMBAT victory="211714409">
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="211714401" rate="10" />
+				<ACTION type="talent" param1="211714406" rate="40" /> <!-- 화염구 -->
+				
+				<ACTION type="talent" param1="211714404" rate="20" />  <!--화염채찍 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" >
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="211714401" rate="10" />  <!--지팡이평타1-->
+				<ACTION type="talent" param1="211714402" rate="30" />  <!--지팡이평타2-->
+			
+				<ACTION type="talent" param1="211714406" rate="30" />  <!--화염구 -->
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="211714404" rate="20" />  <!--화염채찍 -->
+				</CHECK>
+			</CHECK>
+
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211714408" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+		
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

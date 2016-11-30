@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 디펜더 -->
+<maiet>
+	<COLT name="가디엘 예비신자" npcid="501102">
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="GaddielAggroChat1" />
+			</DEFAULT>
+		</AGGRO>	
+		<COMBAT mode="0" victory="250110202" >
+			<DEFAULT>
+				<ACTION type="talent" param1="250110211" rate="40" />
+				<ACTION type="talent" param1="250110212" rate="40" />
+				<ACTION type="talent" param1="250110213" rate="5" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110201" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>
+
+

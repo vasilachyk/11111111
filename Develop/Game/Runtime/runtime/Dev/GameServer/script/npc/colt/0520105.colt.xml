@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 밀리 -->
+<maiet>
+	<COLT name="울지 않는 광대" npcid="520105">
+		
+		<COMBAT>
+			<DEFAULT>				
+				<ACTION type="talent" param1="252010004" rate="40" /> <!-- 1타 주먹치기 -->				
+				<ACTION type="talent" param1="252010006" rate="10" /> <!-- 팔떼서치기 -->				
+				<ACTION type="talent" param1="252010008" rate="10" /> <!-- 번개 -->
+			</DEFAULT>		
+			
+			
+			<CHECK type="rage" param1="100">				
+				<ACTION type="talent" param1="252010008" rate="40" /> <!-- 번개 -->
+					
+			</CHECK>
+			
+			<CHECK type="distance" param1="800">
+				<ACTION type="talent" param1="252010002" rate="10" /> <!-- 몸돌려뒤보기 -->
+				<ACTION type="talent" param1="252010001" rate="10" /> <!-- idle -->				
+				<ACTION type="talent" param1="252010003" rate="10" /> <!-- 무릎꿇기 -->
+			</CHECK>
+			
+		</COMBAT>
+
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="252010002" rate="30" /> <!-- 몸돌려뒤보기 -->
+				<ACTION type="talent" param1="252010001" rate="10" /> <!-- idle -->				
+				<ACTION type="talent" param1="252010003" rate="30" /> <!-- 무릎꿇기 -->				
+			</DEFAULT>
+		</IDLE>
+	</COLT>	
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

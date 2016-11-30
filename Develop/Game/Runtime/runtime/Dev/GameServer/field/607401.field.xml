@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="123" minimap_name="map00122" loading_image_name="00122" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="40000" boundary_min_y="30760" boundary_max_x="60164" boundary_max_y="55131" weather_effect="true" town="false" returnable="true" tutorial="false" rebirth_debuff_id="502020">
+		<BGM fieldbgm="bgm_field_15">
+            <ENVBGM dawnbgm="amb_battlefield_dawn" />
+            <ENVBGM daytimebgm="amb_battlefield_daytime" />
+            <ENVBGM sunsetbgm="amb_battlefield_sunset" />
+            <ENVBGM nightbgm="amb_battlefield_night" />
+            <ENVBGM clodybgm="amb_night" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="47088.730469" y="39254.957031" z="144.174149" dir_x="0.669131" dir_y="0.743145" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="50274.152344" y="45398.386719" z="2.999471" dir_x="-0.857167" dir_y="-0.515038" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_출발지점" local="false" x="47204.785156" y="39244.625000" z="138.167419" radius="689.130615" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="소환된 유령기사">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="211310601" rate="30" />
+				<ACTION type="talent" param1="211310602" rate="20" />
+				<ACTION type="talent" param1="211310604" rate="10" />
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="group" max_count="1">
+					<ACTION type="face_to" />
+					<ACTION type="talent" param1="211310600" rate="10" duration="0" />
+				</ACTION>
+			</CHECK>
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="211310601" rate="10" />
+				<ACTION type="talent" param1="211310602" rate="20" />
+				<ACTION type="talent" param1="211310604" rate="30" />
+			</CHECK>
+			<CHECK type="distance" param1="100" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="211310601" rate="10" />
+					<ACTION type="talent" param1="211310602" rate="10" />
+					<ACTION type="talent" param1="211310603" rate="80"/>
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="211310606" rate="80" duration="0"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	function NPC_113106:OnSpawn( Info )
+		this:Wait(1)
+	end
+	
+	
+	]]></SCRIPT>
+	
+</maiet>

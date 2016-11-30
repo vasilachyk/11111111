@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="521000" minimap_name="map521000" min_x="-11000" min_y="-2000" max_x="14000" max_y="13000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="에픽 몬스터?" x="10585.462891" y="9699.169922" z="2.000079" dir_x="-0.999391" dir_y="0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101000" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="에픽 몬스터?" x="10592.860352" y="7726.643066" z="1.999907" dir_x="-0.999391" dir_y="0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101000" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="레이드 일반몹" x="-1272.880981" y="11325.286133" z="2.000054" dir_x="-0.857167" dir_y="-0.515038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="8894021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="레이드 일반몹" x="-1069.470215" y="10155.738281" z="2.000049" dir_x="-0.945519" dir_y="0.325568" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="8894021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="레이드 일반몹" x="3489.177002" y="11155.231445" z="2.000203" dir_x="-0.970296" dir_y="-0.241922" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="800" roam_depth="100" combat_radius="0" color="auto">
+            <NPC id="1000006" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="레이드 일반몹" x="3488.889404" y="10500.509766" z="2.000176" dir_x="-0.945519" dir_y="0.325568" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="800" roam_depth="100" combat_radius="0" color="auto">
+            <NPC id="1000006" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="레이드 일반몹" x="2326.351318" y="6251.611328" z="1.999912" dir_x="0.961262" dir_y="-0.275637" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="106001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="레이드 일반몹" x="4652.878906" y="6288.189941" z="1.999846" dir_x="0.981627" dir_y="-0.190809" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="111034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="레이드 일반몹" x="-837.462219" y="10741.816406" z="2.000057" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501004" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="레이드 일반몹" x="-2489.253418" y="6199.119141" z="1.999982" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="512002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="레이드 일반몹" x="-2057.294922" y="6616.186523" z="1.999975" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="512001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="레이드 일반몹" x="-2073.329346" y="5804.890625" z="1.999975" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="1000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="512001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="100" group="0" name="투명벽" x="-3666.478027" y="6292.262207" z="3.000000" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101" group="0" name="투명벽" x="-3664.951416" y="6553.518066" z="3.000000" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102" group="0" name="투명벽" x="-3664.870117" y="6029.566895" z="3.000000" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103" group="0" name="투명벽" x="6124.623047" y="6283.266113" z="2.999780" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="104" group="0" name="투명벽" x="6124.370117" y="6031.172363" z="2.999758" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="105" group="0" name="투명벽" x="6129.711914" y="6526.415527" z="2.999802" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="200" group="0" name="종합선물세트" x="-9152.290039" y="8609.600586" z="2.000000" dir_x="-0.999391" dir_y="-0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="5200017" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작지점" x="-9818.018555" y="8587.758789" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="2번째 부활지점" x="6560.751465" y="10718.750000" z="3.000168" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="-9672.554688" y="8600.067383" z="2.000000" radius="1000.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="쌍 지그니프 활성화" local="false" x="10951.237305" y="8693.491211" z="1.999991" radius="2000.000000" enabled="true" groupname="none" />
+        <SENSOR id="3" name="체크포인트" local="false" x="6414.969238" y="10772.879883" z="3.000173" radius="500.000000" enabled="true" checkpoint="2" groupname="none" />
+        <AREA id="1" name="레이드 실험실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-7935.690918" y="8528.613281" z="0.000000" radius="5000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="2" name="에픽 몬스터 넓이 테스트실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="10374.359375" y="8557.058594" z="0.000000" radius="5000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="폭 30m 통로 테스트실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-731.780273" y="10868.148438" z="0.000024" radius="3000.000000" height="1000.000000" />
+            <CYLINDER x="3147.615967" y="10871.041992" z="0.000034" radius="3000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="폭 20m 통로 테스트실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-1659.460693" y="6335.418457" z="0.000024" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="1432.643066" y="6321.516602" z="0.000053" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="4134.438965" y="6353.321777" z="0.000026" radius="2020.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

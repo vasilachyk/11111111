@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8003" min_x="0" min_y="0" max_x="60000" max_y="60000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="auto" x="8541.222656" y="10791.523438" z="3.000030" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="508003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="auto" x="10595.635742" y="10866.220703" z="3.000011" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="508003" default="true" rate="10" />
+        </SPAWN>
+    </FIELDINFO>
+</maiet>

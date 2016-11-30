@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="108" min_x="0" min_y="0" max_x="100000" max_y="100000" weather_effect="true" town="false">
+        <BGM fieldbgm="bgm_field_5">
+            <ENVBGM dawnbgm="amb_normal_1" />
+            <ENVBGM daytimebgm="amb_normal_1" />
+            <ENVBGM sunsetbgm="amb_normal_1" />
+            <ENVBGM nightbgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+            <ENVBGM normalbgm="amb_normal_1" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SNW">
+                <ADD weather="SUN" percent="10" />
+                <ADD weather="CLD" percent="15" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="M4_Scarbrow" x="84408.632813" y="72012.250000" z="3074.604004" dir_x="-0.908508" dir_y="0.417867" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="M4_Barren" x="14595.372070" y="79533.554688" z="1882.595581" dir_x="0.878817" dir_y="-0.477159" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="fom 테레스 평원" x="48516.285156" y="15678.382813" z="98.008369" dir_x="0.026177" dir_y="0.999657" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="S4_Scarbrow" local="false" x="92069.257813" y="67486.968750" z="3548.571533" radius="8000.000000" enabled="true" />
+        <SENSOR id="2" name="S4_Barren" local="false" x="10099.399414" y="87476.789063" z="2011.533691" radius="8140.000000" enabled="true" />
+        <SENSOR id="3" name="to 테레스 평원" x="50390.464844" y="6409.678711" z="735.819458" radius="8000.000000" enabled="true">
+            <WARP title="테레스 평원으로 이동" condition="0" gate_type="auto" field="107" marker="4" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

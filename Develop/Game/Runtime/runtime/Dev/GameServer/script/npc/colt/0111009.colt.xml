@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#광기의 코볼트 지휘관	
+211101301	#찌르기공격
+211101302	#휘두르기 공격
+#211101303	#방어
+211101304	#포효
+-->
+<maiet>
+	<COLT name="르왕키 친위대 전사" npcid="111009">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211101301" rate="25" desc="찌르기공격" />
+				<ACTION type="talent" param1="211101302" rate="25" desc="휘두르기 공격" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="70" >
+				<ACTION type="talent" param1="211101304" rate="25" desc="포효" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

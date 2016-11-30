@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="113" minimap_name="map00113" loading_image_name="00113" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="16000" boundary_min_y="41000" boundary_max_x="37000" boundary_max_y="59000" weather_effect="true" fixed_time="Night" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="CLD">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작점" x="29407.281250" y="48590.804688" z="1485.817749" dir_x="-0.766044" dir_y="0.642788" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="QM 992010 obj 2" x="26070.738281" y="50918.292969" z="1792.265625" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="29473.435547" y="48550.554688" z="1496.687622" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="10" name="안식 사용시 회복 버프" local="false" x="25931.621094" y="50191.421875" z="1851.094971" radius="8000.000000" enabled="true" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="만넬로스" npcid="512002">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="talent" param1="251200230"/>										
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>
+		
+		<COMBAT mode="0" comment="default"> 
+			<DEFAULT>
+				<ACTION type="talent" param1="251200210" rate="50" duartion="0" />
+				<ACTION type="talent" param1="251200213" rate="25" duartion="0" />
+				<ACTION type="talent" param1="251200211" rate="45" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="251200218" rate="10" duartion="0" comment="shield of darkness" cycle="50"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1200" >
+				<ACTION type="distance" param1="1000" param2="1000" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="251200210" rate="5" />
+				<ACTION type="talent" param1="251200211" rate="45" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" comment="어둠의 선언" victory="251200223">
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_7512002" param2="DeclareDarkness" rate="70" duartion="0" />
+				
+				<ACTION type="talent" param1="251200210" rate="10" />
+				<ACTION type="talent" param1="251200213" rate="10" />
+				<ACTION type="talent" param1="251200211" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="251200218" rate="10" duartion="0" comment="shield of darkness" cycle="40"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" >
+				<ACTION type="lua" param1="NPC_7512002" param2="DeclareDarkness" rate="70" duartion="0" cycle="15"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1200" >
+				<ACTION type="distance" param1="1000" param2="1000" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="251200210" rate="2" />
+				<ACTION type="talent" param1="251200211" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="2" comment="번개구" victory="251200223">
+			<DEFAULT>
+				<!-- summon sphere -->
+				<ACTION type="talent" param1="251200210" rate="10" />
+				<ACTION type="talent" param1="251200213" rate="10" />
+				<ACTION type="talent" param1="251200219" rate="10" />
+			</DEFAULT>
+	
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="251200218" rate="10" duartion="0" comment="shield of darkness" cycle="30"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1200" >
+				<ACTION type="distance" param1="1000" param2="1000" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="251200215" rate="35" duartion="0" cycle="20"/>
+				<ACTION type="talent" param1="251200216" rate="35" duartion="0" cycle="20"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<!-- summon sphere -->
+				<ACTION type="talent" param1="251200210" rate="2" />
+				<ACTION type="talent" param1="251200219" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="3" comment="번개구2" victory="251200223">
+			<DEFAULT>
+				<ACTION type="talent" param1="251200210" rate="10" />
+				<ACTION type="talent" param1="251200212" rate="10" />
+				<ACTION type="talent" param1="251200219" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="251200218" rate="10" duartion="0" comment="shield of darkness" cycle="20"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="251200217" rate="70" duartion="0" comment="summon twin sphere" cycle="20"/>
+			</CHECK>
+
+			<CHECK type="distance" param1="1200" >
+				<ACTION type="distance" param1="1000" param2="1000" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="251200210" rate="2" />
+				<ACTION type="talent" param1="251200219" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="251200200" cycle="10"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_7512002:Init( NPCID )
+	--[[
+		1: 
+		2: 공포의장막 누적데미지
+	--]]
+	NPC_ReserveUserData( NPCID, 2 )	
+	
+	NPC_7512002.LimitForBreakShield		= (NPC_7512002.MaxHP/20)/20
+	
+	NPC_7512002.BufIdShieldOfDarkness 	= 40323
+	
+	NPC_7512002.NpcIdPSphere 			= 7512005
+	NPC_7512002.NpcIdMSphere 			= 7512006
+	
+	NPC_7512002.TalIdModeChange1			= 251200220
+	NPC_7512002.TalIdModeChange2			= 251200221
+	NPC_7512002.TalIdModeChange3			= 251200222
+	NPC_7512002.TalIdDeclareDarkness		= 251200214
+	
+	NPC_7512002.TTLElectricOrb			= 20
+end
+
+function NPC_7512002:OnBPartRecover()
+	for i=1, 2 do
+		this:SetUserData( i, 0 )
+	end 
+end
+
+function NPC_7512002:OnActSummonPlusSphere( ThisActor, Enemy )
+	--GLog( "NPC_7512002:OnFinishSummonPlusSphere\n" )
+	local ThisNPC = AsNPC( ThisActor)
+	
+	local WorldPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), vec3( -300, 0, 0 )  )
+	local Minion = ThisNPC:SummonNow( NPC_7512002.NpcIdPSphere, WorldPos )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_7512002:OnActSummonMinusSphere( ThisActor, Enemy )
+	--GLog( "NPC_7512002:OnFinishSummonMinusSphere\n" )
+	local ThisNPC = AsNPC( ThisActor)
+	
+	local WorldPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), vec3( 300, 0, 0 )  )
+	local Minion = ThisNPC:SummonNow( NPC_7512002.NpcIdMSphere, WorldPos )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_7512002:OnActSummonSpheres( ThisActor, Enemy )
+	--GLog( "NPC_7512002:OnActSummonSpheres\n" )
+	local ThisNPC = AsNPC( ThisActor)
+
+	local WorldPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), vec3( -300, 0, 0 )  )
+	local PSphere = ThisNPC:SummonNow( NPC_7512002.NpcIdPSphere, WorldPos )
+	
+	local WorldPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), vec3( 300, 0, 0 )  )
+	local MSphere = ThisNPC:SummonNow( NPC_7512002.NpcIdMSphere, WorldPos )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_7512002:DeclareDarkness( ThisActor, Enemy )
+	--GLog( "NPC_7512002:DeclareDarkness\n" )
+	local ThisNPC = AsNPC( ThisActor)
+	
+	local NewEnemy = ThisNPC:Aggro( "random", 0 )
+	if ThisNPC:IsCooldown( NPC_7512002.TalIdDeclareDarkness ) then
+		return
+	end
+	
+	ThisNPC:UseTalent( NPC_7512002.TalIdDeclareDarkness, NewEnemy )
+end
+
+function NPC_7512002:OnStartShieldOfDarkness( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	
+	ThisNPC:GainBuff( NPC_7512002.BufIdShieldOfDarkness )
+end
+
+function NPC_7512002:OnFinishShieldOfDarkness( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor)
+	-- 공포의 장막 누적데미지 리셋
+	ThisNPC:SetUserData( 2, 0 )
+end
+
+function NPC_7512002:OnFinishAndAggroShort( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor)
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+
+function NPC_7512002:AccDamage( ThisNPC, HitInfo )
+	-- 공포의 보호막 버프 처리
+	
+	if ThisNPC:CheckBuff( NPC_7512002.BufIdShieldOfDarkness ) then
+		local ShieldDmgAcc = ThisNPC:GetUserData( 2 ) + HitInfo.Damage
+
+		if ShieldDmgAcc > NPC_7512002.LimitForBreakShield then
+			-- 보호막 깨짐 처리
+			ThisNPC:RemoveBuff( NPC_7512002.BufIdShieldOfDarkness )
+			ThisNPC:SetUserData( 2, 0 )
+			HitInfo.Damage = ShieldDmgAcc - NPC_7512002.LimitForBreakShield
+		else
+			-- 보호막 데미지 누적및 실데미지 무효화
+			ThisNPC:SetUserData( 2, ShieldDmgAcc )
+		end
+
+		return HitInfo
+	end
+	
+	--- mode change
+	local HPPer = ThisNPC:GetHP()/ThisNPC:GetMaxHP()
+	if ThisNPC:GetMode() == 0 and HPPer < 0.9 then
+		ThisNPC:ClearJob()
+		--GLog( "ModeChange1 " .. NPC_7512002.TalIdModeChange1  .. "\n")
+		ThisNPC:UseTalentSelf( NPC_7512002.TalIdModeChange1 )
+	elseif ThisNPC:GetMode() == 1 and HPPer < 0.5 then
+		--GLog( "ModeChange2 \n")
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( 1, HitInfo.Attacker )
+		ThisNPC:UseTalentSelf( NPC_7512002.TalIdModeChange2 )
+	elseif ThisNPC:GetMode() == 2 and HPPer < 0.2 then
+		--GLog( "ModeChange3 \n")
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_7512002.TalIdModeChange3 )
+	end
+	
+	return HitInfo
+end
+
+function NPC_7512002:OnHitCapsule_1_0( HitInfo )
+	return NPC_7512002:AccDamage( this, HitInfo )
+end
+
+	]]></SCRIPT>
+</maiet>

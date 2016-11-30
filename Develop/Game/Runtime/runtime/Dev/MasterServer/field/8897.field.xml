@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" minimap_name="map00102" loading_image_name="00102" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="28612" boundary_min_y="19315" boundary_max_x="54074" boundary_max_y="44993" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_5">
+            <ENVBGM dawnbgm="amb_snowyfield_dawn" />
+            <ENVBGM daytimebgm="amb_snowyfield_daytime" />
+            <ENVBGM sunsetbgm="amb_snowyfield_sunset" />
+            <ENVBGM nightbgm="amb_snowyfield_night" />
+            <ENVBGM clodybgm="amb_normal_2" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="20" />
+                <ADD weather="HSW" percent="20" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="PAX 디아고" x="41651.875000" y="31020.748047" z="11977.306641" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,0,255">
+            <NPC id="8896002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="오우거" x="42281.882813" y="30535.812500" z="11980.055664" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="오우거" x="40214.066406" y="31103.302734" z="11961.102539" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="오우거" x="41792.449219" y="32370.261719" z="11958.780273" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="오우거" x="40885.832031" y="30688.794922" z="11961.228516" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="오우거" x="41678.023438" y="29537.273438" z="11978.849609" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="오우거" x="40480.351563" y="29812.412109" z="11980.722656" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="오우거" x="42439.554688" y="29439.681641" z="11967.384766" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="오우거" x="42808.656250" y="31712.464844" z="11964.506836" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="오우거" x="40892.062500" y="32417.587891" z="11960.958984" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" group="0" name="오우거" x="39727.390625" y="30567.546875" z="11961.253906" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="128,128,255">
+            <NPC id="8896021" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="스폰 마커" x="39348.914063" y="29491.808594" z="11960.304688" dir_x="0.819152" dir_y="0.573576" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="Quest 마커" x="41220.648438" y="30781.859375" z="11977.422852" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,380 @@
+--============================================
+-- filename: Const.lua
+-- ¼³¸E ½ºÅ©¸³Æ®³ª C++¿¡¼­ »ç¿EÏ´Â »ó¼E
+--
+--============================================
+
+--======================================================
+-- C++¿¡¼­ »ç¿EÏ´Â »ó¼E
+-- »ó¼EÀÌ¸§À» º¯°æÇÒ °æ¿EC++¿¡µµ ÇÔ²² º¯°æÇØ¾ß ÇÑ´Ù.
+--======================================================
+
+INACTIVE_SHAREDFIELD_NPC_CLEARTIME = 60;
+
+-- ÀÏ¹Ý
+CONST_KEEP_PLAYER_SPAWN = true;				-- ÇÃ·¹ÀÌ¾ûÜÇ ¸¶Áö¸· À§Ä¡¸¦ ±â·ÏÇÒÁE¿©ºÎ
+RUN_RESOURCE_VALIDATOR	= true;				-- ¿ÜºÎ µ¥ÀÌÅÍ ÆÄÀÏ À¯È¿¼º Ã¼Å© ¿©ºÎ
+RUN_FOR_TEST = true;						-- ¼­¹ö¸¦ Å×½ºÆ®¿E¸·Î ±¸µ¿ÇÒÁE¿©ºÎ, ´Ù¸¥ µð¹ö±×¿ECONST °ªÀÌ ÄÑÁ®ÀÖ¾ûÑµ ÀÌ °ªÀÌ falseÀÌ¸Eµð¹ö±×, Å×½ºÆ® ÄÚµå°¡ ÀÛµ¿ÇÏÁE¾Ê½À´Ï´Ù.
+--ENABLE_SETME_GRADE = true;					-- setme grade [GRADE] ÄÜ¼Ö ¸úÓÉ¾EÈ°¼ºÈ­ ¿©ºÎ¸¦ ½ºÀ§Äª ÇÕ´Ï´Ù. RUN_FOR_TEST °¡ true ÀÏ ¶§¸¸ À¯È¿ÇÕ´Ï´Ù.
+GAME_TICK = 20;								-- ¼­¹EÆ½
+SERVER_SLEEP = true;
+DISMOUNT_BUFFID = 5000220
+
+CONST_NPC_XML_FILES 	= "system/npc.xml";
+CONST_ITEM_XML_FILES 	= "system/xitem.xml";
+CONST_TALENT_XML_FILES 	= "system/talent.xml";
+CONST_BUFF_XML_FILES 	= "system/buff.xml";
+CONST_ENCHANT_XML_FILES 	= "system/enchant.xml";
+CONST_RECIPE_XML_FILES 	= "system/recipe.xml";
+CONST_LOOT_XML_FILES 	= "system/loot.xml";
+
+
+-- ÇÊµE°EÃ ---------------------------------
+INCLUDE_DEV_FIELD_LIST 	= false;			-- °³¹ßÁßÀÎ ÇÊµE·ÎµE¿©ºÎ
+
+-- È¯°E½Ã°£, ³¯¾¾) °EÃ ---------------------
+
+CONST_LOCALTIME_PER_GAMETIME_ONE_HOUR	= 840;		-- ½Ç½Ã°£ 14ºÐÀÌ °ÔÀÓ 1½Ã°£
+CONST_ENV_TIME_UPDATE_TICK_SEC			= 60;		-- ½Ã°£Ã¼Å© Æ½°ª(ÃÊ) - 60ÃÊ
+
+
+-- °ÔÀÓ³» ½Ã°£´E¼³Á¤
+CONST_ENV_TIME_DAWN_START_HOUR		= 4;		-- AM 4½ÃºÎÅÍ »õº®(Dawn)
+CONST_ENV_TIME_DAYTIME_START_HOUR	= 7;		-- AM 7½ÃºÎÅÍ ³·(Daytime)
+CONST_ENV_TIME_SUNSET_START_HOUR	= 18;		-- PM 6½ÃºÎÅÍ ÇØÁú³ESunset)
+CONST_ENV_TIME_NIGHT_START_HOUR		= 21;		-- PM 9½ÃºÎÅÍ ÀÚÁ¤(Night)
+
+CONST_ENV_WEATHER_TICK_SEC			= 5040;		-- ³¯¾¾ º¯È­ Æ½ 84ºÐ (84 * 60)
+
+--- µ¿ÀEÇÊµE°EÃ ---------------------------------
+CONST_DYNAMICFIELD_EXPIRED_TIME	= 800;		-- µ¿ÀEÇÊµE±×·E¡ À¯È¿ÇÑ ÇÃ·¹ÀÌ¾ûÌ¡ ¾øÀ»¶§ µ¿ÀEÇÊµE±×·E» À¯Áö½ÃÄÑÁÖ´Â ¿©À¯½Ã°£  [µðÆúÆ® 15ºÐ] (´ÜÀ§: ÃÊ)
+
+--CONST_LOCALTIME_PER_GAMETIME_ONE_HOUR	= 5;		-- ½Ç½Ã°£ 5ÃÊ°¡ °ÔÀÓ 1½Ã°£
+--CONST_ENV_TIME_UPDATE_TICK_SEC			= 5;	-- ½Ã°£Ã¼Å© Æ½°ª(ÃÊ) - 60ÃÊ
+--CONST_ENV_WEATHER_TICK_SEC			= 5;		-- ³¯¾¾ º¯È­ Æ½(5ÃÊ)
+
+-- ³¯¾¾ »óÅÂ ÀEÌÇ¥
+
+
+-- ÀEE°EÃ ------------------------------------
+PVP_MODE	= false;								-- ÇÃ·¹ÀÌ¾ûÌ£ ÀEE°¡´É ¿©ºÎ
+PVP_DAMAGE_BASE_AMP						= -0.25;		-- PVP µ¥¹ÌÁEº¸Á¤
+
+
+COMBAT_CHASE_MAX_DURATION_TIME			= 8.0;		-- ÀEõÁß ÅÅ·±Æ®¸¦ ¾²±âÀ§ÇÑ ÃßÀûÀÇ ÃÖ´EÃ°£
+
+STRESS_ADD_INTERRUPT_DURING_ATTACKING	= 10;		-- °ø°Ý½Ã ÀÎÅÍ·´Æ® ´çÇÒ¶§ ¾ò´Â ½ºÆ®·¹½º ¼öÄ¡
+STRESS_ADD_LIMITED_CHASE_TIME			= 10;		-- °ø°ÝÇÏ·Á°EÃßÀûÇÑ ½Ã°£µ¿¾È ¹Þ´Â ½ºÆ®·¹½º ¼öÄ¡
+STRESS_CHASE_INTERVAL					= 1;		-- °ø°ÝÇÏ·Á°EÃßÀûÇÏ¿© ½ºÆ®·¹½º ¹ÞÀ»¶§ÀÇ ½Ã°£ °£°Ý(´ÜÀ§: ÃÊ)
+STRESS_ADD_AVOID_MELEE_ATTACK			= 10;		--  NPCÀÇ Á¢±Ù °ø°ÝÀ» ÀûÀÌ È¸ÇÇ½Ã ¹Þ´Â ½ºÆ®·¹½º ¼öÄ¡
+STRESS_ADD_AVOID_RANGE_ATTACK			= 10;		-- NPCÀÇ ¿ø°Å¸® °ø°ÝÀ» ÀûÀÌ È¸ÇÇ½Ã ¹Þ´Â ½ºÆ®·¹½º ¼öÄ¡
+
+STATE_FACTOR_FOR_DAMAGE_BY_BACK			= 1.5;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ µÚ¿¡¼­ ¸Â¾ÒÀ»¶§
+STATE_FACTOR_FOR_DAMAGE_BY_BEATEN		= 1.0;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ MF_BEATEN
+STATE_FACTOR_FOR_DAMAGE_BY_STUN		    = 1.2;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ MF_STUN
+STATE_FACTOR_FOR_DAMAGE_BY_DEFLECT		= 1.2;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ MF_DEFLECT
+STATE_FACTOR_FOR_DAMAGE_BY_STAGGER		= 1.2;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ MF_STAGGER
+STATE_FACTOR_FOR_DAMAGE_BY_THROWUP		= 1.2;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ MF_THROWUP
+STATE_FACTOR_FOR_DAMAGE_BY_KNOCKDOWN	= 1.5;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ MF_KNOCKDOWN
+STATE_FACTOR_FOR_DAMAGE_BY_UPPERED		= 1.2;		--  »óÅÂ¿¡ µû¸¥ µ¥¹ÌÁEº¸Á¤ MF_UPPERED
+
+STATE_FACTOR_FOR_MF_VALUE_BY_BACK		= 1.5;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ µÚ¿¡¼­ ¸Â¾ÒÀ» ¶§
+STATE_FACTOR_FOR_MF_VALUE_BY_BEATEN		= 1.0;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ MF_BEATEN	
+STATE_FACTOR_FOR_MF_VALUE_BY_STUN		= 1.5;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ MF_STUN
+STATE_FACTOR_FOR_MF_VALUE_BY_DEFLECT	= 1.0;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ MF_DEFLECT
+STATE_FACTOR_FOR_MF_VALUE_BY_STAGGER	= 1.0;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ MF_STAGGER
+STATE_FACTOR_FOR_MF_VALUE_BY_THROWUP	= 1.0;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ MF_THROWUP
+STATE_FACTOR_FOR_MF_VALUE_BY_KNOCKDOWN	= 1.0;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ MF_KNOCKDOWN
+STATE_FACTOR_FOR_MF_VALUE_BY_UPPERED	= 1.0;		--  »óÅÂ¿¡ µû¸¥ ¸ð¼ÇÆÑÅÍ º¸Á¤ MF_UPPERED	
+
+VICTORY_DEFAULT_DELAY					= 3.0;		-- NPC°¡ ½Â¸®ÇßÀ»¶§ ÄÝÆ®¿¡ ¸úÙÃµÇÁE¾Ê¾ÒÀ»¶§ ±âº»ÀûÀ¸·Î ´EâÇÏ´Â ½Ã°£
+INVINCIBLE_TIME_REVIVE					= 3.0;
+INVINCIBLE_TIME_ENTER_FIELD				= 10.0;
+INVINCIBLE_BUFF_ID					= 1900;
+INVISIBLE_BUFF_ID					= 902;
+
+NO_WEAPON_DAMAGE_LEFT				= 5;			-- ¿Þ¼Õ ¹«±â¸¦ ÀåÂøÇÏÁE¾Ê¾ÒÀ» °æ¿EÇ ±âº» µ¥¹ÌÁE
+NO_WEAPON_DAMAGE_RIGHT				= 5;			-- ¿À¸¥¼Õ ¹«±â¸¦ ÀåÂøÇÏÁE¾Ê¾ÒÀ» °æ¿EÇ ±âº» µ¥¹ÌÁE
+
+PRE_HIT_CHECK_TIME					= 0.12;			-- ½ÇÁ¦ ÆÇÁ¤ ½Ã°£º¸´Ù ¸ÕÀEÆÇÁ¤ÇÏ´Â ½Ã°£
+
+-- ÀÏ¹Ý¸EÀEE°EÃ --
+DEF_WAIT_INTERVAL = 1;								-- ÀEõÁß ÀÌµ¿½Ã Áß°£Áß°£ ´EâÇÏ´Â ½Ã°£°ª
+
+-- ÀEõÀ¯È¿°Å¸® ¼³Á¤ --								-- ÀEõ½ÃÀÛÈÄ ÀÏÁ¤°Å¸®¸¦ ÀÌµ¿ÇÏ¸EÀEõ¸¦ Ç®°E¹«Àû»óÅÂ·Î ÀEE½ÃÀÛÁöÁ¡À¸·Î º¹±ÍÇÑ´Ù.
+NPC_DEFAULT_COMBAT_RADIUS = 0;
+
+-- ½ºÅÈ ¸®Á¨ --------------------------------------
+REGEN_TICK								= 5;		-- ¸®Á¨ Æ½ (ÃÊ)
+HP_REGEN_AMOUNT 						= 20;		-- Æ½´EHP ¸®Á¨·®
+HP_REGEN_RATE_IN_COMBAT 				= 0.0625;	-- ÀEõÁß HP ¸®Á¨ º¸Á¤Ä¡ (1 = 100%)
+EN_REGEN_AMOUNT 						= 60;		-- Æ½´EEN ¸®Á¨·®
+EN_REGEN_RATE_IN_COMBAT 				= 0.4;		-- ÀEõÁß EN ¸®Á¨ º¸Á¤Ä¡ (1 = 100%)
+STA_REGEN_AMOUNT 						= 50;		-- Æ½´ESTA ¸®Á¨·®
+STA_REGEN_RATE_IN_COMBAT 				= 0.6;		-- ÀEõÁß STA ¸®Á¨ º¸Á¤Ä¡ (1 = 100%)
+SITTING_REGEN_RATE						= 1.5;		-- ¾É¾ÆÀÖÀ» ¶§ ¸®Á¨·® ºñÀ² 
+
+-- PVP °EÃ --------------
+PVP_DURATIONTIME						= 5.0;						-- ÇÃ·¹ÀÌ¾ûÌ£ ÇÇ°Ý½Ã PVP»óÅÂ Áö¼Ó½Ã°£
+PVP_ARENA_FIELD_ID						= 8005;						-- PvP Arena Field ID
+
+-- ¸¶¹ýÁE°EÃ --------------
+MAGICAREA_EFFECTION_PERIOD			= 1.0;				-- ¸¶¹ýÁEÈ¿°EÁÖ±E
+
+-- Åõ¸úä­ °EÃ
+INVISIBILITY_DETECT_TICK					= 1.0;				-- Åõ¸úä­ Å½ÁEÃ³¸® Æ½ ÁÖ±E(second)
+INVISIBILITY_DETECT_DISTANCE			= 500; -- Åõ¸úä­ Å½Áö°Å¸® (cm)
+
+-- ÇEÌÆ®Å×ÀÌºE°EÃ
+HATETABLE_ENTRY_TIMEOUT				= 12;				-- ÇEÌÆ® Å×ÀÌºúÛ¡ µé¾ûÌ£ Ç×¸ñÀÌ ÀÚµ¿À¸·Î Á¦°ÅµÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+HATETABLE_ENTRY_PARTY_SCAN_DISTANCE = 2500;				-- ÇEÌÆ® Å×ÀÌºúÛ¡ Ãß°¡µÈ ÇÃ·¹ÀÌ¾ûÜÇ ÆÄÆ¼¿EÅ½»E°Å¸® (cm)
+HATETABLE_LIMIT_AGGRO_RANGE			= 2500;			-- Aggro() ÇÔ¼ö·Î ´EEÀE¯ÇÒ ¶§ Àû¿E¹ÞÀ» Á¦ÇÑ °Å¸® (cm)
+	
+-- Æ÷Ä¿½º °EÃ --------------
+FOCUS_ADVENT_DURATION_TIME = 20.0; -- °­½Å Æ÷Ä¿½º°¡ ÃÖ´E¾ó¸¶³ª Áö¼ÓµÇ´Â°¡
+FOCUS_BERSERK_HIT_COUNT = 8;	-- ¸ûÕøÀ» ¶§·Á¾ß ¹ö¼­Å©¿¡ °É¸®´Â°¡
+FOCUS_BERSERK_DURATION_TIME = 15.0;	-- ¹ö¼­Å© Æ÷Ä¿½º°¡ ¾ó¸¶³ª Áö¼ÓµÇ´Â°¡
+FOCUS_BERSERK_RELAYHIT_TIME = 9.0;	-- ¹ö¼­Å© Æ÷Ä¿½ºÀÇ ¹öºúÜÌ À¯ÁöµÇ´Â ½Ã°£
+FOCUS_COUNTER_DURATION_TIME = 10.0;	-- ¿ª½À Æ÷Ä¿½º°¡ ¾ó¸¶³ª Áö¼ÓµÇ´Â°¡
+FOCUS_ENLIGHTEN_DURATION_TIME = 60.0;	-- °¢¼º Æ÷Ä¿½º°¡ ¾ó¸¶³ª Áö¼ÓµÇ´Â°¡
+FOCUS_ENLIGHTEN_HIT_COUNT = 3;			-- ¸ûÕøÀ» ‹š·Á¾ß °¢¼º¿¡ °É¸®´Â°¡
+FOCUS_ENLIGHTEN_MINDSTORM_BUFF_ID = 500;	-- ¸¶ÀÎÆ®½ºÅE¹öÇÁ ¾ÆÀÌµE
+FOCUS_ENLIGHTEN_RELAYHIT_TIME = 5.0;		-- °¢¼º Æ÷Ä¿½ºÀÇ ¹öºúÜÌ À¯ÁöµÇ´Â ½Ã°£
+
+-- ÀÚ¸®ºñ¿E°EÃ
+AFK_TIMEOUT = 600; -- ÀÚ¸®ºñ¿EµÇ´Â ½Ã°£
+
+-- ³«ÇÏ µ¥¹ÌÁE°EÃ --------------
+FALLING_DEBUFF_LV1_ID = 100003;
+FALLING_DEBUFF_LV2_ID = 100004;
+
+-- Åõ±âÀE°EÃ --------
+ARENA_FIELDGROUP_ID = 50010;				-- Åõ±âÀEÇÊµå±×·E¾ÆÀÌµE
+ARENA_FIELD_ID = 50011;							-- Åõ±âÀEÇÊµE¾ÆÀÌµE
+ARENA_GAME_COUNT = 10.0;					-- Åõ±âÀE°ÔÀÓ½ÃÀÛ ´Eâ½Ã°£
+ARENA_SCOREBOARD_COUNT= 10.0;			-- Åõ±âÀEÁ¡¼öÆÇ ´Eâ½Ã°£
+ARENA_DEATHMATCH_MAX_SCORE = 7;		-- Åõ±âÀEµ¥½º¸ÅÄ¡ ÃÖ´E¡¼E
+ARENA_DEATHMATCH_REBIRTH_TIME = 30.0;	-- Åõ±âÀEµ¥½º¸ÅÄ¡ ºÎÈ°½Ã°£
+
+-- NPC ½ÃÃ¼¼Ò¸E°EÃ ------------
+function MakeMinute(second)
+	return second * 60
+end
+
+NPC_DECAY_TIME_NOITEM = 30;				-- NPC°¡ ¾ÆÀÌÅÛ ¾øÀ»¶§ ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_0 = MakeMinute(5);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_1 = MakeMinute(5);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_2 = MakeMinute(5);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_3 = MakeMinute(5);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_4 = MakeMinute(10);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_5 = MakeMinute(10);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_6 = MakeMinute(10);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_7 = MakeMinute(15);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_8 = MakeMinute(15);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_9 = MakeMinute(15);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DECAY_TIME_GRADE_10 = MakeMinute(15);			-- NPC°¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§ µûÍÞº° ½ÃÃ¼°¡ ¼Ò¸EÇ´Â ½Ã°£ (´ÜÀ§: ÃÊ)
+NPC_DESPAWN_TIME_FOR_DINNER = 600;					-- ¸¸ÂENPC ÀÇ ÀÚµ¿ ¼Ò¸EÃ°£ (´ÜÀ§: ÃÊ)
+	
+--  ºÐ³E°EÃ -----------------
+HIT_RAGE_AMOUNT = 10;						-- NPC°¡ ÇÇ°ÝÀ» ÀÔÀ» ¶§ ¾òÀ» ºÐ³E®
+CRIHIT_RAGE_AMOUNT = 10;					-- NPC°¡ Ä¡¸úá¸¸¦ ÀÔÀ» ¶§ ¾òÀ» Ãß°¡ ºÐ³E® (±âº» ÇÇ°ÝºÐ³E®¿¡ Ãß°¡)
+
+-- ±æÃ£±E°EÃ
+NPC_FINDPATH_RADIUS_LEVEL1 = 600 			-- ±æÃ£±E·¹º§1 Àû¿EE§
+NPC_FINDPATH_RADIUS_LEVEL2 = 1200			-- ±æÃ£±E·¹º§2 Àû¿EE§
+NPC_FINDPATH_RADIUS_LEVEL3 = 2000			-- ±æÃ£±E·¹º§3 Àû¿EE§
+NPC_FINDPATH_TICK_LEVEL1 = 0.2				-- ±æÃ£±E·¹º§1 °»½Å Æ½½Ã°£
+NPC_FINDPATH_TICK_LEVEL2 = 0.4				-- ±æÃ£±E·¹º§2 °»½Å Æ½½Ã°£
+NPC_FINDPATH_TICK_LEVEL3 = 0.6				-- ±æÃ£±E·¹º§3 °»½Å Æ½½Ã°£
+NPC_FINDPATH_TICK_OTHER = 1.0				-- ±æÃ£±E¹E§¹Û °»½Å Æ½½Ã°£
+NPC_FINDPATH_MOVESPEED_FACTOR = 400			-- ±æÃ£±E°»½Å Æ½½Ã°£ ¼Óµµ º¸Á¤Ä¡ (Æ½½Ã°£ * ÀÌµ¿¼Óµµ / ÆÑÅÍ)
+
+-- ·çÆÃ ----------------
+LOOT_LEVEL_DIFF_PENALTY_1 = "2, 3, 0.8"
+LOOT_LEVEL_DIFF_PENALTY_2 = "4, 5, 0.8"
+LOOT_LEVEL_DIFF_PENALTY_3 = "6, 11, 0.8"
+LOOT_LEVEL_DIFF_PENALTY_4 = "12, 20, 0.2"
+LOOT_LEVEL_DIFF_PENALTY_5 = "21, 100, 0.1"
+
+LOOT_PENALTY_TIER = {1, 0.7, 0.5, 0.3, 0.001} -- ÆÐ³ÎÆ¼ µûÍÞ ¼ø¼­´EÎ 1µûÍÞ,2µûÍÞ,3µûÍÞ,4µûÍÞ,5µûÍÞ ¾ÆÀÌÅÛ ¿¢¼¿ÀÇ µå¶EÆÐ³ÎÆ¼ ¶õ¿¡ ±â¼E
+
+
+-- Ã¤ÁýÈ°µ¿ ¼Ò¿E½Ã°£ ----------------
+GATHER_TIME_MINE_TIER_1		= 6.0		-- Ã¤±¤
+GATHER_TIME_MINE_TIER_2		= 6.0
+GATHER_TIME_MINE_TIER_3		= 6.0
+GATHER_TIME_MINE_TIER_4		= 6.0
+GATHER_TIME_MINE_TIER_5		= 6.0
+GATHER_TIME_MINE_TIER_6		= 6.0
+GATHER_TIME_MINE_TIER_7		= 6.0
+GATHER_TIME_MINE_TIER_8		= 6.0
+GATHER_TIME_MINE_TIER_9		= 6.0
+GATHER_TIME_MINE_TIER_10	= 6.0
+
+GATHER_TIME_HERB_TIER_1		= 6.0		-- ½Ä¹°
+GATHER_TIME_HERB_TIER_2		= 6.0
+GATHER_TIME_HERB_TIER_3		= 6.0
+GATHER_TIME_HERB_TIER_4		= 6.0
+GATHER_TIME_HERB_TIER_5		= 6.0
+GATHER_TIME_HERB_TIER_6		= 6.0
+GATHER_TIME_HERB_TIER_7		= 6.0
+GATHER_TIME_HERB_TIER_8		= 6.0
+GATHER_TIME_HERB_TIER_9		= 6.0
+GATHER_TIME_HERB_TIER_10	= 6.0
+
+GATHER_TIME_RELIC_TIER_1	= 6.0		-- ¹ß±¼
+GATHER_TIME_RELIC_TIER_2	= 6.0
+GATHER_TIME_RELIC_TIER_3	= 6.0
+GATHER_TIME_RELIC_TIER_4	= 6.0
+GATHER_TIME_RELIC_TIER_5	= 6.0
+GATHER_TIME_RELIC_TIER_6	= 6.0
+GATHER_TIME_RELIC_TIER_7	= 6.0
+GATHER_TIME_RELIC_TIER_8	= 6.0
+GATHER_TIME_RELIC_TIER_9	= 6.0
+GATHER_TIME_RELIC_TIER_10	= 6.0
+
+GATHER_TIME_LUMBER_TIER_1	= 6.0		-- ¸ñÀEÃ¤ÃE
+GATHER_TIME_LUMBER_TIER_2	= 6.0
+GATHER_TIME_LUMBER_TIER_3	= 6.0
+GATHER_TIME_LUMBER_TIER_4	= 6.0
+GATHER_TIME_LUMBER_TIER_5	= 6.0
+GATHER_TIME_LUMBER_TIER_6	= 6.0
+GATHER_TIME_LUMBER_TIER_7	= 6.0
+GATHER_TIME_LUMBER_TIER_8	= 6.0
+GATHER_TIME_LUMBER_TIER_9	= 6.0
+GATHER_TIME_LUMBER_TIER_10	= 6.0
+
+-- Ã¤Áý ¿ÀºE§Æ® ¸®½ºÆE½Ã°£ ----------------
+GATHER_RESPAWN_TIME_MINE	= 300;		-- 5ºÐ(1 = 1ÃÊ)
+GATHER_RESPAWN_TIME_HERB	= 300;
+GATHER_RESPAWN_TIME_RELIC	= 300;
+GATHER_RESPAWN_TIME_LUMBER	= 300;
+
+-- ºÎÈ° °EÃ
+REBIRTH_VALID_DISTANCE_XY		= 300.0;
+REBIRTH_VALID_DISTANCE_Z		= 100.0;
+REBIRTH_SOULSTONE_DEBUFF		= 1910;	
+REBIRTH_CHECKPOINT_DEBUFF		= 1910;	
+REBIRTH_SOULSTONE_RECOVER		= 0.25;
+REBIRTH_CHECKPOINT_RECOVER		= 0.25;
+REBIRTH_QUESTPVP_RECOVER		= 1.0;
+REBIRTH_BATTLEARENA_RECOVER		= 1.0;
+
+REBIRTH_QUESTPVP_BUFF_BONUS1_MYTEAM_PLAYER_RATE = 0.7;		-- »ó´EÀ ÀÎ¿øÀÌ 80% ¹Ì¸¸ÀÏ ¶§ ÀÌ ¹öÇÁ°¡ Àû¿EÊ
+REBIRTH_QUESTPVP_BUFF_BONUS2_MYTEAM_PLAYER_RATE = 0.5;		-- »ó´EÀ ÀÎ¿øÀÌ 50% ¹Ì¸¸ÀÏ ¶§ ÀÌ ¹öÇÁ°¡ Àû¿EÊ
+REBIRTH_QUESTPVP_BUFF_BONUS3_MYTEAM_PLAYER_RATE = 0.2;		-- »ó´EÀ ÀÎ¿øÀÌ 20% ¹Ì¸¸ÀÏ ¶§ ÀÌ ¹öÇÁ°¡ Àû¿EÊ, »ç¿EÏÁE¾ÊÀ» °æ¿E0.0À¸·Î ¼³Á¤
+
+-- ÇÊµEÈ¥Àâµµ
+FIELD_CROWED_BOOST_RESPAWN_TICK_MINIMUM_SECONDS = 10.0; -- ÇÊµEÈ¥Àâµµ¿¡ µû¸¥ ¸®½ºÆE½Ã°£ °¨¼Ò¿¡ ´EÑ ÃÖ¼Ò ½Ã°£
+FIELD_CROWED_BOOST_DECAY_TICK_MINIMUM_SECONDS = 30.0; -- ÇÊµEÈ¥Àâµµ¿¡ µû¸¥ ½ÃÃ¼¼Ò¸E½Ã°£ °¨¼Ò¿¡ ´EÑ ÃÖ¼Ò ½Ã°£
+FIELD_CROWED_BOOST_RATE_MODIFIER = 0.0; -- ÇÊµEÈ¥Àâµµ º¸Á¤Ä¡
+
+-- ÃÖÀûÈ­ °EÃ
+COMMAND_CROWDED_QUEUE_SIZE = 2000;
+-- COMMAND_OVERFULL_QUEUE_SIZE = 4000; -- ¾ÆÁEÀû¿EÄ¿¸àµå°¡ ¾ø¾ûØ­ ¸·½À´Ï´Ù.
+SECTOR_CROWDED_LEVEL_CAPACITY = 60 -- º¹Àâ·¹º§ÀÌ µÇ±EÀ§ÇÑ ÇÊ¿EÇÃ·¹ÀÌ¾E¼E
+SECTOR_PACKET_IGNORE_EACH_COUNT = 4 -- º¹Àâ·¹º§´E ¹«½ÃµÉ ÆÐÅ¶ È½¼E
+SECTOR_PACKET_LIMIT_QUEUE_SIZE = 40 -- ¼½ÅÍ´E°E®µÉ ÇÃ·¹ÀÌ¾ûÖ° Ä«¿ûáÍ ÃÖ´E°¹¼E
+MOVE_COMMAND_LIMIT_PLAYER_COUNT_LEVEL1 = 10	-- ¼½ÅÍ ÇÃ·¹ÀÌ¾Eº¹Àâµµ¿¡ µû¸¥ ÀÌµ¿ÆÐÅ¶ °É·¯³»±E(·¹º§1: ÇÊÅÍ¾øÀ½)
+MOVE_COMMAND_LIMIT_PLAYER_COUNT_LEVEL2 = 50	-- ¼½ÅÍ ÇÃ·¹ÀÌ¾Eº¹Àâµµ¿¡ µû¸¥ ÀÌµ¿ÆÐÅ¶ °É·¯³»±E(·¹º§2: LOD Àû¿E
+
+-- AI Monitor -----------
+AIMON_ENABLE = true;
+AIMON_AUTO_TARGET = false;
+AIMON_SET_FIELDID = 1100001;
+AIMON_SET_SPAWNID = 2;
+AIMON_UPDATE_INTERVAL = 0.5;
+
+-- ÇÇ·Îµµ -----------
+FATIGUE_DECREASE_PER_MINUTE_ON_HUNTING_GROUND = 0;
+FATIGUE_DECREASE_PER_MINUTE_ON_NOT_HUNTING_GROUND = 0;
+FATIGUE_INCREASE_PER_HOUR_BY_BLANKTIME = 0;
+FATIGUE_SET_ROOM_NORMAL = 0;
+FATIGUE_SET_ROOM_SPECIAL = 0;
+
+-- Ä£±¸ °EÃ ----------
+FRIEND_LIST_CAPACITY = 50;
+
+-- ÅÅ·±Æ® -----------
+TALENT_GIVED_EXTRA_PASSIVE = {80000, 80001, 80002, 80004, 80005, 80006, 80007, 80008, 80017}
+TALENT_NORMAL_ATTACK_COMBO = "101001:5, 102001:5, 103001:3, 104001:3, 105001:4, 107001:3, 109001:5"
+TALENT_NORMAL_ATTACK_COMBO_PAIR = "101011:101002, 101030:101002, 102011:102002, 102030:102002, 103011:103002, 103030:103002, 104011:104002, 104030:104002, 105011:105002, 105030:105002, 107011:107002, 107030:107002, 109020:109002, 109030:109002"
+
+-- PC¹E-----------
+ALWAYS_PC_CAFE_MODE = false; -- PC¹E¸ðµåÃ³·³ Ã³¸®µÉÁE¿©ºÎ (Å×½ºÆ®¿E
+PC_CAFE_BUFF = {8000000} --PC¹EÀEE¹öÇÁ ¸ðµE½ºÅÝ +10, ¾ÆÀÌÅÛ È¹µEÈ®·E10% Áõ°¡, °ÔÀÓ¸Ó´Ï È¹µEÈ®·E10% Áõ°¡, °æÇèÄ¡ È¹µæ¾E10% Áõ°¡, »ý¸úÓÂ ¹× Á¤½Å·Â È¸º¹¾E20% Áõ°¡
+
+-- ±æµE-----------
+GUILD_CREATE_COST = 100000;
+
+--======================================================
+-- ½ºÅ©¸³Æ®¿¡¼­ »ç¿EÏ´Â »ó¼E
+--======================================================
+-- Patorl Enum
+PATROL_INFINITY		=0;			-- ¹«ÇÑ ¼øÂE      
+PT_ONCE					=0;
+PT_ONCE_RETURN		=1;
+PT_LOOP					=2;
+PT_LOOP_BACKORDER	=3;
+
+ROAM_DEFAULT_IDLE_TIME = 7.0;	-- ·Î¹Ö ±âº» ´Eâ½Ã°£
+
+TEST_AI_DEBUG_MESSAGE = false;		-- ±æÃ£±E½ÇÆÐ µûÜÇ AI ¸Þ¼¼ÁEÅ¬¶óÀÌ¾ðÆ®¿¡ º¸³»ÁÖ±E
+TEST_SHOW_CLIENT_NPC_POS = false;
+TEST_SHOW_CLIENT_NPC_MOVE_PATH = false;
+TEST_SHOW_CLIENT_NPC_PICKING = 0;
+TEST_SHOW_NAVIGATION_MESH = false;
+TEST_SHOW_CLIENT_COLT = false;
+TEST_SHOW_CLIENT_FORMULA_DAMAGE = false;	-- Å¬¶óÀÌ¾ðÆ®¿¡ ÇÇÇØ°ø½ÄÀÌ º¸ÀÏÁE¿©ºÎ
+TEST_SHOW_CLIENT_FORMULA_GUARD = false;		-- Å¬¶óÀÌ¾ðÆ®¿¡ °¡µå°ø½ÄÀÌ º¸ÀÏÁE¿©ºÎ
+
+TEST_MOVE_BY_CONTEXT = false;
+TEST_RANDOM_MOVE = false;
+ENABLE_COLT_TIMEOUT_CHECKER = false;
+SHOW_LUA_ERROR_LOG = false;
+SHOW_TALENT_LOG = false;
+TEST_MAKE_SOLO_PARTY = false;
+TEST_ENABLE_OFFLINE_PARTY_FOR_STAND_ALONE_MODE = false;
+DEBUG_CREATE_CONVERT_LUAFILE = false;
+TEST_CMD_HANDLER_COMPARER = false;
+
+TEST_ENABLE_TUTORIAL = false;
+
+--======================================================
+-- AutoTest¿¡¼­ »ç¿EÏ´Â »ó¼E
+--======================================================
+
+AUTO_TEST_ACTIVE = false;
+AUTO_TEST_TYPE = "none";
+AUTO_TEST_LIMIT_FRAME = 0;
+AUTO_TEST_REPEAT = 1
+AUTO_TEST_TIME = 1000000000;
+AUTO_TEST_SPEED = 1;
+AUTO_TEST_FIELD_ID = 5000;
+AUTO_TEST_NPC_COUNT = 10;
+
+AITEST_TYPE = 0;			-- AITEST__NONE = 0, AITEST_STRESS_COMBAT_ONE_FIELD = 1; AITEST_STRESS_COMBAT_ALL_FIELD = 2;
+
+
+INTERACT_QUEST_OBJECTIVE_ANI_TIME = 6
+
+LOG_CRT = 0; -- ·Î±×¿¡ ³²±ECommandResultTable
+
+ENABLE_COMBAT_FORMULA_VER2 = true;  -- »õ·Î¿EÀEE°ø½Ä Àû¿E¿©ºÎ
+--LOG_FORMULA_COMBAT = true; -- »õ·Î¿EÀEE°ø½Ä ·Î±× ÂE»ÁE¿©ºÎ
+
+ENABLE_GLOBAL_LOOT = true;			-- [¸ó½ºÅÍ Ã³Ä¡ ÀÌº¥Æ® Á¾·á] loot_global.xml ¿¡ ÀÖ´Â ·çÆÃ Á¤º¸¸¦ ÀEª ·çÆÃ¿¡ ¾µÁE¿©ºÎ
+
+--======================================================
+-- Áö¿ªÈ­ °EÃ »ó¼E
+--======================================================
+LIMIT_MAX_LEVEL = 40;  --ÃÖ´E·¹º§ Á¦ÇÑ
+--======================================================
+-- µð¹ö±×¿¡ ÇÊ¿äÇÑ »ó¼E
+--======================================================
+DEBUG_CONSOLE_SHOW_GAMETICK = true;		-- ÄÜ¼Ö¿¡ °ÔÀÓÆ½À» Ãâ·ÂÇÒ °ÍÀÎ°¡
+DEBUG_CONSOLE_GAMETICK_TICK = 60;		-- ¸ûßÊ¿¡ ÇÑ¹ø¾¿ Ãâ·ÂÇÒ °ÍÀÎ°¡
+DEBUG_GAME_TICK_MOD_SPEED = 1.0;		-- °ÔÀÓ Æ½ ¹è¼Ó
+IS_DESPAWN_AFTER_LOOT = false;				-- ·çÆÃ ÀÌÈÄ ¹Ù·Î µð½ºÆùÇÒ ÁE¿©ºÎ
+
+QUESTPVP_AFK_RETURN_TO_INN = 300000

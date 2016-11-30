@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="30000" boundary_min_y="16214" boundary_max_x="60283" boundary_max_y="34555" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="도전 플릿풋" x="48702.460938" y="22212.599609" z="1106.171143" dir_x="-0.681998" dir_y="0.731354" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="true" start_time="1" respawn_time="1800" roam_radius="600" roam_depth="200" color="auto">
+            <NPC id="1000001" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MON_M 1000001 플릿풋" x="46409.718750" y="24777.578125" z="1016.654297" dir_x="0.669131" dir_y="-0.743145" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

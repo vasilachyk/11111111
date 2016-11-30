@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="베스피오단 금고지기">
+		<COMBAT mode="0" >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="211701501" rate="20" />
+				<ACTION type="talent" param1="211701502" rate="20" />
+				<ACTION type="talent" param1="211701505" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+
+				<ACTION type="talent" param1="211701501" rate="10" />
+				<ACTION type="talent" param1="211701502" rate="10" />
+				<ACTION type="talent" param1="211701505" rate="10" duration="0"/>
+				<ACTION type="talent" param1="211701506" rate="15" />
+				<ACTION type="talent" param1="211701503" rate="15" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="100" >
+					<ACTION type="talent" param1="211701509" rate="35" />  <!-- 회피 L -->
+					<ACTION type="talent" param1="211701510" rate="35" /> <!-- 회피 R -->
+					<ACTION type="talent" param1="211701504" rate="30" /> <!-- 회피베기 -->
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211701512" auto_run="true" max_count="1"/>
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="8"/>
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="8"/>
+				
+				<ACTION type="talent" param1="211701502" rate="20" />
+				<ACTION type="talent" param1="211701504" rate="10" />
+				<ACTION type="talent" param1="211701505" rate="10" />
+				<ACTION type="talent" param1="211701511" rate="10" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<!-- <ACTION type="lua" param1="BespioAggroChat1" /> -->
+			</DEFAULT>
+		</AGGRO>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1031" min_x="-6007" min_y="-6007" max_x="4207" max_y="4207" weather_effect="false" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" name="몹1" x="537.826050" y="-33.499054" z="12.265004" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" start_time="0" respawn_time="300" roam_radius="300" roam_depth="100" color="255,0,0">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" name="몹2" x="-496.248169" y="136.226532" z="34.930000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" start_time="0" respawn_time="300" roam_radius="300" roam_depth="100" color="255,0,0">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" name="몹3" x="284.664612" y="864.880493" z="-39.277096" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" start_time="0" respawn_time="300" roam_radius="300" roam_depth="100" color="255,0,0">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" name="몹4" x="468.182983" y="-1225.701294" z="-42.471809" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="50.000000" random_dir="true" enabled="true" start_time="0" respawn_time="300" roam_radius="200" roam_depth="100" color="255,0,0">
+            <NPC id="32" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" name="몹5" x="-2153.145264" y="-3438.395996" z="681.902100" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" start_time="0" respawn_time="300" roam_radius="500" roam_depth="100" color="255,0,0">
+            <NPC id="33" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" name="몹6" x="-766.832275" y="-2962.813232" z="-47.679691" dir_x="0.754710" dir_y="0.656059" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" start_time="0" respawn_time="3000" roam_radius="500" roam_depth="100" color="255,0,0">
+            <NPC id="34" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작 위치" x="520.400879" y="1928.652954" z="-36.590961" dir_x="0.469472" dir_y="-0.882948" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="탈출 위치" x="185.533981" y="2285.632324" z="-37.796021" radius="400.000000" enabled="true" checkpoint="1" />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="윈드러너 - 아란바스 화산지대" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610601" rate="30" />
+				<ACTION type="talent" param1="211610602" rate="30" />
+				<ACTION type="talent" param1="211610603" rate="20" />				
+				<ACTION type="nothing" param1="1" rate="20" />				
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40">
+				<ACTION type="talent" param1="211610601" rate="30" />
+				<ACTION type="talent" param1="211610602" rate="30" />	
+				<ACTION type="group" rate="20">
+					<ACTION type="move_random" param1="500" />			
+					<ACTION type="talent" param1="211610603" />				
+				</ACTION>				
+				<ACTION type="group" rate="20">
+					<ACTION type="talent" param1="211610604" />			
+					<ACTION type="talent" param1="211610605" />				
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610600" rate="40" />
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

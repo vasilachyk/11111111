@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="성녀" npcid="501003"> 
+		<!--
+			의존성
+			Field_501.lua : 처형집행인 등장 연출 
+			Buff.lua : 쉴드 버프 해제시 pain탤런트 처리
+		-->
+		<COMBAT mode="0" comment="">
+			<DEFAULT>
+				
+				<ACTION type="talent" param1="250100310" rate="30" duration="1" desc="1타1" />
+				<ACTION type="talent" param1="250100311" rate="30" duration="1" desc="1타2" />
+				<ACTION type="talent" param1="250100312" rate="35" duration="0" desc="마법 발사" />
+				
+				<ACTION type="talent" param1="250100320" rate="5" duration="0" desc="순간이동" />
+			</DEFAULT>
+			<!--
+			<CHECK type="hp" param1="80" param2="100">
+				
+			</CHECK>
+			-->
+			<CHECK type="stress" param1="30">
+				<ACTION type="talent" param1="250100320" rate="10" duration="0" desc="순간이동" />
+			</CHECK>
+			<!--
+			<CHECK type="hp" param1="60" param2="80">
+				<ACTION type="talent" param1="250100310" rate="10" duration="1" desc="1타1" />
+				<ACTION type="talent" param1="250100311" rate="10" duration="1" desc="1타2" />
+				<ACTION type="talent" param1="250100312" rate="10" duration="0" desc="마법 발사" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="60">
+				<ACTION type="lua" param1="NPC_501003" param2="SpawnExecutioner" max_count="1"/>
+			</CHECK>
+			-->
+			<CHECK type="hp" param1="30" param2="80">
+				<ACTION type="talent" param1="250100331"  duration="0" desc="보호막1" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="250100332" duration="0" desc="보호막2" />
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" comment="순간 이동" victory="250100321">
+			<DEFAULT>
+				<ACTION type="talent" param1="250100321" duration="0" desc="순간 이동 끝" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="2" comment="보호막" victory="250100334">
+			<DEFAULT>
+				<ACTION type="talent" param1="250100310" rate="10" duration="1" desc="1타1" />
+				<ACTION type="talent" param1="250100311" rate="10" duration="1" desc="1타2" />
+				<ACTION type="talent" param1="250100312" rate="10" duration="0" desc="마법 발사" />
+			</DEFAULT>
+			<!--
+			<CHECK type="gained_buff" param1="40773" >
+				<ACTION type="talent" param1="250100334" rate="90" duration="0" desc="보호막 해제" />
+			</CHECK>
+			-->
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="250100312" rate="10" duration="0" desc="마법 발사" />
+				<ACTION type="aggro" param1="random" param2="0"/>
+			</CHECK>
+						
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+function NPC_501003:Init(NPCID)
+	--[[
+		User Data
+		1: Pain누적 데미지
+	--]]
+	NPC_501003.UD_Pain 		= 1
+	NPC_501003.UD_Shield	= 2
+	NPC_501003.UD_DATASIZE	= 2
+
+	NPC_ReserveUserData(NPCID, NPC_501003.UD_DATASIZE)
+	
+	NPC_501003.LIMIT_Shield		= 300
+	NPC_501003.TALENT_ShieldCharging = 250100330
+	NPC_501003.TALENT_BreakShield1	= 250100333
+	NPC_501003.TALENT_BreakShield2	= 250100334
+	NPC_501003.TALENT_Blink 		= 250100321
+	
+	NPC_501003.Executioner = 501004
+	NPC_501003.TALENT_WHIRLWIND = 250100220
+	NPC_501003.BUFF_Shield1 = 40770
+	NPC_501003.BUFF_Shield2 = 40771
+	
+	NPC_501003.MODE_Blink = 1
+	
+end
+
+function NPC_501003:SpawnExecutioner( ThisNPC, Enemy )
+	local Executioner = ThisNPC:SummonNow( NPC_501003.Executioner, ThisNPC:GetPos() )
+	Executioner:Assist(ThisNPC)
+
+	ThisNPC:SetTarget(Executioner)
+
+	-- Do reaction
+	--ThisNPC:ClearJob()
+	--ThisNPC:UseTalentSelf( NPC_501003.TalIdPain1 )
+end
+
+function NPC_501003:OnFinishShieldCharging( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Executioner = ThisNPC:GetTarget()
+	
+	ThisNPC:UseTalentSelf( NPC_501003.TALENT_ShieldCharging )
+
+	if Executioner == nil or Executioner:IsNull() or Executioner:IsDead() then return end
+
+	AsNPC(Executioner):UseTalentSelf( NPC_501003.TALENT_WHIRLWIND )
+end
+
+function NPC_501003:OnCancelShieldBreak( ThisActor, Enemy )
+--	GLog("NPC_501003:OnCancelShieldBreak")
+	local ThisNPC = AsNPC( ThisActor )
+--	ThisNPC:SayNow("NPC_501003:OnCancelShieldBreak")
+	ThisNPC:UseTalentSelf( NPC_501003.TALENT_BreakShield2 )
+end
+
+function NPC_501003:OnActShieldBreak2( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:RemoveBuff( NPC_501003.BUFF_Shield1 )
+	ThisNPC:RemoveBuff( NPC_501003.BUFF_Shield2 )
+end
+
+
+
+function NPC_501003:OnActBlink( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro("random", 0)
+	
+	ThisNPC:RemoveAllBuff()
+	ThisNPC:MoveToActor( Target, -1 )
+	--ThisNPC:SayNow("ActBlink")
+end
+
+function NPC_501003:AccDamage( ThisNPC, HitInfo )
+	
+	--ThisNPC:SayNow("Mode "..ThisNPC:GetMode())
+	--[[
+	if ThisNPC:GetMode() == NPC_501003.MODE_Blink or ThisNPC:GetCurrentTalent() == NPC_501003.TALENT_Blink then
+		HitInfo.Damage = 0
+		return HitInfo
+	end
+	--]]
+	-- 어둠의 보호막 버프 처리
+	--[[
+	if ThisNPC:CheckBuff( NPC_501003.BUFF_Shield1 ) then
+		HitInfo.Damage = HitInfo.Damage / 10
+		return HitInfo
+	elseif ThisNPC:CheckBuff( NPC_501003.BUFF_Shield2 ) then
+		HitInfo.Damage = 0
+		return HitInfo
+	end
+	--]]
+end
+
+
+function NPC_501003:OnHitCapsule_1_0( HitInfo )
+	return NPC_501003:AccDamage( this, HitInfo )
+end
+
+function NPC_501003:OnHitCapsule_2_0( HitInfo )
+	return NPC_501003:AccDamage( this, HitInfo )
+end
+
+-- 대사
+function NPC_501003:OnCombatBegin()
+	this:NonDelayBalloon("$$LicheChat")
+end
+
+function NPC_501003:OnDie( Despawn )
+	this:NonDelayBalloon("$$LicheChat5")
+end
+
+	]]></SCRIPT>
+</maiet>

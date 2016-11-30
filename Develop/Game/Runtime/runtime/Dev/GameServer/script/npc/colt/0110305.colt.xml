@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="Borgo" npcid="110305" >
+		<COMBAT victory="211000112" max_duration="5">
+			<DEFAULT>
+				<!-- 기본 평타 패턴 -->
+				<ACTION type="talent" param1="211000101" rate="20" />
+				<ACTION type="talent" param1="211000102" rate="20" />
+				<ACTION type="talent" param1="211000104" rate="10" />
+				
+				<!-- 센기술 -->
+				<ACTION type="talent" param1="211000105" rate="10" />
+				<ACTION type="talent" param1="211000106" rate="10" />
+				<ACTION type="talent" param1="211000150" rate="10" />
+				
+				<!-- 삽질 시리즈 -->
+				<ACTION type="talent" param1="211000112" rate="5" />
+				<ACTION type="talent" param1="211000113" rate="5" duration="0"/>
+				<ACTION type="talent" param1="211000114" rate="5" duration="0"/>
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="hp" param2="50">
+					<CHECK type="rage" param1="150">
+						<ACTION type="talent" param1="211000107" duration="0" rate="10" />
+						<ACTION type="talent" param1="211000111" duration="0" rate="10" />
+					</CHECK>
+				</CHECK>
+				<CHECK type="hp" param1="50">
+					<CHECK type="rage" param1="200">
+						<ACTION type="talent" param1="211000116" duration="0" rate="10" />
+					</CHECK>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="800" comment="원거리패턴">
+				<CHECK type="unbreakpart" param1="1">
+					<ACTION type="talent" param1="211000108" rate="45" />
+					<ACTION type="talent" param1="211000106" rate="45" />
+					
+					<ACTION type="talent" param1="211000101" rate="5" />
+					<ACTION type="talent" param1="211000102" rate="5" />
+					<ACTION type="talent" param1="211000104" rate="5" />
+				</CHECK>
+				
+				<ACTION type="talent" param1="211000106" rate="85" />
+				
+				<ACTION type="talent" param1="211000101" rate="5" />
+				<ACTION type="talent" param1="211000102" rate="5" />
+				<ACTION type="talent" param1="211000104" rate="5" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211000110" auto_run="true" max_count="1" />
+				<ACTION type="aggro" param1="random" param2="30" rate="50" cycle="30" />
+				
+				<!-- 기본 평타 패턴 -->
+				<ACTION type="talent" param1="211000101" rate="5" />
+				<ACTION type="talent" param1="211000102" rate="5" />
+				<ACTION type="talent" param1="211000104" rate="5" />
+				
+				<!-- 위험한 기술 -->
+				<ACTION type="talent" param1="211000114" rate="5" cycle="60" duration="0" />
+				<ACTION type="talent" param1="211000150" rate="10" />
+			</CHECK>
+			
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="talent" param1="211000116" rate="100" duration="2" />
+			</CHECK>
+			
+			<CHECK type="e_motionfactor" param1="throwup">
+				<ACTION type="talent" param1="211000108" rate="100" duration="5" />
+			</CHECK>
+
+			<CHECK type="e_motionfactor" param1="stun">
+				<!-- 아주 보내버리거나 -->
+				<ACTION type="talent" param1="211000105" rate="50" duration="5" />
+				<!-- 다 같이 쓸어버리거나 -->
+				<ACTION type="talent" param1="211000106" rate="50" duration="5" />
+			</CHECK>
+		</COMBAT>
+		<STRESS>
+			<CHECK type="stress" param1="600">
+				<ACTION type="lua" param1="NPC_110305" param2="Stressed" rate="100" />
+			</CHECK>
+		</STRESS>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000113" rate="15" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+<![CDATA[
+	
+function NPC_110305:Init(NPCID)
+	
+	NPC_110305.TalidIdot 				= 211000113
+	NPC_110305.TalidEnrage 			= 211000109
+	NPC_110305.TalidPain				= 211000117
+	
+	NPC_110305.TalidWhirlWind 		= 211000107
+	NPC_110305.TalidHeapAttack 	= 211000111
+	NPC_110305.TalidKnockBack 		= 211000116
+	NPC_110305.TalidThrowStone 	= 211000108
+end
+
+function NPC_110305:OnFinishDashAttack(  ThisActor, Opponent )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+	
+	if ThisNPC:GetHP()/ThisNPC:GetMaxHP() > 0.5 and math.random( 0, 1 ) == 0 then
+		ThisNPC:UseTalentSelf( NPC_110305.TalidIdot )
+	end
+end
+
+function NPC_110305:OnFinishAndAggro( ThisActor, Opponent )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_110305:Stressed( ThisNPC, Enemy )
+	local Distance 	= ThisNPC:DistanceTo( Enemy )
+	local r = math.random(0, 3)
+
+	if Distance < 600 then
+		-- 근거리
+		if ThisNPC:IsCooldown( NPC_110305.TalidWhirlWind ) then
+			return
+		end
+		
+		if r == 0 then
+			ThisNPC:UseTalentSelf( NPC_110305.TalidWhirlWind )
+		elseif r == 1 then
+			ThisNPC:UseTalentSelf( NPC_110305.TalidHeapAttack )
+		else
+			ThisNPC:UseTalentSelf( NPC_110305.TalidKnockBack )
+		end
+	else
+		if ThisNPC:CheckBPart( 1 ) then
+			ThisNPC:UseTalent( NPC_110305.TalidKnockBack, Enemy )
+			return
+		end
+		
+		if r == 0 then
+			ThisNPC:UseTalent( NPC_110305.TalidKnockBack, Enemy )
+		else
+			ThisNPC:UseTalent( NPC_110305.TalidThrowStone, Enemy )
+		end
+	end
+end
+
+
+
+
+
+
+]]>
+	</SCRIPT>
+</maiet>

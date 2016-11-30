@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="호저">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211003601" rate="10" duration="0"/>
+
+				<ACTION type="talent" param1="211003602" rate="10" />
+				<ACTION type="talent" param1="211003603" rate="30" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="200" param2="400">
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+
+				<ACTION type="talent" param1="211003601" rate="10" duration="0"/>
+				
+				<ACTION type="talent" param1="211003603" rate="30" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400">
+				<ACTION type="distance" param1="300" param2="300" />
+			</CHECK>
+						
+			<CHECK type="distance" param1="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="211003602" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211003600" rate="15" />
+				<ACTION type="talent" param1="211003601" rate="15" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+
+</maiet>

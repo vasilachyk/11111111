@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="쿨드의 보금자리2" npcid="508007">
+		<COMBAT>			
+			<DEFAULT>	
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_508007:Init( NPCID )
+	NPC_508007.BufIdHouse 	= 40908
+end	
+
+function NPC_508007:OnSpawn()
+	this:GainBuff( NPC_508007.BufIdHouse )
+	this:SetTimer( 1, 10, false )
+end
+
+function NPC_508007:OnTimer( Index )
+	--GLog( "NPC_508007:OnTimer" .. Index .. "\n" )
+	if Index == 1 then
+		
+		this:RemoveBuff( NPC_508007.BufIdHouse )
+		this:Despawn(false)
+		return
+	end
+end
+
+
+	]]></SCRIPT>
+</maiet>

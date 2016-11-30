@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="116005" minimap_name="map116005" min_x="-9807" min_y="-6073" max_x="5193" max_y="8927" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" qpvpnpc1="950000" qpvpnpc2="950001" qpvprebirth1="30" qpvprebirth2="31">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="[EPIC] 아레크" x="-263.801025" y="-88.037720" z="4860.623535" dir_x="-0.970296" dir_y="0.241922" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3000" roam_radius="2500" roam_depth="500" combat_radius="0" color="128,0,255">
+            <NPC id="116030" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="auto" x="0.000000" y="0.000000" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="1" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="-5616.381836" y="3674.622314" z="4437.511230" dir_x="0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="auto" local="false" x="-462.968994" y="35.910583" z="4866.409180" radius="3000.000000" enabled="true" groupname="none" />
+        <SENSOR id="2" name="to 아란바스" x="-6312.578125" y="4796.179688" z="4488.792969" radius="400.000000" enabled="true">
+            <EFFECT effect="ZoneLine" x="295.252441" y="-252.189453" z="0.000000" dir_x="-0.694659" dir_y="0.719339" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.600000" scale_y="0.700000" scale_z="0.600000" />
+            <WARP warp_type="field" title="아란바스로" condition="0" gate_type="auto" field="116" marker="50" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

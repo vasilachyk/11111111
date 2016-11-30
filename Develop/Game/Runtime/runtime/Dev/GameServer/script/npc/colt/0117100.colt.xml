@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 마리옹 강도(117100)	
+211710000	#idle
+211710001	#일반공격1
+211710002	#일반공격2
+211710003	#방패치기
+211710004	#방어
+-->
+<maiet>
+	<COLT name="마리옹 강도" npcid="117100">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710001" desc="일반공격1" rate="30"/>
+				
+				<ACTION type="talent" param1="211710002" desc="일반공격2" rate="40" />
+				<ACTION type="talent" param1="211710003" desc="방패치기" rate="30" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710000" desc="idle" rate="10" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

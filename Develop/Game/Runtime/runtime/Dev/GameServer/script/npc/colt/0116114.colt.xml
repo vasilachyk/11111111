@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="오염된 마그마 정령 - 아란바스 화산지대" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211611400" rate="15" cycle="5" />
+				<ACTION type="talent" param1="211611401" rate="30" />
+				<ACTION type="talent" param1="211611402" rate="30" />
+				<ACTION type="talent" param1="211611403" rate="25" />				
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="60">
+				<ACTION type="talent" param1="211611401" rate="30" />
+				<ACTION type="talent" param1="211611402" rate="30" />
+				<ACTION type="talent" param1="211611403" rate="15" />				
+				<ACTION type="group" rate="15">
+					<ACTION type="move_random" param1="450" />			
+					<ACTION type="talent" param1="211611404" />				
+					<ACTION type="talent" param1="211611404" />						
+				</ACTION>	
+				<ACTION type="group" rate="10">
+					<ACTION type="move_random" param1="450" />			
+					<ACTION type="talent" param1="211611404" />				
+					<ACTION type="talent" param1="211611404" />						
+					<ACTION type="talent" param1="211611404" />					
+				</ACTION>				
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211611400" rate="40" />
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

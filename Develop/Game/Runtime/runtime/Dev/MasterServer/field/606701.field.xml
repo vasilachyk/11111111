@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="101" minimap_name="map00101" loading_image_name="00101" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="60900" boundary_min_y="43700" boundary_max_x="75000" boundary_max_y="63148" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_12">
+            <ENVBGM dawnbgm="amb_plain_dawn" />
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM sunsetbgm="amb_plain_sunset" />
+            <ENVBGM nightbgm="amb_plain_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="HRN">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작지점" x="68791.359375" y="60265.761719" z="12.923828" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="70120.117188" y="52489.371094" z="-786.079102" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_시작지점" local="false" x="68751.101563" y="60324.328125" z="16.911133" radius="621.439819" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

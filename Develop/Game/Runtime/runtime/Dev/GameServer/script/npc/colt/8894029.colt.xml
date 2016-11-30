@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="전위부대 돌격병"> <!--지스타 인스턴스 필드용-->
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+
+				<ACTION type="talent" param1="189402801" rate="40" /> <!-- 일반공격 -->
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="189402801" rate="10"/>
+				<ACTION type="nothing" param1="10" rate="90" />
+			</DEFAULT>
+		</IDLE>
+
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

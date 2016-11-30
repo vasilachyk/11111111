@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="121" min_x="0" min_y="0" max_x="20000" max_y="20000" weather_effect="false" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="from 영웅의 오솔길" x="10000.518555" y="5093.576660" z="22.000013" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="MK00002" x="14054.273438" y="12280.128906" z="1427.828491" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="MK00003" x="9451.423828" y="12901.220703" z="2867.232666" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 영웅의 오솔길" local="false" x="10011.248047" y="3833.443604" z="10.775648" radius="250.000000" enabled="true">
+            <WARP condition="0" field="113" marker="7" title="마커로 이동" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

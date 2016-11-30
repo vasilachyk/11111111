@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--  
+# 오염된 거미	
+211712201	약타
+211712202	강타
+211712203	Roar
+211712204	삽질(Sleeping)
+211712205	흡혈
+-->
+<maiet>
+	<COLT name="오염된 거미" npcid="117122">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211712201" rate="10" />
+				<ACTION type="talent" param1="211712202" rate="10" />				
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				
+				<ACTION type="nothing" param1="2" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

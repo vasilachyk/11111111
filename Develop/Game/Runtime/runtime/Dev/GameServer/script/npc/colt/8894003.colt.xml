@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="봉봉">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+
+				<ACTION type="talent" param1="212100603" rate="20" />
+				<ACTION type="talent" param1="212100604" rate="10" />
+				<ACTION type="talent" param1="212100605" rate="10" />
+				<ACTION type="talent" param1="212100607" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="e_motionfactor" param1="throwup">
+				<ACTION type="talent" param1="212100606" rate="60" />
+				<ACTION type="nothing" param1="1" rate="40" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="212100603" rate="20" />
+				<ACTION type="talent" param1="212100604" rate="10" />
+				<ACTION type="talent" param1="212100605" rate="10" />
+				<ACTION type="talent" param1="212100607" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="212100601" rate="20" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+			<CHECK type="mode" param1="0">
+				<ACTION type="talent" param1="212100602" rate="100" duration="0" />
+			</CHECK>
+		</IDLE>
+	</COLT>
+</maiet>

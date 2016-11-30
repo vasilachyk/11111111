@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="46380" boundary_min_y="26600" boundary_max_x="72000" boundary_max_y="43350" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="MON_M 107100 여왕 테레시스" x="58585.390625" y="36546.781250" z="378.698242" dir_x="0.669131" dir_y="-0.743145" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="MON_M 107100 여왕 테레시스" x="62083.460938" y="32981.933594" z="684.264893" dir_x="0.669131" dir_y="-0.743145" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="부활센서" local="false" x="58834.898438" y="36259.988281" z="389.440552" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

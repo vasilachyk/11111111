@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY />
+    <SCENE>
+        <RTERRAIN>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY version="1.3">
+                <MAP_WIDTH type="int">
+                    <int>256</int>
+                </MAP_WIDTH>
+                <MAP_HEIGHT type="int">
+                    <int>256</int>
+                </MAP_HEIGHT>
+                <MAP_SIZE type="vec3">
+                    <vec3>12000.000000 12000.000000 0.000000</vec3>
+                </MAP_SIZE>
+                <MAP_NAME>Login3_dis.dds</MAP_NAME>
+                <BASEMAP_NAME>Login3_baked.dds</BASEMAP_NAME>
+                <CREATE_NAVEMESH type="bool">
+                    <bool>true</bool>
+                </CREATE_NAVEMESH>
+                <GRASS>Login3_grass.grs</GRASS>
+                <LAYER type="array" size="1">
+                    <LAYERINFO index="0">
+                        <ALPHAMAP>Login3_mask0.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Teress_ground_k11.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                </LAYER>
+            </PROPERTY>
+        </RTERRAIN>
+        <DIRLIGHT>
+            <COMMON name="Direct001">
+                <POSITION>2957.572021 1430.000000 27.310059</POSITION>
+                <DIRECTION>-0.314658 0.809230 -0.496123</DIRECTION>
+                <UP>-0.302695 0.409838 0.860470</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.150</SHADOWLUMINOSITY>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYSPECULAR>1.000</SKYSPECULAR>
+                <DOUBLE_SHADOW_INTENSITY>0.150</DOUBLE_SHADOW_INTENSITY>
+            </PROPERTY>
+        </DIRLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubLight">
+                <POSITION>1109.000000 1550.000000 22.000000</POSITION>
+                <DIRECTION>0.491655 0.662555 0.565063</DIRECTION>
+                <UP>-0.868746 0.417642 0.266187</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.400 0.455 0.541</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_001">
+                <POSITION>1169.000000 1616.000000 131.000000</POSITION>
+                <DIRECTION>0.667164 -0.477090 -0.572082</DIRECTION>
+                <UP>0.637081 -0.032547 0.770109</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.824 0.765 0.667</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_002">
+                <POSITION>1109.000000 1508.000000 121.000000</POSITION>
+                <DIRECTION>-0.732668 -0.672248 0.106208</DIRECTION>
+                <UP>-0.062545 0.221900 0.973062</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.263 0.318 0.267</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="login3.scene_001">
+                <POSITION>2000.000000 2000.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>login3.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+    </SCENE>
+</ROOT>

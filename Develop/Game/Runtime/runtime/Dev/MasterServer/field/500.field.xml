@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="500" min_x="0" min_y="0" max_x="60000" max_y="60000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+    </FIELDINFO>
+</maiet>

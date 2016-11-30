@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="30294" minimap_name="map30294" loading_image_name="30294" min_x="-2000" min_y="-2000" max_x="2000" max_y="1000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_bar_1" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="3" group="0" name="Storage" x="68.425735" y="-315.047272" z="373.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="802001" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="여관방 입구" x="24.120506" y="-718.113037" z="32.999958" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="100" name="Crafting" x="-1055.802368" y="-221.870651" z="373.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101" name="Bed" x="-556.152466" y="-639.800720" z="373.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102" name="Carpet" x="663.749390" y="-453.817017" z="41.248535" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="103" name="FirePlace" x="563.907654" y="-213.546127" z="373.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104" name="Mural" x="796.712097" y="-620.302612" z="373.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="105" name="Table" x="660.859741" y="-464.293701" z="66.800201" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="106" name="Funiture" x="-16.973059" y="558.814087" z="33.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="107" name="Steward" x="-714.159424" y="-395.485962" z="33.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 여관" x="1.231085" y="-927.938965" z="39.905220" radius="100.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-0.555664" y="-39.195313" z="0.000000" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.300000" scale_y="1.000000" scale_z="0.500000" />
+            <WARP warp_type="field" title="여관방에서 여관방 입구로" condition="1" gate_type="manual" field="3" marker="45" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

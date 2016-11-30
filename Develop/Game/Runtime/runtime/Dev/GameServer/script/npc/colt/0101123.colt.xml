@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 디펜더 -->
+<!--
+# 리오드의 인간형(1.2배) 한손검, 방패	
+210112101	#1타
+210112102	#2연타
+210112103	#3연타
+210112105	#찌르기
+210112106	#칼뽑기(tomode0)
+210112107	#칼넣기(tomode1)
+210112108	#회피L
+210112109	#회피R
+210112111	#역습 포커스
+210112112	#강격
+210112114	#보루
+210112115	#파멸의 일격
+210112116	#방패 가격: 기절
+210112117	#돌진
+210112118	#방어
+210112119	#일어나서칼뽑기(tomode0)
+210112120	#방패 후리기
+-->
+<maiet>
+	<COLT name="이단 심판관" npcid="101123">
+		<COMBAT mode="0" victory="210112107" >
+			<DEFAULT>
+				<ACTION type="talent" param1="210112101" rate="10" desc="1타" />
+				<ACTION type="talent" param1="210112102" rate="15" desc="2연타" />
+				<ACTION type="talent" param1="210112115" rate="5" desc="파멸의 일격" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="lua" param1="NPC_101123" param2="SelectSkill" cycle="60" />
+			</CHECK>
+			
+			<CHECK type="gained_buff" param1="80120">
+				<CHECK type="distance" param1="300" >
+					<ACTION type="talent" param1="210112117" rate="50" desc="돌진" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="50" >
+					<ACTION type="talent" param1="210112112" rate="50" desc="강격" />
+					<ACTION type="talent" param1="210112120" rate="50" desc="방패 후리기" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="rage" param1="50" >
+				<ACTION type="talent" param1="210112116" rate="50" desc="방패 가격: 기절" />
+				<ACTION type="guard" param1="210112118" param2="2" rate="10" cycle="15" desc="방어" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="350" >
+				<ACTION type="talent" param1="210112105" rate="15" desc="찌르기" />
+				<ACTION type="talent" param1="210112115" rate="10" desc="파멸의 일격" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210112106" rate="100" desc="칼뽑기(tomode0)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="GaddielAggroChat2" />
+			</DEFAULT>
+		</AGGRO>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_101123:Init( NPCID )
+	NPC_101123.TALENT_1 = 210112111 -- 역습 포커스
+	NPC_101123.TALENT_2 = 210112114 -- 보루
+end
+
+function NPC_101123:SelectSkill(ThisNPC, Enemy)
+	local ranNum = math.random(0, 2)
+	
+	if (ranNum == 1) then
+		ThisNPC:UseTalent( NPC_101123.TALENT_1, Enemy )
+	elseif (ranNum == 2) then
+		ThisNPC:UseTalent( NPC_101123.TALENT_2, Enemy )
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

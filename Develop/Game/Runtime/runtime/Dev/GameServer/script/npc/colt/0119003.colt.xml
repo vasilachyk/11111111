@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 떠다니는 부유체	
+#전투	
+211900310	#회전공격
+211900311	#포자공격
+211900312	#포자연속공격
+-->
+<maiet>
+	<COLT name="떠다니는 부유체" npcid="119003">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211900310" rate="50" desc="회전공격"/>
+				<ACTION type="talent" param1="211900311" rate="20" desc="포자공격" />
+				<ACTION type="talent" param1="211900312" rate="20" desc="포자연속공격" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="200" param2="550" >
+				<ACTION type="talent" param1="211900310" rate="50" desc="회전공격"/>
+				<ACTION type="talent" param1="211900311" rate="25" desc="포자공격" />
+				<ACTION type="talent" param1="211900312" rate="50" desc="포자연속공격" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

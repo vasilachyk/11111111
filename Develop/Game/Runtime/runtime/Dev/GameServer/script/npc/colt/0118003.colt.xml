@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 사자의 갈기 부대 병사 (인간형 한손검 기본, 방패)	
+211800201	1타
+211800202	2연타
+211800203	3연타
+211800204	찌르기
+211800205	모드0전환(칼뽑기)
+211800206	모드1전환(칼넣기)
+211800207	회피L
+211800208	회피R
+211800209	역습 포커스
+211800210	강격
+211800211	충격 반사
+211800212	보루
+211800213	파멸의 일격
+211800214	방패 가격: 기절
+211800215	돌진
+211800216	방어
+-->
+<maiet>
+	<COLT name="사자의 갈기 부대 병사" npcid="118003">
+		<COMBAT mode="0" victory="211800206" >
+			<DEFAULT>
+				<ACTION type="talent" param1="211800212" rate="40" desc="보루" />
+				
+				<ACTION type="talent" param1="211800201" rate="20" desc="1타" />
+				<ACTION type="talent" param1="211800202" rate="15" desc="2연타" />
+				<ACTION type="talent" param1="211800203" rate="30" desc="3연타" />
+				
+				<ACTION type="talent" param1="211800211" rate="5" desc="충격 반사" />
+				<ACTION type="talent" param1="211800213" rate="10" desc="파멸의 일격" />
+				<ACTION type="talent" param1="211800214" rate="5" desc="방패 가격" />
+				<ACTION type="talent" param1="211800215" rate="5" desc="돌진" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80" >
+				<ACTION type="talent" param1="211800209" rate="100" desc="역습 포커스" />
+			</CHECK>
+	
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<CHECK type="gained_buff" param1="80120"> <!-- 역습 -->
+					<ACTION type="talent" param1="211800210" desc="강격" />
+				</CHECK>
+
+				<ACTION type="talent" param1="211800211" rate="20" desc="충격 반사" />
+				<ACTION type="talent" param1="211800212" rate="10" desc="보루" />
+				<ACTION type="talent" param1="211800213" rate="20" desc="파멸의 일격" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211800205" rate="100" desc="" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

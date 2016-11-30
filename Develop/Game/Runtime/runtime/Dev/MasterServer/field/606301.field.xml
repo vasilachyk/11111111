@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1030351" minimap_name="map1030351" loading_image_name="1030351" min_x="-18900" min_y="-17500" max_x="17100" max_y="18500" boundary_min_x="-16000" boundary_min_y="-16000" boundary_max_x="-3111" boundary_max_y="1200" weather_effect="true" town="false" returnable="true" tutorial="false">
+		<BGM fieldbgm="amb_cave_1" />
+		<SOUNDREVERB reverb="9" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="-6958.790527" y="-2277.730713" z="243.715820" dir_x="-0.139173" dir_y="-0.990268" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="-10192.081055" y="-7679.829102" z="232.934174" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="출발지점_센서" local="false" x="-6967.775391" y="-2221.626221" z="252.615768" radius="449.643555" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="특공대원 바라기">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211101011" rate="25" />
+				<ACTION type="talent" param1="211101012" rate="25" />
+				<ACTION type="talent" param1="211101013" rate="20" />
+			</DEFAULT>
+		</COMBAT>
+				
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211101001" rate="100" />
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	<SCRIPT><![CDATA[ 
+
+	]]></SCRIPT>
+</maiet>

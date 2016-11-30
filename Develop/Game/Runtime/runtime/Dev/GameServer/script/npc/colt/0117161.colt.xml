@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 베스피오단 전투원, 실험체, 오염된 게리온, 오기스, 멕기프	
+# 인간형 양손검 기본	
+#일반	
+211713001	#모드0전환(칼뽑기)
+211713002	#모드1전환(칼넣기)
+211713003	#회피L
+211713004	#회피R
+211713005	#광포 포커스
+#공격	
+211713011	#1타
+211713012	#2연타
+211713013	#회전베기
+211713014	#회피베기
+211713015	#돌진
+211713016	#전진공격
+211713017	#후진공격
+211713018	#분쇄
+211713019	#녹턴
+-->
+<maiet>
+	<COLT name="베스피오단 전투원(남)" npcid="117161">
+		<COMBAT victory="211713002">
+			<DEFAULT>
+				<ACTION type="talent" param1="211713011" rate="50" desc="1타" />
+				<ACTION type="talent" param1="211713012" rate="50" desc="2연타" />
+				<ACTION type="talent" param1="211713014" rate="20" desc="회피베기" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211713005" rate="50" desc="광포 포커스" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="gained_buff" param1="80110">
+				<CHECK type="distance" param1="400" >
+					<ACTION type="talent" param1="211713015" rate="50" desc="돌진" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="80" >
+					<ACTION type="talent" param1="211713019" rate="50" desc="녹턴" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="50" >
+					<ACTION type="talent" param1="211713003" rate="10" desc="회피L" />
+					<ACTION type="talent" param1="211713004" rate="10" desc="회피R" />
+					<ACTION type="talent" param1="211713014" rate="30" desc="회피베기" />
+				</CHECK>
+				
+				<ACTION type="talent" param1="211713011" rate="50" desc="1타" />
+				<ACTION type="talent" param1="211713012" rate="50" desc="2연타" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="211713016" rate="50" desc="전진공격" />
+				<ACTION type="talent" param1="211713012" rate="10" desc="2연타" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211713001" rate="100" desc="모드0전환(칼뽑기)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

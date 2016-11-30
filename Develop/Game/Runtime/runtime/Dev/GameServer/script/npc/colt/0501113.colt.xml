@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="변성된 가디엘 이단심판관">
+		<COMBAT victory="250111302">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250111311" rate="10" desc="지팡이1타"/> 
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400">
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="250111311" rate="10" desc="지팡이1타"/> 
+				<ACTION type="talent" param1="250111312" rate="30" desc="지팡이2연타"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" param2="500">
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+
+				<ACTION type="talent" param1="250111313" rate="30" desc="전진 공격"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="talent" param1="250111321" rate="10" desc="빛의 구"/>
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="250111301" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_501113:OnCombatBegin()
+	local dice = math.random(0,6)
+	
+	if dice == 0 then
+		this:NonDelayBalloon("$$GaddielAggroChat9")
+	elseif dice == 1 then
+		this:NonDelayBalloon("$$GaddielDenature2")
+	elseif dice == 2 then
+		this:NonDelayBalloon("$$GaddielDenature3")
+	end
+end
+	
+	]]></SCRIPT>
+</maiet>

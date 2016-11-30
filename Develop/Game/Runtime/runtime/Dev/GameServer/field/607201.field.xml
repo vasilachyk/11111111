@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="512" minimap_name="map00512" loading_image_name="00512" min_x="-17500" min_y="-16300" max_x="17500" max_y="18700" boundary_min_x="-15000" boundary_min_y="-3000" boundary_max_x="1000" boundary_max_y="16000" weather_effect="true" town="false" returnable="true" tutorial="false" rebirth_debuff_id="502020">
+        <BGM fieldbgm="amb_dungeon_catacomb">
+            <ENVBGM dungeonbgm="amb_dungeon_1" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="5" name="보물상자" x="-7849.618652" y="12286.844727" z="105.736542" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103453" default="true" rate="100" />
+        </SPAWN>
+        <MARKER id="1" name="시작위치" x="-1878.614258" y="2546.190674" z="3.000000" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="-7778.515625" y="11021.885742" z="13.880536" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3001" name="광신자 이동" x="-3198.235352" y="5915.456543" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="3001" />
+        <MARKER id="3002" name="auto" x="-9847.271484" y="5934.506348" z="5.055847" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="3001" />
+        <MARKER id="3003" name="auto" x="-9826.577148" y="2463.446289" z="5.055840" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="3001" />
+        <MARKER id="3004" name="auto" x="-8126.439453" y="2432.685303" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="3001" />
+        <SENSOR id="1" name="센서_시작위치" local="false" x="-2060.485596" y="2288.191406" z="3.000000" radius="800.000000" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="116005" minimap_name="map01034" min_x="-22000" min_y="-37000" max_x="50000" max_y="35000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" qpvpnpc1="950000" qpvpnpc2="9500001" qpvprebirth1="102230" qpvprebirth2="102231">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="281" group="0" name="결계 1" x="-5146.184082" y="1641.656128" z="4554.065918" dir_x="-0.358368" dir_y="0.933581" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="282" group="0" name="결계 2" x="-5414.832031" y="1526.960205" z="4535.508301" dir_x="-0.374606" dir_y="0.927184" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116308" group="0" name="불의 군주" x="-1692.052734" y="115.872437" z="4860.751465" dir_x="-0.997564" dir_y="0.069756" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="116308" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116510" group="0" name="[NPC] 숨어있던 하프메인" x="-5986.481934" y="2212.443115" z="4426.484863" dir_x="0.809017" dir_y="-0.587785" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="116510" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="-5616.381836" y="3674.622314" z="4437.511230" dir_x="0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="31" name="불의 군주 이동 마커 1" x="-3942.795166" y="192.617233" z="4844.758789" dir_x="-0.857167" dir_y="0.515038" dir_z="0.000000" random_dir="false" />
+        <MARKER id="32" name="불의 군주 이동 마커 2" x="-4859.094727" y="835.872070" z="4705.315430" dir_x="-0.469471" dir_y="0.882948" dir_z="0.000000" random_dir="false" />
+        <MARKER id="33" name="불의 군주 이동 마커 3" x="-5488.848633" y="2117.314209" z="4450.710449" dir_x="-0.342020" dir_y="0.939693" dir_z="0.000000" random_dir="false" />
+        <MARKER id="116030" name="QM 116030" x="-5382.391113" y="1797.870239" z="4498.930664" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 아란바스" x="-6312.578125" y="4796.179688" z="4488.792969" radius="400.000000" enabled="true">
+            <EFFECT effect="ZoneLine" x="295.252441" y="-252.189453" z="0.000000" dir_x="-0.694659" dir_y="0.719339" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.600000" scale_y="0.700000" scale_z="0.600000" />
+            <WARP warp_type="field" title="아란바스로" condition="0" gate_type="auto" field="116" marker="50" />
+        </SENSOR>
+        <SENSOR id="116030" name="정령신주 사용 센서" local="false" x="-5330.471191" y="1651.279053" z="4527.991699" radius="1000.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

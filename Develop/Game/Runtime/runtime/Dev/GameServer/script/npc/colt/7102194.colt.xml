@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 하피 아엘로	
+710219401	발톱강하1( 수직복귀 )
+710219402	발톱강하1( 점프복귀 )
+710219403	2단할퀴기-전진
+710219404	2단할퀴기-제자리
+710219405	비명
+710219406	돌개바람
+710219407	대쉬
+-->
+<maiet>
+	<COLT name="하피 아엘로" npcid="7102194">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="710219401" rate="10" desc="발톱강하1( 수직복귀 )" />
+				<ACTION type="talent" param1="710219402" rate="10" desc="발톱강하1( 점프복귀 )" />
+				<ACTION type="talent" param1="710219403" rate="30" desc="2단할퀴기-전진" />
+				<ACTION type="talent" param1="710219406" rate="30" desc="돌개바람" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="90" param2="99" >
+				<ACTION type="lua" param1="NPC_7102194" param2="Say" auto_run="true" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="200" >
+				<ACTION type="talent" param1="710219404" rate="50" desc="2단할퀴기-제자리" />
+				<ACTION type="talent" param1="710219406" rate="30" desc="돌개바람" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000" >
+				<ACTION type="distance" param1="400" param2="400"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="710219405" rate="5" desc="비명" max_count="1"/>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_7102194:Say(ThisNPC, Enemy)
+	ThisNPC:NarrationNow( "$$Field_102001_6" )
+end	
+	
+	]]></SCRIPT>
+</maiet>

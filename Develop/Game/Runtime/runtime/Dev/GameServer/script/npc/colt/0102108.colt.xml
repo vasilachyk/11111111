@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="높은바람" npcid="102108">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="10" cycle="8" />
+				<ACTION type="nothing" param1="0.5" rate="10" cycle="8" />
+				
+				<ACTION type="talent" param1="210210600" rate="5" />
+				<ACTION type="talent" param1="210210601" rate="5" />
+				<ACTION type="talent" param1="210210602" rate="30" />
+				<ACTION type="talent" param1="210210605" rate="30" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200" >
+				<ACTION type="nothing" param1="0.5" rate="10" cycle="8" />
+				<ACTION type="nothing" param1="0.5" rate="10" cycle="8" />
+				<ACTION type="talent" param1="210210603" rate="50" comment="제자리 할퀴기"/>
+				<ACTION type="talent" param1="210210605" rate="30" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000" >
+				<ACTION type="distance" param1="400" param2="400"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="210210604" rate="5" max_count="1"/>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

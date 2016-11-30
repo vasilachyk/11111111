@@ -1,0 +1,8 @@
+-- ÀÌº¥Æ® ¿£ÇÇ¾¾ ÇÁ·©Å°
+
+function NPC_3313:OnSpawn(SpawnInfo)
+	this:GainBuff(111638)
+end
+
+
+

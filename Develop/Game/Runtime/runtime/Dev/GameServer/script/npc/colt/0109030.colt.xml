@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="옐로">
+		<COMBAT victory="210901709">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+			
+				<ACTION type="talent" param1="210901701" rate="25" /><!--1타 -->
+				<ACTION type="talent" param1="210901702" rate="15" /><!--2타 -->
+				
+				<ACTION type="talent" param1="210901704" rate="10" /><!--강한공격 -->
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="35" >
+				<ACTION type="lua" param1="NPC_109030" param2="NPC_Die_Dialog" max_count="1" rate="100" />				
+			</CHECK>
+			
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210901701" rate="10" />
+				<ACTION type="talent" param1="210901702" rate="10" />
+				
+				<ACTION type="talent" param1="210901704" rate="10" />
+				<ACTION type="talent" param1="210901705" rate="20" />
+			</CHECK>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>				
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210901707" />
+			</DEFAULT>
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="group" rate="20">					
+					<ACTION type="say" param1="$$COLT_0109030_43"/>	
+					<ACTION type="nothing" param1="1.5" />						
+					<ACTION type="say" param1="$$COLT_0109030_45"/>					
+				</ACTION>
+			</DEFAULT>
+		</AGGRO>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />				
+			</DEFAULT>
+		</IDLE>
+	</COLT>	
+	
+	<SCRIPT><![CDATA[
+	
+
+	
+function NPC_109030:NPC_Die_Dialog( ThisNPC, Enemy )
+	--GLog( "Die_Dialog2\n" )
+	
+	ThisNPC:ClearJob()
+	
+	
+	--ThisNPC:DisableCombat()
+	
+	ThisNPC:Say( "$$COLT_0109030_68" )
+	ThisNPC:Wait(0.5)
+	ThisNPC:Say( "$$COLT_0109030_70" )
+	--ThisNPC:Wait(3)
+	--ThisNPC:Despawn()
+	ThisNPC:Die(Enemy)
+	
+end
+
+	]]></SCRIPT>
+</maiet>

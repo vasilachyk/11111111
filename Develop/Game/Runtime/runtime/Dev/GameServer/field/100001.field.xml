@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="100001" min_x="0" min_y="0" max_x="10000" max_y="10000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="spawn_00001" x="4650.610352" y="9325.103516" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="107003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="spawn_00002" x="4400.268066" y="9294.399414" z="-0.000122" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="107003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="spawn_00003" x="4868.543945" y="9573.596680" z="-0.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="107003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="spawn_00004" x="4867.566406" y="9047.626953" z="2.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="107003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="spawn_00005" x="4582.367676" y="8948.703125" z="2.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="107003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="spawn_00006" x="4318.946777" y="8749.932617" z="2.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="107003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="spawn_00007" x="4889.449707" y="8619.010742" z="2.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="107003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="몬트리올" x="2944.846924" y="3690.493652" z="16.035000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="false" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="109026" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="1번 시작점" x="4569.511719" y="3122.194336" z="80.740402" dir_x="0.069757" dir_y="0.997564" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="SR00001" local="false" x="2881.571533" y="2932.827148" z="133.726715" radius="1146.239990" enabled="true" />
+        <SENSOR id="3" name="SR00002" local="false" x="5565.417480" y="1947.129883" z="3.000021" radius="806.528503" enabled="true" />
+    </FIELDINFO>
+</maiet>

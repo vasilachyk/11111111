@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="113" min_x="0" min_y="0" max_x="80000" max_y="80000" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="CLD">
+                <ADD weather="SUN" percent="5" />
+                <ADD weather="RNY" percent="40" />
+                <ADD weather="HRN" percent="30" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="from 테레스 평원" x="9766.720703" y="32295.312500" z="65.852051" dir_x="0.981627" dir_y="0.190809" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="from 에다산" x="69324.820313" y="36115.671875" z="3237.163330" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="from 마녀의 동굴" x="49826.035156" y="49217.359375" z="1514.187622" dir_x="0.139173" dir_y="-0.990268" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="from 은둔자의 동굴" x="62402.941406" y="58217.816406" z="3587.376221" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="from 죽은자 카타콤" x="39558.261719" y="56996.457031" z="3260.307373" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="from 오염된 화원" x="42417.664063" y="14931.366211" z="-19.559635" dir_x="-0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 테레스 평원" x="6833.311523" y="34093.167969" z="120.751221" radius="3000.000000" enabled="true">
+            <WARP condition="0" field="107" marker="1" title="마커로 이동" />
+        </SENSOR>
+        <SENSOR id="2" name="to 에다산" x="72823.937500" y="33262.527344" z="3202.085449" radius="3000.000000" enabled="true">
+            <WARP condition="0" field="102" marker="1" title="마커로 이동" />
+        </SENSOR>
+        <SENSOR id="3" name="to 마녀의 동굴" x="49683.359375" y="50365.792969" z="1453.345459" radius="400.000000" enabled="true">
+            <WARP condition="0" field="1039" marker="1" title="마커로 이동" />
+        </SENSOR>
+        <SENSOR id="4" name="to 죽은자들을 위한 카타콤" x="39490.679688" y="58749.652344" z="3040.000000" radius="180.000000" enabled="true">
+            <WARP condition="0" field="113001" marker="1" title="마커로 이동" />
+        </SENSOR>
+        <SENSOR id="6" name="to 은둔자의 동굴" x="62298.695313" y="58911.906250" z="3579.959473" radius="300.000000" enabled="true">
+            <WARP condition="0" field="113004" marker="1" title="마커로 이동" />
+        </SENSOR>
+        <SENSOR id="7" name="to 과거의 오솔길" x="27830.369141" y="55261.371094" z="2092.431396" radius="400.000000" enabled="false">
+            <WARP condition="0" field="113005" marker="1" title="마커로 이동" />
+        </SENSOR>
+        <SENSOR id="8" name="to 오염된 화원" local="false" x="42433.582031" y="13268.456055" z="316.368225" radius="530.000000" enabled="true">
+            <WARP condition="0" field="121" marker="1" title="마커로 이동" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

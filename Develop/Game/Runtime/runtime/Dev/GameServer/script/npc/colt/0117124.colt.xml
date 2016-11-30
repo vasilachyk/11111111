@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--  
+# 땅굴거미	
+211712401	일반공격
+211712402	강한공격
+211712403	거미줄발사
+211712404	흡혈
+211712405	도발
+211712406	거미독감염
+-->
+<maiet>
+	<COLT name="땅굴거미" npcid="117124">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="lua" param1="SpiderWebAI" rate="50" />
+				<ACTION type="nothing" param1="1" rate="20" cycle="5"/>
+			</DEFAULT>
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="211712405" duration="0" rate="10" />
+				<ACTION type="nothing"  param1="0" rate="90" />
+			</DEFAULT>
+		</AGGRO>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211712405" rate="10" />
+				<ACTION type="nothing" param1="2" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	--[[ 
+		1. 거미줄이 이 걸려있지 않으면 일정 확률로 거미줄을 시전.
+		2. 거미줄이 걸려잇으면 달려가서 피를 빤다.
+	]]--
+	
+	function SpiderWebAI( ThisNPC, Opponent )
+		local BUFID_SPIDER_WEB 		= 80011			-- 거미줄 디버프ID
+		local TALID_SPIDER_ATTACK1 	= 211712401		-- 일반공격
+		local TALID_SPIDER_ATTACK2 	= 211712402		-- 강한공격
+		local TALID_SPIDER_WEB  	= 211712403		-- 거미줄 TalentID
+		local TALID_SPIDER_DRAIN 	= 211712404		-- 흡혈 TalentID
+		
+		local RATE_SPIDER_ATTACK1 	= 60			-- 일반공격
+		local RATE_SPIDER_ATTACK2 	= 20			-- 강타공격 
+		local RATE_SPIDER_WEB		= 20			-- 거미줄을 쏠 확률
+		
+		-- 거미줄에 걸려있다면
+		if Opponent:CheckBuff( BUFID_SPIDER_WEB ) then
+			hp = ThisNPC:GetHP()
+			maxhp = ThisNPC:GetMaxHP()
+			
+			-- 체력이 50% 이상이면 그냥 공격 50% 이하로 내려가면 드레인 어택
+			if hp/maxhp > 0.5 then
+				n = math.random( 1, 80 )
+				if n <= RATE_SPIDER_ATTACK1 then
+					ThisNPC:MoveToActor( Opponent, TALID_SPIDER_ATTACK1 )
+					ThisNPC:UseTalent( TALID_SPIDER_ATTACK1, Opponent )   			-- 일반공격
+				elseif n <= (RATE_SPIDER_ATTACK1 + RATE_SPIDER_ATTACK2) then
+					ThisNPC:MoveToActor ( Opponent, TALID_SPIDER_ATTACK2 )
+					ThisNPC:UseTalent( TALID_SPIDER_ATTACK2, Opponent )   			-- 강한공격
+				end
+			else
+				ThisNPC:Follow ( Opponent, 100 )
+				--[[
+					버프 지속시간 체크해서 드레인이 가능하다면 드레인.
+					최소 1.5초의 시간이 필요하다.
+				]]--
+				ThisNPC:FaceTo( Opponent )
+				ThisNPC:UseTalent( TALID_SPIDER_DRAIN, Opponent )			
+			end
+		else -- 거미줄이 없다면 
+			n = math.random( 1, 100 )
+			if n <= RATE_SPIDER_ATTACK1 then
+				ThisNPC:MoveToActor( Opponent, TALID_SPIDER_ATTACK1 )
+				ThisNPC:UseTalent( TALID_SPIDER_ATTACK1, Opponent )   				-- 일반공격
+			elseif n <= (RATE_SPIDER_ATTACK1 + RATE_SPIDER_ATTACK2) then
+				ThisNPC:MoveToActor ( Opponent, TALID_SPIDER_ATTACK2 )
+				ThisNPC:UseTalent( TALID_SPIDER_ATTACK2, Opponent )   				-- 강한공격
+			else 
+				ThisNPC:UseTalent( TALID_SPIDER_WEB, Opponent )  					-- 거미줄 발사
+			end
+		end
+	end
+	
+	]]></SCRIPT>
+</maiet>

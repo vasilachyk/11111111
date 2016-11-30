@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" minimap_name="map00102" loading_image_name="00102" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="60000" boundary_min_y="3000" boundary_max_x="80000" boundary_max_y="23000" weather_effect="true" town="false" returnable="false" tutorial="false">
+        <BGM fieldbgm="amb_dungeon_3">
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="HSW">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="2" group="0" name="디아고" x="75237.078125" y="8093.468750" z="10761.049805" dir_x="0.207912" dir_y="0.978148" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="102109" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작지점" x="75536.710938" y="9120.799805" z="10648.506836" dir_x="-0.707107" dir_y="0.707107" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="디아고 이동 마커" x="70157.429688" y="14251.093750" z="10423.671875" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="MK00003" x="74081.171875" y="11768.057617" z="10570.603516" dir_x="-0.719340" dir_y="0.694658" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="MK00004" x="71466.171875" y="13453.646484" z="10366.916992" dir_x="-0.798636" dir_y="0.601815" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="MK00005" x="68549.640625" y="15076.974609" z="10567.485352" dir_x="-0.656059" dir_y="0.754709" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="MK00006" x="67050.406250" y="16527.214844" z="10723.005859" dir_x="-0.866025" dir_y="0.500000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="MK00007" x="65357.828125" y="17673.875000" z="10727.480469" dir_x="0.838671" dir_y="-0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102020" name="QM 102020" x="64511.363281" y="18611.882813" z="10731.672852" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="75533.171875" y="9133.884766" z="10649.303711" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="디아고 트리거" local="false" x="70896.507813" y="13832.235352" z="10392.123047" radius="2000.000000" enabled="true" groupname="none" />
+        <SENSOR id="3" name="종료 센서" x="70891.226563" y="13481.300781" z="10406.823242" radius="10000.000000" enabled="false">
+            <WARP warp_type="field" title="트라이얼 탈출" condition="1" gate_type="auto" field="102" marker="2" />
+        </SENSOR>
+        <SENSOR id="4" name="목적 센서" local="false" x="70714.070313" y="13414.029297" z="10430.221680" radius="10000.000000" enabled="false" groupname="none" />
+    </FIELDINFO>
+</maiet>

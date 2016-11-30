@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="508" minimap_name="map00508" min_x="-20204" min_y="-29700" max_x="29796" max_y="20300" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="토가트 신전 수호자" x="9468.990234" y="-25240.898438" z="2303.000244" dir_x="-0.104529" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="토가트 신전 수호자" x="9351.539063" y="-25417.240234" z="2303.000244" dir_x="0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="토가트 신전 수호자 (패트롤)" x="3919.445068" y="-25433.835938" z="2302.000244" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="토가트 신전 수호자 (패트롤)" x="8522.713867" y="-25427.103516" z="2302.000244" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="토가트 신전 수호자" x="4446.454590" y="-24261.191406" z="2303.000244" dir_x="0.898794" dir_y="0.438371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="토가트 신전 수호자" x="4752.608398" y="-24109.542969" z="2302.000244" dir_x="-0.882948" dir_y="-0.469472" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="토가트 신전 수호자 (대장)" x="4770.983887" y="-23687.656250" z="2302.000244" dir_x="-0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103510" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="100" group="0" name="조사대원 샤를 (입구)" x="11275.966797" y="-25649.476563" z="2302.000488" dir_x="-0.987688" dir_y="0.156435" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103208" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101" group="0" name="조사대원 샤를 (출구)" x="1.102448" y="13061.762695" z="401.993805" dir_x="-0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103208" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="280" group="0" name="투명 벽" x="-808.454834" y="-20214.894531" z="2607.501953" dir_x="0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="281" group="0" name="투명 벽" x="1590.912109" y="-20233.189453" z="2607.502197" dir_x="0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="282" group="0" name="투명 벽" x="-1154.342285" y="9300.915039" z="428.794922" dir_x="0.999848" dir_y="0.017453" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="283" group="0" name="투명 벽" x="4852.453613" y="5574.134277" z="428.794800" dir_x="-0.017453" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103414" group="0" name="빛의 숨결 상자" x="-5.781251" y="4448.870117" z="434.329956" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="5" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103414" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103514" group="0" name="아케론 족장 포르나" x="11152.271484" y="-25275.519531" z="2302.000244" dir_x="-0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="103514" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103515" group="0" name="라이 전사" x="479.687469" y="4969.890137" z="425.743347" dir_x="-0.920505" dir_y="0.390732" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,128,255">
+            <NPC id="103515" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103516" group="0" name="라이 궁수" x="-414.933594" y="4647.159668" z="425.743378" dir_x="0.906308" dir_y="-0.422618" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,128,255">
+            <NPC id="103516" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103517" group="0" name="라이 마법사" x="-209.864746" y="4079.753418" z="425.743408" dir_x="0.559193" dir_y="0.829037" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,128,255">
+            <NPC id="103517" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103518" group="0" name="라이 광전사" x="181.692871" y="4651.398926" z="425.743378" dir_x="-0.615661" dir_y="-0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,128,255">
+            <NPC id="103518" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="11619.255859" y="-25445.837891" z="2302.000244" dir_x="-0.999391" dir_y="0.034899" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="Obj 2번 마커" x="4763.305176" y="-23898.445313" z="2302.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="Obj 3번 마커" x="4779.848145" y="-22976.613281" z="2302.958984" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="이동 지점" x="2.293335" y="7635.338379" z="425.743164" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="31" name="3번 패트롤1" x="3931.368408" y="-25442.675781" z="2349.809570" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="32" name="3번 패트롤2" x="6145.939453" y="-25434.625000" z="2303.000244" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="41" name="4번 패트롤1" x="8509.494141" y="-25425.648438" z="2303.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="42" name="4번 패트롤2" x="6326.669434" y="-25437.468750" z="2303.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="11547.626953" y="-25454.128906" z="2302.000244" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="출구 1" x="12420.000000" y="-25449.564453" z="2303.000244" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_01" x="3.054688" y="12.300781" z="12.911133" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="2.400000" scale_y="0.100000" scale_z="2.400000" />
+            <WARP warp_type="field" title="나가기" condition="0" gate_type="manual" field="103" marker="5" />
+        </SENSOR>
+        <SENSOR id="3" name="출구 2" x="-3.875970" y="14712.431641" z="681.178223" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_01" x="0.000000" y="23.461914" z="-57.388611" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="2.400000" scale_y="0.100000" scale_z="2.300000" />
+            <WARP warp_type="field" title="나가기" condition="0" gate_type="auto" field="103" marker="5" />
+        </SENSOR>
+        <SENSOR id="4" name="포탈" x="4774.820801" y="-23062.375000" z="2302.504883" radius="200.000000" enabled="false">
+            <EFFECT effect="sensor_trial_02" x="0.000000" y="0.000000" z="84.054932" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.250000" scale_y="0.500000" scale_z="0.400000" />
+            <WARP warp_type="field" title="끝으로 이동 포탈" condition="1" gate_type="auto" field="1030221" marker="4" />
+        </SENSOR>
+        <SENSOR id="10" name="이벤트 시작" local="false" x="-2.249902" y="4686.691406" z="425.743378" radius="1500.000000" enabled="true" checkpoint="4" groupname="none" />
+    </FIELDINFO>
+</maiet>

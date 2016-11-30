@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="117" minimap_name="map00117" loading_image_name="00117" min_x="-33650" min_y="-31970" max_x="31350" max_y="33030" boundary_min_x="9500" boundary_min_y="-16700" boundary_max_x="28800" boundary_max_y="-4200" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_dungeon_underpass" />
+		<SOUNDREVERB reverb="9" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+		
+		<MARKER id="1" name="출발지점" x="13006.426758" y="-10461.039063" z="-140.095016" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+		<MARKER id="2" name="목표지점" x="20053.541016" y="-10594.172852" z="-135.802155" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+		<SENSOR id="1" name="센서_출발지점" local="false" x="13057.842773" y="-10585.330078" z="-141.952072" radius="301.811768" enabled="true" checkpoint="1" groupname="none" />
+        
+    </FIELDINFO>
+</maiet>

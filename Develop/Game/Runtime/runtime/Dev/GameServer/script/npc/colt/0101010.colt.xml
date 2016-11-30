@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <COLT name="이리스" npcid="101010">
+		<COMBAT mode="0" comment="">
+			<DEFAULT comment="80~100%">
+				<ACTION type="talent" param1="210101013" rate="20" desc="얼음화살"/>
+				<ACTION type="talent" param1="210101011" rate="20" desc="얼음결계"/>
+				<ACTION type="talent" param1="210101014" duration="0" rate="20" desc="결정화_easy"/>
+			</DEFAULT>
+			
+			<CHECK type="e_gained_buff" param1="41309">
+				<ACTION type="talent" param1="210101013" rate="20" desc="얼음화살"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="1" param2="50" comment="1~50%">
+				<ACTION type="talent" param1="210101023" cycle="20" desc="얼음감옥"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="50" param2="80" comment="50~80%">
+				<ACTION type="talent" param1="210101020" cycle="25" desc="얼음감옥"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000">
+				<ACTION type="talent" param1="210101012" desc="얼음결계"/>
+			</CHECK>
+			
+			<CHECK type="rage" param1="500">
+				<CHECK type="distance" param2="500">
+					<ACTION type="talent" param1="210101003" rate="20" desc="왼쪽회전"/>
+					<ACTION type="talent" param1="210101004" rate="20" desc="오른쪽회전"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param2="80" comment="1~50%">
+				<ACTION type="talent" param1="210101013" rate="20" desc="얼음화살"/>
+				<ACTION type="talent" param1="210101011" rate="20" desc="얼음결계"/>
+				<ACTION type="talent" param1="210101015" duration="0" rate="20" desc="결정화_hard"/>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1" victory="210101022" comment="IceCage Mode">
+			<DEFAULT>
+				<ACTION type="talent" param1="210101021" duration="0" rate="20" desc="얼음감옥 종료"/>
+			</DEFAULT>
+			<CHECK type="gained_buff" param1="41304" comment="생명력회복 약한거">
+				<ACTION type="nothing" param1="1" />
+			</CHECK>
+			<CHECK type="gained_buff" param1="41306" comment="생명력회복 센거">
+				<ACTION type="nothing" param1="1" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_101010:Init( NPCID )
+	--[[
+		User Data
+		1: Pain
+	--]]
+	
+	NPC_ReserveUserData(NPCID, 5);
+
+	NPC_101010.NpcIdSkillDummy 			= 101011
+	NPC_101010.NpcIdWaterJail			= 101012
+	NPC_101010.NpcIdWaterJailHard		= 101013
+
+	NPC_101010.TalIdSmallCircleOfIce 	= 210101100
+	NPC_101010.TalIdLargeCircleOfIce 	= 210101101
+	
+	NPC_101010.BufIdWaterBall			= 41302					-- 꾸미기용 버프
+	NPC_101010.BufIdIcyRegen 			= 41304					-- 41304	#생명력회복
+	
+	NPC_101010.IntervalWaterJail		= 10
+	NPC_101010.TimerIdWaterJail			= 1
+	NPC_101010.TalIdFinishWaterJail		= 210101022
+	NPC_101010.TalIdFinishWaterJail2	= 210101022
+end
+
+function NPC_101010:OnSpawn( SpawnInfo )
+	SpawnInfo.NPC:GainBuff( NPC_101010.BufIdWaterBall )
+end
+
+function NPC_101010:OnActSmallCircleOfIce( ThisActor, Enemy )
+	local SkillDummy = NPC_101010:SummonCircleOfIce( ThisActor, Enemy )
+	
+	if not SkillDummy:IsNull() then
+		SkillDummy:UseTalentSelf( NPC_101010.TalIdSmallCircleOfIce )
+		SkillDummy:Despawn(false)
+	end
+end
+
+function NPC_101010:OnActLargeCircleOfIce( ThisActor, Enemy )
+	local SkillDummy = NPC_101010:SummonCircleOfIce( ThisActor, Enemy )
+	
+	if not SkillDummy:IsNull() then
+		SkillDummy:UseTalentSelf( NPC_101010.TalIdLargeCircleOfIce )
+		SkillDummy:Despawn(false)
+	end
+end
+
+function NPC_101010:SummonCircleOfIce( ThisActor, Enemy )
+	--GLog( "NPC_101010:SummonCircleOfIce\n" )
+	
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local SummonPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	LocalAdjPos = vec3(math.random(0, 0), math.random(0, 0), 0)
+	SummonPos = Math_LocalToWorld( Enemy:GetDir(), Enemy:GetPos(), LocalAdjPos )
+	local SkillDummy = ThisNPC:SummonNow( NPC_101010.NpcIdSkillDummy, SummonPos )
+	return SkillDummy
+end
+
+function NPC_101010:SummonWaterJail( ThisNPC, Enemy, NPCID )
+	--GLog( "NPC_101010:SummonCircleOfIce\n" )
+	
+	local SummonPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	LocalAdjPos = vec3(math.random(0, 0), math.random(0, 0), 0)
+	SummonPos = Math_LocalToWorld( Enemy:GetDir(), Enemy:GetPos(), LocalAdjPos )
+	local WaterJail = ThisNPC:SummonNow( NPCID, SummonPos )
+	return WaterJail
+end
+
+function NPC_101010:OnTimer( TimerID )
+	if TimerID == NPC_101010.TimerIdWaterJail then
+		if this:GetMode() == 1 then
+			this:ClearJob()
+			this:UseTalentSelf( NPC_101010.TalIdFinishWaterJail )
+			this:UseTalentSelf( 210101024 )
+		end
+	end
+end
+
+function NPC_101010:OnStartStartWaterJailHard( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local WaterJail = NPC_101010:SummonWaterJail( ThisNPC, Enemy, NPC_101010.NpcIdWaterJailHard )
+	
+	if not WaterJail:IsNull() then
+		WaterJail:FaceTo( ThisNPC )
+		WaterJail:SetTarget( Enemy )
+		ThisNPC:SetTarget( WaterJail )
+		ThisNPC:SetTimer( NPC_101010.TimerIdWaterJail, NPC_101010.IntervalWaterJail, false )
+	end
+end
+
+
+function NPC_101010:OnStartStartWaterJail( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local WaterJail = NPC_101010:SummonWaterJail( ThisNPC, Enemy, NPC_101010.NpcIdWaterJail )
+	
+	if not WaterJail:IsNull() then
+		WaterJail:FaceTo( ThisNPC )
+		WaterJail:SetTarget( Enemy )
+		ThisNPC:SetTarget( WaterJail )
+		ThisNPC:SetTimer( NPC_101010.TimerIdWaterJail, NPC_101010.IntervalWaterJail, false )
+	end
+end
+
+function NPC_101010:OnStartFinishWaterJail( ThisActor, Enemy )
+	--GLog( "NPC_101010:OnStartFinishWaterJail\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	if ThisNPC:GetSummonCount() > 0 then
+		local WaterJail = AsNPC( ThisNPC:GetTarget() )
+		WaterJail:Die( WaterJail )
+		WaterJail:Despawn(false)
+		
+		ThisNPC:RemoveBuff( NPC_101010.BufIdIcyRegen )
+	elseif Enemy:IsDead() then
+		ThisNPC:RemoveBuff( NPC_101010.BufIdIcyRegen )
+	end
+end
+
+function NPC_101010:OnFinishAndAggroFar( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "far", 0 )
+end
+
+	]]></SCRIPT>
+</maiet>
+
+
+

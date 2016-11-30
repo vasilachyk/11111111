@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1033" minimap_name="map01031" min_x="-10000" min_y="-9000" max_x="59000" max_y="42000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="크립 전사" x="1069.836914" y="-295.136078" z="-372.162415" dir_x="-0.984808" dir_y="-0.173648" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="103111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="크립 전사" x="936.831360" y="-1664.981201" z="-359.763367" dir_x="-0.984808" dir_y="-0.173648" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="103111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="크립 전사" x="107.304398" y="-892.655518" z="-351.162781" dir_x="-0.984808" dir_y="-0.173648" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="103111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="크립 보초" x="-5454.643555" y="-4391.483398" z="-7.855919" dir_x="-0.656059" dir_y="0.754710" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="103114" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="크립 보초" x="-5916.106934" y="-4807.581055" z="-15.136333" dir_x="-0.694659" dir_y="0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="103114" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="크립 땅굴벌레" x="-5820.803223" y="-3217.505615" z="-8.152920" dir_x="-0.694659" dir_y="0.719340" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="103113" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="크립 땅굴벌레" x="-6563.940430" y="-2319.048584" z="-15.538704" dir_x="-0.694659" dir_y="0.719340" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="103113" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="크립 땅굴벌레" x="-7953.916504" y="-2975.135498" z="-14.570299" dir_x="-0.694659" dir_y="0.719340" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="103113" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20" group="0" name="크립 유충 (돌진)" x="884.656799" y="-2212.366699" z="-253.404480" dir_x="-0.939693" dir_y="0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="103112" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="크립 유충 (돌진)" x="1678.770386" y="-1380.423828" z="-359.710876" dir_x="-0.997564" dir_y="0.069757" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="103112" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="크립 유충 (돌진)" x="860.425415" y="146.042343" z="-252.609573" dir_x="-0.529919" dir_y="-0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="103112" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="23" group="0" name="크립 전사 (돌진)" x="-6890.289551" y="-3488.545410" z="-15.939691" dir_x="-0.500000" dir_y="0.866026" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="103111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="100" group="0" name="크립 정신연결자" x="1798.432739" y="-857.496277" z="-361.128632" dir_x="-0.984808" dir_y="-0.173648" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="103115" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301" group="0" name="영혼석" x="-2286.789795" y="1558.265991" z="581.098755" dir_x="-0.994522" dir_y="-0.104529" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1000" group="0" name="리츠 병사" x="-3767.710205" y="-335.422028" z="650.055603" dir_x="-0.987688" dir_y="-0.156434" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103215" default="false" rate="500" />
+            <NPC id="103216" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1001" group="0" name="리츠 병사" x="-3834.209229" y="144.015961" z="629.689148" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103215" default="false" rate="500" />
+            <NPC id="103216" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1002" group="0" name="리츠 병사" x="-4955.424316" y="749.316772" z="-287.884033" dir_x="0.656059" dir_y="0.754710" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103215" default="false" rate="500" />
+            <NPC id="103216" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1003" group="0" name="리츠 병사" x="-5345.649902" y="1826.550659" z="-340.318207" dir_x="0.984808" dir_y="-0.173648" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103215" default="false" rate="500" />
+            <NPC id="103216" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="103210" group="0" name="부관 라이넥" x="-3909.996094" y="1758.014648" z="560.902710" dir_x="0.933581" dir_y="0.358368" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103210" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103211" group="0" name="부관 데일" x="-3970.069824" y="2135.816162" z="552.397339" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103211" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103213" group="0" name="의무병 글로리에" x="-2314.547363" y="1134.110107" z="631.893372" dir_x="-0.974370" dir_y="0.224951" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103213" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="from 코웬 늪지대" x="-3254.151611" y="2037.346924" z="554.248901" dir_x="-0.978148" dir_y="-0.207912" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="from 심층부" x="-5176.124023" y="-5258.180176" z="-33.773891" dir_x="-0.342020" dir_y="0.939693" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="Exit" x="-2386.917480" y="1136.573730" z="627.179199" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="돌진 마커 1-1" x="-277.777557" y="-1237.000610" z="-367.204254" dir_x="-0.984808" dir_y="-0.173648" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="돌진 마커 1-2" x="-1294.241577" y="-1324.962646" z="-369.075104" dir_x="-0.838671" dir_y="0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="돌진 마커 1-3" x="-2054.041016" y="-672.629089" z="-368.581909" dir_x="-0.069756" dir_y="0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="돌진 마커 1-4" x="-2041.415649" y="746.950867" z="-379.707916" dir_x="-0.390731" dir_y="0.920505" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="돌진 마커 1-5" x="-2658.903076" y="1882.854126" z="-365.971893" dir_x="-0.913545" dir_y="0.406737" dir_z="0.000000" random_dir="false" />
+        <MARKER id="16" name="돌진 마커 1-6" x="-3372.614746" y="1962.280762" z="-372.888702" dir_x="-0.927184" dir_y="-0.374607" dir_z="0.000000" random_dir="false" />
+        <MARKER id="17" name="돌진 마커 1-7" x="-4701.868164" y="1422.146606" z="-329.817902" dir_x="-0.945519" dir_y="-0.325568" dir_z="0.000000" random_dir="false" />
+        <MARKER id="21" name="돌진 마커 2-1" x="-7816.991699" y="-1778.463989" z="43.146229" dir_x="-0.573576" dir_y="0.819152" dir_z="0.000000" random_dir="false" />
+        <MARKER id="22" name="돌진 마커 2-2" x="-8104.860352" y="-904.133362" z="223.853363" dir_x="0.587785" dir_y="0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="23" name="돌진 마커 2-3" x="-7681.330078" y="-285.150848" z="349.434906" dir_x="0.838671" dir_y="0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="24" name="돌진 마커 2-4" x="-6690.158691" y="159.399536" z="602.555237" dir_x="0.961262" dir_y="-0.275637" dir_z="0.000000" random_dir="false" />
+        <MARKER id="25" name="돌진 마커 2-5" x="-5276.253418" y="-247.806915" z="652.090027" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="26" name="돌진 마커 2-6" x="-4059.317871" y="-137.831345" z="645.120117" dir_x="0.990268" dir_y="0.139173" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="심층부로" x="-5674.021484" y="-5801.520020" z="-33.211819" radius="500.000000" enabled="true">
+            <WARP warp_type="field" title="심층부로" condition="0" gate_type="auto" field="1030351" marker="1" />
+        </SENSOR>
+        <SENSOR id="103035" name="QOS 103035" local="false" x="-3314.934326" y="2041.203491" z="554.031921" radius="500.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

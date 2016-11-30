@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="충직한 유령하인">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="211303701" rate="10" />
+				<ACTION type="talent" param1="211303702" rate="10" />
+				<ACTION type="talent" param1="211303703" rate="10" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211303700" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

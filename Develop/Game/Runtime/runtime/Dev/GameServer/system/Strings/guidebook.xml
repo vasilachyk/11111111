@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<maiet>
+	<!--
+	레벨 달성 & 맵 진입 ID 할당
+	레벨 달성
+	2001 : 레벨 2 달성 스킬 사용
+	2002 : 레벨 5 달성 라이센스 획득, 포커스 사용
+	2003 : 레벨 11 달성 사망 패널티 추가
+	2004 : 레벨 18 달성 판금 방어구 추가
+	2005 : 레벨 20 달성
+	2006 : 레벨 25 달성
+
+	맵 진입
+	3001 : 부러진 돛대 진입
+	3002 : 인젠 진입
+	3003 : 테레스 평원 진입
+	3004 : 렌고트 부락 진입
+	3005 : 영웅의 오솔길 진입
+	3006 : 에다산 진입
+	3007 : 마코트 부락 진입
+	-->
+
+ <!-- 성장 기록 -->
+	<GUIDEBOOK id="2001" type="level" param="2" popuphelpid="2001"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 2 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□스킬 포인트를 사용해 스킬을 배울 수 있습니다.{CR}□스킬 포인트는 레벨 상승시 1개씩 획득합니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;Tutorial08&quot; w=280 h=200}{CR}<스킬 창>
+	"
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 2 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□스킬 포인트를 사용해 스킬을 배울 수 있습니다.{CR}□스킬 포인트는 레벨 상승시 1개씩 획득합니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;Tutorial08&quot; w=280 h=200}{CR}<스킬 창>
+	"/>
+
+	<GUIDEBOOK id="2002" type="level" param="5" popuphelpid="2002"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 5 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□하나의 스타일에 포인트를 특정 갯수만큼 투자하면 마스터리 스킬을 추가로 배울 수 있습니다.
+	□최초로 배울 수 있는 마스터리 스킬은 각 스타일의 포커스 스킬로 각각의 스타일을 강화시키거나 스킬에 특별한 능력을 추가로 부여합니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;Tutorial17&quot; w=273 h=398}{CR}{ALIGN hor=&quot;center&quot;}<역습/광포/강신/각성 포커스>
+	"
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 5 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□하나의 스타일에 포인트를 특정 갯수만큼 투자하면 마스터리 스킬을 추가로 배울 수 있습니다.
+	□최초로 배울 수 있는 마스터리 스킬은 각 스타일의 포커스 스킬로 각각의 스타일을 강화시키거나 스킬에 특별한 능력을 추가로 부여합니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;Tutorial17&quot; w=273 h=398}{CR}{ALIGN hor=&quot;center&quot;}<역습/광포/강신/각성 포커스>
+	{/INDENT}"/>
+
+	<GUIDEBOOK id="2003" type="level" param="10" popuphelpid="2003"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 10 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□하나의 스타일에 포인트를 10개 투자하면 스타일 숙련 마스터리 스킬을 추가로 배울 수 있습니다.
+	□이 마스터리 스킬을 배우게 되면 다른 스타일의 스킬을 학습할 수 있게 됩니다. 다른 스타일 스킬을 조합하여 나만의 캐릭터를 육성해 보세요.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_d&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 디펜더>
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_b&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 버서커>
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_c&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 클레릭>
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_s&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 소서러>
+	"
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 10 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□하나의 스타일에 포인트를 10개 투자하면 스타일 숙련 마스터리 스킬을 추가로 배울 수 있습니다.
+	□이 마스터리 스킬을 배우게 되면 다른 스타일의 스킬을 학습할 수 있게 됩니다. 다른 스타일 스킬을 조합하여 나만의 캐릭터를 육성해 보세요.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_d&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 디펜더>
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_b&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 버서커>
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_c&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 클레릭>
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv10_skill_s&quot; w=287 h=160}{CR}{ALIGN hor=&quot;center&quot;}<스타일숙련 : 소서러>
+	{/INDENT}"/>
+
+	<GUIDEBOOK id="2004" type="level" param="11" popuphelpid="2004"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 11 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□11레벨부터 사망 시 극심한 피로를 느끼게 됩니다. 사망하지 않도록 각별히 유의하시기 바랍니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv11_death&quot; w=280 h=210}{CR}<극심한 피로>
+	"
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 11 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□11레벨부터 사망 시 극심한 피로를 느끼게 됩니다. 사망하지 않도록 각별히 유의하시기 바랍니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_lv11_death&quot; w=280 h=210}{CR}<극심한 피로>
+	{/INDENT}"/>
+
+	<!--<GUIDEBOOK id="2005" type="level" param="18" popuphelpid="2005"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 18 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□판금 방어구를 장착할 수 있는 레벨이 되었습니다.{CR}□판금 방어구는 보다 높은 방어력과 부가 능력치를 가지고 있으나 착용하기 위해서는 상급갑옷 숙련 라이센스를 획득해야 합니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_hero_mitem4&quot; w=300 h=375}{CR}<플루티드 판금 방어구 세트>
+	{ITEMICON id=63571 w=40 h=40} {ITEMICON id=63572 w=40 h=40} {ITEMICON id=63573 w=40 h=40} {ITEMICON id=63574 w=40 h=40} {ITEMICON id=63575 w=40 h=40}
+	"
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}레벨 18 달성!!{/COLOR}{/FONT}
+	{INDENT dent=10}□판금 방어구를 장착할 수 있는 레벨이 되었습니다.{CR}□판금 방어구는 보다 높은 방어력과 부가 능력치를 가지고 있으나 착용하기 위해서는 상급갑옷 숙련 라이센스를 획득해야 합니다.{/INDENT}
+	{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_hero_fitem4&quot; w=300 h=375}{CR}<플루티드 판금 방어구 세트>
+	{ITEMICON id=63571 w=40 h=40} {ITEMICON id=63572 w=40 h=40} {ITEMICON id=63573 w=40 h=40} {ITEMICON id=63574 w=40 h=40} {ITEMICON id=63575 w=40 h=40}
+	{/INDENT}"/>-->
+
+<!-- 모험 기록 -->
+
+    <GUIDEBOOK id="3001" type="field" param="109" popuphelpid="3001"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}부러진 돛대 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 1~7	
+	□주요 에픽 몬스터{CR h=18}{BITMAP name=&quot;guidebook_monster_veilnus&quot; w=150 h=150} {BITMAP name=&quot;guidebook_monster_crawler&quot; w=150 h=150}
+	□주요 제작 가능 장비
+	쿠오테스의 검/방패, 해적의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_mast_mitem1&quot; w=300 h=375}
+	{ITEMICON id=74000 w=40 h=40} {ITEMICON id=74005 w=40 h=40} {ITEMICON id=63051 w=40 h=40} {ITEMICON id=63052 w=40 h=40} {ITEMICON id=63053 w=40 h=40} {ITEMICON id=63054 w=40 h=40} {ITEMICON id=63055 w=40 h=40}
+	쿠오테스의 지팡이, 제사장의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_mast_mitem2&quot; w=300 h=375}
+	{ITEMICON id=74004 w=40 h=40} {ITEMICON id=63041 w=40 h=40} {ITEMICON id=63042 w=40 h=40} {ITEMICON id=63044 w=40 h=40} {ITEMICON id=63045 w=40 h=40}
+	기타 쿠오테스의 무기 세트{CR h=18}{ITEMICON id=74001 w=40 h=40} {ITEMICON id=74002 w=40 h=40} {ITEMICON id=74003 w=40 h=40}
+	{/INDENT}"
+	
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}부러진 돛대 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 1~7	
+	□주요 에픽 몬스터{CR h=18}{BITMAP name=&quot;guidebook_monster_veilnus&quot; w=150 h=150} {BITMAP name=&quot;guidebook_monster_crawler&quot; w=150 h=150}
+	□주요 제작 가능 장비
+	쿠오테스의 검/방패, 해적의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_mast_fitem1&quot; w=300 h=375}
+	{ITEMICON id=74000 w=40 h=40} {ITEMICON id=74005 w=40 h=40} {ITEMICON id=63051 w=40 h=40} {ITEMICON id=63052 w=40 h=40} {ITEMICON id=63053 w=40 h=40} {ITEMICON id=63054 w=40 h=40} {ITEMICON id=63055 w=40 h=40}
+	쿠오테스의 지팡이, 제사장의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_mast_fitem2&quot; w=300 h=375}
+	{ITEMICON id=74004 w=40 h=40} {ITEMICON id=63041 w=40 h=40} {ITEMICON id=63042 w=40 h=40} {ITEMICON id=63044 w=40 h=40} {ITEMICON id=63045 w=40 h=40}
+	기타 쿠오테스의 무기 세트{CR h=18}{ITEMICON id=74001 w=40 h=40} {ITEMICON id=74002 w=40 h=40} {ITEMICON id=74003 w=40 h=40}
+	{/INDENT}"/>
+
+    <GUIDEBOOK id="3003" type="field" param="107" popuphelpid="3003"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}테레스 평원 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 8~12
+	□주요 에픽 몬스터{CR h=18}{BITMAP name=&quot;guidebook_monster_plefoot&quot; w=150 h=150} {BITMAP name=&quot;guidebook_monster_telessis&quot; w=150 h=150}
+	□주요 제작 가능 장비
+	베테랑 모험가의 검/방패, 자유의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_teress_mitem1&quot; w=300 h=375}
+	{ITEMICON id=60930000 w=40 h=40} {ITEMICON id=60930700 w=40 h=40} {ITEMICON id=60934100 w=40 h=40} {ITEMICON id=60934200 w=40 h=40} {ITEMICON id=60934300 w=40 h=40} {ITEMICON id=60934400 w=40 h=40} {ITEMICON id=60934500 w=40 h=40}
+	베테랑 모험가의 양손검, 척후의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_teress_mitem2&quot; w=300 h=375}
+	{ITEMICON id=60930200 w=40 h=40} {ITEMICON id=60933600 w=40 h=40} {ITEMICON id=60933700 w=40 h=40} {ITEMICON id=60933800 w=40 h=40} {ITEMICON id=60933900 w=40 h=40} {ITEMICON id=60934000 w=40 h=40}
+	베테랑 모험가의 지팡이, 비전의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_teress_mitem3&quot; w=300 h=375}
+	{ITEMICON id=60930400 w=40 h=40} {ITEMICON id=60933100 w=40 h=40} {ITEMICON id=60933200 w=40 h=40} {ITEMICON id=60933400 w=40 h=40} {ITEMICON id=60933500 w=40 h=40}
+	기타 베테랑 모험가 무기 세트 {CR h=18}{ITEMICON id=60930100 w=40 h=40} {ITEMICON id=60930300 w=40 h=40}
+	{/INDENT}"
+
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}테레스 평원 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 8~12
+	□주요 에픽 몬스터{CR h=18}{BITMAP name=&quot;guidebook_monster_plefoot&quot; w=150 h=150} {BITMAP name=&quot;guidebook_monster_telessis&quot; w=150 h=150}
+	□주요 제작 가능 장비
+	베테랑 모험가의 검/방패, 자유의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_teress_fitem1&quot; w=300 h=375}
+	{ITEMICON id=60930000 w=40 h=40} {ITEMICON id=60930700 w=40 h=40} {ITEMICON id=60934100 w=40 h=40} {ITEMICON id=60934200 w=40 h=40} {ITEMICON id=60934300 w=40 h=40} {ITEMICON id=60934400 w=40 h=40} {ITEMICON id=60934500 w=40 h=40}
+	베테랑 모험가의 양손검, 척후의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_teress_fitem2&quot; w=300 h=375}
+	{ITEMICON id=60930200 w=40 h=40} {ITEMICON id=60933600 w=40 h=40} {ITEMICON id=60933700 w=40 h=40} {ITEMICON id=60933800 w=40 h=40} {ITEMICON id=60933900 w=40 h=40} {ITEMICON id=60934000 w=40 h=40}
+	베테랑 모험가의 지팡이, 비전의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_teress_fitem3&quot; w=300 h=375}
+	{ITEMICON id=60930400 w=40 h=40} {ITEMICON id=60933100 w=40 h=40} {ITEMICON id=60933200 w=40 h=40} {ITEMICON id=60933400 w=40 h=40} {ITEMICON id=60933500 w=40 h=40}
+	기타 베테랑 모험가 무기 세트 {CR h=18}{ITEMICON id=60930100 w=40 h=40} {ITEMICON id=60930300 w=40 h=40}
+	{/INDENT}"/>
+
+    <GUIDEBOOK id="3004" type="field" param="110" popuphelpid="3004"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}렌고트 부락 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 13~15
+	□주요 에픽 몬스터{CR h=18}{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_monster_golem&quot; w=150 h=150}
+	{ALIGN hor=&quot;left&quot;}
+	□주요 제작 가능 장비
+	정복의 장검/방패, 용병의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_rengot_mitem1&quot; w=300 h=375}
+	{ITEMICON id=61230000 w=40 h=40} {ITEMICON id=61230700 w=40 h=40} {ITEMICON id=61334100 w=40 h=40} {ITEMICON id=61334200 w=40 h=40} {ITEMICON id=61334300 w=40 h=40} {ITEMICON id=61334400 w=40 h=40} {ITEMICON id=61334500 w=40 h=40}
+	정복의 양손검, 전위의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_rengot_mitem2&quot; w=300 h=375}
+	{ITEMICON id=61230200 w=40 h=40} {ITEMICON id=61333600 w=40 h=40} {ITEMICON id=61333700 w=40 h=40} {ITEMICON id=61333900 w=40 h=40} {ITEMICON id=61334000 w=40 h=40}
+	정복의 지팡이, 기사생도의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_rengot_mitem3&quot; w=300 h=375}
+	{ITEMICON id=61230400 w=40 h=40} {ITEMICON id=61333100 w=40 h=40} {ITEMICON id=61333200 w=40 h=40} {ITEMICON id=61333400 w=40 h=40} {ITEMICON id=61333500 w=40 h=40}
+	기타 정복의 무기 세트{CR h=18}{ITEMICON id=61230100 w=40 h=40} {ITEMICON id=61230300 w=40 h=40}
+	{/INDENT}"
+
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}렌고트 부락 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 13~15
+	□주요 에픽 몬스터{CR h=18}{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_monster_golem&quot; w=150 h=150}
+	{ALIGN hor=&quot;left&quot;}
+	□주요 제작 가능 장비
+	정복의 장검/방패, 용병의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_rengot_fitem1&quot; w=300 h=375}
+	{ITEMICON id=61230000 w=40 h=40} {ITEMICON id=61230700 w=40 h=40} {ITEMICON id=61334100 w=40 h=40} {ITEMICON id=61334200 w=40 h=40} {ITEMICON id=61334300 w=40 h=40} {ITEMICON id=61334400 w=40 h=40} {ITEMICON id=61334500 w=40 h=40}
+	정복의 양손검, 전위의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_rengot_fitem2&quot; w=300 h=375}
+	{ITEMICON id=61230200 w=40 h=40} {ITEMICON id=61333600 w=40 h=40} {ITEMICON id=61333700 w=40 h=40} {ITEMICON id=61333900 w=40 h=40} {ITEMICON id=61334000 w=40 h=40}
+	정복의 지팡이, 기사생도의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_rengot_fitem3&quot; w=300 h=375}
+	{ITEMICON id=61230400 w=40 h=40} {ITEMICON id=61333100 w=40 h=40} {ITEMICON id=61333200 w=40 h=40} {ITEMICON id=61333400 w=40 h=40} {ITEMICON id=61333500 w=40 h=40}
+	기타 정복의 무기 세트{CR h=18}{ITEMICON id=61230100 w=40 h=40} {ITEMICON id=61230300 w=40 h=40}
+	{/INDENT}"/>
+
+    <GUIDEBOOK id="3005" type="field" param="113" popuphelpid="3005"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}영웅의 오솔길 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 15~20
+	□주요 에픽 몬스터{CR h=18}{BITMAP name=&quot;guidebook_monster_rider&quot; w=150 h=150} {BITMAP name=&quot;guidebook_monster_garden&quot; w=150 h=150}
+	□주요 제작 가능 장비
+	망령의 장검/방패, 리비우트 판금 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_mitem1&quot; w=300 h=375}
+	{ITEMICON id=61730000 w=40 h=40} {ITEMICON id=61730700 w=40 h=40} {ITEMICON id=61734600 w=40 h=40} {ITEMICON id=61734700 w=40 h=40} {ITEMICON id=61734800 w=40 h=40} {ITEMICON id=61734900 w=40 h=40} {ITEMICON id=61735000 w=40 h=40}
+	망령의 양손검, 사령의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_mitem2&quot; w=300 h=375}
+	{ITEMICON id=61730200 w=40 h=40} {ITEMICON id=61734100 w=40 h=40} {ITEMICON id=61734200 w=40 h=40} {ITEMICON id=61734300 w=40 h=40} {ITEMICON id=61734400 w=40 h=40} {ITEMICON id=61734500 w=40 h=40}
+	망령의 양손둔기, 결사단의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_mitem3&quot; w=300 h=375}
+	{ITEMICON id=61730300 w=40 h=40} {ITEMICON id=61733600 w=40 h=40} {ITEMICON id=61733700 w=40 h=40} {ITEMICON id=61733800 w=40 h=40} {ITEMICON id=61733900 w=40 h=40} {ITEMICON id=61734000 w=40 h=40}
+	망령의 지팡이, 시온 수도사의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_mitem4&quot; w=300 h=375}
+	{ITEMICON id=61730400 w=40 h=40} {ITEMICON id=61733100 w=40 h=40} {ITEMICON id=61733200 w=40 h=40} {ITEMICON id=61733400 w=40 h=40} {ITEMICON id=61733500 w=40 h=40}
+	기타 정복의 무기 세트{CR h=18}{ITEMICON id=61730100 w=40 h=40}
+	{/INDENT}"
+
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}영웅의 오솔길 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 15~20
+	□주요 에픽 몬스터{CR h=18}{BITMAP name=&quot;guidebook_monster_rider&quot; w=150 h=150} {BITMAP name=&quot;guidebook_monster_garden&quot; w=150 h=150}
+	□주요 제작 가능 장비
+	망령의 장검/방패, 리비우트 판금 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_fitem1&quot; w=300 h=375}
+	{ITEMICON id=61730000 w=40 h=40} {ITEMICON id=61730700 w=40 h=40} {ITEMICON id=61734600 w=40 h=40} {ITEMICON id=61734700 w=40 h=40} {ITEMICON id=61734800 w=40 h=40} {ITEMICON id=61734900 w=40 h=40} {ITEMICON id=61735000 w=40 h=40}
+	망령의 양손검, 사령의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_fitem2&quot; w=300 h=375}
+	{ITEMICON id=61730200 w=40 h=40} {ITEMICON id=61734100 w=40 h=40} {ITEMICON id=61734200 w=40 h=40} {ITEMICON id=61734300 w=40 h=40} {ITEMICON id=61734400 w=40 h=40} {ITEMICON id=61734500 w=40 h=40}
+	망령의 양손둔기, 결사단의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_fitem3&quot; w=300 h=375}
+	{ITEMICON id=61730300 w=40 h=40} {ITEMICON id=61733600 w=40 h=40} {ITEMICON id=61733700 w=40 h=40} {ITEMICON id=61733800 w=40 h=40} {ITEMICON id=61733900 w=40 h=40} {ITEMICON id=61734000 w=40 h=40}
+	망령의 지팡이, 시온 수도사의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_hero_fitem4&quot; w=300 h=375}
+	{ITEMICON id=61730400 w=40 h=40} {ITEMICON id=61733100 w=40 h=40} {ITEMICON id=61733200 w=40 h=40} {ITEMICON id=61733400 w=40 h=40} {ITEMICON id=61733500 w=40 h=40}
+	기타 정복의 무기 세트{CR h=18}{ITEMICON id=61730100 w=40 h=40}
+	{/INDENT}"/>
+
+    <GUIDEBOOK id="3006" type="field" param="102" popuphelpid="3006"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}에다산 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 21~23
+	□주요 에픽 몬스터{CR h=18}{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_monster_diago&quot; w=150 h=150}
+	{ALIGN hor=&quot;left&quot;}
+	□주요 제작 가능 장비
+	승리의 장검/방패, 용기병의 판금 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_mitem1&quot; w=300 h=375}
+	{ITEMICON id=62130000 w=40 h=40} {ITEMICON id=62130700 w=40 h=40} {ITEMICON id=62134600 w=40 h=40} {ITEMICON id=62134700 w=40 h=40} {ITEMICON id=62134800 w=40 h=40} {ITEMICON id=62134900 w=40 h=40} {ITEMICON id=62135000 w=40 h=40}
+	승리의 양손검, 산악수비대의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_mitem2&quot; w=300 h=375}
+	{ITEMICON id=62130200 w=40 h=40} {ITEMICON id=62134100 w=40 h=40} {ITEMICON id=62134200 w=40 h=40} {ITEMICON id=62134300 w=40 h=40} {ITEMICON id=62134400 w=40 h=40} {ITEMICON id=62134500 w=40 h=40}
+	승리의 양손둔기, 겨울 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_mitem3&quot; w=300 h=375}
+	{ITEMICON id=62130300 w=40 h=40} {ITEMICON id=62133600 w=40 h=40} {ITEMICON id=62133700 w=40 h=40} {ITEMICON id=62133800 w=40 h=40} {ITEMICON id=62133900 w=40 h=40} {ITEMICON id=62134000 w=40 h=40}
+	승리의 지팡이, 매혹의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_mitem4&quot; w=300 h=375}
+	{ITEMICON id=62130400 w=40 h=40} {ITEMICON id=62133100 w=40 h=40} {ITEMICON id=62133200 w=40 h=40} {ITEMICON id=62133400 w=40 h=40} {ITEMICON id=62133500 w=40 h=40}
+	기타 승리의 무기 세트{CR h=18}{ITEMICON id=62130100 w=40 h=40}
+	{/INDENT}"
+
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}에다산 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 21~23
+	□주요 에픽 몬스터{CR h=18}{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_monster_diago&quot; w=150 h=150}
+	{ALIGN hor=&quot;left&quot;}
+	□주요 제작 가능 장비
+	승리의 장검/방패, 용기병의 판금 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_fitem1&quot; w=300 h=375}
+	{ITEMICON id=62130000 w=40 h=40} {ITEMICON id=62130700 w=40 h=40} {ITEMICON id=62134600 w=40 h=40} {ITEMICON id=62134700 w=40 h=40} {ITEMICON id=62134800 w=40 h=40} {ITEMICON id=62134900 w=40 h=40} {ITEMICON id=62135000 w=40 h=40}
+	승리의 양손검, 산악수비대의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_fitem2&quot; w=300 h=375}
+	{ITEMICON id=62130200 w=40 h=40} {ITEMICON id=62134100 w=40 h=40} {ITEMICON id=62134200 w=40 h=40} {ITEMICON id=62134300 w=40 h=40} {ITEMICON id=62134400 w=40 h=40} {ITEMICON id=62134500 w=40 h=40}
+	승리의 양손둔기, 겨울 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_fitem3&quot; w=300 h=375}
+	{ITEMICON id=62130300 w=40 h=40} {ITEMICON id=62133600 w=40 h=40} {ITEMICON id=62133700 w=40 h=40} {ITEMICON id=62133800 w=40 h=40} {ITEMICON id=62133900 w=40 h=40} {ITEMICON id=62134000 w=40 h=40}
+	승리의 지팡이, 매혹의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_eda_fitem4&quot; w=300 h=375}
+	{ITEMICON id=62130400 w=40 h=40} {ITEMICON id=62133100 w=40 h=40} {ITEMICON id=62133200 w=40 h=40} {ITEMICON id=62133400 w=40 h=40} {ITEMICON id=62133500 w=40 h=40}
+	기타 승리의 무기 세트{CR h=18}{ITEMICON id=62130100 w=40 h=40}
+	{/INDENT}"/>
+
+	<!--
+    <GUIDEBOOK id="3007" type="field" param="111" popuphelpid="3007"
+	journalmalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}마코트 부락 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 24~26
+	□주요 에픽 몬스터{CR h=18}{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_monster_crassus&quot; w=150 h=150}
+	{ALIGN hor=&quot;left&quot;}□주요 제작 가능 장비
+	요동치는 돌의 지팡이, 믿음의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_mitem1&quot; w=300 h=375}
+	{ITEMICON id=73125 w=40 h=40} {ITEMICON id=63941 w=40 h=40} {ITEMICON id=63942 w=40 h=40} {ITEMICON id=63944 w=40 h=40} {ITEMICON id=63945 w=40 h=40}
+	요동치는 돌의 장검/방패, 포식자의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_mitem2&quot; w=300 h=375}
+	{ITEMICON id=73120 w=40 h=40} {ITEMICON id=73127 w=40 h=40} {ITEMICON id=63951 w=40 h=40} {ITEMICON id=63952 w=40 h=40} {ITEMICON id=63953 w=40 h=40} {ITEMICON id=63954 w=40 h=40} {ITEMICON id=63955 w=40 h=40}
+	요동치는 돌의 양손둔기,{CR}절제된 힘의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_mitem3&quot; w=300 h=350}
+	{ITEMICON id=73124 w=40 h=40} {ITEMICON id=63961 w=40 h=40} {ITEMICON id=63962 w=40 h=40} {ITEMICON id=63963 w=40 h=40} {ITEMICON id=63964 w=40 h=40} {ITEMICON id=63965 w=40 h=40}
+	요동치는 돌의 양손검, 격노의 판금 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_mitem4&quot; w=300 h=375}
+	{ITEMICON id=73122 w=40 h=40} {ITEMICON id=63971 w=40 h=40} {ITEMICON id=63972 w=40 h=40} {ITEMICON id=63973 w=40 h=40} {ITEMICON id=63974 w=40 h=40} {ITEMICON id=63975 w=40 h=40}
+	기타 요동치는 돌의 무기 세트{CR h=18}{ITEMICON id=73121 w=40 h=40}
+	{/INDENT}"
+
+	journalfemalestring="{FONT name=&quot;fntHeadline&quot;}{COLOR r=250 g=230 b=210}마코트 부락 진입!!{/COLOR}{/FONT}{INDENT dent=10}
+	□추천 레벨 24~26
+	□주요 에픽 몬스터{CR h=18}{ALIGN hor=&quot;center&quot;}{BITMAP name=&quot;guidebook_monster_crassus&quot; w=150 h=150}
+	{ALIGN hor=&quot;left&quot;}□주요 제작 가능 장비
+	요동치는 돌의 지팡이, 믿음의 천 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_fitem1&quot; w=300 h=375}
+	{ITEMICON id=73125 w=40 h=40} {ITEMICON id=63941 w=40 h=40} {ITEMICON id=63942 w=40 h=40} {ITEMICON id=63944 w=40 h=40} {ITEMICON id=63945 w=40 h=40}
+	요동치는 돌의 장검/방패, 포식자의 가죽 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_fitem2&quot; w=300 h=375}
+	{ITEMICON id=73120 w=40 h=40} {ITEMICON id=73127 w=40 h=40} {ITEMICON id=63951 w=40 h=40} {ITEMICON id=63952 w=40 h=40} {ITEMICON id=63953 w=40 h=40} {ITEMICON id=63954 w=40 h=40} {ITEMICON id=63955 w=40 h=40}
+	요동치는 돌의 양손둔기,{CR}절제된 힘의 사슬 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_fitem3&quot; w=300 h=350}
+	{ITEMICON id=73124 w=40 h=40} {ITEMICON id=63961 w=40 h=40} {ITEMICON id=63962 w=40 h=40} {ITEMICON id=63963 w=40 h=40} {ITEMICON id=63964 w=40 h=40} {ITEMICON id=63965 w=40 h=40}
+	요동치는 돌의 양손검, 격노의 판금 방어구 세트{CR h=18}{BITMAP name=&quot;guidebook_makot_fitem4&quot; w=300 h=375}
+	{ITEMICON id=73122 w=40 h=40} {ITEMICON id=63971 w=40 h=40} {ITEMICON id=63972 w=40 h=40} {ITEMICON id=63973 w=40 h=40} {ITEMICON id=63974 w=40 h=40} {ITEMICON id=63975 w=40 h=40}
+	기타 요동치는 돌의 무기 세트{CR h=18}{ITEMICON id=73121 w=40 h=40}
+	{/INDENT}"/>
+	-->
+
+</maiet>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족사수" npcid="110007">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211000702" rate="35" />
+				<ACTION type="talent" param1="211000703" rate="15" />
+			</DEFAULT>
+			
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param2="300">
+				<ACTION type="talent" param1="211000701" rate="20" />  <!-- 일반공격(근접) -->
+				<ACTION type="talent" param1="211000705" rate="10" />
+				<ACTION type="talent" param1="211000703" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

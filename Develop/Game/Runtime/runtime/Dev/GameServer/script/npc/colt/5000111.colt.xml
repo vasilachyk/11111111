@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<SCRIPT>
+<![CDATA[
+
+function NPC_5000111:Init(NPCID)
+	
+end
+
+function NPC_5000111:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC);
+end
+
+function NPC_5000111_Yell(ThisNPC, Opponent)
+end
+		
+]]>
+	</SCRIPT>
+	<COLT>
+<!--
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="distance" param1="100" param2="100"/>
+			</DEFAULT>
+		</AGGRO>
+		
+		<COMBAT >
+			<DEFAULT>
+
+        <ACTION type="talent" param1="200315" rate="100" />
+
+      </DEFAULT>
+    </COMBAT>
+
+    <REACTION>
+			<CHECK type="hp" param1="1" param2="25">
+				<ACTION type="lua" param1="NPC_32_Yell" auto_run="true" max_count="1" />
+				<ACTION type="yell" max_count="1" />
+				<ACTION type="flee" param1="from_enemy" param2="5" max_count="1" />
+  			</CHECK>
+  
+			<CHECK type="hp" param1="1" param2="40">
+				<CHECK type="unbreakpart" param1="1" >
+					<CHECK type="motionfactor" param1="deflect">
+						<ACTION type="breakpart" param1="1" rate="80"/>
+					</CHECK>
+				</CHECK>
+			</CHECK>
+		</REACTION>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="200312" rate="70" />
+				<ACTION type="nothing"  param1="1000" rate="30" />
+			</DEFAULT>
+		</IDLE>
+-->
+	</COLT>
+</maiet>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="maiet">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="2">
+				<xs:element name="COLT" type="SHColt" minOccurs="0" maxOccurs="1" />
+				<xs:element name="SCRIPT" type="xs:string" minOccurs="0" maxOccurs="1" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+  <xs:complexType name="SHColt">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="COMBAT" type="SHColtCombatSection" minOccurs="0" maxOccurs="1" />
+      <xs:element name="REACTION" type="SHColtEventSection" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IDLE" type="SHColtEventSection" minOccurs="0" maxOccurs="1" />
+      <xs:element name="AGGRO" type="SHColtEventSection" minOccurs="0" maxOccurs="1" />
+      <xs:element name="STRESS" type="SHColtEventSection" minOccurs="0" maxOccurs="1" />
+      <xs:element name="VICTORY" type="SHColtEventSection" minOccurs="0" maxOccurs="1" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SHColtCombatSection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DEFAULT" type="SHColtDefSection" minOccurs="1" maxOccurs="1" />
+      <xs:element name="CHECK" type ="SHColtCheck" minOccurs="0" maxOccurs="unbounded" />
+    </xs:choice>
+    <xs:attribute name="tackle" type="xs:int" />
+    <xs:attribute name="tackle_rate" type="xs:int" />
+    <xs:attribute name="rotate" type="xs:int" />
+    <xs:attribute name="victory" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="SHColtEventSection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DEFAULT" type="SHColtDefSection" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CHECK" type ="SHColtCheck" minOccurs="0" maxOccurs="unbounded" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SHColtDefSection">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element name="ACTION" type="SHColtAction" maxOccurs="unbounded" />
+      <xs:element name="CHECK" type ="SHColtCheck" maxOccurs="unbounded" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SHColtCheck">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="ACTION" type ="SHColtAction" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CHECK" type ="SHColtCheck" minOccurs="0" maxOccurs="1" />      
+    </xs:choice>
+    <xs:attribute name="type" type="SHColtCheckType" />
+    <xs:attribute name="param1" type="xs:string" />
+    <xs:attribute name="param2" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SHColtAction">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="ACTION" type="SHColtSequencedAction" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attributeGroup ref="SHColtBasicActionAttrs" />
+    <xs:attribute name="max_count" type="xs:int" />
+    <xs:attribute name="rate" type="xs:int" />
+    <xs:attribute name="auto_run" type="xs:boolean" />
+    <xs:attribute name="cycle" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="SHColtSequencedAction">
+    <xs:attributeGroup ref="SHColtBasicActionAttrs" />
+  </xs:complexType>
+  <xs:attributeGroup name="SHColtBasicActionAttrs">
+    <xs:attribute name="type" type="SHColtActionType" />
+    <xs:attribute name="param1" type="xs:string" />
+    <xs:attribute name="param2" type="xs:string" />
+    <xs:attribute name="param3" type="xs:string" />
+    <xs:attribute name="stress" type="xs:boolean" default="true" />
+    <xs:attribute name="duration" type="xs:double" />
+  </xs:attributeGroup>
+  <xs:simpleType name="SHColtActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nothing" />
+      <xs:enumeration value="talent" />
+      <xs:enumeration value="lua" />
+      <xs:enumeration value="flee" />
+      <xs:enumeration value="yell" />
+      <xs:enumeration value="guard" />
+      <xs:enumeration value="breakpart" />
+      <xs:enumeration value="adjust" />
+      <xs:enumeration value="damage" />
+      <xs:enumeration value="motionfactor" />
+      <xs:enumeration value="distance" />
+      <xs:enumeration value="follow" />
+      <xs:enumeration value="move" />
+      <xs:enumeration value="move_random" />
+      <xs:enumeration value="change_hitcapsule" />
+      <xs:enumeration value="say" />
+      <xs:enumeration value="shout" />
+      <xs:enumeration value="narration" />
+      <xs:enumeration value="aggro" />
+      <xs:enumeration value="group" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SHColtCheckType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="hp" />
+      <xs:enumeration value="en" />
+      <xs:enumeration value="sp" />
+      <xs:enumeration value="stress" />
+      <xs:enumeration value="breakpart" />
+      <xs:enumeration value="unbreakpart" />
+      <xs:enumeration value="damage" />
+      <xs:enumeration value="motionfactor" />
+      <xs:enumeration value="distance" />
+      <xs:enumeration value="angle" />
+      <xs:enumeration value="e_motionfactor" />
+      <xs:enumeration value="mode" />
+      <xs:enumeration value="state" />
+      <xs:enumeration value="hitcapsule" />
+      <xs:enumeration value="used_talent" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="신입 유령궁사">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="211304601" rate="40" />
+				<ACTION type="talent" param1="211304602" rate="10" />
+				<ACTION type="talent" param1="211304603" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="20">
+				<ACTION type="flee" param1="from_enemy" param2="4" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="1500">
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="211304601" rate="50" />
+				<ACTION type="talent" param1="211304602" rate="50" />
+			</CHECK>
+
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211304600" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

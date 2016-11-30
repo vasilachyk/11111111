@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="베스피오단 도살자 (여)">
+		<COMBAT mode="0" >
+			<DEFAULT>	
+				<ACTION type="group" rate="50">
+					<ACTION type="face_to"  />
+					<ACTION type="nothing" param1="0.5" />
+				</ACTION>
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+				
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

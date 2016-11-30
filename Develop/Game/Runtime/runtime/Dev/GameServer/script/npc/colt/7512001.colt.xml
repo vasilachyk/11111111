@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="리비우트" npcid="512001">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="say" param1="$$COLT_0512001_9" rate="1"/>
+					<ACTION type="talent" param1="251200162"/>					
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>		
+		<COMBAT mode="0" comment="Peace mode" >
+			<DEFAULT>
+				<ACTION type="talent" param1="251200110" rate="50" />
+				<ACTION type="talent" param1="251200111" rate="50" />
+				<ACTION type="talent" param1="251200112" rate="50" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="90" >
+				<ACTION type="talent" param1="251200109" max_count="1" duration="0"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="80" >
+				<ACTION type="talent" param1="251200109" max_count="1" duration="0"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="70" >
+				<ACTION type="talent" param1="251200109" max_count="1" duration="0"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="60" >
+				<ACTION type="talent" param1="251200109" max_count="1" duration="5"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="50" >
+				<ACTION type="talent" param1="251200109" max_count="1" duration="5"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="40" >
+				<ACTION type="talent" param1="251200109" max_count="1" duration="5"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="30" >
+				<ACTION type="talent" param1="251200109" max_count="1" duration="5"/>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1" victory="251200122">
+			<DEFAULT>
+				<ACTION type="talent" param1="251200120" rate="10" duration="0" />
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="251200121" duration="-1" cycle="3"/>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="2" victory="251200132">
+			<DEFAULT>
+				<ACTION type="talent" param1="251200130" rate="10" duration="0" /> 
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="251200131" duration="-1" cycle="3"/>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="3" comment="Berserker mode" victory="251200151" >
+			<DEFAULT>
+				<ACTION type="talent" param1="251200150" rate="50" />
+				<ACTION type="talent" param1="251200113" rate="10" />
+				<ACTION type="talent" param1="251200114" rate="10" />
+				<ACTION type="talent" param1="251200115" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="251200105" rate="10" />
+				<ACTION type="talent" param1="251200106" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_7512001:Init( NPCID )
+	--[[  USERDATA 
+	1 : 파츠파괴 데미지 누적
+	2 : Pain 데미지 누적
+	3 : Pain 모드전환 데미지 누적
+	4 : 광폭모드 제어 변수( 러쉬 스킬 사용중 광폭화 시간이 다되면 이 변수가 1이 된다. 러쉬 종료후 이 변수를 체크하여 지침으로 이어질지 광폭화를 유지할지 체크)
+	--]]
+	NPC_ReserveUserData( NPCID, 5 )
+	
+	NPC_7512001.UD_HitBPartsWeapon = 5
+	
+	local MaxHP 									= NPC_7512001.MaxHP
+	
+	NPC_7512001.LimitForPain							= MaxHP/20
+	NPC_7512001.LimitForBreakSword					= MaxHP/80
+	NPC_7512001.LimitForModeChange					= MaxHP/20
+	
+	NPC_7512001.DamageBonusForBreakSword				= MaxHP/6
+	
+	NPC_7512001.TalIdPain1							= 251200101
+	NPC_7512001.TalIdPain2							= 251200102
+	NPC_7512001.TalIdTire1							= 251200107	-- mode0
+	NPC_7512001.TalIdTire2							= 251200108	-- mode0
+	NPC_7512001.TalIdTire3							= 251200140	
+	NPC_7512001.TalIdTire4							= 251200141
+	NPC_7512001.TalIdBerserk							= 251200109
+	NPC_7512001.TalIdChangeMode0						= 251200151
+	
+	NPC_7512001.TalIdRushCancel1						= 251200120
+	NPC_7512001.TalIdRushCancel2						= 251200130
+	
+	NPC_7512001.BuffIdBerserk						= 40500
+	NPC_7512001.BuffIdPoint							= 40501
+	NPC_7512001.DurTimeOfBerserk						= 30
+	
+	NPC_7512001.TalIdBPartAttack						= 192020
+	NPC_7512001.TalIdBPartReaction1					= 251200101	-- 일반모드일 경우 Reaction
+	NPC_7512001.TalIdBPartReaction2					= 251200152 -- 광폭화 모드일 경우 Reaction
+end
+
+function NPC_7512001:OnBPartRecover()
+	for i=1, 4 do
+		this:SetUserData( i, 0 )
+	end -- for
+end
+
+-- 더 파괴할 파트가 있는지 체크하는 함수
+function NPC_7512001:SwordExist( ThisNPC )
+	return not( ThisNPC:CheckBPart( 1 ) and ThisNPC:CheckBPart( 2 ) and ThisNPC:CheckBPart( 3 ) )
+end
+
+function NPC_7512001:OnStartPoint1( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "lock", 0 )
+	--Enemy:GainBuff( NPC_7512001.BuffIdPoint )
+end
+
+function NPC_7512001:OnStartPoint2( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+		
+	ThisNPC:Aggro( "lock", 0 )
+	--Enemy:GainBuff( NPC_7512001.BuffIdPoint )
+end
+
+function NPC_7512001:OnFinishRushCancel( ThisActor, Enemy )
+	-- GLog( "NPC_7512001:OnFinishRushCancel\n" )
+	
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "random", 0 )
+end
+
+function NPC_7512001:OnCancelRushAttack1( ThisActor, Enemy )
+	-- GLog( "NPC_7512001:OnCancelRushAttack1\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	if ThisNPC:GetUserData( NPC_7512001.UD_HitBPartsWeapon ) == 1 then return end
+	
+	ThisNPC:UseTalentSelf( NPC_7512001.TalIdRushCancel1 )
+end
+
+function NPC_7512001:OnCancelRushAttack2( ThisActor, Enemy )
+	-- GLog( "NPC_7512001:OnCancelRushAttack2\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	if ThisNPC:GetUserData( NPC_7512001.UD_HitBPartsWeapon ) == 1 then return end
+	
+	ThisNPC:UseTalentSelf( NPC_7512001.TalIdRushCancel2 )
+end
+
+function NPC_7512001:OnFinishRushAttack( ThisActor, Enemy )
+	-- GLog( "NPC_7512001:OnFinishRushAttack\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	
+	if ThisNPC:GetUserData(4) == 1 then
+		NPC_7512001:TiredReaction( ThisNPC )
+	end
+	
+	ThisNPC:Aggro( "random", 0 )
+end
+
+-- 
+-- 리비우트가 지치는 모션취하도록 하는 함수. 
+-- 칼이 있거나 없을경우, 체력이 30% 이상 또는 미만일 경우에 따라서 다른 탤런트를 사용하여야 한다.
+--
+function NPC_7512001:TiredReaction( ThisNPC )
+	-- GLog( "NPC_7512001:TiredReaction\n" )
+	
+	if NPC_7512001:SwordExist( ThisNPC ) then
+		if ThisNPC:GetHP()/ThisNPC:GetMaxHP() > 0.3 then
+			ThisNPC:UseTalentSelf( NPC_7512001.TalIdTire1 )
+		else
+			ThisNPC:UseTalentSelf( NPC_7512001.TalIdTire3 )
+		end
+	else
+		if ThisNPC:GetHP()/ThisNPC:GetMaxHP() > 0.3 then
+			ThisNPC:UseTalentSelf( NPC_7512001.TalIdTire2 )
+		else
+			ThisNPC:UseTalentSelf( NPC_7512001.TalIdTire4 )
+		end
+	end
+end
+
+function NPC_512001:OnFinishBPartReaction( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:SetUserData( NPC_512001.UD_HitBPartsWeapon, 0 )
+end
+
+
+function NPC_7512001:OnTimer( Index )
+	--GLog( "NPC_7512001:OnTimer\n")
+	
+	if Index == 1 then
+		
+		if not this:IsNowCombat() then
+			return
+		end
+		
+		if this:GetMode() ~= 3 then
+			this:SetUserData( 4, 1 )
+			return
+		end
+		
+		NPC_7512001:TiredReaction( this )
+	end
+end
+
+function NPC_7512001:OnFinishRushMode( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+
+	ThisNPC:RemoveBuff( NPC_7512001.BuffIdBerserk )
+	ThisNPC:SetUserData( 4, 0 )	
+end
+
+-- 전투 종료처리
+function NPC_7512001:OnCombatEnd(  )
+	-- GLog( "OnCombatEnd" )
+	this:RemoveBuff( NPC_7512001.BuffIdBerserk )
+	this:SetUserData( 4, 0 )
+end
+
+function NPC_7512001:OnStartTiredToPeace( ThisActor, Enemy )
+	-- GLog( "NPC_7512001:OnStartTiredToPeace\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	
+	ThisNPC:RemoveBuff( NPC_7512001.BuffIdBerserk )
+	ThisNPC:SetUserData( 4, 0 )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+-- 체력 30% 이하에서 지침모드가 시작될때 호출.
+-- 주기적으로 지침모드에 돌입하기 위해서 타이머를 설정한다.
+function NPC_7512001:OnStartTiredToBerserk( ThisActor, Enemy )
+	--GLog( "NPC_7512001:OnStartTiredToBerserk\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	
+	ThisNPC:SetUserData( 4, 0 )
+	ThisNPC:SetTimer( 1, NPC_7512001.DurTimeOfBerserk + 5, false )  -- 지침애니메이션의 자체 길이 때문에 +5를 해준다.
+	
+	--GLog( "NPC_7512001:SetTimer " .. NPC_7512001.DurTimeOfBerserk + 5 .. "\n" )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+-- 광폭화 전환 탤런트가 종료될때 처리
+-- 광폭화 종료타이밍을 SetTimer로 설정한다.
+function NPC_7512001:OnFinishBerserk( ThisActor, Enemy )
+	--GLog( "NPC_7512001:OnFinishBerserk\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	
+	ThisNPC:SetTimer( 1, NPC_7512001.DurTimeOfBerserk, false )
+	--GLog( "NPC_7512001:SetTimer " .. NPC_7512001.DurTimeOfBerserk .. "\n" )
+
+	ThisNPC:SetUserData( 2 , 0 )
+end
+
+-- 다음번에 파괴해야될 파트의 인덱스를 알려주는 함수
+function NPC_7512001:GetNextPartIndex( ThisNPC )
+	--GLog( "NPC_7512001:GetNextPartIndex\n" )
+	
+	local PartIdx = 0
+	if ThisNPC:CheckBPart( 1 ) then
+		if ThisNPC:CheckBPart( 2 ) then
+			if not ThisNPC:CheckBPart( 3 ) then
+				PartIdx = 3
+			end
+		else
+			PartIdx = 2
+		end
+	else
+		PartIdx = 1
+	end
+	
+	return PartIdx
+end
+
+function NPC_7512001:AccDamageForBPartsWeapon( ThisNPC, HitIndex, HitInfo )
+	-- GLog( HitInfo.TalentID )
+	if HitInfo.TalentID == NPC_7512001.TalIdBPartAttack then
+		return true
+	end
+	return false
+end
+
+function NPC_7512001:AccDamage( ThisNPC, HitIndex, HitInfo )
+	-- GLog( "NPC_7512001:AccDamage : HitIndex=" .. HitIndex .. ",1:" .. ThisNPC:GetUserData( 1 ) .. ",2:" .. ThisNPC:GetUserData( 2 ) .. ",3:".. ThisNPC:GetUserData(3) .. "\n" )
+
+	if NPC_7512001:AccDamageForBPartsWeapon( ThisNPC, HitIndex, HitInfo ) then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( 2, 0 )
+		ThisNPC:SetUserData( NPC_512001.UD_HitBPartsWeapon, 1 )
+		
+		if ThisNPC:GetMode() == 0 then
+			ThisNPC:UseTalentSelf( NPC_7512001.TalIdBPartReaction1 )
+		else -- 광폭화 또는 러쉬 모드일경우는 광폭화 모드상태의 pain을 수행
+			ThisNPC:UseTalentSelf( NPC_7512001.TalIdBPartReaction2 )
+		end
+		
+		HitInfo.Damage = HitInfo.Damage + NPC_7512001.DamageBonusForBreakSword
+		return HitInfo
+	end
+	
+	-- Acc for pain
+	local DmgAcc = ThisNPC:GetUserData( 2 ) + HitInfo.Damage
+	ThisNPC:SetUserData( 2, DmgAcc )
+	
+	if ThisNPC:GetMode() == 0 then
+		DmgAcc = ThisNPC:GetUserData( 3 ) + HitInfo.Damage
+		ThisNPC:SetUserData( 3, DmgAcc )
+	end
+	
+	-- Acc for break parts
+	if HitIndex == 1 and HitInfo.Attacker:IsRear( ThisNPC )  then
+		DmgAcc = ThisNPC:GetUserData( 1 ) + HitInfo.Damage
+		ThisNPC:SetUserData( 1, DmgAcc )
+	end
+	
+	-- TiredMode 처리.
+	if ThisNPC:GetCurrentTalent() == NPC_7512001.TalIdTire1 or 
+		ThisNPC:GetCurrentTalent() == NPC_7512001.TalIdTire3 then
+		
+		-- 임계 데미지를 넘지 않았다면 무시
+		if ThisNPC:GetUserData( 1 ) < NPC_7512001.LimitForBreakSword then
+			return HitInfo
+		end
+		
+		-- 칼부위 파괴 처리
+		local PartIdx = NPC_7512001:GetNextPartIndex( ThisNPC )
+		
+		if PartIdx > 0 then
+			ThisNPC:ClearJob()
+			ThisNPC:UseTalentSelf( NPC_7512001.TalIdPain2 )
+			ThisNPC:BreakPart( PartIdx, HitInfo.Attacker )
+			ThisNPC:SetUserData( 1 , 0 )
+			ThisNPC:SetUserData( 2 , 0 )
+			
+			HitInfo.Damage = HitInfo.Damage + NPC_7512001.DamageBonusForBreakSword
+		end
+		
+		return HitInfo
+	end
+	
+	if ThisNPC:GetMode() == 0 and
+		ThisNPC:GetUserData( 2 ) > NPC_7512001.LimitForPain then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_7512001.TalIdPain1 )
+		ThisNPC:SetUserData( 2 , 0 )
+	end
+	
+	return HitInfo
+end
+	
+function NPC_7512001:OnHitCapsule_1_0(HitInfo)
+	return NPC_7512001:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_7512001:OnHitCapsule_2_0(HitInfo)
+	return NPC_7512001:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_7512001:OnHitCapsule_2_1(HitInfo)
+	return NPC_7512001:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_7512001:OnHitCapsule_2_2(HitInfo)
+	return NPC_7512001:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_7512001:OnHitCapsule_2_3(HitInfo)
+	return NPC_7512001:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_7512001:OnHitCapsule_2_1(HitInfo)
+	return NPC_7512001:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_7512001:OnHitCapsule_3_0(HitInfo)
+	return NPC_7512001:AccDamage( this, 2, HitInfo )
+end
+
+
+	]]></SCRIPT>
+</maiet>

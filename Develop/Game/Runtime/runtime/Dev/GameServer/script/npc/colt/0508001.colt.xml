@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="쿨드" npcid="508001">
+		
+		<!--<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="talent" param1="250800101"/>
+					<ACTION type="say" param1="$$COLT_0508001_1" rate="1"/>	
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>-->
+		
+		<COMBAT mode="0" comment="Peace mode">
+			<DEFAULT> 
+				<!--<ACTION type="talent" param1="250800112" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800113" rate="10" duration="2" />-->
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="70" param2="100" >
+				<ACTION type="group" rate="50" cycle="20">
+					<ACTION type="talent" param1="250800118" />
+					<ACTION type="talent" param1="250800120" duration="5" />
+				</ACTION>
+				<!--<ACTION type="talent" param1="250800112" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800113" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800110" rate="50" duration="2" />
+				<ACTION type="talent" param1="250800111" rate="50" duration="2" />
+				<ACTION type="talent" param1="250800116" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800114" rate="50" duration="0" />-->
+			</CHECK>
+			
+			<CHECK type="hp" param1="50" param2="70">
+				<ACTION type="talent" param1="250800143" rate="100"/>
+			</CHECK>
+			
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="250800142" comment="초록 모드">
+			<DEFAULT>
+				<ACTION type="talent" param1="250800110" rate="50" duration="2" />
+				<ACTION type="talent" param1="250800111" rate="50" duration="2" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="45" param2="50">
+				<ACTION type="talent" param1="250800141" rate="30"/> 
+				<ACTION type="talent" param1="250800110" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800111" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800117" rate="10" duration="0" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="20" param2="45">
+				<ACTION type="talent" param1="250800112" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800113" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800110" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800111" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800117" rate="10" duration="0" />
+				<ACTION type="talent" param1="250800118" rate="50"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="20">
+				<ACTION type="talent" param1="250800141" rate="30"/> 
+				<ACTION type="talent" param1="250800112" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800113" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800110" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800111" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800117" rate="10" duration="0" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="2" victory="250800142" comment="달려들어 물기" >
+			<DEFAULT>
+				<ACTION type="talent" param1="250800130" rate="50" />
+				<ACTION type="aggro" param1="random" param2="0"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="3" victory="250800142" comment="파랑 모드" >
+			<DEFAULT>
+				<ACTION type="talent" param1="250800112" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800113" rate="10" duration="2" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="50" param2="70">
+				<ACTION type="talent" param1="250800112" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800113" rate="10" duration="2" />
+				<ACTION type="talent" param1="250800110" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800111" rate="30" duration="2" />
+				<ACTION type="talent" param1="250800115" rate="10"/>
+				<ACTION type="talent" param1="250800117" rate="50" duration="0" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30">
+				<ACTION type="talent" param1="250800140" rate="100"/>
+				<ACTION type="aggro" param1="near" param2="0" max_count="1" />
+				<ACTION type="lua" param1="NPC_508001" param2="Smog" auto_run="true" max_count="1" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="4" victory="250800142" comment="초록 모드에서 뿌리묶기">
+			<DEFAULT>
+				<ACTION type="talent" param1="250800120" rate="10" duration="5" />
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="250800121" rate="10" duration="5" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250800107" rate="20"  />
+				<ACTION type="nothing" param1="0" rate="50"/>
+			</DEFAULT>
+		</IDLE>
+
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_508001:Init( NPCID )
+	--[[  USERDATA 
+	1 : 눈 파츠파괴 데미지 누적
+	2 : 꼬리 파츠파괴 데미지 누적
+	3 : Pain 데미지 누적
+	--]]
+	NPC_ReserveUserData( NPCID, 3 )
+	
+	local MaxHP 										= NPC_508001.MaxHP
+	
+	NPC_508001.LimitForBreakEye							= MaxHP/20		-- 머리파츠
+	NPC_508001.LimitForBreakTail						= MaxHP*1/3		-- 꼬리파츠
+	NPC_508001.LimitForPain								= MaxHP/10 		-- pain 데미지 누적
+	
+	NPC_508001.TalIdBreakEye							= 250800103	-- 눈 아픔
+	NPC_508001.TalIdBreakTail							= 250800104	-- 꼬리 아픔
+	NPC_508001.TalIdPain								= 250800102	-- 데미지 누적 아픔
+	
+	NPC_508001.TalId_MoveL 								= 250800112 -- 좌측 공격
+	NPC_508001.TalId_MoveR 								= 250800113 -- 우측 공격
+	NPC_508001.TalId_Tongue 							= 250800114 -- 혓바닥 공격
+	
+	NPC_508001.NpcIdBubble								= 508000    -- 거품
+	NPC_508001.TTLBubble								= 20
+	NPC_508001.BuffIdBubble								= 40900
+	
+	NPC_508001.NpcIdBug								    = 508004    -- 벌레
+	NPC_508001.NpcIdTree								= 508006    -- 나무 (나중에 508006으로 바꿔야함.그리고 모드1전환을 summon모션으로)
+	NPC_508001.NpcIdTree2								= 508007
+	NPC_508001.SmogBuff 								= 40904		-- 연기버프
+	
+	NPC_508001.BuffIdPoint								= 40909     -- 나무 소환전 알려줌
+end
+
+function NPC_508001:OnBPartRecover()  
+	for i=1, 3 do
+		this:SetUserData( i, 0 )
+	end -- for
+end
+
+-- 어그로 바꾸기
+function NPC_508001:OnFinishAggroChange( ThisActor, Enemy )
+	AsNPC(ThisActor):Aggro( "far", 0 )
+end
+
+-- 물방울 소환 
+function NPC_508001:OnFinishSummonWaterDrop( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_508001.NpcIdBubble, 1, "", -500, 500 )
+end
+
+-- 나무 소환 
+function NPC_508001:OnFinishSummonTree( ThisActor, Enemy )
+    -- 1.쿨드 집 엔피씨일 경우 
+	--local ThisNPC = AsNPC( ThisActor )
+	--local Field = ThisNPC:GetField()
+	
+	--local LocalAdjPos = vec3(100, 100, 0)
+	--WorldPos = Math_LocalToWorld(ThisNPC:GetDir(), ThisNPC:GetPos(), LocalAdjPos)
+	--Field:SpawnLimited(NPC_508001.NpcIdTree, WorldPos, 30)
+	
+	-- 2.뿌리이펙트일경우 -- NPC/dummy_coold_house 여서 NPC/dummy_vis 로 수정함
+	
+	local ThisNPC = AsNPC( ThisActor )
+	local Field = ThisNPC:GetField()
+	GLog("뿌리에 들어옴")
+	local LocalAdjPos = vec3(100, 100, 0)
+	WorldPos = Math_LocalToWorld(ThisNPC:GetDir(), ThisNPC:GetPos(), LocalAdjPos)
+	Field:SpawnLimited(NPC_508001.NpcIdTree, WorldPos, 30)
+end
+
+function NPC_508001:OnStartPoint( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "lock", 0 )
+	Enemy:GainBuff( NPC_508001.BuffIdPoint )
+end
+
+-- 나무 소환 2 (사이즈 더 작음)
+function NPC_508001:OnFinishSummonTree2( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Field = ThisNPC:GetField()
+	local SummonPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	LocalAdjPos = vec3(math.random(0, 0), math.random(0, 0), 0)
+	SummonPos = Math_LocalToWorld( Enemy:GetDir(), Enemy:GetPos(), LocalAdjPos )
+	Field:SpawnLimited( NPC_508001.NpcIdTree2, SummonPos, 10 )
+end
+
+
+function NPC_508001:AccDamage( ThisNPC, HitIndex, HitInfo )
+	local BreakEye = 0
+	local BreakTail = 0
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	if	currentTalent == NPC_508001.TalId_MoveL or
+		currentTalent == NPC_508001.TalId_MoveR or
+		currentTalent == NPC_508001.TalId_Tongue then
+		return HitInfo
+	end
+	
+	local Pain =  ThisNPC:GetUserData( 3 ) + HitInfo.Damage
+	ThisNPC:SetUserData( 3, Pain )
+	
+	-- Acc for pain
+	if ThisNPC:CheckBPart(1) == false then 
+		BreakEye = ThisNPC:GetUserData( 1 ) + HitInfo.Damage
+		ThisNPC:SetUserData( 1, BreakEye )
+	elseif ThisNPC:CheckBPart(2) == false then 
+		BreakTail = ThisNPC:GetUserData( 2 ) + HitInfo.Damage
+		ThisNPC:SetUserData( 2, BreakTail )
+	end
+	
+	if ThisNPC:GetCurrentTalent() == NPC_508001.TalIdBreakEye or
+		ThisNPC:GetCurrentTalent() == NPC_508001.TalIdBreakTail or
+		ThisNPC:GetCurrentTalent() == NPC_508001.TalIdPain then
+		return HitInfo
+	end
+	
+	if BreakEye > NPC_508001.LimitForBreakEye then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_508001.TalIdBreakEye )
+		ThisNPC:BreakPart( 1 , HitInfo.Attacker )
+		ThisNPC:SetUserData( 1, 0 )
+	elseif BreakTail > NPC_508001.LimitForBreakTail then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_508001.TalIdBreakTail )
+		ThisNPC:BreakPart( 2 , HitInfo.Attacker )
+		ThisNPC:SetUserData( 2, 0 )
+		SummonMinion( ThisNPC, nil, NPC_508001.NpcIdBug, 10, "", -1000, 1000 )
+	elseif ThisNPC:GetUserData( 3 ) > NPC_508001.LimitForPain and 
+	    ( not ThisNPC:IsCooldown( NPC_508001.TalIdPain ) ) then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_508001.TalIdPain )
+		ThisNPC:SetUserData( 3 , 0 )
+	end
+	
+	return HitInfo
+end
+
+function NPC_508001:Smog(ThisNPC, Enemy)
+	ThisNPC:GainBuff( NPC_508001.SmogBuff )
+end
+
+-- 전체
+function NPC_508001:OnHitCapsule_1_0(HitInfo)
+	return NPC_508001:AccDamage( this, 0, HitInfo )
+end
+-- 눈
+function NPC_508001:OnHitCapsule_1_1(HitInfo)
+	return NPC_508001:AccDamage( this, 0, HitInfo )
+end
+-- 꼬리
+function NPC_508001:OnHitCapsule_1_2(HitInfo)
+	return NPC_508001:AccDamage( this, 0, HitInfo )
+end
+
+
+
+	]]></SCRIPT>
+</maiet>

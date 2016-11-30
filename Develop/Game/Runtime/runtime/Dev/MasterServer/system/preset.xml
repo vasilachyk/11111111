@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<maiet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PRESET id="defender" level="10" tp="0">
+    <TALENT id="10001~10003" />
+	<TALENT id="10301~10302" />
+	<TALENT id="10601~10602" />
+	<TALENT id="10701~10702" />
+	<TALENT id="10901,10906" />
+	
+	<ITEM id="1~2" />
+	<ITEM id="1060~1064" />    
+  </PRESET>  
+  
+  <PRESET id="defender20" level="20" tp="0">
+    <TALENT id="10001~10004" />
+	<TALENT id="10301~10303" />
+	<TALENT id="10601~10603" />
+	<TALENT id="10701~10703" />
+	<TALENT id="10801" />
+	<TALENT id="10901~10903" />
+	<TALENT id="10906" />
+	<TALENT id="11001~11002" />
+	<TALENT id="11101" />
+	
+	<ITEM id="1~2" />
+	<ITEM id="1060~1064" /> 
+  </PRESET>  
+  
+  <PRESET id="hybrid" level="10" tp="0">
+    <TALENT id="10001~10002" />
+	<TALENT id="10601~10602" />
+	<TALENT id="10701~10703" />
+	<TALENT id="60501" />
+	<TALENT id="60601" />
+	<TALENT id="60701~60702" />
+	
+	<ITEM id="11,2" />
+	<ITEM id="1031~1034" /> 
+  </PRESET>
+  
+  <PRESET id="hybrid20" level="20" tp="0">
+    <TALENT id="10001~10003" />
+	<TALENT id="10301" />
+	<TALENT id="10601~10602" />
+	<TALENT id="10701~10703" />
+	<TALENT id="10901~10902" />
+	<TALENT id="60001~60002" />
+	<TALENT id="60501" />
+	<TALENT id="60601~60602" />
+	<TALENT id="60701~60703" />
+	<TALENT id="60801" />
+	<TALENT id="61301" />
+	
+	<ITEM id="11,2" />
+	<ITEM id="1032~1035" /> 
+  </PRESET>
+  
+  <PRESET id="cleric" level="10" tp="0">
+    <TALENT id="60001~60003" />
+	<TALENT id="60201~60202" />
+	<TALENT id="60501" />
+	<TALENT id="60601" />
+	<TALENT id="60701~60703" />
+	<TALENT id="60801" />
+	
+	<ITEM id="4" />
+	<ITEM id="1051~1054" /> 
+  </PRESET>
+  
+  <PRESET id="cleric20" level="20" tp="0">
+    <TALENT id="60001~60004" />
+	<TALENT id="60201~60202" />
+	<TALENT id="60501" />
+	<TALENT id="60601~60602" />
+	<TALENT id="60701~60703" />
+	<TALENT id="60801~60802" />
+	<TALENT id="60901" />
+	<TALENT id="61001~61003" />
+	<TALENT id="61101" />
+	<TALENT id="61301" />
+	<TALENT id="61401" />
+	
+	<ITEM id="4" />
+	<ITEM id="1052~1055" /> 
+  </PRESET>
+  
+  <PRESET id="berserker" level="10" tp="0">
+    <TALENT id="20001~20002" />
+	<TALENT id="20201" />
+	<TALENT id="20401~20403" />
+	<TALENT id="20501" />
+	<TALENT id="20601~20602" />
+	<TALENT id="20801" />
+	<TALENT id="21901" />
+	
+	<ITEM id="13" />
+	<ITEM id="1010~1014" /> 
+  </PRESET>
+  
+  <PRESET id="berserker20" level="20" tp="0">
+    <TALENT id="20001~20004" />
+	<TALENT id="20201" />
+	<TALENT id="20301" />
+	<TALENT id="20401~20403" />
+	<TALENT id="20501~20502" />
+	<TALENT id="20601~20603" />
+	<TALENT id="20701~20702" />
+	<TALENT id="20801~20802" />
+	<TALENT id="20901" />
+	<TALENT id="21901" />
+	
+	<ITEM id="13" />
+  </PRESET>
+
+  
+  <PRESET id="lv5" level="5" tp="5">
+	<TALENT id="2556" desc="개발자의 행진곡" />
+	<ITEM id="49000~49002" desc="채집도구"/>
+
+	<ITEM id="68000" desc="오튼의 목걸이"/>
+			
+	<ITEM id="62000~62004" desc="방어구:창해(2)"/>
+	<ITEM id="62020~62024" desc="방어구:피라타_가죽(2)"/>
+	
+	<ITEM id="62040~62044" desc="방어구:알스테어(5)"/>
+	<ITEM id="62060~62064" desc="방어구:유랑(5)"/>
+	<ITEM id="62080~62084" desc="방어구:큐프럼_사슬(5)"/>
+
+	<ITEM id="62100~62104" desc="방어구:고행(8)"/>
+	<ITEM id="62120~62124" desc="방어구:루피나_가죽(8)"/>
+	<ITEM id="62140~62144" desc="방어구:유랑(8)"/>
+
+	<ITEM id="70000~70007" desc="무기:자유(5)"/>
+  </PRESET>
+
+  <PRESET id="dlv6" level="6" tp="0" desc="베스피오단">
+    <TALENT id="10701" desc="돌진" />
+	<TALENT id="11601" desc="파멸의 일격" />
+	<TALENT id="10601" desc="강격" />
+	<TALENT id="10801~10803" desc="방패 가격:기절 3" />
+	<TALENT id="12000" desc="역습" />
+	<TALENT id="80018" desc="중급갑옷 숙련:사슬" />
+	
+
+    <TALENT id="2556" desc="개발자의 행진곡" />
+	<ITEM id="49000~49002" desc="채집도구"/>
+
+	<ITEM id="68000" desc="오튼의 목걸이"/>
+			
+	<ITEM id="62000~62004" desc="방어구:창해(2)"/>
+	<ITEM id="62020~62024" desc="방어구:피라타_가죽(2)"/>
+	
+	<ITEM id="62040~62044" desc="방어구:알스테어(5)"/>
+	<ITEM id="62060~62064" desc="방어구:유랑(5)"/>
+	<ITEM id="62080~62084" desc="방어구:큐프럼_사슬(5)"/>
+
+	<ITEM id="70000~70007" desc="무기:자유(5)"/>
+  </PRESET>
+
+  <PRESET id="lv10" level="10" tp="10">
+	<TALENT id="2556" desc="개발자의 행진곡" />
+	<ITEM id="49000~49002" desc="채집도구"/>
+  </PRESET>
+  
+  <PRESET id="lv15" level="15" tp="15">
+	<TALENT id="2556" desc="개발자의 행진곡" />
+	<ITEM id="49000~49002" desc="채집도구"/>
+  </PRESET>
+  
+  <PRESET id="lv20" level="20" tp="20">
+	<TALENT id="2556" desc="개발자의 행진곡" />
+	<ITEM id="49000~49002" desc="채집도구"/>
+    <ITEM id="1000001~1000002" desc="등산용 스토브,스토브 연료"/>
+  </PRESET>
+  
+  <PRESET id="lv25" level="25" tp="25">
+	<TALENT id="2556" desc="개발자의 행진곡" />
+	<ITEM id="49000~49002" desc="채집도구"/>
+  </PRESET>  
+  
+  <PRESET id="wtestd" level="25" tp="0">
+    <TALENT id="10001" desc="한손무기 숙련 1" />
+    <TALENT id="10002" desc="한손무기 숙련 2" />
+	<TALENT id="10701" desc="돌진" />
+	<TALENT id="10702" desc="돌진2" />
+	<TALENT id="11601" desc="파멸의 일격" />
+	<TALENT id="11602" desc="파멸의 일격 2" />
+	<TALENT id="10801" desc="방패 가격: 기절 1" />
+	<TALENT id="10802" desc="방패 가격: 기절 2" />
+	<TALENT id="10803" desc="방패 가격: 기절 3" />
+	<TALENT id="10601" desc="강격" />
+	<TALENT id="10602" desc="강격 2" />
+	<TALENT id="11501" desc="보루" />
+	<TALENT id="11502" desc="보루 2" />
+	<TALENT id="11801" desc="충격 반사 1" />
+	<TALENT id="11802" desc="충격 반사 2" />
+	<TALENT id="10901" desc="혼돈의 일격" />
+	<TALENT id="11401" desc="연속돌격 1" />
+	<TALENT id="11402" desc="연속돌격 2" />
+	<TALENT id="11101" desc="전장의 함성" />
+	<TALENT id="11001" desc="방패 가격: 침묵 1" />
+	<TALENT id="11002" desc="방패 가격: 침묵 2" />
+	<TALENT id="11003" desc="방패 가격: 침묵 3" />
+    <TALENT id="11201" desc="격려의 함성" />
+	<TALENT id="10401" desc="전술 훈련 1" />
+	<TALENT id="10402" desc="전술 훈련 2" />
+	<TALENT id="12000" desc="역습" />
+	<TALENT id="80018" desc="중급갑옷 숙련" />
+    <TALENT id="80019" desc="상급갑옷 숙련" />
+    <ITEM id="73120" desc="요동치는 돌의 장검"/>
+	<ITEM id="73121" desc="요동치는 돌의 둔기"/>
+    <ITEM id="73127" desc="요동치는 돌의 방패"/>
+	<ITEM id="73127" desc="요동치는 돌의 방패"/>
+	<ITEM id="63971~63975" desc="격노의 판금 방어구"/>
+	<ITEM id="63961~63965" desc="절제된 힘의 사슬 방어구"/>
+	<ITEM id="68017" desc="락크러셔의 축복 목걸이"/>
+	<ITEM id="68014" desc="지켜보는 자의 반지"/>
+	<ITEM id="68015" desc="흰색 털뭉치 반지"/>
+	<ITEM id="68013" desc="흰색예티 부족의 부적"/>
+	<ITEM id="9900020" desc="망각의 금서"/>
+  </PRESET>
+
+   <PRESET id="wtestb" level="25" tp="0">
+	<TALENT id="20001" desc="양손무기 숙련"/>
+	<TALENT id="21901" desc="분쇄 1"/>
+	<TALENT id="21902" desc="분쇄 2"/>
+	<TALENT id="20501" desc="버팔로의 진격 1"/>
+	<TALENT id="20502" desc="버팔로의 진격 2"/>
+	<TALENT id="20701" desc="회피베기 1"/>
+	<TALENT id="20702" desc="회피베기 2"/>
+	<TALENT id="20703" desc="회피베기 3"/>
+	<TALENT id="20601" desc="녹턴 1"/>
+	<TALENT id="20602" desc="녹턴 2"/>
+	<TALENT id="21501" desc="광포의 질주 1"/>
+	<TALENT id="21502" desc="광포의 질주 2"/>
+	<TALENT id="20401" desc="무력화 1"/>
+	<TALENT id="20402" desc="무력화 2"/>
+	<TALENT id="21006" desc="정신집중"/>
+	<TALENT id="20201" desc="피의 갈증 1"/>
+	<TALENT id="20202" desc="피의 갈증 2"/>
+	<TALENT id="20203" desc="피의 갈증 3"/>
+	<TALENT id="21101" desc="격노"/>
+	<TALENT id="21801" desc="되받아치기 1"/>
+	<TALENT id="21802" desc="되받아치기 2"/>
+	<TALENT id="20806" desc="후려치기"/>
+	<TALENT id="21106" desc="위기탈출"/>
+	<TALENT id="21401" desc="평정"/>
+	<TALENT id="20301" desc="광포 조절"/>
+	<TALENT id="22000" desc="광포"/>
+	<TALENT id="80018" desc="중급갑옷 숙련" />
+    <TALENT id="80019" desc="상급갑옷 숙련" />
+    <ITEM id="73122" desc="#25렙 양손검"/>
+	<ITEM id="63971~63975" desc="격노의 판금 방어구"/>
+	<ITEM id="63961~63965" desc="절제된 힘의 사슬 방어구"/>
+	<ITEM id="68017" desc="락크러셔의 축복 목걸이"/>
+	<ITEM id="68014" desc="지켜보는 자의 반지"/>
+	<ITEM id="68015" desc="흰색 털뭉치 반지"/>
+	<ITEM id="68013" desc="흰색예티 부족의 부적"/>
+	<ITEM id="9900020" desc="망각의 금서"/>
+  </PRESET>
+
+    <PRESET id="wtestc" level="25" tp="0">
+	<TALENT id="60001" desc="신성 숙련" />
+	<TALENT id="61901" desc="빛의 고리 1" />
+	<TALENT id="61902" desc="빛의 고리 2" />
+	<TALENT id="62001" desc="빛의 소용돌이 1" />
+	<TALENT id="62002" desc="빛의 소용돌이 2" />
+	<TALENT id="60701" desc="치유 1" />
+	<TALENT id="60702" desc="치유 2" />
+	<TALENT id="61401" desc="축복 1" />
+	<TALENT id="61402" desc="축복 2" />
+	<TALENT id="60801" desc="빛의 망치 1" />
+	<TALENT id="60802" desc="빛의 망치 2" />
+	<TALENT id="60803" desc="빛의 망치 3" />
+	<TALENT id="61701" desc="심판의 망치 1" />
+	<TALENT id="61702" desc="심판의 망치 2" />
+	<TALENT id="61703" desc="심판의 망치 3" />
+	<TALENT id="60601" desc="징벌의 성역 1" />
+	<TALENT id="60602" desc="징벌의 성역 2" />
+	<TALENT id="62401" desc="생명의 결정 1" />
+	<TALENT id="62402" desc="생명의 결정 2" />
+	<TALENT id="61001" desc="치유의 성역 1" />
+	<TALENT id="61002" desc="치유의 성역 2" />
+	<TALENT id="62101" desc="마력충전" />
+	<TALENT id="62201" desc="기적의 선율" />
+	<TALENT id="60301" desc="믿음의 유산" />
+	<TALENT id="60302" desc="믿음의 유산" />
+	<TALENT id="60501" desc="강신" />
+    <ITEM id="71" desc="#25렙 둔기"/>
+	<ITEM id="77" desc="#25렙 방패"/>
+	<ITEM id="76" desc="#25렙 지팡이"/>
+	<ITEM id="63941~63942" desc="믿음의 천 방어구1"/>
+	<ITEM id="63944~63945" desc="믿음의 천 방어구2"/>
+	<ITEM id="63951~63955" desc="포식자의 가죽 방어구"/>
+	<ITEM id="68017" desc="락크러셔의 축복 목걸이"/>
+	<ITEM id="68014" desc="지켜보는 자의 반지"/>
+	<ITEM id="68015" desc="흰색 털뭉치 반지"/>
+	<ITEM id="68013" desc="흰색예티 부족의 부적"/>
+	<ITEM id="9900020" desc="망각의 금서"/>
+  </PRESET>
+
+    <PRESET id="wtests" level="25" tp="25">
+	<TALENT id="52750" desc="각성" />
+	<ITEM id="76" desc="#25렙 지팡이"/>
+	<ITEM id="63941~63942" desc="믿음의 천 방어구1"/>
+	<ITEM id="63944~63945" desc="믿음의 천 방어구2"/>
+	<ITEM id="63951~63955" desc="포식자의 가죽 방어구"/>
+	<ITEM id="68017" desc="락크러셔의 축복 목걸이"/>
+	<ITEM id="68014" desc="지켜보는 자의 반지"/>
+	<ITEM id="68015" desc="흰색 털뭉치 반지"/>
+	<ITEM id="68013" desc="흰색예티 부족의 부적"/>
+	<ITEM id="9900020" desc="망각의 금서"/>
+  </PRESET>
+
+    <PRESET id="wtest" level="25" tp="25">
+	<TALENT id="80018" desc="중급갑옷 숙련" />
+    <TALENT id="80019" desc="상급갑옷 숙련" />
+	<TALENT id="12000" desc="역습" />
+	<TALENT id="22000" desc="광포"/>
+	<TALENT id="60501" desc="강신" />
+	<TALENT id="52750" desc="각성" />
+	<ITEM id="70" desc="#25렙 검"/>
+	<ITEM id="71" desc="#25렙 둔기"/>
+	<ITEM id="73" desc="#25렙 양손검"/>
+	<ITEM id="74" desc="#25렙 양손둔기"/>
+    <ITEM id="76" desc="#25렙 지팡이"/>
+	<ITEM id="77" desc="#25렙 방패"/>
+	<ITEM id="2251~2252" desc="25레벨 천 방어구 1"/>
+	<ITEM id="2254~2255" desc="25레벨 천 방어구 2"/>
+	<ITEM id="2281~2285" desc="25레벨 판금 방어구"/>
+	<ITEM id="68017" desc="락크러셔의 축복 목걸이"/>
+	<ITEM id="68014" desc="지켜보는 자의 반지"/>
+	<ITEM id="68015" desc="흰색 털뭉치 반지"/>
+	<ITEM id="68013" desc="흰색예티 부족의 부적"/>
+	<ITEM id="9900020" desc="망각의 금서"/>
+  </PRESET>
+
+<!--
+오튼의 목걸이
+라이센스
+포커스
+
+	<ITEM id="62000~62004" desc="방어구:창해(2)"/>
+	<ITEM id="62020~62024" desc="방어구:피라타_가죽(2)"/>
+	
+	<ITEM id="62040~62044" desc="방어구:알스테어(5)"/>
+	<ITEM id="62060~62064" desc="방어구:유랑(5)"/>
+	<ITEM id="62080~62084" desc="방어구:큐프럼_사슬(5)"/>
+
+	<ITEM id="62100~62104" desc="방어구:고행(8)"/>
+	<ITEM id="62120~62124" desc="방어구:루피나_가죽(8)"/>
+	<ITEM id="62140~62144" desc="방어구:유랑(8)"/>
+
+	<ITEM id="62160~62164" desc="방어구:비의(10)"/>
+	<ITEM id="62180~62184" desc="방어구:경계(10)"/>
+	<ITEM id="62200~62204" desc="방어구:디미디아(10)"/>
+
+	<ITEM id="62340~62344" desc="방어구:사령(19)"/>
+	<ITEM id="62360~62364" desc="방어구:유령 기사_판금(19)"/>
+
+	<ITEM id="62400~62404" desc="방어구:서리 늑대_천(23)"/>
+	<ITEM id="62420~62424" desc="방어구:집행_가죽(23)"/>
+	<ITEM id="62440~62444" desc="방어구:경기병_사슬(23)"/>
+	<ITEM id="62460~62464" desc="방어구:크롬 레드_판금(23)"/>
+
+	
+	<ITEM id="70000~70007" desc="무기:자유(5)"/>
+	<ITEM id="70010~70017" desc="무기:고대 제국(10)"/>
+	<ITEM id="70020~70027" desc="무기:고블린(10)"/>
+	<ITEM id="70030~70037" desc="무기:고블린 골렘(15)"/>
+	<ITEM id="70050~70057" desc="무기:자연(18)"/>
+	<ITEM id="70040~70047" desc="무기:망자(19)"/>
+	<ITEM id="70080~70087" desc="무기:승리(23)"/>
+	<ITEM id="70090~70097" desc="무기:마코트(20)"/>
+
+68000	오튼의 목걸이
+68001	은반지
+68002	금반지
+68003	작은 루비 반지
+68004	다이아몬드 반지
+68005	은 목걸이
+68006	금 목걸이
+68007	진주 목걸이
+68008	렌고트 주술용 부적
+68009	골렘의 반지 [적색]
+68010	골렘의 반지 [청색]
+68011	베스피오단 상징
+68012	광기의 눈 부족의 부적
+68013	흰색예티 부족의 부적
+68014	지켜보는 자의 반지
+68015	흰색 털뭉치 반지
+68016	발로르의 축복 목걸이
+68017	락크러셔의 축복 목걸이
+68018	에다산의 정복자
+68019	안개의 고리
+
+1000001	등산용 스토브
+1000002	스토브 연료
+
+Test
+
+-->
+</maiet>

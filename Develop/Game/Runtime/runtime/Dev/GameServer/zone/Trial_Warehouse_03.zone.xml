@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Umbra Synchronization="true" />
+<ROOT>
+    <SCENE>
+        <SCENEINSTANCE>
+            <COMMON name="trial_warehouse_03.scene_001">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>trial_warehouse_03.scene.xml</FILENAME>
+                <UMBRAID>119</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <DIRLIGHT>
+            <COMMON name="DirectionalLight">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 0.681998 -0.731354</DIRECTION>
+                <UP>0.000000 0.731354 0.681998</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYSPECULAR>0.000</SKYSPECULAR>
+                <DOUBLE_SHADOW_INTENSITY>0.150</DOUBLE_SHADOW_INTENSITY>
+            </PROPERTY>
+        </DIRLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubLight">
+                <POSITION>57902.539063 41502.070313 462.805542</POSITION>
+                <DIRECTION>-0.718381 0.429663 -0.547099</DIRECTION>
+                <UP>-0.695631 -0.449390 0.560487</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.314 0.392 0.498</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_001">
+                <POSITION>57921.363281 41568.613281 466.709961</POSITION>
+                <DIRECTION>-0.367966 -0.925598 -0.088714</DIRECTION>
+                <UP>-0.071873 -0.066810 0.995174</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.290 0.184 0.325</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_002">
+                <POSITION>57860.949219 41460.191406 456.742401</POSITION>
+                <DIRECTION>0.966718 0.232756 0.106208</DIRECTION>
+                <UP>-0.052876 -0.224401 0.973061</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.263 0.318 0.267</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <LIGHT>
+            <COMMON name="PointLight">
+                <POSITION>-1349.000000 921.000000 113.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.996 0.871 0.753</COLOR>
+                <INTENSITY>0.800</INTENSITY>
+                <ATTENUATIONEND>600.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_008">
+                <POSITION>-547.474731 1694.168945 113.497528</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.996 0.871 0.753</COLOR>
+                <INTENSITY>0.800</INTENSITY>
+                <ATTENUATIONEND>600.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_009">
+                <POSITION>600.773682 1767.404175 113.497528</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.996 0.871 0.753</COLOR>
+                <INTENSITY>0.800</INTENSITY>
+                <ATTENUATIONEND>600.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+    </SCENE>
+</ROOT>

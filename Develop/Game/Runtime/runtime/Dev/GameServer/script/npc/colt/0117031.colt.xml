@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="마이코니드 블리" npcid="117031" >
+		<COMBAT>
+			<DEFAULT>	
+				
+			</DEFAULT>
+			<!--
+			<CHECK type="distance" param2="400">
+				<ACTION type="talent" param1="211703100" rate="100" duration="1" desc="씻고싶은독가스(자폭)" />
+			</CHECK>
+			-->
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211703101" rate="100" duration="1" desc="sleep" />
+				<ACTION type="talent" param1="211703102" rate="100" duration="1" desc="atk1" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_117031:OnFinishKillAttack1( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+
+	ThisNPC:Die( Enemy )
+end
+
+function NPC_117031:OnSpawn(Spawn)
+	this:UseTalentSelf( 211703100 )
+	this:SetTimer(1, math.random(30,60), false)
+end
+
+function NPC_117031:OnTimer( Index )
+	if Index == 1 then
+		--GLog("NPC_117031:OnTimer()\n")
+		--this:Despawn(false)
+		this:UseTalentSelf( 211703111 )
+		return
+	end
+end
+
+function NPC_117031:AccDamage( ThisNPC, HitInfo )
+	--GLog("NPC_117031:AccDamage() "..HitInfo.TalentID.."\n")
+	
+	if ThisNPC:GetCurrentTalent() == 211703111 or
+		not HitInfo.Attacker:IsPlayer() then 
+			return HitInfo
+	end
+
+	ThisNPC:ClearJob()
+
+	local Summoner = ThisNPC:GetSummoner()
+	if Summoner ~= nil then
+		--GLog("NPC_117031:AccDamage()\n")
+		Summoner:Attack( HitInfo.Attacker )
+		--Summoner:Aggro( "far", 0 )
+	end
+	
+	ThisNPC:SetDir( HitInfo.Attacker:GetDir() )
+	ThisNPC:UseTalentSelf( 211703103 )
+	ThisNPC:UseTalentSelf( 211703111 )
+	ThisNPC:KillTimer( 1 )
+	
+	return HitInfo
+end
+
+function NPC_117031:OnHitCapsule_1_0(HitInfo)
+	return NPC_117031:AccDamage( this, HitInfo )
+end
+	]]></SCRIPT>
+</maiet>

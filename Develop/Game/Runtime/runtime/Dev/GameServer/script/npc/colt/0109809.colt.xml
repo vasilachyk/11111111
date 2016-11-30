@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="크라울러" npcid="109809">
+		<COMBAT mode="0" comment="No controller">
+			<DEFAULT>			
+				
+				<ACTION type="talent" param1="210980907" rate="30" /><!-- 기본공격 -->
+				<ACTION type="talent" param1="210980908" rate="30" /><!-- 기본공격 -->
+								
+				<ACTION type="talent" param1="210980928" rate="10" /><!-- 포효 -->
+				
+				<ACTION type="talent" param1="210980910" rate="10" /><!-- 거품뱉기 -->
+				
+				<ACTION type="talent" param1="210980911" rate="100" /><!-- 양손찍기 --> 
+				
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_109809:OnSpawn( Info )
+	this:GainBuff( 40184 ) -- HP 회복
+	this:GainBuff( 40185 ) -- 크라울러의 특수껍질
+end 
+
+-- 데미지 처리로직
+function NPC_109809:AccDamage( ThisNPC, PartsIdx, HitInfo )
+	local Attacker = HitInfo.Attacker
+	if (Attacker:CheckBuff(40183) == false) then
+		Attacker:GainBuff(40183)
+		AsPlayer(Attacker):Tip("크라울러가 강력한 공격을 준비합니다.")
+	end
+	
+	if (Attacker:IsPlayer() == true) then
+		ThisNPC:Attack(Attacker)
+	end
+end
+
+function NPC_109809:OnHitCapsule_1_0(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_1_1(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_1_2(HitInfo)
+	return NPC_109809:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_1_3(HitInfo)
+	return NPC_109809:AccDamage( this, 4, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_1_4(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_1_5(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_1_6(HitInfo)
+	return NPC_109809:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_0(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_1(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_2(HitInfo)
+	return NPC_109809:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_3(HitInfo)
+	return NPC_109809:AccDamage( this, 4, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_4(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_5(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_6(HitInfo)
+	return NPC_109809:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_7(HitInfo)
+	return NPC_109809:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_8(HitInfo)
+	return NPC_109809:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_9(HitInfo)
+	return NPC_109809:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_10(HitInfo)
+	return NPC_109809:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_2_11(HitInfo)
+	return NPC_109809:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_0(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_1(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_2(HitInfo)
+	return NPC_109809:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_3(HitInfo)
+	return NPC_109809:AccDamage( this, 4, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_4(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_5(HitInfo)
+	return NPC_109809:AccDamage( this, 5, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_6(HitInfo)
+	return NPC_109809:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_7(HitInfo)
+	return NPC_109809:AccDamage( this, 4, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_8(HitInfo)
+	return NPC_109809:AccDamage( this, 4, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_9(HitInfo)
+	return NPC_109809:AccDamage( this, 4, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_10(HitInfo)
+	return NPC_109809:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_109809:OnHitCapsule_3_11(HitInfo)
+	return NPC_109809:AccDamage( this, 1, HitInfo )
+end
+	]]></SCRIPT>
+</maiet>

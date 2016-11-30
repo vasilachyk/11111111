@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="maiet">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="DIALOG" type="SHDialog" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="SHDialog">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="SAY" type="SHDialogSay" />
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" />
+		<xs:attribute name="text" type="xs:string" />
+		<xs:attribute name="comment" type="xs:string" />
+		<xs:attribute name="exit" type="xs:int" />		
+	</xs:complexType>
+	
+	<xs:complexType name="SHDialogSay">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+		  <xs:element name="SELECT" type="SHDialogSelect" />
+		</xs:sequence>
+		<xs:attribute name="text" type="xs:string" />
+		<xs:attribute name="comment" type="xs:string" />
+	</xs:complexType>
+	
+	<xs:complexType name="SHDialogSelect">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+		  <xs:element name="SAY" type="SHDialogSay" />
+		  <xs:element name="ITEM" type="SHItem" />
+		</xs:choice>
+		<xs:attribute name="text" type="xs:string" />
+		<xs:attribute name="comment" type="xs:string" />
+		<xs:attribute name="exit" type="xs:int" />
+	</xs:complexType>
+  
+	<xs:complexType name="SHItem">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="FILL" type="SHItemFill" />
+			<xs:element name="ADD" type="SHItemAdd" />
+			<xs:element name="REMOVE" type="SHItemRemove" />
+		</xs:choice>
+	</xs:complexType>
+  
+	<xs:complexType name="SHItemFill">
+		<xs:attribute name="id" type="xs:int" />
+		<xs:attribute name="amount" type="xs:int" />
+	</xs:complexType>
+	<xs:complexType name="SHItemAdd">
+		<xs:attribute name="id" type="xs:int" />
+		<xs:attribute name="amount" type="xs:int" />
+	</xs:complexType>
+	<xs:complexType name="SHItemRemove">
+		<xs:attribute name="id" type="xs:int" />
+		<xs:attribute name="amount" type="xs:string" />
+	</xs:complexType>
+</xs:schema>

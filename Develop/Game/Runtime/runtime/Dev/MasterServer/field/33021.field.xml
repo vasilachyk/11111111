@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="33021" minimap_name="map00003" loading_image_name="00003" min_x="-2000" min_y="-2000" max_x="2000" max_y="2000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_3">
+            <ENVBGM dawnbgm="amb_city_dawn" />
+            <ENVBGM daytimebgm="amb_city_daytime" />
+            <ENVBGM sunsetbgm="amb_city_sunset" />
+            <ENVBGM nightbgm="amb_city_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="미용실" x="0.000000" y="0.000000" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

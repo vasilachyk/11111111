@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="소환된 유령궁사">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="30" cycle="5"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="5"/>
+				
+				<ACTION type="talent" param1="211310501" rate="30" />
+				<ACTION type="talent" param1="211310502" rate="5" />
+				<ACTION type="talent" param1="211310503" rate="5" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="nothing" param1="2" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="nothing" param1="1" rate="30" cycle="5"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="5"/>
+				
+				<ACTION type="talent" param1="211310501" rate="30" />
+				<ACTION type="talent" param1="211310502" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="211310504" rate="80" duration="0"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	function NPC_113105:OnSpawn( Info )
+		this:Wait(1)
+	end
+	
+	]]></SCRIPT>
+	
+</maiet>

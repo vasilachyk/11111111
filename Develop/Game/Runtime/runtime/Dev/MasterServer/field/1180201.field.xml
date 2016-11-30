@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="122" minimap_name="map00122" loading_image_name="00122" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Night" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_15">
+            <ENVBGM dawnbgm="amb_battlefield_dawn" />
+            <ENVBGM daytimebgm="amb_battlefield_daytime" />
+            <ENVBGM sunsetbgm="amb_battlefield_sunset" />
+            <ENVBGM nightbgm="amb_battlefield_night" />
+            <ENVBGM clodybgm="amb_night" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="100" group="0" name="생명력" x="21832.244141" y="43285.953125" z="1561.430542" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="118403" default="false" rate="700" />
+        </SPAWN>
+        <SPAWN id="101" group="0" name="생명력" x="23529.701172" y="42975.484375" z="1611.919800" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="118403" default="false" rate="700" />
+        </SPAWN>
+        <SPAWN id="102" group="0" name="생명력" x="23049.623047" y="44698.746094" z="1594.120239" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="118403" default="false" rate="700" />
+        </SPAWN>
+        <SPAWN id="103" group="0" name="생명력" x="23118.419922" y="41919.031250" z="1597.927612" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="118403" default="false" rate="700" />
+        </SPAWN>
+        <SPAWN id="200" group="0" name="대장레온_저장소" x="22397.175781" y="42787.375000" z="1594.275391" dir_x="-0.656059" dir_y="-0.754710" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="118400" default="false" rate="700" />
+        </SPAWN>
+        <SPAWN id="10200" group="0" name="숨겨진생명력" x="22911.570313" y="43344.773438" z="1611.046143" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="118403" default="true" rate="300" />
+        </SPAWN>
+        <SPAWN id="10700" group="0" name="1Stage_보상" x="23458.548828" y="43253.093750" z="1612.524536" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100" patrol_type="ONCE">
+            <NPC id="118498" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10701" group="0" name="2Stage_보상" x="29579.978516" y="32837.304688" z="1939.148926" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100" patrol_type="ONCE">
+            <NPC id="118497" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10702" group="0" name="3Stage_보상" x="49365.214844" y="45465.128906" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100" patrol_type="ONCE">
+            <NPC id="118496" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101001" group="0" name="1Stage_1루트_거미" x="16385.990234" y="37173.300781" z="1360.130981" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101002" group="0" name="1Stage_1루트_거미" x="16435.898438" y="36657.738281" z="1419.668091" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101003" group="0" name="1Stage_1루트_거미" x="15676.967773" y="35918.792969" z="1450.464600" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101004" group="0" name="1Stage_1루트_거미" x="16855.890625" y="34592.578125" z="1471.343750" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101005" group="0" name="1Stage_1루트_거미" x="17237.126953" y="35467.183594" z="1442.385132" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101006" group="0" name="1Stage_1루트_거미" x="15676.877930" y="36778.156250" z="1331.030518" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101007" group="0" name="1Stage_1루트_거미" x="15428.340820" y="38607.511719" z="1168.819702" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101008" group="0" name="1Stage_1루트_거미" x="15819.465820" y="38027.960938" z="1214.469360" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101009" group="0" name="1Stage_1루트_거미" x="15115.665039" y="37729.449219" z="1137.828125" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101100" group="0" name="1Stage_1루트_하피" x="16824.462891" y="36126.421875" z="1468.267212" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100100" patrol_type="ONCE">
+            <NPC id="118601" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102000" group="0" name="1Stage_2루트_거미" x="29174.404297" y="32433.226563" z="1913.282227" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102001" group="0" name="1Stage_2루트_거미" x="30255.121094" y="32318.378906" z="1900.879272" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102002" group="0" name="1Stage_2루트_거미" x="29512.181641" y="34681.664063" z="2038.683350" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102003" group="0" name="1Stage_2루트_거미" x="29402.781250" y="31574.429688" z="1818.566772" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102004" group="0" name="1Stage_2루트_거미" x="29410.390625" y="33422.246094" z="1981.164429" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102005" group="0" name="1Stage_2루트_거미" x="28292.654297" y="33184.843750" z="1999.075073" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102006" group="0" name="1Stage_2루트_거미" x="28356.080078" y="32206.597656" z="1915.157349" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102007" group="0" name="1Stage_2루트_거미" x="31119.246094" y="32862.152344" z="1907.303467" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102008" group="0" name="1Stage_2루트_거미" x="28809.314453" y="33908.832031" z="2019.132446" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102009" group="0" name="1Stage_2루트_거미" x="30276.896484" y="34162.390625" z="1975.361450" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102100" group="0" name="1Stage_2루트_하피" x="30270.464844" y="33316.074219" z="1947.282959" dir_x="0.156434" dir_y="-0.987688" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100200" patrol_type="ONCE">
+            <NPC id="118601" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103000" group="0" name="1Stage_3루트_거미" x="27888.976563" y="52392.738281" z="1585.567261" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103001" group="0" name="1Stage_3루트_거미" x="27540.537109" y="53866.492188" z="1628.036133" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103002" group="0" name="1Stage_3루트_거미" x="28898.498047" y="51940.625000" z="1599.972534" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103003" group="0" name="1Stage_3루트_거미" x="26562.138672" y="55785.781250" z="1759.644653" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103004" group="0" name="1Stage_3루트_거미" x="25571.425781" y="55555.929688" z="1793.776367" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103005" group="0" name="1Stage_3루트_거미" x="26095.640625" y="54870.058594" z="1703.885620" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103006" group="0" name="1Stage_3루트_거미" x="29679.628906" y="52477.519531" z="1640.779297" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103007" group="0" name="1Stage_3루트_거미" x="26486.476563" y="54090.871094" z="1640.565918" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103008" group="0" name="1Stage_3루트_거미" x="28604.324219" y="53061.652344" z="1634.445557" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103009" group="0" name="1Stage_3루트_거미" x="27070.042969" y="53065.554688" z="1604.638916" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118600" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103100" group="0" name="1Stage_3루트_하피" x="28468.328125" y="52349.269531" z="1603.416626" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118601" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201000" group="0" name="2Stage_1루트_렌고트 호위병" x="36359.312500" y="41043.683594" z="983.637756" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201001" group="0" name="2Stage_1루트_렌고트 호위병" x="37182.156250" y="40691.921875" z="814.556946" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201002" group="0" name="2Stage_1루트_렌고트 호위병" x="37270.699219" y="41673.226563" z="797.928833" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="100300" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201003" group="0" name="2Stage_1루트_렌고트 호위병" x="38159.000000" y="40686.656250" z="685.657410" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201004" group="0" name="2Stage_1루트_렌고트 호위병" x="36394.378906" y="40225.453125" z="948.846069" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201005" group="0" name="2Stage_1루트_렌고트 호위병" x="36305.285156" y="41761.570313" z="1044.662109" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201006" group="0" name="2Stage_1루트_렌고트 호위병" x="38207.148438" y="41757.066406" z="660.477295" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201007" group="0" name="2Stage_1루트_렌고트 호위병" x="37134.230469" y="39980.847656" z="805.224731" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201008" group="0" name="2Stage_1루트_렌고트 호위병" x="37627.835938" y="41216.101563" z="753.952576" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201009" group="0" name="2Stage_1루트_렌고트 호위병" x="37879.453125" y="40165.531250" z="709.637329" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201100" group="0" name="2Stage_1루트_렌고트 궁수" x="36642.496094" y="40234.539063" z="899.695251" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201101" group="0" name="2Stage_1루트_렌고트 궁수" x="36719.382813" y="41024.558594" z="901.120850" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201102" group="0" name="2Stage_1루트_렌고트 궁수" x="36561.218750" y="41692.476563" z="968.555786" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201103" group="0" name="2Stage_1루트_렌고트 궁수" x="37517.410156" y="41668.914063" z="758.517639" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201104" group="0" name="2Stage_1루트_렌고트 궁수" x="37463.675781" y="40867.640625" z="775.176208" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201105" group="0" name="2Stage_1루트_렌고트 궁수" x="37303.648438" y="40031.050781" z="781.652893" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201106" group="0" name="2Stage_1루트_렌고트 궁수" x="38090.132813" y="40168.359375" z="685.780396" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201107" group="0" name="2Stage_1루트_렌고트 궁수" x="38168.968750" y="40973.652344" z="687.384766" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201108" group="0" name="2Stage_1루트_렌고트 궁수" x="38202.671875" y="41609.566406" z="672.643738" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201109" group="0" name="2Stage_1루트_렌고트 궁수" x="36096.046875" y="39646.796875" z="996.032410" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202000" group="0" name="2Stage_2루트_렌고트 호위병" x="15751.291016" y="40019.425781" z="1188.176514" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202001" group="0" name="2Stage_2루트_렌고트 호위병" x="16188.511719" y="40465.289063" z="1180.448608" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202002" group="0" name="2Stage_2루트_렌고트 호위병" x="16236.870117" y="39938.375000" z="1174.872070" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202003" group="0" name="2Stage_2루트_렌고트 호위병" x="15574.623047" y="39364.953125" z="1174.826172" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202004" group="0" name="2Stage_2루트_렌고트 호위병" x="16216.112305" y="39289.156250" z="1170.049927" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202005" group="0" name="2Stage_2루트_렌고트 호위병" x="16701.816406" y="39895.429688" z="1171.090820" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202006" group="0" name="2Stage_2루트_렌고트 호위병" x="16739.798828" y="40674.718750" z="1181.691040" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202007" group="0" name="2Stage_2루트_렌고트 호위병" x="17217.716797" y="40265.101563" z="1190.036255" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202008" group="0" name="2Stage_2루트_렌고트 호위병" x="16049.346680" y="37843.980469" z="1249.045898" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202009" group="0" name="2Stage_2루트_렌고트 호위병" x="15907.930664" y="38502.222656" z="1190.734497" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="253,210,64" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118620" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202100" group="0" name="2Stage_2루트_렌고트 궁수" x="21948.546875" y="52103.902344" z="1893.328247" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202101" group="0" name="2Stage_2루트_렌고트 궁수" x="22106.109375" y="52662.292969" z="1924.891357" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202102" group="0" name="2Stage_2루트_렌고트 궁수" x="22701.990234" y="53196.363281" z="1899.698853" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202103" group="0" name="2Stage_2루트_렌고트 궁수" x="23241.632813" y="53401.992188" z="1848.115723" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202104" group="0" name="2Stage_2루트_렌고트 궁수" x="22647.775391" y="52540.082031" z="1840.652954" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202105" group="0" name="2Stage_2루트_렌고트 궁수" x="21871.601563" y="51345.222656" z="1855.560669" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202106" group="0" name="2Stage_2루트_렌고트 궁수" x="22765.294922" y="50591.378906" z="1745.384766" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202107" group="0" name="2Stage_2루트_렌고트 궁수" x="22546.591797" y="51227.382813" z="1786.237793" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202108" group="0" name="2Stage_2루트_렌고트 궁수" x="22293.083984" y="49971.941406" z="1744.065674" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202109" group="0" name="2Stage_2루트_렌고트 궁수" x="21757.615234" y="50362.738281" z="1807.611450" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200200" patrol_type="ONCE">
+            <NPC id="118621" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="203000" group="0" name="2Stage_3루트_렌고트 타리비" x="28039.298828" y="30216.158203" z="1655.782349" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118622" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="203001" group="0" name="2Stage_3루트_렌고트 타리비" x="30167.947266" y="27992.234375" z="1458.713135" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118622" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="203002" group="0" name="2Stage_3루트_렌고트 타리비" x="32481.078125" y="28694.824219" z="1825.500000" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118622" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="203003" group="0" name="2Stage_3루트_렌고트 타리비" x="34205.921875" y="29521.712891" z="1738.485962" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118622" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="203004" group="0" name="2Stage_3루트_렌고트 타리비" x="26574.162109" y="31513.498047" z="1940.954224" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="227,138,89" patrol_group_id="200100" patrol_type="ONCE">
+            <NPC id="118622" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301000" group="0" name="3Stage_1루트_크립 전사" x="50749.449219" y="56442.589844" z="36.132004" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301001" group="0" name="3Stage_1루트_크립 전사" x="49526.933594" y="56696.152344" z="12.718216" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301002" group="0" name="3Stage_1루트_크립 전사" x="52167.695313" y="57008.878906" z="52.095882" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301003" group="0" name="3Stage_1루트_크립 전사" x="48643.070313" y="57053.882813" z="33.917084" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301004" group="0" name="3Stage_1루트_크립 전사" x="52050.460938" y="56071.554688" z="47.047890" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301005" group="0" name="3Stage_1루트_크립 전사" x="48624.664063" y="56191.789063" z="36.173431" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301006" group="0" name="3Stage_1루트_크립 전사" x="50945.476563" y="55329.050781" z="29.769876" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301007" group="0" name="3Stage_1루트_크립 전사" x="50200.867188" y="56868.210938" z="35.384754" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301008" group="0" name="3Stage_1루트_크립 전사" x="49522.949219" y="57593.472656" z="39.282310" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="301009" group="0" name="3Stage_1루트_크립 전사" x="51285.609375" y="57161.046875" z="42.259502" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300100" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302000" group="0" name="3Stage_2루트_크립 전사" x="51235.277344" y="34136.367188" z="2.007813" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302001" group="0" name="3Stage_2루트_크립 전사" x="49992.328125" y="33331.957031" z="2.007813" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302002" group="0" name="3Stage_2루트_크립 전사" x="51135.824219" y="32644.023438" z="2.007813" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302003" group="0" name="3Stage_2루트_크립 전사" x="50405.980469" y="32615.660156" z="2.007813" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302004" group="0" name="3Stage_2루트_크립 전사" x="49143.679688" y="33393.953125" z="73.516808" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302005" group="0" name="3Stage_2루트_크립 전사" x="49653.957031" y="34154.984375" z="26.449505" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302006" group="0" name="3Stage_2루트_크립 전사" x="51674.957031" y="33437.296875" z="2.007813" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302007" group="0" name="3Stage_2루트_크립 전사" x="50887.417969" y="33404.640625" z="2.007813" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302008" group="0" name="3Stage_2루트_크립 전사" x="48209.726563" y="32445.082031" z="73.776016" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302009" group="0" name="3Stage_2루트_크립 전사" x="51898.390625" y="32646.125000" z="1.074262" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300200" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303000" group="0" name="3Stage_3루트_크립 전사" x="30719.400391" y="45067.863281" z="2129.099854" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303001" group="0" name="3Stage_3루트_크립 전사" x="30173.916016" y="46159.031250" z="2187.578613" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303002" group="0" name="3Stage_3루트_크립 전사" x="30075.462891" y="44495.636719" z="2138.902344" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303003" group="0" name="3Stage_3루트_크립 전사" x="29488.468750" y="45509.277344" z="2245.685059" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303004" group="0" name="3Stage_3루트_크립 전사" x="29489.742188" y="47064.367188" z="2291.807617" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303005" group="0" name="3Stage_3루트_크립 전사" x="28423.531250" y="46645.863281" z="2374.016357" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303006" group="0" name="3Stage_3루트_크립 전사" x="29216.914063" y="44290.421875" z="2228.331543" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303007" group="0" name="3Stage_3루트_크립 전사" x="28204.476563" y="45598.164063" z="2355.097900" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303008" group="0" name="3Stage_3루트_크립 전사" x="27895.656250" y="44378.382813" z="2310.540039" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303009" group="0" name="3Stage_3루트_크립 전사" x="28739.250000" y="45142.605469" z="2304.059326" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="303010" group="0" name="3Stage_3루트_크립 전사" x="29011.015625" y="46141.183594" z="2313.770508" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="128,128,255" patrol_group_id="300300" patrol_type="ONCE">
+            <NPC id="118640" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999000" group="0" name="공용벽" x="21860.029297" y="47614.175781" z="1198.962158" dir_x="0.139173" dir_y="-0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999001" group="0" name="공용벽" x="17735.552734" y="46289.980469" z="1180.257568" dir_x="0.438371" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999003" group="0" name="공용벽" x="28189.677734" y="42079.730469" z="2005.253174" dir_x="-0.615661" dir_y="-0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999004" group="0" name="공용벽" x="27278.550781" y="45599.023438" z="1987.534668" dir_x="0.945519" dir_y="-0.325568" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999005" group="0" name="공용벽" x="17702.980469" y="42613.019531" z="907.469238" dir_x="-0.956305" dir_y="-0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999006" group="0" name="공용벽" x="26683.910156" y="62136.253906" z="2532.809570" dir_x="0.866025" dir_y="0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999007" group="0" name="공용벽" x="28112.546875" y="59536.187500" z="2721.260498" dir_x="-0.933580" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999008" group="0" name="공용벽" x="29332.480469" y="55784.179688" z="2408.960938" dir_x="0.961262" dir_y="0.275638" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999009" group="0" name="공용벽" x="19174.208984" y="38596.210938" z="1066.856934" dir_x="-0.927184" dir_y="-0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999010" group="0" name="공용벽" x="30443.101563" y="48264.273438" z="1352.102539" dir_x="-0.777146" dir_y="-0.629321" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999011" group="0" name="공용벽" x="33188.929688" y="45229.363281" z="1392.506836" dir_x="-0.694658" dir_y="-0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999012" group="0" name="공용벽" x="33108.097656" y="42146.554688" z="1156.583130" dir_x="0.707107" dir_y="-0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999013" group="0" name="공용벽" x="31666.701172" y="41535.410156" z="1621.918213" dir_x="-0.453991" dir_y="0.891007" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999015" group="0" name="공용벽" x="36838.457031" y="36747.503906" z="878.293945" dir_x="0.559193" dir_y="0.829038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999016" group="0" name="공용벽" x="38267.085938" y="33398.125000" z="840.227051" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999017" group="0" name="공용벽" x="37395.511719" y="29178.519531" z="66.769043" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999018" group="0" name="공용벽" x="33494.574219" y="52325.308594" z="1231.802734" dir_x="-0.694658" dir_y="-0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999019" group="0" name="공용벽" x="36227.835938" y="49772.089844" z="900.514160" dir_x="0.615661" dir_y="0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999020" group="0" name="공용벽" x="37720.792969" y="50727.679688" z="1239.108887" dir_x="-0.997564" dir_y="-0.069757" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999021" group="0" name="공용벽" x="39211.644531" y="54108.328125" z="1019.469971" dir_x="0.544639" dir_y="-0.838670" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999022" group="0" name="공용벽" x="42334.042969" y="56913.191406" z="989.561035" dir_x="0.819152" dir_y="-0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999023" group="0" name="공용벽" x="43916.824219" y="60426.851563" z="953.061035" dir_x="0.965926" dir_y="-0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999024" group="0" name="공용벽" x="44735.000000" y="63185.394531" z="567.830933" dir_x="0.965926" dir_y="-0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999025" group="0" name="공용벽" x="52352.046875" y="36096.664063" z="-209.161133" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999026" group="0" name="공용벽" x="48344.039063" y="35600.089844" z="-142.513184" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999027" group="0" name="공용벽" x="43946.738281" y="35615.695313" z="-9.649414" dir_x="-0.139173" dir_y="-0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999028" group="0" name="공용벽" x="40446.800781" y="35113.109375" z="95.411743" dir_x="-0.342020" dir_y="0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999029" group="0" name="공용벽" x="43558.097656" y="55167.679688" z="137.407227" dir_x="-0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999030" group="0" name="공용벽" x="47831.281250" y="54703.800781" z="-86.616035" dir_x="-0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999031" group="0" name="공용벽" x="52266.246094" y="54251.964844" z="-103.721069" dir_x="-0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999032" group="0" name="공용벽" x="25532.357422" y="47282.859375" z="1017.721924" dir_x="0.309017" dir_y="0.951056" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999033" group="0" name="공용벽" x="31849.884766" y="53397.578125" z="2048.983398" dir_x="0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999034" group="0" name="공용벽" x="30249.207031" y="51524.968750" z="1274.299072" dir_x="-0.766045" dir_y="0.642787" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999035" group="0" name="공용벽" x="37089.453125" y="29005.312500" z="736.345215" dir_x="0.207912" dir_y="-0.978148" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999036" group="0" name="공용벽" x="33046.378906" y="27948.931641" z="1101.141602" dir_x="0.292372" dir_y="-0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999037" group="0" name="공용벽" x="29393.517578" y="26846.150391" z="915.246338" dir_x="-0.224951" dir_y="0.974370" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999038" group="0" name="공용벽" x="27471.070313" y="27909.539063" z="909.550293" dir_x="-0.719340" dir_y="-0.694658" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999039" group="0" name="공용벽" x="24001.351563" y="29335.576172" z="1473.048096" dir_x="0.069757" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999040" group="0" name="공용벽" x="37388.253906" y="29581.011719" z="1237.183350" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999041" group="0" name="공용벽" x="25727.425781" y="47147.027344" z="2662.910400" dir_x="0.309017" dir_y="0.951056" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="999042" group="0" name="공용벽" x="40470.882813" y="35122.281250" z="1577.392700" dir_x="-0.342020" dir_y="0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1028300" group="0" name="1스테이지벽" x="28572.324219" y="39094.414063" z="1334.213135" dir_x="-0.992546" dir_y="0.121869" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1028301" group="0" name="1스테이지벽" x="28858.923828" y="37129.503906" z="1641.687744" dir_x="-0.121870" dir_y="0.992546" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1028302" group="0" name="1스테이지벽" x="24972.634766" y="36206.531250" z="1568.569702" dir_x="-0.292372" dir_y="0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2028300" group="0" name="2스테이지벽" x="33561.347656" y="39606.773438" z="1058.202637" dir_x="0.707106" dir_y="0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3028300" group="0" name="3스테이지벽" x="19962.044922" y="58218.187500" z="3215.943359" dir_x="0.961262" dir_y="-0.275637" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="2000" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10109000" group="0" name="1Stage_에픽1루트_테레시스" x="16210.155273" y="36083.753906" z="1444.598145" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="10900" patrol_type="ONCE">
+            <NPC id="118510" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20109000" group="0" name="2Stage_에픽1루트_골라스" x="29419.201172" y="52072.062500" z="1585.624634" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="2000" combat_radius="0" color="auto" patrol_group_id="20900" patrol_type="ONCE">
+            <NPC id="118520" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="30109000" group="0" name="3Stage_에픽1루트_볼라스" x="49613.054688" y="45100.503906" z="4.309760" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="6000" roam_depth="2000" combat_radius="0" color="157,240,197" patrol_group_id="30900" patrol_type="ONCE">
+            <NPC id="118501" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작지점" x="22074.369141" y="42486.421875" z="1578.352783" dir_x="0.754709" dir_y="0.656059" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101" name="1Stage_부활지점" x="22100.464844" y="38376.660156" z="1527.009766" dir_x="0.694658" dir_y="0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102" name="2Stage_부활지점" x="22725.099609" y="37771.933594" z="1544.091675" dir_x="0.694658" dir_y="0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="103" name="3Stage_부활지점" x="42067.457031" y="51496.273438" z="626.508545" dir_x="0.694658" dir_y="0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10900" name="1Stage_01에픽루트" x="15639.553711" y="38585.730469" z="1176.415771" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10900" />
+        <MARKER id="10901" name="1Stage_01에픽루트" x="16088.552734" y="40139.539063" z="1179.992554" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10900" />
+        <MARKER id="10902" name="1Stage_01에픽루트" x="18654.935547" y="41033.273438" z="1306.718018" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10900" />
+        <MARKER id="10903" name="1Stage_01에픽루트" x="21171.296875" y="42040.796875" z="1521.865479" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10900" />
+        <MARKER id="10904" name="1Stage_01에픽루트" x="24164.970703" y="43618.664063" z="1582.397827" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10900" />
+        <MARKER id="20900" name="2Stage_01에픽루트" x="32625.492188" y="49796.386719" z="1629.939209" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20900" />
+        <MARKER id="20901" name="2Stage_01에픽루트" x="36588.082031" y="45181.953125" z="869.120178" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20900" />
+        <MARKER id="20902" name="2Stage_01에픽루트" x="35818.917969" y="39743.667969" z="1059.379272" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20900" />
+        <MARKER id="20903" name="2Stage_01에픽루트" x="32802.109375" y="35296.050781" z="1784.994263" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20900" />
+        <MARKER id="20904" name="2Stage_01에픽루트" x="29086.597656" y="31352.746094" z="1783.977051" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20900" />
+        <MARKER id="30900" name="3Stage_01에픽루트" x="52477.156250" y="43868.839844" z="1.999789" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30900" />
+        <MARKER id="30901" name="3Stage_01에픽루트" x="50454.554688" y="40645.285156" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30900" />
+        <MARKER id="30902" name="3Stage_01에픽루트" x="46945.468750" y="42737.089844" z="72.279114" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30900" />
+        <MARKER id="30903" name="3Stage_01에픽루트" x="48701.984375" y="46900.660156" z="2.005770" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30900" />
+        <MARKER id="30904" name="3Stage_01에픽루트" x="52431.535156" y="44565.089844" z="1.999822" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30900" />
+        <MARKER id="100100" name="1Stage_01루트" x="16212.925781" y="38951.070313" z="1170.632080" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100100" />
+        <MARKER id="100101" name="1Stage_01루트" x="22670.953125" y="42539.894531" z="1608.789917" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100100" />
+        <MARKER id="100200" name="1Stage_02루트" x="32517.939453" y="35773.269531" z="1783.284058" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100200" />
+        <MARKER id="100201" name="1Stage_02루트" x="31894.339844" y="38577.148438" z="1949.427979" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100200" />
+        <MARKER id="100202" name="1Stage_02루트" x="26444.908203" y="38903.152344" z="1582.526245" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100200" />
+        <MARKER id="100203" name="1Stage_02루트" x="23493.558594" y="42389.496094" z="1324.305420" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100200" />
+        <MARKER id="100204" name="1Stage_02루트" x="13662.532227" y="41316.937500" z="-5220.977539" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100200" />
+        <MARKER id="100300" name="1Stage_03루트" x="26753.900391" y="53552.179688" z="1621.772095" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100300" />
+        <MARKER id="100301" name="1Stage_03루트" x="24122.273438" y="52359.113281" z="1704.639404" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100300" />
+        <MARKER id="100302" name="1Stage_03루트" x="23866.316406" y="42880.355469" z="1608.147583" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100300" />
+        <MARKER id="100303" name="1Stage_03루트" x="19859.587891" y="41893.335938" z="1595.255859" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="100300" />
+        <MARKER id="118500" name="MON_M 118500 볼라스" x="49336.546875" y="44791.023438" z="1.999104" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="118600" name="NPC_M 118600 대장 레온" x="22298.921875" y="42717.957031" z="1590.006958" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="200100" name="2Stage_01루트" x="34654.750000" y="40245.601563" z="1317.171265" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200100" />
+        <MARKER id="200101" name="2Stage_01루트" x="32138.810547" y="37246.542969" z="1648.351685" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200100" />
+        <MARKER id="200102" name="2Stage_01루트" x="32218.601563" y="34416.730469" z="1825.344849" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200100" />
+        <MARKER id="200103" name="2Stage_01루트" x="27877.355469" y="30824.617188" z="1721.427002" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200100" />
+        <MARKER id="200200" name="2Stage_02루트" x="22904.048828" y="49253.609375" z="1670.148193" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200200" />
+        <MARKER id="200201" name="2Stage_02루트" x="24799.363281" y="38606.574219" z="1620.993652" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200200" />
+        <MARKER id="200202" name="2Stage_02루트" x="31903.378906" y="38956.027344" z="1630.854492" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200200" />
+        <MARKER id="200203" name="2Stage_02루트" x="32991.210938" y="34597.589844" z="1576.073853" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200200" />
+        <MARKER id="200204" name="2Stage_02루트" x="28332.671875" y="31156.783203" z="1761.779297" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200200" />
+        <MARKER id="200300" name="2Stage_03루트" x="30085.666016" y="30276.853516" z="1883.192017" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200300" />
+        <MARKER id="200301" name="2Stage_03루트" x="32336.656250" y="31773.128906" z="1832.593018" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200300" />
+        <MARKER id="200302" name="2Stage_03루트" x="30051.462891" y="35397.519531" z="2090.166016" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200300" />
+        <MARKER id="200303" name="2Stage_03루트" x="26985.978516" y="33377.851563" z="2138.957275" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200300" />
+        <MARKER id="200304" name="2Stage_03루트" x="30673.359375" y="28623.990234" z="1601.088135" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="200300" />
+        <MARKER id="300102" name="3Stage_01루트" x="51339.878906" y="42993.398438" z="1.999629" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300100" />
+        <MARKER id="300103" name="3Stage_01루트" x="49972.484375" y="52744.636719" z="2.001956" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300100" />
+        <MARKER id="300200" name="3Stage_02루트" x="50180.402344" y="37275.886719" z="2.007813" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300200" />
+        <MARKER id="300201" name="3Stage_02루트" x="47681.402344" y="47532.140625" z="2.823259" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300200" />
+        <MARKER id="300300" name="3Stage_03루트" x="33110.507813" y="43405.281250" z="1834.275391" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300300" />
+        <MARKER id="300301" name="3Stage_03루트" x="37652.492188" y="41228.589844" z="702.799805" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300300" />
+        <MARKER id="300302" name="3Stage_03루트" x="42082.464844" y="43025.656250" z="83.823380" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300300" />
+        <MARKER id="300303" name="3Stage_03루트" x="49628.132813" y="44177.816406" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="300300" />
+        <MARKER id="1010000" name="1Stage_클리어시라이프이동경로" x="24642.435547" y="40784.425781" z="1586.184082" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10100" />
+        <MARKER id="1010001" name="1Stage_클리어시라이프이동경로" x="26031.994141" y="38375.207031" z="1588.789673" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10100" />
+        <MARKER id="1010002" name="1Stage_클리어시라이프이동경로" x="32115.695313" y="38525.808594" z="1561.987549" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10100" />
+        <MARKER id="1010003" name="1Stage_클리어시라이프이동경로" x="32810.929688" y="34234.699219" z="1791.625122" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10100" />
+        <MARKER id="1010004" name="1Stage_클리어시라이프이동경로" x="30563.611328" y="33071.300781" z="1928.300293" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="10100" />
+        <MARKER id="2010000" name="2Stage_클리어시라이프이동경로" x="31265.117188" y="33457.375000" z="1905.911133" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20100" />
+        <MARKER id="2010001" name="2Stage_클리어시라이프이동경로" x="31878.312500" y="39163.726563" z="1580.815430" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20100" />
+        <MARKER id="2010002" name="2Stage_클리어시라이프이동경로" x="39797.382813" y="42810.789063" z="520.324890" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20100" />
+        <MARKER id="2010003" name="2Stage_클리어시라이프이동경로" x="47706.101563" y="44705.433594" z="9.375522" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="20100" />
+        <MARKER id="3010000" name="3Stage_클리어시라이프이동경로" x="47645.019531" y="44204.285156" z="14.304062" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010001" name="3Stage_클리어시라이프이동경로" x="41412.261719" y="43071.089844" z="365.129822" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010002" name="3Stage_클리어시라이프이동경로" x="37365.503906" y="40889.390625" z="789.578003" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010003" name="3Stage_클리어시라이프이동경로" x="30075.621094" y="38603.718750" z="1707.621948" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010004" name="3Stage_클리어시라이프이동경로" x="25363.367188" y="39026.558594" z="1619.583862" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010005" name="3Stage_클리어시라이프이동경로" x="24250.761719" y="42243.789063" z="1582.370239" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010006" name="3Stage_클리어시라이프이동경로" x="18553.054688" y="41702.101563" z="1304.726563" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010007" name="3Stage_클리어시라이프이동경로" x="15768.666016" y="38945.984375" z="1170.625244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010008" name="3Stage_클리어시라이프이동경로" x="16539.560547" y="35563.968750" z="1465.836670" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010009" name="3Stage_클리어시라이프이동경로" x="18589.281250" y="33860.500000" z="1355.000488" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010010" name="3Stage_클리어시라이프이동경로" x="18184.019531" y="31604.363281" z="1348.380737" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="3010011" name="3Stage_클리어시라이프이동경로" x="11159.536133" y="26725.345703" z="1265.613892" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="30100" />
+        <MARKER id="80120000" name="1Stage_리더위치마커" x="23205.503906" y="43123.210938" z="1619.093506" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="80220000" name="2Stage_리더위치마커" x="27950.509766" y="32194.027344" z="1897.286865" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" random_dir="false" />
+        <MARKER id="80320000" name="3Stage_리더위치마커" x="48895.402344" y="45698.253906" z="1.999756" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90110000" name="1Stage_라이프위치마커" x="22233.445313" y="43312.375000" z="1576.173584" dir_x="0.987688" dir_y="0.156434" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90110001" name="1Stage_라이프위치마커" x="24568.998047" y="43105.007813" z="1582.397949" dir_x="-0.999848" dir_y="-0.017453" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90110002" name="1Stage_라이프위치마커" x="23903.857422" y="45092.140625" z="1583.787109" dir_x="-0.453990" dir_y="-0.891007" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90110003" name="1Stage_라이프위치마커" x="24101.142578" y="41639.234375" z="1582.213867" dir_x="-0.951057" dir_y="0.309017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90210000" name="2Stage_라이프위치마커" x="27214.240234" y="32471.257813" z="1922.392334" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90210001" name="2Stage_라이프위치마커" x="29034.617188" y="32951.035156" z="1956.963989" dir_x="-0.529919" dir_y="-0.848048" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90210002" name="2Stage_라이프위치마커" x="29213.154297" y="31417.431641" z="1791.790405" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90210003" name="2Stage_라이프위치마커" x="27686.728516" y="31176.593750" z="1789.780884" dir_x="0.358368" dir_y="0.933580" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90310000" name="3Stage_라이프위치마커" x="49668.230469" y="43322.843750" z="7.478011" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90310001" name="3Stage_라이프위치마커" x="49693.605469" y="46904.105469" z="1.998779" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90310002" name="3Stage_라이프위치마커" x="48212.746094" y="45069.027344" z="10.393620" dir_x="0.997564" dir_y="0.069757" dir_z="0.000000" random_dir="false" />
+        <MARKER id="90310003" name="3Stage_라이프위치마커" x="51327.988281" y="45118.093750" z="2.326649" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="아이템사용체크용" local="false" x="23266.333984" y="41217.031250" z="1553.885498" radius="8000.000000" enabled="true" checkpoint="101" groupname="none" />
+        <SENSOR id="2" name="전역_NPC사망시체크" local="false" x="27042.388672" y="44521.109375" z="2416.100830" radius="99999.000000" enabled="false" groupname="none" />
+        <SENSOR id="3" name="전역_라이프모두사망시체크" local="false" x="32704.472656" y="48143.187500" z="1393.354370" radius="90000.000000" enabled="false" groupname="none" />
+        <SENSOR id="10" name="1Stage_스폰센서" local="false" x="23220.095703" y="43272.890625" z="1615.486084" radius="2500.000000" enabled="false" groupname="none" />
+        <SENSOR id="20" name="2Stage_스폰센서" local="false" x="28401.216797" y="32115.406250" z="1879.676025" radius="2000.000000" enabled="false" groupname="none" />
+        <SENSOR id="30" name="3Stage_스폰센서" local="false" x="49549.250000" y="45260.238281" z="4.251073" radius="3000.000000" enabled="false" checkpoint="103" groupname="none" />
+        <SENSOR id="999" name="Stage_시작" local="false" x="22126.929688" y="42557.425781" z="1580.688232" radius="500.000000" enabled="false" checkpoint="101" groupname="none" />
+        <SENSOR id="999999" name="모두 클리어" x="55292.898438" y="44697.253906" z="-1.464600" radius="800.000000" enabled="false">
+            <EFFECT effect="ZoneLine" x="-712.906250" y="-153.824219" z="4.943614" dir_x="0.999848" dir_y="0.017452" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="2.000000" scale_y="1.000000" scale_z="1.500000" />
+            <WARP warp_type="field" title="침묵의 장벽 이동" condition="0" gate_type="auto" field="118" marker="118201" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

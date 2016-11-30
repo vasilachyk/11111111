@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="까르엔" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210909912" rate="40" />
+				<ACTION type="talent" param1="210909911" rate="30" />
+				<ACTION type="talent" param1="210909910" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="talent" param1="210909911" rate="40" />
+				<ACTION type="talent" param1="210909902" rate="10" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="40">
+				<ACTION type="talent" param1="210909912" rate="40" />
+				<ACTION type="talent" param1="210909911" rate="30" />
+				<ACTION type="talent" param1="210909910" rate="10" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210909900" rate="50" />
+				<ACTION type="nothing" param1="5" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 게리온, 오기스, 멕기프	
+# 인간형 양손검 기본	
+#일반	
+211701101	#모드0전환(칼뽑기)
+211701102	#모드1전환(칼넣기)
+211701103	#회피L
+211701104	#회피R
+211701105	#광포 포커스
+#공격	
+211701111	#1타
+211701112	#2연타
+211701113	#회전베기
+211701114	#회피베기
+211701115	#돌진
+211701116	#전진공격
+211701117	#후진공격
+211701118	#분쇄
+211701119	#녹턴
+211701120	#회오리치기
+-->
+<maiet>
+	<COLT name="오기스" npcid="117013">
+		<COMBAT victory="211701102">
+			<DEFAULT>
+				<ACTION type="talent" param1="211701111" rate="50" desc="1타" />
+				<ACTION type="talent" param1="211701112" rate="50" desc="2연타" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211701105" rate="50" desc="광포 포커스" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="gained_buff" param1="80110">
+				<CHECK type="distance" param1="400" >
+					<ACTION type="talent" param1="211701115" rate="50" desc="돌진" />
+					<ACTION type="talent" param1="211701113" rate="50" desc="회전베기" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="80" >
+					<ACTION type="talent" param1="211701119" rate="20" desc="녹턴" />
+					<ACTION type="talent" param1="211701120" rate="50" desc="회오리치기" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="50" >
+					<ACTION type="talent" param1="211701103" rate="10" desc="회피L" />
+					<ACTION type="talent" param1="211701104" rate="10" desc="회피R" />
+					<ACTION type="talent" param1="211701114" rate="30" desc="회피베기" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="211701116" rate="50" desc="전진공격" />
+				<ACTION type="talent" param1="211701113" rate="10" desc="회전베기" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211701101" rate="100" desc="모드0전환(칼뽑기)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

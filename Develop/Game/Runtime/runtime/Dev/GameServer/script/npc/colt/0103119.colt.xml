@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="달빛 거미 여왕" npcid="103119" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210311901" rate="50" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="20"/>
+				<ACTION type="talent" param1="210311902" rate="50" />
+				<ACTION type="talent" param1="210311903" rate="10" /> <!--맹독공격-->
+	
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="400" param2="450" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210311904" rate="10" />
+				<ACTION type="nothing" param1="2" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

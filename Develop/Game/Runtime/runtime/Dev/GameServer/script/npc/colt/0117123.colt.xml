@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 맹독거미	
+211712301	일반공격
+211712302	강한공격
+211712303	맹독공격
+#211712304	배흔들기
+#211712305	가드
+211712203	Roar
+-->
+<maiet>
+	<COLT name="이끼거미" npcid="117123">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211712301" rate="30" />
+				<ACTION type="talent" param1="211712302" rate="10" />
+				<ACTION type="talent" param1="211712303" rate="10" cycle="15"/> <!--맹독공격-->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400">
+				<ACTION type="talent" param1="211712301" rate="20" />
+				<ACTION type="talent" param1="211712302" rate="50" />
+				<ACTION type="talent" param1="211712303" rate="10" cycle="15"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="30" />
+				<ACTION type="talent" param1="211712203" rate="30" cycle="30" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211712203" rate="10" />
+				<ACTION type="nothing" param1="2" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

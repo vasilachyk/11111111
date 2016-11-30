@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="플릿풋" npcid="107010">
+		<COMBAT>
+			<DEFAULT comment="50%이상 + 근접">
+				<ACTION type="talent" param1="210701023" rate="100" duration="0" />
+				<ACTION type="talent" param1="210701001" rate="50" duration="3" />
+				<ACTION type="talent" param1="210701005" rate="50" duration="3" />
+				<ACTION type="talent" param1="210701002" rate="1" duration="3" />
+				<ACTION type="talent" param1="210701003" rate="1" duration="3" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="32">
+				<ACTION type="talent" param1="210701022" max_count="1"/>
+			</CHECK>
+
+			<CHECK type="hp" param2="50">
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210701023" rate="50" duration="0" cycle="12"/>
+				
+					<ACTION type="talent" param1="210701001" rate="50" duration="3" />
+					<ACTION type="talent" param1="210701005" rate="50" duration="3" />
+					<ACTION type="talent" param1="210701002" rate="1" duration="3" />
+					<ACTION type="talent" param1="210701003" rate="1" duration="3" />
+				</CHECK>
+				<ACTION type="talent" param1="210701023" rate="50" duration="0" cycle="12"/>
+			
+				<ACTION type="talent" param1="210701002" rate="40" />
+				<ACTION type="talent" param1="210701003" rate="30" />
+				<ACTION type="talent" param1="210701005" rate="20" />
+				<ACTION type="talent" param1="210701007" rate="10" />
+			</CHECK>
+
+			<CHECK type="distance" param1="300" comment="50%이상 + 원거리">
+				<ACTION type="talent" param1="210701023" rate="100" duration="0" />
+				
+				<ACTION type="talent" param1="210701002" rate="40" />
+				<ACTION type="talent" param1="210701003" rate="30" />
+				<ACTION type="talent" param1="210701005" rate="20" />
+				<ACTION type="talent" param1="210701008" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="210701007"  rate="10" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210701006" rate="20" cycle="8"/>
+				<ACTION type="nothing" param1="2" rate="20" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+	<![CDATA[
+	
+function NPC_601001:Init(NPCID)
+	-- 1: 머리
+	-- 2: 꼬리
+	NPC_ReserveUserData(NPCID, 2)
+
+	local MaxHP = NPC_601001.MaxHP
+	NPC_601001.LimitForBreakTail 	= MaxHP/10
+	NPC_601001.LimitForPain 		= MaxHP/20
+	
+	NPC_601001.TalIdPain1 			= 210701009
+	NPC_601001.TalIdPain2 			= 210701010
+	NPC_601001.TalIdThreat			= 210701023
+	
+	NPC_601001.MinionId				= 601002
+end
+
+function NPC_601001:OnFinishAndAggroNear( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "near", 0 )
+end
+
+function NPC_601001:OnBPartRecover()
+	for i=1, 2 do
+		this:SetUserData( i, 0)
+	end -- for
+	
+	this:RemoveAllBuff()
+end
+
+function NPC_601001:AccDamage(bHead, dHitInfo)
+	local victim = AsNPC( dHitInfo.Victim )
+	local attacker = dHitInfo.Attacker
+	local totalDamage = 0
+	local currentDamage = 0
+	local currentTalent = victim:GetCurrentTalent()
+	local userDataIdx = 1
+
+	if(bHead == false and (victim:CheckBPart(1) == true and victim:CheckBPart(2) == true and victim:CheckBPart(3) == true)) then
+		return dHitInfo
+	end
+	
+	--[[ 
+	꼬리쪽은 SLASH와 PIERCE가 아니면 누적 데미지에 패널티를 받는다.
+	머리쪽은 BLUNT가 아니면 누적데미지에 패널티를 받는다.
+	누적데미지는 파츠 파괴나 Pain패턴에 영향을 준다. 
+	--]]
+	
+	if(bHead == false) then
+		userDataIdx = 2
+		
+		if(dHitInfo.Type == DA_SLASH or dHitInfo.Type == DA_PIERCE) then
+			currentDamage = dHitInfo.Damage
+		else
+			currentDamage = dHitInfo.Damage * 0.2
+		end
+	else
+		if(dHitInfo.Type == DA_BLUNT) then
+			currentDamage = dHitInfo.Damage
+		else
+			currentDamage = dHitInfo.Damage * 0.8
+		end
+	end
+	
+	if currentDamage == 0 then
+		return dHitInfo
+	end
+	
+	totalDamage = victim:GetUserData(userDataIdx) + currentDamage
+	victim:SetUserData(userDataIdx, totalDamage)
+	
+	-- GLog( "T:" .. totalDamage .. "\n" )
+	if bHead == true and totalDamage > NPC_601001.LimitForPain  then
+		-- _LogHitInfo( dHitInfo )
+		local bPain = 0
+		
+		if ChkMFForHitReaction( dHitInfo ) then
+			if not victim:IsCooldown( NPC_601001.TalIdPain1 ) then
+				victim:ClearJob()
+				victim:UseTalentSelf( NPC_601001.TalIdPain1 )
+				victim:SetUserData(userDataIdx, 0)
+			end
+		end
+	end
+	
+	local bPartId = 0
+	
+	if bHead == false and totalDamage > NPC_601001.LimitForBreakTail then
+		if(victim:CheckBPart(1) == false) then
+			bPartId = 1
+		elseif(victim:CheckBPart(2) == false) then
+			bPartId = 2
+		--[[
+		elseif(victim:CheckBPart(3) == false) then
+			bPartId = 3
+		--]]
+		end
+		
+		if( bPartId > 0 ) then
+			victim:ClearJob()
+			victim:BreakPart(bPartId, attacker)
+			victim:UseTalentSelf( NPC_601001.TalIdPain2 )
+			victim:SetUserData(userDataIdx, 0)
+		end
+	end
+	
+	return dHitInfo
+end
+
+-- 머리 히트
+function NPC_601001:OnHitCapsule_1_0( HitInfo )
+	return NPC_601001:AccDamage( true, HitInfo )
+end
+
+-- 머리 히트
+function NPC_601001:OnHitCapsule_2_0( HitInfo )
+	return NPC_601001:AccDamage( true, HitInfo )
+end
+
+-- 꼬리 히트
+function NPC_601001:OnHitCapsule_2_2( HitInfo )
+	return NPC_601001:AccDamage( false, HitInfo )
+end
+
+function NPC_601001:OnFinishSummonWolves( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	NPC_601001:SummonWolves( ThisNPC, Enemy, 3 )
+	ThisNPC:UseTalentSelf( NPC_601001.TalIdThreat )
+end
+
+-- 플릿풋의 아군 부르기
+function NPC_601001:SummonWolves( ThisNPC, Enemy, MinionCount )
+	local WorldPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	ThisNPC:NarrationNow("$$FleetFootSummon")
+	
+	for i = 1, MinionCount, 1 do
+		LocalAdjPos = vec3(math.random(-500, 500), math.random(-500, 500), 0)
+		WorldPos = Math_LocalToWorld(ThisNPC:GetDir(), ThisNPC:GetPos(), LocalAdjPos)
+		ThisNPC:SummonNow( NPC_601001.MinionId, WorldPos)
+	end
+end
+
+function NPC_601001:OnVictory( )
+	this:SetUserData( 1, 0 )
+	this:SetUserData( 2, 0 )
+end
+	
+	]]></SCRIPT>
+</maiet>

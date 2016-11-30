@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#광기의 코볼트 명사수	
+211101401	#총쏘기
+211101402	#총돌려쏘기
+211101403	#폭팔사격
+-->
+<maiet>
+	<COLT name="크르흐" npcid="111039">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="group" rate="70">
+					<ACTION type="talent" param1="211101401" desc="총쏘기" />
+					<ACTION type="nothing" param1="0.4" />
+				</ACTION>
+				
+				<ACTION type="group" rate="10" cycle="15">
+					<ACTION type="talent" param1="211101402" desc="총돌려쏘기" />
+					<ACTION type="nothing" param1="0.4" />
+				</ACTION>
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="80" >
+				<ACTION type="group" rate="10">
+					<ACTION type="talent" param1="211101403" desc="폭팔사격" />
+					<ACTION type="nothing" param1="0.8" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="distance" param1="600" >
+				<ACTION type="distance" param1="600" param2="700" rate="10"/>
+				
+				<ACTION type="group" rate="70">
+					<ACTION type="talent" param1="211101401" desc="총쏘기" />
+					<ACTION type="nothing" param1="0.8" />
+				</ACTION>
+				
+				<ACTION type="group" rate="10" cycle="15">
+					<ACTION type="talent" param1="211101402" desc="총돌려쏘기" />
+					<ACTION type="nothing" param1="0.8" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

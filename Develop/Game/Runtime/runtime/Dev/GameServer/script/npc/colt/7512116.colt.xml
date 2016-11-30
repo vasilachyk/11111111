@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="저주받은 스켈레톤 궁수">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+			
+				<ACTION type="talent" param1="251211601" rate="30" />
+				<ACTION type="talent" param1="251211602" rate="10" />
+				<ACTION type="talent" param1="251211603" rate="40" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="1500" >
+				<ACTION type="distance" param1="750" param2="800" rate="30"/>
+				<ACTION type="talent" param1="251211601" rate="10" />
+				<ACTION type="talent" param1="251211602" rate="40" />
+				<ACTION type="talent" param1="251211603" rate="30" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" param2="1000" >
+				<!--
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="5" auto_run="true"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="5"/>
+				-->
+				<ACTION type="lua" param1="SideStep" rate="30" cycle="20"/>
+				
+				<!-- <ACTION type="talent" param1="251211601" rate="30" /> -->
+				<!-- <ACTION type="talent" param1="251211602" rate="10" /> -->
+				<ACTION type="talent" param1="251211603" rate="50" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="251211600" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

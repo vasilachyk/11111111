@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="영혼조리사 쿠프스" npcid="520001">
+		<COMBAT mode="0" comment="">
+			<DEFAULT>
+
+				<ACTION type="talent" param1="252000113" rate="30" desc="내려치기" />
+				<ACTION type="talent" param1="252000110" rate="30" desc="2연타" />
+				<ACTION type="lua" param1="NPC_520001" param2="BackAttack" rate="20" cycle="5"/>
+				<ACTION type="aggro" param1="far" param2="0" rate="20" />
+
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="70" param2="85">
+				<ACTION type="talent" param1="252000116" cycle="5" desc="휘두르기 시작" />
+				<!--
+				<ACTION type="talent" param1="252000114" cycle="30" rate="5" duration="0" desc="도발 짝퉁" />
+				-->
+				
+				<ACTION type="talent" param1="252000130" cycle="30" rate="5" duration="0" desc="도발 시작" />
+				
+			</CHECK>
+ 
+			<CHECK type="hp" param1="50" param2="70">
+				<ACTION type="aggro" param1="short" param2="0" cycle="30" rate="20" />
+				<ACTION type="talent" param1="252000116" cycle="5" rate="20" desc="휘두르기 시작" />
+				<ACTION type="talent" param1="252000111" cycle="20" rate="5" desc="3회전 휘두르기" />
+				<ACTION type="talent" param1="252000130" cycle="30" rate="5" duration="0" desc="도발 시작" />
+			</CHECK>
+ 
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="252000120" cycle="5" duration="0" rate="70" desc="휠윈드 시작" />
+				<ACTION type="talent" param1="252000116" cycle="5" desc="휘두르기 시작" />
+				<ACTION type="talent" param1="252000130" cycle="30" rate="5" duration="0" desc="도발 시작" />
+			</CHECK>
+
+			<CHECK type="stress" param1="50">
+				<ACTION type="talent" param1="252000120" duration="0" desc="휠윈드 시작" />
+			</CHECK>			
+		</COMBAT>
+		<COMBAT mode="1" comment="휠윈드" victory="252000122">
+			<DEFAULT>
+				<!--<ACTION type="talent" param1="252000121" duration="0" desc="휠윈드 쉼" />-->
+			</DEFAULT>
+			<CHECK type="distance" param1="300" >
+				<ACTION type="distance" param1="200" param2="250" duration="3"/>
+				<!--<ACTION type="talent" param1="252000121" duration="0" rate="50" desc="휠윈드 쉼" />-->
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="2" comment="도발" victory="252000132">
+			<DEFAULT>
+				<ACTION type="talent" param1="252000133" duration="0" cycle="1" desc="도발 끝" />
+				<ACTION type="talent" param1="252000132" duration="0" desc="도발 끝" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="4" comment="휘두르기" victory="252000119">
+			<DEFAULT>
+				<ACTION type="talent" param1="252000119" duration="0" desc="휘두르기 끝" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+function NPC_520001:Init(NPCID)
+	--[[
+		User Data
+		1: Pain누적 데미지
+		2: BreakPart 머리
+		3: BreakPart 칼날
+	--]]
+	NPC_520001.UD_PAIN 		= 1
+	--NPC_520001.UD_BP_HEAD 	= 2
+	--NPC_520001.UD_BP_BLADE 	= 3
+	NPC_520001.UD_DATASIZE	= 1
+
+	NPC_520001.BP_HEAD 	= 1
+	NPC_520001.BP_BLADE = 2
+	
+	NPC_ReserveUserData(NPCID, NPC_520001.UD_DATASIZE);
+	
+	NPC_520001.LIMIT_PAIN		= NPC_520001.MaxHP/10
+	NPC_520001.LIMIT_BP_HEAD	= NPC_520001.MaxHP * 0.49
+	NPC_520001.LIMIT_BP_BLADE	= NPC_520001.MaxHP * 0.7
+	--NPC_520001.LIMIT_FLEE		= NPC_520001.MaxHP * 1 --0.05
+	
+	NPC_520001.TALENT_Provoke = 252000130
+	NPC_520001.TALENT_CountAttack = 252000131
+	
+	NPC_520001.TALENT_PAIN1 = 252000101
+	NPC_520001.TALENT_PAIN2 = 252000102
+
+	NPC_520001.TALENT_BackAttack = 252000112
+	NPC_520001.TALENT_SpinAttack = 252000110
+	
+	NPC_520001.TALENT_SpinSmash = 252000117 
+	NPC_520001.TALENT_SpinSpin	= 252000118
+	
+	NPC_520001.WHIRLWIND_BUFF 		= 40750
+	NPC_520001.WHIRLWIND_TTL 		= 10
+	NPC_520001.WHIRLWIND_TIMER 		= 1
+	NPC_520001.WHIRLWIND_FINISH		= 252000122
+end
+
+function NPC_520001:OnBPartRecover()
+	for i=1, NPC_520001.UD_DATASIZE do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+-- Talent Callback Func
+function NPC_520001:OnFinishAndAggroSwap( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_520001:ProcessAccDamage( ThisNPC, PartsIdx, HitInfo )
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	local mode = ThisNPC:GetMode()
+	local MODE_DEFAULT = 0
+	local MODE_PROVOKE = 2 -- 도발
+	local hp = ThisNPC:GetHP()
+	
+	-- 도발
+	if mode == MODE_PROVOKE and currentTalent ~= NPC_520001.TALENT_Provoke then
+		ThisNPC:ClearJob()
+		ThisNPC:FaceTo(HitInfo.Attacker)
+		ThisNPC:UseTalentSelf( NPC_520001.TALENT_CountAttack )
+		--ThisNPC:UseTalent( NPC_520001.TALENT_CountAttack, HitInfo.Attacker )
+		return HitInfo
+	end
+	
+	--GLog("hp "..hp.." limit "..NPC_520001.LIMIT_BP_HEAD)
+	if hp < NPC_520001.LIMIT_BP_BLADE and not ThisNPC:CheckBPart( NPC_520001.BP_BLADE ) and mode == MODE_DEFAULT then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_520001.TALENT_PAIN2 )
+		ThisNPC:BreakPart( NPC_520001.BP_BLADE, HitInfo.Attacker )
+		return HitInfo
+	elseif hp < NPC_520001.LIMIT_BP_HEAD and not ThisNPC:CheckBPart( NPC_520001.BP_HEAD ) and mode == MODE_DEFAULT then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_520001.TALENT_PAIN2 )
+		ThisNPC:BreakPart( NPC_520001.BP_HEAD, HitInfo.Attacker )
+		return HitInfo
+	end
+		
+	-- pain 패턴
+	local damageAcc = ThisNPC:GetUserData( NPC_520001.UD_PAIN ) + HitInfo.Damage
+	if damageAcc > NPC_520001.LIMIT_PAIN and ChkMFForHitReaction( HitInfo ) and
+		mode == MODE_DEFAULT then
+ 
+	 	ThisNPC:SetUserData( NPC_520001.UD_PAIN, 0 )
+		ThisNPC:ClearJob()
+	 	ThisNPC:UseTalentSelf( NPC_520001.TALENT_PAIN1 )
+	 	return HitInfo
+	end
+	ThisNPC:SetUserData( NPC_520001.UD_PAIN, damageAcc )
+
+end
+
+function NPC_520001:OnHitCapsule_1_0(HitInfo)
+--	GLog("NPC_520001:OnHitCapsule_1_0")
+	return NPC_520001:ProcessAccDamage( this, 0, HitInfo )
+end
+
+-- 휠윈드
+function NPC_520001:OnFinishStartWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:GainBuff( NPC_520001.WHIRLWIND_BUFF )
+	ThisNPC:SetTimer( NPC_520001.WHIRLWIND_TIMER, NPC_520001.WHIRLWIND_TTL, false )
+	
+	AsNPC(ThisNPC):Aggro("random", 0)
+end
+
+function NPC_520001:OnActEndWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:RemoveBuff( NPC_520001.WHIRLWIND_BUFF )
+end
+
+function NPC_520001:OnTimer( Index )
+	if not Index == NPC_520001.WHIRLWIND_TIMER then return end
+	this:ClearJob()
+	this:UseTalentSelf( NPC_520001.WHIRLWIND_FINISH )
+end
+
+-- 휘두르기
+function NPC_520001:OnFinishSpinAttack( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local dist = ThisNPC:DistanceTo( Enemy )
+	local isFront = Enemy:IsFront( ThisNPC )
+ 
+	if dist < 600 and isFront then
+		ThisNPC:UseTalentSelf( NPC_520001.TALENT_SpinSmash )
+	else
+		ThisNPC:UseTalentSelf( NPC_520001.TALENT_SpinSpin )
+	end
+end
+
+-- 후방 공격
+function NPC_520001:BackAttack( ThisNPC, Enemy )
+	local dist = ThisNPC:DistanceTo( Enemy )
+	local isRear = Enemy:IsRear( ThisNPC )
+ 
+	if dist < 200 then
+		ThisNPC:UseTalentSelf( NPC_520001.TALENT_SpinAttack )
+	elseif dist < 500 and isRear then
+		ThisNPC:UseTalentSelf( NPC_520001.TALENT_BackAttack )
+	end
+ end
+ 
+	]]></SCRIPT>
+</maiet>

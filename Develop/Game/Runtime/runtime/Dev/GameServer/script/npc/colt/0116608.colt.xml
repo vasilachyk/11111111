@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 부족 용병 (인간형 한손검 기본, 방패)	
+211660601	1타
+211660602	2타
+211660603	3타
+211660604	찌르기
+211660605	모드0전환(칼뽑기)
+211660606	모드1전환(칼넣기)
+211660607	회피L
+211660608	회피R
+211660609	역습 포커스
+211660610	강격
+211660611	충격 반사
+211660612	보루
+211660613	파멸의 일격
+211660614	방패 가격: 기절
+211660615	돌진
+211660616	방어
+-->
+<maiet>
+	<COLT name="물의 정령 용병(여)" npcid="116608" >
+		<COMBAT mode="0" victory="211660606" >
+			<DEFAULT>
+				<ACTION desc="방패 가격: 기절" type="talent" param1="211660614" rate="40" />
+				
+				<ACTION desc="1타" type="talent" param1="211660601" rate="20" />
+				<ACTION desc="3타" type="talent" param1="211660603" rate="15" />
+				<ACTION desc="2타" type="talent" param1="211660602" rate="30" />
+				
+				<ACTION desc="충격 반사" type="talent" param1="211660611" rate="5" />
+				<ACTION desc="파멸의 일격" type="talent" param1="211660613" rate="10" />
+				<ACTION desc="방패 가격: 기절" type="talent" param1="211660614" rate="5" />
+				<ACTION desc="돌진" type="talent" param1="211660615" rate="5" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80" >
+				<ACTION desc="역습 포커스" type="talent" param1="211660609" rate="100" />
+			</CHECK>
+	
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<CHECK type="gained_buff" param1="80120">
+					<ACTION desc="강격" type="talent" param1="211660610"/>
+				</CHECK>
+
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+
+				<ACTION desc="충격 반사" type="talent" param1="211660611" rate="20" />
+				<ACTION desc="보루" type="talent" param1="211660612" rate="10" />
+				<ACTION desc="찌르기" type="talent" param1="211660604" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION desc="모드0전환(칼뽑기)" type="talent" param1="211660605" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

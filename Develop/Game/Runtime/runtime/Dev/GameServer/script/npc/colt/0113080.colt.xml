@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="유령마 그래스라이더" npcid="113080">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="30" />
+				
+				<ACTION type="talent" param1="211308001" rate="40" />
+				<ACTION type="talent" param1="211308002" rate="20" />
+				<!-- 심각하게 재미없어서 추가 -->
+				<ACTION type="talent" param1="211308003" rate="30" duration="0" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500">			
+				<ACTION type="talent" param1="211308002" rate="50" />
+				<ACTION type="talent" param1="211308001" rate="10" />
+			</CHECK>
+		</COMBAT>
+			
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211308000" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#대족장 르왕키	
+211101001	#idle
+211101002	#내려찍기
+211101003	#왼손휘두르기
+211101004	#오른손휘두르기
+211101005	#양손휘두르기
+211101006	#태클
+211101007	#포효
+211101008	#강탈
+211101009	#르왕키 메가데스
+-->
+<maiet>
+	<COLT name="대족장 르왕키" npcid="111010">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211101002" rate="25" />
+				<ACTION type="talent" param1="211101003" rate="25" />
+				<ACTION type="talent" param1="211101004" rate="25" />
+				<ACTION type="talent" param1="211101006" rate="25" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200" >
+				<CHECK type="rage" param1="100" >
+					<ACTION type="talent" param1="211101005" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				<ACTION type="talent" param1="211101007" rate="20"/>
+				<ACTION type="talent" param1="211101003" rate="40" />
+			</CHECK>
+		</COMBAT>
+	
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211101001" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[ 
+	]]></SCRIPT>
+</maiet>

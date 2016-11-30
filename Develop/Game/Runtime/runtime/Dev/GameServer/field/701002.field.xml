@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="121003" minimap_name="map121003" loading_image_name="121002" min_x="0" min_y="0" max_x="20000" max_y="20000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+      <BGM fieldbgm="bgm_field_9">
+            <ENVBGM dungeonbgm="amb_dungeon_garden" />
+      </BGM>
+		<Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <GRID type="wall" row="67" column="67" filled="566,15,46,23,38,29,33,34,33,34,3,9,18,37,3,10,17,50,17,50,17,23,7,20,17,16,14,20,16,16,17,18,16,15,18,18,16,15,20,16,16,13,23,15,16,13,23,14,17,12,26,11,18,12,26,11,18,10,28,11,18,10,29,10,18,10,29,10,18,8,31,14,14,8,32,13,14,8,32,13,14,8,32,13,14,8,32,13,14,8,32,13,15,8,31,13,15,8,31,13,15,8,30,14,15,10,28,13,16,10,26,14,17,13,23,13,19,12,15,21,19,15,10,23,19,19,6,23,19,48,19,16,1,31,19,48,20,45,22,48,23,44,23,44,23,44,23,44,23,34,1,9,23,32,3,9,23,28,7,9,24,27,7,9,26,23,44,20,49,14,568" />
+		<SPAWN id="1" group="0" name="화원의 주인" x="9860.758789" y="9492.306641" z="8.475716" dir_x="0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="701019" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="문" x="10613.919922" y="4285.389160" z="222.552658" dir_x="-0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="701220" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="문" x="9384.525391" y="4283.731934" z="224.968826" dir_x="-0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="701207" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="제일스의 본체" x="12432.103516" y="11032.675781" z="7.632458" dir_x="-0.515039" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="113232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="spawn_00003" x="7773.089844" y="8011.180664" z="8.632370" dir_x="-0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="113246" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="spawn_00006" x="12788.029297" y="8892.154297" z="8.632309" dir_x="-0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="113246" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="9367.349609" y="4757.887207" z="308.452393" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7121019" name="MON_M 7121019 화원의 주인" x="9938.324219" y="9612.501953" z="7.632416" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="0" name="오염된 화원 마지막 방으로" x="9387.821289" y="3685.178711" z="212.315262" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-4.232422" y="231.182373" z="0.000000" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="오염된화원 마지막방으로" condition="0" gate_type="auto" field="701001" marker="13" />
+        </SENSOR>
+        <SENSOR id="1" name="오염된 화원 1번방으로 " x="10604.089844" y="3686.152100" z="212.315262" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="20.541992" y="230.980225" z="-179.267151" dir_x="-0.006652" dir_y="0.999978" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="오염된화원 1번방으로" condition="0" gate_type="auto" field="701001" marker="12" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

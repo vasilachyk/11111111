@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="512" minimap_name="map00512" loading_image_name="00512" min_x="-17500" min_y="-16300" max_x="17500" max_y="18700" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_dungeon_catacomb">
+            <ENVBGM dungeonbgm="amb_dungeon_1" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="2" group="0" name="[예배당] 유령하인" x="734.597534" y="-6060.888184" z="119.936401" dir_x="-0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="[예배당] 유령하인" x="60.217606" y="-6600.834961" z="140.602661" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="150" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="[예배당] 굴 어세신" x="-369.632690" y="-5968.239258" z="204.102173" dir_x="0.694658" dir_y="-0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="[예배당] 굴 어세신" x="13.352875" y="-7322.585449" z="158.978516" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="[예배당] 굴 광신자" x="-6833.546875" y="-1845.364502" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="0,128,128">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="[예배당] 굴 어세신" x="-4695.025391" y="-5363.310547" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="[예배당] 굴 어세신" x="-4668.788574" y="-5878.716797" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="[예배당] 굴 어세신" x="-6362.895508" y="-1209.349609" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="[예배당] 굴 광신자" x="-7421.976563" y="-1372.302612" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,128,128">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="[예배당] 굴 어세신" x="-5977.842773" y="-5509.117188" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="60.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="[예배당] 굴 어세신" x="-7507.616699" y="-2284.142334" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="[예배당] 굴 어세신" x="-6887.380371" y="-5689.047852" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="[예배당] 굴 어세신" x="-6822.270996" y="-5894.384277" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="[예배당] 굴 어세신" x="-6141.594727" y="-2283.504395" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" group="0" name="[예배당] 굴 어세신" x="-7914.612793" y="-5585.946289" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="80.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="[예배당] 굴 어세신" x="-8831.813477" y="-5261.556152" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="[예배당] 굴 어세신" x="-7296.264648" y="-2500.907715" z="2.000000" dir_x="0.190809" dir_y="0.981627" dir_z="0.000000" radius="80.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="23" group="0" name="바스테로" x="-7807.717773" y="10353.420898" z="13.880508" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="86400" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="3500" color="auto">
+            <NPC id="512000" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="24" group="0" name="유령기사단장" x="7810.461426" y="10447.278320" z="2.000000" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="86400" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="3500" color="auto">
+            <NPC id="512001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="25" group="0" name="spawn_00025" x="-7307.973633" y="-1212.029785" z="13.455811" dir_x="0.190809" dir_y="0.981627" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="140,0,63">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="26" group="0" name="[예배당] 스켈레톤" x="-7681.895508" y="1549.858887" z="3.000000" dir_x="0.999391" dir_y="0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28" group="0" name="[예배당] 스켈레톤" x="-7547.765137" y="2222.656494" z="3.000000" dir_x="0.809017" dir_y="-0.587785" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="29" group="0" name="[예배당] 스켈레톤" x="-6165.940918" y="2277.520020" z="3.000000" dir_x="-0.484809" dir_y="-0.874620" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="30" group="0" name="[예배당] 스켈레톤" x="-6737.754395" y="2500.216309" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="32" group="0" name="[예배당] 스켈레톤" x="-5974.815918" y="1751.161133" z="3.101446" dir_x="-1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="33" group="0" name="[예배당] 스켈레톤" x="-6270.351074" y="1005.578308" z="2.000000" dir_x="-0.707107" dir_y="0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="35" group="0" name="[예배당] 스켈레톤" x="-7201.117188" y="883.794373" z="3.000000" dir_x="0.707107" dir_y="0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="38" group="0" name="[예배당] 굴 어세신" x="-3726.957031" y="1289.470093" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="41" group="0" name="[예배당] 굴 어세신" x="-6299.934570" y="-2384.563965" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="43" group="0" name="[예배당] 굴 버서커" x="-3873.541748" y="1505.433228" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="45" group="0" name="[예배당] 굴 버서커" x="-3643.556152" y="2274.492188" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="83,206,101">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="46" group="0" name="[예배당] 굴 버서커" x="-3374.739990" y="2163.986572" z="10.478542" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="83,206,101">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="48" group="0" name="[예배당] 굴 버서커" x="-2630.197754" y="1336.007935" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="83,206,101">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="49" group="0" name="[예배당] 굴 버서커" x="-4533.815918" y="2332.674561" z="10.000217" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="83,206,101">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="50" group="0" name="[예배당] 굴 버서커" x="-3559.324951" y="1543.413086" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="83,206,101">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="52" group="0" name="[예배당] 굴 광신자" x="-6816.331055" y="1717.078613" z="10.000217" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="53" group="0" name="[예배당] 굴 광신자" x="-3105.601563" y="2055.944580" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="54" group="0" name="[예배당] 굴 광신자" x="-2799.385254" y="1107.123779" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="56" group="0" name="[예배당] 굴 버서커" x="-9756.497070" y="2642.929688" z="82.972168" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="57" group="0" name="[예배당] 고위사제 콰트라" x="-9871.493164" y="5264.401855" z="73.777466" dir_x="-0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="58" group="0" name="[예배당] 굴 버서커" x="-7024.252930" y="-5844.338379" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="59" group="0" name="[예배당] 굴 버서커" x="-8797.066406" y="-5141.509766" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="60" group="0" name="[예배당] 굴 광신자" x="-6146.675781" y="-1402.239990" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="61" group="0" name="[예배당] 굴 광신자" x="-8155.079102" y="6286.589844" z="2.000000" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="62" group="0" name="[예배당] 굴 버서커" x="-7336.881836" y="6294.728516" z="3.000000" dir_x="-0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="205,85,85">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="65" group="0" name="spawn_00065" x="-3883.977539" y="6104.110840" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="66" group="0" name="spawn_00066" x="-5420.136230" y="5605.937012" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="67" group="0" name="[예배당] 굴 광신자" x="-4999.927734" y="5665.257813" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="68" group="0" name="spawn_00068" x="-3881.932129" y="5639.377930" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="69" group="0" name="spawn_00069" x="-5197.215820" y="5898.161133" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="64,55,234">
+            <NPC id="512103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="72" group="0" name="spawn_00072" x="5733.513672" y="-5761.750977" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="73" group="0" name="spawn_00073" x="4521.708984" y="-5597.658691" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="75" group="0" name="spawn_00075" x="8692.652344" y="-5299.329102" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="76" group="0" name="spawn_00076" x="7040.001953" y="-5555.491699" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="77" group="0" name="spawn_00077" x="8751.185547" y="-5467.078125" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="78" group="0" name="spawn_00078" x="5798.561035" y="-6004.956055" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="80" group="0" name="spawn_00080" x="5934.247559" y="-5842.226074" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="81" group="0" name="spawn_00081" x="7302.438477" y="-5507.819824" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="82" group="0" name="spawn_00082" x="8905.642578" y="-5298.671387" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="83" group="0" name="spawn_00083" x="8977.202148" y="-2069.853516" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="150" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="84" group="0" name="spawn_00084" x="7710.999023" y="-1654.999390" z="4.000700" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="400" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="85" group="0" name="spawn_00085" x="6552.104004" y="-2025.959717" z="4.000700" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="88" group="0" name="spawn_00088" x="6665.022949" y="-1822.509521" z="4.000700" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="89" group="0" name="spawn_00089" x="5985.915527" y="-1442.595703" z="4.000700" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="201,248,41">
+            <NPC id="512105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="90" group="0" name="spawn_00090" x="8744.251953" y="-2088.994629" z="46.331055" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="150" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="92" group="0" name="spawn_00092" x="6395.072754" y="-1810.972534" z="4.000700" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="96" group="0" name="spawn_00096" x="3838.208496" y="1375.094727" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="97" group="0" name="spawn_00097" x="4030.758789" y="2155.547363" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="99" group="0" name="spawn_00099" x="3608.058105" y="2200.286377" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="100" group="0" name="spawn_00100" x="3691.841064" y="1241.824585" z="8.432041" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101" group="0" name="spawn_00101" x="2732.399414" y="1524.697388" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102" group="0" name="spawn_00102" x="2610.163086" y="1682.588867" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103" group="0" name="spawn_00103" x="3846.911621" y="2312.117920" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="187,102,121">
+            <NPC id="512110" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="105" group="0" name="spawn_00105" x="3551.595215" y="1520.631592" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="200" roam_depth="200" combat_radius="0" color="187,102,121">
+            <NPC id="512110" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="106" group="0" name="spawn_00106" x="2930.460449" y="1764.997070" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="187,102,121">
+            <NPC id="512110" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112" group="0" name="spawn_00112" x="6272.250977" y="1036.161133" z="4.373200" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113" group="0" name="spawn_00113" x="7628.432129" y="1043.825195" z="4.373200" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="115" group="0" name="spawn_00115" x="8207.372070" y="1060.152344" z="4.373200" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116" group="0" name="spawn_00116" x="8235.865234" y="2372.612305" z="4.373200" dir_x="0.069756" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="117" group="0" name="spawn_00117" x="6988.007813" y="2278.608398" z="4.373200" dir_x="0.069756" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="119" group="0" name="spawn_00119" x="6192.183105" y="2381.456055" z="4.373200" dir_x="0.069756" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="121" group="0" name="spawn_00121" x="6201.067383" y="1699.470703" z="4.373200" dir_x="-0.999848" dir_y="0.017453" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="122" group="0" name="spawn_00122" x="7775.590332" y="1757.038086" z="4.373200" dir_x="-0.999848" dir_y="0.017453" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="123" group="0" name="spawn_00123" x="9889.739258" y="3015.436523" z="4.055782" dir_x="-0.999848" dir_y="0.017453" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="124" group="0" name="spawn_00124" x="9890.268555" y="5287.739258" z="56.916016" dir_x="-0.999848" dir_y="0.017453" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="250,97,39">
+            <NPC id="512109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="125" group="0" name="spawn_00125" x="7425.583496" y="6453.909180" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="126" group="0" name="spawn_00126" x="8069.800781" y="6468.044922" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="127" group="0" name="spawn_00127" x="5737.766113" y="6039.833496" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="128" group="0" name="spawn_00128" x="5623.110840" y="5727.942383" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="129" group="0" name="spawn_00129" x="3748.286621" y="6032.535645" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="150" roam_depth="200" combat_radius="0" color="71,250,39">
+            <NPC id="512111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="131" group="0" name="spawn_00131" x="5461.654785" y="5993.924316" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="187,102,121">
+            <NPC id="512110" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="133" group="0" name="spawn_00133" x="3699.992920" y="5612.965820" z="3.000000" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="200" combat_radius="0" color="187,102,121">
+            <NPC id="512110" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="134" group="0" name="만넬로스" x="-2.906334" y="12391.710938" z="120.347298" dir_x="-0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="86400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="5500" color="187,102,121">
+            <NPC id="512002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="143" group="0" name="유령사이드 문" x="1629.283447" y="5891.522461" z="99.198853" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="144" group="0" name="구울 사이드 문" x="-1722.035156" y="5891.379883" z="99.200203" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="145" group="0" name="만넬로스 문" x="3.371831" y="8213.082031" z="99.404327" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="146" group="0" name="바스테로 레버" x="-7784.345703" y="13424.918945" z="111.000008" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="147" group="0" name="유령기사단장 레버" x="7808.189453" y="13405.114258" z="122.886299" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512208" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="150" group="0" name="상위기사 탐핀" x="7755.484863" y="5933.778320" z="2.998647" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512112" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="151" group="0" name="겁에 질린 도공 디닐" x="-498.106201" y="4798.001953" z="2.000000" dir_x="0.529920" dir_y="0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="8000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="500" combat_radius="0" color="auto">
+            <NPC id="512210" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113214" group="0" name="헤이든" x="23.595734" y="-9412.556641" z="104.881203" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="113214" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113217" group="0" name="[NPC] 아이젠트 트리어" x="488.701508" y="10284.163086" z="111.122231" dir_x="-0.309018" dir_y="0.951056" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="113217" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113222" group="0" name="생명의 단지" x="2.776914" y="11488.460938" z="120.347298" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="113222" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113245" group="0" name="[NPC] 제일스의 영혼" x="2.510022" y="11724.238281" z="120.347298" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="113245" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="512206" group="0" name="숨겨진 보물상자2" x="2887.456299" y="-1870.740479" z="4.000000" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512206" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="512211" group="0" name="상자" x="2298.392822" y="-1596.179199" z="4.000000" dir_x="0.999391" dir_y="0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="512211" default="true" rate="800" />
+            <NPC id="1" default="false" rate="200" />
+        </SPAWN>
+        <MARKER id="1" name="from 오솔길 오른쪽" x="1977.260376" y="-12611.110352" z="154.119629" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="from 오솔길 왼쪽" x="-1985.037109" y="-12656.697266" z="132.886230" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="도지 도주경로1" x="4755.857422" y="-1160.364258" z="31.709961" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="도지 도주경로2" x="6957.992676" y="-1602.901367" z="19.424957" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="도지 도주경로3" x="8774.309570" y="-1691.025391" z="4.000700" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="도지 도주경로4" x="8916.665039" y="-4637.179688" z="3.000000" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="도지 도주경로5" x="8564.857422" y="-5782.171387" z="3.000000" dir_x="-0.997564" dir_y="0.069757" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="도지 도주경로6" x="3836.271973" y="-5650.470703" z="3.000000" dir_x="-0.997564" dir_y="-0.069756" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="도지 도주경로7" x="253.317047" y="-6474.960938" z="139.592407" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="도지 도주경로8" x="32.324692" y="-10326.846680" z="134.577026" dir_x="0.891007" dir_y="-0.453991" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="도지 도주경로 마지막" x="1967.750732" y="-11541.825195" z="160.174805" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="고위사제 이동1" x="-9866.671875" y="4154.942871" z="63.236084" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="고위사제 이동2" x="-9831.464844" y="2454.953613" z="75.846191" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="고위사제 이동3" x="-7250.599121" y="2461.505127" z="20.124249" dir_x="0.484810" dir_y="-0.874620" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="고위사제 이동4" x="-6069.490234" y="981.419434" z="3.000000" dir_x="0.358368" dir_y="0.933580" dir_z="0.000000" random_dir="false" />
+        <MARKER id="16" name="고위사제 이동5" x="-5715.173828" y="2371.574219" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="17" name="고위사제 이동6" x="-2239.585449" y="2384.614014" z="3.000000" dir_x="-0.669130" dir_y="-0.743145" dir_z="0.000000" random_dir="false" />
+        <MARKER id="18" name="고위사제 이동7" x="-4253.609375" y="969.720703" z="3.000000" dir_x="-0.997564" dir_y="-0.069756" dir_z="0.000000" random_dir="false" />
+        <MARKER id="19" name="고위사제 이동8" x="-4837.891113" y="785.268555" z="4.000007" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="20" name="고위사제 이동9" x="-4853.971191" y="-1145.866211" z="42.633789" dir_x="-1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="21" name="고위사제 이동10" x="-7113.709473" y="-1387.084229" z="3.000000" dir_x="0.994522" dir_y="0.104529" dir_z="0.000000" random_dir="false" />
+        <MARKER id="22" name="MK00022" x="18.171021" y="5552.998047" z="3.000000" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="23" name="MK00023" x="-13.406326" y="7307.247070" z="3.000000" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="24" name="상위기사탐핀 이동마커1" x="8630.563477" y="5917.493652" z="2.998648" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="25" name="상위기사탐핀 이동마커2" x="9871.730469" y="5905.819824" z="5.055548" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="26" name="상위기사탐핀 이동마커3" x="9901.423828" y="2380.942139" z="5.055845" dir_x="-0.999391" dir_y="-0.034899" dir_z="0.000000" random_dir="false" />
+        <MARKER id="27" name="상위기사탐핀 이동마커4" x="8783.301758" y="2319.006592" z="5.373199" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="28" name="상위기사탐핀 이동마커5" x="8742.270508" y="1643.244385" z="5.373199" dir_x="-1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="29" name="상위기사탐핀 이동마커6" x="5663.541016" y="1596.148071" z="5.373199" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30" name="상위기사탐핀 이동마커7" x="5580.333008" y="2306.272949" z="5.373199" dir_x="-0.999391" dir_y="0.034900" dir_z="0.000000" random_dir="false" />
+        <MARKER id="31" name="상위기사탐핀 이동마커8" x="2117.977051" y="2202.990234" z="2.700001" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="32" name="상위기사탐핀 이동마커9" x="2144.689697" y="1131.572998" z="2.700001" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="33" name="상위기사탐핀 이동마커10" x="4814.690918" y="1077.420410" z="5.000056" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="34" name="상위기사탐핀 이동마커11" x="4762.761719" y="-1005.172363" z="5.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="35" name="상위기사탐핀 이동마커12" x="7545.139160" y="-1131.216309" z="5.000700" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="36" name="상위기사탐핀 이동마커13" x="7510.858398" y="-1877.398804" z="5.000700" dir_x="0.034900" dir_y="0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50" name="시작 지점" x="-17.365967" y="-10511.526367" z="104.881203" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="51" name="만넬로스 방" x="-15.853161" y="9672.563477" z="105.190628" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="52" name="헤이든 순간이동" x="-502.150604" y="10330.319336" z="112.554726" dir_x="0.390731" dir_y="0.920505" dir_z="0.000000" random_dir="false" />
+        <MARKER id="53" name="바스테로 방" x="-7807.218262" y="9519.202148" z="14.880493" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="54" name="리비우트 방" x="7804.856445" y="9612.264648" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="512002" name="MON_M 512002 만넬로스" x="15.679428" y="12273.055664" z="121.347298" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="512104" name="MON_M 512104 고위사제 콰트라" x="-9801.407227" y="5440.693848" z="85.579041" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="512112" name="MON_M 512112 상위기사 탐핀" x="7825.572266" y="5983.743652" z="2.998644" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="512206" name="OBJ_M 512206 숨겨진 보물상자" x="2801.449951" y="-1781.326294" z="5.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="20111111" name="집사테스트용" x="-17.162458" y="12019.277344" z="121.347298" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 오솔길 오른쪽" x="2023.554199" y="-13420.510742" z="103.881203" radius="450.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-24.235352" y="365.094727" z="-27.317078" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="2.000000" />
+            <WARP warp_type="field" title="다른 필드로 이동" condition="0" gate_type="auto" field="113" marker="9" />
+        </SENSOR>
+        <SENSOR id="2" name="to 오솔길 왼쪽" x="-2000.347778" y="-13443.039063" z="103.881203" radius="450.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-14.509155" y="307.490234" z="-79.484077" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="2.000000" />
+            <WARP warp_type="field" title="다른 필드로 이동" condition="0" gate_type="auto" field="113" marker="10" />
+        </SENSOR>
+        <SENSOR id="9" name="항아리 소환 센서" local="false" x="22.184067" y="12395.558594" z="120.347298" radius="5000.000000" enabled="false" groupname="none" />
+        <SENSOR id="10" name="항아리 이벤트 센서" local="false" x="8.571804" y="11494.956055" z="121.347298" radius="1500.000000" enabled="false" groupname="none" />
+        <SENSOR id="11" name="제일스 이벤트 센서" local="false" x="-2.637063" y="11507.167969" z="121.347298" radius="1500.000000" enabled="false" groupname="none" />
+        <SENSOR id="70" name="안전지대" local="false" x="-2071.160156" y="-12394.197266" z="104.881203" radius="500.000000" enabled="true" checkpoint="50" groupname="none" />
+        <SENSOR id="71" name="안전지대" local="false" x="2015.383789" y="-12310.443359" z="103.881203" radius="500.000000" enabled="true" checkpoint="50" groupname="none" />
+        <AREA id="1" name="레나스의 예배당" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-26.793098" y="-6486.837891" z="101.005714" radius="1500.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="2" name="탄식의 복도" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="4921.506348" y="-5739.424805" z="-0.000244" radius="1500.000000" height="1000.000000" />
+            <CYLINDER x="6758.840820" y="-5516.799316" z="-0.000244" radius="1500.000000" height="1000.000000" />
+            <CYLINDER x="9067.130859" y="-5768.121094" z="-0.000061" radius="1500.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="제 1묘실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="6635.080566" y="-1776.047241" z="0.000061" radius="1500.000000" height="1000.000000" />
+            <CYLINDER x="8375.836914" y="-1655.774048" z="0.000061" radius="1400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="보물 안치실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="2974.412109" y="-1361.685303" z="0.000000" radius="1300.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="5" name="제 2묘실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="735.635620" y="1706.565552" z="-16.250484" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="2031.590820" y="1641.277588" z="-10.936035" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="2883.349121" y="1652.665283" z="-10.936035" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="3035.483643" y="1559.574585" z="-10.936035" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="2926.845459" y="1962.446533" z="-10.936035" radius="1300.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="6" name="제 3묘실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="6503.256836" y="1633.745972" z="0.000000" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="7359.286133" y="1815.854370" z="0.000000" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="7451.656250" y="1918.216431" z="23.625122" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="7915.832520" y="1942.169434" z="0.000000" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="7919.239746" y="1674.877686" z="0.000000" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="8170.791504" y="1323.988159" z="-2.045349" radius="1000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="7" name="기사단장의 안식처" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="7786.494141" y="11456.338867" z="-0.926727" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="7663.801270" y="13048.734375" z="104.810387" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="8632.591797" y="9311.407227" z="-3.796624" radius="800.000000" height="1000.000000" />
+            <CYLINDER x="6890.991699" y="9240.712891" z="-3.796860" radius="800.000000" height="1000.000000" />
+            <CYLINDER x="7785.192871" y="9697.520508" z="-1.883207" radius="800.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="8" name="바스테로의 은둔처" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-7736.401367" y="11498.296875" z="13.169678" radius="3000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="9" name="시체의 길" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-5321.341309" y="-5771.138672" z="-0.000216" radius="1700.000000" height="1000.000000" />
+            <CYLINDER x="-8714.623047" y="-5901.044434" z="-0.000083" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="-8155.132324" y="-5748.219727" z="-0.000157" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="-6683.326172" y="-6296.892090" z="-0.000170" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="-6727.018066" y="-5976.244629" z="-0.000198" radius="1300.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="10" name="서 있는 자들의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-6780.772461" y="-2232.156738" z="0.000000" radius="1300.000000" height="1000.000000" />
+            <CYLINDER x="-6487.013184" y="-1665.816040" z="-4.598694" radius="1200.000000" height="1000.000000" />
+            <CYLINDER x="-6430.870605" y="-1633.021484" z="-5.069946" radius="1200.000000" height="1000.000000" />
+            <CYLINDER x="-6378.143555" y="-1484.270996" z="0.000000" radius="1200.000000" height="1000.000000" />
+            <CYLINDER x="-7237.695801" y="-1520.084717" z="0.000000" radius="1050.000000" height="1000.000000" />
+            <CYLINDER x="-6096.596680" y="-1098.991455" z="0.000000" radius="800.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="11" name="끝없는 뼈의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-2588.465820" y="1707.418823" z="8.668827" radius="1700.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="12" name="부서진 해골의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-6818.263184" y="1816.074341" z="-23.693647" radius="1650.000000" height="1000.000000" />
+            <CYLINDER x="-6494.800293" y="1157.541016" z="16.880133" radius="1000.000000" height="1000.000000" />
+            <CYLINDER x="-6421.731934" y="1546.288574" z="-5.324745" radius="1000.000000" height="1000.000000" />
+            <CYLINDER x="-6451.383301" y="873.595276" z="-3.802205" radius="1000.000000" height="1000.000000" />
+            <CYLINDER x="-7404.483398" y="964.686157" z="-3.802205" radius="1000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="13" name="만넬로스의 안식처" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="221.796768" y="12423.954102" z="111.852776" radius="3500.000000" height="1000.000000" />
+            <CYLINDER x="58.021187" y="10780.478516" z="89.453941" radius="2300.000000" height="1000.000000" />
+            <CYLINDER x="1983.990967" y="10038.283203" z="96.716515" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="-1573.560913" y="9925.676758" z="113.309929" radius="1800.000000" height="1000.000000" />
+            <CYLINDER x="-1631.649414" y="15052.670898" z="96.716515" radius="1800.000000" height="1000.000000" />
+            <CYLINDER x="877.764099" y="13934.521484" z="160.369812" radius="1800.000000" height="1000.000000" />
+            <CYLINDER x="1274.904175" y="14411.494141" z="89.743912" radius="1800.000000" height="1000.000000" />
+            <CYLINDER x="1520.934570" y="14748.831055" z="106.769707" radius="1800.000000" height="1000.000000" />
+            <CYLINDER x="1295.843262" y="15175.755859" z="86.841087" radius="1800.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

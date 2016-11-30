@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="코볼트 족장 - 아란바스 화산지대 4 Rank">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211611201" rate="25" />
+				<ACTION type="talent" param1="211611202" rate="25" />
+				<ACTION type="talent" param1="211611203" rate="25" />
+				<ACTION type="talent" param1="211611205" rate="25" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200" >
+				<CHECK type="rage" param1="100" >
+					<ACTION type="talent" param1="211611204" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="talent" param1="211611206" rate="20"/>
+				<ACTION type="talent" param1="211611202" rate="40" />
+			</CHECK>
+		</COMBAT>
+	
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211611200" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[ 
+
+	]]></SCRIPT>
+</maiet>

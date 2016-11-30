@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="51470" boundary_min_y="24200" boundary_max_x="71300" boundary_max_y="53000" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_2">
+            <ENVBGM dawnbgm="amb_plain_dawn" />
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM sunsetbgm="amb_plain_sunset" />
+            <ENVBGM nightbgm="amb_plain_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작지점" x="67292.109375" y="46999.339844" z="590.683167" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="60476.308594" y="34250.531250" z="524.692017" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="마커_에픽몹로밍" x="61080.445313" y="34534.187500" z="549.527100" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="4" name="마커_에픽몹로밍" x="62496.984375" y="29760.052734" z="1111.324219" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="5" name="마커_에픽몹로밍" x="68880.585938" y="31999.605469" z="941.647644" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="6" name="마커_에픽몹로밍" x="64022.839844" y="37956.386719" z="616.848877" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="7" name="마커_에픽몹로밍" x="61080.871094" y="34532.367188" z="563.136536" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <SENSOR id="1" name="체크포인트저장" local="false" x="66949.835938" y="47118.042969" z="595.654724" radius="864.485352" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ITEM id="2891" />
+            <ITEM id="2892" />
+            <ITEM id="2894" />
+            <ITEM id="2895" />
+            <ITEM id="10002003" />
+            <ITEM id="10002104" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

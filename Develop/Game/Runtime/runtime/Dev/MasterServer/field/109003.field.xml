@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="99011" minimap_name="map00107" loading_image_name="109003" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="13000" boundary_min_y="37000" boundary_max_x="40000" boundary_max_y="80000" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_gstar_start">
+            <ENVBGM dawnbgm="amb_dawn" />
+            <ENVBGM daytimebgm="amb_daytime" />
+            <ENVBGM sunsetbgm="amb_sunset" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="">
+                <ADD weather="SUN" percent="100" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="2" group="0" name="투명벽" x="24670.800781" y="66207.859375" z="2386.258545" dir_x="0.406737" dir_y="-0.913545" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="투명벽" x="21981.447266" y="64991.710938" z="2323.845703" dir_x="0.406737" dir_y="-0.913545" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="투명벽" x="26092.072266" y="66787.703125" z="2286.378906" dir_x="0.406737" dir_y="-0.913545" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작 위치" x="24253.072266" y="71990.757813" z="2601.005859" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109700" name="NPC_M 109700 용병왕 리하르트" x="24218.273438" y="67916.773438" z="2571.757568" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="2001" name="[Sensor] 튜토리얼 도움말 - 이동, 대화" local="true" x="24252.806641" y="72741.203125" z="2779.738281" radius="1000.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2002" name="[Sensor] 튜토리얼 도움말 - NPC대화" local="true" x="24145.660156" y="68731.554688" z="2631.728516" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="2010" name="[Sensor] 튜토리얼 도움말 - 막기" local="true" x="24272.097656" y="70661.367188" z="2666.092285" radius="1000.000000" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ITEM id="11100" />
+            <ITEM id="11101" />
+            <ITEM id="11102" />
+            <ITEM id="11103" />
+            <ITEM id="11104" />
+            <ITEM id="11105" />
+            <ITEM id="10002003" />
+            <ITEM id="10002105" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

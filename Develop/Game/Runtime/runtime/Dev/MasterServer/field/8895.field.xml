@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="109" minimap_name="map00109" loading_image_name="00109" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="22470" boundary_min_y="34816" boundary_max_x="41318" boundary_max_y="51064" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_7">
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="PAX 티안" x="31548.679688" y="43409.851563" z="1244.832764" dir_x="-0.838671" dir_y="0.544639" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="8896000" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="스타트 마커" x="29624.568359" y="44896.777344" z="1127.403687" dir_x="0.819152" dir_y="-0.573577" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

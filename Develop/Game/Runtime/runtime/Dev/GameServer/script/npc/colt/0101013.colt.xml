@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="이리스얼음감옥" npcid="101013"> 
+		<COMBAT mode="0" comment="">
+			<DEFAULT>
+				<ACTION type="talent" param1="210101200" duration="0" cycle="30" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="1" comment="">
+			<DEFAULT>
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_101013:Init( NPCID )
+	NPC_101013.BufIdIcyRegen 	= 41304
+	NPC_101013.BufIdIceCageDeco	= 41300
+end
+
+function NPC_101013:OnSwallowBegin( Enemy )
+	-- GLog("NPC_101013:OnSwallowBegin()\n")
+	local Summoner = this:GetSummoner()
+	Summoner:GainBuff( NPC_101013.BufIdIcyRegen )
+end
+
+function NPC_101013:OnSwallowFinish( Enemy )
+	this:ClearJob()
+	this:Die( this )
+end
+
+function NPC_101013:OnFinishIceCage( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Die( ThisNPC )
+end
+
+function NPC_101013:OnDie( Despawn )
+	local Summoner = this:GetSummoner()
+	Summoner:RemoveBuff( NPC_101013.BufIdIcyRegen )
+	
+	this:RemoveBuff( NPC_101013.BufIdIceCageDeco )
+end
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="전위부대 저격수"> <!--전투지원 퀘스트 인스턴스 필드용-->
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="211000702" rate="35" />
+				<ACTION type="talent" param1="211000703" rate="15" />
+				
+				<ACTION type="distance" param1="300" param2="300" rate="10" cycle="15"/>
+			</DEFAULT>
+
+			<CHECK type="hp" param2="20">
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211000705" rate="20" />
+					<ACTION type="flee" param1="from_enemy" param2="3" />  <!-- 거리 벌리기 -->
+				</ACTION>
+			</CHECK>
+			
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param1="0" param2="300">
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="211000701" rate="20" />  <!-- 일반공격(근접) -->
+				<ACTION type="talent" param1="211000702" rate="10" />
+				<ACTION type="talent" param1="211000703" rate="20" />
+			</CHECK>
+			
+			<!-- 적이 아주멀리 있을 경우 -->
+			<CHECK type="distance" param1="1500">
+				<ACTION type="distance" param1="1000" param2="1000" duration="2" />
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

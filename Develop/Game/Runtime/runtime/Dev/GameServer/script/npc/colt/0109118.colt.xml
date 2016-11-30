@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 포악한 나무정령	
+210911800	두리번(idle2)
+210911801	도발
+210911802	울부짖기
+210911810	할퀴기
+210911811	양손펀치
+210911812	발구르기
+210911813	해골던지기
+210911814	뿌리묶기
+-->
+<maiet>
+	<COLT name="포악한 나무정령" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210911810" rate="40" />
+				<ACTION type="talent" param1="210911811" rate="30" />
+				<ACTION type="talent" param1="210911812" rate="20" />
+				
+			</DEFAULT>
+
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="talent" param1="210911810" rate="40" />
+				<ACTION type="talent" param1="210911802" rate="10" />
+				<ACTION type="talent" param1="210911801" rate="10" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="40">
+				<ACTION type="talent" param1="210911810" rate="40" />
+				<ACTION type="talent" param1="210911811" rate="30" />
+				<ACTION type="talent" param1="210911812" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210911800" rate="30" />
+				<ACTION type="nothing" param1="5" rate="70" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

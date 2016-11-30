@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="108" min_x="0" min_y="0" max_x="100000" max_y="100000" weather_effect="true" dynamic="true">
+        <Env set="default">
+            <WEATHER default="SNW">
+                <ADD weather="SUN" percent="10" />
+                <ADD weather="CLD" percent="15" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="M4_Scarbrow" x="85846.820313" y="71459.882813" z="3123.565186" dir_x="-0.908508" dir_y="0.417867" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="M4_Barren" x="14595.372070" y="79533.554688" z="1882.595581" dir_x="0.878817" dir_y="-0.477159" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="M4_Teress" x="48516.285156" y="15678.382813" z="95.964127" dir_x="0.026177" dir_y="0.999657" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="S4_Scarbrow" type="TOUCH" x="98631.992188" y="68807.718750" z="3187.820313" radius="12420.000000" enabled="true" />
+        <SENSOR id="2" name="S4_Barren" type="TOUCH" x="10099.399414" y="87476.789063" z="2011.533691" radius="8140.000000" enabled="true" />
+        <SENSOR id="3" name="S4_Teress" type="TOUCH" x="48528.046875" y="4791.064453" z="83.409668" radius="10340.000000" enabled="true" />
+    </FIELDINFO>
+</maiet>

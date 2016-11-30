@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="아레크" npcid="116030">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="211603010" rate="10" duration="1" desc="턱으로 어퍼컷"/>
+				<ACTION type="talent" param1="211603011" rate="10" duration="1" desc="턱으로 밀기"/>
+
+				<ACTION type="talent" param1="211603012" rate="10" duration="1" cycle="30" desc="먹기"/>
+				<ACTION type="lua" param1="NPC_116030" param2="BackAttack" rate="50" cycle="10" desc="꼬리치기"/>
+			</DEFAULT>
+
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="211603007" max_count="1" desc="울부짖기"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="50" param2="90" >
+				<ACTION type="talent" param1="211603018" rate="10" duration="1" cycle="50" desc="울부짖기"/>
+				<ACTION type="talent" param1="211603041" rate="10" duration="0" cycle="50" desc="이륙 (tomode1)"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="70" param2="90" >
+				<ACTION type="talent" param1="211603023" rate="10" duration="1" cycle="15" desc="콤보 4연타+대쉬"/>
+			</CHECK>
+
+			<CHECK type="hp" param2="70" >
+				<CHECK type="distance" param1="700">
+					<ACTION type="talent" param1="211603033" rate="10" duration="3" cycle="20" desc="지상브레쓰 - 우측 회전"/>
+					<ACTION type="talent" param1="211603032" rate="10" duration="3" cycle="20" desc="지상브레쓰 - 좌측 회전"/>				
+				</CHECK>
+			</CHECK>
+			
+			
+			<CHECK type="hp" param1="50" param2="70" >
+				<ACTION type="talent" param1="211603022" rate="10" duration="1" cycle="15" desc="콤보 4연타"/>
+				<ACTION type="talent" param1="211603017" rate="10" duration="5" cycle="15" desc="백대쉬 브레쓰"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="50" >
+				<ACTION type="talent" param1="211603016" rate="10" duration="1" cycle="50" desc="울부짖기 + 광폭화"/>
+				<ACTION type="talent" param1="211603024" rate="10" duration="1" cycle="15" desc="콤보 3연타 2"/>
+				<ACTION type="talent" param1="211603021" rate="10" duration="1" cycle="15" desc="콤보 3연타"/>
+				<ACTION type="talent" param1="211603042" rate="10" duration="0" cycle="40"  desc="이륙브레쓰 (tomode1)"/>
+				<ACTION type="talent" param1="211603014" rate="10" duration="0" cycle="30" desc="재채기"/>
+			</CHECK>
+		
+			
+			<!-- 거리별 추가 패턴 -->
+			
+			<CHECK type="distance" param1="700">
+				<ACTION type="talent" param1="211603013" rate="10" duration="1" cycle="10" desc="대시"/>
+				<ACTION type="talent" param1="211603030" rate="10" duration="1" cycle="10" desc="지상브레쓰 - 직선"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="211603031" rate="10" duration="1" cycle="20" desc="지상브레쓰 - 전방"/>
+				<ACTION type="talent" param1="211603020" rate="10" duration="1" cycle="20" desc="콤보 2연타"/>
+			</CHECK>
+		</COMBAT>
+	
+		<COMBAT mode="1" victory="211603047" desc="플라잉 모드">
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_116030" param2="AirAttack" rate="50" cycle="10"/>
+				<ACTION type="aggro" param1="far" param2="0" rate="5"/>
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="211603040" duration="0" desc="착륙 (tomode0)"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="211603043" rate="10" cycle="5" desc="전진 공중브레쓰"/>
+				<ACTION type="talent" param1="211603044" rate="10" cycle="5" desc="공중브레쓰"/>
+				<ACTION type="talent" param1="211603045" rate="10" cycle="5" desc="공중브레쓰 - 좌회전"/>
+				<ACTION type="talent" param1="211603046" rate="10" desc="공중브레쓰 - 우회전"/>
+			</CHECK>
+			
+		</COMBAT>	
+	</COLT>
+<!--
+Venister
+
+탤런트 일람
+211603001	착륙
+211603002	이륙
+211603003	좌측 회전
+211603004	우측 회전
+211603005	울부 짖기
+NPC_116030.TALENT_EAT	먹기
+211603007	턱으로 어퍼컷
+211603008	턱으로 밀기
+211603009	꼬리치기
+211603010	지상브레쓰
+211603011	두리번거리기
+NPC_116030.TALENT_PAIN1	아파하기 #1
+NPC_116030.TALENT_PAIN2	아파하기 #2
+211603014	냄새맡기
+211603015	재채기
+NPC_116030.TALENT_AirBreath1	공중브레쓰 #1
+NPC_116030.TALENT_AirBreath2	공중브레쓰 #2 - 좌회전
+NPC_116030.TALENT_AirBreath3	공중브레쓰 #3 - 우회전
+NPC_116030.TALENT_AirBreath4	전진 공중브레쓰
+211603021	이륙브레쓰
+211603022	지상브레쓰
+
+211603050	콤보 1형
+211603051	콤보 2형
+211603052	콤보 3형
+211603053	콤보 4형
+211603054	콤보 5형
+211603055	대시
+-->
+  <SCRIPT>
+  <![CDATA[ 
+	-- 아레크 스크립트
+	
+	-- UD 1번: 누적 데미지
+	-- UD 2번: 누적 데미지 초기화 횟수
+	-- UD 3번: 플레이어를 먹었을 때 누적 데미지
+	
+	function NPC_116030:Init(NPCID)
+	
+		NPC_116030.UD_Spewup = 1 -- 먹고 있을 때 받은 데미지.
+		NPC_116030.UD_PAIN = 2		-- Pain을 위한 누적 데미지.
+		NPC_116030.UD_TAIL = 3		-- 꼬리 파괴를 위한 누적 데미지.
+		NPC_116030.UD_DATASIZE = 3
+		
+		NPC_ReserveUserData( NPCID, NPC_116030.UD_DATASIZE );
+		
+		NPC_116030.LIMIT_TAIL = NPC_116030.MaxHP * 0.4
+		NPC_116030.LIMIT_PAIN = NPC_116030.MaxHP * 0.1
+		NPC_116030.LIMIT_Spewup = 10000 -- 먹고 있을 때 뱉을 시점.
+		
+		NPC_116030.PART_HEAD = 0
+		NPC_116030.PART_BODY = 1
+		NPC_116030.PART_TAIL = 2
+		
+		NPC_116030.BPARTS_TAIL = 4
+		
+		NPC_116030.MODE_FLYING = 1
+		
+		NPC_116030.TALENT_PAIN1 = 211603004
+		NPC_116030.TALENT_PAIN2 = 211603005
+		NPC_116030.TALENT_EAT 	= 211603012
+		
+		NPC_116030.TALENT_AirBreath1 = 211603044
+		NPC_116030.TALENT_AirBreath2 = 211603045
+		NPC_116030.TALENT_AirBreath3 = 211603046
+		NPC_116030.TALENT_AirBreath4 = 211603043
+		
+		NPC_116030.TALENT_BackAttack = 211603015
+	end
+	
+	function NPC_116030:OnSwallowBegin(TargetActor)
+		-- GLog("NPC_116030:OnSwallowBegin()\n")
+		this:SetUserData(NPC_116030.UD_Spewup, 0)
+	end
+	
+function NPC_116030:OnHitSwallowed(HitInfo)
+	-- GLog("NPC_116030:OnHitSwallowed()\n")
+	local totalDamage = this:GetUserData( NPC_116030.UD_Spewup ) + HitInfo.Damage
+
+	-- GLog( "NPC_116030:OnHitSwallowed() totalDamage "..totalDamage.."\n" )
+	if ( totalDamage > NPC_116030.LIMIT_Spewup ) then -- 400 데미지 이상일때
+		this:SetUserData( NPC_116030.UD_Spewup, 0 )	-- 누적 데미지 초기화
+		this:Spewup() -- 뱉기
+	else
+		this:SetUserData( NPC_116030.UD_Spewup, totalDamage )
+	end
+end
+
+function NPC_116030:BackAttack( ThisNPC, Enemy )
+	if Enemy:IsRear( ThisNPC ) then
+		ThisNPC:UseTalentSelf( NPC_116030.TALENT_BackAttack )
+	end
+end
+	
+function NPC_116030:OnFinishAndAggroFar( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "far", 0 )
+end
+
+function NPC_116030:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "random", 0 )
+end
+	
+function NPC_116030:AirAttack(ThisNPC, Opponent)
+	-- 적을 랜덤으로 고른다.
+	local Target = ThisNPC:Aggro("far", 0)
+	if not Target then return end
+
+	local distance = ThisNPC:DistanceTo(Target)	-- 목표와의 거리
+	local least_distance = 900	 								-- 순회 최소 거리 (단위: 미터)
+	local max_distance = 2000	 								-- 순회 최대 거리 (단위: 미터)
+	local poly = 20											-- 순회할 정점 갯수
+	local dir = ThisNPC:GetFowardDir(Target) 		-- 순회 계산시 초기방향
+
+	-- 최소 거리 맞추기
+	if (distance < least_distance) then
+		distance = least_distance
+	end
+		
+	if( distance > max_distance ) then
+		distance = max_distance
+	end
+
+	local orbitpoints = Math_GetPolygonPoints(Target:GetPos(), ThisNPC:GetDir(), distance, poly)
+	local waypoints = {}
+		
+	for i=1,poly/2 do
+		waypoints[i] = orbitpoints[tostring(i)]
+	end
+		
+	ThisNPC:PatrolInstant(waypoints, PT_ONCE)
+end
+
+function NPC_116030:AccDamage( part, dHitInfo )
+	local ThisNPC = AsNPC( dHitInfo.Victim )
+	local Target = dHitInfo.Attacker
+	local totalDamage = 0
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	-- 둔기나 아이스에 추가 데미지 처리.
+	-- GLog("Arek_AccDamage - dHitInfo.Type "..dHitInfo.Type.."\n")
+	if(dHitInfo.Type == DA_BLUNT or dHitInfo.Type == DA_COLD) then
+		dHitInfo.Damage = dHitInfo.Damage * 1.2
+	end
+
+	-- pain 예외 사항.
+	if ThisNPC:GetMode() == NPC_116030.MODE_FLYING or
+		currentTalent == NPC_116030.TALENT_EAT or
+		currentTalent == NPC_116030.TALENT_PAIN1 or
+		currentTalent == NPC_116030.TALENT_PAIN2 then
+			return dHitInfo
+	end
+
+	
+	-- 꼬리 자르기.
+	if part == NPC_116030.PART_TAIL and
+		ThisNPC:CheckBPart( NPC_116030.BPARTS_TAIL ) == false then
+	
+			totalDamage = ThisNPC:GetUserData( NPC_116030.UD_TAIL ) + dHitInfo.Damage
+			ThisNPC:SetUserData( NPC_116030.UD_TAIL, totalDamage)
+
+			if totalDamage >= NPC_116030.LIMIT_TAIL then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart( NPC_116030.BPARTS_TAIL, Target)
+				ThisNPC:UseTalentSelf( NPC_116030.TALENT_PAIN2 )
+				ThisNPC:SetUserData( NPC_116030.UD_PAIN, 0)
+				ThisNPC:SetUserData( NPC_116030.UD_TAIL, 0)
+				return dHitInfo
+			end
+	end
+
+	-- pain 처리
+	totalDamage = ThisNPC:GetUserData( NPC_116030.UD_PAIN ) + dHitInfo.Damage
+	ThisNPC:SetUserData( NPC_116030.UD_PAIN, totalDamage)
+		
+	if( totalDamage >= NPC_116030.LIMIT_PAIN ) then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( NPC_116030.UD_PAIN, 0)
+			
+		if(ThisNPC:CheckBPart(1) == false) then
+			ThisNPC:BreakPart(1, Target)
+		elseif (ThisNPC:CheckBPart(2) == false) then
+			ThisNPC:BreakPart(2, Target)
+		elseif (ThisNPC:CheckBPart(3) == false) then
+			ThisNPC:BreakPart(3, Target)
+		else
+			ThisNPC:UseTalentSelf(NPC_116030.TALENT_PAIN1)
+			return dHitInfo
+		end
+		ThisNPC:UseTalentSelf(NPC_116030.TALENT_PAIN2)		
+	end
+	
+	return dHitInfo		
+end
+
+function NPC_116030:OnBPartRecover()
+	for i=1, NPC_116030.UD_DATASIZE do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+
+	function NPC_116030:OnHitCapsule_1_0(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_BODY, HitInfo)
+	end
+	
+	function NPC_116030:OnHitCapsule_2_0(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_HEAD, HitInfo)
+	end
+	function NPC_116030:OnHitCapsule_2_1(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_BODY, HitInfo)
+	end
+	function NPC_116030:OnHitCapsule_2_2(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_TAIL, HitInfo)
+	end
+
+	function NPC_116030:OnHitCapsule_3_0(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_BODY, HitInfo)
+	end	
+	function NPC_116030:OnHitCapsule_3_1(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_TAIL, HitInfo)
+	end
+	function NPC_116030:OnHitCapsule_3_2(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_TAIL, HitInfo)
+	end
+
+	function NPC_116030:OnHitCapsule_4_0(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_HEAD, HitInfo)
+	end
+	function NPC_116030:OnHitCapsule_4_1(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_BODY, HitInfo)
+	end
+	function NPC_116030:OnHitCapsule_4_2(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_TAIL, HitInfo)
+	end
+	
+	function NPC_116030:OnHitCapsule_5_0(HitInfo)
+		return NPC_116030:AccDamage( NPC_116030.PART_BODY, HitInfo)
+	end
+	
+	]]>
+  </SCRIPT>
+</maiet>

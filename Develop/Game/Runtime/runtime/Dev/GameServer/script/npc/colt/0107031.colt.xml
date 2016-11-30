@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="조련사 조나한">
+		<COMBAT mode="0" >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210703101" rate="30" />
+				<ACTION type="talent" param1="210703102" rate="20" />
+				<ACTION type="talent" param1="210703104" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210703101" rate="10" />
+				<ACTION type="talent" param1="210703102" rate="10" />
+				<ACTION type="talent" param1="210703104" rate="10" />
+				<ACTION type="talent" param1="210703105" rate="30" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="40" >
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="210703107" /> <!-- 회피 L -->
+						<ACTION type="talent" param1="210703105" /> <!-- 찌르기 -->
+					</ACTION>
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="210703108" /> <!-- 회피 R -->
+						<ACTION type="talent" param1="210703105" /> <!-- 찌르기 -->
+					</ACTION>
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+			</DEFAULT>
+		</AGGRO>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

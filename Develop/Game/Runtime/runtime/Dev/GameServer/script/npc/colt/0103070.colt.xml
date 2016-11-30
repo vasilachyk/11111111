@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+
+<maiet>
+	<COLT name="늪의 군주 볼락" npcid="103070">
+		<COMBAT mode="0" comment="Peace mode">
+			<DEFAULT> 
+				<ACTION type="aggro" param1="near" param2="0" rate="10"/>
+				<ACTION type="lua" param1="NPC_103070" param2="BackAttack" rate="10" desc="뒷발길질"/>
+				<ACTION type="talent" param1="210300310" rate="10" duration="2" desc="왼팔 휘두르기"/>
+				<ACTION type="talent" param1="210300311" rate="10" duration="2" desc="오른팔 휘두르기"/>
+				<ACTION type="talent" param1="210300323" rate="10" duration="0" desc="전방 휘두르기 2연타"/>
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="60" >
+				<ACTION type="aggro" param1="random" param2="0" rate="5"/>
+				<ACTION type="lua" param1="NPC_103070" param2="BackAttack" rate="10" desc="뒷발길질"/>
+				<ACTION type="talent" param1="210300310" rate="20" duration="2" desc="왼팔 휘두르기"/>
+				<ACTION type="talent" param1="210300311" rate="20" duration="2" desc="오른팔 휘두르기"/>
+				<ACTION type="talent" param1="210300323" rate="10" duration="0" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="210300314" rate="5" duration="5" desc="잡아서 내려치기"/>
+				<ACTION type="talent" param1="210300326" rate="5" duartion="0" desc="진흙폭파2"/>
+				<CHECK type="distance" param1="1200" >
+					<ACTION type="talent" param1="210300328" duration="0" desc="양팔 합치기5"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="40" param2="60" >
+				<ACTION type="aggro" param1="random" param2="0" cycle="5"/>
+				<ACTION type="lua" param1="NPC_103070" param2="BackAttack" rate="10" desc="뒷발길질"/>
+				<ACTION type="talent" param1="210300310" rate="10" duration="2" desc="왼팔 휘두르기"/>
+				<ACTION type="talent" param1="210300311" rate="10" duration="2" desc="오른팔 휘두르기"/>
+				<ACTION type="talent" param1="210300323" rate="10" duration="0" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="210300314" rate="5" duration="5" desc="잡아서 내려치기"/>
+				<ACTION type="talent" param1="210300320" rate="5" duartion="0" desc="뿌리묶기"/>
+				<CHECK type="distance" param1="1200" >
+					<ACTION type="talent" param1="210300328" duration="0" desc="양팔 합치기5"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="40" >
+				<ACTION type="aggro" param1="random" param2="0" rate="5"/>
+				<ACTION type="lua" param1="NPC_103070" param2="BackAttack" rate="10" desc="뒷발길질"/>
+				<ACTION type="talent" param1="210300310" rate="10" duration="2" desc="왼팔 휘두르기"/>
+				<ACTION type="talent" param1="210300311" rate="10" duration="2" desc="오른팔 휘두르기"/>
+				<ACTION type="talent" param1="210300323" rate="10" duration="0" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="210300321" rate="10" duration="5" desc="빠르게 잡아서 내려치기"/>
+				<ACTION type="talent" param1="210300320" rate="10" duartion="0" desc="뿌리묶기"/>
+				<ACTION type="talent" param1="210300322" rate="10" duration="2" desc="왼팔 휘두르기2"/>
+				<ACTION type="talent" param1="210300325" rate="10" duration="1" desc="양팔 합치기3"/>
+				<CHECK type="distance" param1="1200" >
+					<ACTION type="talent" param1="210300328" duration="0" desc="양팔 합치기5"/>
+				</CHECK>
+			</CHECK>
+
+		</COMBAT>
+		
+		<STRESS>
+			<CHECK type="stress" param1="300">
+				<ACTION type="aggro" param1="random" param2="0" rate="100"/>
+			</CHECK>
+		</STRESS>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210300301" rate="5"  />
+			</DEFAULT>
+		</IDLE>	
+	</COLT>
+	<SCRIPT>
+	<![CDATA[ 
+
+function NPC_103070:Init( NPCID )
+	--[[  USERDATA 
+	1 : Pain 데미지 누적
+	--]]
+	NPC_ReserveUserData( NPCID, 1 )
+	
+	local MaxHP 										= NPC_103070.MaxHP
+	
+	NPC_103070.LimitForPain								= MaxHP/10 	-- pain 데미지 누적
+	NPC_103070.TalIdPain								= 210300302	-- 데미지 누적 아픔
+	
+	NPC_103070.TalIdTwoHand						 	    = 210300312 -- 양팔 합치기
+	NPC_103070.TalIdBackAttack						 	= 210300313 -- 뒷발길질
+	NPC_103070.TalIdBugSummon						 	= 210300319 -- 벌레소환
+	NPC_103070.TalIdTwoHand2					 	    = 210300324 -- 양팔 합치기2
+	NPC_103070.TalIdTwoHand3					 	    = 210300325 -- 양팔 합치기3
+	NPC_103070.TalIdFireMud					 	        = 210300326 -- 진흙폭파
+	NPC_103070.TalIdTwoHand4					 	    = 210300327 -- 양팔 합치기4
+	NPC_103070.TalIdTwoHand5					 	    = 210300328 -- 양팔 합치기5
+	
+	NPC_103070.BuffIdStar								= 40839     -- 볼락 반짝이
+	NPC_103070.BuffIdArmBug								= 40851     -- 볼락 어깨벌레
+	NPC_103070.NpcIdBugR								= 103006    -- 빨강벌레
+	
+end
+
+function NPC_103070:OnSpawn(Spawn)
+	this:GainBuff( NPC_103070.BuffIdStar )
+	this:GainBuff( NPC_103070.BuffIdArmBug )
+end
+
+function NPC_103070:OnBPartRecover()  
+	this:SetUserData( 1, 0 )
+end
+
+--	뒷발길질
+function NPC_103070:BackAttack( ThisNPC, Enemy )
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	local IsRear = Enemy:IsRear( ThisNPC )
+	
+	if Dist < 600 and IsRear then
+		ThisNPC:UseTalentSelf( NPC_103070.TalIdBackAttack )
+	end 
+end
+
+-- 잡아서 내려치기, 진흙소환 어그로 바꾸기
+function NPC_103070:OnFinishAggroChange( ThisActor, Enemy )
+	AsNPC(ThisActor):Aggro( "random", 0 )
+end
+
+-- 빨강벌레 소환 
+function NPC_103070:OnStartSummonBugR( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_103070.NpcIdBugR, 1, "", -700, 700 )
+end
+
+function NPC_103070:AccDamage( ThisNPC, HitInfo )
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	local Pain =  ThisNPC:GetUserData( 1 ) + HitInfo.Damage
+	ThisNPC:SetUserData( 1, Pain )
+	
+	-- pain 예외 처리.
+	if currentTalent == NPC_103070.TalIdTwoHand or
+		currentTalent == NPC_103070.TalIdBugSummon or
+		currentTalent == NPC_103070.TalIdTwoHand2 or
+		currentTalent == NPC_103070.TalIdTwoHand3 or
+		currentTalent == NPC_103070.TalIdFireMud or
+		currentTalent == NPC_103070.TalIdTwoHand4 or
+		currentTalent == NPC_103070.TalIdTwoHand5 or
+		ThisNPC:IsCooldown( NPC_103070.TalIdPain ) then
+		return HitInfo
+	end
+	
+	if	Pain > NPC_103070.LimitForPain then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_103070.TalIdPain )
+		ThisNPC:SetUserData( 1 , 0 )
+	end
+	
+	return HitInfo
+end
+
+
+-- 전체
+function NPC_103070:OnHitCapsule_1_0(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_1(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_2(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_3(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_4(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_5(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_6(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_7(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_8(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_9(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_10(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+function NPC_103070:OnHitCapsule_1_11(HitInfo)
+	return NPC_103070:AccDamage( this, HitInfo )
+end
+
+	
+	]]>
+	</SCRIPT>
+</maiet>

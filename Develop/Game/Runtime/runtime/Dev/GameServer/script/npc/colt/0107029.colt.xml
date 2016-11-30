@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="렌고트부족 호위병">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702901" rate="20" /> <!-- 일반공격1 -->
+				<ACTION type="talent" param1="210702906" rate="10" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="210702902" rate="10" />	<!-- 연타공격 -->				
+				<ACTION type="talent" param1="210702903" rate="10" />  <!-- 강타공격 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702901" rate="10" /> <!-- 일반공격1 -->
+				<ACTION type="talent" param1="210702906" rate="10" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="210702902" rate="10" />	<!-- 연타공격 -->				
+				<ACTION type="talent" param1="210702903" rate="20" />  <!-- 강타공격 -->
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="200">
+				<CHECK type="rage" param1="100">
+					<ACTION type="guard" param1="210702905" param2="1" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+	
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210702306" rate="50" /> 
+				<ACTION type="talent" param1="210702307" rate="50" />
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

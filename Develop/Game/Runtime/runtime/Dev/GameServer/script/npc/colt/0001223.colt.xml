@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <COLT name="악기 장인 헤븐" npcid="1223">
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="group" rate="5" cycle="800">
+					<!--<ACTION type="say" param1="$$Field_1_1"/>-->
+					<ACTION type="talent" param1="141004" />
+					<ACTION type="talent" param1="141005" />
+					<ACTION type="talent" param1="141004" />
+				</ACTION>
+				<ACTION type="group" rate="5" cycle="900">
+					<!--<ACTION type="say" param1="$$Field_1_2"/>-->
+					<ACTION type="talent" param1="141004" />
+					<ACTION type="talent" param1="141005" />
+					<ACTION type="talent" param1="141006" />
+					<ACTION type="talent" param1="141006" />
+					<ACTION type="talent" param1="141005" />
+					<ACTION type="talent" param1="141004" />
+				</ACTION>
+				<ACTION type="group" rate="5" cycle="800">
+					<!--<ACTION type="say" param1="$$Field_1_3"/>-->
+					<ACTION type="talent" param1="141006" />
+					<ACTION type="talent" param1="141005" />
+					<ACTION type="talent" param1="141004" />
+					<ACTION type="talent" param1="141005" />
+					<ACTION type="talent" param1="141006" />
+					<ACTION type="talent" param1="141006" />
+					<ACTION type="talent" param1="141006" />
+				</ACTION>
+				<ACTION type="talent" param1="141007" rate="5" />
+				<ACTION type="nothing" param1="10" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<maiet>
+<!-- /////////////////////////////////////////////////////////////////////////
+ 원래는 motion.xml이 각 모델또는 애니메이션 세트마다 하나씩 있어야 하지만
+ 엔진에서 캐릭터 애니메이션이 정리되지 않은 관계로 당분간 motion.xml 하나에서 
+ 모든 모션을 다 관리하도록 합니다. 그래서 우선 플레이어와 NPC로 구분해 놓았습니다.
+ 플레이어도 나중에 갖고 있는 무기마다 애니메이션이 바뀌어야 하므로 구조가 바뀔 수 있습니다. - bird(2006/05/16)
+-->
+
+<!--
+ 	<MOTION name="" stance="기본값:all" loop="기본값:false" cancelEnabled="기본값:true" cameraLook="기본값:false" weaponAni="기본값:true" usable_upper="true" auto_prefix="false">
+		<Default>
+			//<Sequence ani="idle" speed="기본값:1" timeout="기본값:0" />
+		</Default>
+	</MOTION>
+-->
+  
+<!-- 
+ 이벤트 설명
+ gravity_down : 하강 시작시
+ event_landed : 땅에 착지시
+
+ 
+ speed : 애니메이션 속도
+ timeout : 해당 시간이 지나면 다음 씨퀀스로 넘어감
+-->
+
+  <!-- /////////////////////////////////////////////////////////////////////////
+ PC만 사용하는 모션
+-->
+
+  <MOTION name="guarded" stance="battle" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="guard_block" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_guarded" stance="battle" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="guards_block"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="guard_kb" stance="battle" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="guard_kb" />
+      <Sequence ani="guard_kb" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_guard_kb" stance="battle" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="guards_kb"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_operation" stance="all" weaponAni="false">
+    <Default>
+      <Sequence ani="none_operation"/>
+    </Default>
+  </MOTION>
+
+  <!-- /////////////////////////////////////////////////////////////////////////
+ PC 스킬 모션 
+-->
+  <MOTION name="PS_31" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="spell_cast2" speed="1.0" />
+      <Sequence ani="spell_fire1" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_32" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="atk1" speed="1.0" />
+      <Sequence ani="atk2" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_50001" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="spell_cast2" speed="1.0" />
+      <Sequence ani="spell_fire1" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_101000" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="aiming" />
+      <Sequence ani="aiming_middle"  event="doShoot"  />
+      <Sequence ani="atk1"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_guardattack" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="counter" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_guardattack_shield" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="counter" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_tackle_counter" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="chainsmash" speed="1.0" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_active_cast" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active_cast" speed="1.8" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active_idle" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active_idle" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active_fire" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active_fire" speed="1.8" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_warcry_cast" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="warcry_cast" speed="1.5" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_warcry_idle" loop="true" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="warcry_idle" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_warcry_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="warcry_fire" speed="1.5" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_warcry_fire_fast" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="warcry_fire" speed="3" />
+    </Default>
+  </MOTION>
+  
+   <MOTION name="PS_rage_cast" loop="false" cancelEnabled="true" cameraLook="false">
+   <Default>
+      <Sequence ani="rage_cast" speed="2" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_rage_idle" loop="true" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="rage_idle" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_rage_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="rage_fire" speed="2.2" />
+    </Default>
+  </MOTION>
+  
+   
+  <MOTION name="PS_buff_cast" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="spell_buff_cast" speed="1.5" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_buff_idle" loop="true" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="spell_buff_idle" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_buff_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="spell_buff_fire" speed="1.5" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_buff_fire_fast" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="spell_buff_fire" speed="1.8" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_buff_fire_slow" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="spell_buff_fire" speed="1.3" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_area_cast" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="spell_area_cast" speed="1.5" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_area_idle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="spell_area_idle" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_area_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="spell_area_fire" speed="2" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_area_fire2" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="spell_area_fire2" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_area_fire3" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="spell_area_fire3" speed="1" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_area_fire3_fast" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="spell_area_fire3" speed="1.5" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_pb_cast" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="spell_pb_cast" speed="1.8" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_pb_idle" loop="true" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="spell_pb_idle" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_pb_fire" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="spell_pb_fire" speed="1.8" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_bow_cast" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="bow_cast_bow" speed="1.5" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_bow_idle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="bow_idle_bow" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_bow_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="bow_fire_bow" speed="1.8" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_spear1" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="active1_spear" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_spear2_cast" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active2_cast_spear" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_spear2_idle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active2_idle_spear" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_spear2_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="active2_fire_spear" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_arc1_cast" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active1_cast_gun" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_arc1_idle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active1_idle_gun" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_arc1_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="active1_fire_gun" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_arc2_cast" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active2_cast_gun" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_arc2_idle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="active2_idle_gun" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_arc2_fire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="active2_fire_gun" speed="1" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_arc_triplefire" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="active1_fire_gun" speed="2" />
+	  <Sequence ani="active1_fire_gun" speed="1" />
+	  <Sequence ani="active2_fire_gun" speed="1" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_atk1" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk1"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk2" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk2"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk3" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk4" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk4"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk5" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk5"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk6" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk6"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_atk1_r" loop="false" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk1_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk2_r" loop="false" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk2_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk3_r" loop="false" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk3_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk4_r" loop="false" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk4_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk5_r" loop="false" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk5_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk6_r" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk6_r"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_atk1b" loop="false" cancelEnabled="true" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk1b" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atk1b_r" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="atk1b_r" speed="1.0" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atksp" stance="battle" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="atksp"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_atksp_r" stance="battle" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="atksp_r"/>
+    </Default>
+  </MOTION>
+  
+  <!-- Dodge -->
+  <MOTION name="PS_dodge_front" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_f" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_back" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_b" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_left" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_l" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_right" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_r" />
+    </Default>
+  </MOTION> 
+  <!-- 회피술용 구르기 모션체인지 -->
+  <MOTION name="PS_dodge_front_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_f" frameover="3800"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_back_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_b" frameover="3800"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_left_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_l" frameover="3800"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_right_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_r" frameover="3800"/>
+    </Default>
+  </MOTION>
+  <!-- 곡예술용 구르기 모션체인지 -->
+  <MOTION name="PS_dodges_front_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodges_f" frameover="3800"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodges_back_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodges_b" frameover="3800"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodges_left_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodges_l" frameover="3800"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodges_right_short" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodges_r" frameover="3800"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_escape" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_b" frameover="2881"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_flash" loop="false" weaponAni="false" cameraLook="false" postfix="true" usable_upper="true">
+    <Default>
+      <Sequence ani="dwp_active315" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_front_dash" loop="false" cameraLook="false" postfix="true" usable_upper="true">
+    <Default>
+      <Sequence ani="active117"  frameover="2881"/>
+    </Default>
+  </MOTION>
+  <!--
+  <MOTION name="PS_dodge_front_r" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_f_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_back_r" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_b_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_left_r" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_l_r"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dodge_right_r" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="dodge_r_r"/>
+    </Default>
+  </MOTION>
+  -->
+   <!-- 브레이커블 파츠 공격 -->
+  <MOTION name="PS_bpart_atk1" loop="false" cancelEnabled="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="atk1f" speed="1.0" />
+      <Sequence ani="atk1f_r" speed="1.0" />  
+    </Default>
+  </MOTION>
+  
+  <!-- 채집 -->
+  <MOTION name="PS_gather_down" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="false">
+    <Default>
+      <Sequence ani="none_gather_down"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_gather_up" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="false">
+    <Default>
+      <Sequence ani="none_gather_up"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_gather_herb" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="false">
+    <Default>
+      <Sequence ani="none_gather_herb"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_gather_idle" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="false">
+    <Default>
+      <Sequence ani="none_gather_idle"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_gather_key" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="false">
+    <Default>
+      <Sequence ani="none_gather_key"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_gather_mine" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="false">
+    <Default>
+      <Sequence ani="none_gather_mine"/>
+    </Default>
+  </MOTION>
+    
+  <!-- Weapon Drawing -->
+  <MOTION name="PS_sworddrawing" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk_start"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_sworddrawing_r" loop="false" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk_start_r"/>
+    </Default>
+  </MOTION>
+ <!-- none_drink -->
+	<MOTION name="PS_drink" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+		<Default>
+			<Sequence ani="none_drink"/>
+		</Default>
+	</MOTION>
+	
+	<MOTION name="PS_drink_fast" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+		<Default>
+			<Sequence ani="none_drink" speed="3.0"/>
+		</Default>
+	</MOTION>
+  
+  <!-- 시음 -->
+  <MOTION name="PS_potion" loop="false" cameraLook="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="potion" />
+    </Default>
+  </MOTION>
+  <MOTION name="PS_potion_fast" loop="false" cameraLook="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="potion" speed="3.0"/>
+    </Default>
+  </MOTION>
+  <!-- 음식 공용 -->
+  <MOTION name="PS_bread" loop="false" cameraLook="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="bread"/>
+    </Default>
+  </MOTION>
+  
+  <!-- 붕대 -->
+  <MOTION name="PS_bandage" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="none_bandage" />
+    </Default>
+  </MOTION>
+  
+  <!-- 만찬용 -->
+  <MOTION name="PS_eat_bread" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="none_eat_bread"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_eat_meat" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="none_eat_meat"/>
+    </Default>
+  </MOTION>
+  
+<!-- 소셜 모션 -->
+  <MOTION name="PS_ia_beg" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_beg"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_bow" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_bow"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_cheer" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" usable_upper="true">
+    <Default>
+      <Sequence ani="none_ia_cheer"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_clap" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_clap"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_cry" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_cry"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_dance1" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" usable_upper="true">
+    <Default>
+      <Sequence ani="none_ia_dance1"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_dance2" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_dance2"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_dance3" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_dance3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_dance4" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_dance4"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_dance5" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_dance5"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_newyearsbow" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_newyearsbow"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_kiss2" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_kiss2"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_propose" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_propose"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_ignore" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_ignore"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_kiss" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_kiss"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_laugh" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_laugh"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_lookaround" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_lookaround"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_negative" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_negative"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_point" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_point"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_positive" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_positive"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_firework" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" usable_upper="true">
+    <Default>
+      <Sequence ani="none_ia_firework"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_firework2" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" usable_upper="true">
+    <Default>
+      <Sequence ani="none_ia_firework2"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_salute" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_salute"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_halt" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_halt"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_somersalut" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_somersalut"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_rest" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_rest"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_fantastic" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="none_ia_fantastic"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_shuffle" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="none_ia_shuffle"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_humming" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_humming"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_stroke" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_stroke"/>
+    </Default>
+  </MOTION>
+  
+  <!--캐시 소셜 모션 -->
+   <MOTION name="PS_ia_supreme" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_supreme"/>
+    </Default>
+  </MOTION>  
+   <MOTION name="PS_ia_wink" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_wink"/>
+    </Default>
+  </MOTION>
+
+  <!--이리스의 워터볼 -->
+  <MOTION name="PS_ia_ice_circle" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_ice_circle_waterball"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_shower" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_shower_waterball"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_watergun" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_confess_waterball"/>
+    </Default>
+  </MOTION>
+
+  <!--할로윈 펌킨 -->
+  <MOTION name="PS_ia_pumpkin_smile" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_pumpkin_smile_pumpkin"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_pumpkin_rest" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_pumpkin_rest_pumpkin"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_ia_heart" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_heart"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_confess" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" usable_upper="true" auto_prefix="false">
+    <Default>
+      <Sequence ani="none_ia_confess"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_dash" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_dash"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dash" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_dash"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_sigh" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_sigh"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_talk1" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_talk1"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_talk2" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_talk2"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_taunt" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_taunt"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_wave" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_wave"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_mage" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_mage" speed="1.7"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_sit" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_sit_down"/>
+	  <Sequence ani="none_sit_idle" timeout="2" />
+	  <Sequence ani="none_sit_rise"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_beg2" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_beg_start"/>
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_idle" />
+	  <Sequence ani="none_beg_end"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_beg_end" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+	  <Sequence ani="none_beg_end"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_rise" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_sit_rise"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_sleep" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_sleep_down"/>
+	  <Sequence ani="none_ia_sleep_idle"/>
+	  <Sequence ani="none_ia_sleep_rise" speed="1.5"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_cheer_ride" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_cheer_ride"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_dance_ride" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_dance_ride"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_salute_ride" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="true" >
+    <Default>
+      <Sequence ani="none_ia_salute_ride"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_ia_halt_ride" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="none_ia_halt_ride"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_drum_active1" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_active1_drum"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_drum_active2" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_active2_drum"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_bomb_active1" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_active1_bomb"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_bomb_cast1" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_idle_bomb"/>
+    </Default>
+  </MOTION>  
+  <MOTION name="PS_dinner_meat" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_dinner_meat"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dinner_drink" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_dinner_drink"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_dinner_vegetable" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_dinner_vegetable"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_eat_fondue" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="1hb_eat_fondue"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_2" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_2"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_3" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_4" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_4"/>
+    </Default>
+  </MOTION>  
+  <MOTION name="PS_active1_guitar_5" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_5"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_6" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_6"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_7" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_7"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_8" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_8"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_9" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_9"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_10" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_10"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_12" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_guitar_13" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+	  <Sequence ani="2hb_active1_guitar_9"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active1_percussion" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hd_active1_percussion"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active2_percussion" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hd_active2_percussion"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active3_percussion" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hd_active3_percussion"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active4_percussion" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hd_active4_percussion"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_active5_percussion" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hd_active5_percussion"/>
+    </Default>
+  </MOTION>
+  <MOTION name="PS_perform1_percussion" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hd_active7_percussion"/>	  
+    </Default>
+  </MOTION>
+  <MOTION name="PS_perform2_percussion" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="2hd_active8_percussion"/>  
+    </Default>
+  </MOTION>  
+  <MOTION name="idle2" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="idle2"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="idle3" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="idle3"/>
+    </Default>
+  </MOTION>
+
+  <!-- 임시 보스 소환용 먹이주기-->
+  <MOTION name="PS_bossspawn_cast" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="none_loot_start"/>
+    </Default>
+  </MOTION> 
+  <MOTION name="PS_bossspawn_idle" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="none_idle_farm"/>
+    </Default>
+  </MOTION> 
+  <MOTION name="PS_bossspawn_fire" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" usable_upper="true">
+    <Default>
+      <Sequence ani="none_loot_end"/>
+    </Default>
+  </MOTION> 
+      
+  <!-- 로그인 화면 -->
+  <MOTION name="login_idle" stance="all" loop="true" cancelEnabled="false" cameraLook="false">
+    <Default>
+      <Sequence ani="login_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="select_char" stance="all" loop="true" cancelEnabled="false" cameraLook="false">
+    <Default>
+      <Sequence ani="login_idle01"/>
+      <Sequence ani="login_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="occasional_char" stance="all" loop="true" cancelEnabled="false" cameraLook="false">
+    <Default>
+      <Sequence ani="login_idle02"/>
+      <Sequence ani="login_idle"/>
+    </Default>
+  </MOTION>
+
+</maiet>
+
+
+

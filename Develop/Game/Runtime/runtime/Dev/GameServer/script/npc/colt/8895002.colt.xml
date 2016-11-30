@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- 소레나(e3퍼블릭) -->
+<!--
+Venister
+
+탤런트 일람
+210500201: 착륙
+210500202: 이륙
+210500203: 좌측회전
+210500204: 우측회전
+210500205: 뿔로 치기
+210500206: 대시
+210500207: 백대시
+210500208: 울부짖기 #1 - 광역 (일어나서 소리지르기)
+210500209: 울부짖기 #2 - 분노
+210500210: 삽질하기
+210500211: 파리잡기 (오른손 앞발치기)
+210500212: 공중대시
+210500213: 머리 아파하기
+210500214: 뿔 잘리기
+210500215: 아파서 기절하기
+210500216: 오른손 휘두르기
+210500217: 근접콤보
+210500218: 분노
+210500219: 공중에서 잡기
+210500220: 브레스
+210500221: 모래 뿌리기
+210500222: 샌드 스톰
+-->
+<maiet>
+	<COLT max_duration="8">
+		<COMBAT mode="0" >
+			<DEFAULT>
+				<ACTION type="aggro" param1="random" param2="0" rate="20" cycle="30" />
+				
+				<!-- 평타 -->
+				<ACTION type="talent" param1="210500205" rate="10" cycle="5" />
+				<ACTION type="talent" param1="210500211" rate="10"/>
+				<ACTION type="talent" param1="210500216" rate="10"/>
+				<ACTION type="talent" param1="210500221" rate="10" duration="4" cycle="30" />
+				<!-- 대시 -->
+				<ACTION type="talent" param1="210500206" rate="12" duration="8" cycle="10" />
+				<!-- 날기 -->
+				<ACTION type="talent" param1="210500202" rate="50" duration="0" cycle="300" />
+
+				<!-- 울부짖거나(영역 넉백) -->
+				<ACTION type="talent" param1="210500209" rate="10" />
+				
+				<ACTION type="group" rate="30" duration="15" cycle="10">
+					<!-- 백대시 -->
+					<ACTION type="talent" param1="210500207"/>
+					<!-- 브레스 -->
+					<ACTION type="talent" param1="210500220"/>
+				</ACTION>
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="700">
+				<ACTION type="group" cycle="120">
+					<!-- 울부짖거나(영역 넉백) -->
+					<!--<ACTION type="talent" param1="210500209" duration="0" />-->
+					<!-- 모래 브레스 -->
+					<ACTION type="talent" param1="210500220"/>
+				</ACTION>
+			</CHECK>
+
+			<!-- HP 10% 이하면 패턴 변형 -->
+			<CHECK type="hp" param2="10">
+				<!-- 폭주 -->
+				<ACTION type="talent" param1="210500218" duration="0" auto_run="true" max_count="1" />
+
+				<!-- 날아오르기 -->
+				<ACTION type="talent" param1="210500202" rate="50" cycle="300" />	
+				
+				<!-- 평타 -->
+				<ACTION type="talent" param1="210500205" rate="10" cycle="5" />
+				<ACTION type="talent" param1="210500211" rate="10" cycle="5" />
+				<ACTION type="talent" param1="210500216" rate="10" cycle="5" />
+
+				<!-- 평타 콤보 -->
+				<ACTION type="talent" param1="210500217" rate="20" cycle="5" />
+			</CHECK>
+			
+			<!-- HP 50% 이하면 패턴 변형 -->
+			<CHECK type="hp" param2="50">
+				<!-- 폭주 -->
+				<ACTION type="talent" param1="210500218" duration="0" auto_run="true" max_count="1" />
+
+				<ACTION type="aggro" param1="random" param2="0" rate="20" cycle="30" />
+				
+				<ACTION type="talent" param1="210500221" rate="10" duration="4" cycle="5" />
+				<!-- 날아오르기 -->
+				<ACTION type="talent" param1="210500202" rate="10" duration="0" cycle="300" />
+				
+				<!-- 평타 -->
+				<ACTION type="talent" param1="210500205" rate="10" cycle="5" />
+				<ACTION type="talent" param1="210500211" rate="10" cycle="5" />
+				<ACTION type="talent" param1="210500216" rate="10" cycle="5" />
+
+				<!-- 평타 콤보 -->
+				<ACTION type="talent" param1="210500217" rate="20" cycle="5" />
+
+				<!-- 대시 -->
+				<ACTION type="talent" param1="210500206" rate="12" cycle="10" />
+
+				<ACTION type="group" rate="30" cycle="25">
+					<!-- 백대시 -->
+					<ACTION type="talent" param1="210500207"/>
+					<!-- 대시 -->
+					<ACTION type="talent" param1="210500206" duration="0"/>
+				</ACTION>				
+
+				<!-- 울부짖기 시리즈 -->
+				<ACTION type="talent" param1="210500208" rate="5" duration="0"/>
+				<ACTION type="talent" param1="210500210" rate="5" duration="0"/>
+			</CHECK>
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<CHECK type="mode" param1="0">
+					<ACTION type="talent" param1="210500206" rate="10" />
+					<ACTION type="talent" param1="210500210" rate="10" duration="0" />
+					<ACTION type="talent" param1="210500217" rate="10" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<!-- 플라잉 모드 -->
+		<COMBAT mode="1" victory="210500201" >
+			<DEFAULT>
+				<ACTION type="talent" param1="210500212" rate="100" cycle="600"/>
+				<!-- 마법진 -->
+				<!-- <ACTION type="lua" param1="Sorena_AirDirt" rate="10" cycle="120" /> -->
+				<!-- 선회 공격 
+				<ACTION type="lua" param1="Sorena_AirAttack" rate="30" cycle="120"/> -->
+				<!-- 공중에서 잡기 -->
+				<ACTION type="talent" param1="210500219" rate="30" duration="5"/>
+				<!-- 공중 대시 -->
+				<ACTION type="talent" param1="210500212" rate="40"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<STRESS>
+			  <CHECK type="stress" param1="30">
+				<ACTION type="lua" param1="Sorena_Stressed2" rate="80" />
+			  </CHECK>
+		</STRESS>
+	</COLT>
+	<SCRIPT><![CDATA[ 
+function NPC_8895002:Init(NPCID)
+	NPC_ReserveUserData(NPCID, 2);
+	NPC_8895002.UD_Pain = 1
+	NPC_8895002.UD_PhasePain = 2
+	NPC_8895002.TALENT_HornDash = 190001 -- 뿔 들고 유저가 쓰는 탤런트
+	NPC_8895002.TALENT_PainHornDash = 210500230 -- 뿔에 맞으면 쓰는 탤런트
+	NPC_8895002.TALENT_PainHead = 210500213
+	NPC_8895002.TALENT_PainBreakHorn = 210500214
+	NPC_8895002.TALENT_PainFaint = 210500215
+	NPC_8895002.MODE_Flying = 1
+	NPC_8895002.BPARTS_Horn = 1
+	NPC_8895002.LIMIT_Pain = 2000
+	NPC_8895002.LIMIT_BParts = NPC_8895002.MaxHP * 0.3
+end
+
+function NPC_8895002:ProcessHitBody( ThisNPC, HitInfo)
+
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	if currentTalent == 210500214 or
+		currentTalent == 210500215 or
+		currentTalent == 210500213 or
+		currentTalent == NPC_8895002.TALENT_PainHornDash then
+			return HitInfo
+	end
+
+	if HitInfo.TalentID == NPC_8895002.TALENT_HornDash then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf(NPC_8895002.TALENT_PainHornDash)
+		return HitInfo
+	end
+	
+	local totalDamage = ThisNPC:GetUserData(NPC_8895002.UD_Pain) + HitInfo.Damage
+	if totalDamage < NPC_8895002.LIMIT_Pain then
+		ThisNPC:SetUserData(NPC_8895002.UD_Pain, totalDamage)
+		return HitInfo
+	end
+		
+	-- 아파하기
+	ThisNPC:SetUserData(NPC_8895002.UD_Pain, 0)
+	local phasePain = ThisNPC:GetUserData(NPC_8895002.UD_PhasePain) + 1 -- Pain 횟수
+	ThisNPC:SetUserData(2, phasePain)
+
+	ThisNPC:ClearJob()
+	if phasePain % 4 == 0 then
+		ThisNPC:UseTalentSelf(210500215)
+	else
+		ThisNPC:UseTalentSelf(210500213)
+	end
+	
+	return HitInfo
+end
+
+function NPC_8895002:AccDamage( ThisNPC, HitInfo)
+
+	if (not ThisNPC:CheckBPart(NPC_8895002.BPARTS_Horn)) and ThisNPC:GetHP() < NPC_8895002.LIMIT_BParts then
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart(NPC_8895002.BPARTS_Horn, HitInfo.Attacker)
+		ThisNPC:UseTalentSelf(210500223)
+		
+		return HitInfo
+	end
+		
+	return NPC_8895002:ProcessHitBody( ThisNPC, HitInfo)
+end
+	
+function Sorena_Stressed2(ThisNPC, Opponent)
+	if ThisNPC:GetMode() ~= 0 then return end
+		
+	-- 거리가 10m보다 멀면, 타겟을 근접으로 바꾼다.
+	local Distance = ThisNPC:DistanceTo(Opponent)
+	-- ThisNPC:Say("-- [DEBUG] 거리는 "..tostring(Distance).."입니다.")
+		
+	if(Distance >= 1000) then
+		ThisNPC:Aggro("short", 0)
+		return
+	end
+
+	-- 거리가 가까우면 랜덤으로 셋 중 하나의 근접기술을 사용한다.(2개는 근접, 한개는 그냥 날아가기)
+	local ranNum = math.random(0, 2)
+		
+	if(ranNum == 0) then 
+		ThisNPC:UseTalentSelf(210500206) -- 콤보
+	elseif(ranNum == 1) then
+		ThisNPC:UseTalentSelf(210500207) -- 흙뿌리기
+	end
+end
+
+
+function NPC_8895002:OnHitCapsule_1_1(HitInfo)
+	return NPC_8895002:AccDamage( this, HitInfo )
+end
+
+function NPC_8895002:OnHitCapsule_1_0(HitInfo)
+	return NPC_8895002:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8895002:OnHitCapsule_1_2(HitInfo)
+	return NPC_8895002:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8895002:OnHitCapsule_4_0(HitInfo)
+	return NPC_8895002:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8895002:OnHitCapsule_4_1(HitInfo)
+	return NPC_8895002:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8895002:OnHitCapsule_4_2(HitInfo)
+	return NPC_8895002:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8895002:OnHitCapsule_5_0(HitInfo)
+	return NPC_8895002:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8895002:OnHitCapsule_6_0(HitInfo)
+	return NPC_8895002:ProcessHitBody( this, HitInfo )
+end
+
+]]>
+  </SCRIPT>
+</maiet>

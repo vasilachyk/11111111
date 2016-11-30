@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 원거리 -->
+<maiet>
+	<COLT name="인형술사" npcid="520102">
+		<COMBAT victory="252010209">
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="252010201" rate="10" />
+				<ACTION type="talent" param1="252010206" rate="40" /> <!-- 화염구 -->
+				
+				<ACTION type="talent" param1="252010204" rate="20" />  <!--화염채찍 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" >
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="252010201" rate="10" />  <!--지팡이평타1-->
+				<ACTION type="talent" param1="252010202" rate="30" />  <!--지팡이평타2-->
+			
+				<ACTION type="talent" param1="252010206" rate="30" />  <!--화염구 -->
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="252010204" rate="20" />  <!--화염채찍 -->
+				</CHECK>
+			</CHECK>
+
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="252010208" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>		
+		
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

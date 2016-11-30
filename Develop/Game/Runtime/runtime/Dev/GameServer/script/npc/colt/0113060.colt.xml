@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="썩어가는 나무정령">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+								
+				<ACTION type="talent" param1="211306001" rate="40" />
+				<ACTION type="talent" param1="211306002" rate="20" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80">
+				<ACTION type="talent" param1="211306003" rate="90" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211306005" rate="10" auto_run="true"/>
+				<ACTION type="talent" param1="211306001" rate="50" />
+				<ACTION type="talent" param1="211306002" rate="40" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="211306004" duration="0" rate="10" />
+				<ACTION type="nothing"  param1="0" rate="90" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80" />
+				<ACTION type="talent" param1="211306000" rate="20" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

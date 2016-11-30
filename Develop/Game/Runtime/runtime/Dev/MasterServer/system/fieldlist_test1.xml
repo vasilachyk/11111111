@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <FIELDLIST>
+        <!-- 기본필드 -->
+        <FIELD id="1" name="리츠" default_channel="2" validation="false" />
+		<FIELD id="2" name="리츠 거주지역" default_channel="2" ailod_enable = "false"/>
+        <FIELD id="3" name="인젠 자유항" default_channel="2" ailod_enable = "false"/>
+        <FIELD id="10" name="실내맵" default_channel="2" validation="false" />
+        <FIELD id="101" name="리오드" default_channel="2" validation="false" />
+        <FIELD id="102" name="에다산" default_channel="2" />
+        <FIELD id="103" name="침묵의 늪" default_channel="2" validation="false" />
+        <FIELD id="104" name="린덴 언덕" default_channel="2" validation="false" />
+        <FIELD id="105" name="리모스사막" default_channel="2" validation="false" />
+        <FIELD id="106" name="잊혀진 성지" default_channel="2" validation="false" />
+        <FIELD id="107" name="테레스 평원" default_channel="2" />
+        <FIELD id="1070130" name="검은바위 동굴" /> <!-- 퀘스트가 없을때 들어가게 되는 공용 동굴 -->		
+        <FIELD id="1070460" name="타리비의 동굴" /> <!-- 퀘스트가 없을때 들어가게 되는 공용 동굴 -->
+        <FIELD id="108" name="아이스베일" default_channel="2" validation="false" />
+        <FIELD id="109" name="부러진 돛대" default_channel="2" validation="false" />
+        <FIELD id="110" name="렌고트 부락" default_channel="2" />
+        <FIELD id="111" name="마코트 부락" file="0111" default_channel="2" validation="false" />
+        <FIELD id="112" name="폐허의 숲" default_channel="2" validation="false" />
+        <FIELD id="113" name="영웅의 오솔길" default_channel="2" />
+        <FIELD id="121" name="오염된 화원" default_channel="2" validation="false" />
+        <FIELD id="117" name="리츠 지하수로" default_channel="2" validation="false" />
+        <FIELD id="502" name="신기루 숲" default_channel="2" validation="false" />
+        <FIELD id="10101" name="리오드 (dym)" validation="false" />
+        <FIELD id="10107" name="테레스 평원 (dym)" />
+        <FIELD id="10108" name="아이스베일 (dym)" validation="false" />
+        <FIELD id="18005" name="Pure_Indoor2 (dym)" validation="false" />
+        <FIELD id="18010" name="희철씨 집 (dym)" validation="false" />
+		<FIELD id="116" name="아란바스 화산지대" default_channel="2" validation="false" />
+        <!--
+		<FIELD id="2"	name="바렌"	    	    file="0002" />
+		<FIELD id="4"	name="란스바렌"	      file="0004" />
+		<FIELD id="5" name="리츠" file="0005" />
+		<FIELD id="113"	name="티어즈 엔드"	file="0113" />
+		<FIELD id="114"	name="레나스의 분노"	  file="0114" />
+		<FIELD id="115"	name="스카브로우 동굴"	file="0115" />
+		<FIELD id="116"	name="자유의 등대"	    file="0116" />
+		<FIELD id="117"	name="리츠 지하수로"	  file="0117" />
+		<FIELD id="118"	name="불타는 숲"	      file="0118" />
+		<FIELD id="119"	name="지옥의 전장"	    file="0119" />
+		<FIELD id="120"	name="세다의 성"	      file="0120" />
+		<FIELD id="121" name="오염된 화원"      file="0121" />
+		<FIELD id="501"	name="바렌 광산"	      file="0501" />
+		<FIELD id="503"	name="안개의 저택"	    file="0503" />
+		<FIELD id="504"	name="하얀 날개 은신처"	file="0504" />
+		<FIELD id="505"	name="라시노스의 신전"	file="0505" />
+		<FIELD id="506"	name="렌델왕궁"	        file="0506" />
+		<FIELD id="507"	name="배반의 무덤"	    file="0507" />
+		<FIELD id="508" name="레나스의 신전"	  file="0508" />
+		<FIELD id="509" name="불균형의 천칭"	  file="0509" />
+		-->
+        <!-- 트라이얼 테스트 -->
+        <FIELD id="1011" name="대형 창고 트라이얼 테스트" />
+        <!--FIELD id="1012" name="창고2 트라이얼" /-->
+        <!--FIELD id="1013" name="창고3 트라이얼" /-->
+        <FIELD id="1021" name="소형집 트라이얼 테스트" />
+        <FIELD id="1022" name="중형집 트라이얼 테스트" />
+        <!--FIELD id="1023" name="대형집 트라이얼" /-->
+        <FIELD id="1031" name="던젼1 트라이얼 테스트" />
+        <FIELD id="1032" name="던젼2 트라이얼 테스트" />
+        <FIELD id="1033" name="던젼3 트라이얼" />
+        <FIELD id="1034" name="던젼4 트라이얼" />
+        <FIELD id="1039" name="던젼3 마녀의 동굴" />
+        <FIELD id="1042" name="성2 트라이얼" validation="false" />
+        <FIELD id="113001" name="카타콤1" />
+        <FIELD id="113004" name="은둔자의 동굴" />
+        <FIELD id="113005" name="장로의 숲" />
+        <!--		
+		<FIELD id="1012" name="창고2 트라이얼" 						file="1012" />
+		<FIELD id="1013" name="창고3 트라이얼" 						file="1013" />
+		<FIELD id="1023" name="대형집 트라이얼" 						file="1023" />		
+		<FIELD id="1033" name="던젼3 트라이얼" 						file="1033" />
+    <FIELD id="1041" name="성1 트라이얼"              file="1041" />
+    		-->
+        <!-- 테스트 -->
+        <!--FIELD id="1041" name="성1 트라이얼" /-->
+        <!--테스트 -->
+        <FIELD id="8001" name="Pure_InDoor" validation="false" />
+        <FIELD id="8002" name="MaietTown" validation="false" />
+        <FIELD id="8003" name="BirdTown" />
+        <FIELD id="8004" name="BirdTeressPlain" />
+        <FIELD id="8005" name="Pure_Indoor2" validation="false" />
+        <FIELD id="9001" name="BirdTown" />
+        <FIELD id="9090" name="IsnaraTown" />
+        <FIELD id="9091" name="MadduckTown" />
+        <FIELD id="9092" name="MizelanTown" />
+        <FIELD id="9093" name="Luna1xTown" />
+        <FIELD id="9094" name="BillcapTown" />
+        <FIELD id="9095" name="PokTown" />
+        <FIELD id="9096" name="BillcapTest" />
+        <FIELD id="9099" name="Tropical Paradise" validation="false" />
+        <FIELD id="9101" name="NetworkStressTest" />
+		<FIELD id="9113" name="영웅의 오솔길 Test" validation="false" />
+		<FIELD id="9121" name="오염된 화원 Test" validation="false" />
+        <FIELD id="107099" name="보스테스트필드" />
+        <!--
+		<FIELDGROUP id="1" start_field="0101" start_marker="1">
+			<FIELD id="0101"/>
+			<FIELD id="0102"/>
+		</FIELDGROUP>
+		-->
+		
+		<FIELDGROUP id="50010">
+            <FIELD id="50011" name="투기장" />
+        </FIELDGROUP>
+		
+        <FIELDGROUP id="30030" start_field="30031" start_marker="1">
+            <FIELD id="30031" name="메를린의 집" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30290" start_field="30291" start_marker="1">
+            <FIELD id="30291" name="고드모어의 집" /> <!-- 고드모어의 집-->
+        </FIELDGROUP>
+        <FIELDGROUP id="30292" start_field="30292" start_marker="1">
+            <FIELD id="30292" name="기본 여관 방" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30293" start_field="30293" start_marker="1">
+            <FIELD id="30293" name="베이직 여관 방" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30294" start_field="30294" start_marker="1">
+            <FIELD id="30294" name="스토리지 여관 방" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30295" start_field="30295" start_marker="1">
+            <FIELD id="30295" name="스튜어드 여관 방" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30296" start_field="30296" start_marker="1">
+            <FIELD id="30296" name="프리미엄 여관 방" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30310" start_field="30311" start_marker="1">
+            <FIELD id="30311" name="항구 창고" /> <!-- 항구 창고-->
+        </FIELDGROUP>
+        <FIELDGROUP id="1070130" start_field="1070131" start_marker="1">
+            <FIELD id="1070131" name="검은바위 동굴" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070160" start_field="1070161" start_marker="1">
+            <FIELD id="1070161" name="브로드테일 창고" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070460" start_field="1070461" start_marker="1">
+            <FIELD id="1070461" name="타리비의 동굴" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070540" start_field="1070541" start_marker="1">
+            <FIELD id="1070541" name="닷소의 집" />
+            <FIELD id="1070542" name="닷소의 집 지하실" />			
+        </FIELDGROUP>		
+        <!-- 퀘스트 셈플 필드 -->
+        <FIELD id="5000" name="퀘스트 샘플" />
+        <FIELDGROUP id="5001" start_field="5001" start_marker="1" validation="false">
+            <FIELD id="5001" name="퀘스트 타임어텍 셈플" />
+        </FIELDGROUP>
+        <!-- AI 테스트 필드 -->
+        <FIELD id="5010" name="AI 테스트 놀이터" />
+    </FIELDLIST>
+</maiet>

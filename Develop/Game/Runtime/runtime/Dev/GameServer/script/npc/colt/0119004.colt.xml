@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 우르크	
+211801301	들이받기
+211801302	돌진
+211801303	idle1
+211801304	idle2
+211801305	idle3
+211801306	idle4
+211801307	idle5
+211801308	포효
+-->
+<maiet>
+	<COLT name="미친 우르크" npcid="119004">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211801301" rate="50"/>
+				<ACTION type="talent" param1="211801302" rate="50"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="10"/>
+				<ACTION type="talent" param1="211801303" rate="10"/>
+				<ACTION type="talent" param1="211801304" rate="10"/>
+				<ACTION type="talent" param1="211801305" rate="10"/>
+				<ACTION type="talent" param1="211801306" rate="10"/>
+				<ACTION type="talent" param1="211801307" rate="10"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

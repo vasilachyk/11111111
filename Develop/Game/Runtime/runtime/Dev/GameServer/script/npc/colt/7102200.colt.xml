@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <COLT name="소환된 트롤 전사" npcid="7102200">
+		<COMBAT >
+			<DEFAULT>
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="350" >
+				<CHECK type="rage" param1="200">
+					<ACTION type="talent" param1="210200308" rate="10" />
+				</CHECK>
+				<ACTION type="talent" param1="210200303" rate="10" />
+				<ACTION type="talent" param1="210200304" rate="10" />
+				<ACTION type="talent" param1="210200305" rate="5" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="350" >
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="210200303" rate="5" />
+				<ACTION type="talent" param1="210200304" rate="5" />
+				<ACTION type="talent" param1="210200305" rate="5" />
+				<!-- 원거리 스킬 -->
+				<ACTION type="talent" param1="210200306" rate="30" />
+				<ACTION type="talent" param1="210200307" rate="50" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210200300" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

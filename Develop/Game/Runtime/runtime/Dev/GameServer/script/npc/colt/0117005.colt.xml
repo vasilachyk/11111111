@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="마이코니드 큐링" npcid="117005" >
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211700500" rate="100" desc="회복(자폭)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_117005:OnFinishKillAttack3( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+
+	ThisNPC:Die( Enemy )
+end
+
+function NPC_117005:OnSpawn(Spawn)
+	this:UseTalentSelf(211700501)
+end
+	]]></SCRIPT>
+</maiet>

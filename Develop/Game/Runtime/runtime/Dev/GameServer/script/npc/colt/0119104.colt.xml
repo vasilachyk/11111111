@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 검은크립, 이끼크립	
+211910400	#idle2
+#전투	
+211910410	#2연속찌르기
+211910411	#양손가위질
+211910412	#3연속찌르기
+211910413	#포효
+211910414	#독침쏘기
+-->
+<maiet>
+	<COLT name="검은 크립" npcid="119104">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="211910410" rate="40" desc="2연속찌르기" />
+				<ACTION type="talent" param1="211910411" rate="30" desc="양손가위질" />
+				<ACTION type="talent" param1="211910412" rate="20" desc="3연속찌르기" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="600">
+				<ACTION type="talent" param1="211910413" rate="10" desc="포효" duration="0" />
+				<ACTION type="talent" param1="211910410" rate="10" desc="2연속찌르기" />
+				<ACTION type="talent" param1="211910414" rate="70" desc="독침쏘기" duration="0" />			
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="50" desc="nothing" />
+				<ACTION type="talent" param1="211910400" rate="10" desc="idle2" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

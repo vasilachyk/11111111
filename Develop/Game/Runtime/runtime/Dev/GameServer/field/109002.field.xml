@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1041" minimap_name="map01041" loading_image_name="01041" min_x="-7950" min_y="-6920" max_x="10050" max_y="11080" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Daytime" town="false" returnable="false" tutorial="false">
+        <BGM fieldbgm="bgm_field_6">
+            <ENVBGM dungeonbgm="amb_dungeon_1" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="[OBJ] 보물 상자" x="1013.984253" y="6815.756836" z="1507.466797" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="109039" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="[OBJ] 보물 상자" x="-1793.243408" y="7265.578125" z="1507.466797" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="109039" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="영혼석" x="3638.450195" y="-2686.540039" z="1722.000610" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="해골 전사" x="-341.935547" y="3914.732178" z="741.189758" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="해골 궁수" x="-1825.319580" y="3389.790283" z="1594.932251" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="90" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,128,255">
+            <NPC id="109233" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="해골 궁수" x="2070.244629" y="6543.351563" z="1507.466797" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="90" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,128,255">
+            <NPC id="109233" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="해골 전사" x="-770.601074" y="-618.414063" z="1145.577637" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="해골 전사" x="490.917480" y="3717.022217" z="741.189209" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="해골 전사" x="1984.614990" y="-3325.603027" z="1316.828857" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="해골 전사" x="2053.306396" y="3771.642822" z="1595.637817" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="해골 전사" x="-1251.847168" y="6916.176758" z="1508.466797" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" group="0" name="해골 전사" x="639.730713" y="-593.997070" z="1145.000244" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20" group="0" name="해골 전사" x="777.073853" y="4740.791992" z="742.189331" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="해골 전사" x="-405.931152" y="2805.935547" z="741.189575" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="해골 전사" x="1448.055176" y="6920.832031" z="1508.466797" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="64,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="30" group="0" name="해골 전사" x="1873.201904" y="5370.453613" z="1557.771973" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="31" group="0" name="해골 전사" x="-1865.533203" y="5008.675293" z="1556.455566" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="32" group="0" name="해골 전사" x="-2023.352051" y="6601.228516" z="1507.466797" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="33" group="0" name="해골 전사" x="-2100.436279" y="1867.499512" z="1651.768799" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="34" group="0" name="해골 전사" x="-648.841064" y="1525.114014" z="1645.949829" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="35" group="0" name="해골 전사" x="21.184601" y="456.501892" z="1005.254883" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="36" group="0" name="해골 전사" x="743.767944" y="1469.651611" z="1645.949951" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="37" group="0" name="해골 전사" x="2116.022705" y="1774.692871" z="1651.768677" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="38" group="0" name="해골 전사" x="1602.346802" y="3177.100586" z="1594.932251" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="39" group="0" name="해골 전사" x="-21.510498" y="-2731.831055" z="1149.327759" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,128,128">
+            <NPC id="109232" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109104" group="0" name="[OBJ] 모험가의 시체" x="4089.590576" y="-2258.231445" z="1722.000610" dir_x="0.882948" dir_y="-0.469472" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109105" group="0" name="[OBJ] 고문서" x="1.471741" y="6805.972656" z="835.086304" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109109" group="0" name="[OBJ] 모험가의 저널" x="4198.241211" y="-2283.966797" z="1722.000610" dir_x="0.984808" dir_y="0.173648" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109109" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109110" group="0" name="[OBJ] 모험가의 보물" x="-322.395874" y="5061.346680" z="741.190125" dir_x="0.529919" dir_y="-0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109110" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="from 부러진 돛대" x="1478.277832" y="-2119.539795" z="2332.000732" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="from 부러진 돛대 2" x="3.743408" y="7852.567383" z="747.905884" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109008" name="[QM] 109008" x="2.101807" y="8226.817383" z="748.822021" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109053" name="[QM] 109053" x="-7.522705" y="1090.590576" z="748.872925" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1090062" name="[QM] 109006 obj 2" x="1.125336" y="6481.294922" z="700.752991" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 부러진 돛대" x="705.769775" y="-2101.873779" z="2332.000732" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_01" x="-35.703369" y="9.978271" z="-46.062012" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="3.000000" scale_y="0.500000" scale_z="3.000000" />
+            <WARP warp_type="field" title="부러진 돛대 (Peace)" condition="1090087" gate_type="auto" field="109" marker="3" />
+            <WARP warp_type="field" title="부러진 돛대 (War)" condition="1090088" gate_type="auto" field="109001" marker="3" />
+        </SENSOR>
+        <SENSOR id="2" name="뒷문 출구" x="-5.432068" y="8439.801758" z="776.124146" radius="350.000000" enabled="true">
+            <EFFECT effect="sensor_trial_01" x="0.000000" y="12.916992" z="-0.116943" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="3.200000" scale_y="0.300000" scale_z="3.000000" />
+            <WARP warp_type="field" title="부러진 돛대 (Peace)" condition="1090085" gate_type="auto" field="109" marker="4" />
+            <WARP warp_type="field" title="부러진 돛대 (War)" condition="1090086" gate_type="auto" field="109001" marker="4" />
+        </SENSOR>
+        <SENSOR id="1090061" name="[QOS] 109006 obj 1" local="false" x="1625.136230" y="-2119.142578" z="2330.174072" radius="400.000000" enabled="true" groupname="none" />
+        <SENSOR id="1090062" name="[QOS] 109006 obj 2" local="false" x="0.587761" y="6485.610840" z="698.879089" radius="800.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

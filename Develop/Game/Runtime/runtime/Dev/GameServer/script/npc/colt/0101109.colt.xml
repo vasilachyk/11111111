@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 경비병	
+210110901	배기
+210110902	잡기
+210110903	방어
+-->
+<maiet>
+	<COLT name="오염된 경비병" npcid="101109">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210110901" rate="40" />
+			</DEFAULT>
+			<CHECK type="rage" param1="80">
+				<CHECK type="unbreakpart" param1="2">
+					<ACTION type="guard" param1="210110903" param2="2" rate="50" />
+				</CHECK>
+			</CHECK>
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="210110902" rate="50" desc="잡기" cycle="5" />
+				<ACTION type="talent" param1="210110901" rate="50" desc="배기" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

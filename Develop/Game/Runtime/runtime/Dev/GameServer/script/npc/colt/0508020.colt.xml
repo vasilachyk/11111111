@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="베이누스" npcid="508020">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="lua" param1="NPC_508020" param2="bugdespawn" desc="벌레지움"/>
+					<ACTION type="talent" param1="250802005"/>
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>	
+		<COMBAT mode="0" victory="250802031">
+			<DEFAULT>
+				<ACTION type="talent" param1="250802020" rate="10" duration="5" desc="전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="250802021" rate="10" duration="5" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="250802022" rate="10" duration="5" desc="전방 휘두르기 3연타"/>
+			</DEFAULT>
+
+			<CHECK type="hp" param1="80" >
+				<CHECK type="distance" param1="700" param2="1200">
+					<ACTION type="talent" param1="250802015" desc="바닥찍기"/>
+				</CHECK>
+				<ACTION type="talent" param1="250802020" rate="20" duration="5" desc="전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="250802021" rate="20" duration="5" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="250802022" rate="10" duration="5" desc="전방 휘두르기 3연타"/>
+				<ACTION type="talent" param1="250802013" rate="10" duration="5" desc="발구르기"/>
+				<ACTION type="talent" param1="250802014" rate="5" duration="5" desc="크게 발구르기"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="80" >
+				<CHECK type="distance" param1="1500" >
+					<ACTION type="talent" param1="250802022" desc="전방 휘두르기 3연타"/>
+				</CHECK>
+				<CHECK type="distance" param1="700" param2="1200">
+					<ACTION type="talent" param1="250802015" desc="바닥찍기"/>
+				</CHECK>
+				<ACTION type="group" cycle="40">
+					<ACTION type="talent" param1="250802012" duration="5" desc="잡기"/>
+					<ACTION type="talent" param1="250802013" duration="5" desc="발구르기"/>
+				</ACTION>
+				<ACTION type="talent" param1="250802020" rate="20" duration="5" desc="전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="250802021" rate="25" duration="5" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="250802022" rate="20" duration="5" desc="전방 휘두르기 3연타"/>
+				<ACTION type="talent" param1="250802013" rate="5" duration="5" desc="발구르기"/>
+				<ACTION type="talent" param1="250802014" rate="10" duration="5" desc="크게 발구르기"/>
+				<ACTION type="talent" param1="250802042" rate="5" cycle="20" desc="돌 떨어트리기(원)"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="40" param2="60" >
+				<CHECK type="distance" param1="1500" >
+					<ACTION type="talent" param1="250802022" desc="전방 휘두르기 3연타"/>
+				</CHECK>
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="250802012" duration="5" desc="잡기"/>
+					<ACTION type="talent" param1="250802013" duration="5" desc="발구르기"/>
+				</ACTION>
+				<ACTION type="talent" param1="250802040" rate="5" cycle="20" desc="돌 떨어트리기(사방작음)"/>
+				<ACTION type="talent" param1="250802020" rate="20" duration="5" desc="전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="250802021" rate="20" duration="5" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="250802022" rate="30" duration="5" desc="전방 휘두르기 3연타"/>
+				<ACTION type="talent" param1="250802013" rate="10" duration="5" desc="발구르기"/>
+				<ACTION type="talent" param1="250802014" rate="5" duration="5" desc="크게 발구르기"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="40" >
+				<ACTION type="talent" param1="250802010" max_count="1" desc="페이즈 전환"/>
+			</CHECK>
+		
+			<CHECK type="hp" param1="0" param2="40" >
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="250802012" duration="5" desc="잡기"/>
+					<ACTION type="talent" param1="250802013" desc="발구르기"/>
+				</ACTION>
+				<CHECK type="distance" param1="1200" >
+					<ACTION type="talent" param1="250802025" desc="빠름 전방 휘두르기 3연타"/>
+				</CHECK>
+				<ACTION type="talent" param1="250802041" rate="10" cycle="20" desc="돌 떨어트리기(사방큼)"/>
+				<ACTION type="talent" param1="250802023" rate="20" duration="5" desc="빠름 전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="250802024" rate="20" duration="5" desc="빠름 전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="250802025" rate="25" duration="5" desc="빠름 전방 휘두르기 3연타"/>
+				<ACTION type="talent" param1="250802013" rate="5" duration="5" desc="발구르기"/>
+				<ACTION type="talent" param1="250802014" rate="5" duration="5" desc="크게 발구르기"/>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="250802030" duration="5" desc="전투 시작"/>
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+--[[
+250802003	pain1
+250802004	pain2
+#공격스킬	
+250802010	페이즈 전환
+250802011	앞으로 점프
+250802012	잡기
+250802013	발구르기
+250802014	크게 발구르기
+250802040	돌 떨어트리기 (사방작음)
+250802041	돌 떨어트리기 (원)
+250802042	돌 떨어트리기 (사방큼)
+250802016	지진 발사
+#연타공격	
+250802020	전방 휘두르기 1타
+250802021	전방 휘두르기 2연타
+250802022	전방 휘두르기 3연타
+250802023	빠름 전방 휘두르기 1타
+250802024	빠름 전방 휘두르기 2연타
+250802025	빠름 전방 휘두르기 3연타
+--]]
+function NPC_508020:Init(NPCID)
+	
+	NPC_508020.UD_PAIN1 = 1		-- 주기적인 Pain을 위한 누적 데미지.
+	NPC_508020.UD_PAIN2 = 2		-- 큰 Pain을 위한 누적 데미지.
+	NPC_508020.UD_DATASIZE = 2
+	
+	NPC_ReserveUserData( NPCID, NPC_508020.UD_DATASIZE );
+		
+	NPC_508020.LIMIT_PAIN1 = NPC_508020.MaxHP * 0.1
+	NPC_508020.LIMIT_PAIN2 = NPC_508020.MaxHP * 0.6
+		
+	NPC_508020.BPARTS_1 = 1
+	NPC_508020.BPARTS_2 = 2
+	NPC_508020.BPARTS_3 = 3
+	NPC_508020.BPARTS_4 = 4
+	
+	NPC_508020.MODE_DAFAULT = 0
+	NPC_508020.MODE_STATUE = 1
+		
+	NPC_508020.TALENT_PAIN1 = 250802003
+	NPC_508020.TALENT_PAIN2 = 250802004
+	
+	NPC_508020.TALENT_Rockslide1 = 250802040	-- 돌 떨어트리기(사방작음)
+	NPC_508020.TALENT_Rockslide2 = 250802041	-- 돌 떨어트리기(사방큼)
+	NPC_508020.TALENT_Rockslide3 = 250802042	-- 돌 떨어트리기(원)
+	--NPC_508020.TALENT_Quake 	= 250802016	-- 지진 발사
+	NPC_508020.TALENT_Grip 	    = 250802012	-- 잡기
+	
+	NPC_508020.DUMMY_ID	= 508021
+	NPC_508020.DUMMY_TALENT_Rockslide_1 = 250802100
+	NPC_508020.DUMMY_TALENT_Rockslide_2 = 250802101
+	NPC_508020.DUMMY_TALENT_Rockslide_3 = 250802102
+	
+	NPC_508020.BuffIdArmBug								= 41203   
+	
+	-- 여자 석상
+	NPC_508020.STATUE_SpawnID 	= 5080221
+	NPC_508020.STATUE_COUNT 	= 2
+	NPC_508020.STATUE_WakeUp 	= 250802211
+	
+end
+
+function NPC_508020:OnSpawn(Spawn)
+	this:GainBuff( NPC_508020.BuffIdArmBug )
+end
+
+function NPC_508020:bugdespawn( ThisNPC, Enemy )
+	this:RemoveBuff( NPC_508020.BuffIdArmBug )
+end
+
+function NPC_508020:OnStartWakeStatue( ThisActor, Enemy )
+	--GLog("NPC_520010:OnStartWakeStatue()\n")
+	
+	local Field = ThisActor:GetField()
+	local Minion 
+	
+	for i = 0, NPC_508020.STATUE_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_508020.STATUE_SpawnID+i )
+		Minion:UseTalentSelf( NPC_508020.STATUE_WakeUp )
+	end -- for
+end
+
+
+function NPC_508020:OnStartRockslide_1( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Field = ThisActor:GetField()
+	local Dummy = Field:GetNPC( NPC_508020.DUMMY_ID )
+	
+	-- GLog("NPC_508020:OnStartRockslide_1() "..Dummy:GetCurrentTalent().."\n")
+	
+	if not Dummy or
+		Dummy:GetCurrentTalent() ~= -1 then
+			return
+	end
+	
+	Dummy:UseTalentSelf( NPC_508020.DUMMY_TALENT_Rockslide_1 )
+end
+
+function NPC_508020:OnStartRockslide_2( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Field = ThisActor:GetField()
+	local Dummy = Field:GetNPC( NPC_508020.DUMMY_ID )
+	
+	if not Dummy or
+		Dummy:GetCurrentTalent() ~= -1 then
+			return
+	end
+	
+	Dummy:UseTalentSelf( NPC_508020.DUMMY_TALENT_Rockslide_2 )
+end
+
+function NPC_508020:OnStartRockslide_3( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Field = ThisActor:GetField()
+	local Dummy = Field:GetNPC( NPC_508020.DUMMY_ID )
+	
+	if not Dummy or
+		Dummy:GetCurrentTalent() ~= -1 then
+			return
+	end
+	
+	Dummy:UseTalentSelf( NPC_508020.DUMMY_TALENT_Rockslide_3 )
+end
+
+
+function NPC_508020:OnFinishAndAggroFar( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "far", 0 )
+end
+
+function NPC_508020:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "random", 0 )
+end
+
+function NPC_508020:AccDamage( ThisNPC, HitInfo )
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	local mode = ThisNPC:GetMode()
+	local Target = HitInfo.Attacker
+	
+	local painAcc = ThisNPC:GetUserData( NPC_508020.UD_PAIN1 ) + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_508020.UD_PAIN1, painAcc )
+	
+	local damageAcc = ThisNPC:GetUserData( NPC_508020.UD_PAIN2 ) + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_508020.UD_PAIN2, damageAcc )
+		
+	-- pain 예외 처리.
+	if currentTalent == NPC_508020.TALENT_Rockslide1 or
+		currentTalent == NPC_508020.TALENT_Rockslide2 or
+		currentTalent == NPC_508020.TALENT_Rockslide3 or
+		--currentTalent == NPC_508020.TALENT_Quake or
+		currentTalent == NPC_508020.TALENT_Grip or
+		ThisNPC:IsCooldown( NPC_508020.TALENT_PAIN1 ) or
+		ThisNPC:IsCooldown( NPC_508020.TALENT_PAIN2 ) then
+			return HitInfo
+	end
+	
+	if damageAcc >= NPC_508020.LIMIT_PAIN2 then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( NPC_508020.UD_PAIN1, 0 )
+		ThisNPC:SetUserData( NPC_508020.UD_PAIN2, 0 )
+	 	ThisNPC:UseTalentSelf( NPC_508020.TALENT_PAIN2 )
+	elseif painAcc >= NPC_508020.LIMIT_PAIN1 then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( NPC_508020.UD_PAIN1, 0 )
+	 	ThisNPC:UseTalentSelf( NPC_508020.TALENT_PAIN1 )
+		if(ThisNPC:CheckBPart(1) == false) then
+			ThisNPC:BreakPart(1, Target)
+		elseif (ThisNPC:CheckBPart(2) == false) then
+			ThisNPC:BreakPart(2, Target)
+		elseif (ThisNPC:CheckBPart(3) == false) then
+			ThisNPC:BreakPart(3, Target)
+		elseif (ThisNPC:CheckBPart(4) == false) then
+			ThisNPC:BreakPart(4, Target)
+		end	
+	end
+	
+	return HitInfo
+end
+
+function NPC_508020:OnHitCapsule_1_0(HitInfo)
+	return NPC_508020:AccDamage( this, HitInfo )
+end
+
+function NPC_508020:OnHitCapsule_2_0(HitInfo)
+	return NPC_508020:AccDamage( this, HitInfo )
+end
+
+
+
+function NPC_508020:OnBPartRecover()
+	for i=1, NPC_508020.UD_DATASIZE do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+	]]></SCRIPT>
+</maiet>
+
+
+

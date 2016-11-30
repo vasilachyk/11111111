@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 바다 에보스 광전사	
+210931800	idle2
+210931801	일반공격
+210931802	내려찍기
+-->
+<maiet>
+	<COLT name="바다 에보스 광전사" npcid="109318">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210931801" rate="30" />
+				<ACTION type="talent" param1="210931802" rate="20" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210931800" rate="70" />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

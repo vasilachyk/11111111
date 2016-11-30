@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 디펜더 -->
+<maiet>
+	<COLT name="변성된 마을 주민" npcid="501109">
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="GaddielDenature" />
+			</DEFAULT>
+		</AGGRO>		
+		<COMBAT mode="0" > <!-- victory="250110902" > -->
+			<DEFAULT>
+				<ACTION type="talent" param1="250110911" rate="80" />
+				<ACTION type="talent" param1="250110912" rate="20" />
+				<!--<ACTION type="talent" param1="250110913" rate="5" />-->
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110901" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>
+
+

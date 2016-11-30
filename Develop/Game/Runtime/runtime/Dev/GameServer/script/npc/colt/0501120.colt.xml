@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+
+<maiet>
+	<COLT name="갑옷 기사" npcid="501120">
+		<COMBAT mode="0" >
+			<DEFAULT>
+				<ACTION type="talent" param1="250112011" rate="30" duration="2" />
+				<ACTION type="talent" param1="250112012" rate="20" duration="2" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80" >
+				<ACTION type="talent" param1="250112013" rate="30" duration="2"/>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250112001" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_501120:OnFinishAndAggroShort( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+	]]></SCRIPT>
+</maiet>

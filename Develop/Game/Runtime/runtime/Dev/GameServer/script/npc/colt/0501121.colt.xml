@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 디펜더 -->
+<maiet>
+	<COLT name="가디엘 간수 상디" npcid="501121">
+		<COMBAT mode="0" victory="250112106" >
+			<DEFAULT>
+				<ACTION type="talent" param1="250112114" rate="40" /> <!-- 보루 : 긴 쿨타임-->
+				
+				<ACTION type="talent" param1="250112101" rate="20" />
+				<ACTION type="talent" param1="250112103" rate="15" />
+				<ACTION type="talent" param1="250112102" rate="30" />
+				
+				<ACTION type="talent" param1="250112113" rate="5" /> <!-- 충격 반사 -->
+				<ACTION type="talent" param1="250112115" rate="10" /> <!-- 파멸의 일격 -->
+				<ACTION type="talent" param1="250112116" rate="5" /> <!-- 방패 가격 -->
+				<ACTION type="talent" param1="250112117" rate="5" /> <!-- 돌진 -->
+			</DEFAULT>
+
+			<CHECK type="rage" param1="200">
+				<ACTION type="guard" param1="250112118" param2="5" rate="50" />
+			</CHECK>
+
+			<CHECK type="gained_buff" param1="80120"> <!-- 역습 -->
+				<ACTION type="talent" param1="250112101" rate="20" />
+				<ACTION type="talent" param1="250112103" rate="15" />
+				<ACTION type="talent" param1="250112102" rate="30" />
+				
+				<ACTION type="talent" param1="250112112" rate="35"/>
+			</CHECK>
+				
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="talent" param1="250112113" rate="20" /> <!-- 충격 반사 -->
+				<ACTION type="talent" param1="250112114" rate="10" /> <!-- 보루 -->
+				<ACTION type="talent" param1="250112115" rate="20" /> <!-- 파멸의 일격 -->
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250112105" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+						
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

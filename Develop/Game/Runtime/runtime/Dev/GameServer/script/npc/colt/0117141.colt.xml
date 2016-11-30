@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 박쥐 조련사	
+# 인간형 한손둔기 기본, 방패	
+211714001	1타
+211714002	2연타
+211714003	3연타
+211714004	강한공격(삭제중)
+211714005	찌르기
+211714006	모드0전환(칼뽑기)
+211714007	모드1전환(칼넣기)
+211714008	회피L
+211714009	회피R
+211714010	반격(삭제중)
+211714011	역습 포커스
+211714012	강격
+211714013	충격 반사
+211714014	보루
+211714015	파멸의 일격
+211714016	방패 가격: 기절
+211714017	돌진
+211714018	방어
+-->
+<maiet>
+	<COLT name="박쥐 조련사" npcid="117141">
+		<COMBAT mode="0" victory="211714007" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211714001" desc="1타" rate="20" />
+				<ACTION type="talent" param1="211714002" desc="2연타" rate="20" />
+				<ACTION type="talent" param1="211714015" desc="파멸의 일격" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="talent" param1="211714001" desc="1타" rate="10" />
+				<ACTION type="talent" param1="211714002" desc="2연타" rate="10" />
+				<ACTION type="talent" param1="211714015" desc="파멸의 일격" rate="10" />
+				<ACTION type="talent" param1="211714005" desc="찌르기" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80" >
+					<ACTION type="talent" param1="211714005" desc="찌르기" /> <!-- 찌르기 -->
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211714006" desc="모드0전환(칼뽑기)" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

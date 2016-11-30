@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="122" minimap_name="map00122" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="NPC 511102 작전사령관 아가렌" x="47607.457031" y="49798.328125" z="8.519643" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="511102" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="12973.875000" y="27827.611328" z="1362.489258" dir_x="0.838671" dir_y="0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="NPC_M 511102 작전사령관 아가렌" x="47564.113281" y="50094.550781" z="3.671924" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="SENSOR 511102 작전사령관 아가렌" local="false" x="47862.980469" y="49721.964844" z="3.020676" radius="300.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

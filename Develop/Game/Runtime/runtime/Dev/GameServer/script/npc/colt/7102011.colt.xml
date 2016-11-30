@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#트롤, 오우거	
+710200301	idle2
+710200302	포효1
+710200303	포효2
+710200304	일반공격1
+710200305	일반공격2
+710200306	강한공격
+710200307	대쉬공격
+710200308	돌던지기
+710200309	엉덩방아
+710200310	포효
+710200311	점화
+-->
+<maiet>
+	<COLT name="트롤 돌격대장" npcid="7102011">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="710200304" rate="40" desc="일반공격1" />
+				<ACTION type="talent" param1="710200305" rate="40" desc="일반공격2" />
+				<ACTION type="talent" param1="710200306" rate="20" desc="강한공격" />
+				<ACTION type="talent" param1="710200307" rate="10" desc="대쉬공격" />
+				<ACTION type="talent" param1="710200309" rate="10" desc="엉덩방아" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="500" >
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="710200304" rate="10" desc="일반공격1" />
+				<ACTION type="talent" param1="710200305" rate="10" desc="일반공격2" />
+				
+				<!-- 원거리 스킬 -->
+				<ACTION type="talent" param1="710200307" rate="50" desc="대쉬공격" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="710200301" rate="20" desc="idle2" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

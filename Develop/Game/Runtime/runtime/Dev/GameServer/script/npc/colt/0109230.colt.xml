@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 리자드맨 용병	
+210923001	idle2
+210923002	내려찍기
+210923003	돌려베기
+210923004	횡베기
+210923005	방패치기
+210923006	잡기
+210923007	함성
+210923008	위협
+-->
+<maiet>
+	<COLT name="리자드맨 용병" npcid="109230">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923004" rate="20" />
+				<ACTION type="talent" param1="210923005" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="30" >
+				<ACTION type="talent" param1="210923004" rate="40" />
+				<ACTION type="talent" param1="210923005" rate="30" />
+				<ACTION type="talent" param1="210923006" rate="20" max_count="2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="210923002" rate="10" />
+				<ACTION type="talent" param1="210923003" rate="10" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="210923008" rate="10" cycle="10" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923001" rate="30" />
+				<ACTION type="nothing" param1="5" rate="70" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

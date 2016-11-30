@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>					
+	<COLT name="굶주린 묘지늑대" npcid="113151">			
+		<COMBAT>			
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="211315111" rate="35" />
+				<ACTION type="talent" param1="211315112" rate="15" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40" >
+				<ACTION type="talent" param1="211315116" rate="5" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6" />
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6" />
+				<ACTION type="talent" param1="211315102" rate="5" cycle="30"/> 
+				
+				<ACTION type="talent" param1="211315111" rate="10" />
+				<ACTION type="talent" param1="211315112" rate="10" /> 
+				<ACTION type="talent" param1="211315113" rate="30" /> 
+				
+				<ACTION type="lua" param1="RunAround"  rate="10" cycle="20" />
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="211315114" rate="50" />  
+					<ACTION type="talent" param1="211315115" rate="50" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211315100" rate="20" />
+				<ACTION type="talent" param1="211315101" rate="20" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_113150:OnActWolfCry( ThisActor, Enemy )
+	--GLog( "NPC_113150:OnActWolfCry\n" )
+	CallAlly8m( ThisActor, Enemy )
+end
+
+	]]></SCRIPT>	
+</maiet>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족 치료사">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702701" rate="50" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0" param2="20">
+				<ACTION type="flee" param1="to_home" param2="3" max_count="1"/>	
+			</CHECK>
+			
+			<CHECK type="rage" param1="60">
+				<ACTION type="lua" param1="NPC_107027" param2="Regen" max_count="5" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80"/>
+				<ACTION type="talent" param1="210702307" rate="20"/>
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+
+--[[
+	힐받을 대상 선정. 일단 본인만 힐하도록.
+--]]
+function SearchToHeal(  ThisNPC )
+	return ThisNPC
+end 
+
+--[[
+	치유마법 시전
+--]]
+function NPC_107027:Heal( ThisNPC, Opponent )
+	local TALID_RENGOT_HEAL = 210702702
+	local Target = SearchToHeal( ThisNPC)
+	
+	--ThisNPC:Narration( "Heal" )
+	ThisNPC:MoveToActor( Target, TALID_RENGOT_HEAL )
+	ThisNPC:UseTalent( TALID_RENGOT_HEAL, Target )
+end
+
+--[[
+	HOT형 재생 마법 시전
+--]]
+function NPC_107027:Regen( ThisNPC, Opponent )
+	local TALID_RENGOT_REGEN = 210702703
+	local BUFID_REGEN = 80041
+	
+	if ThisNPC:CheckBuff( BUFID_REGEN ) then
+		return
+	end
+	
+	local Target = SearchToHeal( ThisNPC )
+	
+	--ThisNPC:Narration( "Regen" )
+	
+	if Target ~= ThisNPC then
+		ThisNPC:MoveToActor( Target, TALID_RENGOT_REGEN )
+	end
+	
+	ThisNPC:UseTalent( TALID_RENGOT_REGEN, Target )
+end
+
+	]]></SCRIPT>
+</maiet>

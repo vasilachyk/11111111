@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 해골 궁수	
+210923300	idle2
+210923301	활쏘기
+210923302	활쏘기(강)
+-->
+<maiet>
+	<COLT name="해골 궁수" npcid="109233" >
+		<COMBAT max_duration="-1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210923301" desc="활쏘기" rate="50" />
+				<ACTION type="talent" param1="210923302" desc="활쏘기(강)" rate="30" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923300" desc="idle2" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

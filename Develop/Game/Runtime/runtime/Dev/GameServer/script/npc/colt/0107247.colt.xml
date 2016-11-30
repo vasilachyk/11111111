@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 렌고트부족 폭탄  -->
+<maiet>
+	<COLT name="렌고트 폭탄">
+		<COMBAT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+--[[
+function NPC_107247:OnSpawn( Spawn )
+	local TALID_BOMBBOMB 	= 210724701
+	local TALID_BOMBIGNITE 	= 210724702
+	local Summoner = this:GetSummoner()
+	if Summoner == nil or Summoner:IsNull() then
+		this:Wait( BOMB_DELAY )
+		
+		this:SetDecayTime( 10 )
+		this:UseTalentSelf( TALID_BOMBBOMB )
+		this:NextAction()
+		
+		this:Die(this)
+	else
+		Summoner:WaitFor(this)
+		Summoner:Die(Summoner)
+
+		--this:Wait( BOMB_DELAY )
+		this:SetDecayTime( 10 )
+		this:UseTalentSelf( TALID_BOMBIGNITE )
+		this:UseTalentSelf( TALID_BOMBBOMB )
+		
+		this:NextAction()
+	end
+	
+end
+--]]
+
+	]]></SCRIPT>
+</maiet>

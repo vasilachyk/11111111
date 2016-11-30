@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY />
+    <SCENE>
+        <RTERRAIN>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY version="1.3">
+                <MAP_WIDTH type="int">
+                    <int>256</int>
+                </MAP_WIDTH>
+                <MAP_HEIGHT type="int">
+                    <int>256</int>
+                </MAP_HEIGHT>
+                <MAP_SIZE type="vec3">
+                    <vec3>20000.000000 20000.000000 0.000000</vec3>
+                </MAP_SIZE>
+                <MAP_NAME>Contaminated_Garden_2_boss_dis.dds</MAP_NAME>
+                <BASEMAP_NAME>Contaminated_Garden_2_boss_baked.dds</BASEMAP_NAME>
+                <CREATE_NAVEMESH type="bool">
+                    <bool>false</bool>
+                </CREATE_NAVEMESH>
+                <GRASS>Contaminated_Garden_2_boss_grass.grs</GRASS>
+                <LAYER type="array" size="4">
+                    <LAYERINFO index="0">
+                        <ALPHAMAP>Contaminated_Garden_2_boss_mask0.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="1">
+                        <ALPHAMAP>Contaminated_Garden_2_boss_mask1.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g06.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="2">
+                        <ALPHAMAP>Contaminated_Garden_2_boss_mask2.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g02.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>300.000000 300.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="3">
+                        <ALPHAMAP>Contaminated_Garden_2_boss_mask3.dds</ALPHAMAP>
+                        <TILEMAP type="specular">grandwall_rock_01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>400.000000 400.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                </LAYER>
+            </PROPERTY>
+        </RTERRAIN>
+        <DIRLIGHT>
+            <COMMON name="TerrainLightMap0">
+                <POSITION>9727.008789 9018.312500 402.375427</POSITION>
+                <DIRECTION>0.383798 0.548120 -0.743145</DIRECTION>
+                <UP>0.426250 0.608749 0.669131</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYSPECULAR>1.000</SKYSPECULAR>
+                <DOUBLE_SHADOW_INTENSITY>0.600</DOUBLE_SHADOW_INTENSITY>
+            </PROPERTY>
+        </DIRLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubLight">
+                <POSITION>57902.539063 41502.070313 462.805542</POSITION>
+                <DIRECTION>-0.718381 0.429663 -0.547099</DIRECTION>
+                <UP>-0.695631 -0.449390 0.560487</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.314 0.392 0.498</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_001">
+                <POSITION>57921.363281 41568.613281 466.709961</POSITION>
+                <DIRECTION>-0.367966 -0.925598 -0.088714</DIRECTION>
+                <UP>-0.071873 -0.066810 0.995174</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.290 0.184 0.325</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_002">
+                <POSITION>57860.949219 41460.191406 456.742401</POSITION>
+                <DIRECTION>0.966718 0.232756 0.106208</DIRECTION>
+                <UP>-0.052876 -0.224401 0.973061</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.263 0.318 0.267</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_2_boss.scene_001">
+                <POSITION>10000.000000 10000.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_2_boss.scene.xml</FILENAME>
+                <UMBRAID>138</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_001">
+                <POSITION>9604.109375 8076.534180 -0.000122</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_002">
+                <POSITION>6529.408203 8951.114258 -0.000122</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_003">
+                <POSITION>6590.641113 8504.276367 -0.000122</POSITION>
+                <DIRECTION>-0.956305 0.292372 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>37.870342 37.870342 37.870342</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_004">
+                <POSITION>6590.641113 8504.276367 -0.000122</POSITION>
+                <DIRECTION>-0.956305 0.292372 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>37.870342 37.870342 37.870342</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_005">
+                <POSITION>7623.156738 8972.756836 -0.000122</POSITION>
+                <DIRECTION>-0.275637 0.961262 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>37.870342 37.870342 37.870342</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_006">
+                <POSITION>8996.527344 6540.072266 -0.000122</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_007">
+                <POSITION>13600.863281 8498.916016 -0.000122</POSITION>
+                <DIRECTION>-0.987688 0.156434 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.210819 45.210819 45.210819</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_008">
+                <POSITION>13730.002930 9742.175781 -0.000122</POSITION>
+                <DIRECTION>-0.207912 0.978148 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.210819 45.210819 45.210819</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_009">
+                <POSITION>11211.346680 6526.656250 0.000000</POSITION>
+                <DIRECTION>0.874620 0.484810 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>45.103836 45.103836 45.103836</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_010">
+                <POSITION>12234.847656 7888.625000 0.000000</POSITION>
+                <DIRECTION>0.965926 -0.258819 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.103836 45.103836 45.103836</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_001">
+                <POSITION>8772.167969 12268.966797 216.391586</POSITION>
+                <DIRECTION>0.766044 0.642788 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_002">
+                <POSITION>13478.115234 9898.004883 0.000000</POSITION>
+                <DIRECTION>0.190809 0.981627 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_003">
+                <POSITION>7952.908691 7014.645020 0.000000</POSITION>
+                <DIRECTION>-0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_004">
+                <POSITION>9107.871094 13459.435547 -213.931625</POSITION>
+                <DIRECTION>0.994522 0.104528 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>29.699589 29.699589 29.699589</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BoleteMushroomCluster_RT_001">
+                <POSITION>12605.122070 8939.915039 0.000061</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BoleteMushroomCluster_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BoleteMushroomCluster_RT_002">
+                <POSITION>13762.568359 8736.624023 0.000061</POSITION>
+                <DIRECTION>0.838671 0.544639 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>41.297058 41.297058 41.297058</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BoleteMushroomCluster_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BoleteMushroomCluster_RT_003">
+                <POSITION>13112.219727 11106.647461 8.006364</POSITION>
+                <DIRECTION>0.642788 -0.766044 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>41.297058 41.297058 41.297058</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BoleteMushroomCluster_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_001">
+                <POSITION>6297.123047 8786.490234 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_002">
+                <POSITION>7108.220215 10243.124023 2132.077148</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_003">
+                <POSITION>6697.891602 8961.701172 2132.077148</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_004">
+                <POSITION>6752.158691 11220.384766 0.000000</POSITION>
+                <DIRECTION>-0.998630 0.052336 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_005">
+                <POSITION>7373.887695 10901.684570 0.000000</POSITION>
+                <DIRECTION>-0.207912 0.978148 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_006">
+                <POSITION>7868.157715 10780.032227 0.000000</POSITION>
+                <DIRECTION>0.669131 0.743145 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_007">
+                <POSITION>8585.929688 11048.536133 0.000000</POSITION>
+                <DIRECTION>0.997564 -0.069757 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_008">
+                <POSITION>8809.519531 11059.419922 0.000000</POSITION>
+                <DIRECTION>0.669131 0.743145 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>36.194145 36.194145 36.194145</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_009">
+                <POSITION>11043.591797 11104.929688 0.025780</POSITION>
+                <DIRECTION>0.788011 0.615662 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_010">
+                <POSITION>10793.933594 11328.451172 6.887334</POSITION>
+                <DIRECTION>-0.034899 0.999391 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_011">
+                <POSITION>12208.323242 11193.121094 -15.221910</POSITION>
+                <DIRECTION>-0.034899 0.999391 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_012">
+                <POSITION>13661.603516 10207.707031 0.025780</POSITION>
+                <DIRECTION>0.788011 0.615662 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>45.048351 45.048351 45.048351</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_LiveOak_RT_001">
+                <POSITION>11464.040039 13497.679688 0.000000</POSITION>
+                <DIRECTION>-0.258819 0.965926 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_LiveOak_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_LiveOak_RT_002">
+                <POSITION>6873.731934 12222.829102 0.000000</POSITION>
+                <DIRECTION>-0.544639 -0.838671 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_LiveOak_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+    </SCENE>
+</ROOT>
+<Umbra Synchronization="true" />

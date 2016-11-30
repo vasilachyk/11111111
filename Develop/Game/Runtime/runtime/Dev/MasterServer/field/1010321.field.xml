@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="101" minimap_name="map00101" loading_image_name="00101" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="25000" boundary_min_y="50000" boundary_max_x="50000" boundary_max_y="70000" weather_effect="true" fixed_time="Night" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_16" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="5" />
+                <ADD weather="HRN" percent="2" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="지그니프" x="38342.812500" y="61182.046875" z="-53.322636" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="800.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1500" roam_depth="200" combat_radius="7000" color="auto">
+            <NPC id="101000" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="101417" group="0" name="101417 촌장 클로드" x="33108.781250" y="58526.460938" z="264.233093" dir_x="-0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101417" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10141800" group="0" name="101418 가드병사" x="37699.984375" y="61544.468750" z="-53.639404" dir_x="-0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101418" default="true" rate="500" />
+            <NPC id="101419" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10141801" group="0" name="101418 가드병사" x="38059.070313" y="60613.972656" z="-53.638977" dir_x="-0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101418" default="true" rate="500" />
+            <NPC id="101419" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10141802" group="0" name="101418 가드병사" x="38416.078125" y="61889.753906" z="-52.145908" dir_x="-0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101418" default="true" rate="500" />
+            <NPC id="101419" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10141803" group="0" name="101418 가드병사" x="38843.628906" y="60507.667969" z="-53.639572" dir_x="-0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101418" default="true" rate="500" />
+            <NPC id="101419" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10141804" group="0" name="101418 가드병사" x="39192.316406" y="61331.628906" z="-53.638775" dir_x="-0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="101418" default="true" rate="500" />
+            <NPC id="101419" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10983200" group="0" name="안보이는벽" x="33288.941406" y="58730.988281" z="208.647491" dir_x="0.642787" dir_y="0.766045" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="109832" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="to 지그니프" x="33252.464844" y="57779.781250" z="246.187500" dir_x="-0.374607" dir_y="0.927184" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101000" name="MON_M 101000 지그니프" x="38681.214844" y="61370.292969" z="-52.639145" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10141700" name="클로드 이동" x="32618.150391" y="58393.718750" z="242.539154" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="지그니프 영역" x="32899.601563" y="58329.011719" z="218.004852" radius="500.000000" enabled="false" exit="1010320">
+            <EFFECT effect="sensor_trial_02" x="244.679688" y="246.621094" z="18.263275" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.500000" scale_y="0.500000" scale_z="0.500000" />
+            <WARP warp_type="field" title="to 리오드" condition="0" gate_type="auto" field="101" marker="1010320" />
+        </SENSOR>
+        <SENSOR id="2" name="부활지점" local="false" x="33262.332031" y="57777.875000" z="246.187500" radius="150.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="100" name="촌장이대화시작센서" local="false" x="32881.800781" y="58163.558594" z="246.187500" radius="1000.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

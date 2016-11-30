@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>					
+	<COLT name="굶주린 회색늑대" npcid="107052">
+		<COMBAT>			
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="210700811" rate="35" />
+				<ACTION type="talent" param1="210700812" rate="15" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6" />
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6" />
+				<ACTION type="talent" param1="210700802" rate="5" cycle="30"/> 
+				
+				<ACTION type="talent" param1="210700811" rate="10" />
+				<ACTION type="talent" param1="210700812" rate="10" /> 
+				<ACTION type="talent" param1="210700813" rate="30" /> 
+				
+				<ACTION type="lua" param1="RunAround"  rate="10" cycle="20" />
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="210700814" rate="50" />  
+					<ACTION type="talent" param1="210700815" rate="50" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210700800" rate="20" />
+				<ACTION type="talent" param1="210700801" rate="20" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_107052:OnActWolfCry( ThisActor, Enemy )
+	--GLog( "NPC_107052:OnActWolfCry\n" )
+	CallAlly8m( ThisActor, Enemy )
+end
+
+function NPC_107052:OnHitCapsule_1_0(HitInfo)
+	if (HitInfo.TalentID == 190551) then
+		this:GainBuff(110108)
+	elseif (HitInfo.TalentID == 190552) then
+		this:GainBuff(110109)
+	end
+end
+
+	]]></SCRIPT>	
+</maiet>

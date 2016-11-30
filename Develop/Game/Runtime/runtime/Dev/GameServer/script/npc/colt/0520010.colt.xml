@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="집사 다르엘 합침" npcid="520010">
+
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="say" param1="$$COLT_0520010_1"/>	
+					<ACTION type="talent" param1="252001007"/>
+					<ACTION type="talent" param1="252001001"/>
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>		
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="10" desc="뒤 공격"/>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="10" duration="5" desc="일반 공격2"/>
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="95" >
+			    <ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="10" desc="뒤 공격"/>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="10" duration="5" desc="일반 공격2"/>
+				<ACTION type="talent" param1="252001012" rate="10" duration="5" desc="지팡이 날리기 직선"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="85" param2="95">
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001002" duration="0" desc="날아서 회피(좌)"/>
+					<ACTION type="talent" param1="252001012" duration="5" desc="지팡이 날리기 직선"/>
+				</ACTION>
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001003" duration="0" desc="날아서 회피(우)"/>
+					<ACTION type="talent" param1="252001013" duration="5" desc="지팡이 날리기 주변"/>
+				</ACTION>
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001004" duration="0" desc="날아서 회피(뒤)"/>
+					<ACTION type="talent" param1="252001014" duration="5" desc="지팡이 날리기 주변2"/>
+				</ACTION>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="10" duration="5" desc="일반 공격2"/>
+				<ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="5" desc="뒤 공격"/>
+			</CHECK>
+
+			<CHECK type="hp" param1="60" param2="85">
+				<ACTION type="group" rate="5" cycle="45" desc="24.88">
+					<ACTION type="talent" param1="252001020" duration="0" desc="낮은 공중 부유 시작"/>
+					<ACTION type="talent" param1="252001021" duration="0" desc="낮은 공중 부유 읏샤"/>
+					<ACTION type="lua" param1="NPC_520010" param2="LevitationBigFire" desc="낮은 공중 부유 휘젓기" />
+				</ACTION>
+				<ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="10" desc="뒤 공격"/>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="10" duration="5" desc="일반 공격2"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="50" param2="60">
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="252001008" desc="고개돌리기(용모설명)"/>
+					<ACTION type="talent" param1="252001042" desc="눈부신 용모(간략)"/>
+				</ACTION>
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001002" duration="0" desc="날아서 회피(좌)"/>
+					<ACTION type="talent" param1="252001012" duration="5" desc="지팡이 날리기 직선"/>
+				</ACTION>
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001003" duration="0" desc="날아서 회피(우)"/>
+					<ACTION type="talent" param1="252001013" duration="5" desc="지팡이 날리기 주변"/>
+				</ACTION>
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001004" duration="0" desc="날아서 회피(뒤)"/>
+					<ACTION type="talent" param1="252001014" duration="5" desc="지팡이 날리기 주변2"/>
+				</ACTION>
+				<ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="10" desc="뒤 공격"/>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="10" duration="5" desc="일반 공격2"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001002" desc="날아서 회피(좌)"/>
+					<ACTION type="talent" param1="252001040" desc="눈부신 용모"/>
+				</ACTION>
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001003" desc="날아서 회피(우)"/>
+					<ACTION type="talent" param1="252001040" duration="0" desc="눈부신 용모"/>
+				</ACTION>
+				<ACTION type="group" rate="5">
+					<ACTION type="talent" param1="252001004" desc="날아서 회피(뒤)"/>
+					<ACTION type="talent" param1="252001040" duration="0" desc="눈부신 용모"/>
+				</ACTION>
+				<ACTION type="group" rate="3">
+					<ACTION type="talent" param1="252001002" desc="날아서 회피(좌)"/>
+					<ACTION type="talent" param1="252001030" rate="10" duration="0" desc="매직실드"/>
+				</ACTION>
+				<ACTION type="group" rate="3">
+					<ACTION type="talent" param1="252001003" desc="날아서 회피(우)"/>
+					<ACTION type="talent" param1="252001030" rate="10" duration="0" desc="매직실드"/>
+				</ACTION>
+				<ACTION type="group" rate="3">
+					<ACTION type="talent" param1="252001004" desc="날아서 회피(뒤)"/>
+					<ACTION type="talent" param1="252001030" rate="10" duration="0" desc="매직실드"/>
+				</ACTION>
+				<ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="10" desc="뒤 공격"/>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="10" duration="5" desc="일반 공격2"/>
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" desc="지팡이 없는 모드">
+			<DEFAULT>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="10" duration="5" desc="일반 공격2"/>
+				<ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="10" desc="뒤 공격"/>
+				<ACTION type="talent" param1="252001031" rate="20" desc="불쇼"/>
+			</DEFAULT>
+			<CHECK type="hp" param1="0" param2="20">
+				<ACTION type="talent" param1="252001010" rate="5" duration="5" desc="일반 공격1"/>
+				<ACTION type="talent" param1="252001011" rate="5" duration="5" desc="일반 공격2"/>
+				<ACTION type="lua" param1="NPC_520010" param2="BackAttack" rate="5" desc="뒤 공격"/>
+				<ACTION type="talent" param1="252001031" rate="20" desc="불쇼"/>
+				<ACTION type="talent" param1="252001044" rate="10" desc="눈부신 용모(넓음)"/>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="3" victory="252001051" desc="높은 공중 부유">
+			<DEFAULT>
+				<ACTION type="group" >
+					<ACTION type="talent" param1="252001052" rate="1" duration="0" desc="물건 발사(여러개)" />
+					<ACTION type="talent" param1="252001051" duration="0" desc="높은 공중 부유 끝"/>
+				</ACTION>
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="252001000" rate="20"  />
+				<ACTION type="nothing" param1="0" rate="50"/>
+			</DEFAULT>
+		</IDLE>
+		<!-- 기능 테스트용 주석 -->
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+function NPC_520010:Init(NPCID)
+	--[[
+		User Data
+		1: 가면
+		2: 지팡이
+		3~9: 미니언 ID
+	--]]
+	
+	NPC_520010.UD_PAIN 		= 1
+	NPC_520010.UD_STAFF 	= 2
+	NPC_520010.UD_DATASIZE	= 2
+	NPC_ReserveUserData( NPCID, NPC_520010.UD_DATASIZE )
+	
+	NPC_520010.MODE_DEFAULT 		= 0
+	NPC_520010.MODE_BREAKSTICK 		= 1
+	NPC_520010.MODE_LEVITATION 		= 2
+	NPC_520010.MODE_HIGHTLEVITATION = 3
+
+	local MaxHP 					= NPC_520010.MaxHP
+	NPC_520010.LIMIT_PAIN			= MaxHP * 0.05
+	NPC_520010.LIMIT_BREAKSTICK		= MaxHP * 0.7		-- 지팡이 
+
+	NPC_520010.BPART_MASK 	= 1
+	NPC_520010.BPART_STAFF 	= 2
+	
+	NPC_520010.TALENT_Levitation_Fire 		= 252001021
+	NPC_520010.TALENT_Levitation_Fire2 		= 252001023
+	NPC_520010.TALENT_Levitation_Finish 	= 252001022
+	NPC_520010.TALENT_HightLevitation_Start = 252001050
+	NPC_520010.TALENT_HightLevitation_Finish = 252001051
+	NPC_520010.TALENT_ShowFace_Fast			= 252001042
+	NPC_520010.TALENT_ShowFace_Say			= 252001008
+	
+	NPC_520010.TALENT_PAIN 					= 252001005
+	NPC_520010.TALENT_BreakStick 			= 252001006
+	NPC_520010.TALENT_BackAttack 			= 252001015 
+
+	NPC_520010.MARKER_Levitation = 20111111
+	
+	-- 책
+	NPC_520010.BOOK_SpawnID 	= 20111111
+	NPC_520010.BOOK_COUNT 		= 5
+	NPC_520010.BOOK_Levitation 	= 252001100
+	NPC_520010.BOOK_FIRE 		= 252001101
+	NPC_520010.BOOK_LANDING		= 252001110
+	
+	-- 화로
+	NPC_520010.BRAZIER_SpawnID 		= 20111121
+	NPC_520010.BRAZIER_COUNT		= 2 
+	NPC_520010.BRAZIER_Levitation 	= 252001600
+	NPC_520010.BRAZIER_FIRE 		= 252001601
+	NPC_520010.BRAZIER_LANDING		= 252001610
+	
+	-- 의자
+	NPC_520010.CHAIR_SpawnID 		= 20111131
+	NPC_520010.CHAIR_COUNT			= 2 
+	NPC_520010.CHAIR_Levitation 	= 252001700
+	NPC_520010.CHAIR_FIRE 			= 252001701
+	NPC_520010.CHAIR_LANDING		= 252001710
+
+	
+	NPC_520010.TIMER_Levitation_ID = 1
+	NPC_520010.TIMER_Levitation_TIME = 10
+	
+	NPC_520010.TIMER_HightLevitation_ID = 2
+	NPC_520010.TIMER_HightLevitation_TIME = 5
+	
+end
+
+--	전투 전 이벤트(어서오시오)
+function NPC_520010:OnSayNow( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	ThisNPC:SayNow("$$COLT_0520010_3")
+end
+
+--	전투 중 이벤트(용모설명)
+function NPC_520010:OnSayNow2( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	ThisNPC:SayNow("$$COLT_0520010_6")
+end
+
+--	전투 중 이벤트(지팡이 놓치기)
+function NPC_520010:OnSayNow3( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	ThisNPC:SayNow("$$COLT_0520010_7")
+end
+
+--	전투 중 이벤트(불쇼)
+function NPC_520010:OnSayNow4( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	ThisNPC:NarrationNow("$$COLT_0520010_17")
+end
+
+--	전투 중 이벤트(공중부유)
+function NPC_520010:OnSayNow5( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	ThisNPC:NarrationNow("$$COLT_0520010_14")
+end
+
+--	뒤공격
+function NPC_520010:BackAttack( ThisNPC, Enemy )
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	local IsRear = Enemy:IsRear( ThisNPC )
+	
+	if Dist < 500 and IsRear then
+		if ThisNPC:GetMode() == 0 then
+			ThisNPC:UseTalentSelf( NPC_520010.TALENT_BackAttack )
+		end
+	end 
+end
+
+function NPC_520010:OnBPartRecover()  
+	this:SetUserData( NPC_520010.UD_MASK, 0 )
+	this:SetUserData( NPC_520010.UD_STAFF, 0 )
+end
+
+-- 공중 부양 시작
+function NPC_520010:OnStartLevitation( ThisActor, Enemy )
+	--GLog("NPC_520010:OnStartLevitation()\n")
+	
+	local Field = ThisActor:GetField()
+	local Minion 
+	
+	for i = 0, NPC_520010.BOOK_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BOOK_SpawnID+i )
+		Minion:UseTalentSelf( NPC_520010.BOOK_Levitation )
+	end -- for
+
+	for i = 0, NPC_520010.BRAZIER_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BRAZIER_SpawnID+i )
+		Minion:UseTalentSelf( NPC_520010.BRAZIER_Levitation )
+	end -- for
+
+	for i = 0, NPC_520010.CHAIR_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.CHAIR_SpawnID+i )
+		Minion:UseTalentSelf( NPC_520010.CHAIR_Levitation )
+	end -- for
+	
+	local ThisNPC = AsNPC(ThisActor)
+	local dice = math.random(0,2)		
+	if( dice == 0) then 
+		ThisNPC:NarrationNow("$$COLT_0520010_13")
+	end
+	if( dice == 1) then 
+		ThisNPC:NarrationNow("$$COLT_0520010_15")
+	end
+	if( dice == 2) then 
+		ThisNPC:NarrationNow("$$COLT_0520010_16")
+	end
+	--ThisNPC:SetTimer( NPC_520010.TIMER_HightLevitation_ID, NPC_520010.TIMER_HightLevitation_TIME )
+end
+
+-- 공중 부양 발사
+function NPC_520010:OnActLevitation( ThisActor, Enemy )
+	--GLog("NPC_520010:OnActLevitation()\n")
+
+	local Field = ThisActor:GetField()
+	local Minion
+	local index = math.random(0, NPC_520010.BOOK_COUNT-1)
+	
+	for i = 0, NPC_520010.BOOK_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BOOK_SpawnID + index )
+		if Minion:GetCurrentTalent() == -1 then break end
+		index = index + 1
+		if NPC_520010.BOOK_COUNT <= index then
+			index = 0
+		end
+	end -- for
+	
+	if Minion:GetCurrentTalent() ~= -1 then return end
+	
+	AsNPC(ThisActor):FaceTo( Minion )
+	Minion:UseTalent( NPC_520010.BOOK_FIRE + (index * 100), Enemy )
+end
+
+function NPC_520010:OnActLevitationBig( ThisActor, Enemy )
+	local Field = ThisActor:GetField()
+	local Minion
+	local index = math.random( 0, NPC_520010.BRAZIER_COUNT-1 )
+
+	for i = 0, NPC_520010.BRAZIER_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BRAZIER_SpawnID + index )
+		if Minion:GetCurrentTalent() == -1 then break end
+		index = index + 1
+		if NPC_520010.BRAZIER_COUNT <= index then
+			index = 0
+		end
+	end -- for
+	
+	if Minion:GetCurrentTalent() == -1 then 
+		Minion:UseTalent( NPC_520010.BRAZIER_FIRE, Enemy )
+		return
+	end
+
+	index = math.random( 0, NPC_520010.CHAIR_COUNT-1 )
+
+	for i = 0, NPC_520010.CHAIR_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.CHAIR_SpawnID + index )
+		if Minion:GetCurrentTalent() == -1 then break end
+		index = index + 1
+		if NPC_520010.CHAIR_COUNT <= index then
+			index = 0
+		end
+	end -- for
+	
+	if Minion:GetCurrentTalent() == -1 then
+		Minion:UseTalent( NPC_520010.CHAIR_FIRE, Enemy )
+	end
+end
+
+function NPC_520010:OnActLevitationMultiple( ThisActor, Enemy )
+	local Field = ThisActor:GetField()
+	local Minion
+	local Target
+	
+	for i = 0, NPC_520010.BOOK_COUNT-1 do
+--		GLog("NPC_520010:OnActLevitationMultiple() "..NPC_520010.BOOK_SpawnID + i.." "..NPC_520010.BOOK_FIRE + (i * 100).."\n")
+		Minion = Field:GetSpawnNPC( NPC_520010.BOOK_SpawnID + i )
+		Target = AsNPC(ThisActor):Aggro("random", 0)
+		Minion:Wait(i)
+		Minion:UseTalent( NPC_520010.BOOK_FIRE + (i * 100), Target )
+	end
+	
+	for i = 0, NPC_520010.BRAZIER_COUNT-1 do
+		-- GLog("1")
+		Minion = Field:GetSpawnNPC( NPC_520010.BRAZIER_SpawnID + i )
+		Target = AsNPC(ThisActor):Aggro("random", 0)
+		Minion:Wait((i*2)+5)
+		Minion:UseTalent( NPC_520010.BRAZIER_FIRE, Target )
+	end
+	
+	for i = 0, NPC_520010.CHAIR_COUNT-1 do
+		-- GLog("2")
+		Minion = Field:GetSpawnNPC( NPC_520010.CHAIR_SpawnID + i )
+		Target = AsNPC(ThisActor):Aggro("random", 0)
+		Minion:Wait((i*2)+6)
+		Minion:UseTalent( NPC_520010.CHAIR_FIRE, Target )
+	end
+end
+
+
+-- 공중 부양 끝
+function NPC_520010:OnFinishLevitation( ThisActor, Enemy )
+--	GLog("NPC_520010:OnFinishLevitation()\n")
+		
+	local Field = ThisActor:GetField()
+	local Minion 
+	
+	for i = 0, NPC_520010.BOOK_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BOOK_SpawnID+i )
+		--Minion:ClearJob()
+		Minion:UseTalentSelf( NPC_520010.BOOK_LANDING )
+	end -- for
+
+	for i = 0, NPC_520010.BRAZIER_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BRAZIER_SpawnID+i )
+		--Minion:ClearJob()
+		Minion:UseTalentSelf( NPC_520010.BRAZIER_LANDING )
+	end -- for
+
+	for i = 0, NPC_520010.CHAIR_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.CHAIR_SpawnID+i )
+		--Minion:ClearJob()
+		Minion:UseTalentSelf( NPC_520010.CHAIR_LANDING )
+	end -- for
+end
+
+
+
+-- 높은 공중 부양 시작
+function NPC_520010:OnStartHightLevitation( ThisActor, Enemy )
+	--GLog("NPC_520010:OnStartHightLevitation()\n")
+	
+	local Field = ThisActor:GetField()
+	local Minion 
+	
+	for i = 0, NPC_520010.BOOK_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BOOK_SpawnID+i )
+		Minion:UseTalentSelf( NPC_520010.BOOK_Levitation )
+	end -- for
+
+	for i = 0, NPC_520010.BRAZIER_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.BRAZIER_SpawnID+i )
+		Minion:UseTalentSelf( NPC_520010.BRAZIER_Levitation )
+	end -- for
+
+	for i = 0, NPC_520010.CHAIR_COUNT-1 do
+		Minion = Field:GetSpawnNPC( NPC_520010.CHAIR_SpawnID+i )
+		Minion:UseTalentSelf( NPC_520010.CHAIR_Levitation )
+	end -- for
+	
+	local ThisNPC = AsNPC(ThisActor)
+	ThisNPC:SetTimer( NPC_520010.TIMER_HightLevitation_ID, NPC_520010.TIMER_HightLevitation_TIME )
+end
+
+-- 눈부신 용모 설명.
+function NPC_520010:OnActShowFace( ThisActor, Enemy )
+	ThisActor:NarrationNow("$$COLT_0520010_4")
+end
+
+
+-- 공중 부유 발사 큰거
+-- <ACTION type="lua" param1="NPC_520010" param2="LevitationBigFire"/>
+
+function NPC_520010:LevitationBigFire( ThisNPC, Enemy )
+	ThisNPC:MoveToMarker( NPC_520010.MARKER_Levitation )
+	ThisNPC:UseTalentSelf( NPC_520010.TALENT_Levitation_Fire2 )
+	ThisNPC:UseTalentSelf( NPC_520010.TALENT_HightLevitation_Start )	
+end
+
+function NPC_520010:OnDie( despawnInfo )
+	NPC_520010:OnFinishLevitation( this, nil )
+end
+
+function NPC_520010:OnTimer( timerID )
+	--GLog("NPC_520010:OnTimer() "..timerID.."\n")
+	
+	-- 공중 부유 상태에서 일정 시간이 지나면 내려온다.
+	if timerID == NPC_520010.TIMER_Levitation_ID then
+		this:UseTalentSelf( NPC_520010.TALENT_Levitation_Finish )
+	elseif timerID == NPC_520010.TIMER_HightLevitation_ID then
+		this:UseTalentSelf( NPC_520010.TALENT_HightLevitation_Finish )
+	end
+end
+
+-- 지팡이, 가면 떨구기
+function NPC_520010:AccDamage( ThisNPC, HitInfo )
+	local stickAcc = 0
+
+	-- Acc for pain
+	local painAcc = ThisNPC:GetUserData( NPC_520010.UD_PAIN ) + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_520010.UD_PAIN, painAcc )
+	
+	-- Acc for Bparts
+	if ThisNPC:CheckBPart( NPC_520010.BPART_STAFF ) == false then 
+		stickAcc = ThisNPC:GetUserData( NPC_520010.UD_STAFF ) + HitInfo.Damage
+		ThisNPC:SetUserData( NPC_520010.UD_STAFF, stickAcc )
+	end
+	
+	-- 죽을 때 마스크 벗기기.
+	if ThisNPC:GetHP() <= HitInfo.Damage then
+	--	GLog("NPC_520010:AccDamage() Break BPART_MASK\n")
+		ThisNPC:BreakPart( NPC_520010.BPART_MASK , HitInfo.Attacker )
+	end
+	
+	-- 공중 부유 중에는 pain을 하지 않는다.
+	if NPC_520010.MODE_BREAKSTICK < ThisNPC:GetMode() or
+		ThisNPC:IsCooldown( NPC_520010.TALENT_PAIN ) or
+		ThisNPC:GetCurrentTalent() == NPC_520010.TALENT_Levitation_Finish or
+		ThisNPC:GetCurrentTalent() == NPC_520010.TALENT_HightLevitation_Finish or
+		ThisNPC:GetCurrentTalent() == NPC_520010.TALENT_ShowFace_Fast or
+		ThisNPC:GetCurrentTalent() == NPC_520010.TALENT_ShowFace_Say then
+		
+		return Hitinfo
+	end
+	
+	-- pain처리.
+	if NPC_520010.LIMIT_BREAKSTICK <= stickAcc then
+		ThisNPC:ClearJob()
+		ThisNPC:NonDelaySay("$$COLT_0520010_2")
+		ThisNPC:UseTalentSelf( NPC_520010.TALENT_BreakStick )
+		ThisNPC:BreakPart( NPC_520010.BPART_STAFF , HitInfo.Attacker )
+		ThisNPC:SetUserData( NPC_520010.UD_STAFF, 0 )
+		ThisNPC:SetUserData( NPC_520010.UD_PAIN, 0 )
+		
+	elseif NPC_520010.LIMIT_PAIN <= painAcc then
+		ThisNPC:ClearJob()
+		local dice = math.random(0,6)		
+		if( dice == 0) then 
+			ThisNPC:SayNow("$$COLT_0520010_9")
+		end
+		if( dice == 1) then 
+			ThisNPC:SayNow("$$COLT_0520010_10")
+		end
+		if( dice == 2) then 
+			ThisNPC:SayNow("$$COLT_0520010_11")
+		end
+		if( dice == 3) then 
+			ThisNPC:SayNow("$$COLT_0520010_12")
+		end
+		if( dice == 4) then 
+			ThisNPC:SayNow("$$COLT_0520010_18")
+		end
+		if( dice == 5) then 
+			ThisNPC:SayNow("$$COLT_0520010_19")
+		end
+		if( dice == 6) then 
+			ThisNPC:SayNow("$$COLT_0520010_20")
+		end
+		ThisNPC:UseTalentSelf( NPC_520010.TALENT_PAIN )
+		ThisNPC:SetUserData( NPC_520010.UD_PAIN, 0 )
+	end
+	
+	return HitInfo
+end
+
+
+-- 전체
+function NPC_520010:OnHitCapsule_1_0(HitInfo)
+	return NPC_520010:AccDamage( this, HitInfo )
+end
+
+function NPC_520010:OnHitCapsule_2_0(HitInfo)
+	return NPC_520010:AccDamage( this, HitInfo )
+end
+
+function NPC_520010:OnHitCapsule_3_0(HitInfo)
+	return NPC_520010:AccDamage( this, HitInfo )
+end
+
+
+function NPC_520010:OnFinishAndAggroShort( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_520010:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "random", 0 )
+end
+
+	]]></SCRIPT>
+</maiet>

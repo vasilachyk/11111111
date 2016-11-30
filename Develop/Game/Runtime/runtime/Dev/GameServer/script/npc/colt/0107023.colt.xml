@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+렌고트부족공작원  
+
+210702301	일반공격(근접)
+210702302	일반활쏘기
+210702303	빠른활쏘기
+210702304	독화살
+210702305	도발
+210702306	idle1
+210702307	idle2
+210702308	다리봉쇄
+-->
+<maiet>
+	<COLT name="렌고트부족공작원">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702302" rate="20" />
+				<ACTION type="talent" param1="210702303" rate="40" />
+				<ACTION type="talent" param1="210702304" rate="40" />
+			</DEFAULT>
+			
+			<!-- 적이 아주멀리 있을 경우 -->
+			<CHECK type="distance" param1="1500">
+				<ACTION type="distance" param1="1000" param2="1000" duration="2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="flee" param1="from_enemy" param2="1.5" cycle="15" />  <!-- 거리 벌리기 -->
+				</CHECK>
+			</CHECK>
+
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param1="0" param2="300">
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702301" rate="40" />  <!-- 일반공격(근접) -->
+				<ACTION type="talent" param1="210702302" rate="10" />
+				<ACTION type="talent" param1="210702303" rate="10" />
+				<ACTION type="talent" param1="210702304" rate="10" />
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80" />
+				<ACTION type="talent" param1="210702307" rate="20" />
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+</maiet>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#르왕키 친위대 마법사, 광기의 코볼트 마법사, 마코트 일족 마법사
+211101101	지팡이공격
+211101102	화염화살
+211101103	화염기둥
+-->
+<maiet>
+	<COLT name="르왕키 친위대 마법사" npcid="111008">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="211101101" rate="25" desc="지팡이공격" />
+				<ACTION type="talent" param1="211101102" rate="25" desc="화염화살" />
+				<ACTION type="talent" param1="211101103" rate="25" desc="화염기둥" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="1000" >
+				<ACTION type="distance" param1="750" param2="800" rate="50"/>
+				<ACTION type="talent" param1="211101102" rate="40" desc="화염화살" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="5"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="5"/>
+				
+				<ACTION type="lua" param1="SideStep" rate="30" cycle="20"/>
+				
+				<ACTION type="talent" param1="211101101" rate="10" desc="지팡이공격" />
+				<ACTION type="talent" param1="211101102" rate="30" desc="화염화살" />
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

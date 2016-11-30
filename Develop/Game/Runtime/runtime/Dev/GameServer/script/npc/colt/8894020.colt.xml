@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="고블린골렘">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="211001112" rate="8" duration="0"/>
+				
+				<ACTION type="lua" param1="NPC_8894020" param2="BackAttack" rate="20" />
+				<ACTION type="talent" param1="211001102" rate="20" /> <!-- 평타 1 -->
+				<ACTION type="talent" param1="211001116" rate="20" /> <!-- 평타 2 -->
+				<ACTION type="talent" param1="211001109" rate="20" /> <!-- 잡기 -->
+				
+				<ACTION type="talent" param1="211001106" rate="5" duration="0" />
+				<ACTION type="talent" param1="211001113" rate="5" duration="0" />
+				<ACTION type="talent" param1="211001114" rate="5" duration="0" />
+				<ACTION type="talent" param1="211001115" rate="5" duration="0" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="20">
+				<ACTION type="talent" param1="211001121" duration="0" max_count="1" />
+			</CHECK>
+			
+			<!-- 파트 파괴후 모드 변경 -->
+			<CHECK type="breakpart" param1="1">
+				<ACTION type="talent" param1="211001121" duration="0" max_count="1" />
+			</CHECK>
+			
+			<!-- 분노 패턴 충격파 -->
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="200">
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="211001108" duration="0" />
+						<!--<ACTION type="aggro" param1="short" param2="30" cycle="20"/>-->
+					</ACTION>
+					<!--<ACTION type="aggro" param1="short" param2="30" rate="50" cycle="30"/>-->
+				</CHECK>
+			</CHECK>
+			
+			<!-- 적이 아주멀리 있을 경우 -->
+			<CHECK type="distance" param1="700">
+				<ACTION type="talent" param1="211001105" rate="100" /> 										<!-- 덮치기 -->
+				<ACTION type="distance" param1="400" param2="400" rate="70" duration="2" /> 		<!-- 거리좁히기 -->
+			</CHECK>
+			
+			<CHECK type="distance" param1="400">
+				<ACTION type="talent" param1="211001112" rate="8" duration="0"/>
+				
+				<ACTION type="talent" param1="211001109" rate="40" />										<!-- 잡기 -->
+				<ACTION type="talent" param1="211001102" rate="15" /> 										<!-- 근접공격 -->
+				<ACTION type="talent" param1="211001104" rate="25" /> 										<!-- 중거리공격 손바닥치기 -->
+				
+				<ACTION type="talent" param1="211001106" rate="5" duration="0" />
+				<ACTION type="talent" param1="211001113" rate="5" duration="0" />
+				<ACTION type="talent" param1="211001114" rate="5" duration="0" />
+				<ACTION type="talent" param1="211001115" rate="5" duration="0" />
+			</CHECK>
+		</COMBAT>
+		
+		<!-- 파츠 파괴 당한 후 패턴-->
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="lua" param1="NPC_8894020" param2="BackAttack" rate="20" />
+				<ACTION type="talent" param1="211001122" rate="10" /> <!-- 평타1 -->
+				<ACTION type="talent" param1="211001132" rate="10" /> <!-- 평타2 -->
+				<ACTION type="talent" param1="211001129" rate="20" /> <!-- 잡기 -->
+			</DEFAULT>
+
+			<!-- 분노 패턴 충격파 -->
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="200">
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="211001128" duration="0"/>
+						<!--<ACTION type="aggro" param1="short" param2="30" cycle="20"/>-->
+					</ACTION>
+					<!--<ACTION type="aggro" param1="short" param2="30" rate="50" cycle="30"/>-->
+				</CHECK>
+			</CHECK>
+			
+			<!-- 적이 아주멀리 있을 경우 -->
+			<CHECK type="distance" param1="700">
+				<ACTION type="talent" param1="211001125" rate="20" /> 										<!-- 덮치기 -->
+				<ACTION type="distance" param1="400" param2="400" rate="70" duration="2" /> 		<!-- 거리좁히기 -->
+			</CHECK>
+	
+			<CHECK type="distance" param1="400">
+				<ACTION type="talent" param1="211001129" rate="30" />		    							     <!-- 잡기 -->
+				<ACTION type="talent" param1="211001122" rate="10" /> 										<!-- 근접공격 -->
+				<ACTION type="talent" param1="211001124" rate="20" /> 										<!-- 중거리공격 손바닥치기 -->
+			</CHECK>
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<!--<ACTION type="lua" param1="NPC_8894020" param2="OnAggro"/>-->
+				<ACTION type="group">
+					<ACTION type="lua" param1="PuppetFinish"/>
+					<ACTION type="talent" param1="211001107"/>
+				</ACTION>
+			</DEFAULT>
+		</AGGRO>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+			<CHECK type="mode" param1="0">
+				<ACTION type="talent" param1="211001101" rate="10" />
+				<ACTION type="nothing" param1="2" rate="90"/>
+			</CHECK>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT>
+	 <![CDATA[ 
+ function NPC_8894020:Init( NPCID )
+	--[[  USERDATA 
+	1 : 보석에 누적되는 데미지
+	2 : Pain패턴을 보이기 위한 누적 데미지
+	3 : 보석의 밝기 State값( 체력에 따라 0~4의 값을 가진다. )
+	--]]
+	NPC_ReserveUserData( NPCID, 3 )
+	
+	NPC_8894020.LimitForBreakJewel 	= NPC_8894020.MaxHP*2/4
+	
+	NPC_8894020.TalIdBackAttack0 	=  211001103
+	NPC_8894020.TalIdBackAttack1 	=  211001123
+	NPC_8894020.TalIdEnrage			= 	211001107
+	
+	NPC_8894020.BufIdRegen1			= 	40112
+	NPC_8894020.BufIdRegen2			= 	40113
+	NPC_8894020.BufIdRegen3			= 	40114
+	NPC_8894020.BufIdRegen4			= 	40115
+	NPC_8894020.BufIdRegen5			= 	40116
+	
+	NPC_8894020.BufIdBerserk			= 	40111
+	
+	NPC_8894020.TalIdPain0_1			= 	211001117
+	NPC_8894020.TalIdPain0_2			=  211001118
+	NPC_8894020.TalIdPain1_1			= 	211001133
+	NPC_8894020.TalIdPain2_2			=  211001134
+	
+end
+
+--	방향과 거리에 따라서 근접 평타나 뒷발길질 공격을 수행
+function NPC_8894020:BackAttack( ThisNPC, Enemy )
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	local IsRear = Enemy:IsRear( ThisNPC )
+	
+	if Dist < 200 and IsRear then
+		-- 뒤에있을경우 뒷발길질
+		if ThisNPC:GetMode() == 0 then
+			ThisNPC:UseTalentSelf( NPC_8894020.TalIdBackAttack0 )
+		else
+			ThisNPC:UseTalentSelf( NPC_8894020.TalIdBackAttack1 )
+		end
+	end 
+end
+
+function NPC_8894020:OnSpawn( Info )
+	this:GainBuff( NPC_8894020.BufIdRegen1 )
+end 
+
+function NPC_8894020:ProcessHitBody( ThisNPC, HitInfo )
+	if not ThisNPC:CheckBPart( 1 ) then
+		HitInfo.Damage = 1
+	end
+	
+	return HitInfo
+end
+
+function NPC_8894020:ProcessHitJewel( ThisNPC, HitInfo )
+	
+	if not HitInfo.Attacker:IsFront(ThisNPC) then
+		return NPC_8894020:ProcessHitBody( ThisNPC, HitInfo )
+	end
+	
+	NPC_8894020:ProcessPain( ThisNPC, HitInfo )
+	
+	-- 가슴의 보석이 빠졌으면 체크를 중지한다.
+	if ThisNPC:CheckBPart( 1 ) or ThisNPC:GetCurrentTalent() == NPC_8894020.TalIdEnrage then
+		return HitInfo
+	end
+	
+	local DmgAcc = ThisNPC:GetUserData( 1 ) + HitInfo.Damage
+	ThisNPC:SetUserData( 1, DmgAcc )
+	
+	-- 파츠 파괴 체크
+	if DmgAcc >= NPC_8894020.LimitForBreakJewel and HitInfo.Attacker:IsPlayer() then
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( 1, HitInfo.Attacker )
+		NPC_8894020:RemoveBuff( ThisNPC, ThisNPC:GetUserData( 3 ) )
+		ThisNPC:GainBuff( NPC_8894020.BufIdBerserk, 0, 0 )
+		--ThisNPC:Aggro("random", 0)
+		
+		ThisNPC:UseTalentSelf( NPC_8894020.TalIdEnrage )
+		
+		return HitInfo
+	end
+	
+	-- 보석 밝기값 조절
+	local State = ThisNPC:GetUserData( 3 )
+	local diff = NPC_8894020.LimitForBreakJewel - DmgAcc
+	local NewState = math.floor( 5-(diff/NPC_8894020.LimitForBreakJewel)*5 )
+	--GLog("State "..State.." NewState "..NewState.."\n")
+	
+	if State ~= NewState then
+		ThisNPC:SetUserData( 3, NewState )
+		NPC_8894020:RemoveBuff( ThisNPC, State )
+		NPC_8894020:GainBuff( ThisNPC, NewState )
+	end
+	
+	return HitInfo
+end
+
+function NPC_8894020:ProcessPain( ThisNPC, HitInfo )
+	local TotDamage  = ThisNPC:GetUserData( 2 ) + HitInfo.Damage
+	local LimitValue = ThisNPC:GetMaxHP()/10
+
+	ThisNPC:SetUserData( 2, TotDamage )		
+
+	if not (TotDamage > LimitValue) or not ChkMFForHitReaction(HitInfo) then return end
+	
+	local Pain1ID = NPC_8894020.TalIdPain0_1
+	local Pain2ID = NPC_8894020.TalIdPain0_2
+
+	if ThisNPC:GetMode() ~= 0 then
+		Pain1ID = NPC_8894020.TalIdPain1_1
+		Pain2ID = NPC_8894020.TalIdPain1_2
+	end
+
+	if not ThisNPC:IsCooldown( Pain1ID ) then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( Pain1ID )
+		ThisNPC:SetUserData( 2, 0)
+	elseif not ThisNPC:IsCooldown( Pain2ID ) then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( Pain2ID )
+		ThisNPC:SetUserData( 2, 0)
+	end
+end
+
+function NPC_8894020:RemoveBuff( ThisNPC, State )
+	--GLog( "NPC_8894020:RemoveBuffByState" .. State .."\n" )
+	
+	if State == 0 then
+		ThisNPC:RemoveBuff( NPC_8894020.BufIdRegen1 )
+	elseif State == 1 then
+		ThisNPC:RemoveBuff( NPC_8894020.BufIdRegen2 )
+	elseif State == 2 then
+		ThisNPC:RemoveBuff( NPC_8894020.BufIdRegen3 )
+	elseif State == 3 then
+		ThisNPC:RemoveBuff( NPC_8894020.BufIdRegen4 )
+	elseif State == 4 then
+		ThisNPC:RemoveBuff( NPC_8894020.BufIdRegen5 )
+	end
+end
+
+function NPC_8894020:GainBuff( ThisNPC, State )
+	--GLog( "NPC_8894020:GainBuffByState" .. State .."\n" )
+	
+	if State == 0 then
+		ThisNPC:GainBuff( NPC_8894020.BufIdRegen1 )
+	elseif State == 1 then
+		ThisNPC:GainBuff( NPC_8894020.BufIdRegen2 )
+	elseif State == 2 then
+		ThisNPC:GainBuff( NPC_8894020.BufIdRegen3 )
+	elseif State == 3 then
+		ThisNPC:GainBuff( NPC_8894020.BufIdRegen4 )
+	elseif State == 4 then
+		ThisNPC:GainBuff( NPC_8894020.BufIdRegen5 )
+	end
+end
+
+function NPC_8894020:OnHitCapsule_1_0(HitInfo)
+	return NPC_8894020:ProcessHitJewel( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_1_1(HitInfo)
+	return NPC_8894020:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_2_0(HitInfo)
+	return NPC_8894020:ProcessHitJewel( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_2_1(HitInfo)
+	return NPC_8894020:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_2_2(HitInfo)
+	return NPC_8894020:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_2_3(HitInfo)
+	return NPC_8894020:ProcessHitJewel( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_3_0(HitInfo)
+	return NPC_8894020:ProcessHitJewel( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_3_1(HitInfo)
+	return NPC_8894020:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_3_2(HitInfo)
+	return NPC_8894020:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_3_3(HitInfo)
+	return NPC_8894020:ProcessHitJewel( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_4_0(HitInfo)
+	return NPC_8894020:ProcessHitJewel( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_5_0(HitInfo)
+	return NPC_8894020:ProcessHitJewel( this, HitInfo )
+end
+
+function NPC_8894020:OnHitCapsule_5_1(HitInfo)
+	return NPC_8894020:ProcessHitBody( this, HitInfo )
+end
+	]]>
+	</SCRIPT>
+</maiet>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="Cyndea for Cave Rescure Mission (with threaten talent)" npcid="103063">
+		<COMBAT mode="0">
+			<DEFAULT comment="training mode (hp 90~100%)">
+				<ACTION type="talent" param1="210306017" rate="10" duration="0" comment="left dodge" />
+				<ACTION type="talent" param1="210306018" rate="10" duration="0" comment="right dodge" />
+				<ACTION type="talent" param1="210306010" rate="40" comment="swing twice" />
+				<ACTION type="talent" param1="210306011" rate="40" comment="strike ground" />
+			</DEFAULT>
+
+			<CHECK type="distance" param1="1500">
+				<ACTION type="talent" param1="210306021" rate="100" comment="leap attack" />
+			</CHECK>
+
+			<CHECK type="hp" param1="40" param2="90" comment="intermediate mode (hp 40~90%)">
+				<ACTION type="talent" param1="210306014" rate="12" duration="0" cycle="30" comment="ranged enemy threaten" />
+				<ACTION type="talent" param1="210306017" rate="5" duration="0" comment="left dodge" />
+				<ACTION type="talent" param1="210306018" rate="5" duration="0" comment="right dodge" />
+				<ACTION type="talent" param1="210306015" rate="4" duration="0" comment="back dodge" />
+				<ACTION type="talent" param1="210306010" rate="19" comment="swing twice" />
+				<ACTION type="talent" param1="210306011" rate="19" comment="strike ground" />
+				<ACTION type="talent" param1="210306060" rate="12" comment="combo attack 1/2 (to mode 2)" />
+				<ACTION type="talent" param1="210306013" rate="12" comment="forward leap strike" />
+				<ACTION type="talent" param1="210306070" rate="12" duration="0" comment="rush attack (to mode 3)" />
+			</CHECK>
+
+			<CHECK type="hp" param1="0" param2="40" comment="berserk mode (hp 0~40%)">
+				<ACTION type="talent" param1="210306014" rate="15" duration="0" cycle="20" comment="ranged enemy threaten" />
+				<ACTION type="talent" param1="210306017" rate="2" duration="0" comment="left dodge" />
+				<ACTION type="talent" param1="210306018" rate="2" duration="0" comment="right dodge" />
+				<ACTION type="talent" param1="210306015" rate="2" duration="0" comment="back dodge" />
+				<ACTION type="talent" param1="210306010" rate="12" comment="swing twice" />
+				<ACTION type="talent" param1="210306011" rate="12" comment="strike ground" />
+				<ACTION type="talent" param1="210306060" rate="17" comment="combo attack 1/2 (to mode 2)" />
+				<ACTION type="talent" param1="210306022" rate="19" comment="forward leap strike - fast action, unblockable" />
+				<ACTION type="talent" param1="210306070" rate="19" duration="0" comment="rush attack (to mode 3)" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="2" victory="210306062" comment="combo attack 2">
+			<DEFAULT>
+				<ACTION type="talent" param1="210306061" rate="100" duration="0" comment="combo attack 2/2 - finish (to mode 0)" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="3" victory="210306074" comment="rush attack - A mode">
+			<DEFAULT>
+				<ACTION type="talent" param1="210306071" rate="100" duration="0" comment="rush attack - A (to mode 4)" />
+			</DEFAULT>
+			<CHECK type="distance" param2="600">
+				<ACTION type="talent" param1="210306073" rate="100" duration="0" comment="if enemy is close, then finish rushing (to mode 0)" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="4" victory="210306074" comment="rush attack - B mode">
+			<DEFAULT>
+				<ACTION type="talent" param1="210306072" rate="100" duration="0" comment="rush attack - B (to mode 3)" />
+			</DEFAULT>
+			<CHECK type="distance" param2="600">
+				<ACTION type="talent" param1="210306073" rate="100" duration="0" comment="if enemy is close, then finish rushing (to mode 0)" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_103063:Init( NPCID )
+	--[[
+	1: Pain데미지 누적
+	--]]
+		
+	NPC_ReserveUserData( NPCID, 2 )
+	
+	NPC_103063.IdxForPain				= 1
+	NPC_103063.LimitForPain				= NPC_103063.MaxHP/10
+	NPC_103063.IdxForBreakParts			= 2
+	NPC_103063.LimitForBreakParts		= NPC_103063.MaxHP/30
+
+	NPC_103063.TalIdPain1				= 210306050
+	NPC_103063.TalIdPain2				= 210306051
+
+	NPC_103063.TalIdCancelTwoHits			= 210306062
+	NPC_103063.TalIdCancelRush			= 210306074
+end
+
+function NPC_103063:OnCancelTwoHits( ThisActor, Enemy )
+	ThisActor:UseTalentSelf( NPC_103063.TalIdCancelTwoHits )
+end
+
+function NPC_103063:OnCancelRush( ThisActor, Enemy )
+	ThisActor:UseTalentSelf( NPC_103063.TalIdCancelRush )
+end
+
+function NPC_103063:OnFinishAndAggroNear( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "near", 0 )
+end
+
+function NPC_103063:AccDamage( ThisNPC, HitInfo )
+	-- GLog( "AccDamage\n" )
+	local AccDamage = ThisNPC:GetUserData( NPC_103063.IdxForBreakParts ) + HitInfo.Damage
+	-- breakparts
+	if AccDamage > NPC_103063.LimitForBreakParts and not ThisNPC:IsCooldown( NPC_103063.TalIdPain2 ) then 
+		local PartsIdx = -1
+		if not ThisNPC:CheckBPart(1) then
+			PartsIdx = 1
+		elseif not ThisNPC:CheckBPart(2) then
+			PartsIdx = 2
+		end
+		
+		if PartsIdx > 0 then
+			ThisNPC:BreakPart( PartsIdx, HitInfo.Attacker )
+			ThisNPC:ClearJob();
+			ThisNPC:UseTalentSelf( NPC_103063.TalIdPain2 )
+			
+			ThisNPC:SetUserData( NPC_103063.IdxForBreakParts, 0 )
+		end
+		
+		return
+	end
+	
+	ThisNPC:SetUserData( NPC_103063.IdxForBreakParts, AccDamage )
+	
+	AccDamage = ThisNPC:GetUserData( NPC_103063.IdxForPain ) + HitInfo.Damage
+	
+	-- pain
+	--if AccDamage > NPC_103063.LimitForPain and ThisNPC:GetCurrentTalent() <= 0 then 
+	if AccDamage > NPC_103063.LimitForPain then 
+		if not ThisNPC:IsCooldown( NPC_103063.TalIdPain1 ) then
+			ThisNPC:ClearJob();
+			ThisNPC:UseTalentSelf( NPC_103063.TalIdPain1 )
+			ThisNPC:SetUserData( NPC_103063.IdxForPain, 0 )
+		end
+		
+		return
+	end
+	
+	ThisNPC:SetUserData( NPC_103063.IdxForPain, AccDamage )
+	
+end
+
+function NPC_103063:OnHitCapsule_1_0(HitInfo)
+	return NPC_103063:AccDamage( this, HitInfo )
+end
+
+
+	]]></SCRIPT>	
+</maiet>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 리츠 // 수상한 감시자
+2118001	#1타
+2118002	#2연타
+2118003	#3연타
+2118004	#강한공격(삭제중)
+2118005	#찌르기
+2118006	#모드0전환(칼뽑기)
+2118007	#모드1전환(칼넣기)
+2118008	#회피L
+2118009	#회피R
+2118010	#반격(삭제중)
+2118011	#역습 포커스
+2118012	#강격
+2118013	#충격 반사
+2118014	#보루
+2118015	#파멸의 일격
+2118016	#방패 가격: 기절
+2118017	#돌진
+2118018	#방어
+-->
+<maiet>
+	<COLT name="수상한 감시자" npcid="1182">
+		<COMBAT mode="0" victory="2118007" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="2118001" desc="1타" rate="40" />
+				<ACTION type="talent" param1="2118002" desc="2연타" rate="30" />
+				<ACTION type="talent" param1="2118015" desc="파멸의 일격" rate="30" />
+				
+				<ACTION type="talent" param1="2118008" desc="회피L" cycle="15" rate="10" />
+				<ACTION type="talent" param1="2118009" desc="회피R" cycle="15" rate="10" />
+				<ACTION type="guard" param1="2118018" param2="2" rate="10" cycle="15" desc="방어" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="2118001" desc="1타" rate="5" />
+				<ACTION type="talent" param1="2118002" desc="2연타" rate="5" />
+				<ACTION type="talent" param1="2118015" desc="파멸의 일격" rate="30" />
+				<ACTION type="talent" param1="2118005" desc="찌르기" rate="50" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="2118006" desc="모드0전환(칼뽑기)" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

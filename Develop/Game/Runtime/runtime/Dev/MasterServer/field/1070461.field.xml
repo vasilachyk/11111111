@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1032" minimap_name="map01031" loading_image_name="01031" min_x="-6007" min_y="-6007" max_x="4207" max_y="4207" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_cave_1" />
+        <SOUNDREVERB reverb="9" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="감찰관 타리비" x="-2210.755859" y="-3487.951660" z="679.865112" dir_x="0.544639" dir_y="-0.838671" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107030" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="렌고트 호위병 (경고)" x="173.260803" y="-418.619934" z="-35.288979" dir_x="0.275637" dir_y="0.961262" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107029" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="렌고트 호위병 (공격)" x="-227.788651" y="-307.741089" z="-15.642321" dir_x="0.275637" dir_y="0.961262" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107029" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="렌고트 호위병 (로밍)" x="-822.535339" y="-2421.658203" z="-41.906719" dir_x="0.996195" dir_y="0.087156" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="255,0,0">
+            <NPC id="107029" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="렌고트 호위병 (로밍)" x="-140.045990" y="-2973.766602" z="-14.007702" dir_x="0.707107" dir_y="0.707107" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="255,0,0">
+            <NPC id="107029" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="렌고트 보디가드" x="-2468.307129" y="-3551.810303" z="676.442017" dir_x="0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107029" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="렌고트 보디가드" x="-2056.439697" y="-3262.337402" z="687.482910" dir_x="0.587785" dir_y="-0.809017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107029" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="332.107605" y="2166.212402" z="-34.355606" dir_x="0.587785" dir_y="-0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1070461" name="QM 107046 obj 1" x="-1904.924438" y="-4029.676758" z="685.963562" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1070462" name="QM 107046 obj 2" x="-2344.275879" y="-3333.661377" z="683.038147" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="출구" x="-327.303711" y="2532.750488" z="-42.024136" radius="500.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="495.577637" y="-195.163574" z="0.000000" dir_x="0.819152" dir_y="-0.573576" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="테레스 평원으로" condition="1" gate_type="auto" field="107" marker="107046" />
+        </SENSOR>
+        <SENSOR id="2" name="체크포인트" local="false" x="406.287262" y="2069.557373" z="-35.441227" radius="300.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="3" name="경고" local="false" x="617.119507" y="1186.700195" z="-40.657391" radius="400.000000" enabled="true" groupname="none" />
+        <SENSOR id="4" name="공격" local="false" x="-31.757851" y="-337.223877" z="-40.782837" radius="800.000000" enabled="true" groupname="none" />
+        <SENSOR id="5" name="알람" local="false" x="162.209076" y="-2088.725830" z="-13.449453" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="6" name="타리비" local="false" x="-1986.794556" y="-3871.364258" z="681.725830" radius="750.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

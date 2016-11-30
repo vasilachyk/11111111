@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" min_x="0" min_y="0" max_x="90000" max_y="90000" weather_effect="true" bgm="fieldbgm" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="2" name="병장 제시카" x="43346.125000" y="40909.605469" z="556.301636" dir_x="-0.681999" dir_y="-0.731353" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="false" start_time="1" respawn_time="120" roam_radius="1" roam_depth="1" color="255,128,255">
+            <NPC id="990002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" name="여왕 테레시스" x="28745.591797" y="37513.242188" z="683.692261" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="107007" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" name="보르고" x="21155.394531" y="41812.890625" z="2670.026367" dir_x="-0.694658" dir_y="-0.719340" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="110001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" name="아루카" x="25388.519531" y="57299.109375" z="2142.671387" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="121009" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" name="아루카와 아이들1" x="25615.488281" y="57332.488281" z="2140.147949" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="121010" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" name="아루카와 아이들2" x="25106.324219" y="57285.398438" z="2146.355469" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="121011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" name="아루카와 아이들3" x="25318.410156" y="57532.937500" z="2137.996338" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="121014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" name="소레나" x="59030.011719" y="58888.324219" z="577.833923" dir_x="0.970296" dir_y="0.241921" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="105002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" name="베루스" x="35282.187500" y="55388.800781" z="1068.714478" dir_x="0.927184" dir_y="0.374607" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="true" start_time="1" respawn_time="300" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="106001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" name="대장장이 노아" x="42741.949219" y="40996.398438" z="547.265198" dir_x="0.241922" dir_y="-0.970296" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="1" roam_depth="1" color="128,128,255">
+            <NPC id="3001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" name="소울바인더" x="42350.621094" y="40880.773438" z="569.083130" dir_x="0.857167" dir_y="-0.515038" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="true" start_time="1" respawn_time="1" roam_radius="1" roam_depth="200" color="0,128,64">
+            <NPC id="14003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="23" name="수영" x="43148.847656" y="40926.792969" z="554.708801" dir_x="0.707107" dir_y="-0.707107" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="false" start_time="1" respawn_time="180" roam_radius="1" roam_depth="1" color="255,0,0">
+            <NPC id="990006" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="42613.453125" y="40430.570313" z="586.504578" dir_x="-0.052335" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="MK00002" x="25792.384766" y="36644.437500" z="779.784851" dir_x="0.999998" dir_y="0.001746" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="MK00005" x="38844.472656" y="56075.410156" z="772.420715" dir_x="-0.997564" dir_y="0.069757" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="MK00003" x="17445.517578" y="42661.593750" z="2633.336914" dir_x="0.587785" dir_y="-0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="MK00004" x="25183.914063" y="55625.820313" z="2126.149902" dir_x="0.104528" dir_y="0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="MK00006" x="54295.437500" y="58453.636719" z="258.531952" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

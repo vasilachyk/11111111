@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="주술에 걸린 말벌">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" auto_run="true" />
+				<ACTION type="nothing" param1="1" rate="40" />
+				
+				<ACTION type="talent" param1="211003302" rate="30" /> <!-- 독침 -->
+				<ACTION type="talent" param1="211003301" rate="30" /> <!-- 일반공격 -->
+			</DEFAULT>
+
+			<CHECK type="rage" param1="10">
+				<ACTION type="lua" param1="NPC_110033" param2="Retreat" rate="40" cycle="5"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="300" ><!-- 가까이 있을 때 -->
+				<ACTION type="nothing" param1="0.5" auto_run="true" />
+			
+				<ACTION type="flee" param1="from_enemy" param2="0.5" rate="40" />
+				<ACTION type="talent" param1="211003302" rate="30"  /> <!-- 독침 -->	
+				<ACTION type="talent" param1="211003301" rate="30" /> <!-- 일반공격 -->
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="800" >
+				<ACTION type="nothing" param1="0.5" auto_run="true" />
+				
+				<ACTION type="lua" param1="NPC_110033" param2="Rotate" rate="40" />
+				<ACTION type="talent" param1="211003302" rate="30"  /> <!-- 독침 -->	
+				<ACTION type="talent" param1="211003301" rate="30" /> <!-- 일반공격 -->
+			</CHECK>
+		</COMBAT>
+		
+		<AGGRO>
+		</AGGRO>
+		
+	</COLT>
+	<SCRIPT><![CDATA[ 
+	
+	function NPC_110033:Retreat( ThisNPC, Enemy )
+		local Dir = ThisNPC:GetFowardDir(Enemy)
+		
+		local Points1 = Math_GetPolygonPoints( Enemy:GetPos(), Dir, 250, 8 )
+		local Point1Idx = ( 6 + math.random( 0, 2 ) )%8 +1
+		
+		local distance = ThisNPC:DistanceTo( Enemy )
+		if distance < 300 then
+			ThisNPC:Move( Points1[ tostring( Point1Idx ) ] )
+		end
+		
+		local Points2 = Math_GetPolygonPoints( Enemy:GetPos(), Dir, 600, 16 )
+		local Point2Idx = (Point1Idx*2 + math.random( -1, 1 ) -1 )%16 +1
+		ThisNPC:Move( Points2[ tostring( Point2Idx ) ] )	
+		ThisNPC:FaceTo( Enemy )
+	end
+	
+	function NPC_110033:Rotate( ThisNPC, Enemy )
+		local Distance = ThisNPC:DistanceTo(Enemy)	-- 목표와의 거리
+		local EdgeCnt = 8
+		
+		local Points = Math_GetPolygonPoints(Enemy:GetPos(), ThisNPC:GetFowardDir(Enemy) , Distance, EdgeCnt )
+		local WayPoints = {}
+		
+		if math.random(0,1) == 1 then
+			for i=1, 2 do
+				WayPoints[i] = Points[tostring(i)]
+			end
+		else
+			for i=6, 7 do
+				WayPoints[ i-5 ] = Points[ tostring( 13-i ) ]
+			end
+		end
+		
+		ThisNPC:PatrolInstant(WayPoints, PT_ONCE)
+		ThisNPC:FaceTo( Enemy )
+		ThisNPC:Wait(0.5)
+	end
+	
+	
+	]]></SCRIPT>
+		
+</maiet>
+

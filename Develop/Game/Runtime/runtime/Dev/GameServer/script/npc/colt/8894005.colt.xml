@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="다크우드 봉봉 샤먼">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				
+				<ACTION type="talent" param1="212100803" rate="10" />
+				<ACTION type="talent" param1="212100804" rate="40" />
+				<ACTION type="talent" param1="212100805" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="150">
+				<ACTION type="talent" param1="212100805" rate="20" />
+			</CHECK>
+			
+			<!-- 근접전 -->
+			<CHECK type="distance" param2="300">
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				
+				<ACTION type="talent" param1="212100803" rate="20" />
+				<ACTION type="talent" param1="212100804" rate="20" />
+				<ACTION type="talent" param1="212100805" rate="20" />
+				<ACTION type="talent" param1="212100806" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+  		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="212100801" rate="20" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+			<!--
+			<CHECK type="mode" param1="0">
+				<ACTION type="talent" param1="212100802" rate="100" duration="0" />
+			</CHECK>
+			-->
+		</IDLE>
+		
+	</COLT>
+</maiet>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 역병 들린 코볼트 유골
+211711000	idle2
+211711001	망치공격
+211711002	헤딩
+211711003	방어
+211711004	포효
+-->
+<maiet>
+	<COLT name="역병 들린 코볼트 유골" npcid="117110">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711001" desc="망치공격" rate="40" />
+				<ACTION type="talent" param1="211711002" desc="헤딩" rate="40" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="211711004" desc="포효" rate="15" />
+				<ACTION type="talent" param1="211711001" desc="망치공격" rate="10" />
+				<ACTION type="talent" param1="211711002" desc="헤딩" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211711000" desc="idle2" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

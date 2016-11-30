@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="변성된 가디엘 고위 사제">
+		<COMBAT victory="250110302">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110311" rate="10" desc="지팡이1타"/> 
+				<ACTION type="talent" param1="250110312" rate="30" desc="지팡이2연타"/>
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="250110323" rate="30" desc="치유의 성역2"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				<ACTION type="talent" param1="250110323" rate="30" desc="치유의 성역2"/>
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110301" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

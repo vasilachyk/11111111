@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<maiet>
+  <COLT>
+    <COMBAT >
+      <DEFAULT>
+
+      </DEFAULT>
+      <CHECK type="mode" param1="0">
+        <ACTION type="talent" param1="189403102" rate="40"/>
+        <ACTION type="talent" param1="189403103" rate="30"/>
+        <ACTION type="talent" param1="189403104" rate="30" duration="0" />
+      </CHECK>
+
+    </COMBAT>
+	
+	<COMBAT mode="1" >
+		<DEFAULT>	
+			 <!-- Under Ground -->
+			<ACTION type="talent" param1="189403105" rate="100" />		
+			<!--<ACTION type="lua" param1="NPC_8894031_ZigzagMoveAttack"/>-->
+		</DEFAULT>
+	</COMBAT>
+
+    <IDLE>
+	<!--
+      <CHECK type="mode" param1="0">
+			<ACTION type="talent" param1="189403104" duration="0" rate="60" /> 
+			<ACTION type="nothing"  param1="1000" rate="40" />
+      </CHECK>
+	  <CHECK type="mode" param1="1">
+			<ACTION type="talent" param1="189403105" duration="0" rate="10" /> 
+			<ACTION type="nothing"  param1="1000" rate="80" />
+	  </CHECK>
+	  -->
+    </IDLE>
+  </COLT>
+  
+  <SCRIPT><![CDATA[
+
+function NPC_8894031:Init(NPCID)
+
+end
+
+function NPC_8894031:OnSpawn(Spawn)
+	this:GainBuff(100006);
+end
+   
+function NPC_8894031:OnVictory()
+	this:GainBuff(100006 );
+end
+  
+
+function NPC_8894031_ZigzagMoveAttack(ThisNPC, Opponent)
+	local UnborrowTalentID = 189403105;
+	local Distance = ThisNPC:DistanceTo(Opponent);
+	local HalfWidth = 500;
+	local Step = 300;
+	local LocalAdjPos = vec3();
+	local WorldPos = vec3();
+	
+	for i=1, Distance/Step do
+		Distance = Distance - Step;
+		if (Distance < Step) then	break end
+		
+		HalfWidth = -HalfWidth;
+		LocalAdjPos = vec3(HalfWidth, Distance, 0);
+		WorldPos = Math_LocalToWorld(Opponent:GetDir(), Opponent:GetPos(), LocalAdjPos); -- 적을 중심으로 한 좌표계에서 보정된 좌표의 월드 좌표를 구함
+		ThisNPC:Move(WorldPos, false, true);
+	 end
+
+	 if (ThisNPC:MoveToActor(Opponent, UnborrowTalentID) == false) then return end
+	
+	ThisNPC:UseTalent(UnborrowTalentID, Opponent);
+end
+  
+  ]]></SCRIPT>
+</maiet>

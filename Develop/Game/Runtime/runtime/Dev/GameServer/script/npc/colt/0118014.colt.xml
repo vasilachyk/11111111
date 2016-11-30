@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#코볼트 채집꾼	
+211801401	#총쏘기
+211801402	#범위탄
+211801403	#폭팔사격
+211801404	#속박탄
+-->
+<maiet>
+	<COLT name="코볼트 채집꾼" npcid="118014">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="group" rate="70">
+					<ACTION type="talent" param1="211801401" desc="총쏘기" />
+					<ACTION type="nothing" param1="0.4" />
+				</ACTION>
+				
+				<ACTION type="group" rate="10" cycle="10">
+					<ACTION type="talent" param1="211801403" desc="폭팔사격" />
+					<ACTION type="nothing" param1="0.4" />
+				</ACTION>
+				
+				<ACTION type="group" rate="10" cycle="15">
+					<ACTION type="talent" param1="211801402" desc="범위탄" />
+					<ACTION type="nothing" param1="0.4" />
+				</ACTION>
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="50" >
+				<CHECK type="e_gained_buff" param1="80180" comment="속박">
+					<ACTION type="talent" param1="211801402" desc="범위탄" />
+				</CHECK>
+				<ACTION type="group" rate="10">
+					<ACTION type="talent" param1="211801404" desc="속박탄" cycle="15" />
+					<ACTION type="talent" param1="211801402" desc="범위탄" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="distance" param1="600">
+				<CHECK type="e_gained_buff" param1="80180" comment="속박">
+					<ACTION type="group" rate="10">
+						<ACTION type="talent" param1="211801402" desc="범위탄" />
+						<ACTION type="nothing" param1="0.4" />
+					</ACTION>
+					
+					<ACTION type="group" rate="10">
+						<ACTION type="talent" param1="211801403" desc="폭팔사격" />
+						<ACTION type="nothing" param1="0.4" />
+					</ACTION>
+				</CHECK>
+				
+				<ACTION type="talent" param1="211801404" rate="80" desc="속박탄" cycle="15" />
+				<ACTION type="group" rate="20">
+					<ACTION type="talent" param1="211801401" desc="총쏘기" />
+					<ACTION type="nothing" param1="0.4" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="e_gained_buff" param1="80180" comment="속박">
+				<ACTION type="group" rate="10">
+					<ACTION type="talent" param1="211801402" desc="범위탄" />
+					<ACTION type="nothing" param1="0.4" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="211801401" rate="90" desc="총쏘기" />
+				<ACTION type="say" rate="10" param1="$$KGathererAggroChat1" param2="1" />
+				<ACTION type="say" rate="10" param1="$$KGathererAggroChat2" param2="1" />
+				<ACTION type="say" rate="10" param1="$$KGathererAggroChat3" param2="1" />
+				<ACTION type="say" rate="10" param1="$$KGathererAggroChat4" param2="1" />
+				<ACTION type="say" rate="10" param1="$$KGathererAggroChat5" param2="1" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

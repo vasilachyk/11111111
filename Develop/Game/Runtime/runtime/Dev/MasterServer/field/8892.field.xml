@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="109" min_x="0" min_y="0" max_x="140000" max_y="140000" boundary_min_x="35000" boundary_min_y="25000" boundary_max_x="122000" boundary_max_y="115000" weather_effect="true" town="false" max_gather_mine="12" max_gather_herb="10" max_gather_relic="9" max_gather_lumber="8">
+        <BGM fieldbgm="bgm_field_7">
+            <ENVBGM dawnbgm="amb_dawn" />
+            <ENVBGM daytimebgm="amb_daytime" />
+            <ENVBGM sunsetbgm="amb_sunset_jungle" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="100" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="보스" x="69792.796875" y="63698.734375" z="9633.647461" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="8894022" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="상급기사 세레스" x="75043.109375" y="71332.875000" z="9930.412109" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="131007" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="부러진 돛대(시작)" x="75392.054688" y="72062.179688" z="9902.301758" dir_x="-0.469471" dir_y="-0.882948" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="SR00001 시작" local="false" x="75423.492188" y="72068.218750" z="9905.054688" radius="300.000000" enabled="true" />
+        <SENSOR id="2" name="SR00002 귀환" x="68668.976563" y="71421.757813" z="9806.359375" radius="700.000000" enabled="false">
+            <WARP title="다른 필드로 이동" condition="0" gate_type="auto" field="8891" marker="1" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

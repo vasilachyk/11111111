@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY />
+    <SCENE>
+        <RTERRAIN>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY version="1.3">
+                <MAP_WIDTH type="int">
+                    <int>256</int>
+                </MAP_WIDTH>
+                <MAP_HEIGHT type="int">
+                    <int>256</int>
+                </MAP_HEIGHT>
+                <MAP_SIZE type="vec3">
+                    <vec3>40000.000000 40000.000000 0.000000</vec3>
+                </MAP_SIZE>
+                <MAP_NAME>Contaminated_Garden_dis.dds</MAP_NAME>
+                <BASEMAP_NAME>Contaminated_Garden_baked.bmp</BASEMAP_NAME>
+                <CREATE_NAVEMESH type="bool">
+                    <bool>false</bool>
+                </CREATE_NAVEMESH>
+                <GRASS>Contaminated_Garden_grass.grs</GRASS>
+                <LAYER type="array" size="6">
+                    <LAYERINFO index="0">
+                        <ALPHAMAP>Contaminated_Garden_mask0.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g02.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>400.000000 400.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="1">
+                        <ALPHAMAP>Contaminated_Garden_mask1.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g03.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>400.000000 400.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="2">
+                        <ALPHAMAP>Contaminated_Garden_mask2.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g04.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>400.000000 400.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="3">
+                        <ALPHAMAP>Contaminated_Garden_mask3.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>400.000000 400.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="4">
+                        <ALPHAMAP>Contaminated_Garden_mask4.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g05.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="5">
+                        <ALPHAMAP>Contaminated_Garden_mask5.dds</ALPHAMAP>
+                        <TILEMAP type="specular">congarden_ground_g06.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                </LAYER>
+            </PROPERTY>
+        </RTERRAIN>
+        <DIRLIGHT>
+            <COMMON name="TerrainLightMap0">
+                <POSITION>5521.869141 7513.968750 8112.882813</POSITION>
+                <DIRECTION>-0.451111 -0.605991 -0.655189</DIRECTION>
+                <UP>-0.404937 -0.515235 0.755354</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.010</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.000 0.000 0.000</SKYCOLOR>
+                <GROUNDCOLOR>0.000 0.000 0.000</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="article_cart01.max">
+                <POSITION>12941.154297 6381.012207 22.012695</POSITION>
+                <DIRECTION>0.468590 -0.883416 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_cart01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_cart01.max02">
+                <POSITION>9084.130859 10513.266602 3.092773</POSITION>
+                <DIRECTION>-0.885225 -0.465164 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_cart01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_drum_broken01.m_005">
+                <POSITION>14208.164063 14263.037109 36.619007</POSITION>
+                <DIRECTION>0.951499 -0.307650 -0.000555</DIRECTION>
+                <UP>0.002021 0.004447 0.999988</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_drum_broken01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_drum_broken01_005">
+                <POSITION>13986.367188 13491.254883 34.576702</POSITION>
+                <DIRECTION>0.717420 0.690770 0.090255</DIRECTION>
+                <UP>-0.146419 0.022852 0.988959</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_drum_broken01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_drum_broken02.max">
+                <POSITION>14970.908203 12557.828125 -2.033203</POSITION>
+                <DIRECTION>0.835676 0.549222 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_drum_broken02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden.scene_005">
+                <POSITION>10000.000000 10000.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_1F_win_add.max">
+                <POSITION>10000.001953 9999.999023 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_1F_win_add.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_1F_win_add.max02">
+                <POSITION>10000.002930 9999.999023 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_1F_win_add.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max">
+                <POSITION>6664.573242 9299.578125 1343.091553</POSITION>
+                <DIRECTION>0.866026 0.500000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max16">
+                <POSITION>8529.258789 10376.157227 1343.091553</POSITION>
+                <DIRECTION>-0.866026 -0.500000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max17">
+                <POSITION>10393.946289 11452.733398 1343.091553</POSITION>
+                <DIRECTION>-0.499999 0.866026 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max18">
+                <POSITION>12258.630859 12529.312500 1343.091553</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max19">
+                <POSITION>5587.996094 11164.267578 1343.091553</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max20">
+                <POSITION>7452.681641 12240.843750 1343.091553</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max21">
+                <POSITION>9317.368164 13317.418945 1343.091553</POSITION>
+                <DIRECTION>-0.866026 -0.500000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max22">
+                <POSITION>11182.052734 14393.997070 1343.091553</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max23">
+                <POSITION>8817.727539 5570.206055 1343.091553</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max24">
+                <POSITION>10682.414063 6646.781250 1343.091553</POSITION>
+                <DIRECTION>0.866026 0.500000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max25">
+                <POSITION>12547.101563 7723.359863 1343.091553</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max26">
+                <POSITION>14411.785156 8799.940430 1343.091553</POSITION>
+                <DIRECTION>-0.866026 -0.500000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max27">
+                <POSITION>7741.150879 7434.890625 1343.091919</POSITION>
+                <DIRECTION>-0.866026 -0.500000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max28">
+                <POSITION>9605.835938 8511.466797 1343.091919</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max29">
+                <POSITION>11470.521484 9588.046875 1343.091919</POSITION>
+                <DIRECTION>0.866026 0.500000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr01.max30">
+                <POSITION>13335.208984 10664.627930 1343.091919</POSITION>
+                <DIRECTION>0.866026 0.500000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_chandr02.max">
+                <POSITION>14523.301758 12819.184570 7.566462</POSITION>
+                <DIRECTION>0.327447 -0.943971 -0.041195</DIRECTION>
+                <UP>-0.000000 -0.043599 0.999049</UP>
+                <SCALE>0.999999 1.000000 0.999999</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_chandr02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_toproof.scene_001">
+                <POSITION>30000.000000 30000.000000 -0.000977</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_toproof.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_watermill01.max">
+                <POSITION>11351.083984 7817.448242 14.841797</POSITION>
+                <DIRECTION>-0.840936 0.541135 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_watermill01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_watermill01.max08">
+                <POSITION>6087.235352 7694.977539 0.000000</POSITION>
+                <DIRECTION>0.412303 -0.911047 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_watermill01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_watermill01.max09">
+                <POSITION>8628.250000 13394.492188 13.904297</POSITION>
+                <DIRECTION>0.836928 0.547312 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_watermill01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="con_garden_watermill02.max">
+                <POSITION>13831.374023 11290.435547 28.441069</POSITION>
+                <DIRECTION>0.978986 0.201591 0.030790</DIRECTION>
+                <UP>-0.031435 -0.000000 0.999506</UP>
+                <SCALE>1.000000 0.999999 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_watermill02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_latern_a.max25">
+                <POSITION>10522.162109 15527.504883 1989.140747</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_latern_a.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_latern_a.max26">
+                <POSITION>10387.749023 15314.314453 2337.748291</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_latern_a.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_latern_a.max27">
+                <POSITION>9827.071289 15319.300781 2665.831543</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_latern_a.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_latern_a.max28">
+                <POSITION>9895.576172 14924.216797 1771.485596</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_latern_a.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_latern_a.max29">
+                <POSITION>10066.365234 15738.464844 1292.789551</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_latern_a.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_latern_a.max30">
+                <POSITION>9225.829102 15275.605469 1533.948486</POSITION>
+                <DIRECTION>-0.985281 -0.170941 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_latern_a.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max">
+                <POSITION>6979.248535 12666.378906 346.415039</POSITION>
+                <DIRECTION>-1.000000 -0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max128">
+                <POSITION>9568.259766 7334.147461 346.415039</POSITION>
+                <DIRECTION>1.000000 0.000000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max148">
+                <POSITION>8286.052734 9732.263672 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max156">
+                <POSITION>12122.262695 9732.257813 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max160">
+                <POSITION>14491.335938 10433.738281 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max161">
+                <POSITION>14080.994141 10266.737305 346.415039</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max164">
+                <POSITION>14491.335938 9732.263672 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max169">
+                <POSITION>6813.257324 13076.716797 346.415039</POSITION>
+                <DIRECTION>1.000000 0.000000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max172">
+                <POSITION>9747.503906 12666.375977 346.415039</POSITION>
+                <DIRECTION>-1.000000 -0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max177">
+                <POSITION>10433.175781 13076.599609 346.415039</POSITION>
+                <DIRECTION>-1.000000 -0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max178">
+                <POSITION>10267.742188 13076.716797 346.415039</POSITION>
+                <DIRECTION>1.000000 0.000000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max180">
+                <POSITION>10419.324219 6923.800781 346.415039</POSITION>
+                <DIRECTION>-1.000000 -0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max182">
+                <POSITION>10253.381836 7334.148438 346.415039</POSITION>
+                <DIRECTION>1.000000 0.000000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max185">
+                <POSITION>9733.683594 6923.802734 346.415039</POSITION>
+                <DIRECTION>-1.000000 -0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max188">
+                <POSITION>13187.525391 7334.033691 346.415039</POSITION>
+                <DIRECTION>-1.000000 -0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max190">
+                <POSITION>13021.533203 6922.854004 346.415039</POSITION>
+                <DIRECTION>1.000000 0.000000 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max192">
+                <POSITION>5916.946777 9566.268555 346.415039</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max194">
+                <POSITION>5505.767090 9732.260742 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max198">
+                <POSITION>5505.767090 10433.735352 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max200">
+                <POSITION>8286.052734 10433.739258 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max201">
+                <POSITION>7875.709961 10266.734375 346.415039</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max205">
+                <POSITION>7875.709961 9566.268555 346.415039</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max208">
+                <POSITION>12122.262695 10433.731445 346.415039</POSITION>
+                <DIRECTION>0.000001 -1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max209">
+                <POSITION>11711.921875 10266.734375 346.415039</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max213">
+                <POSITION>11711.921875 9566.268555 346.415039</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="ingen_streetlight_04_day.max221">
+                <POSITION>14080.994141 9566.783203 346.415039</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_04_day.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.max">
+                <POSITION>15058.279297 12646.164063 0.000000</POSITION>
+                <DIRECTION>-0.270854 0.962620 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.max07">
+                <POSITION>13886.931641 13389.814453 9.465174</POSITION>
+                <DIRECTION>-0.270854 0.962620 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.max08">
+                <POSITION>13855.353516 13516.592773 9.465174</POSITION>
+                <DIRECTION>-0.270854 0.962620 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.max09">
+                <POSITION>11387.381836 7579.753906 25.668299</POSITION>
+                <DIRECTION>-0.270854 0.962620 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.max10">
+                <POSITION>11274.265625 7582.845703 25.668299</POSITION>
+                <DIRECTION>-0.270854 0.962620 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.max11">
+                <POSITION>9533.666016 13688.480469 8.567261</POSITION>
+                <DIRECTION>0.897374 0.441271 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.max12">
+                <POSITION>9551.179688 13576.684570 8.567261</POSITION>
+                <DIRECTION>0.897374 0.441271 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k02_005">
+                <POSITION>12663.323242 11264.867188 0.000000</POSITION>
+                <DIRECTION>0.492842 0.870119 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_001">
+                <POSITION>30989.283203 28033.417969 232.592743</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_002">
+                <POSITION>30812.945313 27533.921875 237.005585</POSITION>
+                <DIRECTION>-0.529927 0.848043 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>37.932648 37.932648 37.932648</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_AmericanBoxwood_2_003">
+                <POSITION>30674.859375 27242.222656 233.067047</POSITION>
+                <DIRECTION>-0.829023 -0.559215 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>37.932652 37.932652 37.932652</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_001">
+                <POSITION>32184.492188 29281.800781 -489.037109</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_002">
+                <POSITION>31156.552734 28009.417969 216.989853</POSITION>
+                <DIRECTION>0.970301 0.241900 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_003">
+                <POSITION>30701.863281 27053.761719 214.620926</POSITION>
+                <DIRECTION>0.731374 -0.681976 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>39.472866 39.472866 39.472866</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BanyanTree_RT_004">
+                <POSITION>27271.033203 28876.457031 -489.037109</POSITION>
+                <DIRECTION>0.984816 0.173603 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>39.472870 39.472870 39.472870</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BanyanTree_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BoleteMushroomCluster_RT_001">
+                <POSITION>30875.175781 28431.826172 221.596649</POSITION>
+                <DIRECTION>-0.258808 0.965929 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>37.932648 37.932648 37.932648</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BoleteMushroomCluster_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_BoleteMushroomCluster_RT_002">
+                <POSITION>30256.802734 28295.273438 288.028931</POSITION>
+                <DIRECTION>-0.258808 0.965929 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>37.932648 37.932648 37.932648</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_BoleteMushroomCluster_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_001">
+                <POSITION>31081.019531 28618.824219 124.338242</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>53.783741 53.783741 53.783741</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_002">
+                <POSITION>30677.380859 29211.359375 33.845242</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>53.783741 53.783741 53.783741</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_003">
+                <POSITION>30169.128906 28265.050781 289.285919</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>53.783741 53.783741 53.783741</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_004">
+                <POSITION>28917.041016 29465.171875 -7.392838</POSITION>
+                <DIRECTION>-0.544598 0.838697 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>53.783741 53.783741 53.783741</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_005">
+                <POSITION>28380.634766 29560.542969 -0.382488</POSITION>
+                <DIRECTION>0.990265 0.139195 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>48.135387 48.135387 48.135387</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_006">
+                <POSITION>27426.281250 28955.605469 -7.404751</POSITION>
+                <DIRECTION>0.224991 0.974361 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>54.755184 54.755184 54.755184</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_007">
+                <POSITION>31695.115234 29730.710938 -7.364620</POSITION>
+                <DIRECTION>0.992542 -0.121905 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>54.755184 54.755184 54.755184</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_008">
+                <POSITION>31184.396484 29117.078125 -3.583584</POSITION>
+                <DIRECTION>-0.069797 -0.997561 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>54.755188 54.755188 54.755188</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_009">
+                <POSITION>29350.777344 27584.257813 276.251770</POSITION>
+                <DIRECTION>0.882925 -0.469514 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>62.939682 62.939682 62.939682</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_001">
+                <POSITION>30505.044922 29342.964844 6.984322</POSITION>
+                <DIRECTION>-0.601823 0.798630 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>54.151108 54.151108 54.151108</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_002">
+                <POSITION>29996.792969 28396.656250 289.554443</POSITION>
+                <DIRECTION>-0.601823 0.798630 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>54.151108 54.151108 54.151108</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_003">
+                <POSITION>28700.830078 29481.687500 -6.920914</POSITION>
+                <DIRECTION>-0.939700 0.342000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>54.151108 54.151108 54.151108</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_004">
+                <POSITION>28486.974609 29749.519531 1.138004</POSITION>
+                <DIRECTION>0.707107 0.707107 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>48.464149 48.464149 48.464149</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_005">
+                <POSITION>27287.966797 29122.605469 -7.404751</POSITION>
+                <DIRECTION>-0.406686 0.913568 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>55.129131 55.129131 55.129131</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_006">
+                <POSITION>31846.744141 29885.726563 -7.404873</POSITION>
+                <DIRECTION>0.866019 0.500011 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>55.129131 55.129131 55.129131</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_007">
+                <POSITION>31344.607422 28970.953125 -4.279495</POSITION>
+                <DIRECTION>0.544598 -0.838697 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>55.129135 55.129135 55.129135</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_CinnamonFern_RT_008">
+                <POSITION>29549.433594 27671.183594 285.775391</POSITION>
+                <DIRECTION>0.987694 0.156399 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>63.369545 63.369545 63.369545</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_CinnamonFern_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_LiveOak_RT_001">
+                <POSITION>32454.697266 27434.478516 -23.193289</POSITION>
+                <DIRECTION>0.754685 0.656087 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_LiveOak_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Swamp_LiveOak_RT_002">
+                <POSITION>28055.636719 27288.980469 -4.908188</POSITION>
+                <DIRECTION>-0.104503 0.994525 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Swamp_LiveOak_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+    </SCENE>
+</ROOT>

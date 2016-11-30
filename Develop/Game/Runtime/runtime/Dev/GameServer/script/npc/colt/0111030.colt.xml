@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="역병 박쥐">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211103001" rate="40" />
+				<ACTION type="talent" param1="211103002" rate="40" />
+				<ACTION type="talent" param1="211103003" rate="10" />
+				<ACTION type="talent" param1="211103004" rate="10" />
+			</DEFAULT>
+			
+			<!--
+			<CHECK type="distance" param1="200" >
+				<CHECK type="rage" param1="100">
+					<ACTION type="talent" param1="211103005" rate="10" />
+				</CHECK>
+			</CHECK>
+			-->
+			
+			<CHECK type="distance" param1="400">
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="211103001" rate="40" />
+				<ACTION type="talent" param1="211103002" rate="10" />
+				<ACTION type="talent" param1="211103003" rate="10" />
+				<ACTION type="talent" param1="211103004" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80" />
+				<ACTION type="talent" param1="211103000" rate="20" />
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+</maiet>

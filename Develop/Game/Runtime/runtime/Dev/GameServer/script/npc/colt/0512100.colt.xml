@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="저주받은 스켈레톤">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="251210001" rate="10" />
+				<ACTION type="talent" param1="251210002" rate="10" />				
+				<ACTION type="talent" param1="251210003" rate="20" />
+				<ACTION type="talent" param1="251210004" rate="10" />
+				<ACTION type="talent" param1="251210005" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="300" rate="20"  />
+			</CHECK>
+			<CHECK type="rage" param1="200">
+				<ACTION type="guard" param1="251210006" param2="3" rate="50" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="251210000" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

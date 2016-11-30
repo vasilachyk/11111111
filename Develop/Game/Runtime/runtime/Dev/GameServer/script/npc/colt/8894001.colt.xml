@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="타락한 나무정령">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+								
+				<ACTION type="talent" param1="189400101" rate="40" />
+				<ACTION type="talent" param1="189400102" rate="20" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80">
+				<ACTION type="talent" param1="189400101" rate="10" />
+				<ACTION type="talent" param1="189400108" rate="90" />
+			</CHECK>
+			
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="189400103" duration="0" rate="10" />
+				<ACTION type="nothing"  param1="0" rate="90" />
+			</DEFAULT>
+		</AGGRO>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="4" rate="50" />
+				<ACTION type="talent" param1="189400105" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>
+

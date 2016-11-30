@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="66000" boundary_min_y="52000" boundary_max_x="83000" boundary_max_y="69000" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false" max_gather_mine="25" max_gather_herb="30" max_gather_relic="10" max_gather_lumber="8">
+        <BGM fieldbgm="bgm_field_2">
+            <ENVBGM dawnbgm="amb_plain_dawn" />
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM sunsetbgm="amb_plain_sunset" />
+            <ENVBGM nightbgm="amb_plain_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작점" x="72621.726563" y="63686.503906" z="-25.044197" dir_x="0.529919" dir_y="-0.848048" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="QM 992013 obj 2" x="75122.546875" y="59896.152344" z="255.106232" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="72610.937500" y="63700.628906" z="-28.875772" radius="600.000000" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

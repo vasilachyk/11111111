@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="그림자 구울 어세신">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" />
+				<ACTION type="nothing" param1="1" rate="20" />
+				
+				<ACTION type="talent" param1="211302201" rate="20" />
+				<ACTION type="talent" param1="211302202" rate="30" />
+				<ACTION type="talent" param1="211302203" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400">
+				<ACTION type="distance" param1="300" param2="300" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

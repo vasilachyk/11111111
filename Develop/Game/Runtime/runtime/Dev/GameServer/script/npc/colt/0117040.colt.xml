@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="폴루토" npcid="117000">
+		<COMBAT comment="default">
+			<DEFAULT>
+				<ACTION type="talent" param1="211700005" rate="20" />
+				<ACTION type="talent" param1="211700010" rate="20" />
+				<ACTION type="talent" param1="211700008" rate="30" />
+				<ACTION type="talent" param1="211700007" rate="10" />
+				<ACTION type="lua" param1="NPC117000_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="gained_buff" param1="40139">
+				<ACTION type="talent" param1="211700012" rate="20" duration="0"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="211700004" rate="20" />
+				<ACTION type="talent" param1="211700005" rate="20" />
+				<ACTION type="talent" param1="211700006" rate="20" />
+				<ACTION type="talent" param1="211700011" rate="20" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+				<ACTION type="talent" param1="211700014" rate="20" duration="0" />
+				<ACTION type="talent" param1="211700008" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1" comment="broken left tentacle. cannot use grapple.">
+			<DEFAULT>
+				<ACTION type="talent" param1="211700005" rate="25" />
+				<ACTION type="talent" param1="211700008" rate="20" />
+				<ACTION type="talent" param1="211700007" rate="20" />
+				<ACTION type="lua" param1="NPC117000_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="gained_buff" param1="40139">
+				<ACTION type="talent" param1="211700012" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="211700004" rate="20" />
+				<ACTION type="talent" param1="211700005" rate="20" />
+				<ACTION type="talent" param1="211700006" rate="20" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+				<ACTION type="talent" param1="211700014" rate="20" duration="0" />
+				<ACTION type="talent" param1="211700008" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="2" comment="broken right tentacle. cannot use tentacle-swing and cleaning teeth.">
+			<DEFAULT>
+				<ACTION type="talent" param1="211700005" rate="25" />
+				<ACTION type="talent" param1="211700008" rate="20" />
+				<ACTION type="talent" param1="211700007" rate="20" />
+				<ACTION type="lua" param1="NPC117000_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="211700005" rate="20" />
+				<ACTION type="talent" param1="211700006" rate="20" />
+				<ACTION type="talent" param1="211700011" rate="20" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+				<ACTION type="talent" param1="211700014" rate="20" duration="0"/>
+				<ACTION type="talent" param1="211700008" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="3" comment="broken all tentacle">
+			<DEFAULT>
+				<ACTION type="talent" param1="211700005" rate="25" />
+				<ACTION type="talent" param1="211700008" rate="30" />
+				<ACTION type="talent" param1="211700007" rate="20" />
+				<ACTION type="lua" param1="NPC117000_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="211700005" rate="20" />
+				<ACTION type="talent" param1="211700006" rate="20" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true" />
+				<ACTION type="talent" param1="211700014" rate="20" duration="0" />
+				<ACTION type="talent" param1="211700008" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211700000" rate="10"  />
+				<ACTION type="talent" param1="211700001" rate="10"  />
+				<ACTION type="nothing" param1="3" rate="80"  />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_117040:Init(NPCID)
+	--[[
+		User Data
+		1: 왼촉수  누적 데미지
+		2: 오른촉수 누적 데미지
+		3: Pain누적 데미지
+	--]]
+	NPC_ReserveUserData(NPCID, 3);
+	
+	local MaxHP 								= NPC_117040.MaxHP
+	
+	NPC_117040.LimitForBeaten			= MaxHP/5			-- beaten reaction
+	
+	NPC_117040.LimitForLeftTentacle 	= MaxHP/2			-- left tentacle
+	NPC_117040.LimitForRightTentacle 	= MaxHP/4			-- right tentacle
+	
+	NPC_117040.TalIdPain1					= 211700015		-- long 	to_mode2
+	NPC_117040.TalIdPain1_1				= 211700016		-- short		to_mode2
+	NPC_117040.TalIdPain2					= 211700017		-- long		to_mode1
+	NPC_117040.TalIdPain2_1				= 211700018		-- short		to_mode1
+	NPC_117040.TalIdPain3					= 211700019		-- short		for hit reaction
+	NPC_117040.TalIdPain4					= 211700020		-- long		to_mode3
+	NPC_117040.TalIdPain4_1				= 211700021		-- short		to_mode3
+	
+	NPC_117040.TalIdVomit					= 211700008
+	NPC_117040.TalIdBackAttack			= 211700009
+	NPC_117040.TalIdFrontJump			= 211700013
+	
+	NPC_117040.BuffIdBadBreath			= 40139
+end
+
+-- Talent Callback Func
+function NPC_117040:OnFinishAndAggroFar( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "far", 0 )
+end
+
+function NPC117000_BackAttack( ThisNPC, Enemy )
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	local IsRear = Enemy:IsRear( ThisNPC )
+	
+	if Dist > 150 and Dist < 600 and IsRear then
+		if ThisNPC:IsCooldown( NPC_117040.TalIdBackAttack ) then
+			ThisNPC:UseTalentSelf( NPC_117040.TalIdFrontJump )
+			return
+		end
+		ThisNPC:UseTalentSelf( NPC_117040.TalIdBackAttack )
+	end
+end
+
+function NPC_117040:OnStartCleaning( ThisNPC, Enemy )
+	ThisNPC:RemoveBuff( NPC_117040.BuffIdBadBreath )
+end
+
+function NPC117000_ProcessAccDamage( ThisNPC, PartsIdx, HitInfo )
+	-- Acc damage 
+	local DmgAcc = 0
+	if  PartsIdx == 1 or PartsIdx == 2 then
+		DmgAcc = ThisNPC:GetUserData( PartsIdx ) + HitInfo.Damage	
+		ThisNPC:SetUserData( PartsIdx, DmgAcc )
+	end
+	
+	DmgAcc = ThisNPC:GetUserData( 3 ) + HitInfo.Damage
+	ThisNPC:SetUserData( 3, DmgAcc )
+	
+	--[[
+	GLog( "-- Process Acc Damage Root ( P:" .. PartsIdx .. 
+		", D:" .. HitInfo.Damage .. 
+		", 1:" .. ThisNPC:GetUserData( 1 ) .. 
+		", 2:" .. ThisNPC:GetUserData( 2 ) .. 
+		", 3:" .. ThisNPC:GetUserData( 3 ) .. " ) --\n"  )
+	--]]
+	
+	
+	if ThisNPC:GetCurrentTalent() == NPC_117040.TalIdVomit then
+		-- no reaction while act vomit
+		return
+	end
+	
+	-- Reaction
+	if 	PartsIdx == 1 and																	-- 
+		( not ThisNPC:CheckBPart( 1 ) ) and											-- If left tentacle is exist
+		ThisNPC:GetUserData( 1 ) > NPC_117040.LimitForLeftTentacle and  	-- If accumulated damage is enough
+		ChkMFForHitReaction( HitInfo ) then											-- If current damage have enough motion-factor
+	
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( 1, HitInfo.Attacker )
+
+		-- Choose Pain Ani and mode change
+		if ThisNPC:CheckBPart( 2 ) then
+			--GLog( "To mode3 ..\n" )
+			
+			if ThisNPC:IsCooldown( NPC_117040.TalIdPain4 ) then
+				ThisNPC:UseTalentSelf( NPC_117040.TalIdPain4_1 )
+			else
+				ThisNPC:UseTalentSelf( NPC_117040.TalIdPain4 )
+			end
+			
+			return
+		end 
+		
+		--GLog( "To mode 1..\n" )
+		if ThisNPC:IsCooldown( NPC_117040.TalIdPain1 ) then
+			ThisNPC:UseTalentSelf( NPC_117040.TalIdPain1_1	 )
+		else
+			ThisNPC:UseTalentSelf( NPC_117040.TalIdPain1	 )
+		end
+		
+		return
+	end
+	
+	if 	PartsIdx == 2 and
+		( not ThisNPC:CheckBPart( 2 ) ) and
+		ThisNPC:GetUserData( 2 ) > NPC_117040.LimitForRightTentacle and
+		ChkMFForHitReaction( HitInfo ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( 2, HitInfo.Attacker )
+		
+		if ThisNPC:CheckBPart( 1 ) then
+			--GLog( "To mode3 ..\n" )
+			
+			if ThisNPC:IsCooldown( NPC_117040.TalIdPain4 ) then
+				ThisNPC:UseTalentSelf( NPC_117040.TalIdPain4_1 )
+			else
+				ThisNPC:UseTalentSelf( NPC_117040.TalIdPain4 )
+			end
+			return
+		end 
+		
+		--GLog( "To mode 2..\n" )
+		if ThisNPC:IsCooldown( NPC_117040.TalIdPain2 ) then
+			ThisNPC:UseTalentSelf( NPC_117040.TalIdPain2_1	 )
+		else
+			ThisNPC:UseTalentSelf( NPC_117040.TalIdPain2	 )
+		end
+		
+		return
+	end
+
+	if ThisNPC:IsCooldown( NPC_117040.TalIdPain3 ) then
+		return
+	end
+	
+	if ThisNPC:GetUserData( 3 ) > NPC_117040.LimitForBeaten and
+		ChkMFForHitReaction( HitInfo ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_117040.TalIdPain3	 )
+		ThisNPC:SetUserData( 3, 0 )
+		return
+	end
+end
+
+function NPC_117040:OnHitCapsule_1_0(HitInfo)
+	NPC117000_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_1_1(HitInfo)
+	NPC117000_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_1_2(HitInfo)
+	NPC117000_ProcessAccDamage( this, 2, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_0(HitInfo)
+	NPC117000_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_1(HitInfo)
+	NPC117000_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_2(HitInfo)
+	NPC117000_ProcessAccDamage( this, 2, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_3(HitInfo)
+	NPC117000_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_4(HitInfo)
+	NPC117000_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_5(HitInfo)
+	NPC117000_ProcessAccDamage( this, 2, HitInfo )
+end	
+
+function NPC_117040:OnHitCapsule_2_6(HitInfo)
+	NPC117000_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_7(HitInfo)
+	NPC117000_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_2_8(HitInfo)
+	NPC117000_ProcessAccDamage( this, 2, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_3_0(HitInfo)
+	NPC117000_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_3_0(HitInfo)
+	NPC117000_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_117040:OnHitCapsule_3_0(HitInfo)
+	NPC117000_ProcessAccDamage( this, 3, HitInfo )
+end
+
+]]></SCRIPT>
+</maiet>

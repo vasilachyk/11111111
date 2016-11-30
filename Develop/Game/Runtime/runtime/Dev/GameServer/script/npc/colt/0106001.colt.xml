@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT max_duration="5">
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="Verus_Ignition" rate="100" />
+			</DEFAULT>
+		</AGGRO>
+		<COMBAT >
+			<DEFAULT>
+				<ACTION type="lua" param1="Verus_Ignition" rate="15" cycle="100" />
+				<ACTION type="talent" param1="210600151" rate="20" />
+				<ACTION type="talent" param1="210600152" rate="20" />
+				<ACTION type="talent" param1="210600153" rate="20" />
+				<ACTION type="talent" param1="210600154" rate="20" />
+				<ACTION type="talent" param1="210600155" rate="20" cycle="300" />
+				<ACTION type="talent" param1="210600108" rate="10" cycle="300" />
+				<ACTION type="talent" param1="210600109" rate="10" cycle="300" />
+				<ACTION type="talent" param1="210600113" rate="20" cycle="300" />
+			</DEFAULT>
+			<CHECK type="gained_buff" param1="40050">
+				<DEFAULT>
+					<ACTION type="talent" param1="210600101" rate="20" />
+					<ACTION type="talent" param1="210600102" rate="20" />
+					<ACTION type="talent" param1="210600103" rate="20" />
+					<ACTION type="talent" param1="210600104" rate="20" />
+					<ACTION type="talent" param1="210600105" rate="20" cycle="300" />
+					<ACTION type="talent" param1="210600108" rate="10" cycle="300" />
+					<ACTION type="talent" param1="210600109" rate="10" cycle="300" />
+					<ACTION type="talent" param1="210600113" rate="20" cycle="300" />
+				</DEFAULT>
+				<CHECK type="distance" param1="800">
+					<ACTION type="aggro" param1="random" param2="10" rate="10" />
+					<ACTION type="talent" param1="210600106" rate="20" duration="3" />
+					<ACTION type="talent" param1="210600107" rate="20" duration="3" />
+				</CHECK>
+			</CHECK>
+			<CHECK type="distance" param1="800">
+				<ACTION type="aggro" param1="short" param2="10" rate="10" />
+				<ACTION type="talent" param1="210600156" rate="20" duration="3" />
+				<ACTION type="talent" param1="210600157" rate="20" duration="3" />
+			</CHECK>
+		</COMBAT>
+		<STRESS>
+			<CHECK type="stress" param1="100">
+				<DEFAULT>
+					<ACTION type="lua" param1="Verus_Ignition" rate="15" cycle="100" />
+					<ACTION type="talent" param1="210600153" rate="20" duration="0" />
+					<ACTION type="talent" param1="210600113" rate="20" cycle="300" />
+				</DEFAULT>
+				<CHECK type="gained_buff" param1="40050">
+					<ACTION type="talent" param1="210600104" rate="20" duration="0" />
+					<ACTION type="talent" param1="210600103" rate="20" duration="0" />
+					<ACTION type="talent" param1="210600113" rate="20" cycle="300" />
+				</CHECK>
+			</CHECK>
+		</STRESS>
+	</COLT>	
+	<SCRIPT>
+	<![CDATA[ 
+	--[[
+		베루스
+	--]]
+	
+	function NPC_106001:Init(NPCID)
+		NPC_ReserveUserData(NPCID, 1)
+	end
+
+	function Verus_Ignition(ThisNPC, Enemy)
+		if(ThisNPC:CheckBuff(40050) == false and ThisNPC:CheckBuff(40053) == false) then
+			if(ThisNPC:CheckBPart(1) == true and ThisNPC:CheckBPart(2) == true) then
+				ThisNPC:UseTalentSelf(210600158)
+			else
+				ThisNPC:UseTalentSelf(210600112)
+			end
+		end
+	end
+	
+	function NPC_106001:OnFinishActivateBuff(ThisNPC, Enemy)
+		ThisNPC:GainBuff(40050)
+	end
+	
+	function NPC_106001:OnFinishActivateBuff2(ThisNPC, Enemy)
+		ThisNPC:GainBuff(40052)
+	end
+	
+	function NPC_106001:OnHitCapsule_0_0(HitInfo)
+		local victim = AsNPC( HitInfo.Victim )
+		local hpRate = victim:GetHP()/victim:GetMaxHP()
+		
+		if(this:CheckBuff(40050) == false and this:CheckBuff(40052) == false and hpRate < 0.5) then
+			-- '연옥의 불꽃'과 '암흑의 불꽃' 버프가 없을 때에만 누적 데미지로 인정
+			local totalDamage = victim:GetUserData(1) + HitInfo.Damage
+			
+			if(totalDamage > 1500) then
+				if (victim:CheckBPart(1) == false) then
+					victim:ClearJob()
+					victim:BreakPart(1, HitInfo.Attacker)
+					victim:UseTalentSelf(210600120)
+				elseif(victim:CheckBPart(2) == false) then
+					victim:ClearJob()
+					victim:BreakPart(2, HitInfo.Attacker)
+					victim:RemoveBuff(40050)
+					victim:GainBuff(40052)
+					victim:UseTalentSelf(210600121)
+				end
+				totalDamage = 0
+			else
+				HitInfo.MF:Adjust(MF_BEATEN, 60, 1500)
+			end
+			
+			victim:SetUserData(1, totalDamage)
+		end
+				
+		return HitInfo
+	end
+	
+	]]>
+	</SCRIPT>
+</maiet>
+

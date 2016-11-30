@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="가디엘 이단심판관 뮈텔">
+		<COMBAT victory="250110602">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110611" rate="10" desc="지팡이1타"/> 
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="400">
+				<ACTION type="talent" param1="250110611" rate="10" desc="지팡이1타"/> 
+				<ACTION type="talent" param1="250110612" rate="30" desc="지팡이2연타"/>
+				<ACTION type="talent" param1="250110621" rate="5" desc="빛의 가시"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" param2="500">
+				<ACTION type="talent" param1="250110613" rate="30" desc="전진 공격"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="talent" param1="250110621" rate="10" desc="빛의 가시"/>
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110601" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_501106" param2="MutelIdleChat" cycle="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_501106:MutelIdleChat( ThisNPC, Enemy)
+		local dice = math.random(0,1)
+		if dice == 0 then
+			ThisNPC:NonDelaySay("$$Field_501001_18", 5)
+		else
+			ThisNPC:NonDelaySay("$$Field_501001_19", 5)
+		end
+end
+
+	
+	]]></SCRIPT>
+</maiet>

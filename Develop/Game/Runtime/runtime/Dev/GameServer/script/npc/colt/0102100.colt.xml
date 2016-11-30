@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="에다산 산양">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210210001" rate="40" />
+				<ACTION type="talent" param1="210210002" rate="40" />
+			</DEFAULT>
+		</COMBAT>
+
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210210000" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

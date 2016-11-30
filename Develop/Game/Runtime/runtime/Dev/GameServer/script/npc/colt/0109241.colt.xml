@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 가시호저	
+210924100	idle2
+210924101	idle3
+210924102	방전
+210924103	돌진
+210924104	근접공격1(atk3)
+210924105	근접공격2(atk4)
+-->
+<maiet>
+	<COLT name="가시호저">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210924103" rate="30" desc="돌진" cycle="9" />
+				<ACTION type="talent" param1="210924104" rate="30" desc="근접공격1(atk3)" />
+				<ACTION type="talent" param1="210924105" rate="30" desc="근접공격2(atk4)" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="400">
+				<ACTION type="talent" param1="210924103" rate="50" desc="돌진" cycle="6" />
+				<ACTION type="talent" param1="210924104" rate="10" desc="근접공격1(atk3)" />
+				<ACTION type="talent" param1="210924105" rate="10" desc="근접공격2(atk4)" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210924100" rate="30" desc="idle2" />
+				<ACTION type="talent" param1="210924101" rate="30" desc="idle3" />
+				<ACTION type="nothing" param1="5" rate="70" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

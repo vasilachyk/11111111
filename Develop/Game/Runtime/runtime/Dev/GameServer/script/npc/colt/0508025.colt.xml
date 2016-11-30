@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="베이누스 로닌형" npcid="508025">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="250802011" rate="10" duration="5" desc="한바퀴 휘두르기"/>
+				<ACTION type="talent" param1="252001010" rate="10" duration="5" desc="전방 휘두르기"/>
+				<ACTION type="talent" param1="250802012" rate="10" duration="5" cycle="20" desc="잡기"/>
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="1" >
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="250802013" duration="0" desc="발구르기"/>
+					<ACTION type="talent" param1="250802015" desc="돌 떨구기"/>
+				</ACTION>
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="250802013" duration="0" desc="발구르기"/>
+					<ACTION type="talent" param1="250802016" desc="지진 발사"/>
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0" rate="50"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="타죽은 원령 - 아란바스 화산지대" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610301" rate="25" />
+				<ACTION type="talent" param1="211610302" rate="25" />
+				<ACTION type="talent" param1="211610303" rate="25" />
+				<ACTION type="talent" param1="211610304" rate="25" />				
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="70">
+				<ACTION type="talent" param1="211610301" rate="10" />
+				<ACTION type="talent" param1="211610302" rate="10" />
+				<ACTION type="talent" param1="211610303" rate="10" />
+				<ACTION type="talent" param1="211610304" rate="10" />
+				<ACTION type="talent" param1="211610305" rate="20" />
+				<ACTION type="talent" param1="211610306" rate="20" />				
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610300" rate="50" />
+				<ACTION type="nothing" param1="5" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 늑대 우두머리	
+210112400	#idle2(땅파기)
+210112401	#idle3(울기)
+210112402	#짖기
+210112403	#회피회전L
+210112404	#회피회전R
+210112405	#늑대울음
+공격 스킬	
+210112410	#물기(atk_1)
+210112411	#물어뜯기(atk_2)
+210112412	#대쉬물기(atk_3)
+210112413	#물기2(atk_4)
+-->
+<maiet>					
+	<COLT name="오염된 늑대 우두머리" npcid="101124">
+		<COMBAT>			
+			<DEFAULT>
+				<ACTION type="talent" param1="210112410" rate="30" desc="물기" />
+				<ACTION type="talent" param1="210112411" rate="30" cycle="5" desc="물어뜯기" />
+				<ACTION type="talent" param1="210112412" rate="30" cycle="5" desc="대쉬물기" />
+				<ACTION type="talent" param1="210112403" rate="5" cycle="7" desc="회피회전L" />
+				<ACTION type="talent" param1="210112404" rate="5" cycle="7" desc="회피회전R" />
+			</DEFAULT>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="210112411" rate="40" desc="물어뜯기" />
+				<ACTION type="talent" param1="210112412" rate="40" desc="대쉬물기" />
+				
+				<ACTION type="talent" param1="210112402" rate="5" cycle="30" desc="짖기" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210112400" rate="20" desc="idle2(땅파기)" />
+				<ACTION type="talent" param1="210112401" rate="20" desc="idle3(울기)" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

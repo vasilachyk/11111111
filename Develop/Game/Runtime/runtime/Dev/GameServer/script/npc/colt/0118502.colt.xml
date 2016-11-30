@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="볼라스 스킬더미" npcid="118502">
+		<COMBAT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_118502:Init( NPCID )
+end
+
+function NPC_118502:OnFinishSkill( ThisActor, Enemy )
+	AsNPC(ThisActor):Despawn( false )
+end
+
+	]]></SCRIPT>
+</maiet>

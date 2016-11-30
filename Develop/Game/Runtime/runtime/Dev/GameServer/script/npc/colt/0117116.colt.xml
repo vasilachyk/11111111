@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 팬텀 마이코니드 미니온	
+211711600	idle2
+211711601	idle3
+211711602	포자떨구기
+211711603	박치기
+-->
+<maiet>
+	<COLT name="마이코니드 미니온" npcid="117116">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711603" rate="40" desc="박치기" />
+				<ACTION type="talent" param1="211711602" rate="40" desc="포자떨구기" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711600" rate="30" desc="idle2" />
+				<ACTION type="talent" param1="211711601" rate="30" desc="idle3" />
+				<ACTION type="nothing" param1="2" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 나무정령	
+210923701	일반공격
+210923702	강한공격
+210923703	idle2
+210923704	발구르기
+-->
+<maiet>
+	<COLT name="나무정령">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923701" rate="30" />
+				<ACTION type="talent" param1="210923702" rate="25" />
+				<ACTION type="talent" param1="210923704" rate="20" />				
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="4" rate="50" />
+				<ACTION type="talent" param1="210923703" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>
+

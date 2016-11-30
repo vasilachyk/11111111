@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="전위부대 돌격병"> <!--전투지원 퀘스트 인스턴스 필드용-->
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="189404001" rate="20" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="189404002" rate="20" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="189404003" rate="10" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="189404004" rate="10" /> <!-- 강타공격 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="talent" param1="189404001" rate="10" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="189404002" rate="10" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="189404003" rate="10" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="189404004" rate="30" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="189404005" param2="1" rate="50" cycle="8"/>
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

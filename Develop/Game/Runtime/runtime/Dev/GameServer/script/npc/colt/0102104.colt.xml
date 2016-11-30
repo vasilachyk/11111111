@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="고지하운터수컷" npcid="102104">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="20"/>
+				
+				<ACTION type="talent" param1="210210403" rate="40" />
+				<ACTION type="talent" param1="210210404" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="100">
+					<ACTION type="group" rate="50" cycle="5">
+						<ACTION type="talent" param1="210210405"/>
+						<ACTION type="talent" param1="210210406"/>
+					</ACTION>
+					<ACTION type="talent" param1="210210405" rate="50"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="20" />
+				
+				<ACTION type="talent" param1="210210403" rate="20" />
+				<ACTION type="talent" param1="210210404" rate="10" />
+				<ACTION type="talent" param1="210210406" rate="40" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210210402" rate="20" />
+				<ACTION type="talent" param1="210210403" rate="20" />
+				<ACTION type="talent" param1="210210404" rate="20" />
+				<ACTION type="nothing" param1="2" rate="20" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

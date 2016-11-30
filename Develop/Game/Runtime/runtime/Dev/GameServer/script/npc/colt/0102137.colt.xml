@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 죽음의 토템	
+210213700 죽음의 광선
+-->
+<maiet>
+	<COLT name="죽음의 토템" npcid="102137">
+		<COMBAT >
+			<DEFAULT/>
+			<CHECK type="distance" param2="2000" >			
+				<ACTION type="talent" param1="210213700" rate="100" />			
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

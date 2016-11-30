@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8003" minimap_name="map08003" min_x="0" min_y="0" max_x="60000" max_y="60000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" qpvpnpc1="950000" qpvpnpc2="950000" qpvprebirth1="102230" qpvprebirth2="102231">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="auto" x="7355.976563" y="5509.559082" z="2.996094" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1172000" group="0" name="auto" x="7020.844727" y="6426.953125" z="2.996094" dir_x="0.500000" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1172001" group="0" name="auto" x="8114.373535" y="6643.619629" z="2.996094" dir_x="-0.573577" dir_y="-0.819152" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1172002" group="0" name="auto" x="8470.322266" y="5665.751953" z="2.996094" dir_x="-0.961262" dir_y="-0.275637" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1172003" group="0" name="auto" x="7727.932129" y="4876.021484" z="2.996094" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117200" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="1" x="6165.498535" y="5327.316406" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="SR00001" local="false" x="3528.375000" y="4463.601563" z="3.000000" radius="700.000000" enabled="true" groupname="none" />
+        <AREA id="1" name="area_00001" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="9836.286133" y="2335.415527" z="0.000000" radius="1000.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

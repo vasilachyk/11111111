@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="습격자">
+		<COMBAT victory="210901809">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+			
+				<ACTION type="talent" param1="210901801" rate="25" /><!--1타 -->
+				<ACTION type="talent" param1="210901802" rate="15" /><!--2타 -->
+				
+				<ACTION type="talent" param1="210901804" rate="10" /><!--강한공격 -->
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210901807" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+</maiet>

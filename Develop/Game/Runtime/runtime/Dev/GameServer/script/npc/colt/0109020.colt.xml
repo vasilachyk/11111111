@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="티안">
+		<COMBAT victory="210901809">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210901801" rate="50" /><!--1타 -->
+				<ACTION type="talent" param1="210901804" rate="50" /><!--강한공격 -->
+				
+				<ACTION type="talent" param1="210901805" rate="15" /><!--찌르기 -->
+				<ACTION type="talent" param1="210901810" rate="15" /><!--회피L -->
+				<ACTION type="talent" param1="210901811" rate="15" /><!--회피R -->			
+							
+			</DEFAULT>
+			 <CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210901801" rate="8" />
+				<ACTION type="talent" param1="210901812" rate="2" />
+				
+				<ACTION type="talent" param1="210901802" rate="10" />
+				<ACTION type="talent" param1="210901804" rate="10" />
+				<ACTION type="talent" param1="210901805" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210901807" /><!--칼뽑기-->				
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<!-- 이벤트 NPC는 패트롤 도중 멈추면 안됨 -->
+		</IDLE>
+	</COLT>
+</maiet>

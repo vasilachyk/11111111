@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="레바론" npcid="116000">	
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="talent" param1="211600002"/>
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>		
+		
+		<COMBAT mode="0" comment="Peace mode">
+			<DEFAULT> 
+				<ACTION type="talent" param1="211600005" rate="5" duration="2" desc="회피점프_좌"/>
+				<ACTION type="talent" param1="211600006" rate="5" duration="2" desc="회피점프_우"/>
+				<ACTION type="talent" param1="211600010" rate="40" duration="2" desc="왼손 휘두르기"/>
+				<ACTION type="talent" param1="211600011" rate="40" duration="2" desc="오른손 올리기 펀치"/>
+				<ACTION type="lua" param1="NPC_116000" param2="BackAttack" rate="20" cycle="5"/>
+				<ACTION type="aggro" param1="far" param2="0" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="80" param2="100" >
+				<ACTION type="lua" param1="NPC_116000" param2="StigmaStampAttack" rate="30"/>
+				<ACTION type="talent" param1="211600010" rate="10" duration="2" desc="왼손 휘두르기"/>
+				<ACTION type="talent" param1="211600011" rate="10" duration="2" desc="오른손 올리기 펀치"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="80" >
+				<ACTION type="lua" param1="NPC_116000" param2="StigmaStampAttack" rate="30"/>
+				<ACTION type="talent" param1="211600010" rate="10" duration="2" desc="왼손 휘두르기"/>
+				<ACTION type="talent" param1="211600011" rate="10" duration="2" desc="오른손 올리기 펀치"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="30" param2="60">
+				<ACTION type="lua" param1="NPC_116000" param2="StigmaStampAttack" rate="30"/>
+				<ACTION type="talent" param1="211600010" rate="10" duration="2" desc="왼손 휘두르기"/>
+				<ACTION type="talent" param1="211600011" rate="10" duration="2" desc="오른손 올리기 펀치"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30">
+				<ACTION type="talent" param1="211600017" rate="20" desc="회오리"/>
+				<ACTION type="lua" param1="NPC_116000" param2="StigmaStampAttack" rate="50"/>
+				<ACTION type="talent" param1="211600010" rate="10" duration="2" desc="왼손 휘두르기"/>
+				<ACTION type="talent" param1="211600011" rate="10" duration="2" desc="오른손 올리기 펀치"/>
+				<ACTION type="aggro" param1="far" param2="0" rate="10" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211600001" rate="5"  />
+				<ACTION type="nothing" param1="2" rate="95"/>
+			</DEFAULT>
+		</IDLE>
+
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_116000:Init( NPCID )
+	NPC_ReserveUserData( NPCID, 16 )
+	
+	local MaxHP 										= NPC_116000.MaxHP
+	
+	NPC_116000.LimitForBreakLarm						= MaxHP/20		-- 왼팔 파츠 누적
+	NPC_116000.LimitForBreakRarm						= MaxHP/15		-- 오른팔 파츠 누적
+	NPC_116000.LimitForBreakChin						= MaxHP/10		-- 턱 파츠 누적
+	NPC_116000.LimitForPain								= MaxHP/5 		-- pain 데미지 누적
+	
+	NPC_116000.Stigma									= 0				-- 낙인 찍은 것 저장	
+	NPC_116000.Limit_Stigma3							= 3             -- 낙인 3개면 폭발
+	NPC_116000.Limit_Stigma4							= 4             -- 낙인 4개면 폭발
+	NPC_116000.Limit_Stigma5							= 5             -- 낙인 5개면 폭발
+	NPC_116000.Limit_Stigma6							= 6             -- 낙인 6개면 폭발
+	
+	NPC_116000.Fire1									= 0				-- 낙인 소환수 저장
+	NPC_116000.Fire2									= 0				
+	NPC_116000.Fire3									= 0
+	NPC_116000.Fire4									= 0
+	NPC_116000.Fire5									= 0
+	NPC_116000.Fire6									= 0
+	
+	NPC_116000.Magma1									= MaxHP*70/100  -- HP가 70%일때 
+	NPC_116000.Magma2									= MaxHP*50/100  -- HP가 50%일때 
+	NPC_116000.Magma3									= MaxHP*30/100  -- HP가 30%일때 
+	
+	NPC_116000.TalIdBreak								= 211600003		-- 파츠 떨어져 아픔
+	NPC_116000.TalIdPain								= 211600004		-- 데미지 누적 아픔
+	
+	NPC_116000.TalIdAvoidL 								= 211600005 	-- 회피점프_좌
+	NPC_116000.TalIdAvoidR 								= 211600006 	-- 회피점프_우
+	NPC_116000.TalIdAtk3 								= 211600012 	-- 오른손 제자리 내려치기
+	NPC_116000.TalIdStrike1 							= 211600013 	-- 점프내려치기1
+	NPC_116000.TalIdStrike2 							= 211600014 	-- 점프내려치기2
+	NPC_116000.TalIdJumpFire							= 211600015 	-- 공격후 뒤로 점프
+	NPC_116000.TalIdFire 								= 211600016 	-- 용암 분출
+	
+	NPC_116000.NpcIdStigma								= 116001		-- 낙인 소환수
+	NPC_116000.BuffId									= 40817			-- 레바론 기본 불
+end
+
+function NPC_116000:OnBPartRecover()  
+	for i=1, 16 do
+		this:SetUserData( i, 0 )
+	end -- for
+end
+
+function NPC_116000:OnSpawn(Spawn)
+	this:GainBuff( NPC_116000.BuffId )
+end
+
+function NPC_116000:OnDie( Despawn )
+	this:RemoveBuff( NPC_116000.BuffId )
+	local despawnEnd = 10 + this:GetUserData(5)
+ 
+	for i = 11, despawnEnd do
+		local MinionID = this:GetUserData(i)
+		local Minion = this:GetMinion(MinionID)
+		Minion:Despawn(true)
+		Minion:RemoveBuff(40818)
+		this:SetUserData(i, 0)
+	end
+ 
+	this:SetUserData(5, 0)
+end
+
+-- 낙인을 소환하는 공격 모션들
+function NPC_116000:StigmaStampAttack( ThisNPC, Enemy )
+	local dist = ThisNPC:DistanceTo( Enemy )
+	local n = math.random( 1, 2 )
+	
+	if NPC_116000:CheckUseStigmaStampCountAndHP(ThisNPC) then	
+		ThisNPC:UseTalentSelf( NPC_116000.TalIdFire )
+		return
+	end
+	
+	if dist > 1500 then
+		ThisNPC:MoveToActor( Enemy, NPC_116000.TalIdStrike2 )
+		ThisNPC:UseTalent( NPC_116000.TalIdStrike2, Enemy )
+		return
+	end
+	if dist > 1000 then
+		ThisNPC:MoveToActor( Enemy, NPC_116000.TalIdStrike1 )
+		ThisNPC:UseTalent( NPC_116000.TalIdStrike1, Enemy )
+		return
+	end
+	if n == 1 then
+		ThisNPC:MoveToActor( Enemy, NPC_116000.TalIdAtk3 )
+		ThisNPC:UseTalent( NPC_116000.TalIdAtk3, Enemy )
+	end
+	if n == 2 then
+		ThisNPC:MoveToActor( Enemy, NPC_116000.TalIdJumpFire )
+		ThisNPC:UseTalent( NPC_116000.TalIdJumpFire, Enemy )
+	end
+end
+
+-- 오른손 제자리 내려치기 211600012
+function NPC_116000:OnDelayedStigma1( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	NPC_116000:SpawnAndSaveMinion(ThisNPC, Enemy, 600)
+end
+
+-- 점프 내려치기 1 211600013
+function NPC_116000:OnDelayedStigma2( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	NPC_116000:SpawnAndSaveMinion(ThisNPC, Enemy, 500)
+end
+
+-- 점프 내려치기 2 211600014
+function NPC_116000:OnDelayedStigma3( ThisActor, Enemy ) 
+	local ThisNPC = AsNPC( ThisActor )
+	NPC_116000:SpawnAndSaveMinion(ThisNPC, Enemy, 500)
+end
+
+-- 공격후 뒤로 점프 211600015
+function NPC_116000:OnDelayedStigma4( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	NPC_116000:SpawnAndSaveMinion(ThisNPC, Enemy, 600)
+end
+
+-- 미니언 소환 후 저장
+function NPC_116000:SpawnAndSaveMinion(ThisNPC, Enemy, dis)
+	localAdjPos = vec3(0, dis, 0)
+	WorldPos = Math_LocalToWorld(ThisNPC:GetDir(), ThisNPC:GetPos(), localAdjPos)
+	local Minion = ThisNPC:SummonNow( NPC_116000.NpcIdStigma, WorldPos )
+	local stigma = ThisNPC:GetUserData(5) + 1
+	ThisNPC:SetUserData(5, stigma)
+	-- 나중에 지우기 위해 기억한다
+	ThisNPC:SetUserData(10 + stigma, Minion:GetMinionID())
+end
+
+-- 낙인 숫자와 hp를 먼저 계산한다
+function NPC_116000:CheckUseStigmaStampCountAndHP( ThisNPC )
+	local StigmaCnt = ThisNPC:GetUserData(5) 
+	if ThisNPC:GetHP() <= NPC_116000.Magma3 then 
+		return NPC_116000.Limit_Stigma6 <= StigmaCnt
+	end
+	
+	if ThisNPC:GetHP() <= NPC_116000.Magma2 then
+		return NPC_116000.Limit_Stigma5 <= StigmaCnt
+	end
+	
+	if ThisNPC:GetHP() <= NPC_116000.Magma1 then
+		return NPC_116000.Limit_Stigma4 <= StigmaCnt
+	end
+	
+	if ThisNPC:GetHP() > NPC_116000.Magma1 then
+		return NPC_116000.Limit_Stigma3 <= StigmaCnt
+	end
+end
+
+function NPC_116000:OnActMagma(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	local despawnEnd = 10 + ThisNPC:GetUserData(5)
+ 
+	for i = 11, despawnEnd do
+		local MinionID = ThisNPC:GetUserData(i)
+		local Minion = ThisNPC:GetMinion(MinionID)
+		Minion:RemoveBuff(40818)
+		Minion:UseTalentSelf(211600100)
+		ThisNPC:SetUserData(i, 0)
+	end
+ 
+	ThisNPC:SetUserData(5, 0)
+end
+
+function NPC_116000:AccDamage( ThisNPC, HitInfo )
+	local BreakLarm = 0
+	local BreakRarm = 0
+	local BreakChin = 0
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	if	currentTalent == NPC_116000.TalIdFire or
+		currentTalent == NPC_116000.TalIdStrike2 or
+		currentTalent == NPC_116000.TalIdJumpFire then
+		return HitInfo
+	end
+	
+	local Pain =  ThisNPC:GetUserData( 4 ) + HitInfo.Damage
+	ThisNPC:SetUserData( 4, Pain )
+	
+	-- Acc for pain
+	if ThisNPC:CheckBPart(1) == false then 
+		BreakLarm = ThisNPC:GetUserData( 1 ) + HitInfo.Damage
+		ThisNPC:SetUserData( 1, BreakLarm )
+	elseif ThisNPC:CheckBPart(2) == false then 
+		BreakRarm = ThisNPC:GetUserData( 2 ) + HitInfo.Damage
+		ThisNPC:SetUserData( 2, BreakRarm )
+	elseif ThisNPC:CheckBPart(3) == false then 
+		BreakChin = ThisNPC:GetUserData( 3 ) + HitInfo.Damage
+		ThisNPC:SetUserData( 3, BreakChin )
+	end
+		
+	if ThisNPC:GetCurrentTalent() == NPC_116000.TalIdBreak or
+		ThisNPC:GetCurrentTalent() == NPC_116000.TalIdPain then
+		return HitInfo
+	end
+	
+	if BreakLarm > NPC_116000.LimitForBreakLarm then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_116000.TalIdBreak )
+		ThisNPC:BreakPart( 1 , HitInfo.Attacker )
+		ThisNPC:SetUserData( 1, 0 )
+	elseif BreakRarm > NPC_116000.LimitForBreakRarm then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_116000.TalIdBreak )
+		ThisNPC:BreakPart( 2 , HitInfo.Attacker )
+		ThisNPC:SetUserData( 2, 0 )
+	elseif BreakChin > NPC_116000.LimitForBreakChin then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_116000.TalIdBreak )
+		ThisNPC:BreakPart( 3 , HitInfo.Attacker )
+		ThisNPC:SetUserData( 3, 0 )
+	elseif ThisNPC:GetMode() == 0 and
+		ThisNPC:GetUserData( 4 ) > NPC_116000.LimitForPain then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_116000.TalIdPain )
+		ThisNPC:SetUserData( 4 , 0 )
+	end
+	
+	return HitInfo
+end
+
+-- 전체
+function NPC_116000:OnHitCapsule_1_0(HitInfo)
+	return NPC_116000:AccDamage( this, HitInfo )
+end
+-- 왼쪽 팔꿈치
+function NPC_116000:OnHitCapsule_1_1(HitInfo)
+	return NPC_116000:AccDamage( this, HitInfo )
+end
+-- 오른쪽 팔꿈치
+function NPC_116000:OnHitCapsule_1_2(HitInfo)
+	return NPC_116000:AccDamage( this, HitInfo )
+end
+-- 턱
+function NPC_116000:OnHitCapsule_1_3(HitInfo)
+	return NPC_116000:AccDamage( this, HitInfo )
+end
+
+-- 후방 공격
+function NPC_116000:BackAttack( ThisNPC, Enemy )
+	local dist = ThisNPC:DistanceTo( Enemy )
+	local isRear = Enemy:IsRear( ThisNPC )
+	
+	if IsRear then
+		if dist > 500 then
+			ThisNPC:UseTalentSelf( NPC_116000.TalIdJumpFire )
+			ThisNPC:UseTalentSelf( NPC_116000.TalIdAvoidL )
+			ThisNPC:UseTalentSelf( NPC_116000.TalIdAvoidR )
+		end
+	end
+ end
+
+	]]></SCRIPT>
+</maiet>

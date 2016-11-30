@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="부숴지는 오브젝트" npcid="520506">
+		<COMBAT>
+			
+			<DEFAULT>			
+				
+				
+			</DEFAULT>					
+			
+		</COMBAT>		
+		
+		<IDLE>
+			<DEFAULT>
+			
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+	<![CDATA[ 
+
+	--[[
+		
+	--]]
+
+function NPC_520506:OnHitCapsule_1_0(HitInfo) 
+	
+	--GLog("1")
+	local victim = AsNPC( HitInfo.Victim )
+	
+	if( victim:IsPlayer() == false and this:CheckBPart(3) == true ) then
+		this:BreakPart(4, HitInfo.Victim)		
+	end
+	
+	if( victim:IsPlayer() == false and this:CheckBPart(2) == true ) then
+		this:BreakPart(3, HitInfo.Victim)		
+	end
+	
+	if( victim:IsPlayer() == false and this:CheckBPart(1) == true ) then
+		this:BreakPart(2, HitInfo.Victim)		
+	end	
+	
+	if( victim:IsPlayer() == false and this:CheckBPart(1) == false ) then
+		this:BreakPart(1, HitInfo.Victim)		
+	end
+	
+	--local HPPer = this:GetHP() / this:GetMaxHP()	
+	
+	--if( HPPer < 0.2 ) then
+		--this:BreakPart(4, HitInfo.Victim)
+	--elseif( HPPer < 0.4 ) then
+		--this:BreakPart(3, HitInfo.Victim)
+	--elseif( HPPer < 0.6 ) then
+		--this:BreakPart(2, HitInfo.Victim)
+	--elseif( HPPer < 0.8 ) then
+		--this:BreakPart(1, HitInfo.Victim)
+	--end
+	
+	return HitInfo
+	
+end
+
+
+
+	
+	]]>
+	</SCRIPT>
+</maiet>

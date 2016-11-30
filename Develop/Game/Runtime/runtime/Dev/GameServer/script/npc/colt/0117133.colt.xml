@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 베스피오단 도둑, 소시아	
+# 인간형 한손검 기본, 방패	
+#일반	
+211713201	#칼뽑기(tomode0)
+211713202	#칼넣기(tomode1)
+211713203	#회피L
+211713204	#회피R
+211713205	#역습 포커스
+#전투	
+211713211	#1타
+211713212	#2연타
+211713213	#3연타
+211713214	#찌르기
+211713215	#강격
+211713216	#보루
+211713217	#파멸의 일격
+211713218	#방패 가격: 기절
+211713219	#돌진
+211713220	#방어
+211713221	#방패 후리기
+-->
+<maiet>
+	<COLT name="베스피오단 도둑" npcid="117133">
+		<COMBAT mode="0" victory="211713202" >
+			<DEFAULT>
+				<ACTION type="talent" param1="211713211" desc="1타" rate="20" />
+				<ACTION type="talent" param1="211713212" desc="2연타" rate="20" />
+				<ACTION type="talent" param1="211713217" desc="파멸의 일격" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="talent" param1="211713211" desc="1타" rate="10" />
+				<ACTION type="talent" param1="211713212" desc="2연타" rate="10" />
+				<ACTION type="talent" param1="211713217" desc="파멸의 일격" rate="10" />
+				<ACTION type="talent" param1="211713214" desc="찌르기" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80" >
+					<ACTION type="talent" param1="211713214" desc="찌르기" /> <!-- 찌르기 -->
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211713201" desc="모드0전환(칼뽑기)" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+		
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

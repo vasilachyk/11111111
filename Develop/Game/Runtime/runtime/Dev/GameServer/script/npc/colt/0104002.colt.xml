@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="검은심장 칼로스 가시" npcid="104002">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="210400200" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210400203" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_104002:Init( NPCID )
+	--[[
+		User Data
+		1: Pain누적 데미지
+	--]]
+	NPC_104002.UD_BPART1 	= 1
+	NPC_104002.UD_BPART3 	= 2
+	NPC_104002.UD_DATASIZE	= 2
+	NPC_ReserveUserData(NPCID, NPC_104002.UD_DATASIZE)
+	
+	NPC_104002.LIMIT_BPART	= 1210 * 5
+
+end
+
+function NPC_104002:OnTimer( Index )
+	-- GLog("NPC_104002:Test()")
+	local Enemy = this:Aggro( "far", 0 )
+	this:Warp( Enemy:GetPos() )
+	this:SetDir( Enemy:GetDir() )
+	this:UseTalentSelf( 210400200 )
+
+end
+	
+function NPC_104002:ProcessAccDamage( ThisNPC, partsID, HitInfo )
+	-- GLog("NPC_104002:ProcessAccDamage() "..partsID.."\n" )
+	--ThisNPC:SetTimer(1, 10, true)
+	if 0 == partsID then
+		return HitInfo
+	end
+
+	local damageAcc = ThisNPC:GetUserData(partsID) + ( HitInfo.Damage * 15) + math.random( 0, 9 )
+
+	HitInfo.Damage = damageAcc
+
+	ThisNPC:SetUserData( partsID, damageAcc )
+	
+	if damageAcc < NPC_104002.LIMIT_BPART then
+		return HitInfo
+	end
+	
+	if partsID == 1 then
+		ThisNPC:BreakPart( 1, HitInfo.Attacker )
+		ThisNPC:BreakPart( 2, HitInfo.Attacker )
+	else
+		ThisNPC:BreakPart( 3, HitInfo.Attacker )
+		ThisNPC:BreakPart( 4, HitInfo.Attacker )
+	end
+
+	ThisNPC:ClearJob()
+	ThisNPC:UseTalentSelf( 210400210 )
+	
+	return HitInfo
+end
+
+function NPC_104002:OnHitCapsule_1_0(HitInfo)
+	return NPC_104002:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104002:OnHitCapsule_1_1(HitInfo)
+	return NPC_104002:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104002:OnHitCapsule_1_2(HitInfo)
+	return NPC_104002:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104002:OnHitCapsule_1_3(HitInfo)
+	return NPC_104002:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104002:OnHitCapsule_1_4(HitInfo)
+	if this:CheckBPart(1) then
+		return NPC_104002:ProcessAccDamage( this, 0, HitInfo )
+	end
+	return NPC_104002:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104002:OnHitCapsule_1_5(HitInfo)
+	if this:CheckBPart(3) then
+		return NPC_104002:ProcessAccDamage( this, 0, HitInfo )
+	end
+	return NPC_104002:ProcessAccDamage( this, 2, HitInfo )
+end
+
+	]]></SCRIPT>
+</maiet>

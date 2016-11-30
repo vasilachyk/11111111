@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+#트롤, 오우거 제사장	
+710200321	idle2
+710200322	포효1
+710200323	포효2
+710200324	일반공격1
+710200325	일반공격2
+710200326	강한공격
+710200327	엉덩방아
+-->
+<maiet>
+	<COLT name="오우거 대제사장 본스메셔" npcid="7102151">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="710200324" rate="40" desc="일반공격1" />
+				<ACTION type="talent" param1="710200325" rate="30" desc="일반공격2" />
+				<ACTION type="talent" param1="710200326" rate="20" desc="강한공격" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="90" param2="99" >
+				<ACTION type="lua" param1="NPC_7102151" param2="Say" auto_run="true" max_count="1" />
+			</CHECK>
+			<CHECK type="hp" param1="30" param2="20" >
+				<ACTION type="lua" param1="NPC_7102151" param2="Say2" auto_run="true" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="120">
+				<ACTION type="talent" param1="710200327" rate="15" desc="엉덩방아" />
+				<ACTION type="talent" param1="710200323" rate="15" desc="포효2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="710200324" rate="10" desc="일반공격1" />
+				<ACTION type="talent" param1="710200325" rate="10" desc="일반공격2" />
+				<!-- 원거리 스킬 -->
+				<ACTION type="talent" param1="710200326" rate="60" desc="강한공격" />
+			</CHECK>
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="710200324" rate="50" desc="일반공격1" />
+				<ACTION type="nothing" param1="0" rate="50"/>
+			</DEFAULT>
+		</AGGRO>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_7102151:Init( NPCID )
+	
+end
+
+function NPC_7102151:Say(ThisNPC, Enemy)
+	ThisNPC:NarrationNow( "$$EPIC_EDAWAR_OGRE_PRIST_ATTCK" )
+end
+
+function NPC_7102151:Say2(ThisNPC, Enemy)
+	ThisNPC:NarrationNow( "$$EPIC_EDAWAR_OGRE_PRIST_DANGER" )
+end
+
+	]]></SCRIPT>
+</maiet>

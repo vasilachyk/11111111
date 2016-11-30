@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1021" min_x="-1000" min_y="-1000" max_x="1000" max_y="1000" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" name="spawn_00001" x="-425.748932" y="410.783569" z="31.999989" dir_x="-0.390731" dir_y="-0.920505" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" color="255,0,0">
+            <NPC id="32" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" name="spawn_00002" x="446.724304" y="-427.469299" z="31.999989" dir_x="-0.933580" dir_y="0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="-398.166931" y="-675.519287" z="32.999989" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

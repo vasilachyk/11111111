@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1070161" minimap_name="map1070161_1" loading_image_name="30292" min_x="-2750" min_y="-2750" max_x="2750" max_y="2750" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="302" group="0" name="투명 영혼석" x="286.928314" y="-927.525452" z="21.999767" dir_x="-0.358368" dir_y="0.933580" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="302" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="117601" group="0" name="MON 117601 멕기프" x="-237.575317" y="1013.325073" z="461.027283" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="100" combat_radius="0" color="auto">
+            <NPC id="117601" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710000" group="0" name="OBJ 117600 창고물품" x="873.241699" y="-181.306519" z="30.245972" dir_x="-0.857167" dir_y="-0.515038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117600" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710001" group="0" name="OBJ 117600 창고물품1" x="-348.538391" y="562.635498" z="30.214569" dir_x="-0.601815" dir_y="-0.798636" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117600" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710002" group="0" name="OBJ 117600 창고물품2" x="526.922485" y="1529.014648" z="20.000000" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117600" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710003" group="0" name="OBJ 117600 창고물품3" x="-759.842651" y="-1639.799927" z="33.072857" dir_x="0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="9999999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117600" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710004" group="0" name="멕기프 부하" x="-116.510559" y="1255.268066" z="21.999905" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="117160" default="true" rate="500" />
+            <NPC id="117161" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710006" group="0" name="멕기프 부하" x="-1452.589722" y="990.615845" z="31.952087" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="117160" default="true" rate="500" />
+            <NPC id="117161" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710007" group="0" name="멕기프 부하" x="372.712158" y="136.789139" z="21.999779" dir_x="0.069756" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="117160" default="true" rate="500" />
+            <NPC id="117161" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710012" group="0" name="멕기프 부하" x="-304.904022" y="-63.580082" z="21.999830" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="117160" default="true" rate="500" />
+            <NPC id="117161" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710018" group="0" name="멕기프 부하" x="1464.042603" y="995.162598" z="43.811157" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="117160" default="true" rate="500" />
+            <NPC id="117161" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11710021" group="0" name="멕기프 부하" x="529.864014" y="803.791077" z="21.999744" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="117160" default="true" rate="500" />
+            <NPC id="117161" default="false" rate="500" />
+        </SPAWN>
+        <MARKER id="1" name="from 리츠 주거지역 철문" x="12.830412" y="-1104.964355" z="22.999889" dir_x="-0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="117601" name="MON_M 117601 멕기프" x="-228.277634" y="970.868652" z="401.999939" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1176000" name="OBJ_M 117600 창고물품" x="659.172424" y="-197.733521" z="57.959503" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1176001" name="OBJ_M 117600 창고물품1" x="-287.755310" y="502.356750" z="24.249908" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1176002" name="OBJ_M 117600 창고물품2" x="497.486725" y="1603.484985" z="27.308510" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1176003" name="OBJ_M 117600 창고물품3" x="-909.988403" y="-1640.023315" z="32.608521" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 지하수로" x="8.249943" y="-1698.022949" z="35.440414" radius="200.000000" enabled="true" exit="4">
+            <EFFECT effect="sensor_trial_01" x="-12.083668" y="-2.739990" z="0.000000" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.400000" scale_y="1.000000" scale_z="1.200000" />
+            <WARP warp_type="field" title="to 지하수로" condition="0" gate_type="auto" field="1" marker="4" />
+        </SENSOR>
+        <SENSOR id="4234" name="부활지점" local="false" x="14.099384" y="-1081.453491" z="21.999830" radius="300.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="4235" name="툴팁체크용" local="false" x="12.419272" y="-1026.041382" z="21.999828" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="1176000" name="SENSOR 117600 창고물품" local="false" x="737.093140" y="-179.696106" z="48.622253" radius="200.000000" enabled="true" groupname="none" />
+        <SENSOR id="1176001" name="SENSOR 117600 창고물품1" local="false" x="-287.755310" y="502.356750" z="24.249908" radius="200.000000" enabled="true" groupname="none" />
+        <SENSOR id="1176002" name="SENSOR 117600 창고물품2" local="false" x="540.814453" y="1532.901123" z="67.015457" radius="200.000000" enabled="true" groupname="none" />
+        <SENSOR id="1176003" name="SENSOR 117600 창고물품3" local="false" x="-819.583984" y="-1647.839844" z="64.389130" radius="200.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

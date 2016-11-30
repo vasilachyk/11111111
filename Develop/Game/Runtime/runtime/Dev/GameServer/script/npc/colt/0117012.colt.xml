@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 쥬네	
+# 인간형 지팡이 기본(화염)	
+#일반	
+211701201	#모드0전환(칼뽑기)
+211701202	#모드1전환(칼넣기)
+211701203	#회피L
+211701204	#회피R
+211701205	#회피B
+#전투	
+211701211	화염화살
+211701212	화염구
+211701213	화염기둥
+211701214	연쇄폭파
+211701215	화염충격
+211701216	메테오
+-->
+<maiet>
+	<COLT name="쥬네" npcid="117012">
+		<COMBAT victory="211701202">
+			<DEFAULT>
+				<ACTION type="talent" param1="211701211" rate="10" desc="화염화살" />
+				<ACTION type="talent" param1="211701212" rate="10" desc="화염구" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="70">
+				<ACTION type="talent" param1="211701216" rate="10" desc="메테오" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				
+				<ACTION type="talent" param1="211701214" rate="30" desc="연쇄폭파" cycle="7" />
+				<ACTION type="talent" param1="211701213" rate="30" desc="화염기둥" />
+				<ACTION type="talent" param1="211701211" rate="10" desc="화염화살" />
+				<ACTION type="talent" param1="211701212" rate="10" desc="화염구" />
+				<ACTION type="group" rate="10" cycle="30">
+					<ACTION type="talent" param1="211701205" desc="회피B" />
+					<ACTION type="talent" param1="211701211" desc="화염화살" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211701201" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_117012:Init( NPCID )
+	NPC_117012.NpcIdSkillDummy 		= 117016
+	NPC_117012.Meteor 	= 211701600
+end
+
+function NPC_117012:OnActMeteor( ThisActor, Enemy )
+	local SkillDummy = NPC_117012:SummonMeteor( ThisActor, Enemy )
+	
+	if not SkillDummy:IsNull() then
+		SkillDummy:UseTalentSelf( NPC_117012.Meteor )
+		SkillDummy:Despawn(false)
+	end
+end
+
+function NPC_117012:SummonMeteor( ThisActor, Enemy )
+	--GLog( "NPC_117012:SummonMeteor\n" )
+	
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local SummonPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	LocalAdjPos = vec3(math.random(0, 0), math.random(0, 0), 0)
+	SummonPos = Math_LocalToWorld( Enemy:GetDir(), Enemy:GetPos(), LocalAdjPos )
+	local SkillDummy = ThisNPC:SummonNow( NPC_117012.NpcIdSkillDummy, SummonPos )
+	return SkillDummy
+end
+	
+	]]></SCRIPT>
+</maiet>

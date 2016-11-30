@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="10000" boundary_min_y="31325" boundary_max_x="28000" boundary_max_y="53479" weather_effect="true" town="false" returnable="true">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="도전]크라울러" x="18250.914063" y="41507.718750" z="2646.137939" dir_x="0.190809" dir_y="-0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="1800" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="1000000" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="19076.792969" y="37183.476563" z="2380.564941" dir_x="-0.121869" dir_y="0.992546" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

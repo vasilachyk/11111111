@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="볼락의 노랑벌레" npcid="103004">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="aggro" param1="random" param2="0" cycle="5"/>
+			</DEFAULT>
+	
+			<CHECK type="hp" param1="0" >
+				<ACTION type="aggro" param1="random" param2="0" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" >
+				<ACTION type="distance" param1="100" param2="100" duration="10"/>
+			</CHECK>
+			
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_103004:Init( NPCID )
+	NPC_103004.BufIdBubble 	= 40830
+end	
+
+function NPC_103004:OnCombatBegin()
+	this:GainBuff( NPC_103004.BufIdBubble )
+	this:SetTimer( 1, 20, false )
+end
+
+function NPC_103004:OnTimer( Index )
+	if Index == 1 then
+		
+		this:RemoveBuff( NPC_103004.BufIdBubble )
+		this:Despawn(false)
+		return
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

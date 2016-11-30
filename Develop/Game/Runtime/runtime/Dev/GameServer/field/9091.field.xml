@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8003" minimap_name="map08003" min_x="0" min_y="0" max_x="60000" max_y="60000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="12">
+        <BGM fieldbgm="bgm_field_1" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="spawn_00001" x="2387.085938" y="3146.673340" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="3005" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="spawn_00002" x="7839.383789" y="4728.047363" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="3020" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="spawn_00003" x="7874.254883" y="5093.901367" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="3083" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="spawn_00004" x="5034.912598" y="5486.298340" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="110205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200001" group="0" name="spawn_00005" x="7786.383789" y="20554.095703" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="5200000" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200003" group="0" name="spawn_5200003" x="9757.787109" y="18923.298828" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="5200001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200006" group="0" name="spawn_5200006" x="9282.995117" y="13002.041016" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="107047" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200010" group="0" name="장인" x="8838.827148" y="3574.593018" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="5200010" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200011" group="0" name="장인" x="8769.273438" y="1846.570435" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="5200011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200012" group="0" name="장인" x="9942.825195" y="2895.399902" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="5200012" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200013" group="0" name="장인" x="6615.153320" y="1597.533081" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="5200013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200014" group="0" name="장인" x="6026.699219" y="3523.770996" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="5200014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200015" group="0" name="장인" x="8840.713867" y="21450.925781" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="3003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200016" group="0" name="장인" x="11614.103516" y="1893.947632" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="5200016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5200017" group="0" name="장인" x="9204.639648" y="21420.001953" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="500" roam_depth="30" combat_radius="0" color="auto">
+            <NPC id="3021" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="3643.761230" y="4261.868164" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="MK00002" x="16113.572266" y="16469.646484" z="1023.957886" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="MK00003" x="8534.539063" y="20723.181641" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="MK00004" x="9597.681641" y="12439.131836" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="MK00005" x="5393.763672" y="12051.713867" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="6번. 장인" x="7763.454102" y="2701.356934" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

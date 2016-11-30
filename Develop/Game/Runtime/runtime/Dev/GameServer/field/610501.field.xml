@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" minimap_name="map00102" loading_image_name="00102" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="35000" boundary_min_y="25000" boundary_max_x="50000" boundary_max_y="38000" weather_effect="true" town="false" returnable="true" tutorial="false">
+		<BGM fieldbgm="bgm_field_5">
+            <ENVBGM dawnbgm="amb_snowyfield_dawn" />
+            <ENVBGM daytimebgm="amb_snowyfield_daytime" />
+            <ENVBGM sunsetbgm="amb_snowyfield_sunset" />
+            <ENVBGM nightbgm="amb_snowyfield_night" />
+            <ENVBGM clodybgm="amb_normal_2" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+		<SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="46961.000000" y="34086.500000" z="12005.185547" dir_x="-0.406737" dir_y="-0.913546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="41097.152344" y="30895.728516" z="11972.135742" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="안전지대" local="false" x="46999.230469" y="34013.089844" z="12005.185547" radius="750.000000" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ITEM id="2891" />
+            <ITEM id="2892" />
+            <ITEM id="2894" />
+            <ITEM id="2895" />
+            <ITEM id="10002003" />
+            <ITEM id="10002104" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

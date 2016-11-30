@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1012" minimap_name="map01012" loading_image_name="01012" min_x="-2000" min_y="-1780" max_x="2000" max_y="2220" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_dungeon_1" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="10" group="0" name="어미 거미" x="562.207703" y="194.291260" z="103.203613" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="3600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="107004" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="시집" x="914.535339" y="204.595169" z="244.629364" dir_x="0.390731" dir_y="0.920505" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="107236" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="미스텔" x="455.910889" y="1604.097900" z="-64.690231" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="107237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="새끼거미" x="-189.456924" y="-93.751289" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="새끼거미" x="-260.427948" y="313.546417" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="새끼거미" x="-405.021973" y="110.383316" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="새끼거미" x="-478.780090" y="-184.287598" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="새끼거미" x="-233.186508" y="-258.620789" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" group="0" name="새끼거미" x="-646.673279" y="-374.213989" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20" group="0" name="새끼거미" x="-494.492310" y="-35.297791" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="새끼거미" x="-545.678467" y="263.307129" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="새끼거미" x="-155.561203" y="165.727356" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="23" group="0" name="새끼거미" x="-468.748505" y="362.856659" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="24" group="0" name="새끼거미" x="-629.083862" y="68.370972" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="25" group="0" name="새끼거미" x="-670.818115" y="-184.415192" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="26" group="0" name="새끼거미" x="-341.778748" y="-356.716309" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="27" group="0" name="새끼거미" x="-322.369080" y="17.053837" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28" group="0" name="새끼거미" x="-106.549988" y="-54.463383" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="29" group="0" name="새끼거미" x="-27.555756" y="152.777863" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="30" group="0" name="새끼거미" x="-170.006134" y="386.647339" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="31" group="0" name="새끼거미" x="-357.757324" y="225.672516" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="32" group="0" name="새끼거미" x="-688.739868" y="230.480042" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="33" group="0" name="새끼거미" x="-321.718567" y="-140.640381" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="34" group="0" name="새끼거미" x="-522.878113" y="121.389740" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3000000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="255,255,255">
+            <NPC id="107034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302" group="0" name="투명 영혼석" x="-109.946877" y="1524.324707" z="104.203613" dir_x="-0.325568" dir_y="-0.945519" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="302" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="지하 시작점" x="603.895996" y="1500.280029" z="-64.690224" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="미스텔 이동4" x="-569.569702" y="1177.612549" z="103.203613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="미스텔 이동5" x="-555.761353" y="1065.079346" z="103.203613" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="미스텔 이동6" x="389.815552" y="1343.437134" z="-64.690216" dir_x="-1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="미스텔 이동 7" x="537.731201" y="1667.464355" z="-63.690231" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="미스텔 이동8" x="-84.919647" y="1341.501221" z="103.203613" dir_x="-0.939693" dir_y="-0.342020" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="미스텔 이동9" x="-218.836884" y="9.564183" z="103.203613" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="미스텔 이동10" x="190.223999" y="15.489847" z="104.203613" dir_x="0.325568" dir_y="0.945519" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="미스텔 이동11" x="340.236267" y="471.550232" z="104.203613" dir_x="0.891007" dir_y="-0.453991" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="거미4" x="481.539612" y="-314.151428" z="104.203613" dir_x="0.374607" dir_y="-0.927184" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="거미3" x="646.315125" y="-850.100708" z="113.848602" dir_x="-0.587785" dir_y="-0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="거미2" x="474.902313" y="-1093.231323" z="103.203613" dir_x="-0.999391" dir_y="0.034899" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="거미1" x="-265.349701" y="-1107.519409" z="103.203613" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1070542" name="[QM] 107054 obj 2" x="829.448425" y="77.532715" z="104.203613" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="도망 트리거" local="false" x="-443.441833" y="90.309433" z="103.203613" radius="600.000000" enabled="false" groupname="none" />
+        <SENSOR id="2" name="스폰 트리거" local="false" x="886.490356" y="192.906265" z="104.203613" radius="250.000000" enabled="false" groupname="none" />
+        <SENSOR id="3" name="체크포인트" local="false" x="565.672729" y="1297.185059" z="-64.690224" radius="300.000000" enabled="true" checkpoint="1" groupname="none" />
+    </FIELDINFO>
+</maiet>

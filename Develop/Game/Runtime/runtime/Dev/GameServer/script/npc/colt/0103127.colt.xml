@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="흑연꽃 중독자">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210312701" rate="20" />
+				<ACTION type="talent" param1="210312702" rate="30" />
+				<ACTION type="talent" param1="210312703" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400">
+				<ACTION type="distance" param1="300" param2="300" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

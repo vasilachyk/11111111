@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 렌고트 침략자  -->
+<maiet>
+	<COLT name="렌고트부족 침략자">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702401" rate="20" /> <!--평타공격1-->
+				<ACTION type="talent" param1="210702405" rate="10" /> <!--평타공격2-->
+				<ACTION type="talent" param1="210702402" rate="10" /> <!--연타공격 -->
+				<ACTION type="talent" param1="210702403" rate="10" />
+			</DEFAULT>
+			
+			<!-- 전투대기 위치 -->
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702401" rate="10" /> <!--평타공격1-->
+				<ACTION type="talent" param1="210702405" rate="10" /> <!--평타공격2-->
+				<ACTION type="talent" param1="210702402" rate="10" /> <!--연타공격 -->
+				<ACTION type="talent" param1="210702403" rate="20" />
+			</CHECK>
+			
+			<!-- 원거리 -->
+			<CHECK type="distance" param1="500">
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<!-- 분노패턴 ( 방어 ) -->
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="210702406" param2="1" rate="100"/>
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210702307" rate="20"/>
+				<ACTION type="nothing" param1="2" rate="80" />
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

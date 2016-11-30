@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 마리옹 변성체(117102)	
+211710201	칼로 쳐올리기(atk1)
+211710202	발차기(atk5)
+211710203	왼손 휘두르기
+-->
+<maiet>
+	<COLT name="마리옹 변성체" npcid="117102">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710201" desc="칼로 쳐올리기(atk1)" rate="10"/>
+				<ACTION type="talent" param1="211710202" desc="발차기(atk5)" rate="10" />
+				<ACTION type="talent" param1="211710203" desc="왼손 휘두르기" rate="10" />				
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

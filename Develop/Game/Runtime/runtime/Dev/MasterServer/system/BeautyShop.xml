@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+	* 관련파일
+	
+	[컬러정보]
+		\Data\system\color_table.xml 참고 
+
+-->
+
+<maiet>
+	<GENDER type="male">
+		<FACE>
+			<FACETYPE iconpath="Data\Interface\character\resource" meshpath="Data\Model\Player\hm">
+				<ITEM id="Sharp1" price="12500" makeup="Normal" icon="icon_makeup_m_face01_00" mesh="hm_face_12" />
+				<ITEM id="Sharp2" price="15500" makeup="Smoky" icon="icon_makeup_m_face01_01" mesh="hm_face_12" />
+				<ITEM id="Sharp3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face01_02" mesh="hm_face_12" />
+				<ITEM id="Bold1" price="12500" makeup="Normal" icon="icon_makeup_m_face02_00" mesh="hm_face_10" />
+				<ITEM id="Bold2" price="15500" makeup="Smoky" icon="icon_makeup_m_face02_01" mesh="hm_face_10" />
+				<ITEM id="Bold3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face02_02" mesh="hm_face_10" />
+				<ITEM id="Handsome1" price="12500" makeup="Normal" icon="icon_makeup_m_face03_00" mesh="hm_face_22" />
+				<ITEM id="Handsome2" price="15500" makeup="Smoky" icon="icon_makeup_m_face03_01" mesh="hm_face_22" />
+				<ITEM id="Handsome3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face03_02" mesh="hm_face_22" />
+				<ITEM id="Angulate1" price="12500" makeup="Normal" icon="icon_makeup_m_face04_00" mesh="hm_face_04" />
+				<ITEM id="Angulate2" price="15500" makeup="Smoky" icon="icon_makeup_m_face04_01" mesh="hm_face_04" />
+				<ITEM id="Angulate3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face04_02" mesh="hm_face_04" />
+				<ITEM id="Bushy1" price="12500" makeup="Normal" icon="icon_makeup_m_face05_00" mesh="hm_face_13" />
+				<ITEM id="Bushy2" price="15500" makeup="Smoky" icon="icon_makeup_m_face05_01" mesh="hm_face_13" />
+				<ITEM id="Bushy3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face05_02" mesh="hm_face_13" />
+				<ITEM id="Nice_looking1" price="12500" makeup="Normal" icon="icon_makeup_m_face06_00" mesh="hm_face_03" />
+				<ITEM id="Nice_looking2" price="15500" makeup="Smoky" icon="icon_makeup_m_face06_01" mesh="hm_face_03" />
+				<ITEM id="Nice_looking3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face06_02" mesh="hm_face_03" />
+				<ITEM id="Bushy_Angulate1" price="12500" makeup="Normal" icon="icon_makeup_m_face07_00" mesh="hm_face_05" />
+				<ITEM id="Bushy_Angulate2" price="15500" makeup="Smoky" icon="icon_makeup_m_face07_01" mesh="hm_face_05" />
+				<ITEM id="Bushy_Angulate3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face07_02" mesh="hm_face_05" />
+				<ITEM id="Oval1" price="12500" makeup="Normal" icon="icon_makeup_m_face08_00" mesh="hm_face_14" />
+				<ITEM id="Oval2" price="15500" makeup="Smoky" icon="icon_makeup_m_face08_01" mesh="hm_face_14" />
+				<ITEM id="Oval3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face08_02" mesh="hm_face_14" />
+				<ITEM id="Biting1" price="12500" makeup="Normal" icon="icon_makeup_m_face09_00" mesh="hm_face_09" />
+				<ITEM id="Biting2" price="15500" makeup="Smoky" icon="icon_makeup_m_face09_01" mesh="hm_face_09" />
+				<ITEM id="Biting3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face09_02" mesh="hm_face_09" />
+				<ITEM id="GoodNatured1" price="12500" makeup="Normal" icon="icon_makeup_m_face10_00" mesh="hm_face_20" />
+				<ITEM id="GoodNatured2" price="15500" makeup="Smoky" icon="icon_makeup_m_face10_01" mesh="hm_face_20" />
+				<ITEM id="GoodNatured3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face10_02" mesh="hm_face_20" />
+				<ITEM id="Smiling1" price="12500" makeup="Normal" icon="icon_makeup_m_face11_00" mesh="hm_face_19" />
+				<ITEM id="Smiling2" price="15500" makeup="Smoky" icon="icon_makeup_m_face11_01" mesh="hm_face_19" />
+				<ITEM id="Smiling3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face11_02" mesh="hm_face_19" />
+				<ITEM id="Charisma1" price="12500" makeup="Normal" icon="icon_makeup_m_face12_00" mesh="hm_face_21" />
+				<ITEM id="Charisma2" price="15500" makeup="Smoky" icon="icon_makeup_m_face12_01" mesh="hm_face_21" />
+				<ITEM id="Charisma3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face12_02" mesh="hm_face_21" />
+				<ITEM id="Expressionless1" price="12500" makeup="Normal" icon="icon_makeup_m_face13_00" mesh="hm_face_23" />
+				<ITEM id="Expressionless2" price="15500" makeup="Smoky" icon="icon_makeup_m_face13_01" mesh="hm_face_23" />
+				<ITEM id="Expressionless3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face13_02" mesh="hm_face_23" />
+				<ITEM id="Vague1" price="12500" makeup="Normal" icon="icon_makeup_m_face14_00" mesh="hm_face_24" />
+				<ITEM id="Vague2" price="15500" makeup="Smoky" icon="icon_makeup_m_face14_01" mesh="hm_face_24" />
+				<ITEM id="Vague3" price="15500" makeup="Sparkle" icon="icon_makeup_m_face14_02" mesh="hm_face_24" />
+			</FACETYPE>
+			<SKINCOLOR>
+				<ITEM colorid="1" price="1500" colortable="skin" />
+				<ITEM colorid="2" price="1500" colortable="skin" />
+				<ITEM colorid="3" price="1500" colortable="skin" />
+				<ITEM colorid="4" price="1500" colortable="skin" />
+				<ITEM colorid="5" price="1500" colortable="skin" />
+				<ITEM colorid="6" price="1500" colortable="skin" />
+				<ITEM colorid="7" price="1500" colortable="skin" />
+				<ITEM colorid="8" price="1500" colortable="skin" />
+				<ITEM colorid="9" price="1500" colortable="skin" />
+				<ITEM colorid="10" price="1500" colortable="skin" />
+				<ITEM colorid="11" price="1500" colortable="skin" />
+				<ITEM colorid="12" price="1500" colortable="skin" />
+				<ITEM colorid="13" price="1500" colortable="skin" />
+				<ITEM colorid="14" price="1500" colortable="skin" />
+				<ITEM colorid="15" price="1500" colortable="skin" />
+				<ITEM colorid="16" price="1500" colortable="skin" />
+				<ITEM colorid="17" price="1500" colortable="skin" />
+				<ITEM colorid="18" price="1500" colortable="skin" />
+				<ITEM colorid="19" price="1500" colortable="skin" />
+				<ITEM colorid="20" price="1500" colortable="skin" />
+				<ITEM colorid="21" price="1500" colortable="skin" />
+				<ITEM colorid="22" price="1500" colortable="skin" />
+				<ITEM colorid="23" price="1500" colortable="skin" />
+				<ITEM colorid="24" price="1500" colortable="skin" />
+				<ITEM colorid="25" price="1500" colortable="skin" />
+				<ITEM colorid="26" price="1500" colortable="skin" />
+				<ITEM colorid="27" price="1500" colortable="skin" />
+				<ITEM colorid="28" price="1500" colortable="skin" />
+				<ITEM colorid="29" price="1500" colortable="skin" />
+				<ITEM colorid="30" price="1500" colortable="skin" />
+				<ITEM colorid="31" price="1500" colortable="skin" />
+				<ITEM colorid="32" price="1500" colortable="skin" />
+			</SKINCOLOR>
+			<EYECOLOR> 
+				<ITEM id="Black" price="1200" colortable="eye" colorid="1" />
+				<ITEM id="BlueGreen" price="1200" colortable="eye" colorid="2" />
+				<ITEM id="Blue" price="1200" colortable="eye" colorid="3" />
+				<ITEM id="RedBrown" price="1200" colortable="eye" colorid="4" />
+				<ITEM id="yellowGreen" price="1200" colortable="eye" colorid="5" />
+				<ITEM id="Purple" price="1200" colortable="eye" colorid="6" />
+				<ITEM id="LagoonBlue" price="1200" colortable="eye" colorid="7" />
+				<ITEM id="Lavender" price="1200" colortable="eye" colorid="8" />
+				<ITEM id="Brown" price="1200" colortable="eye" colorid="9" />
+				<ITEM id="BlueGray" price="1200" colortable="eye" colorid="10" />
+				<ITEM id="SkyBlue" price="1200" colortable="eye" colorid="11" />
+				<ITEM id="Red" price="1200" colortable="eye" colorid="12" />
+				<ITEM id="Green" price="1200" colortable="eye" colorid="13" />
+				<ITEM id="BlueViolet" price="1200" colortable="eye" colorid="14" />
+				<ITEM id="PeacockBlue" price="1200" colortable="eye" colorid="15" />
+				<ITEM id="Gray" price="1200" colortable="eye" colorid="16" />
+			</EYECOLOR>
+		</FACE>
+		<HAIR><!-- 남자 머리-->
+			<HAIRSTYLE iconpath="Data\Interface\character\resource" meshpath="Data\Model\Player\hm">
+				<ITEM id="Shaggy1" price="12500" icon="icon_hair_m01" mesh="hm_hair_16" />
+				<ITEM id="Shaggy2" price="12500" icon="icon_hair_m02" mesh="hm_hair_02" />
+				<ITEM id="Perm1" price="12500" icon="icon_hair_m03" mesh="hm_hair_13" />
+				<ITEM id="Perm2" price="12500" icon="icon_hair_m04" mesh="hm_hair_14" />
+				<ITEM id="Bobbed1" price="12500" icon="icon_hair_m05" mesh="hm_hair_05" />
+				<ITEM id="Shaggy3" price="12500" icon="icon_hair_m06" mesh="hm_hair_19" />
+				<ITEM id="Shaggy4" price="12500" icon="icon_hair_m07" mesh="hm_hair_07" />
+				<ITEM id="Perm3" price="12500" icon="icon_hair_m08" mesh="hm_hair_11" />
+				<ITEM id="Bang1" price="12500" icon="icon_hair_m09" mesh="hm_hair_17" />
+				<ITEM id="Dandy1" price="12500" icon="icon_hair_m10" mesh="hm_hair_15" />
+				<ITEM id="Dandy2" price="12500" icon="icon_hair_m11" mesh="hm_hair_12" />
+				<ITEM id="Asymmetry1" price="12500" icon="icon_hair_m12" mesh="hm_hair_25" />
+				<ITEM id="AllBack1" price="12500" icon="icon_hair_m13" mesh="hm_hair_18" />
+				<ITEM id="AllBack2" price="12500" icon="icon_hair_m14" mesh="hm_hair_03" />
+				<ITEM id="Asymmetry2" price="12500" icon="icon_hair_m15" mesh="hm_hair_20" />
+				<ITEM id="Bang2" price="12500" icon="icon_hair_m16" mesh="hm_hair_21" />
+				<ITEM id="Asymmetry3" price="12500" icon="icon_hair_m17" mesh="hm_hair_23" />
+				<ITEM id="ShotWolf1" price="12500" icon="icon_hair_m18" mesh="hm_hair_26" />
+				<ITEM id="Bobbed2" price="12500" icon="icon_hair_m19" mesh="hm_hair_24" />
+				<ITEM id="TowBlock1" price="12500" icon="icon_hair_m20" mesh="hm_hair_27" />
+				<ITEM id="AllBack3" price="12500" icon="icon_hair_m21" mesh="hm_hair_22" />
+				<ITEM id="Crop1" price="12500" icon="icon_hair_m22" mesh="hm_hair_28" />
+				<ITEM id="Reggae1" price="16700" icon="icon_hair_m23" mesh="hm_hair_29" premium="true" />
+				<ITEM id="Afro1" price="16700" icon="icon_hair_m24" mesh="hm_hair_30" premium="true" />
+				<ITEM id="Dandy3" price="16700" icon="icon_hair_m25" mesh="hm_hair_32" premium="true" />
+				<ITEM id="Dandy4" price="16700" icon="icon_hair_m26" mesh="hm_hair_33" premium="true" />
+			</HAIRSTYLE>
+			<HAIRCOLOR>
+				<ITEM id="BlueGreen" price="3000" colortable="hair" colorid="1" />
+				<ITEM id="SkyBlue" price="3000" colortable="hair" colorid="2" />
+				<ITEM id="Green" price="3000" colortable="hair" colorid="3" />
+				<ITEM id="Lavender" price="4000" colortable="hair" colorid="4" premium="true" />
+				<ITEM id="LagoonBlue" price="3000" colortable="hair" colorid="5" />
+				<ITEM id="Brown" price="3000" colortable="hair" colorid="6" />
+				<ITEM id="OrangeBrown" price="3000" colortable="hair" colorid="7" />
+				<ITEM id="MilkBrown" price="3000" colortable="hair" colorid="8" />
+				<ITEM id="YellowBrown" price="3000" colortable="hair" colorid="9" />
+				<ITEM id="RedBrown" price="3000" colortable="hair" colorid="10" />
+				<ITEM id="DarkOliveGreen" price="3000" colortable="hair" colorid="11" />
+				<ITEM id="Dimgray" price="3000" colortable="hair" colorid="12" />
+				<ITEM id="SteelBlue" price="3000" colortable="hair" colorid="13" />
+				<ITEM id="Maroon" price="3000" colortable="hair" colorid="14" />
+				<ITEM id="Yellow" price="3000" colortable="hair" colorid="15" />
+				<ITEM id="Turquoise" price="4000" colortable="hair" colorid="16" premium="true" />
+				<ITEM id="PeachPuff" price="4000" colortable="hair" colorid="17" premium="true" />
+				<ITEM id="DarkGray" price="4000" colortable="hair" colorid="18" premium="true" />
+				<ITEM id="White" price="3000" colortable="hair" colorid="19" premium="true" />
+				<ITEM id="LightSteelBlue" price="3000" colortable="hair" colorid="20" />
+				<ITEM id="LightYellow" price="3000" colortable="hair" colorid="21" />
+				<ITEM id="RedOrange" price="4000" colortable="hair" colorid="22" premium="true" />
+				<ITEM id="Indigo" price="3000" colortable="hair" colorid="23" />
+				<ITEM id="Tomato" price="4000" colortable="hair" colorid="24" premium="true" />
+				<ITEM id="Aqua" price="3000" colortable="hair" colorid="25" />
+				<ITEM id="Wheat" price="3000" colortable="hair" colorid="26" />
+				<ITEM id="Orange" price="4000" colortable="hair" colorid="27" premium="true" />
+				<ITEM id="DarkMagenta" price="3000" colortable="hair" colorid="28" />
+				<ITEM id="SilverGray" price="3000" colortable="hair" colorid="29" />
+				<ITEM id="BlueWhite" price="3000" colortable="hair" colorid="30" />
+			</HAIRCOLOR>
+		</HAIR>
+		<TATOO>
+			<TATOOTYPE texturepath="Data\Texture\Character">
+				<ITEM id="None" price="0" texture="" />
+				<ITEM id="Eagle1" price="3500" texture="tattoo_00" />
+				<ITEM id="Trophy1" price="3500" texture="tattoo_01" />
+				<ITEM id="Snake1" price="3500" texture="tattoo_02" />
+				<ITEM id="Flower1" price="3500" texture="tattoo_03" />
+				<ITEM id="Wing1" price="3500" texture="tattoo_22" />
+				<ITEM id="Fish1" price="3500" texture="tattoo_05" />
+				<ITEM id="Trophy2" price="3500" texture="tattoo_06" />
+				<ITEM id="Wing2" price="3500" texture="tattoo_21" />
+				<ITEM id="Wing3" price="3500" texture="tattoo_08" />
+				<ITEM id="Wing4" price="3500" texture="tattoo_09" />
+				<ITEM id="Shield1" price="3500" texture="tattoo_10" />
+				<ITEM id="Shield2" price="3500" texture="tattoo_11" />
+				<ITEM id="Shield3" price="3500" texture="tattoo_12" />
+				<ITEM id="Shield4" price="3500" texture="tattoo_13" />
+				<ITEM id="Shield5" price="3500" texture="tattoo_20" />
+				<ITEM id="Question1" price="3500" texture="tattoo_15" />
+				<ITEM id="Flower2" price="3500" texture="tattoo_16" />
+				<ITEM id="Wing5" price="3500" texture="tattoo_17" />
+				<ITEM id="Eyebrow1" price="3500" texture="tattoo_18" />
+				<ITEM id="Flower3" price="3500" texture="tattoo_19" />
+				<ITEM id="Injury1" price="3500" texture="tattoo_14" colorchoice="false" />
+				<ITEM id="Injury2" price="3500" texture="tattoo_07" colorchoice="false" />
+				<ITEM id="Injury3" price="3500" texture="tattoo_04" colorchoice="false" />
+				<ITEM id="Skull1" price="3500" texture="tattoo_23" colorchoice="false" />
+				<ITEM id="Injury4" price="3500" texture="tattoo_24" colorchoice="false" />
+				<ITEM id="Ruddy1" price="3500" texture="tattoo_25" />
+				<ITEM id="Scar1" price="3500" texture="tattoo_26" />
+				<ITEM id="Crack1" price="3500" texture="tattoo_27" />
+				<ITEM id="Clover1" price="3500" texture="tattoo_28" />
+				<ITEM id="Star1" price="3500" texture="tattoo_29" />
+				<ITEM id="WaterDrop1" price="3500" texture="tattoo_30" />
+				<ITEM id="Tears1" price="3500" texture="tattoo_31" />
+				<ITEM id="Paint1" price="3500" texture="tattoo_32" />
+				<ITEM id="Panda1" price="3500" texture="tattoo_33" />
+				<ITEM id="Panda2" price="3500" texture="tattoo_34" />
+				<ITEM id="Panda3" price="3500" texture="tattoo_35" />
+				<ITEM id="EyeShadow1" price="3500" texture="tattoo_36" />
+				<ITEM id="EyeShadow2" price="3500" texture="tattoo_37" />
+				<ITEM id="Horn1" price="3500" texture="tattoo_38" />
+				<ITEM id="Freckle1" price="3500" texture="tattoo_39" />
+				<ITEM id="Beard1" price="3500" texture="tattoo_40" />
+				<ITEM id="Horn2" price="3500" texture="tattoo_41" />
+				<ITEM id="Beard2" price="3500" texture="tattoo_42" />
+				<ITEM id="Barcode1" price="3500" texture="tattoo_43" colorchoice="false" />
+				<ITEM id="Cyborg1" price="3500" texture="tattoo_44" colorchoice="false" />
+				<ITEM id="Cyborg2" price="3500" texture="tattoo_45" colorchoice="false" />
+				<ITEM id="Band1" price="3500" texture="tattoo_46" colorchoice="false" />
+				<ITEM id="Band2" price="3500" texture="tattoo_47" colorchoice="false" />
+				<ITEM id="WaterDrop2" price="3500" texture="tattoo_48" colorchoice="false" />
+			</TATOOTYPE>
+			<TATOOCOLOR>
+				<ITEM id="Black" price="1200" colortable="tatoo" colorid="1" />
+				<ITEM id="BlueGreen" price="1200" colortable="tatoo" colorid="2" />
+				<ITEM id="Blue" price="1200" colortable="tatoo" colorid="3" />
+				<ITEM id="RedBrown" price="1200" colortable="tatoo" colorid="4" />
+				<ITEM id="yellowGreen" price="1200" colortable="tatoo" colorid="5" />
+				<ITEM id="Purple" price="1200" colortable="tatoo" colorid="6" />
+				<ITEM id="LagoonBlue" price="1200" colortable="tatoo" colorid="7" />
+				<ITEM id="Lavender" price="1200" colortable="tatoo" colorid="8" />
+				<ITEM id="Brown" price="1200" colortable="tatoo" colorid="9" />
+				<ITEM id="BlueGray" price="1200" colortable="tatoo" colorid="10" />
+				<ITEM id="SkyBlue" price="1200" colortable="tatoo" colorid="11" />
+				<ITEM id="Red" price="1200" colortable="tatoo" colorid="12" />
+				<ITEM id="Green" price="1200" colortable="tatoo" colorid="13" />
+				<ITEM id="BlueViolet" price="1200" colortable="tatoo" colorid="14" />
+				<ITEM id="PeacockBlue" price="1200" colortable="tatoo" colorid="15" />
+				<ITEM id="Gray" price="1200" colortable="tatoo" colorid="16" />
+			</TATOOCOLOR>
+		</TATOO>
+		<VOICE>
+			<VOICETYPE>
+				<ITEM id="husky" price="3000" soundprefix="voice1" />
+				<ITEM id="cheerful" price="3000" soundprefix="voice2" />
+				<ITEM id="ambitious" price="3000" soundprefix="voice3" />
+			</VOICETYPE>
+		</VOICE>
+	</GENDER>
+	<GENDER type="female">
+		<FACE>
+			<FACETYPE iconpath="Data\Interface\character\resource" meshpath="Data\Model\Player\hf">
+				<ITEM id="Charm1" price="12500" makeup="Normal" icon="icon_makeup_w_face01_00" mesh="hf_face_17" />
+				<ITEM id="Charm2" price="15500" makeup="Smoky" icon="icon_makeup_w_face01_01" mesh="hf_face_17" />
+				<ITEM id="Charm3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face01_02" mesh="hf_face_17" />
+				<ITEM id="Mature1" price="12500" makeup="Normal" icon="icon_makeup_w_face02_00" mesh="hf_face_07" />
+				<ITEM id="Mature2" price="15500" makeup="Smoky" icon="icon_makeup_w_face02_01" mesh="hf_face_07" />
+				<ITEM id="Mature3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face02_02" mesh="hf_face_07" />
+				<ITEM id="Beautiful1" price="12500" makeup="Normal" icon="icon_makeup_w_face03_00" mesh="hf_face_13" />
+				<ITEM id="Beautiful2" price="15500" makeup="Smoky" icon="icon_makeup_w_face03_01" mesh="hf_face_13" />
+				<ITEM id="Beautiful3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face03_02" mesh="hf_face_13" />
+				<ITEM id="Pure1" price="12500" makeup="Normal" icon="icon_makeup_w_face04_00" mesh="hf_face_12" />
+				<ITEM id="Pure2" price="15500" makeup="Smoky" icon="icon_makeup_w_face04_01" mesh="hf_face_12" />
+				<ITEM id="Pure3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face04_02" mesh="hf_face_12" />
+				<ITEM id="Impassive1" price="12500" makeup="Normal" icon="icon_makeup_w_face05_00" mesh="hf_face_14" />
+				<ITEM id="Impassive2" price="15500" makeup="Smoky" icon="icon_makeup_w_face05_01" mesh="hf_face_14" />
+				<ITEM id="Impassive3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face05_02" mesh="hf_face_14" />
+				<ITEM id="Fierce1" price="12500" makeup="Normal" icon="icon_makeup_w_face06_00" mesh="hf_face_15" />
+				<ITEM id="Fierce2" price="15500" makeup="Smoky" icon="icon_makeup_w_face06_01" mesh="hf_face_15" />
+				<ITEM id="Fierce3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face06_02" mesh="hf_face_15" />
+				<ITEM id="Round1" price="12500" makeup="Normal" icon="icon_makeup_w_face07_00" mesh="hf_face_16" />
+				<ITEM id="Round2" price="15500" makeup="Smoky" icon="icon_makeup_w_face07_01" mesh="hf_face_16" />
+				<ITEM id="Round3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face07_02" mesh="hf_face_16" />
+				<ITEM id="GoodNatured1" price="12500" makeup="Normal" icon="icon_makeup_w_face08_00" mesh="hf_face_06" />
+				<ITEM id="GoodNatured2" price="15500" makeup="Smoky" icon="icon_makeup_w_face08_01" mesh="hf_face_06" />
+				<ITEM id="GoodNatured3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face08_02" mesh="hf_face_06" />
+				<ITEM id="BigEye1" price="12500" makeup="Normal" icon="icon_makeup_w_face09_00" mesh="hf_face_18" />
+				<ITEM id="BigEye2" price="15500" makeup="Smoky" icon="icon_makeup_w_face09_01" mesh="hf_face_18" />
+				<ITEM id="BigEye3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face09_02" mesh="hf_face_18" />
+				<ITEM id="Apparent1" price="12500" makeup="Normal" icon="icon_makeup_w_face10_00" mesh="hf_face_19" />
+				<ITEM id="Apparent2" price="15500" makeup="Smoky" icon="icon_makeup_w_face10_01" mesh="hf_face_19" />
+				<ITEM id="Apparent3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face10_02" mesh="hf_face_19" />
+				<ITEM id="Vague1" price="12500" makeup="Normal" icon="icon_makeup_w_face11_00" mesh="hf_face_20" />
+				<ITEM id="Vague2" price="15500" makeup="Smoky" icon="icon_makeup_w_face11_01" mesh="hf_face_20" />
+				<ITEM id="Vague3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face11_02" mesh="hf_face_20" />
+				<ITEM id="Sharp1" price="12500" makeup="Normal" icon="icon_makeup_w_face12_00" mesh="hf_face_21" />
+				<ITEM id="Sharp2" price="15500" makeup="Smoky" icon="icon_makeup_w_face12_01" mesh="hf_face_21" />
+				<ITEM id="Sharp3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face12_02" mesh="hf_face_21" />
+				<ITEM id="Good1" price="12500" makeup="Normal" icon="icon_makeup_w_face13_00" mesh="hf_face_22" />
+				<ITEM id="Good2" price="15500" makeup="Smoky" icon="icon_makeup_w_face13_01" mesh="hf_face_22" />
+				<ITEM id="Good3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face13_02" mesh="hf_face_22" />
+				<ITEM id="Dim1" price="12500" makeup="Normal" icon="icon_makeup_w_face14_00" mesh="hf_face_23" />
+				<ITEM id="Dim2" price="15500" makeup="Smoky" icon="icon_makeup_w_face14_01" mesh="hf_face_23" />
+				<ITEM id="Dim3" price="15500" makeup="Sparkle" icon="icon_makeup_w_face14_02" mesh="hf_face_23" />
+			</FACETYPE>
+			<SKINCOLOR>
+				<ITEM colorid="1" price="1500" colortable="skin" />
+				<ITEM colorid="2" price="1500" colortable="skin" />
+				<ITEM colorid="3" price="1500" colortable="skin" />
+				<ITEM colorid="4" price="1500" colortable="skin" />
+				<ITEM colorid="5" price="1500" colortable="skin" />
+				<ITEM colorid="6" price="1500" colortable="skin" />
+				<ITEM colorid="7" price="1500" colortable="skin" />
+				<ITEM colorid="8" price="1500" colortable="skin" />
+				<ITEM colorid="9" price="1500" colortable="skin" />
+				<ITEM colorid="10" price="1500" colortable="skin" />
+				<ITEM colorid="11" price="1500" colortable="skin" />
+				<ITEM colorid="12" price="1500" colortable="skin" />
+				<ITEM colorid="13" price="1500" colortable="skin" />
+				<ITEM colorid="14" price="1500" colortable="skin" />
+				<ITEM colorid="15" price="1500" colortable="skin" />
+				<ITEM colorid="16" price="1500" colortable="skin" />
+				<ITEM colorid="17" price="1500" colortable="skin" />
+				<ITEM colorid="18" price="1500" colortable="skin" />
+				<ITEM colorid="19" price="1500" colortable="skin" />
+				<ITEM colorid="20" price="1500" colortable="skin" />
+				<ITEM colorid="21" price="1500" colortable="skin" />
+				<ITEM colorid="22" price="1500" colortable="skin" />
+				<ITEM colorid="23" price="1500" colortable="skin" />
+				<ITEM colorid="24" price="1500" colortable="skin" />
+				<ITEM colorid="25" price="1500" colortable="skin" />
+				<ITEM colorid="26" price="1500" colortable="skin" />
+				<ITEM colorid="27" price="1500" colortable="skin" />
+				<ITEM colorid="28" price="1500" colortable="skin" />
+				<ITEM colorid="29" price="1500" colortable="skin" />
+				<ITEM colorid="30" price="1500" colortable="skin" />
+				<ITEM colorid="31" price="1500" colortable="skin" />
+				<ITEM colorid="32" price="1500" colortable="skin" />
+			</SKINCOLOR>
+			<EYECOLOR>
+				<ITEM id="Black" price="1200" colortable="eye" colorid="1" />
+				<ITEM id="BlueGreen" price="1200" colortable="eye" colorid="2" />
+				<ITEM id="Blue" price="1200" colortable="eye" colorid="3" />
+				<ITEM id="RedBrown" price="1200" colortable="eye" colorid="4" />
+				<ITEM id="yellowGreen" price="1200" colortable="eye" colorid="5" />
+				<ITEM id="Purple" price="1200" colortable="eye" colorid="6" />
+				<ITEM id="LagoonBlue" price="1200" colortable="eye" colorid="7" />
+				<ITEM id="Lavender" price="1200" colortable="eye" colorid="8" />
+				<ITEM id="Brown" price="1200" colortable="eye" colorid="9" />
+				<ITEM id="BlueGray" price="1200" colortable="eye" colorid="10" />
+				<ITEM id="SkyBlue" price="1200" colortable="eye" colorid="11" />
+				<ITEM id="Red" price="1200" colortable="eye" colorid="12" />
+				<ITEM id="Green" price="1200" colortable="eye" colorid="13" />
+				<ITEM id="BlueViolet" price="1200" colortable="eye" colorid="14" />
+				<ITEM id="PeacockBlue" price="1200" colortable="eye" colorid="15" />
+				<ITEM id="Gray" price="1200" colortable="eye" colorid="16" />
+			</EYECOLOR>
+		</FACE>
+		<HAIR><!-- 여자 머리-->
+			<HAIRSTYLE iconpath="Data\Interface\character\resource" meshpath="Data\Model\Player\hf">
+				<ITEM id="Bang1" price="12500" icon="icon_hair_w01" mesh="hf_hair_01" />
+				<ITEM id="Bobbed1" price="12500" icon="icon_hair_w02" mesh="hf_hair_02" />
+				<ITEM id="Braids1" price="12500" icon="icon_hair_w03" mesh="hf_hair_03" />
+				<ITEM id="Bobbed2" price="12500" icon="icon_hair_w04" mesh="hf_hair_04" />
+				<ITEM id="Bobbed3" price="12500" icon="icon_hair_w05" mesh="hf_hair_05" />
+				<ITEM id="Bobbed4" price="12500" icon="icon_hair_w06" mesh="hf_hair_12" />
+				<ITEM id="Bobbed5" price="12500" icon="icon_hair_w07" mesh="hf_hair_07" />
+				<ITEM id="Bang2" price="12500" icon="icon_hair_w08" mesh="hf_hair_14" />
+				<ITEM id="Perm1" price="12500" icon="icon_hair_w09" mesh="hf_hair_13" />
+				<ITEM id="Perm2" price="12500" icon="icon_hair_w10" mesh="hf_hair_15" />
+				<ITEM id="Natural1" price="12500" icon="icon_hair_w11" mesh="hf_hair_21" />
+				<ITEM id="Bobbed6" price="12500" icon="icon_hair_w12" mesh="hf_hair_20" />
+				<ITEM id="Short1" price="12500" icon="icon_hair_w13" mesh="hf_hair_18" />
+				<ITEM id="Reggae1" price="12500" icon="icon_hair_w14" mesh="hf_hair_19" />
+				<ITEM id="Bang3" price="12500" icon="icon_hair_w15" mesh="hf_hair_23" />
+				<ITEM id="Sheep1" price="12500" icon="icon_hair_w16" mesh="hf_hair_24" />
+				<ITEM id="Pigtail1" price="12500" icon="icon_hair_w17" mesh="hf_hair_22" />
+				<ITEM id="Short2" price="12500" icon="icon_hair_w18" mesh="hf_hair_11" />
+				<ITEM id="Perm3" price="12500" icon="icon_hair_w19" mesh="hf_hair_26" />
+				<ITEM id="Bobbed7" price="12500" icon="icon_hair_w20" mesh="hf_hair_25" />
+				<ITEM id="Natural2" price="12500" icon="icon_hair_w21" mesh="hf_hair_28" />
+				<ITEM id="Natural3" price="12500" icon="icon_hair_w22" mesh="hf_hair_27" />
+				<ITEM id="Reggae2" price="16700" icon="icon_hair_w23" mesh="hf_hair_29" premium="true" />
+				<ITEM id="Afro1" price="16700" icon="icon_hair_w24" mesh="hf_hair_30" premium="true" />
+				<ITEM id="pigtail" price="16700" icon="icon_hair_w25" mesh="hf_hair_34" premium="true" /><!-- 양갈래 머리-->
+				<ITEM id="Natural4" price="16700" icon="icon_hair_w26" mesh="hf_hair_33" premium="true" /><!-- 여신 머리-->
+			</HAIRSTYLE>
+			<HAIRCOLOR>
+				<ITEM id="BlueGreen" price="3000" colortable="hair" colorid="1" />
+				<ITEM id="SkyBlue" price="3000" colortable="hair" colorid="2" />
+				<ITEM id="Green" price="3000" colortable="hair" colorid="3" />
+				<ITEM id="Lavender" price="4000" colortable="hair" colorid="4" premium="true" />
+				<ITEM id="LagoonBlue" price="3000" colortable="hair" colorid="5" />
+				<ITEM id="Brown" price="3000" colortable="hair" colorid="6" />
+				<ITEM id="OrangeBrown" price="3000" colortable="hair" colorid="7" />
+				<ITEM id="MilkBrown" price="3000" colortable="hair" colorid="8" />
+				<ITEM id="YellowBrown" price="3000" colortable="hair" colorid="9" />
+				<ITEM id="RedBrown" price="3000" colortable="hair" colorid="10" />
+				<ITEM id="DarkOliveGreen" price="3000" colortable="hair" colorid="11" />
+				<ITEM id="Dimgray" price="3000" colortable="hair" colorid="12" />
+				<ITEM id="SteelBlue" price="3000" colortable="hair" colorid="13" />
+				<ITEM id="Maroon" price="3000" colortable="hair" colorid="14" />
+				<ITEM id="Yellow" price="3000" colortable="hair" colorid="15" />
+				<ITEM id="Turquoise" price="4000" colortable="hair" colorid="16" premium="true" />
+				<ITEM id="PeachPuff" price="4000" colortable="hair" colorid="17" premium="true" />
+				<ITEM id="DarkGray" price="4000" colortable="hair" colorid="18" premium="true" />
+				<ITEM id="White" price="3000" colortable="hair" colorid="19" premium="true" />
+				<ITEM id="LightSteelBlue" price="3000" colortable="hair" colorid="20" />
+				<ITEM id="LightYellow" price="3000" colortable="hair" colorid="21" />
+				<ITEM id="RedOrange" price="4000" colortable="hair" colorid="22" premium="true" />
+				<ITEM id="Indigo" price="3000" colortable="hair" colorid="23" />
+				<ITEM id="Tomato" price="4000" colortable="hair" colorid="24" premium="true" />
+				<ITEM id="Aqua" price="3000" colortable="hair" colorid="25" />
+				<ITEM id="Wheat" price="3000" colortable="hair" colorid="26" />
+				<ITEM id="Orange" price="4000" colortable="hair" colorid="27" premium="true" />
+				<ITEM id="DarkMagenta" price="3000" colortable="hair" colorid="28" />
+				<ITEM id="SilverGray" price="3000" colortable="hair" colorid="29" />
+				<ITEM id="BlueWhite" price="3000" colortable="hair" colorid="30" />
+			</HAIRCOLOR>
+		</HAIR>
+		<TATOO>
+			<TATOOTYPE texturepath="Data\Texture\Character">
+				<ITEM id="None" price="0" texture="" />
+				<ITEM id="Eagle1" price="3500" texture="tattoo_00" />
+				<ITEM id="Trophy1" price="3500" texture="tattoo_01" />
+				<ITEM id="Snake1" price="3500" texture="tattoo_02" />
+				<ITEM id="Flower1" price="3500" texture="tattoo_03" />
+				<ITEM id="Wing1" price="3500" texture="tattoo_22" />
+				<ITEM id="Fish1" price="3500" texture="tattoo_05" />
+				<ITEM id="Trophy2" price="3500" texture="tattoo_06" />
+				<ITEM id="Wing2" price="3500" texture="tattoo_21" />
+				<ITEM id="Wing3" price="3500" texture="tattoo_08" />
+				<ITEM id="Wing4" price="3500" texture="tattoo_09" />
+				<ITEM id="Shield1" price="3500" texture="tattoo_10" />
+				<ITEM id="Shield2" price="3500" texture="tattoo_11" />
+				<ITEM id="Shield3" price="3500" texture="tattoo_12" />
+				<ITEM id="Shield4" price="3500" texture="tattoo_13" />
+				<ITEM id="Shield5" price="3500" texture="tattoo_20" />
+				<ITEM id="Question1" price="3500" texture="tattoo_15" />
+				<ITEM id="Flower2" price="3500" texture="tattoo_16" />
+				<ITEM id="Wing5" price="3500" texture="tattoo_17" />
+				<ITEM id="Eyebrow1" price="3500" texture="tattoo_18" />
+				<ITEM id="Flower3" price="3500" texture="tattoo_19" />
+				<ITEM id="Injury1" price="3500" texture="tattoo_14" colorchoice="false" />
+				<ITEM id="Injury2" price="3500" texture="tattoo_07" colorchoice="false" />
+				<ITEM id="Injury3" price="3500" texture="tattoo_04" colorchoice="false" />
+				<ITEM id="Skull1" price="3500" texture="tattoo_23" colorchoice="false" />
+				<ITEM id="Injury4" price="3500" texture="tattoo_24" colorchoice="false" />
+				<ITEM id="Ruddy1" price="3500" texture="tattoo_25" />
+				<ITEM id="Scar1" price="3500" texture="tattoo_26" />
+				<ITEM id="Crack1" price="3500" texture="tattoo_27" />
+				<ITEM id="Clover1" price="3500" texture="tattoo_28" />
+				<ITEM id="Star1" price="3500" texture="tattoo_29" />
+				<ITEM id="WaterDrop1" price="3500" texture="tattoo_30" />
+				<ITEM id="Tears1" price="3500" texture="tattoo_31" />
+				<ITEM id="Paint1" price="3500" texture="tattoo_32" />
+				<ITEM id="Panda1" price="3500" texture="tattoo_33" />
+				<ITEM id="Panda2" price="3500" texture="tattoo_34" />
+				<ITEM id="Panda3" price="3500" texture="tattoo_35" />
+				<ITEM id="EyeShadow1" price="3500" texture="tattoo_36" />
+				<ITEM id="EyeShadow2" price="3500" texture="tattoo_37" />
+				<ITEM id="Horn1" price="3500" texture="tattoo_38" />
+				<ITEM id="Freckle1" price="3500" texture="tattoo_39" />
+				<ITEM id="Beard1" price="3500" texture="tattoo_40" />
+				<ITEM id="Horn2" price="3500" texture="tattoo_41" />
+				<ITEM id="Beard2" price="3500" texture="tattoo_42" />
+				<ITEM id="Barcode1" price="3500" texture="tattoo_43" colorchoice="false" />
+				<ITEM id="Cyborg1" price="3500" texture="tattoo_44" colorchoice="false" />
+				<ITEM id="Cyborg2" price="3500" texture="tattoo_45" colorchoice="false" />
+				<ITEM id="Band1" price="3500" texture="tattoo_46" colorchoice="false" />
+				<ITEM id="Band2" price="3500" texture="tattoo_47" colorchoice="false" />
+				<ITEM id="WaterDrop2" price="3500" texture="tattoo_48" colorchoice="false" />
+			</TATOOTYPE>
+			<TATOOCOLOR>
+				<ITEM id="Black" price="1200" colortable="tatoo" colorid="1" />
+				<ITEM id="BlueGreen" price="1200" colortable="tatoo" colorid="2" />
+				<ITEM id="Blue" price="1200" colortable="tatoo" colorid="3" />
+				<ITEM id="RedBrown" price="1200" colortable="tatoo" colorid="4" />
+				<ITEM id="yellowGreen" price="1200" colortable="tatoo" colorid="5" />
+				<ITEM id="Purple" price="1200" colortable="tatoo" colorid="6" />
+				<ITEM id="LagoonBlue" price="1200" colortable="tatoo" colorid="7" />
+				<ITEM id="Lavender" price="1200" colortable="tatoo" colorid="8" />
+				<ITEM id="Brown" price="1200" colortable="tatoo" colorid="9" />
+				<ITEM id="BlueGray" price="1200" colortable="tatoo" colorid="10" />
+				<ITEM id="SkyBlue" price="1200" colortable="tatoo" colorid="11" />
+				<ITEM id="Red" price="1200" colortable="tatoo" colorid="12" />
+				<ITEM id="Green" price="1200" colortable="tatoo" colorid="13" />
+				<ITEM id="BlueViolet" price="1200" colortable="tatoo" colorid="14" />
+				<ITEM id="PeacockBlue" price="1200" colortable="tatoo" colorid="15" />
+				<ITEM id="Gray" price="1200" colortable="tatoo" colorid="16" />
+			</TATOOCOLOR>
+		</TATOO>
+		<VOICE>
+			<VOICETYPE>
+				<ITEM id="husky" price="3000" soundprefix="voice1" />
+				<ITEM id="cheerful" price="3000" soundprefix="voice2" />
+				<ITEM id="ambitious" price="3000" soundprefix="voice3" />
+			</VOICETYPE>
+		</VOICE>
+	</GENDER>
+</maiet>

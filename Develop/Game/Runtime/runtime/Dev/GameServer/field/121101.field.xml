@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="121002" minimap_name="map121002" loading_image_name="121002" min_x="0" min_y="0" max_x="20000" max_y="20000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_9">
+            <ENVBGM dungeonbgm="amb_dungeon_garden" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <GRID type="wall" row="67" column="67" filled="0,160,14,51,20,44,25,40,29,36,33,32,37,29,39,27,41,25,43,22,19,7,20,20,18,13,17,19,15,17,17,17,15,21,15,15,16,22,1,3,10,14,14,29,11,13,13,30,11,13,13,30,12,13,10,33,12,11,8,37,11,10,9,37,12,9,8,39,11,8,9,39,11,8,9,40,11,7,8,41,11,6,9,42,10,6,9,42,10,6,8,44,10,5,8,44,10,5,8,44,10,6,7,47,7,7,6,48,6,8,5,49,5,8,5,49,3,11,4,48,4,11,5,46,5,10,6,45,6,10,6,45,4,11,7,45,3,12,7,45,3,12,7,44,4,12,9,41,4,13,9,38,6,14,9,38,6,16,9,36,6,16,9,37,5,17,9,39,4,16,9,38,4,16,12,35,4,17,14,28,8,17,16,26,6,20,17,23,6,22,20,11,14,22,20,3,19,25,42,25,42,26,38,29,38,29,38,30,35,34,32,36,26,43,22,48,18,52,6,103" />
+        <TOKEN id="1" token_item="1450100" />
+        <SPAWN id="1" group="6" name="1_봉봉" x="12307.763672" y="2670.941895" z="3.000800" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="6" name="spawn_00002" x="13496.528320" y="1524.305664" z="3.000616" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="6" name="spawn_00003" x="12094.291992" y="2702.029297" z="3.000705" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="6" name="spawn_00007" x="14483.082031" y="3510.900146" z="3.000165" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="spawn_00008" x="1658.326904" y="6816.822754" z="3.000353" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="6" name="spawn_00009" x="14326.529297" y="3650.233398" z="3.000556" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="6" name="spawn_00010" x="15850.183594" y="3313.542725" z="3.000634" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="1" name="spawn_00012" x="16671.480469" y="7587.657715" z="3.000567" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="6" name="spawn_00014" x="14216.150391" y="3498.237549" z="3.000326" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="6" name="spawn_00017" x="14287.933594" y="4456.279785" z="57.615791" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20" group="6" name="spawn_00020" x="13570.354492" y="1743.150391" z="3.000413" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="24" group="6" name="spawn_00024" x="14419.181641" y="4480.138184" z="3.000000" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="26" group="6" name="보물상자" x="15473.635742" y="3903.599609" z="3.000494" dir_x="0.681999" dir_y="-0.731353" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121216" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="27" group="1" name="오염된 꽃 1" x="16849.933594" y="5124.757813" z="3.000000" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28" group="1" name="오염된 꽃 1" x="16411.146484" y="6889.077637" z="3.000651" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="29" group="1" name="오염된 꽃 1" x="17914.072266" y="7811.187500" z="3.000181" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="32" group="1" name="오염된 꽃 1" x="17234.533203" y="8486.113281" z="3.000483" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="33" group="1" name="오염된 꽃 1" x="18665.925781" y="8127.331055" z="3.000282" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="34" group="1" name="보물상자" x="18649.554688" y="6875.147949" z="3.000547" dir_x="0.224951" dir_y="0.974370" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121217" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="35" group="1" name="그냥벌" x="16535.972656" y="7493.958008" z="3.000693" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="400" combat_radius="0" color="auto">
+            <NPC id="7121016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="36" group="1" name="spawn_00036" x="15954.562500" y="5676.212891" z="3.000569" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="37" group="1" name="spawn_00037" x="15567.559570" y="5766.955566" z="3.000159" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="38" group="1" name="spawn_00038" x="17448.335938" y="6539.124512" z="3.000336" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="45" group="6" name="문" x="15343.971680" y="4475.330078" z="1.912369" dir_x="-0.719339" dir_y="-0.694659" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="46" group="1" name="spawn_00046" x="18451.052734" y="9105.983398" z="3.000977" dir_x="-0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121221" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="47" group="3" name="spawn_00047" x="9445.891602" y="17660.060547" z="0.590437" dir_x="0.996195" dir_y="0.087155" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121220" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="48" group="4" name="spawn_00048" x="4446.830566" y="16547.683594" z="0.660652" dir_x="0.777146" dir_y="0.629321" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121220" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="49" group="0" name="spawn_00049" x="6813.788574" y="4435.976074" z="-16.253418" dir_x="-0.453991" dir_y="-0.891007" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121222" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="50" group="0" name="spawn_00050" x="9364.037109" y="3718.868652" z="0.000122" dir_x="-0.139173" dir_y="-0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121207" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="51" group="2" name="가시더미" x="16844.984375" y="13285.639648" z="3.000037" dir_x="0.469472" dir_y="-0.882947" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="54" group="0" name="spawn_00054" x="18620.982422" y="10747.947266" z="3.000854" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="55" group="2" name="spawn_00055" x="16153.208008" y="15553.206055" z="43.198792" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="56" group="3" name="spawn_00056" x="11922.108398" y="17949.724609" z="3.000410" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="86400" enable_respawn_tick_boost="true" roam_radius="400" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="58" group="3" name="spawn_00058" x="10598.534180" y="18027.669922" z="3.000147" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="200" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="61" group="3" name="spawn_00061" x="10749.330078" y="17142.751953" z="3.000402" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="200" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="62" group="3" name="spawn_00062" x="12825.661133" y="16383.552734" z="46.053020" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="200" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="64" group="0" name="spawn_00064" x="10131.269531" y="19077.900391" z="3.000742" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="75" group="4" name="spawn_00075" x="6957.348633" y="17402.371094" z="3.000295" dir_x="0.920505" dir_y="0.390732" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="86400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="3300" color="auto">
+            <NPC id="7121009" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="79" group="5" name="spawn_00079" x="2524.843750" y="7561.615723" z="3.000801" dir_x="-0.241921" dir_y="-0.970296" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="80" group="5" name="spawn_00080" x="2615.616943" y="10069.939453" z="3.000000" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121012" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="83" group="5" name="spawn_00083" x="2479.308105" y="11825.289063" z="3.000977" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="86400" enable_respawn_tick_boost="true" roam_radius="200" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121210" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="84" group="5" name="spawn_00084" x="1828.406860" y="11843.875000" z="3.000191" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="85" group="5" name="spawn_00085" x="2042.428711" y="8471.228516" z="3.000000" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="88" group="5" name="spawn_00088" x="1645.072266" y="8814.022461" z="3.000977" dir_x="0.998630" dir_y="-0.052335" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="89" group="0" name="spawn_00089" x="4274.650879" y="15544.333008" z="3.000977" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="90" group="0" name="spawn_00090" x="3967.497070" y="15558.573242" z="3.000977" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="91" group="5" name="오염된 꽃 7" x="2748.312744" y="4520.955078" z="2.992998" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="92" group="7" name="오염된 꽃 7" x="5271.892090" y="3822.714600" z="2.980866" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="93" group="7" name="오염된 꽃 7" x="4497.278320" y="4631.543457" z="2.965509" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102" group="1" name="spawn_00102" x="15791.958008" y="6390.901855" z="3.000493" dir_x="0.857168" dir_y="-0.515037" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121219" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="111" group="0" name="spawn_00111" x="3755.879639" y="3595.081055" z="2.991607" dir_x="0.997564" dir_y="-0.069756" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121218" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113" group="1" name="spawn_00113" x="17644.328125" y="8707.500977" z="3.000492" dir_x="0.438372" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="2" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="114" group="2" name="spawn_00114" x="18026.314453" y="14646.797852" z="57.410950" dir_x="-0.999391" dir_y="-0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116" group="2" name="spawn_00116" x="15611.307617" y="16363.996094" z="48.636528" dir_x="0.777147" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="136" group="1" name="오염된 꽃 1" x="17709.818359" y="6187.601074" z="3.000401" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="137" group="1" name="spawn_00137" x="17000.437500" y="6648.339355" z="17.783415" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="200" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="138" group="7" name="오염된 꽃 7" x="6571.002930" y="3611.737305" z="2.997979" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="139" group="1" name="오염된 꽃 1" x="14923.251953" y="5444.483398" z="3.000749" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="140" group="3" name="오염된 꽃 3" x="13445.639648" y="16379.273438" z="3.000668" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="141" group="3" name="오염된 꽃 3" x="14240.943359" y="18198.013672" z="19.422226" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="142" group="3" name="오염된 꽃 3" x="12918.326172" y="17401.789063" z="3.000484" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="143" group="3" name="오염된 꽃 3" x="10559.804688" y="17756.957031" z="3.000584" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="144" group="3" name="오염된 꽃 3" x="11498.258789" y="19066.429688" z="3.000100" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="145" group="7" name="오염된 꽃 7" x="6106.057129" y="3128.177002" z="2.993568" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="146" group="1" name="오염된 꽃 1" x="18015.113281" y="8431.352539" z="3.000487" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="147" group="7" name="오염된 꽃 7" x="5334.643555" y="3158.506592" z="2.971098" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="148" group="5" name="spawn_00148" x="2805.080322" y="14341.310547" z="3.000977" dir_x="0.848047" dir_y="0.529921" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="50" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="149" group="5" name="spawn_00149" x="3035.921143" y="13019.071289" z="3.000977" dir_x="0.438370" dir_y="0.898795" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="150" group="5" name="spawn_00150" x="2240.173096" y="13335.561523" z="3.000977" dir_x="0.601814" dir_y="0.798636" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="151" group="5" name="spawn_00151" x="2800.056885" y="6468.858398" z="3.000977" dir_x="-0.681999" dir_y="0.731353" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="12" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="152" group="5" name="spawn_00152" x="2294.080566" y="13032.147461" z="3.000977" dir_x="0.906307" dir_y="0.422620" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="50" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="153" group="0" name="spawn_00153" x="3541.929443" y="15391.433594" z="3.000977" dir_x="0.438370" dir_y="0.898795" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="40" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="154" group="5" name="spawn_00154" x="1982.199951" y="6598.745117" z="3.000641" dir_x="0.438370" dir_y="0.898795" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="155" group="5" name="spawn_00155" x="1939.662720" y="9330.596680" z="3.000000" dir_x="0.422616" dir_y="0.906309" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="156" group="0" name="spawn_00156" x="3654.326660" y="13737.608398" z="3.000000" dir_x="-0.559194" dir_y="0.829037" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="20" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="157" group="0" name="spawn_00157" x="4037.118164" y="14270.750000" z="3.000000" dir_x="-0.694659" dir_y="0.719339" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="158" group="5" name="spawn_00158" x="2164.805420" y="6156.139648" z="3.000000" dir_x="-0.573577" dir_y="0.819151" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="159" group="5" name="spawn_00159" x="2694.390137" y="5724.200684" z="-0.040475" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121220" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="160" group="3" name="오염된 꽃 3" x="13306.870117" y="16924.810547" z="3.000576" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="161" group="3" name="오염된 꽃 3" x="14624.593750" y="17887.474609" z="3.000129" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="162" group="3" name="오염된 꽃 3" x="10933.784180" y="19258.580078" z="3.000100" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="163" group="3" name="오염된 꽃 3" x="10739.908203" y="17518.980469" z="3.000654" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="164" group="1" name="오염된 꽃 1" x="16270.938477" y="5138.348633" z="3.000260" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="165" group="1" name="오염된 꽃 1" x="18244.722656" y="6167.121582" z="3.000313" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="168" name="spawn_00168" x="17335.650391" y="14128.218750" z="2.971840" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="113089" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="169" name="spawn_00169" x="4412.430176" y="15049.963867" z="3.412476" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="113089" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="170" group="4" name="포자 버섯" x="9050.039063" y="16717.140625" z="42.199585" dir_x="-0.788012" dir_y="0.615660" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="171" group="0" name="포자 버섯" x="10127.875000" y="19231.005859" z="17.957275" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="172" group="7" name="포자 버섯" x="4973.650391" y="5164.637207" z="40.857666" dir_x="-0.309018" dir_y="0.951056" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="173" group="0" name="포자 버섯" x="4302.574707" y="2638.129883" z="1.413696" dir_x="0.798636" dir_y="-0.601814" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="174" group="0" name="포자 버섯" x="4989.356445" y="15246.751953" z="4.894928" dir_x="-0.927184" dir_y="0.374606" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="176" group="2" name="포자 버섯" x="16136.083008" y="13780.889648" z="4.930023" dir_x="0.981627" dir_y="-0.190808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="35" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="177" group="2" name="포자 버섯" x="16254.028320" y="13535.145508" z="4.943573" dir_x="-0.069755" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="178" group="6" name="포자 버섯" x="14852.876953" y="2385.587891" z="2.886108" dir_x="0.342019" dir_y="0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="200" group="0" name="알케스트꽃" x="7280.698730" y="3670.225098" z="5.974021" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201" group="6" name="알케스트꽃" x="13287.772461" y="3138.840332" z="3.000611" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202" group="1" name="알케스트꽃" x="17412.437500" y="4607.442871" z="3.000000" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="203" group="1" name="알케스트꽃" x="16974.136719" y="8894.508789" z="3.000838" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="204" group="0" name="알케스트꽃" x="18873.580078" y="10244.851563" z="3.000446" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="205" group="3" name="알케스트꽃" x="11826.902344" y="19184.378906" z="3.000072" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="206" group="4" name="알케스트꽃" x="4732.234375" y="17612.583984" z="3.000924" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="207" group="5" name="알케스트꽃" x="2991.896240" y="6492.098633" z="3.000638" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="208" group="3" name="spawn_00208" x="11756.583984" y="16904.457031" z="3.000761" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="209" group="3" name="spawn_00209" x="13438.635742" y="18599.486328" z="3.000103" dir_x="0.500001" dir_y="-0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="7121223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="210" name="spawn_00210" x="17076.785156" y="11841.468750" z="1.701599" dir_x="0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="7121241" default="true" rate="100" />
+        </SPAWN>
+        <MARKER id="1" name="마커_시작지점" x="9070.243164" y="985.000732" z="3.000093" dir_x="0.087156" dir_y="0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="마커_열쇠먹은봉봉1" x="14283.792969" y="16950.037109" z="3.000403" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="마커_열쇠먹은봉봉2" x="10403.037109" y="17481.255859" z="3.000745" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="마커_봉봉로밍1" x="5347.066895" y="7278.821289" z="64.196777" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="봉봉들이동" x="2673.948242" y="11931.176758" z="3.000977" dir_x="0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="마커_봉봉로밍2" x="2298.005371" y="12108.715820" z="3.000265" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="마커_봉봉로밍2" x="2539.133789" y="11125.282227" z="3.000113" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="마커 나무정령1" x="16986.904297" y="8690.315430" z="3.000616" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="마커 나무정령2" x="18828.222656" y="8381.005859" z="3.000113" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="마커 나무정령3" x="17723.220703" y="7953.833984" z="3.000290" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="마커 보스한테 죽었을 때" x="4949.556152" y="16919.013672" z="3.000977" dir_x="-0.766045" dir_y="-0.642787" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="마커 보스해치운다음" x="9271.380859" y="3116.477539" z="2.960111" dir_x="-0.156435" dir_y="-0.987688" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="SENSOR_M 보스방에서마지막방으로" x="6581.602051" y="4086.514160" z="3.000815" dir_x="-0.544639" dir_y="-0.838671" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="MK후반봉봉도망1" x="4167.256348" y="15187.926758" z="3.000977" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="MK후반봉봉도망2" x="1343.975708" y="7327.985840" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="16" name="OBJ_M 113246 알케스트 꽃" x="7294.858887" y="3713.799072" z="3.000848" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="17" name="SENSOR_M 센서_보스룸으로" x="6803.088379" y="4282.287109" z="2.000916" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7121009" name="MON_M 7121009 아루카" x="6957.348633" y="17402.371094" z="3.000295" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7121205" name="MON_M 7121205 루루가" x="11922.108398" y="17949.724609" z="3.000410" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7121210" name="MON_M 7121210 타나루가" x="2479.308105" y="11825.289063" z="2.000977" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7121240" name="OBJ_M 7121240 포자 버섯" x="5358.318359" y="3136.757568" z="21.960905" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_1독꽃정지" local="false" x="18449.353516" y="9248.550781" z="3.000000" radius="307.425812" enabled="true" groupname="none" />
+        <SENSOR id="2" name="센서_가시덩굴더미_정지1" local="false" x="8858.517578" y="17638.533203" z="3.000610" radius="543.248047" enabled="true" groupname="none" />
+        <SENSOR id="3" name="센서_가시덩굴더미_정지2" local="false" x="14542.470703" y="17196.814453" z="3.000782" radius="523.251465" enabled="true" groupname="none" />
+        <SENSOR id="4" name="센서_봉봉뒤에서출현" local="false" x="2662.250000" y="13152.018555" z="3.000552" radius="509.115601" enabled="true" groupname="none" />
+        <SENSOR id="5" name="SENSOR 센서_보스룸으로" x="7251.839355" y="5162.265625" z="50.476532" radius="600.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-239.562988" y="-369.135254" z="-66.179565" dir_x="-0.495133" dir_y="-0.868818" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="보스룸으로" condition="0" gate_type="auto" field="121102" marker="1" />
+        </SENSOR>
+        <SENSOR id="6" name="룸_벌_독꽃" local="false" x="15535.521484" y="4677.655273" z="3.000008" radius="243.183273" enabled="true" groupname="none" />
+        <SENSOR id="7" name="센서_1번방" local="false" x="11332.475586" y="1575.784180" z="15.832520" radius="195.285843" enabled="true" groupname="none" />
+        <SENSOR id="8" name="시작 체크포인트" local="false" x="9043.980469" y="985.026611" z="2.993142" radius="400.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="9" name="SR00009" x="8964.013672" y="10.827271" z="2.996400" radius="426.345642" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="16.672852" y="272.774719" z="61.097778" dir_x="0.104528" dir_y="0.994522" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="다른 필드로 이동" condition="0" gate_type="auto" field="113" marker="7" />
+        </SENSOR>
+        <SENSOR id="10" name="SR00010" local="false" x="9294.709961" y="17639.843750" z="47.630493" radius="205.396240" enabled="true" groupname="none" />
+        <SENSOR id="11" name="SR00011" local="false" x="4245.968262" y="16371.802734" z="35.884277" radius="202.215546" enabled="true" groupname="none" />
+        <SENSOR id="12" name="SR00012" local="false" x="2801.378662" y="5538.598145" z="41.660034" radius="187.175461" enabled="true" groupname="none" />
+        <SENSOR id="13" name="SR 첫번째체크포인트" local="false" x="11769.331055" y="1658.300415" z="3.000882" radius="250.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="14" name="SR 두번째 체크포인트" local="false" x="4125.323242" y="15515.675781" z="2.999489" radius="790.000000" enabled="true" checkpoint="11" groupname="none" />
+        <SENSOR id="15" name="환경_1번방" local="true" x="13516.687500" y="2927.316895" z="3.000548" radius="2359.604248" enabled="true" groupname="none" />
+        <SENSOR id="16" name="환경_첫번째꽃밭" local="true" x="17310.593750" y="6316.840332" z="3.000611" radius="2808.728027" enabled="true" groupname="none" />
+        <SENSOR id="17" name="환경_가시덩굴복도" local="true" x="16864.431641" y="13035.880859" z="3.000695" radius="3841.453369" enabled="true" groupname="none" />
+        <SENSOR id="18" name="환경_거대봉봉과 꽃밭" local="true" x="12323.476563" y="17906.472656" z="3.000500" radius="2785.807617" enabled="true" groupname="none" />
+        <SENSOR id="19" name="환경_아루카" local="true" x="6964.731445" y="17360.023438" z="3.000736" radius="2490.991699" enabled="true" groupname="none" />
+        <SENSOR id="20" name="환경_마지막가시덩굴복도" local="true" x="2281.081543" y="11360.502930" z="3.000977" radius="5061.824219" enabled="true" groupname="none" />
+        <SENSOR id="21" name="환경_마지막방_꽃밭" local="true" x="4654.056152" y="3945.273193" z="2.979777" radius="2696.541748" enabled="true" groupname="none" />
+        <AREA id="1" name="숨겨진 봉봉의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="13845.636719" y="2520.836914" z="-203.614258" radius="2400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="가시덩굴의 통로" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="18458.058594" y="13745.423828" z="-143.510254" radius="4400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="5" name="거대한 봉봉의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="12397.587891" y="18077.888672" z="11.174806" radius="2700.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="6" name="아루카의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="6884.966309" y="17735.894531" z="0.000000" radius="2400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="8" name="안식처의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="4620.909668" y="3830.621094" z="-134.625977" radius="2600.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="9" name="오염된 꽃의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="17377.626953" y="6267.394531" z="13.958508" radius="2500.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="10" name="거대한 봉봉과 가시덩굴의 통로" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="2935.314941" y="14054.807617" z="0.000000" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="1486.880005" y="8972.521484" z="0.000000" radius="3100.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--  
+	새끼 이끼 거미 
+	210700201	약타
+	210700202	강타
+	210700205	Roar
+	210700206	삽질(Sleeping)
+	210700207	흡혈
+-->
+<maiet>
+	<COLT>
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210700201" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210700205" rate="10" />
+				<ACTION type="nothing" param1="2" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="고스트라이더" npcid="113160">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="211316010" rate="10" />
+				<ACTION type="talent" param1="211316011" rate="10" />
+				<ACTION type="talent" param1="211316012" rate="10" />
+				<ACTION type="talent" param1="211316015" rate="10" />
+				<ACTION type="talent" param1="211316017" rate="40" />
+			</DEFAULT>
+			<CHECK type="hp" param1="60" param2="90">
+				<ACTION type="talent" param1="211316010" rate="10" />
+				<ACTION type="talent" param1="211316011" rate="10" />
+				<ACTION type="talent" param1="211316012" rate="10" />
+				<ACTION type="talent" param1="211316015" rate="10" />
+				<ACTION type="talent" param1="211316018" rate="40" />
+			</CHECK>
+			<CHECK type="hp" param1="30" param2="60">
+				<ACTION type="talent" param1="211316010" rate="10" />
+				<ACTION type="talent" param1="211316011" rate="10" />
+				<ACTION type="talent" param1="211316012" rate="10" />
+				<ACTION type="talent" param1="211316015" rate="10" />
+				<ACTION type="talent" param1="211316017" rate="40" />
+				<ACTION type="talent" param1="211316016" rate="40" duration="0" />
+			</CHECK>
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="211316018" rate="20" />
+				<ACTION type="talent" param1="211316019" rate="20" />
+				<ACTION type="talent" param1="211316016" rate="20" />
+				<ACTION type="lua" param1="NPC_113160" param2="MarkOfDeath" rate="40" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="211316051" comment="대쉬모드" >
+			<DEFAULT>
+				<ACTION type="aggro" param1="random" />
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="lua" param1="NPC_113160" param2="DashAttack" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="2" victory="211316051" comment="비행모드">
+			<DEFAULT>
+				<ACTION type="aggro" param1="random" />
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="group" >
+					<ACTION type="aggro" param1="random" />
+					<ACTION type="talent" param1="211316031" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="3" victory="211316050" comment="참수모드">
+			<CHECK type="e_gained_buff" param1="40147" comment="절망버프상태">
+				<CHECK type="distance" param2="200">
+					<ACTION type="talent" param1="211316041" max_count="1"/>
+				</CHECK>
+				<CHECK type="distance" param2="200">
+					<ACTION type="talent" param1="211316040"/>
+				</CHECK>
+				<ACTION type="distance" param1="150" param2="150" duration="3"/>
+			</CHECK>
+			
+			<CHECK type="e_gained_buff" param1="40145" comment="죽음의징표상태">
+				<ACTION type="distance" param1="150" param2="150" duration="6" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="group">
+					<ACTION type="talent" param1="211316002" rate="20" duration="0"/>
+					<ACTION type="talent" param1="211316050" rate="20" duration="0"/>
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="5" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_113160:Init(NPCID)
+	--[[
+		User Data
+		1: 대쉬 카운트
+		2: 대쉬 모팩 누적
+		3: 대쉬타입
+		    0 일반대쉬
+			1 노쿨대쉬
+		4: 대쉬 캔슬 리액션 처리 플래그
+		5: Pain 데미지
+	--]]
+	
+	NPC_ReserveUserData(NPCID, 5);
+	
+	NPC_113160.MaxCntUserData			= 3
+	NPC_113160.MaxCntSpirit				= 3
+	NPC_113160.MaxCntDash				= 3
+	
+	NPC_113160.BufIdHellFlame			= 40140
+	NPC_113160.MinionIdSkillDummy		= 113161
+	
+	NPC_113160.TalIdDashStart			= 211316017
+	NPC_113160.TalIdDashContinue		= 211316020
+	NPC_113160.TalIdDashEnd				= 211316021
+	NPC_113160.TalIdForcedDashEnd		= 211316022
+	
+	NPC_113160.TalIdFinalDashStart		= 211316019
+	NPC_113160.TalIdFinalDashEnd		= 211316023
+	NPC_113160.TalIdForcedFinalDashEnd	= 211316024
+	
+	NPC_113160.TalIdForcedDashEnd2		= 211316025
+	NPC_113160.TalIdForcedFinalDashEnd2	= 211316026
+	
+	NPC_113160.TalIdFieryPath1			= 211316102
+	NPC_113160.TalIdFieryPath2			= 211316103
+	NPC_113160.TalIdModeChange2			= 211316025
+	NPC_113160.TalIdBackAttack			= 211316014
+	NPC_113160.TalIdPain1				= 211316001
+	NPC_113160.TalIdPain2				= 211316004
+	NPC_113160.TalIdMarkOfDeath			= 211316013
+	
+	NPC_113160.DataIdxDashCount			= 1
+	NPC_113160.DataIdxForBlockScore		= 2
+	NPC_113160.DataIdxForDashType		= 3
+	NPC_113160.DataIdxForDashCancelFlag	= 4
+	
+	NPC_113160.LimitForDispair			= 500
+	NPC_113160.LimitForBackAttack		= 200
+	NPC_113160.LimitForStopRush			= 1700
+	NPC_113160.LimitForPain				= NPC_113160.MaxHP/20
+end
+
+function NPC_113160:OnSpawn( Info )
+	this:GainBuff( NPC_113160.BufIdHellFlame )
+end
+
+function NPC_113160:MarkOfDeath( ThisNPC, Enemy )
+	if ThisNPC:IsCooldown( NPC_113160.TalIdMarkOfDeath ) then
+		return
+	end
+	
+	local NewEnemy = ThisNPC:Aggro( "near", 0 )
+	ThisNPC:Aggro( "lock", 0 )
+
+	if ThisNPC:DistanceTo( NewEnemy ) > NPC_113160.LimitForDispair then
+		return
+	end
+	
+	ThisNPC:UseTalent( NPC_113160.TalIdMarkOfDeath, NewEnemy )
+end
+
+function NPC_113160:BackAttack( ThisNPC, Enemy )
+	if ThisNPC:IsCooldown( NPC_113160.TalIdBackAttack ) then
+		return
+	end
+
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	local IsRear = Enemy:IsRear( ThisNPC )
+	
+	if Dist < NPC_113160.LimitForBackAttack and IsRear then
+		if ThisNPC:GetMode() == 0 then
+			ThisNPC:UseTalentSelf( NPC_113160.TalIdBackAttack )
+		end
+	end	
+end
+
+function NPC_113160:OnActFieryPath( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local SummonPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	LocalAdjPos = vec3(math.random(0, 0), math.random(0, 0), 0)
+	SummonPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), LocalAdjPos )
+	local SkillDummy = ThisNPC:SummonNow( NPC_113160.MinionIdSkillDummy, SummonPos )
+	
+	SkillDummy:FaceTo( Enemy )
+	if math.random(0,1) == 1 then
+		SkillDummy:UseTalent( NPC_113160.TalIdFieryPath1, Enemy )
+	else
+		SkillDummy:UseTalent( NPC_113160.TalIdFieryPath2, Enemy )
+	end
+		
+	SkillDummy:Despawn(false)
+end
+
+function NPC_113160:OnActCircleOfFire( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local SkillDummy = AsNPC( ThisNPC:GetTarget() )
+	SkillDummy:UseTalentSelf( 211316101 ) 
+end
+
+function NPC_113160:OnStartCircleOfFire( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local SummonPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	local MaxDist = 800
+	local MinDist = 300
+
+	local xPos = math.random(0, MaxDist)
+	local doubleY = MaxDist*MaxDist-xPos*xPos
+	local yMaxPos = math.sqrt( doubleY  )
+	local yMinPos = 0
+	
+	if xPos < MinDist then
+		yMinPos = math.sqrt( MinDist*MinDist-xPos*xPos  )
+	end
+	local yPos = math.random( yMinPos, yMaxPos )
+	
+	--GLog( xPos .. "," .. yPos .. "\n" )
+	local n = math.random( 0 , 4 )
+	
+	if n == 0 then
+		xPos = xPos*-1
+	elseif n == 1 then
+		xPos = xPos*-1
+		yPos = yPos*-1
+	elseif n == 2 then
+		yPos = yPos*-1
+	end
+	
+	LocalAdjPos = vec3( xPos, yPos, 0)
+	SummonPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), LocalAdjPos )
+	local SkillDummy = ThisNPC:SummonNow( NPC_113160.MinionIdSkillDummy, SummonPos )
+	
+	SkillDummy:GainBuff( 40143 )
+	ThisNPC:SetTarget( SkillDummy )
+end
+
+-- 화염발굽 시작
+function NPC_113160:OnFinishFieryHoofsStart( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:RemoveAllBuff()
+	ThisNPC:Aggro( "random", 0 )
+end
+
+-- 대쉬공격시작을 수행후 모드전환및 대쉬 카운트를 1로 설정한다.
+function NPC_113160:OnFinishDashStart( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:SetUserData( NPC_113160.DataIdxDashCount, 1 )
+	ThisNPC:SetUserData( NPC_113160.DataIdxForDashType, 0 )
+	ThisNPC:SetUserData( NPC_113160.DataIdxForDashCancelFlag, 0 )
+	
+	ThisNPC:RemoveAllBuff()
+	ThisNPC:Aggro( "random", 0 )
+end
+
+function NPC_113160:OnFinishFinalDashStart( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:SetUserData( NPC_113160.DataIdxDashCount, 1 )
+	ThisNPC:SetUserData( NPC_113160.DataIdxForDashType, 1 )
+	ThisNPC:SetUserData( NPC_113160.DataIdxForDashCancelFlag, 0 )
+	
+	ThisNPC:RemoveAllBuff()
+	ThisNPC:Aggro( "random", 0 )
+end
+
+function NPC_113160:OnActDashContinue( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	-- 블럭 누적치 리셋
+	ThisNPC:SetUserData( NPC_113160.DataIdxForBlockScore, 0 )
+end
+
+function NPC_113160:OnCancelDashEnd( ThisActor, Enemy )
+	--GLog("NPC_113160:OnCancelDashEnd()\n")
+	local ThisNPC = AsNPC( ThisActor )
+
+--	ThisNPC:UseTalent( NPC_113160.TalIdForcedDashEnd2, Enemy )
+	ThisNPC:Aggro( "random", 0 )
+end
+
+function NPC_113160:OnCancelFinalDashEnd( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:UseTalent( NPC_113160.TalIdForcedFinalDashEnd2, Enemy )
+end
+
+function NPC_113160:OnCancelDashContinue( ThisActor, Enemy )
+	--GLog("NPC_113160:OnCancelDashContinue()\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "random", 0 )
+end
+
+
+-- 이어지는대쉬공격을수행후 횟수를 카운트한다.
+function NPC_113160:OnFinishDashContinue( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:SetUserData( 1, ThisNPC:GetUserData( 1 )+1 )
+	
+	ThisNPC:RemoveAllBuff()
+	ThisNPC:Aggro( "random", 0 )
+end
+
+-- 대쉬카운트를 체크하여 대쉬공격을 계속할지 말지를 결정.
+function NPC_113160:DashAttack( ThisNPC, Enemy )
+	local DashCount = ThisNPC:GetUserData( 1 )
+	--GLog( "DashAttack = " .. DashCount .. " Enemy=" .. Enemy:GetName() .. "\n" )
+	
+	ThisNPC:Wait(1)
+	ThisNPC:FaceTo( Enemy )
+	
+	if  DashCount < NPC_113160.MaxCntDash then
+		ThisNPC:UseTalent( NPC_113160.TalIdDashContinue, Enemy )
+	else
+		if ThisNPC:GetUserData( 3 ) == 0 then
+			ThisNPC:UseTalent( NPC_113160.TalIdDashEnd, Enemy )
+		else
+			ThisNPC:UseTalent( NPC_113160.TalIdFinalDashEnd, Enemy )
+		end
+	end
+end
+
+function NPC_113160:OnBPartRecover()
+	-- 브레이커블 파츠를 사용하지 않기 때문에 딱히 해줄것이 없다.
+end
+
+function NPC_113160:AccDamage( ThisNPC, PartsIdx, HitInfo )
+	if ThisNPC:GetMode() == 1 or 
+		ThisNPC:GetCurrentTalent() == NPC_113160.TalIdDashEnd or 
+		ThisNPC:GetCurrentTalent() == NPC_113160.TalIdFinalDashEnd then
+		
+		NPC_113160:AccDamageForStopRush( ThisNPC, PartsIdx, HitInfo )
+		
+	elseif ThisNPC:GetMode() == 0 then
+		--NPC_113160:AccDamageForPain( ThisNPC, PartsIdx, HitInfo )
+	end
+end
+
+function NPC_113160:AccDamageForPain( ThisNPC, PartsIdx, HitInfo )
+	if ThisNPC:GetCurrentTalent() ~= 0 then
+		return
+	end
+	
+	local AccDamage = ThisNPC:GetUserData( 4 )+ HitInfo.Damage
+	if AccDamage > NPC_113160.LimitForPain then
+		ThisNPC:UseTalentSelf( NPC_113160.TalIdPain1 )
+		ThisNPC:SetUserData( 5, 0 )
+		return
+	end
+	
+	ThisNPC:SetUserData( 5, AccDamage )
+end
+
+-- mode1 처리
+-- 누적된 deflect weight값을 이용해서 러쉬를 멈출지 말지를 결정한다.
+function NPC_113160:AccDamageForStopRush( ThisNPC, PartsIdx, HitInfo )
+	if ThisNPC:GetUserData( NPC_113160.DataIdxForDashCancelFlag ) == 1 then
+		return
+	end
+	
+	local DeflectWeight = HitInfo.MF:Get( MF_DEFLECT ).Weight
+
+	if DeflectWeight <= 0 then
+		return
+	end
+	
+	--local Tot = ThisNPC:GetUserData( NPC_113160.DataIdxForBlockScore ) + DeflectWeight
+	local Enemy = HitInfo.Attacker
+	local Tot = ThisNPC:GetUserData( NPC_113160.DataIdxForBlockScore )
+	
+	if ThisNPC:GetLevel()-3 <= Enemy:GetLevel() then
+		Tot = Tot + DeflectWeight
+	else -- 3렙 이하부터 레벨 패널티
+		local LevelDiff = ThisNPC:GetLevel()-3 - Enemy:GetLevel()
+		
+		if LevelDiff >= 10 then -- 10렙 이상 차이나면 완전 무시
+			return
+		end
+		
+		Tot = Tot + DeflectWeight * ( 1 - 0.05 * LevelDiff )
+	end
+
+	--Tot = 3300
+	--GLog( "DeflectWeight=" .. DeflectWeight .. ", Tot=" .. Tot .."\n" )
+	--if Tot >= 0 then
+	if Tot >= NPC_113160.LimitForStopRush then
+		if ThisNPC:GetCurrentTalent() ~= NPC_113160.TalIdDashStart and
+			ThisNPC:GetCurrentTalent() ~= NPC_113160.TalIdFinalDashStart then
+			
+			ThisNPC:SetUserData( NPC_113160.DataIdxForDashCancelFlag, 1 )
+			ThisNPC:ClearJob()
+			if ThisNPC:GetUserData( NPC_113160.DataIdxForDashType ) == 0 then
+				ThisNPC:UseTalentSelf( NPC_113160.TalIdForcedDashEnd )
+			else
+				ThisNPC:UseTalentSelf( NPC_113160.TalIdForcedFinalDashEnd )
+			end
+		end
+	else
+		ThisNPC:SetUserData( NPC_113160.DataIdxForBlockScore, Tot )
+	end
+end
+
+function NPC_113160:OnHitDeflected(HitInfo)
+	NPC_113160:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_113160:OnHitCapsule_1_0(HitInfo)
+	NPC_113160:AccDamage( this, 1, HitInfo )
+end
+
+-- 돌진시작
+function NPC_113160:OnHitCapsule_3_0(HitInfo)
+	NPC_113160:AccDamage( this, 3, HitInfo )
+end
+
+-- 돌진계속
+function NPC_113160:OnHitCapsule_4_0(HitInfo)
+	NPC_113160:AccDamage( this, 3, HitInfo )
+end
+
+-- 돌진종료
+function NPC_113160:OnHitCapsule_5_0(HitInfo)
+	NPC_113160:AccDamage( this, 3, HitInfo )
+end
+
+]]></SCRIPT>
+</maiet>

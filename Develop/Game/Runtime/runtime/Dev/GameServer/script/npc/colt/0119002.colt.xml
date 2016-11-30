@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 썩은 트롤
+211900200	idle2
+211900201	일반공격1
+211900202	일반공격2
+211900203	강한공격
+211900204	포효
+-->
+<maiet>
+	<COLT name="썩은 트롤">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211900201" rate="20" />
+				<ACTION type="talent" param1="211900202" rate="10" />
+				<ACTION type="talent" param1="211900203" rate="10" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211900200" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

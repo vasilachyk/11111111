@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="117" minimap_name="map00117" loading_image_name="00117" min_x="-33650" min_y="-31970" max_x="31350" max_y="33030" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="6" max_gather_herb="6" max_gather_relic="16" max_gather_lumber="13">
+        <BGM fieldbgm="amb_dungeon_underpass">
+            <ENVBGM dungeonbgm="amb_dungeon_3" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="marker 시작지점" x="-21308.552734" y="-10575.849609" z="-47.000011" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="117081" name="QM 타일런트 좀비" x="-26859.972656" y="-11817.330078" z="3.081543" dir_x="-0.559193" dir_y="0.829038" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="sensor 부활지점" local="false" x="-21311.259766" y="-10577.746094" z="-48.000008" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="3" name="툴팁센서" local="false" x="-21307.966797" y="-10576.576172" z="-47.000004" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="100" name="타일런트 스폰체크 센서" local="false" x="-26922.738281" y="-11865.950195" z="-47.000015" radius="6000.000000" enabled="false" groupname="none" />
+        <SENSOR id="200" name="탈렌트 사용체크 센서" local="false" x="-26643.013672" y="-11838.119141" z="-47.000015" radius="6000.000000" enabled="true" groupname="none" />
+        <AREA id="117081" name="타일런트 좀비의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-26581.695313" y="-11898.064453" z="-104.617279" radius="4500.000000" height="1000.000000" />
+        </AREA>
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

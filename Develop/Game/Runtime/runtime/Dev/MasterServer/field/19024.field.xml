@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8005" minimap_name="map08005" loading_image_name="08005" min_x="0" min_y="0" max_x="12000" max_y="12000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_1">
+            <ENVBGM daytimebgm="amb_battlefield_daytime" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="from 카를로스" x="2962.460938" y="5085.038574" z="827.099304" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="from 먼지" x="5985.155762" y="6058.147461" z="2.000000" dir_x="-0.017453" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="from 미젤란" x="3212.367920" y="4333.178711" z="827.099976" dir_x="0.882948" dir_y="0.469472" dir_z="0.000000" random_dir="false" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

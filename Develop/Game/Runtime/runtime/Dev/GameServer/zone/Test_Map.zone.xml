@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <SCENE>
+        <SCENEINSTANCE>
+            <COMMON name="test_map.scene.xml">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>test_map.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <DIRLIGHT>
+            <COMMON name="DirectionalLight">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.450270 0.377821 -0.809017</DIRECTION>
+                <UP>0.619743 0.520026 0.587785</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYSPECULAR>0.000</SKYSPECULAR>
+                <DOUBLE_SHADOW_INTENSITY>0.150</DOUBLE_SHADOW_INTENSITY>
+            </PROPERTY>
+        </DIRLIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="test_raid.scene_001">
+                <POSITION>1231.296997 8795.754883 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>test_raid.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <LIGHT>
+            <COMMON name="PointLight">
+                <POSITION>-7572.413574 8761.274414 719.268188</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>1.000 1.000 1.000</COLOR>
+                <INTENSITY>1.000</INTENSITY>
+                <ATTENUATIONEND>5000.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>1500.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointLight1">
+                <POSITION>9866.115234 8657.828125 719.268188</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>1.000 1.000 1.000</COLOR>
+                <INTENSITY>1.000</INTENSITY>
+                <ATTENUATIONEND>5000.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>1500.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointLight2">
+                <POSITION>1096.951172 10958.541992 719.268188</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>1.000 1.000 1.000</COLOR>
+                <INTENSITY>1.000</INTENSITY>
+                <ATTENUATIONEND>5000.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>1500.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointLight3">
+                <POSITION>1138.824707 6351.334961 719.268188</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>1.000 1.000 1.000</COLOR>
+                <INTENSITY>1.000</INTENSITY>
+                <ATTENUATIONEND>5000.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>1500.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="test_area.scene_001">
+                <POSITION>-184.440277 -13091.552734 0.000035</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>test_area.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+    </SCENE>
+</ROOT>

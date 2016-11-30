@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 허약한 크립 전사	
+211800100	#idle2
+	
+#전투	
+211800110	#2연속찌르기
+211800111	#양손가위질
+211800112	#3연속찌르기
+211800113	#포효
+211800114	#독침쏘기
+-->
+<maiet>
+	<COLT name="허약한크립전사" npcid="118001">
+		<COMBAT mode="0">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="211800110" rate="40" comment="atk_1" />
+				<ACTION type="talent" param1="211800111" rate="40" comment="atk_2" />
+				<ACTION type="talent" param1="211800112" rate="20" comment="atk_3" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="600">
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6" />
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6" />
+				
+				<ACTION type="talent" param1="211800113" rate="10" comment="roar" duration="0" />		
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT comment="">
+				<ACTION type="nothing" param1="0" rate="90" comment="nothing" />
+				<ACTION type="talent" param1="211800100" rate="10" comment="idle2" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

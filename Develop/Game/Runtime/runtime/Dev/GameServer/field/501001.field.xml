@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="501" minimap_name="map00501" loading_image_name="00501" min_x="-15214" min_y="-21040" max_x="21786" max_y="15960" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_14">
+            <ENVBGM dungeonbgm="amb_dungeon_monastery" />
+        </BGM>
+        <Env set="boss_room">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <GRID type="wall" row="124" column="124" filled="543,7,117,7,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,117,2,4,1,112,7,4,1,112,7,4,4,109,4,10,1,109,4,10,1,109,4,10,1,109,4,10,1,109,4,10,1,108,5,10,1,108,5,10,1,108,5,10,1,108,5,10,1,108,5,10,1,108,5,10,1,108,5,10,1,108,5,10,1,108,5,10,1,108,5,10,3,106,2,15,1,106,2,15,1,106,2,15,1,106,2,15,1,106,2,15,10,97,2,15,4,5,1,97,9,2,10,5,1,97,9,2,10,5,1,97,9,2,10,5,1,97,9,2,12,1,3,87,18,3,12,1,3,87,18,3,4,10,2,87,4,10,4,3,4,10,2,87,4,10,4,3,4,10,2,87,4,10,4,3,4,10,2,87,4,10,4,3,4,10,2,87,4,10,4,3,4,10,2,87,4,10,4,6,1,10,2,87,4,20,1,10,2,87,4,20,1,10,2,87,4,10,2,8,1,10,2,87,4,10,2,7,2,10,2,87,4,10,2,7,2,10,2,87,4,10,2,7,2,10,2,5,22,60,4,10,11,10,2,5,22,60,4,10,11,10,12,14,3,60,8,2,15,10,12,14,3,58,10,2,19,2,16,16,1,58,10,2,19,2,10,22,1,58,4,8,19,34,1,58,4,8,19,34,1,58,4,5,25,5,4,22,1,58,4,5,25,5,10,16,1,58,4,5,25,5,10,14,3,58,4,5,25,5,10,14,3,58,4,5,8,9,8,8,24,58,2,7,8,9,8,8,21,61,2,7,8,9,14,2,21,61,2,1,14,9,14,2,2,80,2,8,7,9,7,9,2,80,2,8,7,9,7,9,2,80,2,8,7,9,7,9,2,80,2,8,7,9,7,9,2,80,2,8,7,9,7,9,2,80,8,2,7,3,4,2,7,9,2,80,8,5,4,3,4,2,4,6,8,80,8,12,4,2,1,9,8,83,7,24,10,83,11,16,14,83,14,9,9,100,10,2,5,107,10,2,5,107,10,2,5,109,8,2,5,109,3,11,1,109,3,11,1,109,3,11,1,109,3,11,1,109,3,11,1,109,3,11,1,110,2,11,1,110,2,11,1,110,2,11,1,110,2,11,1,110,2,11,1,110,2,11,1,110,2,11,1,811" />
+        <SPAWN id="101000" group="0" name="1번 방 - 문" x="2.244358" y="-14748.402344" z="1251.354370" dir_x="-0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101001" group="0" name="가디엘 교도 - 문지기" x="13.592087" y="-15190.555664" z="1250.354370" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501100" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101002" group="0" name="수도사 지나" x="-367.398407" y="-18858.927734" z="1202.999878" dir_x="0.978148" dir_y="-0.207912" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="1" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501204" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101101" group="0" name="일반 교도" x="391.451385" y="-17350.376953" z="1208.321655" dir_x="-0.275638" dir_y="0.961262" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101102" group="0" name="일반 교도" x="-134.945496" y="-15999.802734" z="1208.254028" dir_x="-0.965926" dir_y="0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101103" group="0" name="일반 교도" x="-259.828064" y="-16040.610352" z="1203.744873" dir_x="0.500000" dir_y="0.866026" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101104" group="0" name="일반 교도" x="352.242615" y="-17197.941406" z="1205.585327" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101105" group="0" name="일반 교도" x="253.152588" y="-17307.421875" z="1214.840698" dir_x="0.866025" dir_y="0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101106" group="0" name="일반 교도" x="-240.812073" y="-15934.476563" z="1203.744751" dir_x="0.342020" dir_y="-0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="101107" group="0" name="가디엘 교도" x="-264.701691" y="-15502.073242" z="1202.999878" dir_x="0.788011" dir_y="-0.615661" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,64">
+            <NPC id="501116" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102000" group="0" name="2번 방 - 문" x="0.747093" y="-10232.597656" z="1247.054077" dir_x="-0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102001" group="200" name="가디엘 교도 - 문지기" x="9.885056" y="-10627.939453" z="1299.886108" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501101" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102101" group="200" name="일반 교도" x="227.565704" y="-12420.410156" z="1272.082275" dir_x="0.891007" dir_y="0.453990" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102103" group="200" name="일반 교도" x="214.789246" y="-12293.712891" z="1248.841919" dir_x="0.529919" dir_y="-0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102104" group="200" name="일반 교도" x="325.499023" y="-12306.911133" z="1282.763062" dir_x="-0.656059" dir_y="-0.754710" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102105" group="200" name="일반 교도" x="-334.744202" y="-11515.943359" z="1201.920776" dir_x="0.719340" dir_y="0.694658" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102106" group="200" name="일반 교도" x="-343.338013" y="-11382.407227" z="1201.506348" dir_x="0.719340" dir_y="-0.694658" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102107" group="200" name="일반 교도" x="-237.475357" y="-11386.357422" z="1202.999878" dir_x="-0.515038" dir_y="-0.857168" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102109" group="200" name="가디엘 교도" x="315.305695" y="-10853.126953" z="1202.999878" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,64">
+            <NPC id="501116" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102110" group="200" name="일반 교도" x="-295.246521" y="-13190.744141" z="1202.999878" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102111" group="200" name="일반 교도" x="-355.821442" y="-13348.449219" z="1202.999878" dir_x="0.694658" dir_y="0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="102112" group="200" name="일반 교도" x="-203.479935" y="-13334.316406" z="1203.744751" dir_x="-0.819152" dir_y="0.573577" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103000" group="300" name="3번 방 - 교회 석상" x="-1.693076" y="-4119.446289" z="1274.557739" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103001" group="300" name="가디엘교 수녀" x="-684.240845" y="-8565.259766" z="1270.001709" dir_x="0.224951" dir_y="0.974370" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103004" group="300" name="가디엘교 수녀" x="692.645264" y="-8561.576172" z="1270.001709" dir_x="-0.241922" dir_y="0.970296" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103005" group="300" name="가디엘 교도" x="-408.426605" y="-8699.070313" z="1202.999878" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103006" group="300" name="가디엘 교도" x="393.095917" y="-8690.712891" z="1202.999878" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103017" group="300" name="가디엘 교도" x="-1110.223145" y="-4664.143066" z="1270.001709" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103018" group="300" name="가디엘 교도" x="-1095.490967" y="-5030.947266" z="1270.001709" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103019" group="300" name="가디엘 교도" x="1164.787354" y="-4616.223633" z="1270.001709" dir_x="-0.999391" dir_y="-0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103020" group="300" name="가디엘 교도" x="1165.671143" y="-5026.897949" z="1270.001709" dir_x="-0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103021" group="300" name="가디엘 교도" x="-947.871643" y="-6118.597656" z="1270.001709" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103022" group="300" name="가디엘 교도" x="906.224243" y="-6122.030762" z="1309.981689" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103027" group="300" name="가디엘 교도" x="-425.586761" y="-7659.494141" z="1202.999878" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103028" group="300" name="가디엘 교도" x="440.809265" y="-7661.350586" z="1202.999878" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103031" group="300" name="가디엘 교도" x="-229.290680" y="-6687.284180" z="1205.076538" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103032" group="300" name="가디엘 교도" x="214.008194" y="-6681.013672" z="1202.999878" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501114" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103033" group="300" name="가디엘 교도" x="-218.169861" y="-5649.934570" z="1204.992676" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103034" group="300" name="가디엘 교도" x="214.632172" y="-5646.453125" z="1202.999878" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103040" group="300" name="가디엘교 수녀" x="1445.391846" y="-4820.943848" z="1270.001709" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="103041" group="300" name="가디엘교 수녀" x="-1400.716797" y="-4834.679199" z="1270.001709" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="104000" group="400" name="4번 방 - 지하대기소 - 가짜 문" x="1456.289063" y="1.202203" z="31.050018" dir_x="-1.000000" dir_y="0.000001" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="104105" group="400" name="가디엘 사제" x="11.430511" y="860.546570" z="3.000000" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105102" group="400" name="가디엘 수녀" x="-3940.183350" y="-905.120544" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,0">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105104" group="400" name="가디엘 수녀" x="-2497.391113" y="1029.893921" z="3.000000" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,0">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105105" group="400" name="가디엘 수녀" x="-4450.669922" y="1946.639893" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,0">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105106" group="400" name="일반 교도" x="-3691.149170" y="-1562.406738" z="6.766488" dir_x="0.258819" dir_y="-0.965926" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105107" group="400" name="일반 교도" x="-2569.277588" y="-729.836487" z="3.000000" dir_x="-0.544639" dir_y="0.838670" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105108" group="400" name="일반 교도" x="-2787.227295" y="-1853.398560" z="3.000000" dir_x="0.358368" dir_y="0.933580" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105109" group="400" name="일반 교도" x="-2580.906006" y="1129.038818" z="3.000000" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105110" group="400" name="일반 교도" x="-2480.330078" y="214.583389" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105111" group="400" name="일반 교도" x="-3836.560303" y="-991.645935" z="3.000000" dir_x="-0.390731" dir_y="0.920505" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105112" group="400" name="일반 교도" x="-3637.623779" y="-1691.471680" z="26.082764" dir_x="-0.453991" dir_y="0.891007" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105113" group="400" name="일반 교도" x="-2685.104248" y="1052.061401" z="3.000000" dir_x="0.984808" dir_y="-0.173648" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105114" group="400" name="일반 교도" x="-4283.265137" y="1796.149048" z="3.000000" dir_x="0.996195" dir_y="-0.087155" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105115" group="400" name="가디엘 수녀" x="-3211.317139" y="2087.584229" z="3.000000" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,128,192">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105116" group="400" name="일반 교도" x="-4027.495117" y="1164.605957" z="3.000000" dir_x="0.707107" dir_y="-0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="501117" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105117" group="400" name="가디엘 수녀" x="-3935.927002" y="1160.525269" z="6.806763" dir_x="-0.777146" dir_y="-0.629321" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,0">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105118" group="400" name="가디엘 수녀" x="-3779.434082" y="821.118042" z="3.000000" dir_x="0.998630" dir_y="0.052336" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,0">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105119" group="400" name="일반 교도" x="-4045.772949" y="-16.540260" z="3.000000" dir_x="0.190809" dir_y="-0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105120" group="400" name="일반 교도" x="-4128.755371" y="-89.460457" z="3.000000" dir_x="0.996195" dir_y="-0.087155" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105121" group="400" name="일반 교도" x="-4033.611572" y="-172.245346" z="3.000000" dir_x="0.358367" dir_y="0.933581" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501102" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105122" group="400" name="유물 상자" x="-2292.767578" y="-1864.716797" z="3.000000" dir_x="-0.766045" dir_y="0.642787" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501216" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105123" group="400" name="보물상자" x="-4071.613770" y="-2037.347168" z="3.000000" dir_x="1.000000" dir_y="0.000001" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501217" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105124" group="400" name="가디엘 수녀" x="-2299.212891" y="1889.596680" z="3.000000" dir_x="-0.694658" dir_y="-0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105126" group="400" name="가디엘 사제" x="-3260.419189" y="-2072.520264" z="8.088447" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105127" group="400" name="가디엘 사제" x="-1969.551758" y="-1322.376831" z="3.000000" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105128" group="400" name="가디엘 사제" x="-4364.492676" y="1314.560547" z="3.000000" dir_x="0.087155" dir_y="0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="105130" group="400" name="가디엘 수녀" x="-4396.332520" y="-1405.302856" z="3.000000" dir_x="0.945519" dir_y="0.325568" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106105" group="600" name="가디엘 사제" x="-4654.700684" y="3417.443848" z="3.000000" dir_x="0.906308" dir_y="-0.422618" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106106" group="600" name="가디엘 수녀" x="-4888.245117" y="4099.536621" z="3.000000" dir_x="0.996195" dir_y="0.087156" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106108" group="600" name="가디엘 수녀" x="-4101.988281" y="3848.325928" z="3.000000" dir_x="-0.997564" dir_y="-0.069757" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106111" group="600" name="가디엘 수녀" x="-4596.166016" y="3309.164063" z="3.000000" dir_x="0.069756" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106112" group="600" name="가디엘 수녀" x="-4070.022461" y="5169.629395" z="3.000000" dir_x="-0.788011" dir_y="-0.615662" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106113" group="600" name="가디엘 사제" x="-4123.342773" y="5072.947754" z="3.000000" dir_x="0.325568" dir_y="0.945519" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106114" group="600" name="가디엘 수녀" x="-4912.923340" y="4824.830566" z="3.000000" dir_x="0.874620" dir_y="-0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106115" group="600" name="병든 교도" x="-4985.730957" y="3577.569092" z="3.000000" dir_x="0.882947" dir_y="0.469472" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501206" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="106116" group="600" name="병든 교도" x="-4970.621582" y="3759.318604" z="3.000000" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501211" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107101" group="600" name="가디엘 수녀" x="-5631.036133" y="7255.516602" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107103" group="600" name="가디엘 사제" x="-4456.645508" y="7327.201660" z="3.000000" dir_x="0.438371" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107104" group="600" name="가디엘 수녀" x="-4343.324707" y="7333.041992" z="3.000000" dir_x="-0.669130" dir_y="-0.743145" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107107" group="600" name="가디엘 수녀" x="-4324.468750" y="6412.771484" z="3.000000" dir_x="0.390731" dir_y="-0.920505" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107111" group="600" name="가디엘 수녀" x="-4319.807617" y="6342.999023" z="3.000000" dir_x="0.719339" dir_y="0.694659" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501104" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107112" group="600" name="가디엘 수녀" x="-5181.050781" y="7335.666504" z="3.000000" dir_x="0.719339" dir_y="0.694659" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107114" group="600" name="가디엘 수녀" x="-3783.285400" y="6660.266602" z="3.000000" dir_x="-0.656060" dir_y="0.754709" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501103" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107115" group="600" name="병든 교도" x="-4689.357910" y="7423.530273" z="3.000000" dir_x="0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501206" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107116" group="600" name="병든 교도" x="-5054.583496" y="6326.610352" z="3.000000" dir_x="-0.034900" dir_y="0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501211" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107117" group="600" name="병든 교도" x="-5429.394531" y="7439.369629" z="3.000000" dir_x="-0.997564" dir_y="0.069755" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501219" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="107118" group="600" name="병든 교도" x="-4927.386719" y="6390.170410" z="3.000000" dir_x="-0.913546" dir_y="0.406736" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501211" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108000" group="800" name="8번 방 - 석문" x="1359.314697" y="8707.066406" z="3.000004" dir_x="1.000000" dir_y="-0.000001" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="108001" group="800" name="가디엘 간수" x="946.638977" y="5606.685547" z="-596.999878" dir_x="-0.939693" dir_y="0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,128">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108002" group="800" name="가디엘 간수" x="-954.264343" y="5910.473145" z="-596.999878" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,128">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108009" group="800" name="가디엘 교도" x="-187.635483" y="5282.797852" z="-595.972961" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108010" group="800" name="가디엘 교도" x="166.355652" y="5275.296875" z="-598.942932" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="501115" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108011" group="800" name="가디엘 간수" x="-941.084595" y="5605.457520" z="-527.864075" dir_x="0.956305" dir_y="0.292373" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,128">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108012" group="800" name="가디엘 간수" x="914.794312" y="5916.218262" z="-514.947266" dir_x="-0.998630" dir_y="0.052335" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,128">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108013" group="800" name="가디엘 장로" x="-3.994843" y="6201.384766" z="-534.344299" dir_x="0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="501106" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108014" group="800" name="가디엘 간수" x="1007.396851" y="8940.255859" z="2.000000" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,128">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108015" group="800" name="변성된 동물" x="843.384827" y="8945.967773" z="3.000000" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,160">
+            <NPC id="501108" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108016" group="800" name="정신 나간 도공 조단" x="1004.580322" y="4887.945313" z="-596.999878" dir_x="-0.707107" dir_y="0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501215" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108017" group="800" name="숨겨진 보물상자" x="-319.898163" y="7090.368164" z="-527.864136" dir_x="-0.017451" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501217" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="109000" group="800" name="9번 방 - 고문실 - 문" x="-2.346497" y="10841.316406" z="13.057408" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109001" group="800" name="9번 방 - 고문실 - 문" x="21.874123" y="9205.019531" z="0.000061" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="110101" group="1000" name="갑옷 기사" x="4070.625244" y="6299.923828" z="3.000000" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="110102" group="1000" name="갑옷 기사" x="5286.563965" y="7485.692871" z="4.279694" dir_x="0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="110103" group="1000" name="갑옷 기사" x="4977.217285" y="6305.133789" z="3.000000" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="110104" group="1000" name="갑옷 기사" x="4707.756348" y="7504.853027" z="3.000000" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="111101" group="1000" name="갑옷 기사" x="3918.458740" y="4931.712891" z="3.000000" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="111102" group="1000" name="갑옷 기사" x="3912.677246" y="4470.315918" z="3.000000" dir_x="0.998630" dir_y="0.052336" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="111103" group="1000" name="갑옷 기사" x="3926.039063" y="4022.935059" z="3.000000" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="111104" group="1000" name="갑옷 기사" x="5076.124512" y="4482.003418" z="3.000000" dir_x="-0.999391" dir_y="-0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="111107" group="1000" name="갑옷 기사" x="4517.952637" y="3137.808838" z="3.000000" dir_x="-0.052336" dir_y="0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="111108" group="1000" name="갑옷 기사" x="4515.487793" y="5381.765137" z="3.000000" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501120" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112001" group="0" name="12번 방 - 감옥 - 철문" x="8782.999023" y="3968.495117" z="2.999817" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112002" group="1212" name="12번 방 - 감옥 - 철문" x="9782.563477" y="3979.554199" z="2.999900" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112003" group="0" name="12번 방 - 감옥 - 철문" x="10768.415039" y="3955.255859" z="2.999909" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112004" group="1214" name="12번 방 - 감옥 - 철문" x="11769.037109" y="3975.029053" z="1.999769" dir_x="0.017451" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112005" group="0" name="12번 방 - 감옥 - 철문" x="11762.672852" y="2649.980957" z="1.999905" dir_x="0.000001" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112006" group="1223" name="12번 방 - 감옥 - 철문" x="10771.202148" y="2609.149658" z="2.000092" dir_x="0.000001" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112007" group="1222" name="12번 방 - 감옥 - 철문" x="9774.541992" y="2614.395996" z="3.000122" dir_x="0.000001" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112008" group="1221" name="12번 방 - 감옥 - 철문" x="8777.895508" y="2640.911133" z="3.000239" dir_x="-0.017451" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112101" group="1200" name="가디엘 간수" x="8734.306641" y="3698.308350" z="3.000007" dir_x="-0.034900" dir_y="0.999391" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112102" group="1200" name="가디엘 간수" x="9747.507813" y="3593.771240" z="2.999976" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112103" group="1200" name="가디엘 간수" x="11569.762695" y="3627.675781" z="2.999941" dir_x="-0.017453" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112104" group="1200" name="가디엘 간수" x="8692.028320" y="2874.574951" z="3.000215" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112105" group="1200" name="가디엘 간수" x="9763.448242" y="2865.215088" z="2.000156" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112106" group="1200" name="가디엘 간수" x="11571.627930" y="2820.750000" z="3.000261" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501105" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112202" group="1211" name="일반 교도" x="8637.738281" y="4089.762695" z="2.999740" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112203" group="1213" name="일반 교도" x="10914.588867" y="4457.722656" z="2.999728" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,0">
+            <NPC id="501110" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112207" group="1223" name="일반 교도" x="10545.492188" y="2436.070313" z="3.000417" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="501108" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112302" group="1212" name="일반 교도" x="9976.274414" y="4102.281738" z="2.999726" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112304" group="1214" name="변성된 호저" x="11616.480469" y="4184.096680" z="2.999784" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,0">
+            <NPC id="501110" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112307" group="1223" name="일반 교도" x="10723.285156" y="2246.554199" z="3.000353" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="501108" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112401" group="1213" name="일반 교도" x="10697.129883" y="4198.878906" z="2.999738" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,0">
+            <NPC id="501110" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112406" group="1224" name="일반 교도" x="11846.813477" y="2348.203613" z="3.000114" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="501108" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112502" group="1214" name="일반 교도" x="11947.348633" y="4493.352539" z="2.999721" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,0">
+            <NPC id="501110" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112505" group="1224" name="일반 교도" x="11577.481445" y="2469.108643" z="3.000022" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="501108" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112514" group="1222" name="일반 교도" x="9874.493164" y="2445.286621" z="3.000283" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112515" group="1222" name="일반 교도" x="9558.206055" y="2457.553223" z="3.000326" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112524" group="1221" name="일반 교도" x="8483.113281" y="2452.593994" z="3.000529" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112525" group="1221" name="일반 교도" x="8757.074219" y="2435.817871" z="3.000511" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112528" group="1211" name="일반 교도" x="8904.395508" y="4076.183105" z="2.999784" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112540" group="1212" name="일반 교도" x="9578.708008" y="4095.093018" z="2.999802" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501109" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112547" group="0" name="성스러운 홀 보관상자" x="4411.118652" y="-4049.985352" z="6.000000" dir_x="-0.017453" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501216" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112601" group="1200" name="가디엘 간수 상디" x="12427.737305" y="3396.334473" z="3.822097" dir_x="-0.999391" dir_y="0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,0">
+            <NPC id="501121" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112602" group="1211" name="수도원 기록관" x="8509.404297" y="4512.671875" z="3.000000" dir_x="0.342021" dir_y="-0.939692" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501210" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112603" group="1212" name="부상당한 병사" x="9527.369141" y="4504.655762" z="3.000000" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501208" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112604" group="1212" name="부상당한 린델 왕국 기사" x="9770.328125" y="4505.324219" z="3.000000" dir_x="-0.999848" dir_y="-0.017453" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501207" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112605" group="1222" name="부상당한 린델 왕국 병사" x="10089.149414" y="2235.405029" z="3.000000" dir_x="-0.390731" dir_y="0.920505" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501208" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112606" group="1223" name="부상당한 병사" x="10936.123047" y="2314.901123" z="33.627319" dir_x="-0.994522" dir_y="0.104528" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501208" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="112607" group="1224" name="수도부원장" x="12062.626953" y="2327.301025" z="3.000000" dir_x="-0.500000" dir_y="0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501209" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113001" group="1000" name="13번 방 - 기도실 - 석문" x="3646.291260" y="3225.145996" z="2.000000" dir_x="-1.000000" dir_y="0.000001" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113002" group="1300" name="13번 방 - 기도실 - 투명문" x="3232.434082" y="2534.749268" z="2.000000" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501224" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113003" group="1000" name="13번 방 - 기도실 - 투명문" x="3665.502441" y="3209.929688" z="10.000061" dir_x="1.000000" dir_y="-0.000001" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501224" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113101" group="1300" name="변성된 가디엘 사제" x="2409.424805" y="1565.775757" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501111" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113103" group="1300" name="변성된 가디엘 간수" x="3921.439697" y="1363.963135" z="3.000000" dir_x="0.891007" dir_y="-0.453990" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,0">
+            <NPC id="501122" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113104" group="1300" name="변성된 가디엘 사제" x="4084.622559" y="1356.048828" z="3.000000" dir_x="-0.939693" dir_y="-0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501111" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113105" group="1300" name="변성된 가디엘 간수" x="2427.736328" y="133.478882" z="3.000000" dir_x="0.438371" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,64">
+            <NPC id="501122" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113106" group="1300" name="변성된 가디엘 사제" x="2443.619629" y="-21.039795" z="1.981686" dir_x="0.694658" dir_y="0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501111" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113112" group="1300" name="변성된 가디엘 간수" x="3978.731934" y="196.090546" z="3.000000" dir_x="-0.656059" dir_y="-0.754710" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,0">
+            <NPC id="501122" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113113" group="1300" name="변성된 가디엘 고위사제" x="3895.914307" y="75.275391" z="3.000000" dir_x="0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501112" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113115" group="1300" name="변성된 가디엘 고위사제" x="2574.167236" y="61.604858" z="3.000000" dir_x="-0.987688" dir_y="-0.156435" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501112" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113116" group="1300" name="변성된 가디엘 고위사제" x="3985.182617" y="1235.825684" z="3.000000" dir_x="0.309017" dir_y="0.951057" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501112" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113117" group="1300" name="변성된 가디엘 고위사제" x="2507.461182" y="1433.793701" z="3.000000" dir_x="-0.951057" dir_y="0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501112" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113125" group="1300" name="변성된 가디엘 이단 심판관" x="3897.066895" y="-675.975464" z="3.000000" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="501113" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113126" group="1300" name="변성된 가디엘 이단 심판관" x="2485.050049" y="-686.621643" z="3.000000" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="501113" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="113127" group="1300" name="변성된 가디엘 간수 로밍" x="3175.732178" y="175.037994" z="3.000000" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,0">
+            <NPC id="501122" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="114001" group="1300" name="14번 방 - 성녀의 방 - 문" x="4149.604004" y="-2314.645752" z="2.219896" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501214" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="114002" group="1300" name="14번 방 - 성녀의 방 - 투명문" x="4145.357910" y="-2329.319580" z="0.000217" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501225" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="114010" group="0" name="숨겨진 보물 상자" x="3619.492432" y="-4003.640381" z="5.000000" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="10800" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,0,255">
+            <NPC id="501217" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="501000" group="300" name="수도원장 네이터(발키리)" x="16.235962" y="-5920.711426" z="1200.458130" dir_x="0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="4500" color="auto">
+            <NPC id="501000" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="501001" group="300" name="수도원장 네이터" x="-0.273449" y="-4893.536621" z="1369.183228" dir_x="0.034900" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="5500" color="auto">
+            <NPC id="501001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="501002" group="800" name="처형집행인 (단독)" x="-2.818647" y="12465.326172" z="3.000000" dir_x="0.069756" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="2200" color="auto">
+            <NPC id="501002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="501003" group="1300" name="성녀 리체" x="3172.101074" y="-1747.885376" z="2.000000" dir_x="-0.156435" dir_y="0.987688" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501003" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="501004" group="0" name="처형집행인 (리체랑 함께)" x="4358.964355" y="-3702.536865" z="6.000000" dir_x="-0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501004" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="501222" group="0" name="수도원 기록구" x="3740.403320" y="-3157.055664" z="6.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="501222" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="501223" group="0" name="NPC 경호원 펨버튼" x="-433.657898" y="-18746.183594" z="1202.999878" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="501223" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5012211" group="0" name="수도원 유물" x="482.608490" y="-15086.769531" z="1205.990845" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012212" group="300" name="수도원 유물" x="-1221.464111" y="-9129.680664" z="1270.001709" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012213" group="400" name="수도원 유물" x="833.936401" y="1110.317383" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012214" group="400" name="수도원 유물" x="-3670.608398" y="-2059.264160" z="4.233475" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012215" group="400" name="수도원 유물" x="-3894.975098" y="-1524.391357" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012216" group="400" name="수도원 유물" x="-4153.132324" y="1607.087769" z="13.235840" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012217" group="600" name="수도원 유물" x="-5124.748535" y="4094.433105" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012218" group="600" name="수도원 유물" x="-5509.994629" y="7527.287598" z="9.310295" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012219" group="800" name="수도원 유물" x="449.654510" y="7091.429688" z="-528.864136" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012220" group="800" name="수도원 유물" x="-999.021484" y="5030.374023" z="-596.999878" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012221" group="800" name="수도원 유물" x="-216.451523" y="10021.992188" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012222" group="1000" name="수도원 유물" x="5821.795898" y="7308.854492" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012223" group="1000" name="수도원 유물" x="3923.512695" y="3775.836426" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012224" group="1211" name="수도원 유물" x="9081.392578" y="4331.040527" z="78.067436" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012225" group="1213" name="수도원 유물" x="10518.859375" y="4514.285156" z="2.999717" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012226" group="1224" name="수도원 유물" x="11458.574219" y="2219.481934" z="78.067436" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012227" group="1200" name="수도원 유물" x="12659.867188" y="3168.855713" z="2.999831" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012228" group="1221" name="수도원 유물" x="9034.002930" y="1993.341064" z="3.000471" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012229" group="1214" name="수도원 유물" x="11458.824219" y="4266.725586" z="92.835854" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012230" group="1223" name="수도원 유물" x="10537.832031" y="2020.665771" z="3.000226" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012231" group="1000" name="수도원 유물" x="4247.708496" y="7445.113770" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012232" group="400" name="수도원 유물" x="-1935.408813" y="1320.549194" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012233" group="300" name="수도원 유물" x="-1580.568726" y="-4239.565430" z="1270.001709" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012234" group="300" name="수도원 유물" x="1249.066528" y="-4205.164063" z="1270.001709" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012235" group="400" name="수도원 유물" x="-3798.857422" y="-547.511841" z="3.000000" dir_x="-0.190809" dir_y="-0.981627" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012236" group="400" name="수도원 유물" x="-3865.937988" y="593.347473" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012237" group="600" name="수도원 유물" x="-5925.617188" y="5132.804199" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012238" group="0" name="수도원 유물" x="-3912.046143" y="8142.160645" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012239" group="800" name="수도원 유물" x="1118.153320" y="6393.135742" z="-596.999878" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012240" group="0" name="수도원 유물" x="2320.599609" y="8198.246094" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012241" group="1212" name="수도원 유물" x="10039.189453" y="4484.767090" z="2.999723" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012242" group="1222" name="수도원 유물" x="9456.992188" y="2241.900391" z="78.067444" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012243" group="0" name="수도원 유물" x="3623.135498" y="-3293.487549" z="6.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012244" group="1300" name="수도원 유물" x="2094.051270" y="-2036.118896" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012245" group="400" name="수도원 유물" x="1281.825073" y="-297.548950" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012246" group="600" name="수도원 유물" x="-3754.976318" y="6335.674805" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012247" group="800" name="수도원 유물" x="-1040.264893" y="9019.892578" z="3.000003" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012248" group="800" name="수도원 유물" x="-981.741455" y="11107.277344" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012249" group="800" name="수도원 유물" x="191.908630" y="13816.489258" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012250" group="1000" name="수도원 유물" x="5486.352051" y="3089.081055" z="3.000026" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012252" group="400" name="수도원 유물" x="-2606.199219" y="-1136.026123" z="3.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="5012253" group="400" name="수도원 유물" x="-4130.775879" y="1020.829956" z="2.000000" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="2400" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,128">
+            <NPC id="501221" default="true" rate="100" />
+        </SPAWN>
+        <MARKER id="1" name="시작지점" x="-196.342773" y="-18772.953125" z="1201.999878" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="MK00002" x="-3284.672852" y="-46.661987" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="MK00003" x="3183.337891" y="1858.908936" z="3.000000" dir_x="0.573576" dir_y="-0.819152" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="MON_M 501000 수도원장 네이터" x="67.170731" y="-4713.161621" z="1274.557861" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101001" name="MK가디엘교도1" x="341.431580" y="-15884.718750" z="1202.999878" dir_x="-0.034900" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101002" name="MK가디엘교도1" x="342.698608" y="-16453.140625" z="1202.999878" dir_x="-0.882948" dir_y="-0.469471" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101003" name="MK가디엘교도1" x="-340.373260" y="-16702.875000" z="1202.999878" dir_x="0.615662" dir_y="-0.788011" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101004" name="MK가디엘교도1" x="-8.447121" y="-17372.248047" z="1201.226929" dir_x="0.656059" dir_y="-0.754710" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101005" name="MK가디엘교도1" x="415.525146" y="-17746.375000" z="1202.999878" dir_x="-0.743145" dir_y="0.669130" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101036" name="NPC_M 501204 수도사 지나" x="-419.081116" y="-18831.935547" z="1202.999878" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101062" name="[quest] mk101062" x="8313.053711" y="3426.980713" z="3.000019" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101063" name="[Quest] mk101063" x="3205.883301" y="777.718689" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101064" name="[Quest] mk101064" x="4414.163574" y="-3953.801025" z="6.695068" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102000" name="MK가디엘교도2" x="323.167267" y="-10943.456055" z="1202.999878" dir_x="0.034900" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102001" name="MK가디엘교도2" x="301.170593" y="-11772.584961" z="1204.082764" dir_x="-0.891006" dir_y="-0.453991" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102002" name="MK가디엘교도2" x="-286.871918" y="-12101.820313" z="1202.999878" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102003" name="MK가디엘교도2" x="-248.403534" y="-12786.674805" z="1202.999878" dir_x="0.656059" dir_y="-0.754710" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102004" name="MK가디엘교도2" x="340.468628" y="-13362.675781" z="1202.999878" dir_x="-0.754710" dir_y="0.656059" dir_z="0.000000" random_dir="false" />
+        <MARKER id="103000" name="네이터 변신" x="22.649948" y="-5914.090332" z="1201.999878" dir_x="0.034900" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104001" name="MK가디엘사제1" x="21.214436" y="8.702909" z="4.700372" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104002" name="MK가디엘사제2" x="22.076719" y="-1806.086548" z="282.423706" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104003" name="MK가디엘사제3" x="-24.521959" y="-2900.297119" z="644.057800" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104004" name="MK가디엘사제4" x="1146.889160" y="6.822540" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104005" name="MK가디엘사제5" x="-1428.267944" y="24.233917" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="105001" name="MK가디엘수녀3" x="-3537.307617" y="1316.961426" z="3.000000" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="105002" name="MK가디엘수녀3" x="-3514.543945" y="-1083.706787" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="105003" name="MK가디엘수녀3" x="-2865.996094" y="-1090.361938" z="3.000000" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="105004" name="MK가디엘수녀3" x="-2888.356689" y="1344.089478" z="3.000000" dir_x="-0.325568" dir_y="0.945519" dir_z="0.000000" random_dir="false" />
+        <MARKER id="105005" name="MK가디엘수녀3" x="-3148.925293" y="2141.506836" z="3.000000" dir_x="-0.390731" dir_y="-0.920505" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108001" name="가디엘 간수1" x="1008.134277" y="8754.269531" z="3.000005" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108002" name="가디엘 간수2" x="996.156982" y="6081.837891" z="-596.999878" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108003" name="가디엘 간수3" x="-965.274414" y="6146.198242" z="-596.999878" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108004" name="가디엘 간수4" x="-995.153809" y="8594.377930" z="3.000047" dir_x="-0.987688" dir_y="-0.156434" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108005" name="가디엘 간수5" x="-3691.525635" y="7899.200195" z="3.000000" dir_x="0.819152" dir_y="0.573576" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108006" name="변성된 동물1" x="853.891052" y="8753.167969" z="3.000010" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108007" name="변성된 동물2" x="999.843628" y="6241.239258" z="-596.999878" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108008" name="변성된 동물3" x="-799.037598" y="6148.596680" z="-596.999878" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108009" name="변성된 동물4" x="-1007.446533" y="8777.418945" z="3.000024" dir_x="-0.984808" dir_y="-0.173648" dir_z="0.000000" random_dir="false" />
+        <MARKER id="108010" name="변성된 동물5" x="-3878.148682" y="7925.119629" z="1.721924" dir_x="0.681998" dir_y="0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109101" name="MK-집행인 방 워프" x="20.207352" y="11190.673828" z="2.000000" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="113001" name="변성된 가디엘 간수 로밍1" x="2413.205566" y="873.352234" z="3.000000" dir_x="0.642788" dir_y="0.766044" dir_z="0.000000" random_dir="false" />
+        <MARKER id="113002" name="변성된 가디엘 간수 로밍2" x="4034.212402" y="862.856445" z="3.000000" dir_x="-0.694658" dir_y="-0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="113003" name="변성된 가디엘 간수 로밍3" x="3233.855957" y="165.855270" z="3.000000" dir_x="-0.829038" dir_y="0.559193" dir_z="0.000000" random_dir="false" />
+        <MARKER id="113101" name="MK-기도실 워프" x="3178.567139" y="2054.422363" z="2.000000" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="113201" name="MK00004" x="4050.855225" y="-1505.803711" z="2.000000" dir_x="0.190809" dir_y="-0.981627" dir_z="0.000000" random_dir="false" />
+        <MARKER id="113202" name="MK00004" x="4119.235840" y="-1838.346802" z="3.000000" dir_x="-0.292372" dir_y="0.956305" dir_z="0.000000" random_dir="false" />
+        <MARKER id="113301" name="MK00004" x="3193.719971" y="-758.128418" z="-41.254517" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="501003" name="MON_M 501003 성녀 메린샤" x="3190.253906" y="-1732.017334" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="501004" name="MK-네이퍼스 생성" x="4332.805176" y="-3701.755615" z="32.486969" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="501111" name="MON_M 501111 변성된 가디엘교 사제" x="3201.581055" y="592.595642" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="501217" name="OBJ_M 501217 #숨겨진 보물상자" x="3569.237061" y="-4055.683838" z="5.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="501221" name="OBJ_M 501221 수도원 유물" x="4168.964355" y="-3632.168213" z="5.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="501222" name="NPC_M 501222 수도원 기록구" x="3761.598633" y="-3160.219971" z="8.668242" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50100201" name="MK50100201-집행인" x="21.318970" y="11124.999023" z="3.000000" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50100202" name="MK50100202" x="58.266357" y="8943.092773" z="3.000000" dir_x="0.945519" dir_y="-0.325568" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50100203" name="MK50100203" x="1136.047363" y="8733.856445" z="2.000000" dir_x="0.939693" dir_y="-0.342020" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50100204" name="MK50100204" x="3795.728516" y="7985.983398" z="3.000000" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50100205" name="MK50100205" x="3798.532227" y="7355.452637" z="3.000000" dir_x="0.819152" dir_y="-0.573576" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50100206" name="MK50100206" x="5724.954590" y="6417.001465" z="3.000000" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50100207" name="MK50100207" x="5751.295898" y="5371.255371" z="3.000000" dir_x="-0.898794" dir_y="-0.438371" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50110500" name="MON_M 501105 가디엘교 간수" x="9921.188477" y="3265.976074" z="3.000013" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 리오드" x="21.063862" y="-19337.697266" z="1250.354370" radius="202.371170" enabled="true" exit="1010530">
+            <EFFECT effect="sensor_trial_01" x="-3.908157" y="-15.912109" z="30.282471" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.500000" scale_y="1.000000" scale_z="2.000000" />
+            <WARP warp_type="field" title="리오드로 이동" condition="0" gate_type="auto" field="101" marker="1010530" />
+        </SENSOR>
+        <SENSOR id="2" name="torture_chamber" local="true" x="-13.682495" y="12442.853516" z="3.000000" radius="2100.000000" enabled="true" groupname="none" />
+        <SENSOR id="3" name="chapel" local="true" x="-61.829407" y="-7580.842285" z="1254.360596" radius="1623.541748" enabled="true" groupname="none" />
+        <SENSOR id="4" name="boss_room" local="true" x="3145.115723" y="-1146.699829" z="8.716187" radius="1679.006470" enabled="true" groupname="boss_room" />
+        <SENSOR id="5" name="chapel" local="true" x="-59.676178" y="-4100.759766" z="1348.208252" radius="1807.414917" enabled="true" groupname="none" />
+        <SENSOR id="6" name="boss_room" local="true" x="3168.017822" y="1080.906128" z="3.000000" radius="1750.740601" enabled="true" groupname="boss_room" />
+        <SENSOR id="100" name="안전 지대" local="false" x="13.646733" y="-18889.062500" z="1201.238892" radius="800.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="101036" name="SENSOR 501204 수도사 지나" local="true" x="-341.561340" y="-18822.886719" z="1202.999878" radius="300.000000" enabled="true" groupname="none" />
+        <SENSOR id="106001" name="auto" local="false" x="-3176.031494" y="3054.509766" z="3.000000" radius="350.000000" enabled="true" groupname="none" />
+        <SENSOR id="108001" name="auto" local="false" x="-3282.745850" y="8166.512695" z="3.000016" radius="300.000000" enabled="true" groupname="none" />
+        <SENSOR id="110001" name="갑옷 움직임" local="false" x="4798.757324" y="6867.889648" z="2.000000" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="111001" name="갑옷 움직임" local="false" x="4511.662109" y="3581.928467" z="2.000000" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="112001" name="창살 열기" local="false" x="8339.666992" y="3279.004395" z="2.000107" radius="600.000000" enabled="false" groupname="none" />
+        <SENSOR id="112002" name="창살 열기" local="false" x="9617.694336" y="3277.175293" z="2.000032" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="112003" name="창살 열기" local="false" x="10815.350586" y="3244.866943" z="1.999966" radius="600.000000" enabled="false" groupname="none" />
+        <SENSOR id="112004" name="창살 열기" local="false" x="12022.032227" y="3252.229004" z="57.391113" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="501222" name="SENSOR 501222 수도원 기록구" local="false" x="3773.743164" y="-3166.138916" z="5.000000" radius="300.000000" enabled="true" groupname="none" />
+        <AREA id="1" name="전쟁의 회랑" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="10.903184" y="-14816.968750" z="1198.185547" radius="4400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="전쟁의 예배당" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="20.091755" y="-6639.676270" z="1201.299072" radius="3600.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="5" name="치료대기실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-3294.791016" y="-1270.139160" z="-20.078730" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="6" name="치료대기실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-3228.496094" y="1038.910889" z="-20.078730" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="7" name="치료실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-4785.128906" y="5560.445801" z="-0.000068" radius="2300.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="8" name="제단" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-9.366395" y="5771.395020" z="-324.350891" radius="1800.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="9" name="고문실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-17.829973" y="12424.792969" z="-7.341701" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="10" name="성기사 생활관" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="4805.555176" y="5876.739258" z="-0.000031" radius="2200.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="12" name="감옥" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="10427.729492" y="3240.801270" z="0.000005" radius="2500.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="13" name="기도실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="3114.807129" y="2683.108154" z="-0.000011" radius="500.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="15" name="성녀의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="4148.466797" y="-3621.811279" z="553.905029" radius="900.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

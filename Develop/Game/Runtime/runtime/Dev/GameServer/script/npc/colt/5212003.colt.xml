@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 애니확인 테스트용  -->
+<maiet>
+	<COLT name="애니확인 테스트용(인간형)" >
+		<COMBAT >
+			<DEFAULT>				
+				<ACTION type="talent" param1="521200301" rate="50" />				
+				<ACTION type="talent" param1="521200304" rate="50" />	
+				<ACTION type="talent" param1="521200309" rate="50" />	
+				<ACTION type="talent" param1="521200310" rate="50" />	
+				<ACTION type="talent" param1="521200313" rate="50" />	
+				<ACTION type="talent" param1="521200314" rate="50" />	
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="400" >				
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">			
+			</CHECK>		
+
+		</COMBAT>	
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+						
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

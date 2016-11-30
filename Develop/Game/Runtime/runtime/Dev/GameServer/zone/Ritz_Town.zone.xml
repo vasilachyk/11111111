@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY></PROPERTY>
+    <SCENE>
+        <STATICMESH>
+            <COMMON name="ritz_town">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ritz_town.rs
+                    <ENABLE_PICKING type="bool">
+                        <int>0</int>
+                    </ENABLE_PICKING>
+                </FILENAME>
+            </PROPERTY>
+            <SCENE>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_c49">
+                        <POSITION>-622.648193 1162.784302 679.088196</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>70.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>40.000</ATTENUATIONSTART>
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_street_a17">
+                        <POSITION>-3316.134277 539.969360 334.934265</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.769 0.561</COLOR>
+                        <INTENSITY>0.900</INTENSITY>
+                        <ATTENUATIONEND>1300.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>420.000</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="Omni_street_a17">
+                        <POSITION>-2496.676758 -258.167114 1272.937988</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.769 0.561</COLOR>
+                        <INTENSITY>0.900</INTENSITY>
+                        <ATTENUATIONEND>1300.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>420.000</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a20">
+                        <POSITION>-772.816284 38.539093 1154.267212</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a21">
+                        <POSITION>-538.884399 -61.210632 1154.267212</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a22">
+                        <POSITION>-537.640015 -59.461121 1365.149414</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a23">
+                        <POSITION>-436.489899 -276.423706 1365.149414</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a24">
+                        <POSITION>-433.286530 -291.724548 1154.267212</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a25">
+                        <POSITION>-807.704346 39.410950 1364.532471</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_street_a31">
+                        <POSITION>-928.970825 17.962547 334.934265</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.769 0.561</COLOR>
+                        <INTENSITY>0.900</INTENSITY>
+                        <ATTENUATIONEND>1300.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>420.000</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a26">
+                        <POSITION>-3700.603027 -233.292603 1080.697876</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a27">
+                        <POSITION>-3701.637939 -232.420746 1213.545410</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a28">
+                        <POSITION>-2986.871094 492.710815 1111.766235</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a29">
+                        <POSITION>-2987.906006 493.582703 988.742065</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a30">
+                        <POSITION>-2112.763184 792.485901 1112.419312</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a31">
+                        <POSITION>-2519.814453 693.746948 1006.006409</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_street_a34">
+                        <POSITION>-2010.239258 -123.251266 302.907715</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.769 0.561</COLOR>
+                        <INTENSITY>0.900</INTENSITY>
+                        <ATTENUATIONEND>1300.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>420.000</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="Omni_lantern_a24">
+                        <POSITION>-2635.391113 800.801270 421.475647</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.576 0.408</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>1100.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>370.000</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="Omni_lantern_a25">
+                        <POSITION>-1835.633911 14.775427 611.776550</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.576 0.408</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>1100.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>370.000</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a32">
+                        <POSITION>-2051.864258 -757.643982 1106.680664</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a33">
+                        <POSITION>11.506828 2508.265869 675.781738</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a34">
+                        <POSITION>12.378899 2509.300781 791.033020</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a62">
+                        <POSITION>180.298065 -17.485306 1085.511475</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a63">
+                        <POSITION>181.169891 -7.615379 977.632202</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a64">
+                        <POSITION>759.096436 1462.259399 1655.446899</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a65">
+                        <POSITION>759.968262 1463.033569 1541.400269</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a66">
+                        <POSITION>-4079.441895 140.239822 1620.663696</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a67">
+                        <POSITION>-2985.711670 442.854279 1413.136841</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a68">
+                        <POSITION>-1403.701538 466.869385 1548.932129</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a69">
+                        <POSITION>124.387314 -16.890020 1397.093384</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a70">
+                        <POSITION>809.688843 1194.836914 1169.413696</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a71">
+                        <POSITION>-3802.060059 236.666931 1289.229492</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a17">
+                        <POSITION>65.689865 1610.262939 1304.756836</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a19">
+                        <POSITION>-33.182205 1340.198730 1305.373779</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a18">
+                        <POSITION>-250.144775 1239.048584 1305.373779</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a15">
+                        <POSITION>-34.931717 1341.443115 1094.491699</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a14">
+                        <POSITION>64.818024 1575.375000 1094.491699</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a16">
+                        <POSITION>-265.445648 1235.845215 1094.491699</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a145">
+                        <POSITION>-1119.092529 163.152481 1106.680664</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a146">
+                        <POSITION>384.450623 450.742981 989.206909</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a175">
+                        <POSITION>1666.459595 1928.209473 1174.773071</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a176">
+                        <POSITION>1666.459595 1928.209473 1565.038818</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a177">
+                        <POSITION>188.793732 1925.792847 1031.005981</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a179">
+                        <POSITION>-958.361755 1483.999268 680.127686</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a219">
+                        <POSITION>-309.194641 -657.149841 766.066101</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="night_Omni_win_a220">
+                        <POSITION>-685.768921 -1006.734619 759.328918</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.882 0.561</COLOR>
+                        <INTENSITY>1.000</INTENSITY>
+                        <ATTENUATIONEND>223.076</ATTENUATIONEND>
+                        <ATTENUATIONSTART>121.392</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+                <LIGHT>
+                    <COMMON name="Omni_lantern_a49">
+                        <POSITION>-1254.573608 510.326233 694.238647</POSITION>
+                        <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                        <UP>0.000000 0.000000 1.000000</UP>
+                        <SCALE>1.000000 1.000000 1.000000</SCALE>
+                    </COMMON>
+                    <PROPERTY>
+                        <COLOR>1.000 0.859 0.561</COLOR>
+                        <INTENSITY>0.900</INTENSITY>
+                        <ATTENUATIONEND>810.000</ATTENUATIONEND>
+                        <ATTENUATIONSTART>255.000</ATTENUATIONSTART>
+                        <CASTSHADOW />
+                    </PROPERTY>
+                </LIGHT>
+            </SCENE>
+        </STATICMESH>
+        <ACTOR>
+            <COMMON name="article_lantern12.max01">
+                <POSITION>-2635.327637 800.777771 398.313995</POSITION>
+                <DIRECTION>0.965926 -0.258819 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_lantern12.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="article_lantern12.max02">
+                <POSITION>-1835.590576 14.723291 588.614868</POSITION>
+                <DIRECTION>0.707107 -0.707107 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_lantern12.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="article_lighting1.max06">
+                <POSITION>-1254.640869 510.332520 665.947998</POSITION>
+                <DIRECTION>-1.000000 0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_lighting1.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="ingen_streetlight_03.max01">
+                <POSITION>-3316.134277 603.532898 306.469177</POSITION>
+                <DIRECTION>-0.000000 1.000000 -0.000001</DIRECTION>
+                <UP>0.000000 0.000001 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_03.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="ingen_streetlight_02_day.max01">
+                <POSITION>-2496.676758 -258.167114 627.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_02_day.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="ingen_streetlight_02_day.max02">
+                <POSITION>196.686737 888.499390 16.713026</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_02_day.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="ingen_streetlight_03.max09">
+                <POSITION>-928.970825 -45.600998 306.469177</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_03.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="ingen_streetlight_03.max12">
+                <POSITION>-18.218353 1728.643188 248.842758</POSITION>
+                <DIRECTION>0.000000 1.000000 -0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_03.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="ingen_streetlight_03.max30">
+                <POSITION>-1946.675659 -123.251266 274.442627</POSITION>
+                <DIRECTION>-0.000000 1.000000 -0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>ingen_streetlight_03.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>-0.000000 -0.000000 -0.000000</DIRECTION>
+                <UP>0.000000 0.000000 0.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <ENV />
+                <SHADOWLUMINOSITY>0.10</SHADOWLUMINOSITY>
+                <AMBIENTBOOST>0.000000 0.000000 0.000000</AMBIENTBOOST>
+            </PROPERTY>
+        </DIRLIGHT>
+    </SCENE>
+</ROOT>

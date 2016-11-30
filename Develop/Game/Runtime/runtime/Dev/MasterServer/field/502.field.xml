@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="502" min_x="0" min_y="0" max_x="80000" max_y="80000" instance="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="MK00001" x="67070.953125" y="70394.804688" z="2025.939209" dir_x="-0.241922" dir_y="-0.970296" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="SR00001" type="TOUCH" x="68356.960938" y="83959.195313" z="2153.352783" radius="13160.000000" enabled="true" />
+    </FIELDINFO>
+</maiet>

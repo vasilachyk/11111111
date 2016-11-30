@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="52000" boundary_min_y="25000" boundary_max_x="68000" boundary_max_y="42000" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_2">
+            <ENVBGM dawnbgm="amb_dawn" />
+            <ENVBGM daytimebgm="amb_daytime" />
+            <ENVBGM sunsetbgm="amb_sunset" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="custom_test">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="5" />
+                <ADD weather="HRN" percent="5" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="100" group="0" name="연기" x="57764.496094" y="37093.375000" z="369.282898" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="107234" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101" group="0" name="연기" x="57344.937500" y="31643.673828" z="481.566406" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="107234" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102" group="0" name="연기" x="62949.859375" y="37778.058594" z="667.014343" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="107234" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103" group="0" name="연기" x="62240.792969" y="30658.527344" z="884.860474" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="107234" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1200" group="0" name="테레시스" x="60282.425781" y="34423.367188" z="499.087097" dir_x="0.642787" dir_y="-0.766045" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="9999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="8500" color="64,0,128">
+            <NPC id="107007" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1203" group="0" name="연기로 약해진 거미" x="60429.230469" y="35088.257813" z="486.188629" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1204" group="0" name="연기로 약해진 거미" x="61205.636719" y="33045.507813" z="631.399231" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1205" group="0" name="연기로 약해진 거미" x="61841.058594" y="33740.148438" z="631.911011" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1206" group="0" name="연기로 약해진 거미" x="61867.535156" y="35013.992188" z="607.622559" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1207" group="0" name="연기로 약해진 거미" x="61144.500000" y="35227.406250" z="545.863281" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1208" group="0" name="연기로 약해진 거미" x="59293.464844" y="34283.945313" z="436.299500" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1209" group="0" name="연기로 약해진 거미" x="60148.199219" y="33055.890625" z="572.808777" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1210" group="0" name="연기로 약해진 거미" x="59833.578125" y="34876.968750" z="448.949005" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1211" group="0" name="연기로 약해진 거미" x="60527.847656" y="35712.433594" z="482.040161" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1212" group="0" name="연기로 약해진 거미" x="59353.777344" y="33108.238281" z="538.820984" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1213" group="0" name="연기로 약해진 거미" x="60162.218750" y="32520.546875" z="608.780457" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1214" group="0" name="연기로 약해진 거미" x="61757.550781" y="33208.628906" z="663.574768" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1215" group="0" name="연기로 약해진 거미" x="62275.625000" y="34447.730469" z="664.329346" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1216" group="0" name="연기로 약해진 거미" x="61692.019531" y="35694.820313" z="574.424744" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1217" group="0" name="연기로 약해진 거미" x="60166.582031" y="33825.683594" z="522.033447" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1218" group="0" name="연기로 약해진 거미" x="60831.542969" y="33673.597656" z="579.265930" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1219" group="0" name="연기로 약해진 거미" x="60932.410156" y="34492.000000" z="553.239990" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1220" group="0" name="연기로 약해진 거미" x="61351.191406" y="33716.160156" z="606.837769" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1221" group="0" name="연기로 약해진 거미" x="61501.726563" y="34639.437500" z="589.546021" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1222" group="0" name="연기로 약해진 거미" x="58485.167969" y="34436.550781" z="395.326416" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1223" group="0" name="연기로 약해진 거미" x="58877.500000" y="35030.824219" z="380.363617" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1224" group="0" name="연기로 약해진 거미" x="59706.128906" y="35474.582031" z="425.647644" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1225" group="0" name="연기로 약해진 거미" x="58875.320313" y="35548.738281" z="378.301849" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1226" group="0" name="연기로 약해진 거미" x="60030.066406" y="36036.722656" z="448.323914" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1227" group="0" name="연기로 약해진 거미" x="59584.613281" y="33620.132813" z="504.357422" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1228" group="0" name="연기로 약해진 거미" x="58811.136719" y="33777.492188" z="457.458923" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1229" group="0" name="연기로 약해진 거미" x="59768.117188" y="34165.843750" z="473.786072" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1230" group="0" name="연기로 약해진 거미" x="61036.066406" y="35761.691406" z="545.858887" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1231" group="0" name="연기로 약해진 거미" x="58789.363281" y="33058.449219" z="515.810486" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1232" group="0" name="연기로 약해진 거미" x="59368.765625" y="35930.292969" z="411.598999" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1233" group="0" name="연기로 약해진 거미" x="58280.019531" y="35189.597656" z="358.468353" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1234" group="0" name="연기로 약해진 거미" x="60507.234375" y="33352.839844" z="575.519653" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1235" group="0" name="연기로 약해진 거미" x="61711.632813" y="34242.148438" z="612.800903" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1236" group="0" name="연기로 약해진 거미" x="59327.257813" y="34869.582031" z="408.635254" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1237" group="0" name="연기로 약해진 거미" x="60704.250000" y="36185.671875" z="507.050964" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="107005" default="true" rate="1000" />
+        </SPAWN>
+        <MARKER id="1" name="트라이얼 필드 시작점" x="61681.089844" y="32800.726563" z="673.913452" dir_x="-0.656059" dir_y="0.754710" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="테레시스의 둥지" x="62543.011719" y="32121.621094" z="772.450195" dir_x="-0.559193" dir_y="0.829037" dir_z="0.000000" random_dir="false" />
+        <MARKER id="39" name="고요한 수풀" x="60854.515625" y="33996.683594" z="566.567261" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="301" name="테레시스 이동경로1" x="61462.890625" y="35867.527344" z="551.779968" dir_x="0.587785" dir_y="0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="302" name="테레시스 이동경로2" x="59665.656250" y="36953.203125" z="444.525482" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="303" name="테레시스 이동경로3" x="61298.175781" y="37479.898438" z="542.615662" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="304" name="테레시스 이동경로4" x="63401.167969" y="35832.722656" z="702.919067" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="305" name="테레시스 이동경로5" x="65100.906250" y="33799.542969" z="857.346191" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="306" name="테레시스 이동경로6" x="62815.667969" y="29978.740234" z="958.323181" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="307" name="테레시스 이동경로7" x="64343.835938" y="31143.660156" z="908.599487" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="308" name="테레시스 이동경로8" x="61205.917969" y="30324.218750" z="793.457947" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="309" name="테레시스 이동경로9" x="59118.835938" y="31203.189453" z="625.635559" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="테레시스 도주 센서" local="false" x="61587.910156" y="32908.335938" z="660.364624" radius="500.000000" enabled="true" groupname="none" />
+        <SENSOR id="2" name="퀘스트 End" x="59994.968750" y="34745.382813" z="461.082733" radius="8000.000000" enabled="false">
+            <WARP warp_type="field" title="퀘스트 종료" condition="0" gate_type="auto" field="107" marker="509" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

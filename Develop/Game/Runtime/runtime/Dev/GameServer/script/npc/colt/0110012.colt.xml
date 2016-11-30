@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="Borgo" npcid="110001" >
+		<COMBAT victory="211000112" max_duration="5">
+			<DEFAULT>
+				<!-- 기본 평타 패턴 -->
+				<ACTION type="talent" param1="211000101" rate="20" />
+				<ACTION type="talent" param1="211000102" rate="20" />
+				<ACTION type="talent" param1="211000104" rate="10" />
+				
+				<!-- 센기술 -->
+				<ACTION type="talent" param1="211000105" rate="10" />
+				<ACTION type="talent" param1="211000106" rate="10" />
+				<ACTION type="talent" param1="211000146" rate="10" />
+				<ACTION type="talent" param1="211000150" rate="10" />
+				
+				<!-- 삽질 시리즈 -->
+				<ACTION type="talent" param1="211000112" rate="5" />
+				<ACTION type="talent" param1="211000113" rate="5" duration="0"/>
+				<ACTION type="talent" param1="211000114" rate="5" duration="0"/>
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="hp" param2="50">
+					<CHECK type="rage" param1="150">
+						<ACTION type="talent" param1="211000107" duration="0" rate="10" />
+						<ACTION type="talent" param1="211000111" duration="0" rate="10" />
+					</CHECK>
+				</CHECK>
+				<CHECK type="hp" param1="50">
+					<CHECK type="rage" param1="200">
+						<ACTION type="talent" param1="211000116" duration="0" rate="10" />
+					</CHECK>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="800" comment="원거리패턴">
+				<CHECK type="unbreakpart" param1="1">
+					<ACTION type="talent" param1="211000108" rate="45" />
+					<ACTION type="talent" param1="211000106" rate="45" />
+					
+					<ACTION type="talent" param1="211000101" rate="5" />
+					<ACTION type="talent" param1="211000102" rate="5" />
+					<ACTION type="talent" param1="211000104" rate="5" />
+				</CHECK>
+				
+				<ACTION type="talent" param1="211000106" rate="85" />
+				
+				<ACTION type="talent" param1="211000101" rate="5" />
+				<ACTION type="talent" param1="211000102" rate="5" />
+				<ACTION type="talent" param1="211000104" rate="5" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211000110" auto_run="true" max_count="1" />
+				<ACTION type="aggro" param1="random" param2="30" rate="50" cycle="30" />
+				
+				<!-- 기본 평타 패턴 -->
+				<ACTION type="talent" param1="211000101" rate="5" />
+				<ACTION type="talent" param1="211000102" rate="5" />
+				<ACTION type="talent" param1="211000104" rate="5" />
+				
+				<!-- 위험한 기술 -->
+				<ACTION type="talent" param1="211000146" rate="15" />
+				<ACTION type="talent" param1="211000114" rate="5" cycle="60" duration="0" />
+				<ACTION type="talent" param1="211000150" rate="10" />
+			</CHECK>
+			
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="talent" param1="211000116" rate="100" duration="2" />
+				<ACTION type="talent" param1="211000146" rate="100" duration="5" />
+			</CHECK>
+			
+			<CHECK type="e_motionfactor" param1="throwup">
+				<ACTION type="talent" param1="211000108" rate="100" duration="5" />
+			</CHECK>
+
+			<CHECK type="e_motionfactor" param1="stun">
+				<!-- 아주 보내버리거나 -->
+				<ACTION type="talent" param1="211000105" rate="50" duration="5" />
+				<!-- 다 같이 쓸어버리거나 -->
+				<ACTION type="talent" param1="211000106" rate="50" duration="5" />
+				<!-- 잡아 죽이거나 -->
+				<ACTION type="talent" param1="211000146" rate="80" duration="5" cycle="300" />
+			</CHECK>
+		</COMBAT>
+		<STRESS>
+			<CHECK type="stress" param1="600">
+				<ACTION type="lua" param1="NPC_110012" param2="Stressed" rate="100" />
+			</CHECK>
+		</STRESS>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000113" rate="15" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+<![CDATA[
+	
+function NPC_110012:Init(NPCID)
+	--[[
+	1: OTL 누적데미지
+	2: OTL Count
+	--]]
+	
+	NPC_ReserveUserData(NPCID, 2)
+	
+	NPC_110012.LimitForOTL 			= NPC_110012.MaxHP/20
+	
+	NPC_110012.TalidIdot 				= 211000113
+	NPC_110012.TalidOTL				= 211000115
+	NPC_110012.TalidEnrage 			= 211000109
+	NPC_110012.TalidPain				= 211000117
+	
+	NPC_110012.TalidWhirlWind 		= 211000107
+	NPC_110012.TalidHeapAttack 	= 211000111
+	NPC_110012.TalidKnockBack 		= 211000116
+	NPC_110012.TalidThrowStone 	= 211000108
+end
+
+function NPC_110012:OnBPartRecover()
+	for i=1, 2 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+function NPC_110012:OnFinishDashAttack(  ThisActor, Opponent )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+	
+	if ThisNPC:GetHP()/ThisNPC:GetMaxHP() > 0.5 and math.random( 0, 1 ) == 0 then
+		ThisNPC:UseTalentSelf( NPC_110012.TalidIdot )
+	end
+end
+
+function NPC_110012:OnFinishAndAggro( ThisActor, Opponent )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_110012:Stressed( ThisNPC, Enemy )
+	local Distance 	= ThisNPC:DistanceTo( Enemy )
+	local r = math.random(0, 3)
+
+	if Distance < 600 then
+		-- 근거리
+		if ThisNPC:IsCooldown( NPC_110012.TalidWhirlWind ) then
+			return
+		end
+		
+		if r == 0 then
+			ThisNPC:UseTalentSelf( NPC_110012.TalidWhirlWind )
+		elseif r == 1 then
+			ThisNPC:UseTalentSelf( NPC_110012.TalidHeapAttack )
+		else
+			ThisNPC:UseTalentSelf( NPC_110012.TalidKnockBack )
+		end
+	else
+		if ThisNPC:CheckBPart( 1 ) then
+			ThisNPC:UseTalent( NPC_110012.TalidKnockBack, Enemy )
+			return
+		end
+		
+		if r == 0 then
+			ThisNPC:UseTalent( NPC_110012.TalidKnockBack, Enemy )
+		else
+			ThisNPC:UseTalent( NPC_110012.TalidThrowStone, Enemy )
+		end
+	end
+end
+
+function NPC_110012:OTL(HitInfo)
+	local ThisNPC = AsNPC( HitInfo.Victim )
+	local attacker = HitInfo.Attacker
+	
+	local totalDamage = ThisNPC:GetUserData(1) + HitInfo.Damage
+	local totalCount = ThisNPC:GetUserData(2)
+
+	ThisNPC:SetUserData(1, totalDamage)
+	
+	if totalDamage > NPC_110012.LimitForOTL then
+		if totalCount < 4 then
+			ThisNPC:SetUserData(1, 0)
+			ThisNPC:SetUserData(2, totalCount + 1)
+			
+			if not ThisNPC:IsCooldown( NPC_110012.TalidEnrage ) then
+				ThisNPC:ClearJob()
+				ThisNPC:UseTalentSelf( NPC_110012.TalidEnrage )
+			end
+			
+			return HitInfo
+		else
+			if ThisNPC:IsCooldown( NPC_110012.TalidPain ) or ThisNPC:IsCooldown( NPC_110012.TalidOTL ) then
+				return HitInfo
+			end 
+			
+			ThisNPC:SetUserData(1, 0)
+			ThisNPC:SetUserData(2, totalCount + 1)
+			
+			ThisNPC:ClearJob()
+			
+			if totalCount % 2 == 1 then
+				ThisNPC:UseTalentSelf( NPC_110012.TalidPain )
+			else
+				ThisNPC:UseTalentSelf( NPC_110012.TalidOTL )
+			end
+			
+			return HitInfo
+		end
+	end
+
+	return HitInfo
+end
+
+function NPC_110012:OnHitCapsule_0_0(HitInfo)
+	return NPC_110012:OTL(HitInfo)
+end
+
+function NPC_110012:OnHitCapsule_1_0(HitInfo)
+	return NPC_110012:OTL(HitInfo)
+end
+
+function NPC_110012:OnHitCapsule_1_1(HitInfo)
+	return NPC_110012:OTL(HitInfo)
+end
+
+function NPC_110012:OnHitCapsule_2_1(HitInfo)
+	-- 머리 뽀개기
+	local victim = AsNPC( HitInfo.Victim )
+	local attacker = HitInfo.Attacker
+	
+	if victim:CheckBPart(1) then
+		return HitInfo
+	end
+	
+--	if victim:GetHP()/victim:GetMaxHP() < 0.3 then
+--		victim:BreakPart(1, attacker)
+--	end
+	
+	return HitInfo
+end
+
+]]>
+	</SCRIPT>
+</maiet>

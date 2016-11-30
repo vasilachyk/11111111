@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8005" min_x="0" min_y="0" max_x="10000" max_y="10000" weather_effect="true" town="false">
+        <SOUNDREVERB reverb="9" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" name="테스트" x="5000.000000" y="5000.000000" z="184.120361" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="false" enabled="true" start_time="0" respawn_time="1" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="110020" default="true" rate="100" />
+        </SPAWN>
+    </FIELDINFO>
+</maiet>

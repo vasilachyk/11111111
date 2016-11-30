@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="카라비">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="20"/>
+				
+				<ACTION type="talent" param1="211002401" rate="30" />
+				<ACTION type="talent" param1="211002402" rate="10" />
+				<ACTION type="talent" param1="211002403" rate="20" cycle="5"/>
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="0.5" rate="20"/>
+
+				<ACTION type="talent" param1="211002401" rate="5" />
+				<ACTION type="talent" param1="211002402" rate="5" />
+				<ACTION type="talent" param1="211002403" rate="20" cycle="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="211002404" param2="1" cycle="8" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+	
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="10" /> 
+				<ACTION type="nothing" param1="1" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

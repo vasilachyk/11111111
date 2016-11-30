@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 아레크 -->
+<!--
+Venister
+
+탤런트 일람
+211200101	착륙
+211200102	이륙
+211200103	좌측 회전
+211200104	우측 회전
+211200105	울부 짖기
+211200106	먹기
+211200107	턱으로 어퍼컷
+211200108	턱으로 밀기
+211200109	꼬리치기
+211200110	지상브레쓰
+211200111	두리번거리기
+211200112	아파하기 #1
+211200113	아파하기 #2
+211200114	냄새맡기
+211200115	재채기
+211200116	공중브레쓰 #1
+211200117	공중브레쓰 #2 - 좌회전
+211200118	공중브레쓰 #3 - 우회전
+211200119	전진 공중브레쓰
+211200121	이륙브레쓰
+211200122	지상브레쓰
+
+211200150	콤보 1형
+211200151	콤보 2형
+211200152	콤보 3형
+211200153	콤보 4형
+211200154	콤보 5형
+211200155	대시
+-->
+<maiet>
+	<COLT max_duration="8">
+		<COMBAT >
+		<DEFAULT>
+			<!-- 날기 -->
+			<ACTION type="talent" param1="211200102" rate="5" duration="0" cycle="60" />
+
+			<!-- 울부짖기 -->
+			<ACTION type="talent" param1="211200105" rate="5" duration="5" cycle="120" max_count="2" />
+			
+			<!-- 먹기 -->
+			<ACTION type="talent" param1="211200106" rate="5" duration="5" cycle="120" />
+			
+			<!-- 삽질 -->
+			<ACTION type="talent" param1="211200111" rate="5" duration="0" cycle="50" />
+			<ACTION type="talent" param1="211200114" rate="10" duration="0" cycle="50" />
+			
+			<!-- 근접공격 -->
+			<ACTION type="talent" param1="211200107" rate="10" duration="5" cycle="10" />
+			<ACTION type="talent" param1="211200108" rate="10" duration="5" cycle="10" />
+			
+			<!-- 꼬리치기 -->
+			<ACTION type="talent" param1="211200109" rate="5" duration="0" cycle="20" />
+			
+			<!-- 브레쓰(직진판) -->
+			<ACTION type="talent" param1="211200122" rate="10" duration="5" cycle="30" />
+			
+			<!-- 콤보 -->
+			<ACTION type="talent" param1="211200150" rate="10" duration="5" cycle="30" />
+			<ACTION type="talent" param1="211200151" rate="10" duration="5" cycle="30" />
+		</DEFAULT>
+
+		<!-- 20번 맞으면 가까운놈으로 타겟 변경 -->
+		<CHECK type="distance" param2="300">
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30" rate="50" cycle="30"/>
+			</CHECK>
+		</CHECK>
+		
+		<CHECK type="e_motionfactor" param1="knockdown">
+			<ACTION type="talent" param1="211200106" rate="10" duration="5" />
+			<ACTION type="talent" param1="211200111" rate="5" duration="0" />
+		</CHECK>
+		<CHECK type="e_motionfactor" param1="throwup">
+			<ACTION type="talent" param1="211200106" rate="10" duration="5" />
+			<ACTION type="talent" param1="211200111" rate="5" duration="0" />
+		</CHECK>
+
+		<CHECK type="hp" param2="50">
+		<!-- HP가 50% 이하일때 살벌한 패턴으로 전이 -->
+			<!-- 울부짖기 -->
+			<ACTION type="talent" param1="211200105" duration="5" auto_run="true" max_count="1" />
+			
+			<!-- 이륙는 브레스+이륙으로 변경됨. -->
+			<ACTION type="talent" param1="211200121" rate="5" duration="0" cycle="300" />
+			
+			<!-- 먹기도 여전, 확률이 상향된다. -->
+			<ACTION type="talent" param1="211200106" rate="8" duration="5" cycle="120" />
+			
+			<!-- 삽질, 냄새 맡는 패턴이 재채기로 패턴 전이됨 -->
+			<ACTION type="talent" param1="211200111" rate="5" duration="0" cycle="50" />
+			<ACTION type="talent" param1="211200115" rate="10" duration="0" cycle="50" />
+			
+			<!-- 근접공격은 전부 콤보화 된다. -->
+			<ACTION type="lua" param1="NPC_112001" param2="Arek_ComboAtk" rate="10" cycle="50" />
+			
+			<!-- 꼬리치기 -->
+			<ACTION type="talent" param1="211200109" rate="5" duration="0" cycle="20" />
+			
+			<!-- 브레쓰(강화판) -->
+			<ACTION type="talent" param1="211200110" rate="10" duration="10" cycle="15" />
+		</CHECK>
+	</COMBAT>
+	
+	<!-- 플라잉 모드 -->
+	<COMBAT mode="1" victory="211200101" >
+		<DEFAULT>
+			<!-- 그냥 착륙 -->
+			<ACTION type="talent" param1="211200101" rate="50" duration="0" />
+			
+			<!-- 공중공격 -->
+			<ACTION type="lua" param1="Arek_AirAttack" rate="50" duration="5" max_count="2" />
+		</DEFAULT>
+	</COMBAT>
+	
+    <STRESS>
+      <CHECK type="stress" param1="400">
+		<CHECK type="mode" param1="0">
+			<ACTION type="lua" param1="Arek_Stressed" rate="100" />
+		</CHECK>
+      </CHECK>
+	  <CHECK type="stress" param1="400">
+		<CHECK type="mode" param1="1">
+			<ACTION type="talent" param1="211200101" rate="100" duration="0" />
+		</CHECK>
+      </CHECK>
+    </STRESS>
+	
+    <IDLE>
+      <DEFAULT>
+        <ACTION type="nothing" param1="20" rate="60" />
+      </DEFAULT>
+	  <CHECK type="mode" param1="1">
+		<ACTION type="talent" param1="211200101" rate="100" duration="0" />
+	  </CHECK>
+    </IDLE>
+	<VICTORY>
+		<DEFAULT>
+			<ACTION type="talent" param1="211200105" rate="100" duration="0" />
+			<ACTION type="talent" param1="211200114" rate="100" duration="0" />
+			<ACTION type="talent" param1="211200115" rate="100" duration="0" />
+		</DEFAULT>
+		<CHECK type="mode" param1="1">
+			<ACTION type="talent" param1="211200101" rate="100" duration="0" />
+		</CHECK>
+	</VICTORY>
+  </COLT>
+  <SCRIPT>
+    <![CDATA[ 
+	-- 아레크 스크립트
+	
+	-- UD 1번: 누적 데미지
+	-- UD 2번: 누적 데미지 초기화 횟수
+	-- UD 3번: 플레이어를 먹었을 때 누적 데미지
+	
+	function NPC_112001:Init(NPCID)
+		-- Userdata1: 뱉기 위한 데미지 누적
+		NPC_ReserveUserData(NPCID, 3);
+		
+		NPC_112001.LimitForBreakTail = NPC_112001.MaxHP / 10
+		NPC_112001.LimitForBreakHead = NPC_112001.MaxHP / 20
+	end
+	
+	function NPC_112001:OnSwallowBegin(TargetActor)
+		this:SetUserData(1, 0)
+		--[[
+		아레크의 유저데이터는 다음과 같다.
+		1: 플레이어를 먹은 뒤의 누적 데미지
+		2: 전면부 누적 데미지
+		3: 후면부(꼬리) 누적 데미지
+		--]]
+	end
+	
+	function NPC_112001:OnHitSwallowed(HitInfo)
+		local totalDamage = this:GetUserData(1) + HitInfo.Damage
+
+		if (totalDamage > 400) then -- 400 데미지 이상일때
+			this:SetUserData(1, 0)	-- 누적 데미지 초기화
+			this:Spewup() -- 뱉기
+		else
+			this:SetUserData(1, totalDamage)
+		end
+	end
+
+	function NPC_112001:Arek_ComboAtk(ThisNPC, Opponent)
+		AI_RandomAttack(ThisNPC, Opponent, {211200150, 211200151, 211200152, 211200153, 211200154}, 4)
+	end
+	
+	function Arek_Stressed(ThisNPC, Opponent)
+		if(ThisNPC:GetMode() == 0) then
+			-- 지상이면
+			if(Opponent:IsRear(ThisNPC) == true) then
+				ThisNPC:UseTalentSelf(211200109) -- 뒤에 있으면 꼬리치기
+			else
+				ThisNPC:UseTalentSelf(211200155) -- 앞에 있으면 대시
+			end
+		else
+			-- 비행중이면 착륙
+			ThisNPC:UseTalentSelf(211200101)
+		end
+	end
+		
+	function Arek_AirAttack(ThisNPC, Opponent)
+		-- 적을 랜덤으로 고른다.
+		ThisNPC:Aggro("random", 0)
+
+		if (Opponent:IsNull()) then
+			ThisNPC:UseTalentSelf(211200101)	-- 적이 없으면 그냥 착륙
+		end
+
+		local distance = ThisNPC:DistanceTo(Opponent)	-- 목표와의 거리
+		local least_distance = 900	 								-- 순회 최소 거리 (단위: 미터)
+		local max_distance = 1200	 								-- 순회 최대 거리 (단위: 미터)
+		local poly = 8													-- 순회할 정점 갯수
+		local dir = ThisNPC:GetFowardDir(Opponent) 		-- 순회 계산시 초기방향
+		local ranNum = math.random(0, 3)
+
+		-- 최소 거리 맞추기
+		if (distance < least_distance) then
+			distance = least_distance
+		end
+		
+		if( distance > max_distance ) then
+			distance = max_distance
+		end
+
+		local orbitpoints = Math_GetPolygonPoints(Opponent:GetPos(), ThisNPC:GetDir(), distance, poly)
+		local waypoints = {}
+		
+		for i=1,poly/2 do
+			waypoints[i] = orbitpoints[tostring(i)]
+		end
+		
+		ThisNPC:PatrolInstant(waypoints, PT_ONCE)
+		
+		if (ranNum == 0) then
+			--ThisNPC:MoveToActorWithDuration(Opponent, 211200116, 5.0)
+			ThisNPC:UseTalent(211200116, Opponent)
+		elseif(ranNum == 1) then
+			--ThisNPC:MoveToActorWithDuration(Opponent, 211200116, 5.0)
+			ThisNPC:UseTalent(211200117, Opponent)
+		elseif(ranNum == 2) then
+			--ThisNPC:MoveToActorWithDuration(Opponent, 211200116, 5.0)
+			ThisNPC:UseTalent(211200118, Opponent)
+		else
+			--ThisNPC:MoveToActorWithDuration(Opponent, 211200116, 5.0)
+			ThisNPC:UseTalent(211200119, Opponent)
+		end
+	end
+	
+	function Arek_AccDamage(bHead, dHitInfo)
+		local victim = AsNPC( dHitInfo.Victim )
+		local attacker = dHitInfo.Attacker
+		local totalDamage = 0
+		local currentDamage = 0
+		local currentTalent = victim:GetCurrentTalent()
+		local userDataIdx = 2
+				
+		if(victim:GetMode() == 1 or (bHead == false and victim:CheckBPart(4) == true)) then
+			return dHitInfo
+		end
+		
+		if(bHead == true) then
+			if(dHitInfo.Type == DA_BLUNT or dHitInfo.Type == DA_COLD) then
+				currentDamage = dHitInfo.Damage
+			else
+				currentDamage = dHitInfo.Damage * 0.2
+			end
+		else
+			if(dHitInfo.Type == DA_SLASH or dHitInfo.Type == DA_PIERCE) then
+				currentDamage = dHitInfo.Damage
+			end
+			userDataIdx = 3
+		end
+
+		if(currentDamage == 0 or currentTalent == 211200106 or currentTalent == 211200112 or currentTalent == 211200113) then
+			return dHitInfo
+		end
+
+		totalDamage = victim:GetUserData(userDataIdx) + currentDamage
+		victim:SetUserData(userDataIdx, totalDamage)
+		
+		if( bHead == true and totalDamage >= NPC_112001.LimitForBreakHead ) then
+			local hpRate = victim:GetHP()/victim:GetMaxHP()
+
+			victim:ClearJob()
+			
+			if(hpRate < 0.5) then
+				if(victim:CheckBPart(1) == false) then
+					victim:BreakPart(1, attacker)
+					victim:UseTalentSelf(211200113)
+				elseif (victim:CheckBPart(2) == false) then
+					victim:BreakPart(2, attacker)
+					victim:UseTalentSelf(211200113)
+				elseif (victim:CheckBPart(3) == false) then
+					victim:BreakPart(3, attacker)
+					victim:UseTalentSelf(211200113)
+				else
+					victim:UseTalentSelf(211200112)
+				end
+			else
+				victim:UseTalentSelf(211200112)
+			end
+			
+			victim:SetUserData(userDataIdx, 0)
+		end
+		
+		if(bHead == false and totalDamage >= NPC_112001.LimitForBreakTail and victim:CheckBPart(4) == false) then
+			victim:ClearJob()
+
+			victim:BreakPart(4, attacker)
+			victim:UseTalentSelf(211200113)
+			victim:SetUserData(userDataIdx, 0)
+		end
+
+		return dHitInfo
+	end
+	
+	function NPC_112001:OnHitCapsule_2_0(HitInfo)
+		return Arek_AccDamage(true, HitInfo)
+	end
+	
+	function NPC_112001:OnHitCapsule_4_0(HitInfo)
+		return Arek_AccDamage(true, HitInfo)
+	end
+	
+	function NPC_112001:OnHitCapsule_2_2(HitInfo)
+		return Arek_AccDamage(false, HitInfo)
+	end
+	
+	function NPC_112001:OnHitCapsule_3_1(HitInfo)
+		return Arek_AccDamage(false, HitInfo)
+	end
+	
+	function NPC_112001:OnHitCapsule_3_2(HitInfo)
+		return Arek_AccDamage(false, HitInfo)
+	end
+	
+	function NPC_112001:OnHitCapsule_4_2(HitInfo)
+		return Arek_AccDamage(false, HitInfo)
+	end
+	
+	]]>
+  </SCRIPT>
+</maiet>

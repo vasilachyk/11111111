@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족 정예병">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="211001301" rate="30" />
+				<ACTION type="talent" param1="211001302" rate="10" />
+				<ACTION type="talent" param1="211001303" rate="20" />
+			
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+
+				<ACTION type="talent" param1="211001301" rate="10" />
+				<ACTION type="talent" param1="211001302" rate="10" />
+				<ACTION type="talent" param1="211001303" rate="40" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="211001304" param2="1" cycle="8" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+	
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="10" /> 
+				<ACTION type="nothing" param1="1" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

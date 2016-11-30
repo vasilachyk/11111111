@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="검은심장 칼로스 가시" npcid="104003">
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210400300" max_count="1" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_104001:Init( NPCID )
+	NPC_104003.TIMER_ID = 1
+	NPC_104003.TIMER_TIME = 60 * 2
+end
+	
+function NPC_104003:OnSpawn( Info )
+	-- GLog("NPC_104003:OnSpawn()\n")
+	this:SetTimer( NPC_104003.TIMER_ID, NPC_104003.TIMER_TIME, false )
+end
+	
+function NPC_104003:OnTimer( Index )
+	-- GLog("NPC_104003:OnTimer() "..Index.."\n")
+	if Index == NPC_104003.TIMER_ID then
+		this:Despawn(false)
+	end
+end
+	
+	]]></SCRIPT>
+</maiet>

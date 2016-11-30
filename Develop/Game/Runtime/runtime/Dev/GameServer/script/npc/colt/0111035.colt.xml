@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#마귀벌레	
+211103500	#idle
+211103501	#1타
+211103502	#2연타
+211103503	#3연타
+211103504	#roar
+-->
+<maiet>
+	<COLT name="마귀벌레" npcid="111035">
+		<COMBAT >
+			<DEFAULT>
+				<ACTION type="talent" param1="211103501" rate="40" desc="1타" />
+				<ACTION type="talent" param1="211103502" rate="40" desc="2연타" />
+				<ACTION type="talent" param1="211103503" rate="10" desc="3연타" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" />
+			</DEFAULT>
+		</IDLE>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="211103504" rate="40" desc="roar" duration="0"/>
+				<ACTION type="talent" param1="211103501" rate="40" desc="1타" />
+			</DEFAULT>
+		</AGGRO>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

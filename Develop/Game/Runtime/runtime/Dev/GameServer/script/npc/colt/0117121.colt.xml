@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 구더기	
+211712101	물기 
+-->
+<maiet>
+	<COLT name="오염된 구더기" npcid="117121">	
+		
+		<COMBAT mode="0" comment="Peace mode">
+			<DEFAULT> 
+				<ACTION type="talent" param1="211712101" rate="50" duration="2" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0" rate="1"/>			
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

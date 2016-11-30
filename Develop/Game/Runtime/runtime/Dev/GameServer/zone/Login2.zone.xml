@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY />
+    <SCENE>
+        <RTERRAIN>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY version="1.3">
+                <MAP_WIDTH type="int">
+                    <int>512</int>
+                </MAP_WIDTH>
+                <MAP_HEIGHT type="int">
+                    <int>512</int>
+                </MAP_HEIGHT>
+                <MAP_SIZE type="vec3">
+                    <vec3>60000.000000 60000.000000 0.000000</vec3>
+                </MAP_SIZE>
+                <MAP_NAME>Login2_dis.dds</MAP_NAME>
+                <BASEMAP_NAME>Login2_baked.bmp</BASEMAP_NAME>
+                <CREATE_NAVEMESH type="bool">
+                    <bool>true</bool>
+                </CREATE_NAVEMESH>
+                <GRASS>Login2_grass.grs</GRASS>
+                <LAYER type="array" size="3">
+                    <LAYERINFO index="0">
+                        <ALPHAMAP>Login2_mask0.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Limos_sand_f02.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="1">
+                        <ALPHAMAP>Login2_mask1.dds</ALPHAMAP>
+                        <TILEMAP type="specular">login_ground_02.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>800.000000 800.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="2">
+                        <ALPHAMAP>Login2_mask2.dds</ALPHAMAP>
+                        <TILEMAP type="specular">lane_stone_g01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>200.000000 200.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                </LAYER>
+            </PROPERTY>
+        </RTERRAIN>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.350</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="DummyEnvLight0">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>0.500</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.400 0.400 0.400</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.600 0.610 0.670</SKYCOLOR>
+                <GROUNDCOLOR>0.100 0.080 0.080</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <DIRLIGHT>
+            <COMMON name="TerrainLightMap0">
+                <POSITION>6.000000 0.500000 4.500000</POSITION>
+                <DIRECTION>0.939954 -0.078329 -0.332193</DIRECTION>
+                <UP>0.331045 -0.027587 0.943211</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.000 0.000 0.000</SKYCOLOR>
+                <GROUNDCOLOR>0.000 0.000 0.000</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <LIGHT>
+            <COMMON name="PointLight">
+                <POSITION>13353.314453 39176.656250 3435.286621</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_001">
+                <POSITION>13108.205078 39244.785156 3435.286621</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_002">
+                <POSITION>13019.343750 39091.500000 3435.286621</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_003">
+                <POSITION>13135.566406 38928.140625 3435.286621</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_004">
+                <POSITION>13305.415039 38883.437500 3435.286621</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_005">
+                <POSITION>13431.982422 39016.058594 3435.286621</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_006">
+                <POSITION>13332.747070 39107.515625 3547.254150</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_007">
+                <POSITION>13317.637695 38981.074219 3547.254150</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_008">
+                <POSITION>13225.838867 38932.714844 3547.254150</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_009">
+                <POSITION>13114.935547 38997.457031 3547.254150</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_010">
+                <POSITION>13125.425781 39146.753906 3547.254150</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_011">
+                <POSITION>13244.269531 39157.578125 3547.254150</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_012">
+                <POSITION>13332.747070 39107.515625 3290.273682</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_013">
+                <POSITION>13317.637695 38981.074219 3290.273682</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_014">
+                <POSITION>13225.838867 38932.714844 3290.273682</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_015">
+                <POSITION>13114.935547 38997.457031 3290.273682</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_016">
+                <POSITION>13125.425781 39146.753906 3290.273682</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_017">
+                <POSITION>13244.269531 39157.578125 3290.273682</POSITION>
+                <DIRECTION>-0.406737 0.913545 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.804 0.722 0.655</COLOR>
+                <INTENSITY>0.050</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_018">
+                <POSITION>13372.950195 38848.980469 3349.725098</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.961 0.192 0.192</COLOR>
+                <INTENSITY>0.500</INTENSITY>
+                <ATTENUATIONEND>500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+                <AREARANGE>0.000 0.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_019">
+                <POSITION>22634.533203 26884.187500 1513.103760</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.984 0.655 0.514</COLOR>
+                <INTENSITY>6.000</INTENSITY>
+                <ATTENUATIONEND>5000.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>1000.000</ATTENUATIONSTART>
+                <AREARANGE>6000.000 6000.000 0.000</AREARANGE>
+            </PROPERTY>
+        </LIGHT>
+        <ACTOR>
+            <COMMON name="login">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>login.elu</FILENAME>
+                <ANI />
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone">
+                <POSITION>30208.589844 36466.277344 -552.133057</POSITION>
+                <DIRECTION>-0.777146 -0.623196 -0.087584</DIRECTION>
+                <UP>-0.092404 -0.024666 0.995416</UP>
+                <SCALE>1.687480 1.687480 1.687480</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_002">
+                <POSITION>36130.273438 19747.476563 2379.711670</POSITION>
+                <DIRECTION>0.000000 0.000000 -1.000000</DIRECTION>
+                <UP>-0.798635 -0.601815 -0.000000</UP>
+                <SCALE>3.438860 3.438860 3.438860</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_004">
+                <POSITION>21010.816406 33888.851563 -830.002686</POSITION>
+                <DIRECTION>-0.069756 -0.000000 -0.997564</DIRECTION>
+                <UP>-0.810085 -0.583569 0.056646</UP>
+                <SCALE>1.343034 1.343034 1.343034</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_005">
+                <POSITION>28956.689453 32163.554688 -1491.323242</POSITION>
+                <DIRECTION>0.121869 -0.725902 0.676915</DIRECTION>
+                <UP>-0.992546 -0.089129 0.083114</UP>
+                <SCALE>1.525355 1.525355 1.525355</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_006">
+                <POSITION>27287.931641 35381.894531 -1092.576904</POSITION>
+                <DIRECTION>0.000000 -0.000000 1.000000</DIRECTION>
+                <UP>-0.920505 -0.390731 0.000000</UP>
+                <SCALE>1.722995 1.722995 1.722995</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_007">
+                <POSITION>33581.621094 34699.933594 -1748.707520</POSITION>
+                <DIRECTION>0.236371 -0.967708 -0.087584</DIRECTION>
+                <UP>-0.016697 -0.094170 0.995416</UP>
+                <SCALE>1.687480 1.687480 1.687480</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_008">
+                <POSITION>33581.621094 34303.808594 3271.894287</POSITION>
+                <DIRECTION>-0.777146 -0.574913 -0.255967</DIRECTION>
+                <UP>-0.092404 -0.298084 0.950057</UP>
+                <SCALE>1.142756 1.142756 1.142756</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_009">
+                <POSITION>23134.716797 11324.516602 -9.592285</POSITION>
+                <DIRECTION>-0.953409 0.159664 -0.255967</DIRECTION>
+                <UP>-0.278612 -0.140597 0.950057</UP>
+                <SCALE>1.882756 1.882756 1.882756</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_010">
+                <POSITION>34898.640625 24794.390625 302.520508</POSITION>
+                <DIRECTION>-0.908089 0.409517 -0.087584</DIRECTION>
+                <UP>-0.079841 0.036006 0.996157</UP>
+                <SCALE>1.360309 1.360309 1.360309</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_011">
+                <POSITION>34798.707031 25031.298828 3897.378418</POSITION>
+                <DIRECTION>0.025421 0.966351 -0.255967</DIRECTION>
+                <UP>0.006731 0.255879 0.966686</UP>
+                <SCALE>0.921197 0.921197 0.921197</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="mt_eda_mtstone_012">
+                <POSITION>43769.332031 35599.589844 2379.711670</POSITION>
+                <DIRECTION>0.941169 -0.252186 -0.224951</DIRECTION>
+                <UP>-0.251079 -0.967369 0.034005</UP>
+                <SCALE>2.351101 2.351101 2.351101</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_mtstone.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock01.scene_001">
+                <POSITION>15765.635742 38107.140625 2501.268799</POSITION>
+                <DIRECTION>0.514089 0.707582 -0.484810</DIRECTION>
+                <UP>0.284964 0.392219 0.874620</UP>
+                <SCALE>1.282055 1.282055 1.282055</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock01.scene_002">
+                <POSITION>15239.852539 38974.789063 3608.512207</POSITION>
+                <DIRECTION>-0.625767 0.778216 -0.052865</DIRECTION>
+                <UP>0.734194 0.564771 -0.376819</UP>
+                <SCALE>1.282055 1.282055 1.282055</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock01.scene_003">
+                <POSITION>15546.068359 37466.437500 2250.161621</POSITION>
+                <DIRECTION>-0.108605 -0.629694 0.769214</DIRECTION>
+                <UP>-0.392147 -0.683902 -0.615223</UP>
+                <SCALE>1.282055 1.282055 1.282055</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock01.scene_004">
+                <POSITION>17453.144531 38193.187500 3239.050293</POSITION>
+                <DIRECTION>0.388174 0.707582 0.590465</DIRECTION>
+                <UP>-0.910816 0.392219 0.128759</UP>
+                <SCALE>1.282055 1.282055 1.282055</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock01.scene_005">
+                <POSITION>17175.947266 36034.277344 1939.203613</POSITION>
+                <DIRECTION>0.388174 -0.406245 -0.827216</DIRECTION>
+                <UP>-0.910816 -0.305939 -0.277157</UP>
+                <SCALE>1.226257 1.226257 1.226257</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock01.scene_006">
+                <POSITION>17973.193359 33283.656250 1096.258667</POSITION>
+                <DIRECTION>-0.240153 0.142591 -0.960205</DIRECTION>
+                <UP>-0.612026 0.745547 0.263786</UP>
+                <SCALE>0.975365 0.975365 0.975365</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock01.scene_007">
+                <POSITION>17156.455078 32705.123047 611.837280</POSITION>
+                <DIRECTION>-0.240153 0.387907 0.889862</DIRECTION>
+                <UP>-0.612026 -0.772045 0.171377</UP>
+                <SCALE>1.231434 1.231434 1.231434</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock02.scene_001">
+                <POSITION>16525.546875 37108.265625 2395.607666</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock02.scene_002">
+                <POSITION>15745.788086 36116.789063 1914.102539</POSITION>
+                <DIRECTION>0.000000 0.515038 -0.857167</DIRECTION>
+                <UP>0.000000 0.857167 0.515038</UP>
+                <SCALE>1.518492 1.518492 1.518492</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Broken-Mast_rock02.scene_003">
+                <POSITION>14894.392578 36221.089844 1696.061157</POSITION>
+                <DIRECTION>0.572360 0.759547 0.309017</DIRECTION>
+                <UP>-0.185971 -0.246792 0.951057</UP>
+                <SCALE>1.518492 1.518492 1.518492</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Broken-Mast_rock02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite.max">
+                <POSITION>23821.734375 24970.958984 726.865723</POSITION>
+                <DIRECTION>0.214971 0.926657 -0.308374</DIRECTION>
+                <UP>-0.225762 0.354355 0.907449</UP>
+                <SCALE>1.343231 1.343231 1.343231</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece01.scene_001">
+                <POSITION>13966.874023 24983.521484 1911.702515</POSITION>
+                <DIRECTION>0.326560 -0.858093 0.396277</DIRECTION>
+                <UP>0.566608 -0.157848 -0.808727</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece01.scene_002">
+                <POSITION>19533.414063 30227.998047 419.525269</POSITION>
+                <DIRECTION>0.305890 -0.657463 0.688603</DIRECTION>
+                <UP>-0.570677 0.452321 0.685371</UP>
+                <SCALE>1.665154 1.665151 1.665151</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece01.scene_005">
+                <POSITION>21507.193359 33289.285156 596.785645</POSITION>
+                <DIRECTION>0.012764 0.731242 -0.681998</DIRECTION>
+                <UP>0.011903 0.681894 0.731354</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece01.scene_006">
+                <POSITION>19238.324219 18796.201172 633.858643</POSITION>
+                <DIRECTION>-0.564872 0.748560 -0.347242</DIRECTION>
+                <UP>-0.481583 0.042654 0.875362</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece01.scene_007">
+                <POSITION>23178.777344 31080.349609 451.082520</POSITION>
+                <DIRECTION>-0.363111 -0.627676 0.688603</DIRECTION>
+                <UP>0.043193 0.726912 0.685371</UP>
+                <SCALE>0.951300 0.951300 0.951300</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece01.scene_008">
+                <POSITION>16668.341797 30879.404297 451.082520</POSITION>
+                <DIRECTION>-0.363111 -0.627676 0.688603</DIRECTION>
+                <UP>0.043193 0.726912 0.685371</UP>
+                <SCALE>0.951300 0.951300 0.951300</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece02.scene_001">
+                <POSITION>15409.269531 21038.691406 601.633728</POSITION>
+                <DIRECTION>-0.805288 -0.280083 -0.522556</DIRECTION>
+                <UP>-0.248776 -0.640408 0.726628</UP>
+                <SCALE>1.071922 1.071921 1.071921</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece02.scene_003">
+                <POSITION>15787.478516 18273.201172 72.350342</POSITION>
+                <DIRECTION>-0.334565 -0.855616 0.394952</DIRECTION>
+                <UP>-0.678501 0.509559 0.529137</UP>
+                <SCALE>0.119444 0.119444 0.119444</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece02.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece03.scene_001">
+                <POSITION>24856.154297 21192.068359 999.749268</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.000000 0.000000 0.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece03.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece03.scene_002">
+                <POSITION>19912.181641 18551.482422 920.619263</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.816594 0.816594 0.816594</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece03.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece04.scene_001">
+                <POSITION>20115.507813 21006.414063 478.080719</POSITION>
+                <DIRECTION>0.000000 0.669130 0.743145</DIRECTION>
+                <UP>-0.587785 -0.601217 0.541338</UP>
+                <SCALE>1.323856 1.323856 1.323856</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece04.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece11.scene_001">
+                <POSITION>19018.152344 22422.306641 840.009644</POSITION>
+                <DIRECTION>0.118918 0.267095 0.956305</DIRECTION>
+                <UP>-0.963674 -0.200928 0.175953</UP>
+                <SCALE>0.378689 0.378689 0.378689</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece11.scene_002">
+                <POSITION>15620.951172 21762.757813 925.440063</POSITION>
+                <DIRECTION>-0.325568 -0.945519 0.000000</DIRECTION>
+                <UP>-0.904204 0.311342 0.292372</UP>
+                <SCALE>0.263405 0.263405 0.263403</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece11.scene_003">
+                <POSITION>19399.779297 22161.154297 862.492371</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>-0.927184 0.000000 0.374607</UP>
+                <SCALE>0.178285 0.178285 0.178285</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece11.scene_006">
+                <POSITION>18398.320313 22094.591797 868.208496</POSITION>
+                <DIRECTION>0.587785 -0.809017 0.000000</DIRECTION>
+                <UP>-0.773667 -0.562102 0.292372</UP>
+                <SCALE>0.453803 0.453803 0.453803</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece11.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece14.scene_002">
+                <POSITION>17850.546875 28788.285156 865.467285</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>2.201159 2.201159 2.201159</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece14.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece15.scene_001">
+                <POSITION>18319.734375 23447.968750 837.518921</POSITION>
+                <DIRECTION>0.000000 0.544639 0.838671</DIRECTION>
+                <UP>0.000000 -0.838671 0.544639</UP>
+                <SCALE>1.382338 1.382340 1.382340</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece15.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece16.scene_001">
+                <POSITION>18414.343750 25292.476563 838.549683</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.471531 1.471531 1.471531</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece16.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece16.scene_002">
+                <POSITION>22417.292969 19768.457031 723.716797</POSITION>
+                <DIRECTION>-0.857167 0.515038 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>3.977299 3.977299 3.977296</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece16.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_meteorite_piece21.scene_001">
+                <POSITION>29574.148438 28119.408203 122.009155</POSITION>
+                <DIRECTION>-0.978580 -0.149954 -0.141048</DIRECTION>
+                <UP>-0.093113 -0.288659 0.952894</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_meteorite_piece21.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_stone_01.scene_005">
+                <POSITION>15866.610352 19485.796875 976.265503</POSITION>
+                <DIRECTION>0.090446 0.423443 -0.901396</DIRECTION>
+                <UP>-0.636674 0.720577 0.274617</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_stone_01.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="sandstorm.scene_001">
+                <POSITION>14629.564453 22062.093750 1000.000000</POSITION>
+                <DIRECTION>-0.731353 -0.681999 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>sandstorm.scene.xml</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+    </SCENE>
+</ROOT>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#코볼트 감정사	
+211101501	#일반공격1
+211101502	#일반공격2
+211101503	#강한공격
+211101504	#idle2
+211101505	#idle3
+-->
+<maiet>
+	<COLT name="마코트 일족 감정사" npcid="111015">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211101501" rate="40" />
+				<ACTION type="talent" param1="211101502" rate="40" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="50">
+				<ACTION type="talent" param1="211101503" rate="40" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="10" />
+				<ACTION type="talent" param1="211101504" rate="10" desc="idle2" />
+				<ACTION type="talent" param1="211101505" rate="40" desc="idle3" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

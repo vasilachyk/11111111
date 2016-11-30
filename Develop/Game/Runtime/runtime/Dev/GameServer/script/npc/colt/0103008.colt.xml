@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>					
+	<COLT name="볼락의 스킬더미" npcid="103008">
+		<COMBAT>			
+			<DEFAULT>	
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_103008:OnSpawn( Info )
+	this:SetTimer( 1, 1.5, false )
+	this:SetTimer( 2, 18.5, false )
+end
+
+function NPC_103008:OnTimer( TimerID )
+	if TimerID == 1 then
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+		this:UseTalentSelf( NPC_103003.TalIdSkilldummy ) 
+	else
+		this:Despawn(false)
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 호수 에보스	
+210111200	idle2
+210111201	일반공격
+210111202	내려찍기
+-->
+<maiet>
+	<COLT name="오염된 호수 에보스" npcid="101112">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210111202" rate="10" />
+				<ACTION type="talent" param1="210111201" rate="40" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210111200" rate="70" />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

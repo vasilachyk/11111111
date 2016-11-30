@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="하운터">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="20"/>
+				
+				<ACTION type="talent" param1="211003503" rate="40" />
+				<ACTION type="talent" param1="211003504" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="40">
+					<ACTION type="talent" param1="211003503" rate="25" />
+					<ACTION type="talent" param1="211003504" rate="25"/>
+					<ACTION type="group" rate="50" cycle="5">
+						<ACTION type="talent" param1="211003505"/>
+						<ACTION type="talent" param1="211003506"/>
+					</ACTION>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="20" />
+				
+				<ACTION type="talent" param1="211003503" rate="20" />
+				<ACTION type="talent" param1="211003504" rate="10" />
+				<ACTION type="talent" param1="211003506" rate="40" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_110035" param2="Idle" rate="100" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_110035:Idle( ThisNPC, Enemy)
+	local Mother = ThisNPC:GetTarget()
+	if Mother == nil or Mother:IsNull() then
+		return
+	end
+
+	local Distance = Mother:DistanceTo( ThisNPC )
+	
+	if Distance > 600 then
+		ThisNPC:SetAlwaysRun( true )
+		ThisNPC:MoveToActor( Mother, -1 )
+	elseif Distance > 100 then
+		ThisNPC:SetAlwaysRun( false )
+		ThisNPC:MoveToActor( Mother, -1 )
+	end
+	
+end
+
+function NPC_110035:OnAggro( Target )
+	local Mother = this:GetTarget()
+	if Mother == nil or Mother:IsNull() then
+		return
+	end
+	
+	AsNPC(Mother):Assist( this )
+end
+
+function NPC_110035:OnVictory( )
+	--GLog( "OnVictory \n")
+	local Mother = this:GetTarget()
+	if Mother == nil or Mother:IsNull() or Mother:IsDead() then
+		this:Despawn(false)
+	end
+	
+	--GLog( "Mother:" .. Mother:GetName() .. "\n" )
+end
+
+	]]></SCRIPT>
+		
+</maiet>

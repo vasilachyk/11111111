@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="바스테로" npcid="512000">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="talent" param1="251200041"/>					
+			</DEFAULT>
+		</PROLOGUE>	
+		
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="251200005" rate="10" />
+				<ACTION type="talent" param1="251200006" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="group" cycle="15">
+					<ACTION type="aggro" param1="far" param2="0" />
+					<ACTION type="lua" param1="NPC_7512000" param2="SummonFloatingCorpse" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="70" >
+				<ACTION type="talent" param1="251200030" rate="10" />
+			</CHECK>
+
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="251200032">
+			<DEFAULT>
+				<ACTION type="talent" param1="251200005" rate="10" />
+				<ACTION type="talent" param1="251200006" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="group" cycle="15">
+					<ACTION type="aggro" param1="far" param2="0" />
+					<ACTION type="lua" param1="NPC_7512000" param2="SummonFloatingCorpse" cycle="15" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="lua" param1="NPC_7512000" param2="UseMarchingQuake" cycle="8" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="40" >
+				<ACTION type="talent" param1="251200031" rate="10" />
+			</CHECK>
+						
+		</COMBAT>
+		
+		<COMBAT mode="2" victory="251200032" max_duration="8">
+			<DEFAULT>
+				<ACTION type="talent" param1="251200005" rate="10" />
+				<ACTION type="talent" param1="251200006" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="group" cycle="15">
+					<ACTION type="aggro" param1="far" param2="0" />
+					<ACTION type="lua" param1="NPC_7512000" param2="SummonFloatingCorpse" cycle="15" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="lua" param1="NPC_7512000" param2="UseMarchingQuake" cycle="4" />
+			</CHECK>
+		</COMBAT>
+	
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+function NPC_7512000:Init( NPCID )
+	--[[
+	1: Pain누적 수치
+	2: 날아다니는 시체 갯수
+	--]]
+	NPC_ReserveUserData( NPCID, 2 )
+	
+	NPC_7512000.TalIdPain1						= 251200001
+	NPC_7512000.TalIdPain2						= 251200002
+	NPC_7512000.TalIdGroundOfDarkness			= 251200020
+	NPC_7512000.TalIdBellOfSummon				= 251200007
+	
+	NPC_7512000.NpcIdSkillDummy 				= 7512003
+	NPC_7512000.NpcIdFloatingCorpse		 		= 7512004
+	
+	NPC_7512000.TalIdMarchingQuake1				= 251200010
+	NPC_7512000.TalIdMarchingQuake2				= 251200011
+	NPC_7512000.TalIdMarchingQuake3				= 251200012
+	NPC_7512000.TalIdMarchingQuake4				= 251200013
+	
+	NPC_7512000.DataIdxPain						= 1
+	NPC_7512000.DataIdxMinionCnt				= 2
+	NPC_7512000.MaxCorpseCnt					= 2
+	
+	NPC_7512000.LimitForPain					= 10*10
+end
+
+-- 소환스킬 전처리
+function NPC_7512000:SummonFloatingCorpse( ThisNPC, Enemy )
+	--GLog( "NPC_7512000:SummonFloatingCorpse\n" )
+	if ThisNPC:GetUserData( NPC_7512000.DataIdxMinionCnt ) < NPC_7512000.MaxCorpseCnt then
+		ThisNPC:UseTalent( NPC_7512000.TalIdBellOfSummon, Enemy )
+	end
+end
+
+function NPC_7512000:UseMarchingQuake( ThisNPC, Enemy )
+	--GLog( "NPC_7512000:UseMarchingQuake\n" )
+	if ThisNPC:IsCooldown( NPC_7512000.TalIdMarchingQuake1 ) then
+		return
+	end
+	
+	local n = math.random( 0, 3 )
+	
+	--GLog( n )
+	if n == 0 then
+		ThisNPC:UseTalent( NPC_7512000.TalIdMarchingQuake1, Enemy )
+	elseif n == 1 then
+		ThisNPC:UseTalent( NPC_7512000.TalIdMarchingQuake2, Enemy )
+	elseif n == 2 then
+		ThisNPC:UseTalent( NPC_7512000.TalIdMarchingQuake3, Enemy )
+	else
+		ThisNPC:UseTalent( NPC_7512000.TalIdMarchingQuake4, Enemy )
+	end
+end
+
+-- 부유하는 시체 소환
+function NPC_7512000:OnFinishBellOfSummon( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor)
+	--GLog( "NPC_7512000:OnFinishBellOfSummon\n" )
+	
+	--GLog( Enemy:GetName() .. "\n" )
+	local WorldPos = Enemy:GetPos()
+	
+	-- spawn floating corpse
+	local Minion = ThisNPC:SummonNow( NPC_7512000.NpcIdFloatingCorpse, WorldPos )
+	ThisNPC:SetUserData( NPC_7512000.DataIdxMinionCnt, ThisNPC:GetUserData(NPC_7512000.DataIdxMinionCnt)+1  )
+
+	-- spawn ground of darkness
+	Minion = ThisNPC:SummonNow( NPC_7512000.NpcIdSkillDummy, WorldPos )
+	Minion:UseTalentSelf( NPC_512003.TalIdGroundOfDarkness )
+	
+	--GLog( "Corpse count = " .. ThisNPC:GetUserData(1) .. "\n" )
+end
+
+function NPC_7512000:OnFinishMarchingQuake1( ThisNPC, Enemy )
+	local Minion = NPC_7512000:SpawnMarchingQuake( ThisNPC, Enemy  )
+	Minion:UseTalentSelf( NPC_512003.TalIdMarchingQuake1 )
+end
+
+function NPC_7512000:OnFinishMarchingQuake2( ThisNPC, Enemy )
+	local Minion = NPC_7512000:SpawnMarchingQuake( ThisNPC, Enemy  )
+	Minion:UseTalentSelf( NPC_512003.TalIdMarchingQuake2 )
+end
+
+function NPC_7512000:OnFinishMarchingQuake3( ThisNPC, Enemy )
+	local Minion = NPC_7512000:SpawnMarchingQuake( ThisNPC, Enemy  )
+	Minion:UseTalentSelf( NPC_512003.TalIdMarchingQuake3 )
+end
+
+function NPC_7512000:OnFinishMarchingQuake4( ThisNPC, Enemy )
+	local Minion = NPC_7512000:SpawnMarchingQuake( ThisNPC, Enemy  )
+	Minion:UseTalentSelf( NPC_512003.TalIdMarchingQuake4 )
+end
+
+function NPC_7512000:SpawnMarchingQuake( ThisNPC, Enemy )
+	local WorldPos = Math_LocalToWorld( Enemy:GetDir(), Enemy:GetPos(), vec3(0,0,0) )
+	return AsNPC(ThisNPC):SummonNow( NPC_7512000.NpcIdSkillDummy, WorldPos )
+end
+
+-- 고통의 대지 탤런트 콜백
+function NPC_7512000:OnFinishGroundOfDarkness( ThisNPC, Enemy )
+	--GLog( "NPC_7512000:OnFinishGroundOfDarkness\n")
+	NPC_7512000:SpawnGroundOfDarkness(ThisNPC, Enemy)
+end
+
+-- 전투시작
+function NPC_7512000:OnCombatBegin( )
+	--GLog( "NPC_7512000:OnCombatBegin\n" )
+	-- 부유하는 시체 갯수 초기화
+	
+	this:SetUserData( NPC_7512000.DataIdxMinionCnt, 0)
+end
+
+function NPC_7512000:AccDamage( ThisNPC, PartsIdx, HitInfo )
+	local PainPoint = GetPainPoint( HitInfo )
+	local AccPainPoint = ThisNPC:GetUserData( NPC_7512000.DataIdxPain ) + PainPoint
+	if AccPainPoint > NPC_7512000.LimitForPain and 
+		( not ThisNPC:IsCooldown( NPC_7512000.TalIdPain1 ) ) then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_7512000.TalIdPain1 )
+		ThisNPC:SetUserData( NPC_7512000.DataIdxPain, 0 )
+		return HitInfo
+	end
+	
+	ThisNPC:SetUserData( NPC_7512000.DataIdxPain, AccPainPoint )
+	
+	return HitInfo
+end
+
+function NPC_7512000:OnHitCapsule_1_0(HitInfo)
+	return NPC_7512000:AccDamage( this, 1, HitInfo )
+end
+
+
+
+	]]></SCRIPT>
+</maiet>

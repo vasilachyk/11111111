@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 밀리 -->
+<maiet>
+	<COLT name="수상한 광대 죠슈(네임드)" npcid="520106">
+		
+		<COMBAT>
+			<DEFAULT>				
+				<ACTION type="talent" param1="252010304" rate="40" /> <!-- 1타 주먹치기 -->				
+				<ACTION type="talent" param1="252010307" rate="10" /> <!-- 양팔치기 -->		
+				<ACTION type="talent" param1="252010305" rate="10" /> <!-- 상체 회전 -->				
+				<ACTION type="talent" param1="252010306" rate="10" /> <!-- 팔떼서치기 -->	
+			</DEFAULT>		
+			
+			
+			<CHECK type="rage" param1="100">				
+				<ACTION type="talent" param1="252010306" rate="10" /> <!-- 팔떼서치기 -->	
+			</CHECK>
+			
+			<CHECK type="distance" param1="800">
+				<ACTION type="talent" param1="252010302" rate="10" /> <!-- 몸돌려뒤보기 -->
+				<ACTION type="talent" param1="252010301" rate="10" /> <!-- idle -->				
+				<ACTION type="talent" param1="252010303" rate="10" /> <!-- 무릎꿇기 -->
+			</CHECK>
+			
+		</COMBAT>
+
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="252010302" rate="20" /> <!-- 몸돌려뒤보기 -->
+				<ACTION type="talent" param1="252010301" rate="10" /> <!-- idle -->				
+				<ACTION type="talent" param1="252010303" rate="20" /> <!-- 무릎꿇기 -->				
+			</DEFAULT>
+		</IDLE>
+	</COLT>	
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

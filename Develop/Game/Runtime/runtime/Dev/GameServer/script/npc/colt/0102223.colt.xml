@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="순례자">
+		<COMBAT victory="210222309">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<!--평타 -->
+				<ACTION type="talent" param1="210222301" rate="15" />
+				<ACTION type="talent" param1="210222312" rate="5" />
+				
+				<!--연속공격-->
+				<ACTION type="talent" param1="210222302" rate="20" />
+				<!--강한공격-->
+				<ACTION type="talent" param1="210222304" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="100" >
+					<ACTION type="talent" param1="210222306" rate="40"/>
+					<ACTION type="group" rate="30">
+						<ACTION type="talent" param1="210222310" /> <!-- 회피 L -->
+						<ACTION type="talent" param1="210222305" /> <!-- 찌르기 -->
+					</ACTION>
+					<ACTION type="group" rate="30">
+						<ACTION type="talent" param1="210222311" /> <!-- 회피 R -->
+						<ACTION type="talent" param1="210222305" /> <!-- 찌르기 -->
+					</ACTION>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210222301" rate="8" />
+				<ACTION type="talent" param1="210222312" rate="2" />
+				
+				<ACTION type="talent" param1="210222302" rate="10" />
+				<ACTION type="talent" param1="210222304" rate="10" />
+				<ACTION type="talent" param1="210222305" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210222307" rate="50"/>
+				<ACTION type="talent" param1="210222308" rate="50"/>
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<!--DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />
+			</DEFAULT-->
+		</IDLE>
+	</COLT>
+</maiet>

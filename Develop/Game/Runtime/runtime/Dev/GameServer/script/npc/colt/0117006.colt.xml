@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 마리옹 거인	
+211700600	#idle2
+211700601	#idle3
+211700602	#pain1
+211700603	#회전L
+211700604	#회전R
+# 공격	
+211700610	1타
+211700611	뒤치기
+211700612	난타
+211700613	모래 뿌리기
+211700614	돌 던지기
+211700615	발차기
+211700616	외치기
+-->
+<maiet>
+	<COLT name="마리옹 거인" npcid="117006">
+		<COMBAT >
+			<DEFAULT>
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="211700610" rate="60" desc="1타" />
+				<ACTION type="talent" param1="211700615" rate="20" desc="발차기" />
+				<!-- 원거리 스킬 -->
+				<ACTION type="talent" param1="211700614" rate="5" desc="돌 던지기" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="500" >
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="211700610" rate="10" desc="1타" cycle="10" />
+				<ACTION type="talent" param1="211700615" rate="10" desc="발차기" cycle="10" />
+				<!-- 원거리 스킬 -->
+				<ACTION type="talent" param1="211700614" rate="45" desc="돌 던지기" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211700600" rate="20" desc="idle2" />
+				<ACTION type="talent" param1="211700601" rate="20" desc="idle2" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 호수 에보스	
+210111300	idle2
+210111301	일반공격
+210111302	내려찍기
+-->
+<maiet>
+	<COLT name="변성된 호수 에보스" npcid="101113">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210111300" rate="20" duration="0" desc="idle2" />
+				
+				<ACTION type="talent" param1="210111302" rate="20" desc="내려찍기" />
+				<ACTION type="talent" param1="210111301" rate="40" desc="일반공격" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="210111300" rate="10" duration="0" desc="idle2" />
+				<ACTION type="talent" param1="210111301" rate="30" desc="일반공격" />				
+			</CHECK>
+			
+			<CHECK type="rage" param1="40">
+				<ACTION type="talent" param1="210111301" rate="10" desc="일반공격" />						
+				<ACTION type="talent" param1="210111302" rate="50" desc="내려찍기" cycle="8" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210111300" rate="70" desc="idle2" />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

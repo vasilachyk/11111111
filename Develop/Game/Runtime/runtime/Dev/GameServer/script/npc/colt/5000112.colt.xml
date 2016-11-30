@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 코볼드 병정 샘플. 이 파일을 변경하기 전에 이야기 해주시기 바랍니다. - 조중필 -->
+<maiet>
+	<SCRIPT>
+<![CDATA[
+	-- 코볼드
+
+function NPC_5000112:Init(NPCID)
+	
+end
+
+function NPC_5000112:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC);
+end
+
+]]>
+	</SCRIPT>
+	<COLT>
+<!--
+		<COMBAT >
+			<DEFAULT>
+				<ACTION type="yell" auto_run="true" max_count="1" />
+				<ACTION type="talent" param1="200211" rate="75" />
+			</DEFAULT>
+			<CHECK type="e_motionfactor" param1="knockback">
+				<ACTION type="talent" param1="200211" rate="50" />
+				<ACTION type="talent" param1="200212" rate="50" />
+			</CHECK>
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="talent" param1="200214" rate="40" />
+				<ACTION type="talent" param1="200215" rate="40" />
+			</CHECK>
+			<CHECK type="e_motionfactor" param1="throwup">
+				<ACTION type="talent" param1="200214" rate="50" />
+				<ACTION type="talent" param1="200215" rate="50" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="1" param2="70">
+				<CHECK type="breakpart" param1="1">
+					<ACTION type="talent" param1="200211" rate="95" />
+					<ACTION type="talent" param1="200213" rate="5" />
+				</CHECK>
+				<CHECK type="unbreakpart" param1="1">
+					<ACTION type="talent" param1="200211" rate="50" />
+					<ACTION type="guard" param1="200219" param2="2" rate="20" />
+					<ACTION type="talent" param1="200212" rate="30" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+
+  		<REACTION>
+			<CHECK type="hp" param1="1" param2="70">
+				<CHECK type="unbreakpart" param1="1" >
+					<CHECK type="motionfactor" param1="knockback">
+						<ACTION type="breakpart" param1="1" />
+					</CHECK>
+				</CHECK>
+			</CHECK>
+
+			<CHECK type="hp" param1="1" param2="20">
+				<ACTION type="flee" param1="from_enemy" param2="5" max_count="1" />
+  			</CHECK>
+		</REACTION>
+
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="200214" rate="30" />
+				<ACTION type="talent" param1="200215" rate="20" />
+				<ACTION type="nothing"  param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+-->
+	</COLT>
+</maiet>

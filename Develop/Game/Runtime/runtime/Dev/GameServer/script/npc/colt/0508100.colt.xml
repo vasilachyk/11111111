@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="수호 석상" npcid="508100" max_duration="-1">
+		<COMBAT mode="0">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="250810010" rate="10" comment="atk1" />
+				<ACTION type="talent" param1="250810011" rate="10" comment="atk2" />
+				<ACTION type="talent" param1="250810012" rate="10" comment="atk3" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="250810021" duration="0" rate="10" comment="이동모드" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

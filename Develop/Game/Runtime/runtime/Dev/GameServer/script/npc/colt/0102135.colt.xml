@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 광기의 눈 부족 수호자, 흰색 예티 부족 수호자	
+210213500	#뽜이어볼
+210213501	#원기옥
+210213502	idle2
+210213503	포효1
+210213504	포효2
+210213505	일반공격1
+210213506	일반공격2
+210213507	강한공격
+210213508	대쉬공격
+210213509	돌던지기
+210213510	엉덩방아
+-->
+<maiet>
+	<COLT name="광기의 눈 부족 수호자" npcid="102135">
+		<COMBAT >
+			<DEFAULT>
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="600" >
+				<ACTION type="talent" param1="210213505" rate="10" />
+				<ACTION type="talent" param1="210213506" rate="10" />
+				<ACTION type="talent" param1="210213507" rate="15" />
+				<ACTION type="talent" param1="210213510" rate="15" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="600" >
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="210213505" rate="5" />
+				<ACTION type="talent" param1="210213506" rate="5" />
+				<ACTION type="talent" param1="210213507" rate="5" />
+				<!-- 원거리 스킬 -->
+				<ACTION type="talent" param1="210213509" rate="50" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210213502" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

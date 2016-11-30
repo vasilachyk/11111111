@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="화원의주인" npcid="610201" >
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="talent" param1="261020160"/>					
+					<ACTION type="talent" param1="261020161"/>
+					<ACTION type="talent" param1="261020162" duration="0" />					
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>
+		
+		<COMBAT comment="Unroot">
+			<DEFAULT>
+				<ACTION type="talent" param1="261020104" rate="20" />
+				<ACTION type="talent" param1="261020105" rate="30"/> 
+				<ACTION type="lua" param1="NPC_610201" param2="BackAttack" rate="20" /> 
+				
+				<ACTION type="talent" param1="261020109" rate="10" />
+				<ACTION type="talent" param1="261020110" rate="10" />
+				<ACTION type="talent" param1="261020111" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="261020103" rate="10" cycle="30" duration="0"/>
+			</CHECK>
+			
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+				<ACTION type="talent" param1="261020109" rate="10" duration="0"/>
+				<ACTION type="talent" param1="261020110" rate="10" duration="0"/>
+				<ACTION type="talent" param1="261020111" rate="10" duration="0"/>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="261020123" comment="Rooted" >
+			<DEFAULT>
+				<ACTION type="talent" param1="261020124" rate="50" />
+				<ACTION type="talent" param1="261020125" rate="40" />
+				<ACTION type="talent" param1="261020129" rate="10" />
+				<ACTION type="talent" param1="261020132" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="261020123" rate="10" cycle="30" duration="0"/>
+			</CHECK>
+
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="261020126" rate="40" />
+				<ACTION type="talent" param1="261020129" rate="20" />
+				<!-- 포자 날리기 -->
+				<ACTION type="talent" param1="261020127" rate="10" />
+				<ACTION type="talent" param1="261020133" rate="10" />
+				<ACTION type="talent" param1="261020134" rate="10" />
+				<ACTION type="talent" param1="261020135" rate="10" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+				<ACTION type="talent" param1="261020132" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<!-- 꼬리 잘렸을 경우 -->
+		<COMBAT mode="2" comment="Root destroyed" victory="261020152">
+			<DEFAULT>
+				<ACTION type="talent" param1="261020104" rate="20" />
+				<ACTION type="talent" param1="261020105" rate="30"/> 
+				
+				<ACTION type="talent" param1="261020109" rate="10" />
+				<ACTION type="talent" param1="261020110" rate="10" />
+				<ACTION type="talent" param1="261020111" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="300">
+				<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+				<ACTION type="talent" param1="261020109" rate="10" duration="0"/>
+				<ACTION type="talent" param1="261020110" rate="10" duration="0"/>
+				<ACTION type="talent" param1="261020111" rate="10" duration="0"/>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="261020100" rate="30" />
+				<ACTION type="nothing" param1="3" rate="70" />
+			</DEFAULT>
+			<CHECK type="mode" param1="1" >
+				<ACTION type="talent" param1="261020120" rate="30" />
+				<ACTION type="nothing" param1="3" rate="70" />
+			</CHECK>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[ 
+
+	
+function NPC_610201:OnSpawn( Info )
+	
+end
+
+function NPC_610201:Init( NPCID )
+	--[[  USERDATA 
+	1 : 머리 파츠 데미지 누적
+	2 : 포자(가슴) 파츠 데미지 누적
+	3 : 뿌리 파츠 데미지 누적
+	4 : Pain패턴을 보이기 위한 데미지 누적 
+	--]]
+	NPC_ReserveUserData( NPCID, 5 )
+	
+	local MaxHP 											= NPC_610201.MaxHP
+
+	NPC_610201.LimitForBreakHead 					= MaxHP/10		-- 머리파츠
+	NPC_610201.LimitForBreakRoot 					= MaxHP*1/4  	-- 꼬리파츠	
+	
+	NPC_610201.LimitForModeChangeRoot	 			= MaxHP/10    	-- 모드1 체인지
+	NPC_610201.LimitForModeChangeUnroot				= MaxHP/10    	-- 모드0 체인지 
+	NPC_610201.LimitForPainReaction 				= MaxHP/5		-- 글로벌 페인
+	NPC_610201.LimitForStopVitalize 				= 10			-- 활력취소  
+	NPC_610201.RootRegenTick						= MaxHP/500		-- 꼬리 파괴 누적 데미지  복구 수치
+	
+	NPC_610201.TalIdRoot 							= 261020103
+	NPC_610201.TalIdUnroot 							= 261020123
+	NPC_610201.TalIdCutRoot							= 261020140
+	NPC_610201.TalIdPainShort						= 261020112
+	NPC_610201.TalIdPainLong						= 261020113
+	NPC_610201.TalIdPainHead						= 261020114
+	NPC_610201.TalIdPainChest						= 261020131
+	NPC_610201.TalIdVitalize						= 261020129
+	
+	NPC_610201.TalIdSunken1							= 261020109
+	NPC_610201.TalIdSunken2							= 261020110
+	NPC_610201.TalIdSunken3							= 261020111
+	NPC_610201.TalIdSunken4							= 261020149
+	NPC_610201.TalIdSunken5							= 261020150
+	NPC_610201.TalIdSunken6							= 261020151
+	
+	NPC_610201.BufIdRegen							= 40121
+	NPC_610201.BufIdSporeField						= 40122
+end
+
+function NPC_610201:OnBPartRecover()
+	for i=1, 5 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+function NPC_610201:BackAttack( ThisNPC, Enemy )
+	if ThisNPC:IsCooldown( 261020106 ) or ThisNPC:CheckBPart(3) then
+		return
+	end
+
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	local IsRear = Enemy:IsRear( ThisNPC )
+	
+	if Dist > 150 and Dist < 600 and IsRear then
+		-- 뒤에 있을 경우 뿌리공격
+		if ThisNPC:GetMode() == 0 then
+			ThisNPC:UseTalentSelf( 261020106 )
+		end
+	end
+end
+	
+function NPC_610201:AccDamageUnroot( ThisNPC, PartsIdx, HitInfo )
+	-- Acc damage
+	local DmgAcc = 0
+	if  PartsIdx > 0 and PartsIdx <= 3 then
+		DmgAcc = ThisNPC:GetUserData( PartsIdx ) + HitInfo.Damage	
+		ThisNPC:SetUserData( PartsIdx, DmgAcc )
+	end
+	
+	local Mode = ThisNPC:GetMode()
+	if Mode == 0 or Mode == 2 then
+		DmgAcc = ThisNPC:GetUserData( 4 ) + HitInfo.Damage	
+		ThisNPC:SetUserData( 4, DmgAcc )
+	end
+
+	-- _LogHitInfo( HitInfo )
+	
+	--[[
+	GLog( "-- Process Acc Damage Root ( P:" .. PartsIdx .. 
+		", D:" .. HitInfo.Damage .. ", 1:" .. ThisNPC:GetUserData( 1 ) .. 
+		", 2:" .. ThisNPC:GetUserData( 2 ) .. ", 3:" .. ThisNPC:GetUserData( 3 ) .. ", 4:" .. ThisNPC:GetUserData( 4 ) .. ", 5:" .. ThisNPC:GetUserData( 5 ) .. " ) --\n"  )
+	--]]
+		
+	-- Process reaction
+
+	-- 2.2 Break root
+	if PartsIdx == 3 and 
+		( not ThisNPC:CheckBPart(3) ) and 
+		ThisNPC:GetUserData( 3 ) > NPC_610201.LimitForBreakRoot then
+		--GLog( "Break Part(3) \n" )
+		
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( 3, HitInfo.Attacker )
+		ThisNPC:UseTalentSelf( NPC_610201.TalIdCutRoot )  -- 꼬리잘림
+		ThisNPC:SetUserData( 3, 0 )
+		ThisNPC:SetUserData( 4, 0 )
+		return
+	end
+	
+	if ThisNPC:IsCooldown( NPC_610201.TalIdPainShort ) or
+		ThisNPC:GetCurrentTalent( ) == NPC_610201.TalIdSunken1	or
+		ThisNPC:GetCurrentTalent( ) == NPC_610201.TalIdSunken2	or
+		ThisNPC:GetCurrentTalent( ) == NPC_610201.TalIdSunken3	or
+		ThisNPC:GetCurrentTalent( ) == NPC_610201.TalIdSunken4	or
+		ThisNPC:GetCurrentTalent( ) == NPC_610201.TalIdSunken5	or
+		ThisNPC:GetCurrentTalent( ) == NPC_610201.TalIdSunken6	then
+		return
+	end
+	
+	-- 2. Break part
+	-- 2.1 Break head
+	if PartsIdx == 1 and 
+		( not ThisNPC:CheckBPart(1) or not ThisNPC:CheckBPart(2) ) and 
+		ThisNPC:GetUserData( 1 ) > NPC_610201.LimitForBreakHead  then
+		--GLog( "Break Part(1) \n" )
+		
+		ThisNPC:ClearJob()
+		if not ThisNPC:CheckBPart(1) then
+			ThisNPC:BreakPart( 1, HitInfo.Attacker )
+		else
+			ThisNPC:BreakPart( 2, HitInfo.Attacker )
+		end
+		
+		ThisNPC:UseTalentSelf( NPC_610201.TalIdPainHead )  -- 머리아픔
+		ThisNPC:SetUserData( 1, 0 )
+		ThisNPC:SetUserData( 4, 0 )
+		return
+	end
+	
+	-- 3 Pain
+	if 	ThisNPC:GetUserData( 4 ) > NPC_610201.LimitForPainReaction and
+		ChkMFForHitReaction( HitInfo ) then
+	
+		ThisNPC:ClearJob()
+		if PartsIdx == 1 then
+			ThisNPC:UseTalentSelf( NPC_610201.TalIdPainHead )  -- Pain3
+		else
+			ThisNPC:UseTalentSelf( NPC_610201.TalIdPainShort )  -- Pain1
+		end
+		ThisNPC:SetUserData( 4, 0 )
+	end
+end
+
+function NPC_610201:AccDamageRoot( ThisNPC, PartsIdx, HitInfo )
+	if HitInfo.TalentID == NPC_610201.TalIdVitalize then  
+		-- 활력 탤런트로 맞을 경우는 패스
+		return
+	end
+	
+	-- Acc damage
+	local DmgAcc = 0
+	local PainPoint = 0
+	if PartsIdx == 2 then
+		PainPoint = GetPainPoint( HitInfo )
+		ThisNPC:SetUserData( 2, ThisNPC:GetUserData( 2 ) + PainPoint )
+	elseif  PartsIdx > 0 and PartsIdx <= 3 then
+		DmgAcc = ThisNPC:GetUserData( PartsIdx ) + HitInfo.Damage	
+		ThisNPC:SetUserData( PartsIdx, DmgAcc )
+	end
+	
+	local Mode = ThisNPC:GetMode()
+	if Mode == 1 then
+		DmgAcc = ThisNPC:GetUserData( 4 ) + HitInfo.Damage	
+		ThisNPC:SetUserData( 4, DmgAcc )
+	end
+	
+	--[[
+	GLog( "-- Process Acc Damage Root ( P:" .. PartsIdx .. 
+		", D:" .. HitInfo.Damage .. ", 1:" .. ThisNPC:GetUserData( 1 ) .. 
+		", 2:" .. ThisNPC:GetUserData( 2 ) .. ", 3:" .. ThisNPC:GetUserData( 3 ) .. ", 4:" .. ThisNPC:GetUserData( 4 ) .. ", 5:" .. ThisNPC:GetUserData( 5 ) .. " ) --\n"  )
+	--]]
+		
+	-- _LogHitInfo( HitInfo )
+	-- GLog( "PainPoint(" .. ThisNPC:GetUserData( 2 ) .. "," .. PainPoint .. ")\n" )
+	
+	-- GLog( "Breast Hit\n")
+	-- Chest
+	if PartsIdx == 2 and
+		ThisNPC:GetUserData( 2 ) > NPC_610201.LimitForStopVitalize and 
+		PainPoint > 0 then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_610201.TalIdPainChest )  -- Pain1
+		
+		ThisNPC:SetUserData( 2, 0 )
+		ThisNPC:SetUserData( 4, 0 )
+		return
+	end
+		
+	-- 2.1 Break head
+	if PartsIdx == 1 and 
+		( not ThisNPC:CheckBPart(1) or not ThisNPC:CheckBPart(2) ) and 
+		ThisNPC:GetUserData( 1 ) > NPC_610201.LimitForBreakHead then
+		--GLog( "Break Part(1) \n" )
+		
+		ThisNPC:ClearJob()
+		if not ThisNPC:CheckBPart(1) then
+			ThisNPC:BreakPart( 1, HitInfo.Attacker )
+		else
+			ThisNPC:BreakPart( 2, HitInfo.Attacker )
+		end
+		
+		ThisNPC:UseTalentSelf( NPC_610201.TalIdPainChest )  -- 머리아픔
+		ThisNPC:SetUserData( 1, 0 )
+		ThisNPC:SetUserData( 4, 0 )
+		return
+	end
+	
+	-- 3 Golbal Pain
+	if ThisNPC:GetUserData( 4 ) > NPC_610201.LimitForPainReaction and
+		ChkMFForHitReaction( HitInfo ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_610201.TalIdPainChest )  -- Pain1
+		ThisNPC:SetUserData( 4, 0 )
+	end
+end
+
+function NPC_610201:OnStartVitalize( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+
+	-- 활력 취소를 위한 변수 재설정
+	ThisNPC:SetUserData( 2, 0 )
+end
+
+function NPC_610201:OnStartRoot( ThisActor, Enemy )
+	--GLog( "OnStartRoot \n" )
+
+	local ThisNPC = AsNPC( ThisActor )
+
+	ThisNPC:GainBuff(  NPC_610201.BufIdRegen  )
+	ThisNPC:GainBuff(  NPC_610201.BufIdSporeField  )
+
+	ThisNPC:SetUserData( 4, 0 )
+end
+
+function NPC_610201:OnStartUnroot( ThisActor, Enemy )
+	--GLog( "OnStartUnRoot \n" )
+
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:RemoveBuff( NPC_610201.BufIdRegen )
+	ThisNPC:RemoveBuff( NPC_610201.BufIdSporeField )
+	
+	ThisNPC:SetUserData( 4, 0 ) 
+end
+
+
+-- 활력 시전시 꼬리파츠 누적데미지 감소
+function NPC_610201:OnTryHit( Actor, TalentID )
+	if TalentID ~= NPC_610201.TalIdVitalize then
+		return
+	end
+	
+	local Damage = this:GetUserData( 3 ) - NPC_610201.RootRegenTick
+	if Damage < 0 then 
+		Damage = 0
+	end
+	
+	this:SetUserData( 3, Damage )
+end
+
+--[[
+		HitCapsule Callback functions.
+--]]
+-- 화원의 주인 mode0 기본
+function NPC_610201:OnHitCapsule_1_0(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_1_1(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 3, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_1_2(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_1_3(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+-- 화원의 주인 mode1 기본 
+function NPC_610201:OnHitCapsule_2_0(HitInfo)
+	NPC_610201:AccDamageRoot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_2_1(HitInfo)
+	NPC_610201:AccDamageRoot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_2_2(HitInfo)
+	NPC_610201:AccDamageRoot( this, 0, HitInfo )
+end
+
+-- 화원의 주인 mode2 기본
+function NPC_610201:OnHitCapsule_3_0(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_3_1(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_3_2(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+-- 성큰어택
+function NPC_610201:OnHitCapsule_4_0(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_1(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 3, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_2(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_3(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_4(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_5(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_6(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_7(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_8(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_4_9(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+-- mode2 꼬리잘린 모드 성큰어택
+function NPC_610201:OnHitCapsule_5_0(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_1(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_2(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_3(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_4(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_5(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_6(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_7(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_5_8(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+-- 모드전환 Root
+function NPC_610201:OnHitCapsule_6_0(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_6_1(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_6_2(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_6_3(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_6_4(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+	
+	-- 모드전환중에 꼬리가 잘리면 문제가 될지도 모른다.. 일단 가보자.
+	--NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+-- 모드전환 Unroot
+function NPC_610201:OnHitCapsule_7_0(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_7_1(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 3, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_7_2(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_7_3(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_7_4(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_7_5(HitInfo)
+	NPC_610201:AccDamageUnroot( this, 0, HitInfo )
+end
+
+-- 활력 
+function NPC_610201:OnHitCapsule_8_0(HitInfo)
+	NPC_610201:AccDamageRoot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_8_1(HitInfo)
+	NPC_610201:AccDamageRoot( this, 2, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_8_2(HitInfo)
+	NPC_610201:AccDamageRoot( this, 0, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_8_3(HitInfo)
+	NPC_610201:AccDamageRoot( this, 1, HitInfo )
+end
+
+function NPC_610201:OnHitCapsule_8_4(HitInfo)
+	NPC_610201:AccDamageRoot( this, 0, HitInfo )
+end
+
+	]]></SCRIPT>
+</maiet>

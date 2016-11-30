@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--  어미 이끼거미, 암컷 이끼거미 -->
+<maiet>
+	<COLT>
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="210700401" rate="80" />
+				<ACTION type="talent" param1="210700402" rate="20" />
+			</DEFAULT>
+			<CHECK type="hp" param1="1" param2="30">
+				<ACTION type="group" auto_run="true" max_count="1" >
+					<ACTION type="lua" param1="NPC_107004" param2="MotherSpider_SummonMinion"  auto_run="true" />
+					<ACTION type="talent" param1="210700205" duration="0" />
+				</ACTION>
+				<ACTION type="talent" param1="210700401" rate="80" />
+				<ACTION type="talent" param1="210700402" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="211103211"/>
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_107004:MotherSpider_SummonMinion( ThisNPC, Enemy )
+	local NPCID_BABY_SPIDER = 107002
+	local MINION_CNT = 5
+	
+	NPC_107004:SummonBabySpider( ThisNPC, Enemy, NPCID_BABY_SPIDER, MINION_CNT, "$$COLT_0107004_31", -200, 200 )
+end
+
+function NPC_107004:OnDie(Despawn)
+	local NPCID_BABY_SPIDER = 107002
+	local MINION_CNT = 8
+	
+	NPC_107004:SummonBabySpider( this, nil, NPCID_BABY_SPIDER, MINION_CNT, "$$COLT_0107004_38", -200, 200 )
+end 
+
+function NPC_107004:SummonBabySpider( Summoner, Opponent, MinionID, MinionCnt, Msg, min, max )
+	local WorldPos = vec3()
+	local Field = Summoner:GetField()
+	
+	for i = 1, MinionCnt, 1 do
+		local LocalAdjPos = vec3(math.random(min, max), math.random(min, max), 0)
+		WorldPos = Math_LocalToWorld( Summoner:GetDir(), Summoner:GetPos(), LocalAdjPos )
+
+		local Minion = Field:Spawn( MinionID, WorldPos )
+		
+		if Opponent ~= nil then
+			Minion:Attack( Opponent )
+		end
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="고스트라이더" npcid="113081">
+		<COMBAT>
+			<DEFAULT>
+				<!--
+				<ACTION type="talent" param1="211308103" rate="10" />
+				<ACTION type="talent" param1="211308105" rate="10" />
+				-->
+				<ACTION type="talent" param1="211308107" rate="10" />
+				<!--
+				<ACTION type="talent" param1="211308109" duration="0" rate="10" />
+				<ACTION type="talent" param1="211308110" duration="0" rate="10" />
+				-->
+				
+				<!--
+				<ACTION type="talent" param1="211308104" rate="10" />
+				
+				<ACTION type="talent" param1="211308106" rate="10" />
+				
+				<ACTION type="talent" param1="211308108" rate="10" />
+				
+				<ACTION type="talent" param1="211308111" rate="10" />
+				<ACTION type="talent" param1="211308112" rate="10" />
+				-->
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="211308108" max_count="1" rate="10" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="80" >
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_113081:Init(NPCID)
+	--[[
+		User Data
+		1: 
+		2: 
+		3: Pain누적 데미지
+	--]]
+	
+	NPC_ReserveUserData(NPCID, 3);
+	
+	local MaxHP 								= 70000
+	NPC_113081.BufIdHellFlame			= 40140
+	
+	NPC_113081.MinionIdArcher			= 113105
+	NPC_113081.MinionIdKinight			= 113106
+end
+
+function NPC_113081:OnSpawn( Info )
+	--GLog( "OnSpawn" .. NPC_113081.BufIdHellFlame .. "\n" )
+	this:GainBuff( NPC_113081.BufIdHellFlame )
+end
+
+function NPC_113081:OnFinishSummonArmy( ThisNPC, Enemy )
+end
+
+function NPC_113081:OnStartSummonArmy( ThisNPC, Enemy )
+	ThisNPC:NarrationNow( ThisNPC:GetName() .. "가 죽은자들을 불러들입니다." )
+	NPC113081_SummonArmy( ThisNPC, Enemy )
+end
+
+function NPC113081_SummonArmy( ThisNPC, Enemy )
+	local Dir = Enemy:GetFowardDir( ThisNPC )
+	local Points = Math_GetPolygonPoints( ThisNPC:GetPos(), Dir, 400, 5 )
+	local Minions = { NPC_113081.MinionIdKinight, NPC_113081.MinionIdArcher, NPC_113081.MinionIdArcher, NPC_113081.MinionIdKinight, NPC_113081.MinionIdKinight  }
+	
+	local WorldPos = vec3()
+	local Field = ThisNPC:GetField()
+	
+	for i = 1, 5, 1 do
+		AsNPC(ThisNPC):Summon( Minions[i], Points[ tostring(i) ] )
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

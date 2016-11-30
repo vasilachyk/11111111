@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="육체 쓰레기" npcid="520209">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="252020901" rate="10" />
+				<ACTION type="talent" param1="252020902" rate="30" />
+				<ACTION type="talent" param1="252020903" rate="25" />
+				<ACTION type="talent" param1="252020904" rate="20" />
+			</DEFAULT>			
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="252020900" rate="10"/>
+				<ACTION type="nothing" param1="1" rate="90"/>
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	
+
+	]]></SCRIPT>
+</maiet>

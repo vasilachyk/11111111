@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="무스탕">
+		<COMBAT>
+			<DEFAULT>	
+				
+				<ACTION type="talent" param1="252010102" rate="50" />				
+				<ACTION type="talent" param1="252010106" rate="10" />  <!-- 회피 L -->					
+				
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40">
+				<ACTION type="talent" param1="252010107" rate="30" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="rage" param1="50" >
+				<ACTION type="talent" param1="252010106" />  <!-- 회피 L -->					
+			</CHECK>
+		</COMBAT>
+ 		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

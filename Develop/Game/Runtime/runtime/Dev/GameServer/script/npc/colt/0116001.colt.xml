@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="레바론의 낙인" npcid="116001">
+		<COMBAT mode="0">
+			<DEFAULT>
+				
+			</DEFAULT>
+			
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_116001:Init( NPCID )
+	NPC_116001.BufIdFireDamage 	= 40818
+end	
+
+function NPC_116001:OnSpawn( Info )
+	this:GainBuff( NPC_116001.BufIdFireDamage )
+end
+
+function NPC_116001:OnFinishStigmaDie( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Despawn(true)
+end
+
+	]]></SCRIPT>
+</maiet>

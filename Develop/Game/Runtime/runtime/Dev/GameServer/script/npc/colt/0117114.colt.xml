@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 마이코니드 스폰, 팬텀 마이코니드 스폰	
+211711400	#idle
+211711401	#idle2
+211711402	#점프이동
+211711403	#점프공격
+211711404	#따라다니기
+211711405	#자폭
+211711406	#자폭페이크
+-->
+<maiet>
+	<COLT name="마이코니드 스폰" npcid="117114">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711403" rate="70" desc="점프공격" />
+				<ACTION type="talent" param1="211711406" rate="30" desc="자폭페이크" duration="0"/>
+				<ACTION type="talent" param1="211711402" rate="40" desc="점프이동" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40">				
+				<ACTION type="talent" param1="211711405" rate="80" desc="자폭" />				
+			</CHECK>
+			<CHECK type="distance" param1="300" >
+				<ACTION type="talent" param1="211711403" rate="40" desc="점프공격" />
+				<ACTION type="talent" param1="211711402" rate="70" desc="점프이동" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211711401" rate="30" desc="idle2" />
+				<ACTION type="nothing" param1="0" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_117114:OnFinishSucideAttack( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Die( Enemy )
+end
+	]]></SCRIPT>
+</maiet>

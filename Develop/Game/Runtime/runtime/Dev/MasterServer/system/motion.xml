@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<maiet>
+<!-- /////////////////////////////////////////////////////////////////////////
+ 원래는 motion.xml이 각 모델또는 애니메이션 세트마다 하나씩 있어야 하지만
+ 엔진에서 캐릭터 애니메이션이 정리되지 않은 관계로 당분간 motion.xml 하나에서 
+ 모든 모션을 다 관리하도록 합니다. 그래서 우선 플레이어와 NPC로 구분해 놓았습니다.
+ 플레이어도 나중에 갖고 있는 무기마다 애니메이션이 바뀌어야 하므로 구조가 바뀔 수 있습니다. - bird(2006/05/16)
+-->
+
+<!--
+ 	<MOTION name="" stance="기본값:all" loop="기본값:false" cancelEnabled="기본값:true" cameraLook="기본값:false" cameraLookStance="기본값:all" postfix="기본값:false" usable_upper="기본값:false">
+		<Default>
+			//<Sequence ani="idle" speed="기본값:1" frameover="기본값:0" timeout="기본값:0" />
+		</Default>
+	</MOTION>
+-->
+
+  <!-- 
+ 이벤트 설명
+ gravity_down : 하강 시작시
+ event_landed : 땅에 착지시
+ 
+ speed : 애니메이션 속도
+ timeout : 해당 시간이 지나면 다음 씨퀀스로 넘어감
+ frameover : 해당 프레임이 넘어가면 다음 씨퀀스로 넘어감
+-->
+
+  <!-- /////////////////////////////////////////////////////////////////////////
+ 플레이어 
+-->
+	<!-- idle -->
+	<MOTION name="idle" stance="all" loop="true" cancelEnabled="true" cameraLook="false" postfix="true">
+		<Default>
+			<Sequence ani="idle"/>
+		</Default>
+	</MOTION>
+	
+	<!-- Rotate -->
+	<MOTION name="rotate" stance="all" loop="true" cancelEnabled="true" cameraLook="true" postfix="true">
+		<Default>
+			<Sequence ani="rotate"/>
+		</Default>
+	</MOTION>
+
+  <!-- run -->
+	<MOTION name="run" stance="all" loop="true" cancelEnabled="true" cameraLook="true" postfix="true">
+		<Default>
+			<Sequence ani="run_f"/>
+		</Default>
+		<Forward>
+			<Sequence ani="run_f"/>		
+		</Forward>
+		<Backward>
+			<Sequence ani="run_b"/>
+		</Backward>
+		<Left>
+			<Sequence ani="run_l"/>
+		</Left>
+		<Right>
+			<Sequence ani="run_r"/>
+		</Right>
+	</MOTION>
+
+  <!-- Change Stance -->
+  <MOTION name="change_stance_to_battle" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="start" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="change_stance_to_normal" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="end" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_change_stance_to_battle" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="starts"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_change_stance_to_normal" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="ends"/>
+    </Default>
+  </MOTION>
+
+  <!-- Quick Change Stance -->
+  <MOTION name="change_stance_to_battle2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="start" speed="1.5" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="change_stance_to_normal2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="end" speed="1.5" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_change_stance_to_battle2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="starts" speed="1.5" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_change_stance_to_normal2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="ends" speed="1.5" />
+    </Default>
+  </MOTION>
+
+  <!-- Running Change Stance -->
+  <MOTION name="run_change_stance_to_battle" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="start_run" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="run_change_stance_to_normal" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="end_run" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="run_shield_change_stance_to_battle" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="starts_run"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="run_shield_change_stance_to_normal" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="ends_run"/>
+    </Default>
+  </MOTION>
+  
+  <!-- Quick Running Change Stance -->
+  <MOTION name="run_change_stance_to_battle2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="start_run" speed="1.5" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="run_change_stance_to_normal2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="end_run" speed="1.5" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="run_shield_change_stance_to_battle2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="starts_run" speed="1.5" />
+    </Default>
+  </MOTION>
+
+  <MOTION name="run_shield_change_stance_to_normal2" stance="battle" type="once" cameraLook="false">
+    <Default>
+      <Sequence ani="ends_run" speed="1.5" />
+    </Default>
+  </MOTION>
+  
+  <!-- jump -->
+  <MOTION name="jump" stance="all" loop="false" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="jump_updown"		event="event_landed"/>
+      <Sequence ani="jump_land"/>
+    </Default>
+    <Forward>
+      <Sequence ani="jump_updown"		event="event_landed"/>
+      <Sequence ani="jump_land"/>
+    </Forward>
+    <Backward>
+      <Sequence ani="jump_updown_b"	event="event_landed"/>
+      <Sequence ani="jump_land_b"/>
+    </Backward>
+    <Left>
+      <Sequence ani="jump_updown"		event="event_landed"/>
+      <Sequence ani="jump_land"/>
+    </Left>
+    <Right>
+      <Sequence ani="jump_updown"		event="event_landed"/>
+      <Sequence ani="jump_land"/>
+    </Right>
+  </MOTION>
+
+  <!-- falling -->
+  <MOTION name="falling" stance="all" loop="false" cancelEnabled="false" cameraLook="true" postfix="true">
+    <Default>
+      <Sequence ani="jump_updown"		event="event_landed"/>
+      <Sequence ani="jump_land"/>
+    </Default>
+  </MOTION>
+
+  <!-- Damaged -->
+  <MOTION name="damaged" stance="all" type="once" cameraLook="true">
+    <Default>
+      <Sequence ani="damage"/>
+    </Default>
+  </MOTION>
+
+  <!-- Die -->
+  <MOTION name="die" type="once" cancelEnabled="false" cameraLook="false">
+    <Default>
+      <Sequence ani="die"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="rebirth" stance="all" loop="false" cameraLook="true">
+    <Default>
+      <Sequence ani="rebirth"/>
+    </Default>
+  </MOTION>
+  
+  <!-- #참고# 루팅애니메이션은 event가 next_motion 인 것만 사용 -->
+  <!-- #참고# 인터렉션애니메이션은 event가 없는 것을 사용-->
+  
+  <!-- Loot -->
+  <MOTION name="LootingItem" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_loot_start" event="next_motion" />
+      <Sequence ani="none_loot_end" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="LootInteract" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_loot_start" />
+      <Sequence ani="none_loot_end" />
+    </Default>
+  </MOTION>  
+
+  <!--Loot 3단계-->
+  <MOTION name="LootingItem3" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_loot_start" />
+      <Sequence ani="none_idle" event="next_motion" />
+      <Sequence ani="none_loot_end" />
+    </Default>
+  </MOTION>
+
+  <!-- 루팅 시작 -->
+  <MOTION name="PS_loot_start" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="none_loot_start"/>
+    </Default>
+  </MOTION>
+  
+  <!-- 루팅 종료 -->
+  <MOTION name="PS_loot_end" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="none_loot_end"/>
+    </Default>
+  </MOTION>
+
+  <!--유물채집-->
+  <MOTION name="Lockpicking" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_down" />
+      <Sequence ani="none_gather_key" event="next_motion" />
+      <Sequence ani="none_gather_idle" event="next_motion" />
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>
+  
+  <!--채혈 : 퀘스트-->
+  <MOTION name="BloodSuction" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_down" />
+      <Sequence ani="none_gather_key" event="next_motion"/>
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>  
+  
+  <MOTION name="LockpickInteract" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_down" />
+      <Sequence ani="none_gather_key" />
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>  
+
+  <!--약초채집-->
+  <MOTION name="Gathering" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_down" />
+      <Sequence ani="none_gather_herb" event="next_motion" />
+      <Sequence ani="none_gather_idle" event="next_motion" />
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="GatherInteract" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_down" />
+      <Sequence ani="none_gather_herb" />
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>  
+
+  <!--채광-->
+  <MOTION name="Mining" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_mine" event="next_motion" />
+      <Sequence ani="none_gather_down" />
+      <Sequence ani="none_gather_idle" event="next_motion" />
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>
+  
+  <MOTION name="MineInteract" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_mine" />
+      <Sequence ani="none_gather_down" />
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>  
+
+  <MOTION name="none_gather_up" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_gather_up" />
+    </Default>
+  </MOTION>
+
+  <!--서서 조작-->
+  <MOTION name="Stand_Operation" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_operation" event="next_motion" />
+    </Default>
+  </MOTION>   
+  
+  <MOTION name="Stand_Operate" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_operation" />
+    </Default>
+  </MOTION>      
+  
+  <!-- swim_idle -->
+  <MOTION name="swimidle" stance="all" loop="true" cancelEnabled="true" weaponAni="false" cameraLook="true">
+    <Default>
+      <Sequence ani="none_swim_idle"/>
+    </Default>
+  </MOTION>
+
+  <!-- swim -->
+  <MOTION name="swim" stance="all" loop="true" cancelEnabled="true" weaponAni="false" cameraLook="true">
+    <Default>
+      <Sequence ani="none_swim_f"/>
+    </Default>
+    <Forward>
+      <Sequence ani="none_swim_f"/>
+    </Forward>
+    <Backward>
+      <Sequence ani="none_swim_b"/>
+    </Backward>
+    <Left>
+      <Sequence ani="none_swim_l"/>
+    </Left>
+    <Right>
+      <Sequence ani="none_swim_r"/>
+    </Right>
+  </MOTION>
+
+  <MOTION name="PS_atk1f" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="atk1f"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_atk1f_r" loop="false" cameraLook="false" usable_upper="true">
+    <Default>
+      <Sequence ani="atk1f_r"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_downattack" loop="false" cameraLook="true">
+    <Default>
+      <Sequence ani="atk_down"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_superattack" loop="false" cameraLook="true">
+    <Default>
+      <Sequence ani="atk_rising"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_risingattack" loop="false" cameraLook="true">
+    <Default>
+      <Sequence ani="atk_rising"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="PS_uppercombo" loop="false" cameraLook="true">
+    <Default>
+      <Sequence ani="atk_air"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="PS_upper" loop="false" cameraLook="true">
+    <Default>
+      <Sequence ani="atk_upper"/>
+    </Default>
+  </MOTION>
+
+  <!--<MOTION name="PS_dodge" loop="false" cameraLook="false">
+    <Default>
+      <Sequence ani="dodge_f"/>
+    </Default>
+    <Forward>
+      <Sequence ani="dodge_f"/>
+    </Forward>
+    <Backward>
+      <Sequence ani="dodge_b"/>
+    </Backward>
+    <Left>
+      <Sequence ani="dodge_l"/>
+    </Left>
+    <Right>
+      <Sequence ani="dodge_r"/>
+    </Right>
+  </MOTION>-->
+  
+  <MOTION name="aiming" stance="battle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="aiming"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="shoot" stance="battle" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="atk1"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="reload" stance="battle" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="atk1_r"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="guard" stance="battle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="guard_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="guard_run" stance="battle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="guard_run_f"/>
+    </Default>
+    <Forward>
+      <Sequence ani="guard_run_f"/>
+    </Forward>
+    <Backward>
+      <Sequence ani="guard_run_b"/>
+    </Backward>
+    <Left>
+      <Sequence ani="guard_run_l"/>
+    </Left>
+    <Right>
+      <Sequence ani="guard_run_r"/>
+    </Right>
+	<ForwardLeft>
+      <Sequence ani="guard_run_fl"/>
+    </ForwardLeft>
+    <ForwardRight>
+      <Sequence ani="guard_run_fr"/>
+    </ForwardRight>
+	<BackwardLeft>
+      <Sequence ani="guard_run_bl"/>
+    </BackwardLeft>
+    <BackwardRight>
+      <Sequence ani="guard_run_br"/>
+    </BackwardRight>
+  </MOTION>
+  
+  <MOTION name="guard_r" stance="battle" loop="false" cancelEnabled="true" cameraLook="true" usable_upper="true">
+    <Default>
+      <Sequence ani="guard_end"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_guard" stance="battle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="guards_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="shield_guard_run" stance="battle" loop="true" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="guards_run_f"/>
+    </Default>
+    <Forward>
+      <Sequence ani="guards_run_f"/>
+    </Forward>
+    <Backward>
+      <Sequence ani="guards_run_b"/>
+    </Backward>
+    <Left>
+      <Sequence ani="guards_run_l"/>
+    </Left>
+    <Right>
+      <Sequence ani="guards_run_r"/>
+    </Right>
+	<ForwardLeft>
+      <Sequence ani="guards_run_fl"/>
+    </ForwardLeft>
+    <ForwardRight>
+      <Sequence ani="guards_run_fr"/>
+    </ForwardRight>
+	<BackwardLeft>
+      <Sequence ani="guards_run_bl"/>
+    </BackwardLeft>
+    <BackwardRight>
+      <Sequence ani="guards_run_br"/>
+    </BackwardRight>
+  </MOTION>
+
+  <MOTION name="shield_guard_r" stance="battle" loop="false" cancelEnabled="true" cameraLook="true" usable_upper="true">
+    <Default>
+      <Sequence ani="guards_end"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="bed_sleep" stance="normal" loop="false" cameraLook="false" weaponAni="false" cancelEnabled="false" >
+    <Default>
+      <Sequence ani="none_bed_start"/>
+      <Sequence ani="none_bed_idle" event="next_motion" />
+      <Sequence ani="none_bed_end"/>
+    </Default>
+  </MOTION>
+
+  <!-- 앉기 -->
+  <MOTION name="sit_down" stance="normal" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_sit_down" />
+    </Default>
+  </MOTION>
+  <MOTION name="sit_rise" stance="normal" loop="false" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_sit_rise" />
+    </Default>
+  </MOTION>
+  <MOTION name="sit_idle" stance="normal" loop="true" cancelEnabled="true" weaponAni="false" cameraLook="false">
+    <Default>
+      <Sequence ani="none_sit_idle" />
+    </Default>
+  </MOTION>
+
+  <!-- special attack -->
+  <!--
+	<MOTION name="attack_special1" type="once">
+		<Default>
+			<Sequence ani="special_01"/>
+		</Default>
+	</MOTION>
+-->
+
+  <!-- 모션 팩터 -->
+  <MOTION name="mf_beaten" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="MF_BT1"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="mf_beaten_front" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="MF_BT1"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="mf_beaten_back" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="MF_BT2"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="mf_beaten_left" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="MF_BT1"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="mf_beaten_right" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="MF_BT2"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="mf_knockback" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_KB1"/>
+      <Sequence ani="MF_KB2" event="mf_kb_event">
+        <PostTrigger if="Dead" then="ChangeMotion" param1="die" />
+      </Sequence>
+      <Sequence ani="MF_KB3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="mf_deflect" stance="all" loop="false" cancelEnabled="true" cameraLook="false" postfix="true">
+    <Default>
+      <Sequence ani="MF_DT"/>
+    </Default>
+  </MOTION>
+  <MOTION name="mf_stagger" stance="all" loop="false" cancelEnabled="true" cameraLook="true">
+    <Default>
+      <Sequence ani="MF_ST"/>
+    </Default>
+  </MOTION>
+  <MOTION name="mf_throwup" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_TU1" event="mf_kb_event" />
+      <Sequence ani="MF_TU2">
+        <PostTrigger if="Dead" then="Hold"/>
+      </Sequence>
+      <Sequence ani="MF_KD3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="mf_knockdown" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_KD1"/>
+      <Sequence ani="MF_KD2" event="mf_kd_event">
+        <PostTrigger if="Dead" then="Hold"/>
+      </Sequence>
+      <Sequence ani="MF_KD3"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="mf_uppered" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_BT2" speed="1.9"	event="mf_kb_event"	/>
+      <Sequence ani="jump_updown"		event="event_landed" timeout="15">
+        <PostTrigger if="Dead" then="ChangeMotion" param1="die" />
+      </Sequence>
+	  <Sequence ani="jump_land"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="mf_uppered_short" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_BT2" speed="1.5"	event="event_landed" 	>
+        <PostTrigger if="Dead" then="ChangeMotion" param1="die" />
+      </Sequence>
+	  <Sequence ani="jump_land"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="mf_stun" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+	  <Sequence ani="MF_BT1" frameover="3600" />
+      <Sequence ani="sleep" event="mf_stun_event"/>
+    </Default>
+  </MOTION>
+  <MOTION name="mf_grappled" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <!--<Sequence ani="ragdoll_default" event="mf_throw_event" />-->
+      <Sequence ani="none_eaten" />
+    </Default>
+  </MOTION>
+  <MOTION name="mf_grappled_collision" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_TU2">
+        <PostTrigger if="Dead" then="Hold"/>
+      </Sequence>
+    </Default>
+  </MOTION>
+  <MOTION name="mf_stand_down" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_KD2" />
+    </Default>
+  </MOTION>
+  <MOTION name="mf_stand_up" stance="all" loop="false" cancelEnabled="true" cameraLook="false">
+    <Default>
+      <Sequence ani="MF_KD3" />
+    </Default>
+  </MOTION>
+
+  <!-- Winner pose -->
+  <MOTION name="winner" loop="false" stance="all" cancelEnabled="false" weaponAni="false" cameraLook="true">
+    <Default>
+      <Sequence ani="none_ia_cheer"/>
+      <Sequence ani="none_ia_dance"/>
+    </Default>
+  </MOTION>
+
+  <!-- Loser pose -->
+  <MOTION name="loser" loop="false" stance="all" cancelEnabled="false" weaponAni="false" cameraLook="true">
+    <Default>
+      <Sequence ani="none_ia_beg"/>
+    </Default>
+  </MOTION>
+
+
+  <!--madduck test -->
+  <MOTION name="test_defense" loop="true" cancelEnabled="true" cameraLook="true">
+		<Default>
+			<Sequence ani="jump_updown"/>
+		</Default>
+	</MOTION>
+
+<!-- /////////////////////////////////////////////////////////////////////////
+ NPC 
+-->
+  <MOTION name="npc_idle" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_idle_combat" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="idle_combat"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="npc_idle_air" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="air_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_walk" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="walk"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="npc_walk_air" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="air_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_run" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="run"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="npc_run_air" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="air_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_die" loop="false" cancelEnabled="false">
+		<Default>
+			<Sequence ani="die"/>
+		</Default>
+	</MOTION>
+  
+	<MOTION name="npc_attack" type="once">
+		<Default>
+			<Sequence ani="atk_r"/>
+		</Default>
+	</MOTION>
+
+  <MOTION name="npc_guard" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="guard_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_guards" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="guards_idle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_guard_r" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="guard_end"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_guards_r" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="guards_end"/>
+    </Default>
+  </MOTION>
+  
+  <MOTION name="npc_autoguard" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="guard_start"/>
+      <Sequence ani="guard_end"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_tackle" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="tackle"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_mf_beaten" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_BT1"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_mf_beaten_front" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_BT1"/>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_mf_beaten_back" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_BT2">
+        <PostTrigger if="Dead" then="ChangeMotion" param1="npc_die" />
+      </Sequence>
+    </Default>
+  </MOTION>
+
+  <MOTION name="npc_mf_knockback" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_KB1"/>
+      <Sequence ani="MF_KB2" event="mf_kb_event" >
+         <PostTrigger if="Dead" then="ChangeMotion" param1="npc_die" />
+      </Sequence>
+      <Sequence ani="MF_KB3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="npc_mf_deflect" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_DT"/>
+    </Default>
+  </MOTION>
+  <MOTION name="npc_mf_stagger" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_ST"/>
+    </Default>
+  </MOTION>
+  <MOTION name="npc_mf_throwup" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_TU1" event="mf_kb_event" />
+      <Sequence ani="MF_TU2">
+        <PostTrigger if="Dead" then="Hold"/>
+      </Sequence>
+      <Sequence ani="MF_KD3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="npc_mf_knockdown" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_KD1"/>
+      <Sequence ani="MF_KD2" event="mf_kd_event" />
+      <Sequence ani="MF_KD3"/>
+    </Default>
+  </MOTION>
+  <MOTION name="npc_mf_uppered" stance="all" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="MF_KB1" />
+    </Default>
+  </MOTION>
+  <MOTION name="npc_mf_stun2" stance="all" loop="false" cancelEnabled="true">
+    <Default>
+      <Sequence ani="sleep" event="mf_stun_event" />
+    </Default>
+  </MOTION>
+  <MOTION name="npc_mf_stun" stance="all" loop="false" cancelEnabled="true">
+    <Default>
+		<Sequence ani="MF_BT1" frameover="3600" />
+        <Sequence ani="sleep" event="mf_stun_event" />
+    </Default>
+  </MOTION>
+
+   <MOTION name="npc_sleep" stance="all" loop="true" cancelEnabled="true">
+    <Default>
+      <Sequence ani="sleep"/>
+    </Default>
+  </MOTION>
+    <!-- 강화성공-->
+	<MOTION name="enchant_success" stance="all" loop="false" cancelEnabled="true" weaponAni="false">
+		<Default>
+			<Sequence ani="none_ia_cheer"/>
+		</Default>
+	</MOTION>
+    <!-- 강화 실패 -->
+	<MOTION name="enchant_fail" stance="all" loop="false" cancelEnabled="true" weaponAni="false">
+		<Default>
+			<Sequence ani="none_ia_sigh"/>
+		</Default>
+	</MOTION>
+
+  <!-- test -->
+<!-- 
+	<MOTION name="npc_damaged_special" type="once">
+		<Default>
+			<Sequence ani="special_damage"/>
+		</Default>
+	</MOTION>
+-->
+</maiet>

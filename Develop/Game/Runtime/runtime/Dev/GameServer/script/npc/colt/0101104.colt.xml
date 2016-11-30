@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 나무	
+210110401	#일반공격
+210110402	#강한공격
+210110403	#울부짖기
+210110404	#idle1
+210110405	#idle2
+210110406	#도발
+210110407	#해골던지기
+210110408	#발구르기
+210110409	#뿌리묶기
+-->
+
+<maiet>
+	<COLT name="오염된 나무" npcid="101104">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210110401" rate="50" desc="일반공격" />
+				<ACTION type="talent" param1="210110402" rate="25" desc="강한공격" />
+				<ACTION type="talent" param1="210110408" rate="25" desc="발구르기" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="70" >
+				<ACTION type="talent" param1="210110409" rate="10" desc="뿌리묶기" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" >
+				<CHECK type="hp" param1="60">
+					<ACTION type="talent" param1="210110401" rate="10" desc="일반공격" />
+					<ACTION type="talent" param1="210110407" rate="30" desc="해골던지기" />
+					<ACTION type="talent" param1="210110403" rate="10" desc="울부짖기" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="2" rate="50" />
+				<ACTION type="talent" param1="210110405" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>
+

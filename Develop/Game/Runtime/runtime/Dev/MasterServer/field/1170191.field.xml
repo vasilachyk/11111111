@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="117" minimap_name="map00117" loading_image_name="00117" min_x="-33650" min_y="-31970" max_x="31350" max_y="33030" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_dungeon_underpass">
+            <ENVBGM dungeonbgm="amb_dungeon_3" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="20004" group="0" name="연출뒤 몬스터" x="1213.676514" y="-12014.709961" z="-104.395508" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,128">
+            <NPC id="117510" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="20009" group="0" name="연출뒤 몬스터" x="1017.369263" y="-11774.022461" z="-148.000656" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,128">
+            <NPC id="117511" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30000" group="0" name="이펙트생성용" x="479.841919" y="-12022.243164" z="-137.490784" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30001" group="0" name="이펙트생성용" x="885.063477" y="-11570.897461" z="-136.174133" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30002" group="0" name="이펙트생성용" x="1457.584961" y="-11861.690430" z="-138.197998" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30003" group="0" name="이펙트생성용" x="741.192871" y="-12238.172852" z="-137.835938" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30004" group="0" name="이펙트생성용" x="619.799011" y="-11580.595703" z="-110.172729" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30005" group="0" name="이펙트생성용" x="1206.143799" y="-12201.991211" z="-53.643250" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30006" group="0" name="이펙트생성용" x="1186.698730" y="-11515.549805" z="-127.618652" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30100" group="0" name="이펙트생성용" x="881.173401" y="-11914.382813" z="-148.000687" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="30101" group="0" name="이펙트생성용" x="2802.077637" y="-11818.531250" z="-148.000687" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="0,255,255">
+            <NPC id="117239" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="117226" group="0" name="NPC 117226오염된 물" x="1471.566040" y="-6979.268555" z="-898.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117226" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="117227" group="0" name="NPC 117227 오염된 물질" x="-1016.351746" y="-5200.803711" z="691.042542" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117227" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="117246" group="0" name="NPC 117246 궁중연금술사 보조" x="137.735901" y="-7871.319824" z="112.040573" dir_x="-0.951057" dir_y="-0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="1" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117246" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="117247" group="0" name="NPC 117247 궁중연금술사 보조" x="-74.160103" y="-7873.046387" z="112.040710" dir_x="0.978148" dir_y="0.207912" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="1" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117247" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="117501" group="0" name="정보원 레이디" x="1382.839722" y="-12256.760742" z="-148.000732" dir_x="0.292371" dir_y="-0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="117501" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="117502" group="0" name="마리니" x="956.399292" y="-11988.290039" z="-131.754944" dir_x="0.241922" dir_y="-0.970296" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117502" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="1175010" group="0" name="정보원 레이디" x="1112.581543" y="-12045.813477" z="-148.000671" dir_x="0.838671" dir_y="-0.544639" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="10" combat_radius="1000" color="auto">
+            <NPC id="117503" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11724300" group="0" name="투명벽" x="1540.485229" y="821.161743" z="-148.000641" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117243" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11724301" group="0" name="투명벽" x="-1601.683716" y="807.667114" z="-148.000137" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117243" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11724302" group="0" name="투명벽" x="3096.504639" y="-11768.093750" z="-148.000656" dir_x="-1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117243" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731010" group="0" name="DECO 117310 지하수로 지친병사1" x="-2809.072266" y="-11704.183594" z="-148.000137" dir_x="0.994522" dir_y="-0.104528" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731011" group="0" name="DECO 117310 지하수로 지친병사1" x="-2402.411621" y="-12318.497070" z="-148.000137" dir_x="-0.342020" dir_y="0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731013" group="0" name="DECO 117310 지하수로 지친병사1" x="2558.738281" y="-3852.683350" z="-898.000244" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731014" group="0" name="DECO 117310 지하수로 지친병사1" x="2138.736572" y="-4505.252441" z="-898.000183" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731015" group="0" name="DECO 117310 지하수로 지친병사1" x="-1535.117188" y="1783.865967" z="-148.000137" dir_x="-0.190809" dir_y="-0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731016" group="0" name="DECO 117310 지하수로 지친병사1" x="-2156.409912" y="1836.453857" z="-148.000137" dir_x="0.156435" dir_y="-0.987688" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731017" group="0" name="DECO 117310 지하수로 지친병사1" x="-2509.243652" y="-6911.348633" z="-898.000061" dir_x="0.987688" dir_y="0.156435" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731018" group="0" name="DECO 117310 지하수로 지친병사1" x="-2560.455078" y="-4276.899414" z="-898.000122" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117310" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731100" group="0" name="DECO 117311 지하수로 지친병사2" x="9616.464844" y="11774.763672" z="-139.667007" dir_x="-0.156435" dir_y="0.987688" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117311" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731105" group="0" name="DECO 117311 지하수로 지친병사2" x="2413.948242" y="-4109.038574" z="-898.000183" dir_x="-0.882948" dir_y="-0.469472" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117311" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731106" group="0" name="DECO 117311 지하수로 지친병사2" x="2106.171631" y="-4751.532227" z="-898.000122" dir_x="-0.882948" dir_y="-0.469472" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117311" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731108" group="0" name="DECO 117311 지하수로 지친병사2" x="-2783.771973" y="-11968.477539" z="-148.000137" dir_x="0.961262" dir_y="0.275637" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117311" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11731109" group="0" name="DECO 117311 지하수로 지친병사2" x="-2019.876587" y="-12294.289063" z="-148.000137" dir_x="0.034899" dir_y="0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117311" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734000" group="0" name="DECO 117340 지하수로 검사원1" x="-715.583923" y="-4102.210938" z="-897.999878" dir_x="0.809017" dir_y="0.587785" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117340" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734001" group="0" name="DECO 117340 지하수로 검사원1" x="1690.817627" y="-1083.963257" z="-898.000305" dir_x="-0.838671" dir_y="-0.544639" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117340" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734002" group="0" name="DECO 117340 지하수로 검사원1" x="-1403.615723" y="-759.685547" z="-897.999878" dir_x="0.656059" dir_y="-0.754709" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117340" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734003" group="0" name="DECO 117340 지하수로 검사원1" x="1914.167358" y="-8435.759766" z="-898.000244" dir_x="-0.945519" dir_y="-0.325568" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117340" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734004" group="0" name="DECO 117340 지하수로 검사원1" x="-1940.343872" y="-8225.091797" z="-898.000000" dir_x="0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117340" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734005" group="0" name="DECO 117340 지하수로 검사원1" x="-917.596375" y="-10030.125977" z="-897.999939" dir_x="0.544639" dir_y="0.838670" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117340" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734006" group="0" name="DECO 117340 지하수로 검사원1" x="1021.655518" y="-9990.234375" z="-898.000305" dir_x="-0.469471" dir_y="0.882948" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117340" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11734300" group="0" name="DECO 117343 지하수로 순찰하는검사원2" x="-2188.383301" y="-3346.605957" z="-898.000000" dir_x="0.469471" dir_y="0.882948" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117343" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11736000" group="0" name="연출 마리니연출 철창살닫는 감시병" x="3167.926270" y="-11981.939453" z="-148.000488" dir_x="-0.990268" dir_y="0.139172" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117360" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11737000" group="0" name="이펙트용 투명 NPC" x="2571.217041" y="-13968.931641" z="-147.000687" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117370" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="11750400" group="0" name="연출 죽는 감시병" x="1893.709717" y="-3359.407227" z="-898.000183" dir_x="0.743145" dir_y="-0.669131" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="10" combat_radius="0" color="auto">
+            <NPC id="117504" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="50121200" group="0" name="감옥 창살" x="2987.088135" y="-11862.066406" z="-144.552109" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="501212" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="from 지하수로" x="2303.611328" y="-2636.717041" z="-898.000488" dir_x="0.156434" dir_y="-0.987688" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11000" name="감시병이동마커" x="1801.138916" y="-5162.289063" z="-881.598206" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11001" name="감시병이동마커" x="1802.428467" y="-6741.721680" z="-898.000183" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11002" name="감시병이동마커" x="2185.336914" y="-7848.242676" z="-898.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11003" name="감시병이동마커" x="2288.886719" y="-9335.309570" z="-898.000427" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11004" name="감시병이동마커" x="1091.578979" y="-10286.378906" z="-898.000366" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11005" name="감시병이동마커" x="-605.252686" y="-10194.120117" z="-898.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11006" name="감시병이동마커" x="-2188.279785" y="-9900.396484" z="-898.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11007" name="감시병이동마커" x="-2673.367676" y="-10188.033203" z="-884.756470" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11008" name="감시병이동마커" x="-2363.087402" y="-11847.761719" z="-148.000137" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11009" name="감시병이동마커" x="1054.895020" y="-11967.432617" z="-148.000702" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="117501" name="MON_M 117501 정보원 레이디" x="1025.384521" y="-12040.015625" z="-116.994080" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11750100" name="연출용 레이디도망치는마커" x="2846.772949" y="-11835.996094" z="-147.000641" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11750101" name="순간이동레이디마커" x="897.737793" y="-11924.005859" z="-148.000687" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="100" name="to 지하수로" x="2461.400879" y="1026.331665" z="-148.000488" radius="500.000000" enabled="false">
+            <EFFECT effect="ZoneLine" x="49.424072" y="-399.931335" z="-213.138855" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.200000" scale_y="1.000000" scale_z="1.200000" />
+            <WARP warp_type="field" title="to 지하수로" condition="0" gate_type="auto" field="117" marker="3" />
+        </SENSOR>
+        <SENSOR id="101" name="to 지하수로" x="-2492.799561" y="1023.319336" z="-148.000137" radius="500.000000" enabled="false">
+            <EFFECT effect="ZoneLine" x="19.769287" y="-403.873077" z="-307.616455" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.200000" scale_y="1.000000" scale_z="1.200000" />
+            <WARP warp_type="field" title="to 지하수로" condition="0" gate_type="auto" field="117" marker="3" />
+        </SENSOR>
+        <SENSOR id="110" name="경비병소환센서" local="false" x="2192.565430" y="-3232.313721" z="-897.000183" radius="500.000000" enabled="true" checkpoint="11008" groupname="none" />
+        <SENSOR id="111" name="감시병이마리니찾아보는센서1" local="false" x="2261.139893" y="-9522.683594" z="-897.000427" radius="800.000000" enabled="false" groupname="none" />
+        <SENSOR id="113" name="감시병이마리니찾아보는센서2" local="false" x="-2128.083740" y="-9830.889648" z="-898.000000" radius="800.000000" enabled="false" groupname="none" />
+        <SENSOR id="200" name="이벤트 센서" local="false" x="1389.003906" y="-12325.957031" z="-148.000748" radius="200.000000" enabled="false" groupname="none" />
+        <SENSOR id="201" name="이벤트 센서" local="false" x="964.426880" y="-11992.752930" z="-72.661560" radius="100.000000" enabled="false" groupname="none" />
+        <SENSOR id="299" name="마리니스폰용" local="false" x="1279.527832" y="-11941.035156" z="-148.000702" radius="500.000000" enabled="false" groupname="none" />
+        <SENSOR id="300" name="감시병이마리니찾은센서" local="false" x="1279.154541" y="-11980.058594" z="-148.000671" radius="700.000000" enabled="true" groupname="none" />
+        <SENSOR id="400" name="몬스터수량체크용센서" local="false" x="991.181519" y="-12118.092773" z="-148.000137" radius="800.000000" enabled="false" groupname="none" />
+        <SENSOR id="500" name="공용필드가는센서" x="3033.275635" y="-11833.597656" z="-148.000488" radius="300.000000" enabled="false" exit="3">
+            <EFFECT effect="sensor_trial_02" x="-40.874512" y="0.000000" z="0.000000" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="to지하수로" condition="0" gate_type="auto" field="117" marker="3" />
+        </SENSOR>
+        <SENSOR id="25234" name="부활지점" local="false" x="2314.268311" y="-2637.607666" z="-898.000305" radius="100.000000" enabled="true" checkpoint="1" groupname="none" />
+    </FIELDINFO>
+</maiet>

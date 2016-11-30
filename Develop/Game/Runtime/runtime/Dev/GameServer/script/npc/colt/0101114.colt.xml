@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 호수 방패게	
+210111400	idle2
+210111401	앞발공격(atk3)
+210111402	회전공격(atk1)
+210111403	거품공격(breath_fire1)
+210111404	대쉬공격(atk2)
+-->
+<maiet>
+	<COLT name="오염된 호수 방패게" npcid="101114">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210111401" rate="15" desc="앞발공격" />
+				<ACTION type="talent" param1="210111402" rate="15" desc="회전공격" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210111400" rate="20" desc="idle2" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

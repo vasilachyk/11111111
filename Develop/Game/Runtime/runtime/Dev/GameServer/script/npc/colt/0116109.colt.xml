@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="코볼트 마법사 - 아란바스 화산지대">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211610901" rate="70" />
+			</DEFAULT>
+			
+			<!-- 거리 벌리기 -->
+			<!--<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="flee" param1="from_enemy" duration="3" cycle="60" />
+			</CHECK>-->
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="5"/>
+				<ACTION type="talent" param1="211610902" rate="30"/>
+				<ACTION type="talent" param1="211610904" rate="30"/>				
+				<ACTION type="lua" param1="SideStep" rate="20" cycle="10"/>
+				<!--
+				<ACTION type="group" rate="70" cycle="5">
+					<ACTION type="talent" param1="211610902"/>
+					<ACTION type="talent" param1="211610903"/>
+					<ACTION type="talent" param1="211610903"/>
+				</ACTION>
+				-->
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

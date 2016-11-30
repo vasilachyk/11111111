@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 인간형 한손둔기 기본, 방패	
+211714001	1타
+211714002	2연타
+211714003	3연타
+211714004	강한공격(삭제중)
+211714005	찌르기
+211714006	모드0전환(칼뽑기)
+211714007	모드1전환(칼넣기)
+211714008	회피L
+211714009	회피R
+211714010	반격(삭제중)
+211714011	역습 포커스
+211714012	강격
+211714013	충격 반사
+211714014	보루
+211714015	파멸의 일격
+211714016	방패 가격: 기절
+211714017	돌진
+211714018	방어
+211714019	빛의 구(마법)
+-->
+<maiet>
+	<COLT name="베스피오단 수호사제(남자)" npcid="117136">
+		<COMBAT victory="211714007">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211714001" rate="10" desc="1타" />
+				<ACTION type="talent" param1="211714002" rate="30" desc="2연타" />
+				<ACTION type="talent" param1="211714003" rate="10" desc="3연타" />
+				<ACTION type="talent" param1="211714019" rate="10" desc="빛의 구(마법)" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="50">
+				<CHECK type="distance" param2="350">
+					<ACTION type="talent" param1="211714012" rate="20" desc="강격" />
+					<ACTION type="guard" param1="211714018" param2="2" rate="20" desc="방어" cycle="15" />
+				</CHECK>
+				<ACTION type="talent" param1="211714017" rate="20" desc="돌진" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="350" >
+				<ACTION type="talent" param1="211714002" rate="10" desc="2연타" cycle="10" />
+				<ACTION type="talent" param1="211714003" rate="10" desc="3연타" />
+				<ACTION type="talent" param1="211714005" rate="35" desc="찌르기" cycle="15" />
+				<ACTION type="talent" param1="211714019" rate="60" desc="빛의 구(마법)" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211714006" rate="100" desc="모드0전환(칼뽑기)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

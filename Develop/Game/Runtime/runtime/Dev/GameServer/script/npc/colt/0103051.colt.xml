@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="쿠우 친위대" npcid="103051">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1.5" cycle="6" rate="35" />
+				<ACTION type="nothing" param1="1.5" cycle="6" rate="35" />
+				<ACTION type="talent" param1="210305110" rate="30" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT>
+	<![CDATA[ 
+	
+function NPC_103051:OnSpawn( Info )
+	--this:Wait(2)
+end
+
+	]]>
+	</SCRIPT>
+</maiet>

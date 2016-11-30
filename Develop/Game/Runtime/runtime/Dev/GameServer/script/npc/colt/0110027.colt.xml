@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="렌고트 부족 수석광부">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="20" />
+
+				<ACTION type="talent" param1="211002701" rate="25" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="211002702" rate="25" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="211002703" rate="15" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="211002704" rate="15" cycle="5" /> <!-- 강타공격 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="0.5" rate="30" />
+
+				<ACTION type="talent" param1="211002701" rate="5" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="211002702" rate="5" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="211002703" rate="5" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="211002704" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="2"/>
+				<ACTION type="talent" param1="211002706" rate="8"/>
+				<ACTION type="nothing" param1="1" rate="90"/>
+			</DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

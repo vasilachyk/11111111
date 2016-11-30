@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="떠다니는 부유체">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="250810810" rate="10" />
+				<ACTION type="talent" param1="250810811" rate="10" />
+				<ACTION type="talent" param1="250810812" rate="10" max_count="1"/>
+			</DEFAULT>			
+		</COMBAT>
+		<!--
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810800" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+		-->
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

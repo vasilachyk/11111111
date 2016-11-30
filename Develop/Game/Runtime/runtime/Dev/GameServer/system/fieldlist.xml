@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <FIELDLIST>
+        <!-- ridable: 탈 수 있는지 여부 transformable: 변신할 수 있는지 여부 -->
+        <!-- *********************** 도시 *********************** -->
+        <FIELD id="3" name="인젠 자유항" default_channel="1" show_map="true" validation="true" ailod_enable="false" level="7" />
+        <FIELD id="1" name="리츠" default_channel="1" show_map="true" validation="true" level="30" />
+        <!-- *********************** 기본필드 *********************** -->
+        <FIELD id="103" name="코웬 늪지대" default_channel="1" capacity="100" show_map="false" validation="true" level="36,40" />
+        <FIELD id="103001" name="검은 늪 전장" default_channel="1" capacity="60" show_map="false" ridable_in_pvp="false" transformable="true" validation="true" level="39,40" />
+        <FIELD id="1030350" name="악몽의 굴" default_channel="1" validation="true" show_map="false" ridable="false" />
+        <FIELD id="109" name="부러진 돛대" default_channel="1" capacity="40" show_map="true" validation="true" level="1,4" />
+        <FIELD id="109001" name="위기의 부러진 돛대" default_channel="1" capacity="40" show_map="true" validation="true" level="5,7" />
+        <FIELD id="109002" name="나투라 지하 유적" default_channel="1" capacity="10" show_map="true" validation="true" ridable="false" />
+        <FIELD id="109003" name="튜토리얼" default_channel="1" capacity="10" show_map="false" validation="true" ridable="false" />
+        <FIELD id="107" name="테레스 평원" default_channel="1" capacity="120" show_map="true" validation="true" ailod_enable="false" level="8,12" />
+        <FIELD id="110" name="렌고트 부락" default_channel="1" capacity="70" show_map="true" validation="true" level="13,15" />
+        <FIELD id="113" name="영웅의 오솔길" default_channel="1" capacity="120" show_map="true" validation="true" level="16,20" />
+        <FIELD id="102" name="에다산" default_channel="1" capacity="60" show_map="true" ridable_in_pvp="true" validation="true" level="21,23" />
+        <FIELD id="102001" name="에다산 성지" default_channel="1" capacity="50" show_map="false" ridable_in_pvp="false" validation="true" transformable="true" level="33,35" />
+        <FIELD id="102002" name="에다산 전장" default_channel="1" capacity="60" show_map="true" ridable_in_pvp="true" validation="true" level="21,31" />
+        <FIELD id="111" name="마코트 부락" file="0111" default_channel="1" capacity="70" show_map="true" validation="true" ridable="false" level="24,26" />
+        <FIELD id="101" name="리오드" default_channel="1" capacity="120" show_map="true" validation="true" level="27,29" />
+		<!--XZYD_JJB_BEGIN ORI->ridable="false" -->
+        <FIELD id="117" name="리츠 지하수로" default_channel="1" capacity="70" show_map="true" validation="true" ridable="true" level="30,33" />
+		<!--XZYD_JJB_END-->
+        <FIELD id="118" name="침묵의 장벽" default_channel="1" capacity="60" show_map="true" validation="true" level="34,35" />
+        <FIELD id="119" name="부서진 침묵의 장벽" default_channel="1" capacity="60" show_map="false" validation="true" level="35,36" />
+        <FIELD id="190" name="브룬의 영광" default_channel="1" show_map="false" validation="true" ridable="true" transformable="true" suicidable = "false" />
+		<FIELD id="191" name="PVP이벤트투기장" default_channel="1" show_map="false" validation="false" ridable="false" transformable="false" suicidable = "false" item_usable_in_combat="false" />
+		
+		<!--XZYD_JJB_BEGIN-->
+		<!--<FIELD id="105" name="리모스사막" default_channel="1" validation="true" show_map="true" level="40,50" />-->
+		
+		<FIELD id="116" name="아란바스 화산지대" default_channel="1" validation="true" show_map="true" level="40,50" />
+		<FIELD id="116001" name="침식동" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116002" name="침식동" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116003" name="아레크 둥지" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116004" name="아레크 둥지" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116005" name="아레크 둥지" default_channel="1" validation="false" show_map="false" />
+		
+		<!--<FIELD id="104" name="린덴 언덕" default_channel="1" validation="true" show_map="true" level="40,50" />-->
+		<!--XZYD_JJB_END-->
+
+        <!-- 퀘스트가 없을때 들어가게 되는 공용 동굴 -->
+        <FIELD id="1070130" name="검은바위 동굴" default_channel="1" validation="true" show_map="false" ridable="false" />
+        <FIELD id="1070460" name="타리비의 동굴" validation="true" ridable="false" />
+        <FIELD id="1090160" name="모켄의 동굴" validation="true" ridable="false" />
+        <FIELD id="113002" name="베스피오단 은신처" default_channel="1" validation="true" ridable="false" />
+        <!-- *********************** 여관 *********************** -->
+        <FIELDGROUP id="30291" start_field="30291" start_marker="1">
+            <FIELD id="30291" name="보통 여관 방" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30292" start_field="30292" start_marker="1">
+            <FIELD id="30292" name="기본 여관 방" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30293" start_field="30293" start_marker="1">
+            <FIELD id="30293" name="베이직 여관 방" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30294" start_field="30294" start_marker="1">
+            <FIELD id="30294" name="스토리지 여관 방" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30295" start_field="30295" start_marker="1">
+            <FIELD id="30295" name="스튜어드 여관 방" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30296" start_field="30296" start_marker="1">
+            <FIELD id="30296" name="프리미엄 여관 방" ridable="false" />
+        </FIELDGROUP>
+        <!-- *********************** 트라이얼 필드 *********************** -->
+        <FIELDGROUP id="30300" start_field="30301" start_marker="1">
+            <FIELD id="30301" name="할로윈 이벤트" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30310" start_field="30311" start_marker="1">
+            <FIELD id="30311" name="할로윈 이벤트" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30320" start_field="30321" start_marker="1">
+            <FIELD id="30321" name="할로윈 이벤트" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30330" start_field="30331" start_marker="1">
+            <FIELD id="30331" name="할로윈 이벤트" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30350" start_field="30351" start_marker="1">
+            <FIELD id="30351" name="크리스마스 이벤트" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30360" start_field="30361" start_marker="1">
+            <FIELD id="30361" name="크리스마스 이벤트" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="30370" start_field="30371" start_marker="1">
+            <FIELD id="30371" name="크리스마스 이벤트" ridable="false" />
+        </FIELDGROUP>
+        <!-- *********************** 미용실 *********************** -->
+        <FIELDGROUP id="33021" start_field="33021" start_marker="1">
+            <FIELD id="33021" name="미용실" ridable="false" />
+        </FIELDGROUP>
+        <!-- *********************** 인스턴스 *********************** -->
+        <FIELDGROUP id="1170580" start_field="1170581" start_marker="1">
+            <FIELD id="1170581" name="베스피오단 창고" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1170190" start_field="1170191" start_marker="1">
+            <FIELD id="1170191" name="지하수로 중앙부" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1010320" start_field="1010321" start_marker="1">
+            <FIELD id="1010321" name="지그니프 발견" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1010670" start_field="1010671" start_marker="1">
+            <FIELD id="1010671" name="지그니프 발견" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1010790" start_field="1010791" start_marker="1">
+            <FIELD id="1010791" name="템푸스 호수" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="50010" start_field="50012" start_marker="1">
+            <FIELD id="50012" name="브룬의 영광" ridable="false" transformable="false" suicidable = "false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1020200" start_field="1020201" start_marker="1">
+            <FIELD id="1020201" name="에다산 어딘가..." show_map="false" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1020420" start_field="1020421" start_marker="1">
+            <FIELD id="1020421" name="샤디즈 출몰지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1030010" start_field="1030011" start_marker="1">
+            <FIELD id="1030011" name="코웬 늪지대" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1030040" start_field="1030041" start_marker="1">
+            <FIELD id="1030041" name="봉봉의 마을" ridable="false" />
+            <FIELD id="1030042" name="봉봉의 마을" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1030210" start_field="1030211" start_marker="1">
+            <FIELD id="1030211" name="???" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1030220" start_field="1030221" start_marker="1">
+            <FIELD id="1030221" name="레나스 신전" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1030470" start_field="1030471" start_marker="1">
+            <FIELD id="1030471" name="여왕의 둥지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1030480" start_field="1030481" start_marker="1">
+            <FIELD id="1030481" name="고립된 마법사단" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1031160" start_field="1031161" start_marker="1">
+            <FIELD id="1031161" name="볼락의 영지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070130" start_field="1070131" start_marker="1">
+            <FIELD id="1070131" name="검은바위 동굴" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070160" start_field="1070161" start_marker="1">
+            <FIELD id="1070161" name="브로드테일 창고" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070460" start_field="1070461" start_marker="1">
+            <FIELD id="1070461" name="타리비의 동굴" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070530" start_field="1070531" start_marker="1">
+            <FIELD id="1070531" name="플릿풋의 우리" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070540" start_field="1070541" start_marker="1">
+            <FIELD id="1070541" name="닷소의 집" ridable="false" />
+            <FIELD id="1070542" name="닷소의 집 지하실" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070870" start_field="1070871" start_marker="1">
+            <FIELD id="1070871" name="고요한 수풀" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1070980" start_field="1070981" start_marker="1">
+            <FIELD id="1070981" name="테레시스 출몰지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1091030" start_field="1091031" start_marker="1">
+            <FIELD id="1091031" name="모켄의 은신처" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1091040" start_field="1091041" start_marker="1">
+            <FIELD id="1091041" name="결사의 방어" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1090640" start_field="1090641" start_marker="1">
+            <FIELD id="1090641" name="전장[튜토리얼]" show_map="false" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1100000" start_field="1100001" start_marker="1">
+            <FIELD id="1100001" name="전투 지원" ailod_enable="false" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1100180" start_field="1100181" start_marker="1">
+            <FIELD id="1100181" name="사냥꾼 요오마의 영역" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1100300" start_field="1100301" start_marker="1">
+            <FIELD id="1100301" name="렌고트 고블린 성소" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="113001" start_field="113001" start_marker="1">
+            <FIELD id="113001" name="베스피오단 은신처" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1110330" start_field="1110331" start_marker="1">
+            <FIELD id="1110331" name="르왕키의 왕좌" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1170810" start_field="1170811" start_marker="1">
+            <FIELD id="1170811" name="타일런트 좀비 출몰지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1180080" start_field="1180081" start_marker="1">
+            <FIELD id="1180081" name="침묵의 장벽" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1180140" start_field="1180141" start_marker="1">
+            <FIELD id="1180141" name="침묵의 장벽" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="1180200" start_field="1180202" start_marker="1">
+            <FIELD id="1180202" name="볼라스의 습격" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="9920100" start_field="9920101" start_marker="1">
+            <FIELD id="9920101" name="공동묘지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="9920130" start_field="9920131" start_marker="1">
+            <FIELD id="9920131" name="도나우 호수" ridable="false" />
+        </FIELDGROUP>
+        <!--- 키메라 반복퀘는 스크립트 처리를 위해 다른 필드를 사용함-->
+        <FIELDGROUP id="1180110" start_field="1180111" start_marker="1">
+            <FIELD id="1180111" name="부서진 침묵의 장벽" ridable="false" />
+        </FIELDGROUP>
+        <!--- 반복퀘도 동일한 트라이얼필드를 사용함-->
+        <FIELDGROUP id="1170670" start_field="1170671" start_marker="1">
+            <FIELD id="1170671" name="폴루토의 서식지" ridable="false" />
+        </FIELDGROUP>
+        <!--- 반복퀘도 동일한 트라이얼필드를 사용함-->
+        <FIELDGROUP id="1170680" start_field="1170681" start_marker="1">
+            <FIELD id="1170681" name="펑거스의 서식지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1131580" start_field="1131581" start_marker="1">
+            <FIELD id="1131581" name="고스트 라이더의 습격" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="1131590" start_field="1131591" start_marker="1">
+            <FIELD id="1131591" name="다시 나타난 고스트 라이더" ridable="false" />
+        </FIELDGROUP>
+        <!-- *********************** 인스턴스 던젼 *********************** -->
+        <FIELDGROUP id="121" start_field="121001" start_marker="1">
+            <FIELD id="121001" name="오염된 화원" ridable="false" />
+            <FIELD id="121002" name="오염된 화원 중앙정원" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="512" start_field="512001" start_marker="1">
+            <FIELD id="512001" name="저주받은 납골당" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="501" start_field="501001" start_marker="1">
+            <FIELD id="501001" name="성 파넬 수도원" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="508" start_field="508001" start_marker="1">
+            <FIELD id="508001" name="레나스 신전" ridable="false" />
+        </FIELDGROUP>
+        <!-- *********************** 인스턴스 던젼 (에픽) ***********************  -->
+        <!-- 레벨 35 -->
+        <FIELDGROUP id="121100" start_field="121101" start_marker="1">
+            <FIELD id="121101" name="에픽 던전 오염된 화원" ridable="false" />
+            <FIELD id="121102" name="에픽 던전 오염된 화원 중앙정원" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="512100" start_field="512101" start_marker="1">
+            <FIELD id="512101" name="에픽 던전 저주받은 납골당" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="501100" start_field="501101" start_marker="1">
+            <FIELD id="501101" name="에픽 던전 성 파넬 수도원" ridable="false" />
+        </FIELDGROUP>
+        <!-- 레벨 30 -->
+        <FIELDGROUP id="701" start_field="701001" start_marker="1">
+            <FIELD id="701001" name="에픽 던전 오염된 화원" ridable="false" />
+            <FIELD id="701002" name="에픽 던전 오염된 화원 중앙정원" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="702" start_field="702001" start_marker="1">
+            <FIELD id="702001" name="에픽 던전 저주받은 납골당" ridable="false" />
+        </FIELDGROUP>
+        <!-- 레벨 35
+		<FIELDGROUP id="703" start_field="703001" start_marker="1">
+            <FIELD id="703001" name="오염된 화원" ridable="false" />
+            <FIELD id="703002" name="오염된 화원 중앙정원" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="704" start_field="704001" start_marker="1">
+            <FIELD id="704001" name="저주받은 납골당" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="705" start_field="705001" start_marker="1">
+			<FIELD id="705001" name="성 파넬 수도원" ridable="false" />
+		</FIELDGROUP>
+		-->
+        <!-- 레벨 40 -->
+        <FIELDGROUP id="706" start_field="706001" start_marker="1">
+            <FIELD id="706001" name="황혼의 화원" ridable="false" />
+            <FIELD id="706002" name="황혼의 화원 중앙정원" ridable="false" />
+        </FIELDGROUP>
+        <!--
+        <FIELDGROUP id="707" start_field="708001" start_marker="1">
+            <FIELD id="702001" name="저주받은 납골당" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="708" start_field="709001" start_marker="1">
+			<FIELD id="703001" name="성 파넬 수도원" ridable="false" />
+		</FIELDGROUP>
+		-->
+        <FIELDGROUP id="709" start_field="709001" start_marker="1">
+            <FIELD id="709001" name="에픽 던전 레나스 신전" ridable="false" />
+        </FIELDGROUP>
+        <!-- 710 검은 늪 전장 -->
+        <!-- *********************** NEW 도전 퀘스트 *********************** -->
+        <FIELDGROUP id="601001" start_field="601001" start_marker="1">
+            <FIELD id="601001" name="늑대 우두머리 사냥" ridable="false" />
+            <!-- 플릿풋 퇴치 -->
+        </FIELDGROUP>
+        <FIELDGROUP id="601101" start_field="601101" start_marker="1">
+            <FIELD id="601101" name="늑대 우두머리 사냥[파티]" ridable="false" />
+        </FIELDGROUP>
+        <!--
+		<FIELDGROUP id="601201" start_field="601201" start_marker="1">
+            <FIELD id="601201" name="플릿풋 두마리 퇴치" ridable="false" />
+        </FIELDGROUP>
+		-->
+        <FIELDGROUP id="602001" start_field="602001" start_marker="1">
+            <FIELD id="602001" name="최종병기 골렘" ridable="false" />
+            <!-- 고블린골렘 퇴치 -->
+        </FIELDGROUP>
+        <FIELDGROUP id="602101" start_field="602101" start_marker="1">
+            <FIELD id="602101" name="최종병기 골렘[파티]" ridable="false" />
+        </FIELDGROUP>
+        <!--
+		<FIELDGROUP id="602201" start_field="602201" start_marker="1">
+            <FIELD id="602201" name="고블린골렘 두마리 퇴치" ridable="false" />
+        </FIELDGROUP>
+		-->
+        <FIELDGROUP id="603001" start_field="603001" start_marker="1">
+            <FIELD id="603001" name="눈 속의 괴물" ridable="false" />
+            <!-- 디아고 퇴치 -->
+        </FIELDGROUP>
+        <FIELDGROUP id="603101" start_field="603101" start_marker="1">
+            <FIELD id="603101" name="눈 속의 괴물[파티]" ridable="false" />
+        </FIELDGROUP>
+        <!-- 
+		<FIELDGROUP id="603201" start_field="603201" start_marker="1">
+            <FIELD id="603201" name="디아고 트랩설치" ridable="false" />
+        </FIELDGROUP>
+		-->
+        <FIELDGROUP id="604001" start_field="604001" start_marker="1">
+            <FIELD id="604001" name="숲 속의 식인거미" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="604101" start_field="604101" start_marker="1">
+            <FIELD id="604101" name="숲 속의 식인거미[파티]" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="605001" start_field="605001" start_marker="1">
+            <FIELD id="605001" name="호밀밭 난동꾼" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="605101" start_field="605101" start_marker="1">
+            <FIELD id="605101" name="호밀밭 난동꾼[파티]" ridable="false" />
+        </FIELDGROUP>
+        <!-- 2012년 겨울 업데이트 -->
+        <FIELDGROUP id="606301" start_field="606301" start_marker="1">
+            <FIELD id="606301" name="생물 연구" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="606401" start_field="606401" start_marker="1">
+            <FIELD id="606401" name="[파티]생물 연구" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="606501" start_field="606501" start_marker="1">
+            <FIELD id="606501" name="벌레 요리" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="606601" start_field="606601" start_marker="1">
+            <FIELD id="606601" name="[파티]벌레 요리" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="606701" start_field="606701" start_marker="1">
+            <FIELD id="606701" name="[파티]밤정령 작전" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="606801" start_field="606801" start_marker="1">
+            <FIELD id="606801" name="비밀 연구" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="606901" start_field="606901" start_marker="1">
+            <FIELD id="606901" name="[파티]비밀 연구" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607001" start_field="607001" start_marker="1">
+            <FIELD id="607001" name="사랑의 최후" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607101" start_field="607101" start_marker="1">
+            <FIELD id="607101" name="[파티]사랑의 최후" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607201" start_field="607201" start_marker="1">
+            <FIELD id="607201" name="[파티]보물을 찾아서" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607301" start_field="607301" start_marker="1">
+            <FIELD id="607301" name="운송 지연" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607401" start_field="607401" start_marker="1">
+            <FIELD id="607401" name="[파티]운송 지연" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607501" start_field="607501" start_marker="1">
+            <FIELD id="607501" name="현상수배 가르츠" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607601" start_field="607601" start_marker="1">
+            <FIELD id="607601" name="[파티]현상수배 가르츠" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607701" start_field="607701" start_marker="1">
+            <FIELD id="607701" name="보물사냥꾼과 도둑" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607801" start_field="607801" start_marker="1">
+            <FIELD id="607801" name="[파티]보물사냥꾼과 도둑" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="607901" start_field="607901" start_marker="1">
+            <FIELD id="607901" name="잠의 꽃" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608001" start_field="608001" start_marker="1">
+            <FIELD id="608001" name="[파티]잠의 꽃" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608101" start_field="608101" start_marker="1">
+            <FIELD id="608101" name="사냥꾼의 자랑" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608201" start_field="608201" start_marker="1">
+            <FIELD id="608201" name="[파티]사냥꾼의 자랑" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608301" start_field="608301" start_marker="1">
+            <FIELD id="608301" name="방어구 제작" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608401" start_field="608401" start_marker="1">
+            <FIELD id="608401" name="[파티]방어구 제작" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608501" start_field="608501" start_marker="1">
+            <FIELD id="608501" name="환상적인 스프만들기" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608601" start_field="608601" start_marker="1">
+            <FIELD id="608601" name="[파티]환상적인 스프만들기" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608701" start_field="608701" start_marker="1">
+            <FIELD id="608701" name="늑대들" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608801" start_field="608801" start_marker="1">
+            <FIELD id="608801" name="현상수배 엘소디아" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="608901" start_field="608901" start_marker="1">
+            <FIELD id="608901" name="지하수로의 괴물" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="609201" start_field="609201" start_marker="1">
+            <FIELD id="609201" name="죄는 없다" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="609301" start_field="609301" start_marker="1">
+            <FIELD id="609301" name="[파티]죄는 없다" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610601" start_field="610601" start_marker="1">
+            <FIELD id="610601" name="불치병" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610701" start_field="610701" start_marker="1">
+            <FIELD id="610701" name="[파티]불치병" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="609601" start_field="609601" start_marker="1">
+            <FIELD id="609601" name="고급요리재료" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="609701" start_field="609701" start_marker="1">
+            <FIELD id="609701" name="[파티]고급요리재료" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="609801" start_field="609801" start_marker="1">
+            <FIELD id="609801" name="사냥꾼의 약점" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="609901" start_field="609901" start_marker="1">
+            <FIELD id="609901" name="[파티]사냥꾼의 약점" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610001" start_field="610001" start_marker="1">
+            <FIELD id="610001" name="실험에 대한 의지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610101" start_field="610101" start_marker="1">
+            <FIELD id="610101" name="[파티]실험에 대한 의지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610201" start_field="610201" start_marker="1">
+            <FIELD id="610201" name="화원개장 준비" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610301" start_field="610301" start_marker="1">
+            <FIELD id="610301" name="[파티]화원개장 준비" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610401" start_field="610401" start_marker="1">
+            <FIELD id="610401" name="분실 사고" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610501" start_field="610501" start_marker="1">
+            <FIELD id="610501" name="[파티]분실 사고" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="610801" start_field="610801" start_marker="1">
+            <FIELD id="610801" name="눈 속의 괴물" ridable="false" />
+            <!-- 디아고 퇴치 -->
+        </FIELDGROUP>
+        <!-- 일본 OBT 용 헬하운드 -->
+        <FIELDGROUP id="620001" start_field="620001" start_marker="1">
+            <FIELD id="620001" name="늑대 우두머리 사냥" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620101" start_field="620101" start_marker="1">
+            <FIELD id="620101" name="숲 속의 식인 거미" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620201" start_field="620201" start_marker="1">
+            <FIELD id="620201" name="최종병기 골렘" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620301" start_field="620301" start_marker="1">
+            <FIELD id="620301" name="호밀밭 난동꾼" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620401" start_field="620401" start_marker="1">
+            <FIELD id="620401" name="눈 속의 괴물" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620003" start_field="620003" start_marker="1">
+            <FIELD id="620003" name="[파티]늑대 우두머리 사냥" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620102" start_field="620102" start_marker="1">
+            <FIELD id="620102" name="[파티]숲 속의 식인 거미" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620202" start_field="620202" start_marker="1">
+            <FIELD id="620202" name="[파티]최종병기 골렘" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620302" start_field="620302" start_marker="1">
+            <FIELD id="620302" name="[파티]호밀밭 난동꾼" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="620402" start_field="620402" start_marker="1">
+            <FIELD id="620402" name="[파티]눈 속의 괴물" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1090020" start_field="1090021" start_marker="1">
+            <FIELD id="1090021" name="의문의 습격" ridable="false" />
+        </FIELDGROUP>
+		
+		<!-- 일본 헬하운드 2급 -->
+		<FIELDGROUP id="620501" start_field="620501" start_marker="1">
+            <FIELD id="620501" name="벌레 요리" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="620503" start_field="620503" start_marker="1">
+            <FIELD id="620503" name="[파티]벌레 요리" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="620601" start_field="620601" start_marker="1">
+            <FIELD id="620601" name="지하수로의 괴물" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="620701" start_field="620701" start_marker="1">
+            <FIELD id="620701" name="현상수배 엘소디아" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="620703" start_field="620703" start_marker="1">
+            <FIELD id="620703" name="[파티]불치병" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="620801" start_field="620801" start_marker="1">
+            <FIELD id="620801" name="[파티]죄는 없다" ridable="false" />
+        </FIELDGROUP>
+		<FIELDGROUP id="620901" start_field="620901" start_marker="1">
+            <FIELD id="620901" name="[파티]보물을 찾아서" ridable="false" />
+        </FIELDGROUP>
+		
+        <!-- *********************** 운영 지원 맵 *********************** -->
+        <FIELD id="9999" name="GM의 검은방" default_channel="1" validation="true" show_map="false" ridable="false" />
+        <!-- *********************** PvP 투기장 *********************** -->
+        <FIELDGROUP id="9990" start_field="9991" start_marker="1">
+            <FIELD id="9991" name="브룬의 영광" ridable="false" transformable="false" suicidable = "false" />
+        </FIELDGROUP>
+        <FIELD id="8020" name="MovieTown" default_channel="1" show_map="true" validation="false" />
+		<!--XZYD_JJB_BEGIN-->
+		<FIELDGROUP id="1160090" start_field="1160091" start_marker="1">
+            <FIELD id="1160091" name="아란바스의 폭군" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160200" start_field="1160201" start_marker="1">
+            <FIELD id="1160201" name="침식동" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160210" start_field="1160211" start_marker="1">
+            <FIELD id="1160211" name="불의 정령과의 회담" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160300" start_field="1160301" start_marker="1">
+            <FIELD id="1160301" name="아레크의 둥지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160310" start_field="1160311" start_marker="1">
+            <FIELD id="1160311" name="아레크의 둥지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160340" start_field="1160341" start_marker="1">
+            <FIELD id="1160341" name="흐르는 땅" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160370" start_field="1160371" start_marker="1">
+            <FIELD id="1160371" name="흐르는 땅" ridable="false" />
+        </FIELDGROUP>
+		<!--XZYD_JJB_END-->
+    </FIELDLIST>
+    <FIELDLIST_DEVELOP>
+        <FIELD id="105" name="리모스사막" default_channel="1" validation="false" />
+        <FIELD id="5000" name="퀘스트 샘플" />
+		<!--XZYD_JJB
+        <FIELD id="116" name="아란바스 화산지대" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116001" name="침식동" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116002" name="침식동" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116003" name="아레크 둥지" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116004" name="아레크 둥지" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="116005" name="아레크 둥지" default_channel="1" validation="false" show_map="false" />
+		-->
+        <FIELD id="104" name="린덴 언덕" default_channel="1" validation="false" />
+        <FIELD id="521001" name="테오란" ridable="false" />
+        <FIELD id="521002" name="테오란 지하" ridable="false" />
+        <FIELDGROUP id="1040260" start_field="1040261" start_marker="1">
+            <FIELD id="1040261" name="검은 속삭임의 동굴" ridable="false" />
+        </FIELDGROUP>
+        <!-- 기자간담회 -->
+        <FIELD id="8001" name="영웅의 오솔길" default_channel="1" capacity="120" show_map="true" validation="false" />
+        <!-- CBT2 이벤트용 필드 -->
+        <FIELD id="8005" name="브룬의 영광" default_channel="1" validation="true" show_map="false" ridable="true" transformable="false" suicidable = "false" />
+        <FIELD id="8010" name="3회 리그 경기장" default_channel="1" validation="false" show_map="false" />
+        <FIELD id="8888" name="Testroom" default_channel="1" validation="false" show_map="false" ridable="false" />
+        <!-- 지스타 전용 필드 ************************** -->
+        <FIELD id="8891" name="인젠 자유항(E3)" default_channel="1" ailod_enable="false" show_map="false" validation="false" />
+        <FIELDGROUP id="8893" start_field="8894" start_marker="1">
+            <FIELD id="8894" name="전투 지원(E3)" ailod_enable="false" ridable="false" />
+        </FIELDGROUP>
+		<!--XZYD_JJB
+        <FIELDGROUP id="1160090" start_field="1160091" start_marker="1">
+            <FIELD id="1160091" name="아란바스의 폭군" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160200" start_field="1160201" start_marker="1">
+            <FIELD id="1160201" name="침식동" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160210" start_field="1160211" start_marker="1">
+            <FIELD id="1160211" name="불의 정령과의 회담" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160300" start_field="1160301" start_marker="1">
+            <FIELD id="1160301" name="아레크의 둥지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160310" start_field="1160311" start_marker="1">
+            <FIELD id="1160311" name="아레크의 둥지" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160340" start_field="1160341" start_marker="1">
+            <FIELD id="1160341" name="흐르는 땅" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="1160370" start_field="1160371" start_marker="1">
+            <FIELD id="1160371" name="흐르는 땅" ridable="false" />
+        </FIELDGROUP>
+		-->
+        <!-- <FIELDGROUP id="520" start_field="520001" start_marker="1"> -->
+        <FIELD id="520001" name="라드의 저택 홀" default_channel="1" validation="false" show_map="false" ridable="false" />
+        <FIELD id="520002" name="영혼 저장소" default_channel="1" validation="false" show_map="false" ridable="false" />
+        <FIELD id="520003" name="라드 집무실" default_channel="1" validation="false" show_map="false" ridable="false" />
+        <FIELD id="520004" name="옥상" default_channel="1" validation="false" show_map="false" ridable="false" />
+        <!-- </FIELDGROUP>		-->
+        <!-- *********************** 임시 필드(주로, 대외행사용으로 쓰임) *********************** -->
+        <FIELD id="8895" name="PAX 부러진 돛대" default_channel="1" show_map="true" validation="true" ailod_enable="false" />
+        <FIELDGROUP id="8896" start_field="8896" start_marker="1">
+            <FIELD id="8896" name="PAX 엘루가" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="8897" start_field="8897" start_marker="1">
+            <FIELD id="8897" name="PAX 디아고" ridable="false" />
+        </FIELDGROUP>
+        <FIELDGROUP id="8898" start_field="8898" start_marker="1">
+            <FIELD id="8898" name="PAX 지그니프" ridable="false" />
+        </FIELDGROUP>
+        <!-- *********************** CBT1 이후 출시 예정인 필드 *********************** -->
+        <FIELD id="2" name="리츠 거주지역" default_channel="1" ailod_enable="false" />
+        <FIELD id="106" name="금단의 성지" default_channel="1" validation="false" />
+        <FIELD id="108" name="아이스베일" default_channel="1" validation="false" />
+        <!--FIELD id="502" name="신기루 숲" default_channel="1" validation="false" / -->
+        <!--FIELD id="10101" name="리오드 (dym)" validation="false" /> 
+        <FIELD id="10107" name="테레스 평원 (dym)" />
+        <FIELD id="10108" name="아이스베일 (dym)" validation="false" />
+		<FIELD id="2"	name="바렌"	    	    file="0002" />
+		<FIELD id="4"	name="란스바렌"	      file="0004" />
+		<FIELD id="5" name="리츠" file="0005" />
+		<FIELD id="113"	name="티어즈 엔드"	file="0113" />
+		<FIELD id="114"	name="레나스의 분노"	  file="0114" />
+		<FIELD id="115"	name="스카브로우 동굴"	file="0115" />
+		<FIELD id="117"	name="리츠 지하수로"	  file="0117" />
+		<FIELD id="118"	name="불타는 숲"	      file="0118" />
+		<FIELD id="119"	name="지옥의 전장"	    file="0119" />
+		<FIELD id="120"	name="세다의 성"	      file="0120" />
+		<FIELD id="121" name="오염된 화원"      file="0121" />
+		<FIELD id="503"	name="안개의 저택"	    file="0503" />
+		<FIELD id="504"	name="하얀 날개 은신처"	file="0504" />
+		<FIELD id="505"	name="라시노스의 신전"	file="0505" />
+		<FIELD id="506"	name="렌델왕궁"	        file="0506" />
+		<FIELD id="507"	name="배반의 무덤"	    file="0507" />
+		<FIELD id="508" name="레나스 신전"	  file="0508" />
+		<FIELD id="509" name="불균형의 천칭"	  file="0509" />
+		
+		-->
+        <!-- *********************** 퀘스트 *********************** -->
+        <!-- 트라이얼 테스트 -->
+        <!--FIELD id="1011" name="대형 창고 트라이얼 테스트" />
+        <FIELD id="1012" name="창고2 트라이얼" />
+        <FIELD id="1013" name="창고3 트라이얼" />
+        <FIELD id="1021" name="소형집 트라이얼 테스트" />
+        <FIELD id="1022" name="중형집 트라이얼 테스트" />
+        <FIELD id="1023" name="대형집 트라이얼" />
+        <FIELD id="1031" name="던젼1 트라이얼 테스트" />
+        <FIELD id="1032" name="던젼2 트라이얼 테스트" />
+        <FIELD id="1033" name="던젼3 트라이얼" />
+        <FIELD id="1034" name="던젼4 트라이얼" />
+        <FIELD id="1042" name="성2 트라이얼" validation="false" / -->
+        <!--
+		<FIELD id="1012" name="창고2 트라이얼" 						file="1012" />
+		<FIELD id="1013" name="창고3 트라이얼" 						file="1013" />
+		<FIELD id="1023" name="대형집 트라이얼" 						file="1023" />		
+		<FIELD id="1033" name="던젼3 트라이얼" 						file="1033" />
+		<FIELD id="1041" name="성1 트라이얼"              file="1041" />
+    	-->
+        <!-- 테스트 -->
+        <!--FIELD id="1041" name="성1 트라이얼" / -->
+        <!--테스트 -->
+        <FIELD id="8003" name="BirdTown" validation="false" />
+        <FIELD id="8004" name="BirdTeressPlain" validation="false" />
+        <FIELD id="9001" name="BirdTown" default_channel="3" validation="false" />
+        <FIELD id="9090" name="IsnaraTown" validation="false" />
+        <FIELD id="9091" name="MadduckTown" validation="false" />
+        <FIELD id="9092" name="MizelanTown" validation="false" />
+        <FIELD id="9093" name="Luna1xTown" validation="false" />
+        <FIELD id="9094" name="jungchulheeTown" validation="false" />
+        <FIELD id="9099" name="Tropical paradise" validation="false" />
+        <FIELD id="9101" name="NetworkStressTest" validation="false" />
+        <FIELD id="9113" name="영웅의 오솔길 Test" validation="false" />
+        <FIELD id="100001" name="AibeastTest" validation="false" />
+        <!--
+		<FIELDGROUP id="1" start_field="0101" start_marker="1">
+			<FIELD id="0101"/>
+			<FIELD id="0102"/>
+		</FIELDGROUP>
+		
+
+        <FIELDGROUP id="1090110" start_field="1090111" start_marker="1">
+            <FIELD id="1090111" name="모튼의 후예" ridable="false" />
+        </FIELDGROUP>	-->
+        <!-- 퀘스트 셈플 필드 -->
+        <FIELD id="5009" name="yhcsekai_test" validation="false" />
+        <FIELD id="5010" name="AI 테스트 놀이터" validation="false" />
+        <!-- 폐기 -->
+        <!-- <FIELD id="1090000" name="[튜토리얼] 부러진 돛대" default_channel="1" capacity="10" show_map="false" validation="true" ailod_enable="false" /> -->
+    </FIELDLIST_DEVELOP>
+</maiet>

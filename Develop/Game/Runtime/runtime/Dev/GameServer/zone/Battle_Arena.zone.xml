@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY />
+    <SCENE>
+        <RTERRAIN>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY version="1.3">
+                <MAP_WIDTH type="int">
+                    <int>256</int>
+                </MAP_WIDTH>
+                <MAP_HEIGHT type="int">
+                    <int>256</int>
+                </MAP_HEIGHT>
+                <MAP_SIZE type="vec3">
+                    <vec3>12000.000000 12000.000000 0.000000</vec3>
+                </MAP_SIZE>
+                <MAP_NAME>Battle_Arena_dis.dds</MAP_NAME>
+                <BASEMAP_NAME>Battle_Arena_baked.dds</BASEMAP_NAME>
+                <CREATE_NAVEMESH type="bool">
+                    <bool>true</bool>
+                </CREATE_NAVEMESH>
+                <GRASS>Battle_Arena_grass.grs</GRASS>
+                <LAYER type="array" size="3">
+                    <LAYERINFO index="0">
+                        <ALPHAMAP>Battle_Arena_mask0.dds</ALPHAMAP>
+                        <TILEMAP type="specular">grandwall_rock_01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="1">
+                        <ALPHAMAP>Battle_Arena_mask1.dds</ALPHAMAP>
+                        <TILEMAP type="specular">MtEda_ground_g01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="2">
+                        <ALPHAMAP>Battle_Arena_mask2.dds</ALPHAMAP>
+                        <TILEMAP type="blend">heros_ground_g03.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                </LAYER>
+            </PROPERTY>
+        </RTERRAIN>
+        <DIRLIGHT>
+            <COMMON name="TerrainLightMap0">
+                <POSITION>5884.323730 5930.257813 1018.199219</POSITION>
+                <DIRECTION>-0.704227 -0.299645 -0.643644</DIRECTION>
+                <UP>-0.613743 -0.198808 0.764065</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.200</SHADOWLUMINOSITY>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYSPECULAR>0.000</SKYSPECULAR>
+                <DOUBLE_SHADOW_INTENSITY>0.500</DOUBLE_SHADOW_INTENSITY>
+            </PROPERTY>
+        </DIRLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubLight">
+                <POSITION>6000.000000 6000.000000 418.837219</POSITION>
+                <DIRECTION>-0.640258 0.378505 -0.668434</DIRECTION>
+                <UP>-0.749850 -0.496820 0.436915</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.314 0.392 0.498</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_001">
+                <POSITION>6000.000000 6000.000000 466.709961</POSITION>
+                <DIRECTION>-0.367966 -0.925598 -0.088714</DIRECTION>
+                <UP>-0.071873 -0.066810 0.995174</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.290 0.184 0.325</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_002">
+                <POSITION>6000.000000 6000.000000 499.930115</POSITION>
+                <DIRECTION>0.693056 0.484806 0.533513</DIRECTION>
+                <UP>-0.389181 -0.371337 0.842999</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.263 0.318 0.267</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max002">
+                <POSITION>5730.587585 9249.251465 19.744419</POSITION>
+                <DIRECTION>0.965926 -0.258819 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>23</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max003">
+                <POSITION>6270.696655 9271.322754 19.425859</POSITION>
+                <DIRECTION>0.707107 0.707107 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>24</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max004">
+                <POSITION>5609.434998 8510.858398 19.744419</POSITION>
+                <DIRECTION>0.965926 -0.258819 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>25</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max005">
+                <POSITION>6390.564850 8511.315186 19.425863</POSITION>
+                <DIRECTION>0.707107 0.707107 0.000000</DIRECTION>
+                <UP>0.000000 -0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>26</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max006">
+                <POSITION>5609.434998 3488.685303 19.425863</POSITION>
+                <DIRECTION>-0.707107 -0.707107 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>27</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max007">
+                <POSITION>6390.565002 3488.685303 19.744419</POSITION>
+                <DIRECTION>-0.965926 0.258819 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>28</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max008">
+                <POSITION>5729.303589 2728.677246 19.425859</POSITION>
+                <DIRECTION>-0.707107 -0.707107 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>29</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="Catacomb_of_damned_brazier_B.max009">
+                <POSITION>6269.412170 2750.748047 19.744419</POSITION>
+                <DIRECTION>-0.965926 0.258819 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Catacomb_of_damned_brazier_B.scene.xml</FILENAME>
+                <UMBRAID>30</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene.xml">
+                <POSITION>2170.926025 4421.292969 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>2</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene_017">
+                <POSITION>2112.263672 7537.925781 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>3</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene_018">
+                <POSITION>4404.925293 9839.489258 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>4</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene_019">
+                <POSITION>7603.485840 9841.136719 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>5</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene_020">
+                <POSITION>9861.130859 7601.072754 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>6</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene_021">
+                <POSITION>9868.736328 4406.002441 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>7</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene_022">
+                <POSITION>7575.182129 2152.491211 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>8</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_brazier01.scene_023">
+                <POSITION>4437.865234 2158.665283 1697.585449</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.279706 1.279706 1.279706</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_brazier01.scene.xml</FILENAME>
+                <UMBRAID>9</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="battle_arena.scene.xml">
+                <POSITION>6000.000000 6000.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>battle_arena.scene.xml</FILENAME>
+                <UMBRAID>22</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+    </SCENE>
+</ROOT>
+<Umbra Synchronization="true" />

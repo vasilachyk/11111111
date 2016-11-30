@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="101" minimap_name="map00101" loading_image_name="00101" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="60000" boundary_min_y="30000" boundary_max_x="76000" boundary_max_y="57000" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="101020" group="0" name="이리스" x="68628.570313" y="50758.503906" z="-781.858154" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="0" enable_respawn_tick_boost="false" roam_radius="3500" roam_depth="200" combat_radius="3500" color="auto">
+            <NPC id="101020" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작마커" x="74800.851563" y="51850.750000" z="-215.273941" dir_x="-0.999391" dir_y="-0.034900" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="부활마커" x="70932.023438" y="35297.472656" z="975.067383" dir_x="0.754709" dir_y="0.656059" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101020" name="MON_M 101020 이리스" x="68683.484375" y="50877.230469" z="-779.846863" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="시작지점" local="false" x="74800.679688" y="51844.761719" z="-215.721832" radius="100.000000" enabled="true" checkpoint="2" groupname="none" />
+        <SENSOR id="2" name="완료센서" x="69364.929688" y="36154.960938" z="1070.789551" radius="700.000000" enabled="false" checkpoint="1">
+            <EFFECT effect="sensor_trial_01" x="376.765625" y="-282.984375" z="0.000000" dir_x="-0.838671" dir_y="0.544639" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="2.500000" scale_y="1.000000" scale_z="2.500000" />
+            <WARP warp_type="field" title="리오드" condition="0" gate_type="auto" field="101" marker="1010790" />
+        </SENSOR>
+        <SENSOR id="3" name="툴팁센서" local="false" x="74841.320313" y="51852.093750" z="-213.677094" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="100" name="이리스스폰체크센서" local="false" x="73631.664063" y="51729.507813" z="-233.377350" radius="99999.000000" enabled="false" groupname="none" />
+        <SENSOR id="200" name="탈렌트사용체크센서" local="false" x="73513.468750" y="51837.746094" z="-231.796906" radius="99999.000000" enabled="true" groupname="none" />
+        <AREA id="500" name="감시탑" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="69405.296875" y="35977.242188" z="3602.001953" radius="4000.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

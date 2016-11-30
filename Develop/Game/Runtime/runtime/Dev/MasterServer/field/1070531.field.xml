@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="42000" boundary_min_y="17000" boundary_max_x="53000" boundary_max_y="28000" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_2">
+            <ENVBGM dawnbgm="amb_plain_dawn" />
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM sunsetbgm="amb_plain_sunset" />
+            <ENVBGM nightbgm="amb_plain_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="custom_test">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="5" />
+                <ADD weather="RNY" percent="5" />
+                <ADD weather="HRN" percent="5" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="200" group="0" name="플릿풋" x="48049.015625" y="22967.562500" z="1083.970337" dir_x="-0.719340" dir_y="0.694658" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="99999" enable_respawn_tick_boost="false" roam_radius="0" roam_depth="0" combat_radius="10000" color="200,0,150">
+            <NPC id="107110" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="10543" group="0" name="우루크시체" x="46341.078125" y="22848.259766" z="1102.908325" dir_x="-0.965926" dir_y="-0.258818" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="107250" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10544" group="0" name="우루크시체" x="48295.792969" y="21562.513672" z="1106.170898" dir_x="0.848049" dir_y="0.529919" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="107250" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10545" group="0" name="우루크시체" x="45101.851563" y="23519.357422" z="1115.097046" dir_x="-0.978148" dir_y="0.207912" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="107250" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10546" group="0" name="우루크시체" x="44914.835938" y="22491.525391" z="1201.618530" dir_x="0.309017" dir_y="0.951057" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="107250" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10547" group="0" name="우루크시체" x="49205.015625" y="22156.042969" z="1106.170410" dir_x="0.358368" dir_y="-0.933580" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="107250" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="45961.503906" y="25184.859375" z="1006.552063" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표: 플릿풋" x="48292.828125" y="22665.310547" z="1102.325073" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="46020.601563" y="25107.462891" z="1003.497986" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+    </FIELDINFO>
+</maiet>

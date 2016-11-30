@@ -1,0 +1,13 @@
+-- PAX 디아고퀘스트
+
+function Quest_889202:OnBegin(Player, NPC)
+	if (Player:GetFieldID() == 8895) then
+		Player:GateToTrial(8898, true)
+	end
+end
+
+--function Quest_889202:OnComplete(Player, NPC)
+--	if (Player:GetFieldID() == 8898) then
+--		Player:GateToMarker(8895, 1)
+--	end
+--end

@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="109" minimap_name="map00109" loading_image_name="00109" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_7">
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="3" group="0" name="갈색곰" x="45833.445313" y="43606.199219" z="1234.950195" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="갈색곰" x="71681.679688" y="54192.074219" z="1608.373779" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="갈색곰" x="71115.507813" y="46554.007813" z="1874.125977" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="갈색곰" x="65030.828125" y="32318.855469" z="695.757629" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="갈색곰" x="61251.984375" y="44674.656250" z="1323.306519" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="갈색곰" x="53790.750000" y="40277.511719" z="1388.531860" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="불곰 가로드" x="66206.125000" y="53717.757813" z="2394.201172" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="30" combat_radius="4000" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="갈색곰" x="57080.890625" y="36128.105469" z="1113.354492" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="갈색곰" x="60068.191406" y="41292.046875" z="1144.756348" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="갈색곰" x="60127.558594" y="37932.800781" z="1113.827271" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="갈색곰" x="56537.253906" y="43551.503906" z="1157.718750" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="갈색곰" x="46537.347656" y="41837.433594" z="1382.764893" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="200" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="갈색곰" x="42600.910156" y="39682.574219" z="1584.165527" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="갈색곰" x="50435.078125" y="34347.296875" z="1290.292725" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20" group="0" name="갈색곰" x="50332.011719" y="37542.570313" z="1320.044556" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="갈색곰" x="67413.101563" y="35803.605469" z="1304.504150" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="갈색곰" x="65557.453125" y="36042.316406" z="1131.926270" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="24" group="0" name="갈색곰" x="55724.726563" y="41454.511719" z="1122.715698" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="255,128,192">
+            <NPC id="109238" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="104" group="0" name="리자드맨 용병" x="38627.199219" y="32632.566406" z="805.067444" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="105" group="0" name="리자드맨 용병" x="33458.031250" y="29721.945313" z="925.150146" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="106" group="0" name="리자드맨 용병" x="31792.917969" y="31955.960938" z="800.105652" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109" group="0" name="리자드맨 용병" x="34042.113281" y="39911.195313" z="876.481140" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="111" group="0" name="리자드맨 용병" x="37726.039063" y="35048.410156" z="907.569336" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112" group="0" name="리자드맨 용병" x="33139.500000" y="34716.953125" z="647.264282" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="114" group="0" name="리자드맨 용병" x="18255.986328" y="48925.011719" z="2207.180664" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="118" group="0" name="리자드맨 용병" x="28584.152344" y="54220.652344" z="1742.543701" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="128" group="0" name="리자드맨 용병" x="36435.250000" y="41621.421875" z="764.763428" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="130" group="0" name="리자드맨 용병" x="31463.888672" y="39279.339844" z="1088.393555" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="131" group="0" name="리자드맨 용병" x="33496.484375" y="37865.867188" z="777.195984" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="139" group="0" name="리자드맨 용병" x="35826.554688" y="31895.667969" z="710.215088" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="140" group="0" name="리자드맨 용병" x="34421.238281" y="33029.062500" z="780.584900" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="142" group="0" name="리자드맨 용병" x="36658.101563" y="38380.796875" z="769.662292" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="143" group="0" name="리자드맨 용병" x="32882.828125" y="38831.843750" z="958.408020" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="144" group="0" name="리자드맨 용병" x="33934.542969" y="36457.070313" z="672.836670" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="145" group="0" name="리자드맨 용병" x="38381.097656" y="38729.523438" z="886.333923" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="146" group="0" name="리자드맨 용병" x="35794.609375" y="35492.824219" z="627.127563" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="147" group="0" name="리자드맨 용병" x="39278.527344" y="37471.753906" z="814.991516" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="148" group="0" name="리자드맨 용병" x="37780.343750" y="34221.164063" z="812.896973" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="149" group="0" name="리자드맨 용병" x="35871.722656" y="33312.621094" z="689.940430" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="150" group="0" name="리자드맨 용병" x="37814.167969" y="39416.121094" z="932.555237" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="151" group="0" name="리자드맨 용병" x="33957.976563" y="35159.707031" z="652.438354" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="152" group="0" name="리자드맨 용병" x="37514.476563" y="32836.652344" z="704.165955" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="153" group="0" name="리자드맨 용병" x="35363.089844" y="37748.289063" z="723.125610" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="154" group="0" name="리자드맨 용병" x="36194.289063" y="40574.378906" z="728.521057" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="155" group="0" name="리자드맨 용병" x="34096.464844" y="38759.441406" z="751.278015" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="156" group="0" name="리자드맨 용병" x="32954.625000" y="30869.294922" z="986.408081" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="157" group="0" name="리자드맨 용병" x="36431.820313" y="36267.187500" z="719.020630" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="540.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="158" group="0" name="리자드맨 용병" x="38801.097656" y="35425.167969" z="881.077209" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="150" combat_radius="0" color="0,255,0">
+            <NPC id="109230" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="163" group="0" name="[NPC]술집선원" x="49272.007813" y="25651.869141" z="681.914856" dir_x="-0.866025" dir_y="0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="64,0,128">
+            <NPC id="109460" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="164" group="0" name="[NPC]술집선원" x="48927.058594" y="25552.187500" z="677.115540" dir_x="0.866026" dir_y="0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="64,0,128">
+            <NPC id="109460" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="165" group="0" name="[NPC]술집선원" x="49053.500000" y="25805.107422" z="677.688477" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="64,0,128">
+            <NPC id="109459" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="166" group="0" name="[NPC] 음식상인 노가라" x="47902.898438" y="25242.599609" z="714.999512" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="167" group="0" name="[NPC] 술집 선원" x="49548.953125" y="25380.976563" z="679.001099" dir_x="0.615662" dir_y="-0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109458" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="168" group="0" name="[NPC] 술집 선원" x="49776.207031" y="25177.289063" z="677.688416" dir_x="-0.920505" dir_y="0.390732" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109463" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="169" group="0" name="[NPC] 술집 선원" x="49556.156250" y="25133.449219" z="677.688477" dir_x="0.587786" dir_y="0.809017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109464" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="170" group="0" name="[NPC] 술집 선원" x="49424.238281" y="25879.605469" z="677.688477" dir_x="0.906308" dir_y="0.422618" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109454" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="171" group="0" name="[NPC] 술집 선원" x="49756.945313" y="25948.767578" z="677.688477" dir_x="-0.798636" dir_y="-0.601815" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109457" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="172" group="0" name="[NPC] 술집 선원" x="49585.191406" y="26108.953125" z="677.688477" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109455" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="173" group="0" name="[NPC] 해적 전투원" x="42947.121094" y="32950.843750" z="760.232361" dir_x="-0.422618" dir_y="0.906308" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109477" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="174" group="0" name="[NPC] 술에 절은 케비아" x="48881.484375" y="24893.244141" z="680.744080" dir_x="0.920505" dir_y="0.390731" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109140" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="175" group="0" name="[NPC] 고주망태 부야베스" x="49179.636719" y="24905.044922" z="679.998901" dir_x="-0.992546" dir_y="0.121870" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="109141" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="200" group="0" name="나무 정령" x="30970.335938" y="33841.421875" z="890.877686" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201" group="0" name="나무 정령" x="38459.632813" y="41218.464844" z="922.486938" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="1000.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="211" group="0" name="나무 정령" x="46207.554688" y="40663.015625" z="1464.105835" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="212" group="0" name="나무 정령" x="44589.960938" y="41671.414063" z="1438.752563" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="213" group="0" name="나무 정령" x="65241.792969" y="46433.175781" z="1510.780762" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="214" group="0" name="나무 정령" x="67698.343750" y="57096.808594" z="2423.432617" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="215" group="0" name="나무 정령" x="70318.289063" y="54621.894531" z="1803.389648" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="216" group="0" name="나무 정령" x="68982.765625" y="48637.570313" z="1594.913818" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="217" group="0" name="나무 정령" x="70992.179688" y="44883.371094" z="1843.029785" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="218" group="0" name="나무 정령" x="66463.554688" y="41866.144531" z="1398.635864" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="219" group="0" name="나무 정령" x="62394.886719" y="38760.554688" z="1223.285400" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1500" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="220" group="0" name="나무 정령" x="63301.851563" y="31828.113281" z="733.622559" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="221" group="0" name="나무 정령" x="65125.984375" y="31289.837891" z="576.900513" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="222" group="0" name="나무 정령" x="61015.253906" y="29943.253906" z="640.664612" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="223" group="0" name="나무 정령" x="64358.949219" y="30030.746094" z="466.176483" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="224" group="0" name="나무 정령" x="65949.554688" y="26394.357422" z="358.232971" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="225" group="0" name="나무 정령" x="62288.796875" y="27389.925781" z="347.927734" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="100" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="226" group="0" name="나무 정령" x="60117.015625" y="26301.447266" z="445.610535" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="227" group="0" name="나무 정령" x="59351.042969" y="30209.146484" z="903.710205" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="228" group="0" name="나무 정령" x="64408.187500" y="28020.074219" z="444.554260" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="229" group="0" name="나무 정령" x="64192.187500" y="25118.406250" z="239.117859" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="180" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="0,128,255">
+            <NPC id="109237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="600" group="0" name="방패게" x="43035.820313" y="28313.910156" z="189.721558" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="601" group="0" name="방패게" x="42989.937500" y="29405.123047" z="322.877380" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="602" group="0" name="방패게" x="44522.960938" y="28664.339844" z="291.816742" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="603" group="0" name="방패게" x="41525.570313" y="27913.648438" z="163.648331" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="604" group="0" name="방패게" x="40096.796875" y="26506.986328" z="81.673645" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="605" group="0" name="방패게" x="37664.343750" y="28239.152344" z="133.458282" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="606" group="0" name="방패게" x="39069.433594" y="25005.306641" z="131.507721" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="607" group="0" name="방패게" x="38114.175781" y="26582.449219" z="96.201248" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="608" group="0" name="방패게" x="35399.042969" y="26368.984375" z="275.387909" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="609" group="0" name="방패게" x="36749.859375" y="23942.324219" z="126.683426" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="610" group="0" name="방패게" x="36976.449219" y="25375.347656" z="135.315689" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="611" group="0" name="방패게" x="35872.648438" y="21172.925781" z="40.544312" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="612" group="0" name="방패게" x="35344.453125" y="23387.509766" z="179.501648" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="613" group="0" name="방패게" x="39412.261719" y="23884.482422" z="111.598442" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="614" group="0" name="방패게" x="35740.855469" y="24648.841797" z="179.380295" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="615" group="0" name="방패게" x="32589.859375" y="25663.898438" z="198.675888" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="616" group="0" name="방패게" x="31313.916016" y="22736.441406" z="22.846584" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="617" group="0" name="방패게" x="33381.355469" y="22042.099609" z="147.946869" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="618" group="0" name="방패게" x="41423.203125" y="26410.140625" z="21.179138" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="620" group="0" name="방패게" x="33818.800781" y="24027.337891" z="145.944641" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="621" group="0" name="방패게" x="31311.617188" y="25059.705078" z="95.750473" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="622" group="0" name="방패게" x="29142.060547" y="24972.371094" z="15.693253" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="623" group="0" name="방패게" x="23087.253906" y="20402.224609" z="49.025642" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="624" group="0" name="방패게" x="25327.722656" y="26143.572266" z="84.536385" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="626" group="0" name="방패게" x="23079.679688" y="23738.023438" z="148.127472" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="628" group="0" name="방패게" x="28143.761719" y="25996.484375" z="70.492783" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="629" group="0" name="방패게" x="29812.994141" y="24877.183594" z="15.230133" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="630" group="0" name="방패게" x="54046.296875" y="21773.478516" z="103.980621" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="631" group="0" name="방패게" x="56310.589844" y="20676.177734" z="169.925598" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="632" group="0" name="방패게" x="57755.003906" y="19005.234375" z="-5.311481" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="633" group="0" name="방패게" x="62207.265625" y="20428.574219" z="105.328178" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="634" group="0" name="방패게" x="59547.878906" y="21087.056641" z="150.601700" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="635" group="0" name="방패게" x="63102.695313" y="18729.224609" z="92.182861" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="637" group="0" name="방패게" x="30353.111328" y="24080.769531" z="-30.584442" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="638" group="0" name="방패게" x="43228.929688" y="26465.380859" z="62.209557" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="639" group="0" name="방패게" x="40467.945313" y="24813.962891" z="95.156845" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="640" group="0" name="방패게" x="38297.250000" y="23812.082031" z="136.593018" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="255,0,255">
+            <NPC id="109103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="700" group="0" name="바다 에보스" x="37037.343750" y="26367.294922" z="139.912628" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="701" group="0" name="바다 에보스" x="38167.652344" y="24796.216797" z="109.607712" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="702" group="0" name="바다 에보스" x="37376.472656" y="22863.431641" z="98.574722" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="703" group="0" name="바다 에보스" x="40070.832031" y="25389.601563" z="70.676300" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="704" group="0" name="바다 에보스" x="39754.839844" y="27483.917969" z="99.751602" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="705" group="0" name="바다 에보스" x="42229.796875" y="27403.742188" z="73.673500" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="706" group="0" name="바다 에보스" x="35949.906250" y="22092.746094" z="81.704788" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="707" group="0" name="바다 에보스" x="33044.558594" y="23901.244141" z="164.929901" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="708" group="0" name="바다 에보스" x="32283.179688" y="21341.453125" z="0.197445" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="709" group="0" name="바다 에보스" x="37065.390625" y="21375.734375" z="37.545887" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="710" group="0" name="바다 에보스" x="34559.953125" y="25009.492188" z="207.578461" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="711" group="0" name="바다 에보스" x="32735.472656" y="24576.599609" z="131.149155" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="712" group="0" name="바다 에보스" x="32110.646484" y="22915.779297" z="33.911953" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="713" group="0" name="바다 에보스" x="23558.765625" y="22184.251953" z="13.839025" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="714" group="0" name="바다 에보스" x="27506.927734" y="25053.298828" z="43.448727" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="715" group="0" name="바다 에보스" x="22982.951172" y="25017.207031" z="107.007835" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="716" group="0" name="바다 에보스" x="30191.222656" y="26095.759766" z="131.066940" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="717" group="0" name="바다 에보스" x="28918.533203" y="25874.052734" z="62.812408" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="718" group="0" name="바다 에보스" x="31336.166016" y="24001.843750" z="59.195553" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="719" group="0" name="바다 에보스" x="31488.150391" y="25798.388672" z="153.417511" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="720" group="0" name="바다 에보스" x="26674.414063" y="27160.537109" z="105.139214" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="721" group="0" name="바다 에보스" x="24272.886719" y="26666.003906" z="92.189751" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="722" group="0" name="바다 에보스" x="28247.070313" y="21898.388672" z="-5.645435" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="723" group="0" name="바다 에보스" x="34342.375000" y="21065.677734" z="36.503571" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="724" group="0" name="바다 에보스" x="35846.035156" y="25710.708984" z="204.316620" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="725" group="0" name="바다 에보스" x="33831.699219" y="22753.150391" z="133.877609" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="726" group="0" name="바다 에보스" x="28576.787109" y="24371.753906" z="39.217148" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="727" group="0" name="바다 에보스" x="26499.279297" y="25842.171875" z="84.339844" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="728" group="0" name="바다 에보스" x="39035.652344" y="22895.072266" z="62.787903" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="480.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="128,128,192">
+            <NPC id="109317" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="800" group="0" name="맷돼지" x="58909.160156" y="40118.445313" z="1082.002197" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="801" group="0" name="맷돼지" x="62898.234375" y="40748.109375" z="1227.227417" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="250" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="802" group="0" name="맷돼지" x="61038.835938" y="37362.304688" z="1160.397827" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="803" group="0" name="맷돼지" x="57301.738281" y="37122.851563" z="1069.094360" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="804" group="0" name="맷돼지" x="53956.316406" y="37355.777344" z="1287.754028" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="805" group="0" name="맷돼지" x="50103.984375" y="35941.507813" z="1299.821167" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="806" group="0" name="맷돼지" x="52628.929688" y="36093.136719" z="1173.974609" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="807" group="0" name="맷돼지" x="51140.914063" y="40395.093750" z="1322.403931" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="808" group="0" name="맷돼지" x="54012.542969" y="44144.878906" z="1340.080444" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="809" group="0" name="맷돼지" x="56836.257813" y="46544.664063" z="1258.477539" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="810" group="0" name="맷돼지" x="59907.011719" y="44880.191406" z="1307.501953" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="811" group="0" name="맷돼지" x="56652.437500" y="41703.187500" z="1074.317871" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="812" group="0" name="맷돼지" x="55951.988281" y="40508.988281" z="1083.287598" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="813" group="0" name="맷돼지" x="62446.640625" y="42949.226563" z="1338.020874" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="814" group="0" name="맷돼지" x="67706.976563" y="40730.464844" z="1563.408691" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="815" group="0" name="맷돼지" x="69232.406250" y="45144.246094" z="1765.889648" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="816" group="0" name="맷돼지" x="66636.507813" y="46783.867188" z="1648.928467" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="817" group="0" name="맷돼지" x="64747.675781" y="45535.777344" z="1531.053589" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="818" group="0" name="맷돼지" x="65626.984375" y="48611.121094" z="1896.041748" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="819" group="0" name="맷돼지" x="72464.015625" y="49669.062500" z="1299.266113" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="820" group="0" name="맷돼지" x="75987.632813" y="47545.867188" z="1025.226440" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="821" group="0" name="맷돼지" x="48350.628906" y="36897.125000" z="1317.870239" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="822" group="0" name="맷돼지" x="43910.585938" y="40780.324219" z="1442.574829" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="823" group="0" name="맷돼지" x="44699.867188" y="44661.082031" z="972.864685" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="824" group="0" name="맷돼지" x="39654.644531" y="48768.136719" z="814.149170" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="825" group="0" name="맷돼지" x="48232.851563" y="42037.277344" z="1412.405762" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="826" group="0" name="맷돼지" x="39487.261719" y="34800.328125" z="803.071289" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="827" group="0" name="맷돼지" x="43601.187500" y="31937.378906" z="836.747620" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="828" group="0" name="맷돼지" x="33082.886719" y="29801.625000" z="954.654541" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="829" group="0" name="맷돼지" x="36874.906250" y="31114.457031" z="495.612488" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="830" group="0" name="맷돼지" x="31101.269531" y="33558.761719" z="879.087830" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="831" group="0" name="맷돼지" x="49886.117188" y="45984.062500" z="1078.803345" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="832" group="0" name="맷돼지" x="41340.085938" y="34678.601563" z="738.512878" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="833" group="0" name="맷돼지" x="45110.730469" y="35527.804688" z="957.924194" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="835" group="0" name="맷돼지" x="59164.628906" y="43032.382813" z="1258.224976" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="836" group="0" name="맷돼지" x="55298.582031" y="36024.218750" z="1041.619019" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="837" group="0" name="맷돼지" x="60926.078125" y="39450.941406" z="1196.603638" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="838" group="0" name="맷돼지" x="63722.601563" y="37875.062500" z="1354.458984" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="839" group="0" name="맷돼지" x="66756.421875" y="34362.312500" z="1128.942871" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="840" group="0" name="맷돼지" x="67328.578125" y="37084.539063" z="1388.264648" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="841" group="0" name="맷돼지" x="45823.757813" y="34174.398438" z="1043.000610" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="800.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="50" combat_radius="0" color="0,255,255">
+            <NPC id="109240" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="900" group="0" name="유적을 조사하는 모켄의 해적" x="47955.921875" y="51116.058594" z="561.567444" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="901" group="0" name="유적을 조사하는 모켄의 해적" x="41085.503906" y="51056.453125" z="666.664917" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="902" group="0" name="유적을 조사하는 모켄의 해적" x="42953.457031" y="50956.160156" z="572.081726" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="903" group="0" name="유적을 조사하는 모켄의 해적" x="41281.003906" y="53686.917969" z="588.339294" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="904" group="0" name="유적을 조사하는 모켄의 해적" x="38733.250000" y="53734.675781" z="617.954041" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="905" group="0" name="유적을 조사하는 모켄의 해적" x="38997.402344" y="55713.757813" z="670.002441" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="906" group="0" name="유적을 조사하는 모켄의 해적" x="39150.015625" y="50918.535156" z="735.341797" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="907" group="0" name="유적을 조사하는 모켄의 해적" x="40524.097656" y="49461.441406" z="796.464355" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="908" group="0" name="유적을 조사하는 모켄의 해적" x="41368.621094" y="48063.152344" z="753.423035" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="909" group="0" name="유적을 조사하는 모켄의 해적" x="49877.234375" y="50183.324219" z="717.904480" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="910" group="0" name="유적을 조사하는 모켄의 해적" x="48663.496094" y="53184.398438" z="566.144287" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="911" group="0" name="유적을 조사하는 모켄의 해적" x="46698.191406" y="55397.468750" z="567.144043" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="912" group="0" name="유적을 조사하는 모켄의 해적" x="44950.195313" y="55839.761719" z="561.185547" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="913" group="0" name="유적을 조사하는 모켄의 해적" x="41907.636719" y="56548.683594" z="588.333679" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="914" group="0" name="유적을 조사하는 모켄의 해적" x="41827.648438" y="55333.582031" z="561.215454" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="700" roam_depth="50" combat_radius="0" color="255,128,64">
+            <NPC id="109227" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="1000" group="0" name="개구리" x="48423.328125" y="50611.128906" z="586.812683" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1001" group="0" name="개구리" x="45220.242188" y="49765.019531" z="658.571045" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1002" group="0" name="개구리" x="48246.566406" y="52966.675781" z="546.125671" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1004" group="0" name="개구리" x="41363.066406" y="49191.382813" z="692.393311" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1006" group="0" name="개구리" x="49498.707031" y="52725.339844" z="563.885376" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1008" group="0" name="개구리" x="43064.167969" y="54480.863281" z="595.009827" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1009" group="0" name="개구리" x="39512.070313" y="55013.167969" z="601.062500" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1011" group="0" name="개구리" x="43839.902344" y="57038.382813" z="555.647644" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="4" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1013" group="0" name="토끼" x="53053.640625" y="46523.535156" z="1602.549438" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1015" group="0" name="토끼" x="66691.898438" y="39695.664063" z="1334.081299" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1016" group="0" name="토끼" x="68840.609375" y="47118.765625" z="1550.890991" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1018" group="0" name="토끼" x="62908.113281" y="28961.824219" z="400.415436" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1021" group="0" name="토끼" x="70247.593750" y="37642.328125" z="1916.582153" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1023" group="0" name="토끼" x="42986.632813" y="35280.273438" z="855.664063" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1024" group="0" name="토끼" x="40098.664063" y="31484.281250" z="890.178406" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1029" group="0" name="토끼" x="52214.898438" y="38078.039063" z="1195.745972" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1030" group="0" name="토끼" x="45276.066406" y="40403.812500" z="1417.118530" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1031" group="0" name="토끼" x="61042.601563" y="47291.785156" z="1462.677246" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1032" group="0" name="토끼" x="56195.738281" y="33473.871094" z="943.954651" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="9" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10300" group="0" name="모아새" x="54493.957031" y="31348.574219" z="758.759338" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="10" combat_radius="0" color="64,128,128">
+            <NPC id="109137" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10301" group="0" name="모아새" x="54147.429688" y="30866.779297" z="758.759399" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="10" combat_radius="0" color="64,128,128">
+            <NPC id="109135" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10302" group="0" name="모아새" x="54445.117188" y="30369.695313" z="758.759399" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="10" combat_radius="0" color="64,128,128">
+            <NPC id="109136" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10303" group="0" name="모아새" x="54701.875000" y="30884.068359" z="758.759399" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="10" combat_radius="0" color="64,128,128">
+            <NPC id="109127" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10304" group="0" name="모아새" x="55029.886719" y="31316.005859" z="758.759277" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="10" combat_radius="0" color="64,128,128">
+            <NPC id="109138" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10305" group="0" name="모아새" x="54919.718750" y="30478.892578" z="758.759277" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="10" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="10" combat_radius="0" color="64,128,128">
+            <NPC id="109134" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10700" group="0" name="[영혼석] 모튼 기어" x="47952.921875" y="27075.800781" z="495.910706" dir_x="-0.241923" dir_y="0.970296" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10701" group="0" name="[영혼석] 시작 지점" x="31131.623047" y="42091.968750" z="1126.511230" dir_x="0.829038" dir_y="-0.559192" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10702" group="0" name="[영혼석] 카르가스 캠프" x="51222.839844" y="43639.160156" z="1269.709839" dir_x="0.945519" dir_y="-0.325567" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10750" group="0" name="우편함" x="50190.906250" y="27551.378906" z="624.535828" dir_x="-0.275639" dir_y="0.961261" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="298" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11200" group="0" name="영웅의 돌" x="61855.273438" y="59709.066406" z="3324.614990" dir_x="-0.838670" dir_y="-0.544640" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11201" group="0" name="영웅의 돌" x="56992.632813" y="61163.226563" z="3458.861328" dir_x="0.788011" dir_y="0.615662" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11202" group="0" name="영웅의 돌" x="66384.125000" y="57536.300781" z="2551.337158" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11203" group="0" name="영웅의 돌" x="58730.156250" y="51823.765625" z="2113.531494" dir_x="0.139173" dir_y="0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11204" group="0" name="영웅의 돌" x="55150.570313" y="54196.679688" z="2112.623047" dir_x="0.694659" dir_y="-0.719339" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11205" group="0" name="영웅의 돌" x="50640.210938" y="56382.285156" z="2112.624268" dir_x="0.874620" dir_y="-0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11206" group="0" name="영웅의 돌" x="63797.320313" y="52730.296875" z="2249.021484" dir_x="0.642788" dir_y="-0.766044" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="11207" group="0" name="영웅의 돌" x="58337.511719" y="65301.000000" z="3302.223633" dir_x="0.139174" dir_y="-0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109112" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20000" group="0" name="[OBJ] 봉인의 룬" x="41616.566406" y="52261.812500" z="754.770447" dir_x="-0.052335" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20001" group="0" name="[OBJ] 봉인의 룬" x="43715.363281" y="52260.953125" z="770.566895" dir_x="0.017453" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20002" group="0" name="[OBJ] 봉인의 룬" x="44522.511719" y="53903.101563" z="773.397400" dir_x="-0.874619" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20003" group="0" name="[OBJ] 봉인의 룬" x="43473.593750" y="55720.851563" z="764.744019" dir_x="-0.874619" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20004" group="0" name="[OBJ] 봉인의 룬" x="45388.585938" y="51110.765625" z="688.504639" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20005" group="0" name="[OBJ] 봉인의 룬" x="41614.085938" y="52501.636719" z="769.710388" dir_x="-0.000001" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20006" group="0" name="[OBJ] 봉인의 룬" x="40061.929688" y="52259.605469" z="762.886597" dir_x="-0.017451" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20007" group="0" name="[OBJ] 봉인의 룬" x="40065.046875" y="52503.761719" z="774.847168" dir_x="-0.017453" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20008" group="0" name="[OBJ] 봉인의 룬" x="44731.656250" y="50742.824219" z="771.655884" dir_x="0.866026" dir_y="-0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20009" group="0" name="[OBJ] 봉인의 룬" x="44521.164063" y="50860.781250" z="775.245483" dir_x="-0.857168" dir_y="0.515038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20010" group="0" name="[OBJ] 봉인의 룬" x="43681.496094" y="55843.300781" z="770.057190" dir_x="0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20011" group="0" name="[OBJ] 봉인의 룬" x="43711.789063" y="52502.027344" z="760.746033" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20012" group="0" name="[OBJ] 봉인의 룬" x="47368.753906" y="52263.730469" z="766.826233" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20013" group="0" name="[OBJ] 봉인의 룬" x="47390.664063" y="48921.996094" z="800.286987" dir_x="-0.857167" dir_y="-0.515038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20014" group="0" name="[OBJ] 봉인의 룬" x="49465.730469" y="52500.925781" z="774.027283" dir_x="0.034900" dir_y="0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20015" group="0" name="[OBJ] 봉인의 룬" x="49465.953125" y="52262.160156" z="769.121277" dir_x="-0.000001" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20016" group="0" name="[OBJ] 봉인의 룬" x="46630.500000" y="51689.960938" z="693.722168" dir_x="0.829038" dir_y="-0.559193" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20017" group="0" name="[OBJ] 봉인의 룬" x="47603.843750" y="49044.230469" z="816.593628" dir_x="0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20018" group="0" name="[OBJ] 봉인의 룬" x="50952.859375" y="52956.917969" z="665.846069" dir_x="-0.819152" dir_y="-0.573577" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20019" group="0" name="[OBJ] 봉인의 룬" x="46556.250000" y="53904.722656" z="773.955933" dir_x="0.866026" dir_y="-0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20020" group="0" name="[OBJ] 봉인의 룬" x="42697.367188" y="57066.339844" z="775.313721" dir_x="-0.874619" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20021" group="0" name="[OBJ] 봉인의 룬" x="47365.449219" y="52502.871094" z="776.295471" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20022" group="0" name="[OBJ] 봉인의 룬" x="46346.765625" y="54021.773438" z="775.659668" dir_x="-0.866026" dir_y="0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20023" group="0" name="[OBJ] 봉인의 룬" x="47397.527344" y="55841.769531" z="766.190002" dir_x="-0.857168" dir_y="0.515038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20024" group="0" name="[OBJ] 봉인의 룬" x="43456.429688" y="49053.175781" z="774.453796" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="40" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109107" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20025" group="0" name="[event] 축제용 호박" x="38336.218750" y="40144.742188" z="996.981873" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20026" group="0" name="[event] 축제용 호박" x="40908.062500" y="30860.646484" z="802.177734" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20027" group="0" name="[event] 축제용 호박" x="48066.156250" y="32960.031250" z="799.863525" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20028" group="0" name="[event] 축제용 호박" x="44894.179688" y="30669.388672" z="761.309692" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20029" group="0" name="[event] 축제용 호박" x="34791.531250" y="27911.103516" z="421.483307" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20030" group="0" name="[event] 축제용 호박" x="25891.589844" y="24871.640625" z="13.997342" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20031" group="0" name="[event] 축제용 호박" x="20229.000000" y="28397.330078" z="372.874573" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20032" group="0" name="[event] 축제용 호박" x="10408.453125" y="31271.273438" z="567.572571" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20033" group="0" name="[event] 축제용 호박" x="13334.281250" y="30896.562500" z="861.754150" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20034" group="0" name="[event] 축제용 호박" x="12911.752930" y="31109.365234" z="861.754150" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20035" group="0" name="[event] 축제용 호박" x="13127.767578" y="36119.906250" z="1070.572266" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20036" group="0" name="[event] 축제용 호박" x="14322.759766" y="35963.160156" z="1070.572266" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20037" group="0" name="[event] 축제용 호박" x="10462.160156" y="36802.960938" z="842.477051" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20038" group="0" name="[event] 축제용 호박" x="12862.056641" y="40045.371094" z="700.119873" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20039" group="0" name="[event] 축제용 호박" x="17341.734375" y="35658.101563" z="763.155823" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20040" group="0" name="[event] 축제용 호박" x="51158.222656" y="41367.781250" z="1324.360352" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20041" group="0" name="[event] 축제용 호박" x="54402.777344" y="38851.808594" z="1442.711182" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20042" group="0" name="[event] 축제용 호박" x="52080.562500" y="33107.136719" z="761.942627" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20043" group="0" name="[event] 축제용 호박" x="55621.277344" y="33030.507813" z="806.300476" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20044" group="0" name="[event] 축제용 호박" x="58372.453125" y="25937.175781" z="498.588165" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20045" group="0" name="[event] 축제용 호박" x="54447.757813" y="18056.812500" z="127.804649" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20046" group="0" name="[event] 축제용 호박" x="52956.410156" y="17942.273438" z="127.804649" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20047" group="0" name="[event] 축제용 호박" x="62311.078125" y="25102.957031" z="340.474762" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20048" group="0" name="[event] 축제용 호박" x="66652.968750" y="22972.677734" z="243.337891" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20049" group="0" name="[event] 축제용 호박" x="65174.250000" y="28921.070313" z="483.248840" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20050" group="0" name="[event] 축제용 호박" x="62883.941406" y="30953.574219" z="728.721191" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20051" group="0" name="[event] 축제용 호박" x="59634.441406" y="28912.628906" z="749.144714" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20052" group="0" name="[event] 축제용 호박" x="66355.539063" y="36347.843750" z="1162.528076" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20053" group="0" name="[event] 축제용 호박" x="64058.496094" y="38635.578125" z="1451.834717" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20054" group="0" name="[event] 축제용 호박" x="60588.085938" y="45373.171875" z="1270.773926" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20055" group="0" name="[event] 축제용 호박" x="64008.558594" y="41113.925781" z="1180.346436" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20056" group="0" name="[event] 축제용 호박" x="54174.628906" y="49279.250000" z="1972.767090" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20057" group="0" name="[event] 축제용 호박" x="47525.382813" y="48658.867188" z="693.259827" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20058" group="0" name="[event] 축제용 호박" x="40163.765625" y="51982.968750" z="564.840698" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20059" group="0" name="[event] 축제용 호박" x="59390.242188" y="57004.054688" z="3317.542236" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20060" group="0" name="[event] 축제용 호박" x="60691.953125" y="61027.464844" z="3350.095703" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20061" group="0" name="[event] 축제용 호박" x="60621.421875" y="66874.281250" z="3322.043945" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20062" group="0" name="[event] 축제용 호박" x="65317.105469" y="63968.054688" z="3465.690430" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20063" group="0" name="[event] 축제용 호박" x="60971.207031" y="54267.589844" z="2111.625488" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20064" group="0" name="[event] 축제용 호박" x="67876.578125" y="49740.289063" z="1709.400391" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="20065" group="0" name="[event] 축제용 호박" x="71520.523438" y="37007.253906" z="2021.573242" dir_x="-0.874620" dir_y="0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="300" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3320" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="109001" group="0" name="[NPC] 티안 (모튼 기어 안)" x="51162.261719" y="25982.369141" z="1279.827515" dir_x="-0.857167" dir_y="-0.515038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109004" group="0" name="[NPC] 주정뱅이 알" x="49611.804688" y="27470.269531" z="614.897400" dir_x="-0.241923" dir_y="0.970296" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109004" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109005" group="0" name="[NPC] 대장장이 로코" x="50342.210938" y="29060.248047" z="650.732971" dir_x="-0.173649" dir_y="0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109005" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109006" group="0" name="[NPC] 조리장 클레멘스" x="52895.558594" y="29758.138672" z="734.898132" dir_x="-0.994522" dir_y="0.104528" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109006" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109009" group="0" name="[NPC] 고고학자 카르가스" x="51395.898438" y="43588.156250" z="1268.705688" dir_x="0.544639" dir_y="-0.838671" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109009" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109010" group="0" name="[NPC] 미구엘" x="49749.343750" y="30725.587891" z="652.248779" dir_x="-0.190809" dir_y="-0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109010" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109026" group="0" name="[NPC] 부관 몬트리올" x="34325.238281" y="42694.195313" z="936.322388" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109026" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109045" group="0" name="[NPC] 멋쟁이 모드" x="50472.031250" y="30827.960938" z="652.249390" dir_x="0.104529" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109045" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109053" group="0" name="[NPC] 마법사 누메라스" x="31701.492188" y="43310.789063" z="1286.618286" dir_x="-0.906308" dir_y="0.422618" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109053" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109063" group="0" name="목장 주인 에슈리카" x="53772.753906" y="31315.933594" z="758.847534" dir_x="-0.906308" dir_y="0.422618" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109063" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109098" group="0" name="[OBJ] 봉인된 크라울러" x="45535.488281" y="52393.531250" z="954.510742" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="109098" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109101" group="0" name="[EPIC] 베일누스" x="45560.824219" y="47748.261719" z="729.481689" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="25" enable_respawn_tick_boost="false" roam_radius="0" roam_depth="0" combat_radius="5000" color="128,0,255">
+            <NPC id="109101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109106" group="0" name="[NPC] 의식의 돌" x="58678.117188" y="58238.085938" z="3427.972168" dir_x="-0.956305" dir_y="0.292371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109106" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109108" group="0" name="[OBJ] 의식의 돌 상부" x="59183.125000" y="58054.710938" z="3905.773438" dir_x="0.956305" dir_y="0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="109108" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109133" group="0" name="[NPC] 럼주통" x="48111.976563" y="31185.992188" z="653.604492" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="5" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="109133" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109324" group="0" name="[EPIC] 엘루가" x="59236.718750" y="62595.566406" z="3348.118652" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="false" roam_radius="0" roam_depth="0" combat_radius="8000" color="128,0,255">
+            <NPC id="109324" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109472" group="0" name="[NPC] 견습해적" x="50529.800781" y="29948.087891" z="652.248413" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109472" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109473" group="0" name="[NPC] 견습해적" x="56240.945313" y="26466.742188" z="598.242981" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109483" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109474" group="0" name="[NPC] 견습해적" x="54624.515625" y="26743.869141" z="564.105591" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109472" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109475" group="0" name="[NPC] 선의 제퍼슨" x="46544.230469" y="28588.093750" z="482.210480" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109055" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109476" group="0" name="[NPC] 견습해적" x="48564.046875" y="30001.335938" z="652.030090" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109484" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109477" group="0" name="[NPC] 해적 갑판원" x="51695.878906" y="31369.623047" z="776.408325" dir_x="0.970296" dir_y="-0.241922" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109485" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109478" group="0" name="[NPC] 해적 갑판원" x="51813.109375" y="31494.451172" z="791.975586" dir_x="-0.406737" dir_y="-0.913545" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109486" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109479" group="0" name="[NPC] 해적 갑판원" x="51870.046875" y="31302.494141" z="779.161865" dir_x="-0.987688" dir_y="0.156435" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109475" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109480" group="0" name="[NPC] 해적 망꾼" x="51177.917969" y="31739.222656" z="1800.318726" dir_x="0.292372" dir_y="0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109478" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109481" group="0" name="[NPC] 해적 노잡이" x="51777.156250" y="28083.351563" z="1445.891724" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109480" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109482" group="0" name="[NPC] 해적 노잡이" x="51582.707031" y="28039.865234" z="1445.891724" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109491" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109483" group="0" name="[NPC] 해적 노잡이" x="51107.207031" y="27985.779297" z="1477.638672" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109480" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109484" group="0" name="[NPC] 해적 노잡이" x="50767.007813" y="27894.712891" z="1474.217529" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109491" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109485" group="0" name="[NPC] 해적 노잡이" x="53206.222656" y="31775.984375" z="812.001404" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="600" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109480" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109486" group="0" name="[NPC] 갑판장 클로버" x="48713.085938" y="27884.876953" z="646.176575" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109048" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109487" group="0" name="[NPC] 해적 노잡이" x="47097.156250" y="29424.535156" z="607.203735" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109491" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109488" group="0" name="[NPC] 해적 전투원" x="53326.734375" y="28023.189453" z="730.435242" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109476" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109489" group="0" name="[NPC] 해적 전투원" x="45648.343750" y="28827.994141" z="335.845337" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109476" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109490" group="0" name="[NPC] 항해사 올슨" x="52096.007813" y="30149.068359" z="722.594604" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109491" group="0" name="[NPC] 해적 전투원" x="54555.710938" y="32720.019531" z="757.758057" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109487" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109492" group="0" name="[NPC] 해적 전투원" x="53557.289063" y="32831.968750" z="849.332214" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109488" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109493" group="0" name="[NPC] 해적 전투원" x="45390.222656" y="29971.708984" z="662.766846" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109477" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109494" group="0" name="[NPC] 항해사 빈스" x="49504.398438" y="29052.435547" z="662.495789" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109033" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109495" group="0" name="[NPC] 해적 전투원" x="47665.054688" y="30775.736328" z="680.687012" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109488" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109496" group="0" name="[NPC] 해적 전투원" x="46614.226563" y="30527.318359" z="661.440125" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109487" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109497" group="0" name="[NPC] 해적 전투원" x="46209.039063" y="27787.556641" z="364.509064" dir_x="0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109477" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109498" group="0" name="[NPC]말 많은 보겔벨" x="48353.722656" y="27205.144531" z="574.741333" dir_x="0.292371" dir_y="-0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="109604" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109499" group="0" name="[NPC]노련한 세이렐" x="51369.523438" y="31087.939453" z="681.246704" dir_x="0.292371" dir_y="-0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="109601" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109500" group="0" name="[NPC]미소검 로리타" x="48745.859375" y="31216.541016" z="679.081848" dir_x="0.292371" dir_y="-0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="109603" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109501" group="0" name="[NPC]험악한 몬드라곤" x="51515.769531" y="29390.037109" z="652.284546" dir_x="-0.601815" dir_y="0.798636" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="109602" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109502" group="0" name="[NPC]친절한 나디야" x="52972.238281" y="29332.146484" z="733.899048" dir_x="-0.970296" dir_y="0.241922" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="109605" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109503" group="0" name="[NPC]따분한 모리스" x="52938.980469" y="30615.093750" z="771.812439" dir_x="-0.970296" dir_y="0.241922" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,255">
+            <NPC id="109606" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109504" group="0" name="[NPC] 정찰조장 알폰소" x="48622.332031" y="28933.708984" z="640.673706" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="800" roam_depth="200" combat_radius="0" color="0,255,255">
+            <NPC id="109056" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="게임시작마커" x="50966.800000" y="25934.4000000" z="1230.000000" dir_x="0.974365" dir_y="0.224609" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="from 인젠" x="71594.507813" y="35881.679688" z="2055.088135" dir_x="-0.970296" dir_y="0.241922" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="from 나투라 지하성지" x="59710.777344" y="53794.585938" z="2111.624512" dir_x="0.104528" dir_y="-0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="from 나투라 지하성지 2" x="50800.160156" y="54397.089844" z="978.896118" dir_x="-0.920505" dir_y="-0.390732" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="from 모켄의 은신처" x="9690.112305" y="33099.300781" z="568.537292" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109001" name="[QM] 109001" x="34273.910156" y="42680.562500" z="941.387939" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109002" name="[QM] 109002" x="35388.093750" y="35990.613281" z="645.807495" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109003" name="[QM] 109003" x="51235.046875" y="25972.630859" z="1279.587769" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109004" name="[QM] 109004" x="50245.226563" y="29017.228516" z="651.148499" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109005" name="[QM] 109005" x="51508.878906" y="43726.312500" z="1268.705688" dir_x="0.999877" dir_y="0.015707" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109007" name="[QM] 109007" x="45552.269531" y="47139.515625" z="733.863953" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109010" name="[QM] 109010" x="61275.156250" y="62077.218750" z="3358.305908" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109018" name="[QM] 109018 미 완료시" x="27865.615234" y="28689.646484" z="275.481171" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109022" name="[QM] 109022" x="79509.515625" y="36853.457031" z="3199.483154" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109051" name="[QM] 109051" x="33540.460938" y="25155.246094" z="138.492889" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109052" name="[QM] 109052" x="45318.039063" y="54317.914063" z="560.187500" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109058" name="[QM] 109058" x="33730.414063" y="23609.355469" z="110.240868" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109061" name="[QM] 109061" x="50495.289063" y="30711.597656" z="655.338257" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1090061" name="[QM] 109006 obj 1" x="59685.820313" y="54149.484375" z="2111.625977" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1090189" name="109018 완료 복귀 지점" x="50911.937500" y="25902.140625" z="1278.827759" dir_x="0.961262" dir_y="0.275637" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1090601" name="[QM] 109060 obj 1" x="57943.210938" y="37591.691406" z="1084.388672" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1090602" name="[QM] 109060 obj 2" x="58991.042969" y="41717.355469" z="1161.145752" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 인젠" x="77225.585938" y="35327.656250" z="2732.585449" radius="5000.000000" enabled="true">
+            <EFFECT effect="ZoneLine" x="-4638.039063" y="346.070313" z="-590.412354" dir_x="0.990268" dir_y="-0.139173" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.500000" scale_y="1.500000" scale_z="1.500000" />
+            <WARP warp_type="field" title="인젠으로 이동" condition="0" gate_type="auto" field="3" marker="5" />
+        </SENSOR>
+        <SENSOR id="2" name="to 나투라 지하성지" x="59650.980469" y="54389.539063" z="2098.761963" radius="380.000000" enabled="true" exit="3">
+            <EFFECT effect="sensor_trial_01" x="7.597656" y="-17.722656" z="4.897461" dir_x="-0.121869" dir_y="0.992546" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="3.000000" scale_y="1.000000" scale_z="3.200000" />
+            <WARP warp_type="field" title="to 나투라 지하성지" condition="1" gate_type="auto" field="109002" marker="1" />
+        </SENSOR>
+        <SENSOR id="3" name="to 나투라 지하성지 2" x="51289.425781" y="54642.582031" z="975.586060" radius="400.000000" enabled="true" exit="4">
+            <EFFECT effect="sensor_trial_01" x="-221.058594" y="-104.542969" z="0.000000" dir_x="0.920505" dir_y="0.390731" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="3.500000" scale_y="1.000000" scale_z="3.500000" />
+            <WARP warp_type="field" title="to 나투라 지하성지" condition="1" gate_type="auto" field="109002" marker="4" />
+        </SENSOR>
+        <SENSOR id="4" name="to 모켄의 동굴" x="8075.186523" y="32684.146484" z="587.654724" radius="1100.000000" enabled="true" exit="5">
+            <EFFECT effect="ZoneLine" x="576.760742" y="72.755859" z="-14.824036" dir_x="0.970296" dir_y="0.241922" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="모켄의 은신처 (Trial)" condition="1090211" gate_type="auto" field_group="1091030" quest="109021" />
+            <WARP warp_type="field" title="모켄의 은신처 (공용)" condition="1090212" gate_type="auto" field="1090160" marker="1" />
+        </SENSOR>
+        <SENSOR id="2001" name="[Sensor] 튜토리얼 도움말 - 이동, 대화" local="true" x="29624.484375" y="44846.449219" z="1128.288330" radius="300.000000" enabled="true" groupname="none" />
+        <SENSOR id="2002" name="[Sensor] 튜토리얼 도움말 - NPC대화" local="true" x="31411.744141" y="43467.046875" z="1184.288940" radius="500.000000" enabled="true" groupname="none" />
+        <SENSOR id="2004" name="[Sensor] 튜토리얼 도움말 - 기본공격" local="true" x="35628.976563" y="40444.921875" z="801.934631" radius="2000.000000" enabled="true" groupname="none" />
+        <SENSOR id="2005" name="[Sensor] 튜토리얼 도움말 - 마우스 포인터" local="true" x="42461.253906" y="34373.824219" z="814.354065" radius="3000.000000" enabled="true" groupname="none" />
+        <SENSOR id="2006" name="[Sensor] 튜토리얼 도움말 - 자동달리기" local="true" x="45783.910156" y="30781.185547" z="822.521240" radius="3500.000000" enabled="true" groupname="none" />
+        <SENSOR id="2007" name="[Sensor] 튜토리얼 도움말 - 무기 넣고 빼기" local="true" x="54591.054688" y="33140.054688" z="826.021057" radius="2500.000000" enabled="true" groupname="none" />
+        <SENSOR id="2009" name="[Sensor] 튜토리얼 도움말 - 회피(베일누스 전에 가르쳐 줄 것)" local="true" x="48126.417969" y="47817.003906" z="776.843445" radius="3000.000000" enabled="true" groupname="none" />
+        <SENSOR id="109001" name="[QOS] 109001" local="false" x="34319.160156" y="42693.988281" z="936.921692" radius="1200.000000" enabled="true" groupname="none" />
+        <SENSOR id="109003" name="[QOS] 109003" local="false" x="51110.589844" y="25984.531250" z="1280.011475" radius="400.000000" enabled="true" groupname="none" />
+        <SENSOR id="109004" name="[QOS] 109004" local="false" x="50360.488281" y="29057.574219" z="651.460449" radius="500.000000" enabled="true" groupname="none" />
+        <SENSOR id="109005" name="[QOS] 109005" local="false" x="51463.734375" y="43576.179688" z="1268.705688" radius="400.000000" enabled="true" groupname="none" />
+        <SENSOR id="109018" name="109018 완료하지 못했는데 109로 왔다면" x="27764.662109" y="28643.044922" z="275.481201" radius="1500.000000" enabled="true">
+            <WARP warp_type="field" title="109018 미 완료시" condition="1090181" gate_type="auto" field="109001" marker="109059" />
+        </SENSOR>
+        <SENSOR id="1090031" name="티안의 전령 센서" local="false" x="34253.156250" y="42560.671875" z="963.696655" radius="1500.000000" enabled="true" groupname="none" />
+        <AREA id="1" name="아보루스 유적" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="59123.261719" y="57917.773438" z="1926.894531" radius="9500.000000" height="5000.000000" />
+        </AREA>
+        <AREA id="2" name="싸크룸 유적" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="45540.285156" y="52378.550781" z="991.225708" radius="5000.000000" height="2000.000000" />
+        </AREA>
+        <AREA id="3" name="카르가스의 야영지" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="51531.156250" y="43388.664063" z="1285.718262" radius="1000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="인젠" path="true" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="82264.109375" y="37071.539063" z="3603.968750" radius="0.000000" height="0.000000" />
+        </AREA>
+        <AREA id="11" name="모튼 기어" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="49290.468750" y="25535.162109" z="677.688477" radius="3000.000000" height="3000.000000" />
+        </AREA>
+        <AREA id="12" name="동쪽 숲" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="63576.957031" y="29521.324219" z="516.046875" radius="4000.000000" height="3000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

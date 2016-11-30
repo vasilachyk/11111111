@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="폭주하는 불의 정령 - 아란바스 화산지대" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610501" rate="20" />
+				<ACTION type="talent" param1="211610502" rate="20" />
+				<ACTION type="talent" param1="211610503" rate="40" />				
+				<ACTION type="nothing" param1="1" rate="20" />				
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="35">
+				<ACTION type="talent" param1="211610504" rate="100" />			
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610500" rate="40" />
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

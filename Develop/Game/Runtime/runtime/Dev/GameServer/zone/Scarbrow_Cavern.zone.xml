@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY></PROPERTY>
+    <SCENE>
+        <ACTOR>
+            <COMMON name="con_garden_test">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>con_garden_test.elu</FILENAME>
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <DIRLIGHT>
+            <COMMON name="DirectionalLight">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.000 0.000 0.000</SKYCOLOR>
+                <GROUNDCOLOR>0.000 0.000 0.000</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+    </SCENE>
+</ROOT>

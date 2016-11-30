@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="109" minimap_name="map00109" loading_image_name="00109" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="36346" boundary_min_y="39952" boundary_max_x="51784" boundary_max_y="58189" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_7">
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="PAX 엘루가" x="46336.640625" y="47543.972656" z="733.792542" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="1" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="1300" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="8896001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="에보스" x="44923.714844" y="47705.953125" z="714.665771" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="에보스" x="44544.589844" y="48507.503906" z="689.559082" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="에보스" x="45518.570313" y="48715.960938" z="701.149902" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="에보스" x="45617.402344" y="46554.984375" z="762.937683" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="에보스" x="44657.500000" y="46693.226563" z="740.829224" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="에보스" x="45464.804688" y="45550.859375" z="831.411438" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="에보스" x="46709.554688" y="46711.832031" z="740.801758" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="에보스" x="46266.062500" y="48301.519531" z="700.976074" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="에보스" x="47726.820313" y="47753.656250" z="731.348938" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" group="0" name="에보스" x="47994.601563" y="46652.539063" z="794.470154" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" radius="400.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="60000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="30" combat_radius="0" color="0,255,255">
+            <NPC id="8896011" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="스폰마커" x="43532.492188" y="47339.039063" z="708.924072" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="Quest 마커" x="45605.324219" y="47527.734375" z="722.864380" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

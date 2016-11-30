@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 토나델로 -->
+<maiet>
+	<COLT>
+		<COMBAT >
+			<DEFAULT>
+				<ACTION type="talent" param1="210500101" rate="15" />
+				<ACTION type="talent" param1="210500102" rate="15" />
+				<ACTION type="talent" param1="210500103" rate="15" />
+				<ACTION type="talent" param1="210500104" rate="10" duration="0" />
+				<ACTION type="talent" param1="210500105" rate="15" duration="0" />
+				<ACTION type="talent" param1="210500105" rate="15" />
+				<ACTION type="talent" param1="210500106" rate="15" duration="0"  />
+				<ACTION type="talent" param1="210500106" rate="15" />
+				<ACTION type="talent" param1="210500107" rate="30" duration="0" />
+			</DEFAULT>
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="210500106" rate="15" duration="0"  />
+				<ACTION type="talent" param1="210500106" rate="15" />
+				<!-- <ACTION type="guard" param1="210500108" param2="5" rate="20" /> -->
+				<ACTION type="talent" param1="210500107" rate="15" duration="0" />
+			</CHECK>
+			<CHECK type="distance" param2="500">
+				<ACTION type="talent" param1="210500101" rate="15" />
+				<ACTION type="talent" param1="210500102" rate="15" />
+				<ACTION type="talent" param1="210500103" rate="15" />
+				<ACTION type="talent" param1="210500104" rate="10" duration="0" />
+				<ACTION type="talent" param1="210500105" rate="15" duration="0" />
+				<ACTION type="talent" param1="210500105" rate="15" />
+				<ACTION type="talent" param1="210500107" rate="15" duration="0" />
+			</CHECK>
+			<CHECK type="e_motionfactor" param1="deflect">
+				<ACTION type="talent" param1="210500101" rate="50" />
+				<ACTION type="talent" param1="210500102" rate="50" />
+				<ACTION type="talent" param1="210500107" rate="15" duration="0" />
+			</CHECK>
+		</COMBAT>
+		<REACTION>
+		</REACTION>
+		<IDLE>
+		</IDLE>
+	</COLT>
+</maiet>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 깊은골짜기 하피, 하피 바람술사
+211801000	발톱강하1( 수직복귀 )
+211801001	발톱강하1( 점프복귀 )
+211801002	2단할퀴기-전진
+211801003	2단할퀴기-제자리
+211801004	비명
+211801005	돌개바람
+211801006	대쉬
+-->
+<maiet>
+	<COLT name="깊은골짜기하피바람술사" npcid="118010">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211801000" rate="10" desc="발톱강하1( 수직복귀 )" />
+				<ACTION type="talent" param1="211801001" rate="10" desc="발톱강하1( 점프복귀 )" />
+				<ACTION type="talent" param1="211801003" rate="30" desc="2단할퀴기-제자리" />
+				<ACTION type="talent" param1="211801005" rate="30" desc="돌개바람" />
+			</DEFAULT>
+			
+			<CHECK type="e_gained_buff" param1="80180" comment="속박">
+				<ACTION type="talent" param1="211801005" rate="30" desc="돌개바람" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="200" >
+				<ACTION type="talent" param1="211801003" rate="50" desc="2단할퀴기-제자리" />
+				<ACTION type="talent" param1="211801005" rate="30" desc="돌개바람" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000" >
+				<ACTION type="distance" param1="400" param2="400"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="211801004" rate="5" desc="비명" max_count="1"/>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

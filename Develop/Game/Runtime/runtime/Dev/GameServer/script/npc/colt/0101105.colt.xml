@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 광기어린 늑대	
+210110500	#idle2(땅파기)
+210110501	#idle3(울기)
+210110502	#짖기
+210110503	#회전L
+210110504	#회전R
+210110511	#물기
+210110512	#물어뜯기
+210110513	#대쉬물기
+210110514	#회피회전L
+210110515	#회피회전R
+210110516	#늑대울음
+-->
+<maiet>					
+	<COLT name="광기어린 늑대" npcid="101105">
+		<COMBAT>			
+			<DEFAULT>
+				<ACTION type="talent" param1="210110511" rate="30" desc="물기" />
+				<ACTION type="talent" param1="210110512" rate="30" cycle="5" desc="물어뜯기" />
+				<ACTION type="talent" param1="210110513" rate="30" cycle="5" desc="대쉬물기" />
+				<ACTION type="talent" param1="210110514" rate="5" cycle="5" desc="회피회전L" />
+				<ACTION type="talent" param1="210110515" rate="5" cycle="5" desc="회피회전R" />
+			</DEFAULT>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="210110512" rate="40" desc="물어뜯기" />
+				<ACTION type="talent" param1="210110513" rate="40" desc="대쉬물기" />
+				
+				<ACTION type="talent" param1="210110502" rate="5" cycle="30" desc="짖기" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="210110514" rate="50" desc="회피회전L" />  
+					<ACTION type="talent" param1="210110515" rate="50" desc="회피회전R" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210110500" rate="20" desc="idle2(땅파기)" />
+				<ACTION type="talent" param1="210110501" rate="20" desc="idle3(울기)" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

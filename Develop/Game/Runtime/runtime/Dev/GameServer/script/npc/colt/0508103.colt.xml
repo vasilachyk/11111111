@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+
+<maiet>
+	<COLT name="부식된 시종" npcid="508103">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810301" desc="우측 공격(약)" rate="10" />
+				<ACTION type="talent" param1="250810302" desc="우측 공격" rate="10" cycle="10" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80">
+				<CHECK type="distance" param2="300" >
+					<ACTION type="talent" param1="250810303" desc="회피기 (좌)" rate="10" />
+					<ACTION type="talent" param1="250810304" desc="회피기 (우)" rate="10" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810300" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

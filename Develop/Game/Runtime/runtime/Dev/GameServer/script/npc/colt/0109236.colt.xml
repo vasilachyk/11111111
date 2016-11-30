@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 이끼로 덮인 골렘	
+210923600	idle2
+210923601	pain
+210923602	turn_l
+210923603	turn_r
+#전투	
+210923610	오른손 내려찍기
+210923611	왼손 움켜쥐기
+210923612	독이끼
+210923613	돌던지기
+-->
+<maiet>
+	<COLT name="이끼로 덮인 골렘" npcid="109236">
+		<COMBAT mode="0">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="210923610" rate="40" comment="오른손 내려찍기" />
+				<ACTION type="talent" param1="210923611" rate="40" comment="왼손 움켜쥐기" />
+			</DEFAULT>
+
+			<CHECK type="distance" param1="500">
+				<ACTION type="talent" param1="210923612" rate="30" comment="독이끼" />
+				<ACTION type="talent" param1="210923610" rate="15" comment="오른손 내려찍기" />
+				<ACTION type="talent" param1="210923611" rate="15" comment="왼손 움켜쥐기" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923600" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

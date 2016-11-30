@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="주술사 펜딕">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="189403001" rate="35" />
+				<ACTION type="talent" param1="189403002" rate="25" />
+				<ACTION type="talent" param1="189403004" rate="30" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="90">
+				<ACTION type="talent" param1="189403008" rate="10" max_count="1"/>
+			</CHECK>
+
+			<CHECK type="distance" param1="0" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="189403003" param2="2" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param2="80">
+				<ACTION type="talent" param1="189403007" rate="50" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_110021:Init(NPCID)
+end
+
+function NPC_110021:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC)
+end
+
+	]]></SCRIPT>
+		
+</maiet>

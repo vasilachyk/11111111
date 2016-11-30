@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+
+<maiet>
+	<COLT name="조종당하는 크립 땅굴벌레" npcid="103103">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" />
+				<ACTION type="talent" param1="210310301" rate="40" />
+				<ACTION type="talent" param1="210310302" rate="40" />			
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

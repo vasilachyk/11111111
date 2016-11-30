@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 실종된 경비병 유골(117106)	
+211710600	idle2
+211710601	점프공격
+211710602	우측강타
+211710603	연타
+211710604	어깨치기
+211710605	발차기
+211710606	방어
+-->
+<maiet>
+	<COLT name="실종된 경비병 유골" npcid="117106">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211710601" desc="점프공격" rate="20" />
+				<ACTION type="talent" param1="211710602" desc="우측강타" rate="40" />
+				<ACTION type="talent" param1="211710603" desc="연타" rate="50" />
+				<ACTION type="talent" param1="211710604" desc="어께치기" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="211710601" desc="점프공격" rate="80" />
+				<ACTION type="talent" param1="211710602" desc="우측강타" rate="40" />
+				<ACTION type="talent" param1="211710605" desc="발차기" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710600" desc="idle2" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1036" minimap_name="map01036" loading_image_name="01036" min_x="-10700" min_y="-9224" max_x="19300" max_y="20776" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_cave_2" />
+        <SOUNDREVERB reverb="9" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="모켄의 해적" x="6345.825684" y="2674.109619" z="840.654114" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="모켄의 해적" x="6009.244629" y="2754.592285" z="840.654114" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="모켄의 해적" x="4246.058105" y="8436.706055" z="395.477814" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="모켄의 해적" x="3945.910645" y="8624.561523" z="395.477814" dir_x="0.956305" dir_y="0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="모켄의 해적" x="-3051.684570" y="7334.794922" z="-826.887512" dir_x="0.998630" dir_y="0.052336" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="모켄의 해적" x="-3046.291992" y="7958.927246" z="-826.887512" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="모켄의 해적 (Last)" x="943.481140" y="7850.419922" z="-230.530685" dir_x="-0.987689" dir_y="0.156433" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="모켄의 해적 (Last)" x="1318.067505" y="8014.958496" z="-140.604767" dir_x="-0.990268" dir_y="0.139173" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="600" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109209" default="false" rate="500" />
+            <NPC id="109210" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="쥐 트리거" x="91.965363" y="12454.398438" z="-75.126244" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="1" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="고양이" x="-144.299866" y="12465.826172" z="-75.126221" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="2" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="100" group="0" name="투명벽" x="5948.338867" y="5541.729004" z="747.445618" dir_x="-0.754710" dir_y="-0.656059" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101" group="0" name="투명벽" x="5255.615723" y="8499.680664" z="395.477783" dir_x="0.898794" dir_y="-0.438371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109021" group="0" name="유랑해적 실버" x="8158.377441" y="-834.799316" z="1136.447998" dir_x="-0.956305" dir_y="0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,0">
+            <NPC id="109021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109221" group="0" name="모켄" x="-3131.774902" y="7662.512695" z="-826.887512" dir_x="0.999391" dir_y="0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="109221" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작지점" x="10656.228516" y="-462.998047" z="1315.848389" dir_x="-0.965926" dir_y="-0.258819" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="실버 이동 1-1" x="7069.832520" y="-486.529907" z="1086.972046" dir_x="-0.358367" dir_y="0.933581" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="실버 이동 1-2" x="6230.160156" y="1934.084839" z="840.654114" dir_x="-0.069756" dir_y="0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="실버 이동 1-3" x="5332.001465" y="5215.702148" z="705.554016" dir_x="0.573577" dir_y="0.819152" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="실버 이동 1-4" x="6363.947266" y="6666.275879" z="720.493225" dir_x="-0.139173" dir_y="0.990268" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="실버 이동 1-5" x="5928.251465" y="7929.959473" z="483.022919" dir_x="-0.891006" dir_y="0.453991" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="실버 이동 2-1" x="5000.219238" y="8683.048828" z="395.477783" dir_x="-0.998630" dir_y="0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="실버 이동 2-2" x="3509.880615" y="8173.350586" z="394.722961" dir_x="-0.961262" dir_y="-0.275638" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="실버 이동 2-3" x="-639.544800" y="7732.656738" z="-627.194397" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="실버 이동 2-4" x="-2303.234619" y="7641.920898" z="-826.887451" dir_x="-0.999816" dir_y="0.019197" dir_z="0.000000" random_dir="false" />
+        <MARKER id="110" name="해적 마커" x="-3203.016602" y="7311.919922" z="-826.887512" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="120" name="해적 마커" x="-3195.718506" y="7913.579102" z="-826.887512" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="130" name="모켄 탈출 마커" x="877.276428" y="7879.574219" z="-244.813599" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="109021" name="QM 109021" x="-1868.771118" y="8029.873535" z="-825.887634" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="밖으로" x="12254.823242" y="-441.557617" z="1409.600830" radius="800.000000" enabled="true">
+            <EFFECT effect="ZoneLine" x="-626.652344" y="-71.868164" z="-0.000122" dir_x="0.994522" dir_y="0.104529" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="2.000000" scale_y="2.000000" scale_z="2.000000" />
+            <WARP warp_type="field" title="밖으로 (war)" condition="1090088" gate_type="auto" field="109001" marker="5" />
+            <WARP warp_type="field" title="밖으로 (peace)" condition="1090087" gate_type="auto" field="109" marker="5" />
+        </SENSOR>
+        <SENSOR id="2" name="체크 포인트" local="false" x="7738.090332" y="-919.156006" z="1141.099243" radius="1200.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="3" name="대기 센서 1" local="false" x="6128.672363" y="7968.302734" z="489.540833" radius="1000.000000" enabled="false" groupname="none" />
+        <SENSOR id="4" name="대기 센서 2" local="false" x="-2805.330811" y="7644.780273" z="-826.887512" radius="900.000000" enabled="false" groupname="none" />
+        <SENSOR id="5" name="모켄 퇴장 후" local="false" x="688.047791" y="7597.804199" z="-294.157379" radius="6000.000000" enabled="false" groupname="none" />
+        <SENSOR id="6" name="out" local="true" x="-407.978027" y="16004.231445" z="-825.887512" radius="10687.043945" enabled="true" groupname="out" />
+        <SENSOR id="100" name="체크포인트" local="false" x="10598.300781" y="-480.246063" z="1308.181030" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 볼라스	
+#기본&연출	
+211850101	#착륙 (tomode0)
+211850102	#이륙 (tomode1)
+211850103	#좌측 회전
+211850104	#우측 회전
+211850105	#idle2
+211850106	#pain1
+211850107	#pain2_뿔 잘리기
+211850108	#pain3
+211850109	#pain3_뿔에 맞고 아파하기
+211850110	#pain4
+211850111	#idle (tomode0)
+211850112	#공중 idle
+#공격스킬	
+211850120	#뿔로 치기
+211850121	#뿔로 치기_1타
+211850122	#뿔로 치기_2타
+211850123	#대시
+211850124	#백대시
+211850125	#백대시_공중 대시
+211850126	#울부짖기 2
+211850127	#모래 브레쓰
+211850128	#공중 대시 (tomode0)
+211850129	#공중 대시 (tomode0)_넘어지는 버전
+211850130	#공중 대시_모드 유지 버전
+211850131	#공중 모래 브레쓰
+211850132	#대시_느린버전
+211850133	#샌드스톰
+
+-->
+
+<maiet>
+	<COLT name="볼라스" npcid="118501">
+		<!-- 지상 모드 -->
+		<COMBAT mode="0" >
+			<DEFAULT>
+				<ACTION type="talent" param1="211850120" rate="20" desc="뿔로 치기" />
+				<ACTION type="talent" param1="211850121" rate="70" desc="뿔로 치기_1타" />
+				<ACTION type="talent" param1="211850123" rate="30" desc="대시" />
+				<ACTION type="lua" param1="NPC_118501" param2="CheckRear1" rate="50" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="80">
+				<CHECK type="distance" param1="600" comment="">
+					<ACTION type="talent" param1="211850132" rate="40" desc="대시_느린버전" />
+				</CHECK>
+				
+				<ACTION type="lua" param1="NPC_118501" param2="CheckRear1" rate="50" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="40" param2="80">
+				<ACTION type="talent" param1="211850102" duration="0" cycle="80" desc="이륙 (tomode1)" />
+				
+				<CHECK type="rage" param1="200">
+					<ACTION type="talent" param1="211850126" rate="80" desc="울부짖기 2" />
+				</CHECK>
+				
+				<CHECK type="distance" param1="1000" comment="">
+					<ACTION type="distance" param1="450" param2="550" rate="50" />
+				</CHECK>
+				
+				<CHECK type="distance" param1="600" comment="">
+					<ACTION type="talent" param1="211850127" rate="70" desc="모래 브레쓰" />
+					<ACTION type="talent" param1="211850132" rate="10" desc="대시_느린버전" />
+					<ACTION type="talent" param1="211850123" rate="10" desc="대시" />
+					<ACTION type="talent" param1="211850121" rate="10" desc="뿔로 치기_1타" />
+				</CHECK>
+				
+				<ACTION type="lua" param1="NPC_118501" param2="CheckRear2" rate="40" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="40">
+				<ACTION type="talent" param1="211850102" cycle="80" desc="이륙 (tomode1)" />
+				
+				<CHECK type="rage" param1="200">
+					<ACTION type="group" rate="20">
+						<ACTION type="talent" param1="211850126" desc="울부짖기 2" />
+						<ACTION type="talent" param1="211850127" desc="모래 브레쓰" />
+					</ACTION>
+				</CHECK>
+				
+				<CHECK type="distance" param1="1000" comment="">
+					<ACTION type="distance" param1="450" param2="550" />
+				</CHECK>
+				
+				<CHECK type="distance" param1="600" comment="">
+					<ACTION type="talent" param1="211850127" rate="70" desc="모래 브레쓰" />
+					<ACTION type="talent" param1="211850132" rate="10" desc="대시_느린버전" />
+					<ACTION type="talent" param1="211850123" rate="10" desc="대시" />
+					<ACTION type="talent" param1="211850121" rate="10" desc="뿔로 치기_1타" />
+				</CHECK>
+				
+				<ACTION type="lua" param1="NPC_118501" param2="CheckRear3" rate="40" />
+			</CHECK>
+		</COMBAT>
+		
+		<!-- 공중 모드 -->
+		<COMBAT mode="1" victory="211850100">
+			<DEFAULT>
+				<ACTION type="talent" param1="211850131" rate="50" desc="공중 모래 브레쓰" />
+				<ACTION type="talent" param1="211850130" rate="50" desc="공중 대시_모드 유지 버전" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40">
+				<ACTION type="talent" param1="211850129" cycle="25" desc="공중 대시 (tomode0)_넘어지는 버전" />
+			</CHECK>
+
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="211850128" cycle="25" desc="공중 대시 (tomode0)" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30">
+				<ACTION type="group" cycle="10" >
+					<ACTION type="aggro" param1="random" />
+					<ACTION type="talent" param1="211850133" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param1="30" param2="80">
+				<ACTION type="group" cycle="15" >
+					<ACTION type="aggro" param1="random" />
+					<ACTION type="talent" param1="211850133" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		
+		<!-- 연타 모드 -->
+		<COMBAT mode="2" victory="211850111">
+			<DEFAULT>
+				<ACTION type="talent" param1="211850111" duration="0" />
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="211850122" duration="0" />
+			</CHECK>
+		</COMBAT>
+		
+		<STRESS>
+			<CHECK type="stress" param1="30">
+				<ACTION type="lua" param1="NPC_118501" param2="Bolas_Stressed" rate="80" /> 
+			</CHECK>
+		</STRESS>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+			<CHECK type="mode" param1="0">
+				<ACTION type="nothing" param1="1" rate="50" />
+				<ACTION type="talent" param1="211850105" rate="15" />
+			</CHECK>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_118501:Init(NPCID)
+	NPC_ReserveUserData(NPCID, 6);
+	
+	NPC_118501.DataIdxForPain1			= 1
+	NPC_118501.DataIdxForPain2			= 2
+	NPC_118501.DataIdxForPain3			= 3
+	NPC_118501.DataIdxForPain4			= 4
+	NPC_118501.DataIdxForBreakPart		= 5
+	
+	-- 뿔 들고 유저가 쓰는 탤런트
+	-- NPC_118501.TALENT_HornDash = 190001
+	
+	NPC_118501.TALENT_Pain1 = 211850106
+	NPC_118501.TALENT_Pain2 = 211850107
+	NPC_118501.TALENT_Pain3 = 211850108
+	NPC_118501.TALENT_Pain4 = 211850110
+	NPC_118501.TALENT_PainHornDash = 211850109
+	NPC_118501.TALENT_FlyingDash = 211850128
+	NPC_118501.TALENT_FlyingDashFail = 211850129
+	NPC_118501.TALENT_Flying = 211850102
+	NPC_118501.TALENT_Breath = 211850127
+	NPC_118501.TALENT_BackDash = 211850124
+	NPC_118501.TALENT_FlyingBackDash = 211850125
+	NPC_118501.TALENT_SlowDash = 211850132
+	NPC_118501.TALENT_Dash = 211850123
+	NPC_118501.TALENT_Combo1 = 211850121
+	NPC_118501.TALENT_Roar = 211850126
+	NPC_118501.TALENT_GroundMode = 211850101
+	
+	NPC_118501.BPARTS_Horn = 1
+	NPC_118501.LIMIT_Pain1 = 600
+	NPC_118501.LIMIT_Pain1_1 = 400
+	NPC_118501.LIMIT_Pain4 = 100
+	NPC_118501.LIMIT_BParts = 200
+	NPC_118501.LIMIT_BParts_HP = NPC_118501.MaxHP * 0.4
+	
+	NPC_118501.NpcIdSkillDummy = 118502
+	NPC_118501.TALENT_SkillDummy = 211850201
+	NPC_118501.TALENT_SkillDummy2 = 211850202
+	NPC_118501.TALENT_SkillDummy3 = 211850203
+	
+	NPC_118501.TimerIDShortFlying		= 2			-- 단기 비행모드
+	NPC_118501.TimerIDLongFlying		= 3			-- 장기 비행모드
+	NPC_118501.DurationShortFlying		= 10
+	NPC_118501.DurationLongFlying		= 20
+	
+	NPC_118501.TimerIDShortLandWar		= 4			-- 단기 지상모드
+	NPC_118501.TimerIDLongLandWar		= 5			-- 장기 지상모드
+	NPC_118501.DurationShortLandWar		= 40
+	NPC_118501.DurationLongLandWar		= 50
+end
+
+function NPC_118501:ProcessHitBody( ThisNPC, HitInfo)
+-- 조건에 맞추어 pain 애니 출력 하기 위한 코드
+	local HpPer = ThisNPC:GetHP()/ThisNPC:GetMaxHP()
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	if currentTalent == NPC_118501.TALENT_Pain1 or
+		currentTalent == NPC_118501.TALENT_Pain2 or
+		currentTalent == NPC_118501.TALENT_Pain3 or
+		currentTalent == NPC_118501.TALENT_Pain4 or
+		currentTalent == NPC_118501.TALENT_PainHornDash then
+			return HitInfo
+	end
+	
+	if 1 ~= ThisNPC:GetMode() then
+		if (HpPer >= 0.4) and (HitInfo.Attacker:IsPlayer()) then
+			NPC_118501:ProcessPain( ThisNPC, HitInfo, NPC_118501.TALENT_Pain1, NPC_118501.DataIdxForPain1, NPC_118501.LIMIT_Pain1 )
+		elseif (HpPer < 0.4) and (HitInfo.Attacker:IsPlayer()) then
+			NPC_118501:ProcessPain( ThisNPC, HitInfo, NPC_118501.TALENT_Pain1, NPC_118501.DataIdxForPain1, NPC_118501.LIMIT_Pain1_1 )
+		end
+	end
+	
+	return HitInfo
+end
+
+function NPC_118501:AccDamage( ThisNPC, HitInfo)
+-- 뿔 짜르기
+
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	if HitInfo.Attacker:IsPlayer() and
+		(not ThisNPC:CheckBPart(NPC_118501.BPARTS_Horn)) and
+		(ThisNPC:GetHP() < NPC_118501.LIMIT_BParts_HP) and
+		(3 <= GetPainPoint( HitInfo )) then
+			NPC_118501:ProcessPain( ThisNPC, HitInfo, NPC_118501.TALENT_Pain2, NPC_118501.DataIdxForBreakPart, NPC_118501.LIMIT_BParts, NPC_118501.BPARTS_Horn )
+			
+			return HitInfo
+			
+	elseif (currentTalent == NPC_118501.TALENT_Breath) and (3 <= GetPainPoint( HitInfo )) and (true == HitInfo.Attacker:IsPlayer()) then
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf(NPC_118501.TALENT_Pain1)
+		
+	elseif HitInfo.Attacker:IsPlayer() then
+		if currentTalent == NPC_118501.TALENT_Pain1 or
+			currentTalent == NPC_118501.TALENT_Pain2 or
+			currentTalent == NPC_118501.TALENT_Pain3 or
+			currentTalent == NPC_118501.TALENT_Pain4 or
+			currentTalent == NPC_118501.TALENT_PainHornDash then
+				return HitInfo
+		end
+		
+		NPC_118501:ProcessPain( ThisNPC, HitInfo, NPC_118501.TALENT_Pain4, NPC_118501.DataIdxForPain4, NPC_118501.LIMIT_Pain4 )
+		
+		return HitInfo
+	end
+end
+	
+function NPC_118501:Bolas_Stressed(ThisNPC, Opponent)
+	if ThisNPC:GetMode() ~= 0 then return end
+		
+	-- 거리가 10m보다 멀면, 타겟을 근접으로 바꾼다.
+	local Distance = ThisNPC:DistanceTo(Opponent)
+	-- ThisNPC:Say("-- [DEBUG] 거리는 "..tostring(Distance).."입니다.")
+		
+	if(Distance >= 1000) then
+		ThisNPC:Aggro("short", 0)
+		return
+	end
+
+	-- 거리가 가까우면 랜덤으로 셋 중 하나의 근접기술을 사용한다.(2개는 근접, 한개는 그냥 날아가기)
+	local ranNum = math.random(0, 2)
+		
+	if(ranNum == 0) then 
+		ThisNPC:UseTalentSelf(NPC_118501.TALENT_Roar) -- 울부짓기
+	elseif(ranNum == 1) then
+		ThisNPC:UseTalentSelf(NPC_118501.TALENT_Combo1) -- 뿔로 치기 2연타(1타)
+	elseif(ranNum == 2) then
+		ThisNPC:UseTalentSelf(NPC_118501.TALENT_Dash) -- 대시
+	end
+end
+
+
+function NPC_118501:OnHitCapsule_0_0(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_0_1(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_0_2(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_1_0(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_1_1(HitInfo)
+	return NPC_118501:AccDamage( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_1_2(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_2_0(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_4_0(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_4_1(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_4_2(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+function NPC_118501:OnHitCapsule_4_3(HitInfo)
+	return NPC_118501:ProcessHitBody( this, HitInfo )
+end
+
+-- function NPC_118501:ProcessPain( ThisNPC, HitInfo, TalIdPain, DataIdxForPain, PainLimit )
+-- 	local PainPoint = GetPainPoint( HitInfo )
+	
+-- 	if PainPoint < 0 then
+-- 		return
+-- 	end
+	
+-- 	local AccPainPoint = ThisNPC:GetUserData( DataIdxForPain ) + PainPoint
+-- 	if AccPainPoint > PainLimit and 
+-- 		( not ThisNPC:IsCooldown( TalIdPain ) ) then
+		
+-- 		ThisNPC:ClearJob()
+-- 		ThisNPC:UseTalentSelf( TalIdPain )
+-- 		ThisNPC:SetUserData( DataIdxForPain, 0 )
+-- 	else
+-- 		ThisNPC:SetUserData( DataIdxForPain, AccPainPoint )
+-- 	end
+	
+-- 	return
+-- end
+
+function NPC_118501:ProcessPain( ThisNPC, HitInfo, TalIdPain, DataIdxForPain, PainLimit, PartID )
+	local PainPoint = GetPainPoint( HitInfo )
+	
+	if PainPoint < 0 then
+		return
+	end
+	
+	local AccPainPoint = ThisNPC:GetUserData( DataIdxForPain ) + PainPoint
+	
+	if AccPainPoint > PainLimit and ( not ThisNPC:IsCooldown( TalIdPain ) ) then
+		
+		ThisNPC:ClearJob()
+		
+		if PartID ~= nil then
+			ThisNPC:BreakPart(PartID, HitInfo.Attacker)
+		end
+		
+		ThisNPC:UseTalentSelf( TalIdPain )
+		ThisNPC:SetUserData( DataIdxForPain, 0 )
+	else
+		ThisNPC:SetUserData( DataIdxForPain, AccPainPoint )
+	end
+	
+	return
+end
+
+function NPC_118501:OnStartSummonSkilldummy( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local SummonPos = ThisNPC:GetPos()
+	local SkillDummy = ThisNPC:SummonNow( NPC_118501.NpcIdSkillDummy, SummonPos )
+	
+	SkillDummy:SetDir( ThisNPC:GetDir() )
+	SkillDummy:UseTalent( NPC_118501.TALENT_SkillDummy, Enemy )
+end
+
+function NPC_118501:OnStartSummonSkilldummy2( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local SummonPos = ThisNPC:GetPos()
+	local SkillDummy = ThisNPC:SummonNow( NPC_118501.NpcIdSkillDummy, SummonPos )
+	
+	SkillDummy:SetDir( ThisNPC:GetDir() )
+	SkillDummy:UseTalent( NPC_118501.TALENT_SkillDummy2, Enemy )
+end
+
+function NPC_118501:OnStartSummonSkilldummy3( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local SummonPos = ThisNPC:GetPos()
+	local SkillDummy = ThisNPC:SummonNow( NPC_118501.NpcIdSkillDummy, SummonPos )
+	
+	SkillDummy:SetDir( ThisNPC:GetDir() )
+	SkillDummy:UseTalent( NPC_118501.TALENT_SkillDummy3, Enemy )
+end
+
+function NPC_118501:CheckRear1( ThisNPC, Enemy )
+	local ranNum = math.random(0, 99)
+	local Dist = ThisNPC:DistanceTo( Enemy )
+
+	if Dist < 600 and Enemy:IsRear( ThisNPC ) then
+		if (false == ThisNPC:IsCooldown( NPC_118501.TALENT_BackDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_BackDash )
+		elseif (ranNum <= 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_SlowDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_SlowDash )
+		else
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Combo1 )
+		end
+	elseif (Dist < 600) and (false == Enemy:IsRear( ThisNPC )) then
+		if (ranNum <= 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_SlowDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_SlowDash )
+		else
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Combo1 )
+		end
+	end
+end
+
+function NPC_118501:CheckRear2( ThisNPC, Enemy )
+	local ranNum = math.random(0, 99)
+	local Dist = ThisNPC:DistanceTo( Enemy )
+
+	if Dist < 600 and Enemy:IsRear( ThisNPC ) then
+		if (ranNum <= 80) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_BackDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_BackDash )
+		elseif (ranNum > 80) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_FlyingBackDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_FlyingBackDash )
+		elseif (ranNum <= 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_SlowDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_SlowDash )
+		elseif (ranNum > 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_Dash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Dash )
+		else
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Combo1 )
+		end
+	elseif (Dist < 600) and (false == Enemy:IsRear( ThisNPC )) then
+		if (ranNum <= 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_SlowDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_SlowDash )
+		elseif (ranNum > 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_Dash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Dash )
+		else
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Combo1 )
+		end
+	end
+end
+
+function NPC_118501:CheckRear3( ThisNPC, Enemy )
+	local ranNum = math.random(0, 99)
+	local Dist = ThisNPC:DistanceTo( Enemy )
+
+	if Dist < 600 and Enemy:IsRear( ThisNPC ) then
+		if (ranNum <= 70) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_BackDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_BackDash )
+		elseif (ranNum > 70) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_FlyingBackDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_FlyingBackDash )
+		elseif (ranNum <= 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_Dash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Dash )
+		elseif (ranNum > 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_SlowDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_SlowDash )
+		else
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Combo1 )
+		end
+	elseif (Dist < 600) and (false == Enemy:IsRear( ThisNPC )) then
+		if (ranNum <= 30) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_Breath )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Breath )
+		elseif (ranNum <= 50) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_Dash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Dash )
+		elseif (ranNum <= 70) and (false == ThisNPC:IsCooldown( NPC_118501.TALENT_SlowDash )) then
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_SlowDash )
+		else
+			ThisNPC:UseTalentSelf( NPC_118501.TALENT_Combo1 )
+		end
+	end
+end
+
+function NPC_118501:OnFinishAndAggroSwap( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_118501:OnBPartRecover()
+	for i=1, 5 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+	]]></SCRIPT>
+</maiet>

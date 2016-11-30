@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="maiet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="QUEST">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ITEM">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="FILL">
+                      <xs:complexType>
+                        <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="amount" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ADD">
+                      <xs:complexType>
+                        <xs:attribute name="id" type="xs:unsignedInt" use="required" />
+                        <xs:attribute name="amount" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="OBJECTIVES">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="OBJECTIVE">
+                      <xs:complexType>
+                        <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="desc" type="xs:string" use="required" />
+                        <xs:attribute name="type" type="xs:string" use="required" />
+                        <xs:attribute name="param1" type="xs:string" use="required" />
+                        <xs:attribute name="param2" type="xs:unsignedInt" use="optional" />
+                        <xs:attribute name="field" type="xs:unsignedInt" use="optional" />
+						<xs:attribute name="field2" type="xs:unsignedInt" use="optional" />
+                        <xs:attribute name="marker" type="xs:unsignedInt" use="optional" />
+						<xs:attribute name="marker2" type="xs:unsignedInt" use="optional" />
+                        <xs:attribute name="public_progress" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="REWARDS">
+                <xs:complexType mixed="true">
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="REWARD">
+                      <xs:complexType>
+                        <xs:attribute name="type" type="xs:string" use="required" />
+                        <xs:attribute name="param1" type="xs:string" use="required" />
+                        <xs:attribute name="param2" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="dialog" type="xs:unsignedInt" use="required" />
+                  <xs:attribute name="rewarder" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:unsignedInt" use="required" />
+            <xs:attribute name="title" type="xs:string" use="required" />
+            <xs:attribute name="desc" type="xs:string" use="required" />
+			<xs:attribute name="type" type="xs:string" use="optional" />
+            <xs:attribute name="repeatable" type="xs:boolean" use="required" />
+            <xs:attribute name="dialog" type="xs:unsignedInt" use="required" />
+            <xs:attribute name="incomplete_dialog" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="level" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="timelimit" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="destroy_item" type="xs:string" use="optional" />
+            <xs:attribute name="validation" type="xs:boolean" use="optional" />
+            <xs:attribute name="category" type="xs:string" use="optional" />
+            <xs:attribute name="share_condition" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="share" type="xs:string" use="optional" />
+            <xs:attribute name="trialtype" type="xs:string" use="optional" />
+            <xs:attribute name="field_group" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="party_field" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="party_sensor" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="party_member_count" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="players" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="condition" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="cq_condition" type="xs:unsignedShort" use="optional" />
+			<xs:attribute name="comment" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

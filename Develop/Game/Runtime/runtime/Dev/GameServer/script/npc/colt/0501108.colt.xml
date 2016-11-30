@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>					
+	<COLT name="변성된 늑대" npcid="501108">			
+		<COMBAT>			
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110811" rate="35" />
+				<ACTION type="talent" param1="250110812" rate="15" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="talent" param1="250110802" rate="5" cycle="30"/> 
+				
+				<ACTION type="talent" param1="250110811" rate="10" />
+				<ACTION type="talent" param1="250110812" rate="10" /> 
+				<ACTION type="talent" param1="250110813" rate="30" /> 
+				
+				<ACTION type="lua" param1="RunAround"  rate="10" cycle="20" />
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250110800" rate="20" />
+				<ACTION type="talent" param1="250110801" rate="20" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_501108:OnActWolfCry( ThisActor, Enemy )
+	--GLog( "NPC_501108:OnActWolfCry\n" )
+	CallAlly8m( ThisActor, Enemy )
+end
+
+	]]></SCRIPT>	
+</maiet>

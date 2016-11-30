@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="116005" minimap_name="map00116" min_x="-22000" min_y="-37000" max_x="50000" max_y="35000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" qpvpnpc1="950000" qpvpnpc2="9500001" qpvprebirth1="102230" qpvprebirth2="102231">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="116502" group="0" name="아레크" x="-2628.129639" y="961.139160" z="6435.659180" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="116502" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116503" group="0" name="쓰러진 아레크" x="-675.723450" y="-1665.215576" z="4858.604004" dir_x="0.500000" dir_y="0.866025" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="116517" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116511" group="0" name="[NPC] 하프메인" x="-5629.505859" y="2388.650635" z="4440.045410" dir_x="0.358368" dir_y="-0.933581" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="116511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116516" group="0" name="불균형의 천칭의 개입" x="-148.803528" y="-1635.359131" z="4845.142578" dir_x="-0.224951" dir_y="0.974370" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="116516" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="-5616.381836" y="3674.622314" z="4437.511230" dir_x="0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="하프메인 이동 1" x="-5047.001953" y="1040.832520" z="4654.765625" dir_x="0.777146" dir_y="-0.629320" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="하프메인 이동 2" x="-3902.407715" y="214.291580" z="4842.659668" dir_x="0.987688" dir_y="-0.156434" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="하프메인 이동 3" x="143.511307" y="-197.864807" z="4856.817871" dir_x="0.990268" dir_y="-0.139173" dir_z="0.000000" random_dir="false" />
+        <MARKER id="20" name="아레크 이동 " x="-1416.104736" y="399.740479" z="4857.509766" dir_x="0.898794" dir_y="-0.438371" dir_z="0.000000" random_dir="false" />
+        <MARKER id="25" name="날아서 도주" x="-6162.545898" y="-12091.678711" z="5702.504395" dir_x="-0.406737" dir_y="-0.913545" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30" name="브레스 발사 위치" x="-887.444153" y="-1908.474365" z="4859.686523" dir_x="0.406737" dir_y="0.913545" dir_z="0.000000" random_dir="false" />
+        <MARKER id="31" name="하프메인 맞는 위치" x="-667.965637" y="-1416.551514" z="4858.812012" dir_x="-0.406737" dir_y="-0.913545" dir_z="0.000000" random_dir="false" />
+        <MARKER id="32" name="하프메인 녹턴 위치" x="-566.422607" y="-1220.051514" z="4857.389648" dir_x="-0.438371" dir_y="-0.898794" dir_z="0.000000" random_dir="false" />
+        <MARKER id="33" name="하프메인 흡수 위치" x="-210.561340" y="-1323.275146" z="4849.700195" dir_x="-0.743145" dir_y="-0.669131" dir_z="0.000000" random_dir="false" />
+        <MARKER id="116031" name="QM 116031" x="408.087280" y="-43.807095" z="4858.319336" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 아란바스" x="-6312.578125" y="4796.179688" z="4488.792969" radius="400.000000" enabled="true">
+            <EFFECT effect="ZoneLine" x="295.252441" y="-252.189453" z="0.000000" dir_x="-0.694659" dir_y="0.719339" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.600000" scale_y="0.700000" scale_z="0.600000" />
+            <WARP warp_type="field" title="아란바스로" condition="0" gate_type="auto" field="116" marker="50" />
+        </SENSOR>
+        <SENSOR id="10" name="시작 센서" local="false" x="-5485.480469" y="2168.624268" z="4445.631348" radius="500.000000" enabled="true" groupname="none" />
+        <SENSOR id="116031" name="QOS 116031" local="false" x="-507.668854" y="13.879746" z="4857.127441" radius="2000.000000" enabled="false" groupname="none" />
+    </FIELDINFO>
+</maiet>

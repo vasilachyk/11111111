@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="오우거 돌격대장">
+		<COMBAT >
+			<DEFAULT>				
+				<ACTION type="talent" param1="210200314" rate="70" />
+				<ACTION type="talent" param1="210200311" rate="20" />
+				<ACTION type="talent" param1="210200312" rate="20" />
+				<ACTION type="talent" param1="210200313" rate="10" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210200301" rate="100" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

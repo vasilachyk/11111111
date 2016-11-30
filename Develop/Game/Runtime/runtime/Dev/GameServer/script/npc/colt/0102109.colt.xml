@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+
+
+<!-- 
+210210901	냉기의 포효
+210210902	리프 어택(기절)
+210210903	위협(가슴치기)
+-->
+
+<maiet>
+	<COLT name="???" npcid="102109">
+		<COMBAT>
+			<DEFAULT comment="이벤트 공격">
+				<ACTION type="group">
+					<ACTION type="talent" param1="210210902" rate="100" duration="30" />
+					<ACTION type="talent" param1="210210903" rate="100" duration="0" />				
+				</ACTION>
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="210210901"  rate="100" />
+			</DEFAULT>
+		</AGGRO>
+		
+
+	</COLT>
+</maiet>

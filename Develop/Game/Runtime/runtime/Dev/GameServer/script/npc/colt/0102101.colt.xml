@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="코볼트 산적">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="8"/>
+				<ACTION type="talent" param1="210210101" rate="40" />
+				<ACTION type="talent" param1="210210102" rate="40" />
+				<ACTION type="talent" param1="210210103" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="200" >
+				<CHECK type="rage" param1="200">
+					<ACTION type="guard" param1="210210104" param2="1" rate="10" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="0.5" rate="10" cycle="8"/>
+				
+				<ACTION type="talent" param1="210210101" rate="30" />
+				<ACTION type="talent" param1="210210102" rate="30" />
+				<ACTION type="talent" param1="210210103" rate="10" />
+				
+				<!-- 포효 -->
+				<ACTION type="talent" param1="210210105" rate="10" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210210100" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

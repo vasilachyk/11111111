@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="처형집행인" npcid="501004">
+		<COMBAT mode="0" comment="">
+			<DEFAULT>
+				
+				<ACTION type="talent" param1="250100213" rate="20" desc="내려치기" />
+				<ACTION type="talent" param1="250100210" rate="10" desc="2연타" />
+				<ACTION type="talent" param1="250100224" rate="10" cycle="30" duration="0" desc="휠윈드 시작" />
+				<!--
+				<ACTION type="talent" param1="250100220" rate="10" duration="0" desc="휠윈드 시작" />
+				-->				
+				<!--
+				<ACTION type="lua" param1="NPC_501002" param2="BackAttack" rate="5" cycle="5"/>
+				-->
+			</DEFAULT>
+			<!--
+			<CHECK type="hp" param1="0">
+				
+			</CHECK>
+			-->
+			<CHECK type="hp" param2="99">
+				<ACTION type="talent" param1="250100224" duration="0" desc="휠윈드 시작" />
+				<ACTION type="talent" param1="250100214" duration="0" desc="회복" />
+			</CHECK>
+			<!--
+			<CHECK type="stress" param1="10">
+				<ACTION type="talent" param1="250100220" duration="0" desc="휠윈드 시작" />
+			</CHECK>
+			-->			
+		</COMBAT>
+		<COMBAT mode="1" comment="휠윈드" victory="250100222">
+			<DEFAULT>
+				<!--<ACTION type="talent" param1="250100221" duration="0" desc="휠윈드 쉼" />-->
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="250100222" cycle="10" duration="0" desc="훨윈드 끝" />
+			</CHECK>
+			<CHECK type="distance" param1="300" >
+				<ACTION type="distance" param1="200" param2="250" duration="3"/>
+				<!--<ACTION type="talent" param1="250100221" duration="0" rate="50" desc="휠윈드 쉼" />-->
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+-- 휠윈드
+function NPC_7501004:OnFinishStartWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	NPC_7501004.BUFF_ShieldRemoval = 40772
+	
+	ThisNPC:GainBuff( NPC_501002.WHIRLWIND_BUFF )
+	ThisNPC:GainBuff( NPC_7501004.BUFF_ShieldRemoval )
+--	ThisNPC:SetTimer( NPC_501002.WHIRLWIND_TIMER, NPC_501002.WHIRLWIND_TTL, false )
+	
+end
+
+function NPC_7501004:OnActEndWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:RemoveBuff( NPC_501002.WHIRLWIND_BUFF )
+	ThisNPC:RemoveBuff( NPC_7501004.BUFF_ShieldRemoval )
+	
+	ThisNPC:Aggro( "random", 0)
+end
+
+	]]></SCRIPT>
+</maiet>

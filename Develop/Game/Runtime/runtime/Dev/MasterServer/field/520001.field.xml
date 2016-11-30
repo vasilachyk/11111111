@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="520001" min_x="-10900" min_y="-10900" max_x="10900" max_y="10900" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Sunset" town="false" returnable="true" tutorial="false" max_gather_mine="10" max_gather_herb="10" max_gather_relic="10" max_gather_lumber="10" qpvpnpc1="950000" qpvpnpc2="950000" qpvprebirth1="102230" qpvprebirth2="102231">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="[로밍]일반몹" x="2481.517578" y="-3226.255371" z="19.050041" dir_x="0.838671" dir_y="0.544639" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="[로밍]일반몹" x="3000.892090" y="-3598.696533" z="70.588379" dir_x="-0.104529" dir_y="0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="[로밍]일반몹" x="2472.651367" y="-4238.207031" z="54.395996" dir_x="0.965926" dir_y="0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="[로밍]일반몹" x="2850.552979" y="-4204.000000" z="81.049805" dir_x="-0.121870" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="[로밍]일반몹" x="2937.658447" y="-4574.943848" z="70.754395" dir_x="-0.017453" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="일반몹" x="-4281.746094" y="3312.058105" z="95.317383" dir_x="0.882948" dir_y="-0.469471" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="일반몹" x="1.782776" y="4949.842773" z="0.000000" dir_x="0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="300" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="일반몹" x="-2708.541992" y="8165.684570" z="32.932617" dir_x="0.990268" dir_y="-0.139172" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="50" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="[로밍]일반몹" x="-883.876221" y="4975.950684" z="0.000048" dir_x="-0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="300" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="일반몹" x="2882.667480" y="-3156.254639" z="46.834961" dir_x="-0.731354" dir_y="-0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="일반몹" x="3668.625488" y="-3287.118652" z="64.857910" dir_x="0.529920" dir_y="0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="일반몹" x="-1227.723877" y="8358.404297" z="75.153320" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="일반몹" x="-1366.606201" y="7883.869629" z="75.153320" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="일반몹" x="2683.529785" y="4502.832031" z="75.213379" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="일반몹" x="-825.898193" y="8274.093750" z="75.153320" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="일반몹" x="-3453.309814" y="4297.786133" z="95.317383" dir_x="0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="일반몹" x="-2448.791504" y="8228.873047" z="32.932617" dir_x="0.999391" dir_y="0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="로밍용일반몹" x="3991.179688" y="-3079.000732" z="95.317383" dir_x="-0.743145" dir_y="-0.669131" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" group="0" name="일반몹" x="-2948.538818" y="4144.422852" z="95.317383" dir_x="-0.788011" dir_y="-0.615662" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20" group="0" name="일반몹" x="-2635.014160" y="7509.805664" z="32.932617" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="50" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="일반몹" x="-2816.334229" y="7836.385742" z="32.932617" dir_x="0.998630" dir_y="0.052336" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="일반몹" x="-2128.009766" y="7856.940430" z="32.932617" dir_x="-0.997564" dir_y="-0.069756" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="23" group="0" name="네임드" x="-5701.828613" y="5654.042969" z="32.602173" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="99999" roam_radius="200" roam_depth="0" combat_radius="2000" color="auto">
+            <NPC id="520107" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="24" group="0" name="일반몹" x="8380.757813" y="3632.037598" z="95.317383" dir_x="-0.544639" dir_y="-0.838670" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117132" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="25" group="0" name="일반몹" x="-4121.256836" y="2903.140625" z="22.032227" dir_x="0.515038" dir_y="0.857168" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="26" group="0" name="일반몹" x="8076.581055" y="3011.679688" z="0.000000" dir_x="0.848048" dir_y="0.529919" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="117132" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="27" group="0" name="[로밍]일반몹" x="-1319.358765" y="-3785.443848" z="0.000000" dir_x="0.927184" dir_y="-0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28" group="0" name="죽어있는인형술사" x="-9136.385742" y="3242.465332" z="59.641129" dir_x="0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520507" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="29" group="0" name="죽어있는인형술사" x="8142.219727" y="4270.447754" z="95.317398" dir_x="-0.906308" dir_y="-0.422619" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520507" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="30" group="0" name="1층 포탈" x="3128.834961" y="14.956894" z="3.005761" dir_x="-0.998630" dir_y="0.052337" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520503" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="31" group="0" name="1층 잠겨진문" x="3172.048096" y="-22.736328" z="0.000000" dir_x="-0.996195" dir_y="0.087156" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520504" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="32" group="0" name="죽어있는인형술사" x="-9055.841797" y="4234.091797" z="59.641129" dir_x="0.325569" dir_y="-0.945518" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="20" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520507" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="33" group="0" name="[로밍]일반몹" x="-1695.651489" y="-4734.571289" z="0.000000" dir_x="0.927184" dir_y="-0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="34" group="0" name="일반몹" x="-781.655029" y="-4977.264648" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520508" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="35" group="0" name="먼지내리게하는 오브젝트" x="1799.263428" y="-1523.581177" z="708.837402" dir_x="0.629320" dir_y="-0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="36" group="0" name="먼지내리게하는 오브젝트" x="1608.139771" y="1463.789551" z="599.161133" dir_x="0.629320" dir_y="-0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="37" name="[채집]상자" x="5332.079590" y="-2470.730469" z="2.998228" dir_x="-0.939693" dir_y="0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="38" name="[채집]상자" x="5971.411133" y="5778.719727" z="2.998169" dir_x="-0.777146" dir_y="-0.629321" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="39" name="[채집]상자" x="5762.958008" y="5985.190918" z="2.998178" dir_x="-0.766045" dir_y="-0.642787" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="40" name="[채집]상자" x="2507.907959" y="7205.103027" z="3.166931" dir_x="-0.642788" dir_y="-0.766045" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="41" name="[채집]상자" x="4888.502930" y="270.296509" z="3.166931" dir_x="0.469472" dir_y="-0.882948" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="42" name="[채집]상자" x="2953.363037" y="7204.994629" z="3.166931" dir_x="-0.642788" dir_y="-0.766045" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="43" group="0" name="일반몹" x="-3334.845703" y="4019.464355" z="0.000033" dir_x="0.034899" dir_y="0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="44" group="0" name="일반몹" x="-4026.249268" y="3199.990967" z="0.000040" dir_x="-0.898794" dir_y="-0.438372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="45" group="0" name="일반몹" x="-3060.542725" y="3050.446045" z="0.000033" dir_x="0.970296" dir_y="-0.241921" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="46" group="0" name="일반몹" x="-3031.577637" y="2731.264404" z="0.000048" dir_x="0.848048" dir_y="0.529920" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="47" group="0" name="일반몹" x="-2667.621826" y="3001.525391" z="0.000062" dir_x="-0.978148" dir_y="-0.207912" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="48" group="0" name="일반몹" x="3732.074951" y="1965.619629" z="10.355530" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="49" group="0" name="일반몹" x="4459.871582" y="3092.337158" z="10.355530" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="50" group="0" name="로밍용일반몹" x="3856.632568" y="-2749.156982" z="30.433624" dir_x="-0.469471" dir_y="-0.882948" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="51" group="0" name="일반몹" x="3479.037842" y="2269.519043" z="10.355530" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="52" group="0" name="일반몹" x="3079.634521" y="4525.875977" z="10.355469" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="53" group="0" name="일반몹" x="4854.704102" y="4673.966797" z="27.163147" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="54" group="0" name="일반몹" x="4504.291504" y="2740.436523" z="10.355530" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="55" group="0" name="[로밍]일반몹" x="520.612244" y="4092.682617" z="0.000056" dir_x="-0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="300" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="56" group="0" name="네임드" x="3397.188232" y="3438.658203" z="63.165039" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="99999" roam_radius="200" roam_depth="0" combat_radius="2000" color="auto">
+            <NPC id="520106" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="57" group="0" name="[로밍]일반몹" x="615.676025" y="4871.958496" z="0.000029" dir_x="-0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="300" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="58" group="0" name="[로밍]일반몹" x="-714.032288" y="4543.565430" z="0.000024" dir_x="-0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="300" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520512" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="59" group="0" name="일반몹" x="-4500.624023" y="2956.280518" z="0.000032" dir_x="0.866025" dir_y="0.500001" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="60" group="0" name="일반몹" x="-3083.483154" y="4502.741211" z="0.000039" dir_x="-0.438371" dir_y="-0.898794" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="1" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520105" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="61" group="0" name="네임드" x="5880.616699" y="-5816.854004" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="99999" roam_radius="200" roam_depth="0" combat_radius="2000" color="auto">
+            <NPC id="520103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="62" group="0" name="[로밍]일반몹" x="2655.081055" y="-3570.284912" z="25.673340" dir_x="0.587785" dir_y="0.809017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="63" group="0" name="[로밍]일반몹" x="3525.328857" y="-2854.680908" z="25.673340" dir_x="0.139173" dir_y="-0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="64" group="0" name="[로밍]일반몹" x="2625.208740" y="-4585.491211" z="25.673340" dir_x="0.529920" dir_y="0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="65" group="0" name="일반몹" x="5394.885254" y="5438.194824" z="30.733398" dir_x="0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="66" group="0" name="로밍용일반몹" x="2297.680420" y="-1768.163330" z="32.720703" dir_x="-0.656059" dir_y="0.754709" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="67" group="0" name="로밍용일반몹" x="1764.622192" y="-2317.092529" z="32.720703" dir_x="-0.656059" dir_y="0.754709" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="68" group="0" name="로밍용일반몹" x="2332.509766" y="1789.953735" z="20.131836" dir_x="-0.829037" dir_y="-0.559193" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="69" group="0" name="로밍용일반몹" x="1780.711304" y="2373.880615" z="20.131836" dir_x="-0.642787" dir_y="-0.766045" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="70" group="0" name="로밍용일반몹" x="-1795.735840" y="2340.407471" z="39.972656" dir_x="0.656059" dir_y="-0.754709" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="71" group="0" name="로밍용일반몹" x="-2366.653809" y="1799.502197" z="39.972656" dir_x="0.809017" dir_y="-0.587785" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="72" group="0" name="일반몹" x="2868.523438" y="4724.770508" z="51.850830" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="73" group="0" name="퀘주는사람" x="-432.168274" y="-3603.145020" z="0.000000" dir_x="-0.656059" dir_y="0.754709" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520513" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="74" group="0" name="[로밍]일반몹" x="1346.646484" y="-4059.516357" z="0.000000" dir_x="-0.961262" dir_y="-0.275637" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="75" group="0" name="일반몹" x="-389.944855" y="2250.102783" z="2.995568" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="76" group="0" name="일반몹" x="-1452.100586" y="1905.811768" z="7.503296" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="50" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="77" group="0" name="[로밍]일반몹" x="1676.847290" y="-4827.604980" z="0.000000" dir_x="-0.961262" dir_y="-0.275637" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="출발지점" x="-110.452087" y="-4971.960938" z="3.006348" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="로밍용마커" x="-976.872559" y="2432.288574" z="3.004940" dir_x="0.809017" dir_y="0.587785" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="로밍용마커" x="-1813.420776" y="1721.345703" z="3.091198" dir_x="-0.629321" dir_y="-0.777146" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="로밍용마커" x="-1701.627441" y="1465.125732" z="51.082214" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="로밍용마커" x="3731.330322" y="3782.518311" z="13.352478" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="로밍용마커" x="2192.182373" y="3221.873047" z="18.937988" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="로밍용마커" x="5039.185059" y="5000.996094" z="13.353516" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="로밍용마커" x="-873.428101" y="2220.441895" z="92.701294" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="로밍용마커" x="115.695435" y="2396.404785" z="45.557983" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="로밍용마커" x="49.089111" y="2743.753418" z="30.433638" dir_x="-0.629321" dir_y="-0.777146" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="로밍용마커" x="376.642212" y="7384.953125" z="30.433626" dir_x="-0.629321" dir_y="-0.777146" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="네임드1표시" x="5885.399414" y="-5853.226563" z="278.249695" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="네임드2표시용" x="3380.652832" y="3397.629883" z="2.997550" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="네임드3표시용" x="-5743.609863" y="5712.155762" z="2.998057" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="3" name="2층으로" x="3772.125000" y="40.316162" z="3.005893" radius="486.435822" enabled="false">
+            <WARP warp_type="field" title="2층으로" condition="0" gate_type="auto" field="520002" marker="1" />
+        </SENSOR>
+        <SENSOR id="4" name="세이브저장소" local="false" x="-126.204987" y="-4858.792969" z="75.338135" radius="793.562866" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="5" name="밟으면 먼지나오게하는 센서" local="false" x="1224.091064" y="-2082.541748" z="7.429531" radius="800.000000" enabled="true" groupname="none" />
+        <SENSOR id="8" name="auto" local="false" x="1427.170044" y="1753.747803" z="3.003704" radius="993.245483" enabled="false" groupname="none" />
+        <AREA id="2" name="현관" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-184.967224" y="-5030.456055" z="0.000072" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="중앙 홀" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="88.726440" y="-13.820923" z="0.000041" radius="3000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="5" name="대기실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-9.038162" y="4759.900391" z="0.000054" radius="1700.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="7" name="광대인형 제작실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="3696.961670" y="-3685.383301" z="0.000036" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="5951.835449" y="-6112.274414" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="8" name="업무실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="3698.051514" y="3739.747314" z="0.000042" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="5878.944336" y="5744.963867" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="10" name="광대인형 훈련실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-3738.970703" y="3697.240479" z="0.000045" radius="2000.000000" height="1000.000000" />
+            <CYLINDER x="-6169.409180" y="6101.200684" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

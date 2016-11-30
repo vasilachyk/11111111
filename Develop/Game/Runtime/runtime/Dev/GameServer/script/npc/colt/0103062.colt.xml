@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="크립소환더미" npcid="103062">
+		<COMBAT mode="0">
+			<DEFAULT comment="">
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_103062:Init( NPCID )
+	NPC_103062.NpcIdCreepQueen		= 103060
+	NPC_103062.NpcIdCreepFighter	= 103061
+	NPC_103062.IntervalSummoning	= 30
+	NPC_103062.MaxCntMinion			= 6
+end
+
+-- 크립퀸을 찾아서 자신을 Target으로 설정한다.
+function NPC_103062:OnSpawn( Info )
+	local Field = this:GetField()
+	local Queen = Field:GetNPC( NPC_103062.NpcIdCreepQueen )
+	Queen:SetTarget( this )
+	this:SetTarget( Queen )
+	-- GLog( Queen:GetName() .. " - NPC_103062:OnSpawn \n" )
+end
+
+function NPC_103062:StartSummon( ThisNPC )
+	-- GLog( "NPC_103062:StartSummon\n" ) 
+	
+	NPC_103062:SummonCreep( ThisNPC )
+	ThisNPC:SetTimer( 1, NPC_103062.IntervalSummoning, true )
+end
+
+function NPC_103062:FinishSummon( ThisNPC )
+	ThisNPC:KillTimer( 1 )
+end
+
+function NPC_103062:OnTimer( TimerID )
+	-- GLog( "NPC_103062:OnTimer\n" )
+	NPC_103062:SummonCreep( this )
+end
+
+
+-- 한번에 최대 두마리씩 소환
+function NPC_103062:SummonCreep( ThisNPC )
+	-- GLog( "NPC_103062:SummonCreep\n" )	
+	
+	local Queen = AsNPC( ThisNPC:GetTarget() )
+	if Queen:IsNull() then
+		return
+	end
+	
+	-- GLog( Queen:GetName() .. "\n" )
+	
+	local MaxSummonCnt = 2	-- 한번에 소환하는 최대 소환수의 갯수
+	if Queen:GetHP()/Queen:GetMaxHP() < 0.5 then -- 체력이 50% 이하가 되면 소환수를 한번에 4마리씩 소환한다.
+		MaxSummonCnt = 4
+	end
+	
+	local RemainCnt 	= NPC_103062.MaxCntMinion - ThisNPC:GetSummonCount()
+	local WorldPos 		= vec3()
+	local LocalAdjPos 	= vec3()
+	
+	if RemainCnt > 1 then
+		if RemainCnt > MaxSummonCnt then
+			RemainCnt 	= MaxSummonCnt
+		else
+			RemainCnt	= 1
+		end
+	end
+	
+	for i = 1, RemainCnt, 1 do
+		LocalAdjPos = vec3( math.random(-1000, 1000), math.random(-1000, 1000), 0 )
+		WorldPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), LocalAdjPos )
+		local Minion = ThisNPC:SummonNow( NPC_103062.NpcIdCreepFighter, WorldPos)
+		Minion:Wait(i*2)
+		Minion:Assist( Queen )
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

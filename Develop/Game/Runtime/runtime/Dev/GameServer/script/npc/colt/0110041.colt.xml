@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 렌고트부족 폭탄병  -->
+<maiet>
+	<COLT name="렌고트부족폭탄병">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="211004102" rate="5" />
+				<ACTION type="talent" param1="211004103" rate="10" />		
+				
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="0" param2="200">
+				
+					<ACTION type="nothing" param1="1" rate="25" cycle="6"/>		
+					<ACTION type="talent" param1="211004102" rate="40" /> <!-- 연타공격 -->	
+					<ACTION type="talent" param1="211004103" rate="10" /> <!-- 강타공격 -->	
+								
+				<CHECK type="rage" param1="60">
+					
+					<ACTION type="talent" param1="211004103" rate="40" /> 						
+
+				</CHECK>
+				
+			</CHECK>
+			
+			<CHECK type="distance" param1="200"  >
+				
+				<ACTION type="talent" param1="211004104" rate="100" /><!-- 폭탄던지기 -->
+				
+			</CHECK>
+			
+			
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211004100" rate="20"/>
+				<ACTION type="nothing" param1="1" rate="80"/>
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_110041:OnFinishLayBomb( ThisNPC, Enemy )	
+	local NPCID_BOMB 			= 110042
+	local TALID_BOMBIGNITE 	= 211004202
+	local TALID_BOMBBOMB 	= 211004201
+	
+	local BombPos = Math_GetDistancePoint( ThisNPC:GetPos(), ThisNPC:GetDir(), 60 )
+	local Field = ThisNPC:GetField()
+	local BomberMan = AsNPC(ThisNPC);
+	local Bomb = Field:Spawn( NPCID_BOMB, BombPos )
+	--local Player = AsPlayer(Enemy)
+	
+	--ThisNPC:FleeFromEnemy(5)
+	--ThisNPC:UseTalentSelf(211004108)
+	
+	--if( Enemy:IsPlayer() == true ) then 
+		--GLog( "!!!!!!!!!!!!!\n" )
+	--	BomberMan:StayawayFrom(Enemy, 600)
+	--end 
+	--BomberMan:UseTalentSelf(211004108)
+	Bomb:SetDecayTime( 1 )
+	Bomb:UseTalentSelf( TALID_BOMBIGNITE )
+	Bomb:UseTalentSelf( TALID_BOMBBOMB )
+	Bomb:Die(Bomb)
+	
+	--GLog( "OnFinish_LayBomb\n" )
+end
+
+
+
+
+function NPC_110041:OnTryHit( ThisActor , TalId )
+	local TALID_BOMBBOMB 	= 211004201
+	
+	if TalId == TALID_BOMBBOMB then
+		
+		this:ClearJob()
+		this:Die( this )
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

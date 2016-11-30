@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <COLT name="오우거 문지기 정예병" npcid="7102140">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="710213905" rate="10" desc="일반공격1" />
+				<ACTION type="talent" param1="710213906" rate="10" desc="일반공격2" />
+				<ACTION type="talent" param1="710213909" rate="10" desc="양팔 몽둥이" />
+				<!--<ACTION type="talent" param1="710213908" rate="50" desc="파이어볼"/>-->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="500" >
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="710213905" rate="10" desc="일반공격1" />
+				<ACTION type="talent" param1="710213906" rate="10" desc="일반공격2" />
+				<ACTION type="talent" param1="710213909" rate="10" desc="양팔 몽둥이" />
+				
+				<!-- 원거리 스킬 -->
+				<ACTION type="talent" param1="710213907" rate="50" desc="돌던지기" />
+				<!--<ACTION type="talent" param1="710213908" rate="50" desc="파이어볼"/>-->
+			</CHECK>
+			<CHECK type="distance" param2="1000" >	
+				<ACTION type="talent" param1="710213907" rate="50" desc="돌던지기" />
+				<!--<ACTION type="talent" param1="710213908" rate="50" desc="파이어볼"/>-->			
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="710213901" rate="10" desc="idle2" />
+				<ACTION type="talent" param1="710213902" rate="10" desc="idle3" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

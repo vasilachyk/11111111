@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="하프메인(트라이얼 필드)">
+		<COMBAT mode="0" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211651101" rate="30" />
+				<ACTION type="talent" param1="211651102" rate="30" />
+				<ACTION type="talent" param1="211651103" rate="20" />
+			</DEFAULT>
+
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="talent" param1="211651101" rate="15" />
+				<ACTION type="talent" param1="211651102" rate="15" />
+				<ACTION type="talent" param1="211651103" rate="17" />
+				<ACTION type="talent" param1="211651104" rate="18" />
+				<ACTION type="talent" param1="211651105" rate="18" />
+				<ACTION type="talent" param1="211651106" rate="17" />				
+			</CHECK>
+			
+			<CHECK type="distance" param2="200" >
+				<ACTION type="distance" param1="300" param2="400" rate="100" />
+			</CHECK>			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="400" rate="100" />
+			</CHECK>
+			
+		</COMBAT>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

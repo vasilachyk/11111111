@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 베스피오단 도둑, 소시아	
+# 인간형 한손검 기본, 방패	
+#일반	
+211713201	#칼뽑기(tomode0)
+211713202	#칼넣기(tomode1)
+211713203	#회피L
+211713204	#회피R
+211713205	#역습 포커스
+#전투	
+211713211	#1타
+211713212	#2연타
+211713213	#3연타
+211713214	#찌르기
+211713215	#강격
+211713216	#보루
+211713217	#파멸의 일격
+211713218	#방패 가격: 기절
+211713219	#돌진
+211713220	#방어
+211713221	#방패 후리기
+-->
+<maiet>
+	<COLT name="소시아" npcid="117007">
+		<COMBAT mode="0" victory="211713202" >
+			<DEFAULT>
+				<ACTION type="talent" param1="211713211" rate="10" desc="1타" />
+				<ACTION type="talent" param1="211713212" rate="15" desc="2연타" />
+				<ACTION type="talent" param1="211713217" rate="5" desc="파멸의 일격" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="211713216" rate="15" desc="보루" cycle="40" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="60">
+				<ACTION type="talent" param1="211713205" rate="15" desc="역습 포커스" cycle="40" />
+			</CHECK>
+			
+			<CHECK type="gained_buff" param1="80120">
+				<CHECK type="distance" param1="300" >
+					<ACTION type="talent" param1="211713219" rate="50" desc="돌진" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="50" >
+					<ACTION type="talent" param1="211713215" rate="50" desc="강격" />
+					<ACTION type="talent" param1="211713221" rate="50" desc="방패 후리기" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="rage" param1="50" >
+				<ACTION type="talent" param1="211713218" rate="50" desc="방패 가격: 기절" />
+				<ACTION type="guard" param1="211713220" param2="2" rate="10" cycle="15" desc="방어" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="350" >
+				<ACTION type="talent" param1="211713214" rate="15" desc="찌르기" />
+				<ACTION type="talent" param1="211713217" rate="10" desc="파멸의 일격" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211713201" rate="100" desc="칼뽑기(tomode0)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

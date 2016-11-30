@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="어둠의종자">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="210401101" rate="40" />
+				<ACTION type="talent" param1="210401102" rate="40" />
+				<ACTION type="talent" param1="210401103" rate="10" />
+				<ACTION type="talent" param1="210401104" rate="10" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_606002:OnDie( Info )
+	--[[
+	local Summoner = this:GetSummoner()
+	local MinionCnt = Summoner:GetSummonCount()
+	
+	if MinionCnt == 0 and Summoner:GetCurrentTalent() == 210401012 then
+		Summoner:ClearJob()
+		Summoner:UseTalentSelf( 210401014 )
+	end
+	--]]
+end
+
+	]]></SCRIPT>
+</maiet>

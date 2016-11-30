@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="어둠의종속자" npcid="111034">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211103402" duration="0"/>					
+			</DEFAULT>
+		</PROLOGUE>	
+		
+		<COMBAT mode="0">
+			<DEFAULT comment="기본패턴">			
+				<ACTION type="talent" param1="211103411" rate="40" duration="0"/><!-- 페이즈1(주변독구름) -->																			
+				
+				<ACTION type="talent" param1="211103403" rate="10" /><!-- 머리찍기	-->
+				<ACTION type="talent" param1="211103420" rate="40" /><!-- 머리찍기(빠른버전)	-->
+				<ACTION type="talent" param1="211103404" rate="10" /><!-- 머리찍기(좌,우)	-->
+				<ACTION type="lua" param1="NPC_111034" param2="SmartIdle" rate="20" />
+			</DEFAULT>						
+			
+			<CHECK type="hp" param2="30" ><!-- 페이즈3 -->
+				<ACTION type="lua" param1="NPC_111034" param2="phase3_debuff" rate="100" /><!-- 필살독구름 -->					
+				<ACTION type="talent" param1="211103412" rate="50" duration="0"/><!-- 페이즈2(자기몸에 독구름) -->					
+				
+				<ACTION type="talent" param1="211103422" rate="40" /><!-- 아주 빠른 머리찍기	-->
+				<ACTION type="talent" param1="211103421" rate="40" /><!-- 아주 빠른 머리찍기(좌,우)	-->			
+			</CHECK>
+			
+			<CHECK type="hp" param2="70" ><!-- 페이즈2 + 1  -->
+				<ACTION type="lua" param1="NPC_111034" param2="PhaseChange" auto_run="true" max_count="1" /><!---->
+				
+				<ACTION type="talent" param1="211103411" rate="80" duration="0"/><!-- 페이즈1(주변독구름) -->
+				<ACTION type="talent" param1="211103412" rate="50" duration="0"/><!-- 페이즈2(자기몸에 독구름) -->					
+				
+				<ACTION type="talent" param1="211103403" rate="10" /><!-- 머리찍기	-->
+				<ACTION type="talent" param1="211103420" rate="10" /><!-- 머리찍기(빠른버전)	-->
+				<ACTION type="talent" param1="211103404" rate="10" /><!-- 머리찍기(좌,우)	-->			
+				<ACTION type="lua" param1="NPC_111034" param2="SmartIdle" rate="10" />	
+				<ACTION type="talent" param1="211103422" rate="50" /><!-- 아주 빠른 머리찍기	-->
+				<ACTION type="talent" param1="211103421" rate="40" /><!-- 아주 빠른 머리찍기(좌,우)	-->
+			</CHECK>
+						
+			<CHECK type="hp" param2="85" ><!-- 페이즈2  -->
+				<ACTION type="talent" param1="211103411" rate="80" duration="0"/><!-- 페이즈1(주변독구름) -->
+				<ACTION type="talent" param1="211103412" rate="40" duration="0"/><!-- 페이즈2(자기몸에 독구름) -->					
+				
+				<ACTION type="talent" param1="211103403" rate="20" /><!-- 머리찍기	-->
+				<ACTION type="talent" param1="211103420" rate="40" /><!-- 머리찍기(빠른버전)	-->
+				<ACTION type="talent" param1="211103404" rate="10" /><!-- 머리찍기(좌,우)	-->											
+				<ACTION type="lua" param1="NPC_111034" param2="SmartIdle" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT comment="기본패턴">			
+				<ACTION type="talent" param1="211103411" rate="40" duration="0"/><!-- 페이즈1(주변독구름) -->																			
+				
+				<ACTION type="talent" param1="211103403" rate="10" /><!-- 머리찍기	-->
+				<ACTION type="talent" param1="211103420" rate="40" /><!-- 머리찍기(빠른버전)	-->
+				<ACTION type="talent" param1="211103404" rate="10" /><!-- 머리찍기(좌,우)	-->
+				<ACTION type="lua" param1="NPC_111034" param2="SmartIdle" rate="20" />
+			</DEFAULT>						
+			
+			<CHECK type="hp" param2="30" ><!-- 페이즈3 -->
+				<ACTION type="lua" param1="NPC_111034" param2="phase3_debuff" rate="100" /><!-- 필살독구름 -->					
+				<ACTION type="talent" param1="211103412" rate="50" duration="0"/><!-- 페이즈2(자기몸에 독구름) -->					
+				
+				<ACTION type="talent" param1="211103422" rate="40" /><!-- 아주 빠른 머리찍기	-->
+				<ACTION type="talent" param1="211103421" rate="40" /><!-- 아주 빠른 머리찍기(좌,우)	-->			
+			</CHECK>
+			
+			<CHECK type="hp" param2="70" ><!-- 페이즈2 + 1  -->
+				<ACTION type="lua" param1="NPC_111034" param2="PhaseChange" auto_run="true" max_count="1" /><!---->
+				
+				<ACTION type="talent" param1="211103411" rate="80" duration="0"/><!-- 페이즈1(주변독구름) -->
+				<ACTION type="talent" param1="211103412" rate="50" duration="0"/><!-- 페이즈2(자기몸에 독구름) -->					
+				
+				<ACTION type="talent" param1="211103403" rate="10" /><!-- 머리찍기	-->
+				<ACTION type="talent" param1="211103420" rate="10" /><!-- 머리찍기(빠른버전)	-->
+				<ACTION type="talent" param1="211103404" rate="10" /><!-- 머리찍기(좌,우)	-->			
+				<ACTION type="lua" param1="NPC_111034" param2="SmartIdle" rate="10" />	
+				<ACTION type="talent" param1="211103422" rate="50" /><!-- 아주 빠른 머리찍기	-->
+				<ACTION type="talent" param1="211103421" rate="40" /><!-- 아주 빠른 머리찍기(좌,우)	-->
+			</CHECK>
+						
+			<CHECK type="hp" param2="85" ><!-- 페이즈2  -->
+				<ACTION type="talent" param1="211103411" rate="80" duration="0"/><!-- 페이즈1(주변독구름) -->
+				<ACTION type="talent" param1="211103412" rate="40" duration="0"/><!-- 페이즈2(자기몸에 독구름) -->					
+				
+				<ACTION type="talent" param1="211103403" rate="20" /><!-- 머리찍기	-->
+				<ACTION type="talent" param1="211103420" rate="40" /><!-- 머리찍기(빠른버전)	-->
+				<ACTION type="talent" param1="211103404" rate="10" /><!-- 머리찍기(좌,우)	-->											
+				<ACTION type="lua" param1="NPC_111034" param2="SmartIdle" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="30" />						
+				<ACTION type="talent" param1="211103417" rate="10" /><!-- idle2	-->
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+	<![CDATA[ 
+
+function NPC_111034:Init(NPCID)
+	--[[
+	5: 등딱지 파괴를 위한 수치 누적
+	--]]
+	
+	NPC_ReserveUserData(NPCID, 5);
+		
+	NPC_111034.TalIdPhase3_1 			= 211103414    	-- 성스러운폭발
+	NPC_111034.TalIdPhase3_2 			= 211103413		-- 독구름 폭풍	
+	NPC_111034.PhaseChangeNO 			= 0
+	
+	NPC_111034.DataIdxCarapace			= 5
+	NPC_111034.LimitForBreakCarapace1 	= NPC_111034.MaxHP/10
+	NPC_111034.LimitForBreakCarapace2 	= NPC_111034.MaxHP/10
+end	
+
+function NPC_111034:OnBPartRecover()
+	for i=1, 5 do
+		this:SetUserData( i, 0 )
+	end -- for
+	
+	this:UseTalentSelf( 211103406 )
+end
+
+function NPC_111034:SmartIdle( ThisNPC, Enemy )
+	if ThisNPC:IsRear( Enemy ) then
+		ThisNPC:UseTalentSelf( 211103417 )
+	end
+end
+
+function NPC_111034:PhaseChange( ThisNPC, Enemy ) -- 페이즈 1+2 될 때 바둥거리는거 한번만 하기 
+	--GLog( "NPC_512000:PhaseChangeNO\n" )
+	
+	if NPC_111034.PhaseChangeNO == 0 then
+		ThisNPC:UseTalentSelf( 211103410 )		
+		NPC_111034.PhaseChangeNO = 1		
+	end
+	
+end
+
+function NPC_111034:Phase1_dummyspawn( ThisNPC, Enemy ) -- 더미 소환(도너츠 형)
+	--GLog( "NPC_512000:SpawnGroundOfDarkness\n" )
+	local WorldPos = Math_LocalToWorld( Enemy:GetDir(), ThisNPC:GetPos(), vec3(0,0,0) )
+	local Minion = AsNPC(ThisNPC):SummonNow( 111036, WorldPos )
+	AsNPC(ThisNPC):SetTarget( Minion )	
+	Minion:UseTalentSelf( 211103450 )
+end
+
+function NPC_111034:OnStartFallingStone( ThisActor, Enemy )
+	GLog( "NPC_111034:OnStartFallingStone\n" )
+	
+	local ThisNPC = AsNPC(ThisActor)
+	local WorldPos = Math_LocalToWorld( Enemy:GetDir(), ThisNPC:GetPos(), vec3(0,0,0) )
+	local Minion = ThisNPC:SummonNow( 111036, WorldPos )
+	--Minion:UseTalentSelf( 211103450 )
+end
+
+function NPC_111034:phase3_debuff( ThisActor, Enemy ) -- 랜덤으로 캐릭터에게 디버프사용
+	--GLog( "NPC_111034:phase3_debuff\n" )
+	local ThisNPC = AsNPC( ThisActor)
+	
+	ThisNPC:RemoveBuff( 88024 )
+	ThisNPC:RemoveBuff( 88025 )
+	ThisNPC:RemoveBuff( 88020 )
+	ThisNPC:RemoveBuff( 88022 )
+	
+	local NewEnemy = ThisNPC:Aggro( "random", 0 )
+	if ThisNPC:IsCooldown( NPC_111034.TalIdPhase3_1 ) then
+		return
+	end
+	if ThisNPC:IsCooldown( NPC_111034.TalIdPhase3_2 ) then
+		return
+	end
+	
+	--ThisNPC:NarrationNow("$$COLT_0111034_154")
+	ThisNPC:UseTalent( NPC_111034.TalIdPhase3_1, NewEnemy )
+	NewEnemy:RemoveBuff( 88030 )
+	NewEnemy:RemoveBuff( 88033 )
+	ThisNPC:UseTalent( NPC_111034.TalIdPhase3_2, Enemy )	
+end
+
+function NPC_111034:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC)
+end
+
+function NPC_111034:OnFinishAndAggroSwap( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_111034:OnHitCapsule_1_0(HitInfo) -- 머리부분
+	--return NPC_110011:AccDamageBody( this, HitInfo )
+	return NPC_111034:AccDamageHead(HitInfo)
+end
+
+function NPC_111034:OnHitCapsule_1_1(HitInfo) -- 뿔
+	--return NPC_110011:AccDamageBody( this, HitInfo )
+	return NPC_111034:AccDamageHead(HitInfo)
+end
+
+function NPC_111034:OnHitCapsule_1_2(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )	
+end
+
+function NPC_111034:OnHitCapsule_1_3(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_1_4(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_1_5(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_1_6(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_1_7(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_1_8(HitInfo) 
+	NPC_111034:AccDamageStomach( this,HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_4_0(HitInfo) -- 머리부분
+	--return NPC_110011:AccDamageBody( this, HitInfo )
+	return NPC_111034:AccDamageHead(HitInfo)
+end
+
+function NPC_111034:OnHitCapsule_4_1(HitInfo) -- 뿔
+	--return NPC_110011:AccDamageBody( this, HitInfo )
+	return NPC_111034:AccDamageHead(HitInfo)
+end
+
+function NPC_111034:OnHitCapsule_4_2(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )	
+end
+
+function NPC_111034:OnHitCapsule_4_3(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_4_4(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_4_5(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_4_6(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_4_7(HitInfo)
+	return NPC_111034:AccDamageBody( this, HitInfo )
+end
+
+function NPC_111034:OnHitCapsule_4_8(HitInfo) 
+	NPC_111034:AccDamageStomach( this, HitInfo )
+end
+
+function NPC_111034:AccDamageBody( this, HitInfo ) -- 몸통 부분에 타격데미지 외에는 25% 데미지만 들어간다 
+	if( HitInfo.Type == DA_SLASH or HitInfo.Type == DA_PIERCE ) then
+		HitInfo.Damage = HitInfo.Damage*0.8
+	end
+	
+	return HitInfo
+end
+
+--[[
+	날개가 하나 파괴될때마다 엉덩이부위의 25%의 데미지 증폭효과가 있다.
+--]]
+
+function NPC_111034:AccDamageStomach( ThisNPC, HitInfo )
+	--GLog( "NPC_111034:AccDamageStomach\n" )
+	local PainPoint = 0
+	
+	if not ThisNPC:CheckBPart(2) then -- 파츠가 남아있다면 파괴로직을 수행한다.
+		PainPoint = GetPainPoint( HitInfo )
+	else -- 등딱지가 다 파괴되었다면 힛 데미지를 50% 증폭 시키고 종료.
+		HitInfo.Damage = HitInfo.Damage*1.5
+		return HitInfo
+	end
+		
+	local AccPoint = ThisNPC:GetUserData( NPC_111034.DataIdxCarapace ) + HitInfo.Damage
+	
+	-- 등딱지가 하나 파괴된 상태
+	if ThisNPC:CheckBPart(3) then
+		HitInfo.Damage = HitInfo.Damage*1.25
+		
+		if AccPoint > NPC_111034.LimitForBreakCarapace2 and PainPoint > 0 then
+			ThisNPC:ClearJob()
+			ThisNPC:BreakPart(2, HitInfo.Attacker)
+			ThisNPC:UseTalentSelf( 211103407 )
+			
+			ThisNPC:SetUserData( NPC_111034.DataIdxCarapace, 0 )
+		else
+			ThisNPC:SetUserData( NPC_111034.DataIdxCarapace, AccPoint )
+		end
+	else -- 등딱지가 하나도 파괴되지 않은 상태
+		if AccPoint > NPC_111034.LimitForBreakCarapace1 and PainPoint > 0 then
+			ThisNPC:ClearJob()
+			ThisNPC:BreakPart(3, HitInfo.Attacker)
+			ThisNPC:UseTalentSelf( 211103407 )
+			
+			ThisNPC:SetUserData( NPC_111034.DataIdxCarapace, 0 )
+		else
+			ThisNPC:SetUserData( NPC_111034.DataIdxCarapace, AccPoint )
+		end
+	end
+	
+	return HitInfo
+end
+
+function NPC_111034:AccDamageHead(dHitInfo) -- 타격만 데미지 적용된다
+	
+	local ThisNPC = AsNPC( dHitInfo.Victim )	
+	local LimitValue = ThisNPC:GetMaxHP()/10 -- 뿔이 부서지는 조건
+	
+	
+	if( dHitInfo.Type == DA_SLASH or dHitInfo.Type == DA_PIERCE ) then
+		dHitInfo.Damage = dHitInfo.Damage*0.8
+	end		
+	
+	ThisNPC:SetUserData( 3, ThisNPC:GetUserData( 3 ) + dHitInfo.Damage )
+	ThisNPC:SetUserData( 4, ThisNPC:GetUserData( 4 ) + dHitInfo.Damage ) 
+	
+	if(ThisNPC:GetUserData( 3 ) > 1300) then -- 머리를 때려 일정 데미지가 쌓이면 페인모션이 나온다
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( 211103408 )
+		ThisNPC:SetUserData( 3, 0 )		
+	end	
+	
+	if(ThisNPC:GetUserData( 4 ) > LimitValue) then -- 머리를 때려 일정 데미지가 쌓이면 뿔이 부서진다
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( 211103410 )	
+		ThisNPC:BreakPart(1, dHitInfo.Attacker)
+		ThisNPC:SetUserData( 4, 0 )
+	end
+	
+	return dHitInfo
+end
+	
+	]]>
+	</SCRIPT>
+</maiet>

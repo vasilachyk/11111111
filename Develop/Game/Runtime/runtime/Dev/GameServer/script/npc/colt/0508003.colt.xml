@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="frorogy bomb" npcid="508003">
+		<COMBAT mode="0" comment="">
+			<DEFAULT>
+
+			</DEFAULT>
+
+		</COMBAT>
+		
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_508003:Init( NPCID )
+
+	--[[
+		User Data
+		1: BreakPart 횃불
+	--]]
+	NPC_ReserveUserData( NPCID, 1 );
+
+	NPC_508003.BreakPartHP	= NPC_508003.MaxHP
+	NPC_508003.BreakPartID = 1
+end
+
+-- 판정
+function NPC_508003:OnHitCapsule_1_0(HitInfo)
+
+	--GLog("NPC_508003:OnHitCapsule_1_0\n")
+	
+	local AccDamage	-- 누적데미지 
+	local ThisNPC = AsNPC( HitInfo.Victim )
+
+	if not ThisNPC:CheckBPart( NPC_508003.BreakPartID ) then
+	
+		AccDamage = ThisNPC:GetUserData(1) + HitInfo.Damage
+
+		if AccDamage >= NPC_508003.BreakPartHP then
+			ThisNPC:BreakPart(NPC_508003.BreakPartID, HitInfo.Attacker)			
+		end
+		
+		ThisNPC:SetUserData( 1, AccDamage )
+	end
+
+	return HitInfo
+end
+
+
+
+	]]></SCRIPT>
+</maiet>

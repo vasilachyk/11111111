@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="줄리줄리" npcid="117151">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211715101" rate="60" desc="몸통박치기1" />
+				<ACTION type="talent" param1="211715102" rate="30" desc="몸통박치기2" />
+			</DEFAULT>
+			<CHECK type="distance" param1="500" >
+				<ACTION type="group" rate="30">
+					<ACTION type="distance" param1="300" param2="350" />
+					<ACTION type="talent" param1="211715103" desc="젤리공격" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211715100" rate="50" />
+				<ACTION type="nothing" param1="0" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

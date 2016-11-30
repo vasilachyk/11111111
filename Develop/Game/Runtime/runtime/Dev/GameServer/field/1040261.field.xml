@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="10341" minimap_name="map10341" min_x="-6000" min_y="-9000" max_x="5000" max_y="12000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="104010" group="0" name="MON 104010 레그" x="-2421.354492" y="-6145.105957" z="8.261846" dir_x="-0.052336" dir_y="0.998630" dir_z="0.000000" radius="500.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="60" roam_radius="2000" roam_depth="10" combat_radius="1500" color="auto">
+            <NPC id="104010" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="104249" group="0" name="NPC 104249 아렐" x="-2948.949463" y="-6474.314453" z="-4.357468" dir_x="0.956305" dir_y="-0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="104249" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="104260" group="0" name="NPC 104260 고대 암흑의 고서" x="-475.036499" y="-673.830688" z="366.924927" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="60" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="104260" default="true" rate="500" />
+        </SPAWN>
+        <MARKER id="1" name="SENSOR_M 1 to린덴언덕" x="320.857147" y="10091.433594" z="-73.400307" dir_x="0.121870" dir_y="-0.992546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104010" name="MON_M 104010 레그" x="-461.467651" y="-666.681702" z="366.830292" dir_x="-0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104260" name="NPC_M 104260 고대 암흑의 고서" x="-461.467651" y="-666.681702" z="366.830292" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="SENSOR 1 to린덴언덕" x="790.582153" y="10486.728516" z="12.000000" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-227.383240" y="-139.380859" z="-47.804077" dir_x="0.809017" dir_y="0.587785" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.800000" scale_y="0.800000" scale_z="0.800000" />
+            <WARP warp_type="field" title="to 린덴언덕" condition="0" gate_type="auto" field="104" marker="3" />
+        </SENSOR>
+        <SENSOR id="50" name="SENSOR 아렐스폰용센서" local="false" x="-2152.238281" y="-6088.677246" z="12.000000" radius="1500.000000" enabled="true" groupname="none" />
+        <SENSOR id="51" name="SENSOR 아렐연출용" local="false" x="-2157.178955" y="-6243.690430" z="-4.357468" radius="2500.000000" enabled="false" groupname="none" />
+    </FIELDINFO>
+</maiet>

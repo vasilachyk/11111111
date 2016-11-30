@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="렌고트부족공병">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702801" rate="20" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="210702806" rate="10" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="210702802" rate="10" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="210702803" rate="10" /> <!-- 강타공격 -->
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="30">
+				<CHECK type="distance" param2="300">
+					<ACTION type="group" max_count="1" >
+						<ACTION type="talent" param1="210702804" /> <!-- 폭탄심기 -->
+						<ACTION type="guard" param1="210702807" param2="2" />
+					</ACTION>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="25" cycle="6"/>
+
+				<ACTION type="talent" param1="210702801" rate="10" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="210702806" rate="10" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="210702802" rate="10" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="210702803" rate="20" /> <!-- 강타공격 -->
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="210702807" param2="1" rate="50"/>
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80"/>
+				<ACTION type="talent" param1="210702307" rate="20"/>
+			</DEFAULT>
+		</IDLE>
+
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_107028:OnFinishLayBomb( ThisNPC, Enemy )
+	local NPCID_BOMB 			= 107247
+	local TALID_BOMBIGNITE 	= 210724702
+	local TALID_BOMBBOMB 	= 210724701
+	
+	local BombPos = Math_GetDistancePoint( ThisNPC:GetPos(), ThisNPC:GetDir(), 60 )
+	local Field = ThisNPC:GetField()
+
+	local Bomb = Field:Spawn( NPCID_BOMB, BombPos )
+	Bomb:SetDecayTime( 1 )
+	Bomb:UseTalentSelf( TALID_BOMBIGNITE )
+	Bomb:UseTalentSelf( TALID_BOMBBOMB )
+	Bomb:Die(Bomb)
+end
+
+	]]></SCRIPT>
+</maiet>

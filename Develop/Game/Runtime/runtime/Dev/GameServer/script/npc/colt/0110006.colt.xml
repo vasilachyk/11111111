@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족마법사">
+		<COMBAT>
+			<DEFAULT>	
+				<!-- 적이 가까이 왔을경우 -->
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="211000602" rate="20" />  <!-- 일반공격(근접) -->
+				<ACTION type="talent" param1="211000601" rate="20" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="20">
+				<ACTION type="flee" param1="from_enemy" param2="3" max_count="1" />  <!-- 거리 벌리기 -->
+			</CHECK>
+						
+			<CHECK type="distance" param1="300">
+				<ACTION type="nothing" param1="1" rate="30" cycle="8"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="8"/>
+				
+				<ACTION type="distance" param1="300" param2="300" rate="10" cycle="15"/>
+				<ACTION type="talent" param1="211000601" rate="30" />				
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="10" />
+				<ACTION type="nothing" param1="1" rate="90"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

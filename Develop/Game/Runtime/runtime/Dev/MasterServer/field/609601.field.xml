@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="109" minimap_name="map00109" loading_image_name="00109" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="48000" boundary_min_y="14400" boundary_max_x="67500" boundary_max_y="27500" weather_effect="true" town="false" returnable="true" tutorial="false">
+		<BGM fieldbgm="bgm_field_7">
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="53304.359375" y="21053.050781" z="127.713623" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="61613.476563" y="21031.435547" z="191.250900" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="안전지대" local="false" x="53270.722656" y="21085.357422" z="129.576660" radius="750.000000" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ITEM id="2891" />
+            <ITEM id="2892" />
+            <ITEM id="2894" />
+            <ITEM id="2895" />
+            <ITEM id="10002003" />
+            <ITEM id="10002104" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

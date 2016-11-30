@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="크립유충" npcid="508105">
+		<COMBAT mode="0">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="250810500" rate="10" comment="idle2" />
+				<ACTION type="talent" param1="250810510" rate="60" comment="atk1" />
+				<ACTION type="talent" param1="250810511" rate="30" comment="atk2" />
+			</DEFAULT>
+			<CHECK type="distance" param1="200" param2="1000">
+				<ACTION type="talent" param1="250810500" rate="10" cycle="6" comment="idle2" />
+				<ACTION type="talent" param1="250810513" rate="10" comment="독액발사" />
+				<ACTION type="talent" param1="250810514" rate="10" comment="부식액발사" />
+
+				<!--<ACTION type="talent" param1="250810512" rate="10" duration="0" comment="땅속으로" />-->
+			</CHECK>
+			<CHECK type="distance" param1="1000">
+				<ACTION type="talent" param1="250810512" rate="10" duration="0" comment="땅속으로" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="250810520" rate="10" comment="땅밖으로" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	function NPC_508105:OnFinishBurrow( ThisActor, Enemy )
+		local ThisNPC = AsNPC( ThisActor )
+	
+		ThisNPC:RemoveAllBuff()
+		ThisNPC:Aggro( "near", -1 )
+	end
+	
+	]]></SCRIPT>
+</maiet>

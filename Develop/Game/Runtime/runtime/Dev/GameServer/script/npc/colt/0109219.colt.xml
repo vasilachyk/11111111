@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="오염된 에보스 전사">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="210921911" rate="10" />
+				<ACTION type="talent" param1="210921912" rate="10" />
+				<ACTION type="talent" param1="210921913" rate="10" />
+				<ACTION type="talent" param1="210921914" rate="10" />				
+			</DEFAULT>			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210921900" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	function NPC_109219:OnSpawn( Info )
+		this:GainBuff( 110023 )
+	end
+	]]></SCRIPT>
+</maiet>

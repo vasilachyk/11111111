@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="Ronin for Blackswamp Battlefield (BSB Ronin does not uses Fast Whirlwind talent)" npcid="710050">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210305019" rate="40" comment="adjust cool time of mode change" />
+			</DEFAULT>
+		</PROLOGUE>
+		<COMBAT mode="0" comment="one-handed sword + shield mode">
+			<DEFAULT comment="training mode">
+				<ACTION type="talent" param1="210305018" rate="25" comment="normal slash attack" />
+				<ACTION type="talent" param1="210305060" rate="25" comment="turning slash attack (to mode 4)" />
+				<ACTION type="talent" param1="210305010" rate="25" comment="vertical slash attack" />
+				<ACTION type="talent" param1="210305065" rate="25" comment="combo attack (to mode 5)" />
+			</DEFAULT>
+
+			<CHECK type="e_motionfactor" param1="stun">
+				<ACTION type="talent" param1="210305013" comment="try to catch stunned player" />
+			</CHECK>
+			
+			<CHECK type="e_gained_buff" param1="40820">
+				<CHECK type="distance" param2="300">
+					<ACTION type="talent" param1="210305012" comment="try to stun threatened player" />
+				</CHECK>
+				<ACTION type="distance" param1="200" param2="200" duration="6" />
+			</CHECK>
+
+			<CHECK type="hp" param1="0" comment="hold two-handed weapon (mode change)">
+				<ACTION type="talent" param1="210305016" duration="0" cycle="60" comment="change to two-handed weapon (to mode 1)" />
+			</CHECK>
+
+			<CHECK type="hp" param2="80" comment="ranged threaten for players (hp under 80%)">
+				<ACTION type="group" cycle="20">
+					<ACTION type="talent" param1="210305015" />
+					<ACTION type="aggro" param1="near" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1" comment="two-handed sword mode">
+			<DEFAULT comment="training mode">
+				<!-- dodge action -->
+				   <ACTION type="talent" param1="210305030" rate="10" duration="0" comment="dodge to left" />
+				   <ACTION type="talent" param1="210305031" rate="10" duration="0" comment="dodge to right" />
+				<ACTION type="talent" param1="210305033" rate="20" comment="double slash" />
+				<ACTION type="talent" param1="210305070" rate="20" comment="combo attack 1 (to mode 6)" />
+				<ACTION type="talent" param1="210305034" rate="20" comment="catch and throw player" />
+				<ACTION type="talent" param1="210305037" rate="20" duration="1" comment="whirlwind (to mode 2)" />
+			</DEFAULT>
+
+			<CHECK type="distance" param1="1200">
+				<ACTION type="talent" param1="210305035" rate="100" comment="leap attack"/>
+			</CHECK>
+
+			<CHECK type="hp" param1="40" comment="hold one-handed weapon (mode change)">
+				<ACTION type="talent" param1="210305036" duration="0" cycle="60" comment="change to one-handed weapon (to mode 0)" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="2" comment="whirlwind" victory="210305050">
+			<DEFAULT>
+			</DEFAULT>
+			<CHECK type="distance" param1="0">
+				<ACTION type="distance" param1="150" param2="150" duration="20" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="4" comment="1h combo - phase 3 final">
+			<DEFAULT>
+				<ACTION type="talent" param1="210305062" rate="50" duration="0" comment="final combo normal slash (to mode 0)" />
+				<ACTION type="talent" param1="210305063" rate="50" duration="0" comment="combo stun attack (to mode 0)" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="5" comment="1h combo - phase 2" victory="210305061">
+			<DEFAULT>
+				<ACTION type="talent" param1="210305060" rate="100" duration="0" comment="combo bleeding slash (to mode 4)" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="6" comment="2h combo - phase 2" victory="210305074">
+			<DEFAULT>
+				<ACTION type="talent" param1="210305071" rate="75" duration="0" comment="combo attack 2 (to mode 7)" />
+				<ACTION type="talent" param1="210305074" rate="25" duration="0" comment="interrupt combo (back to mode 1)" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="40" comment="hp under 40%, do not interrupt combo">
+				<ACTION type="talent" param1="210305071" rate="100" duration="0" comment="combo attack 2, with 100% rate (to mode 7)" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="7" comment="2h combo - phase 3 final" victory="210305075">
+			<DEFAULT>
+				<ACTION type="talent" param1="210305072" rate="40" duration="0" comment="combo attack 3 (back to mode 1)" />
+				<ACTION type="talent" param1="210305075" rate="60" duration="0" comment="interrupt combo (back to mode 1)" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="40" comment="hp under 40%, combo more">
+				<ACTION type="talent" param1="210305076" rate="100" duration="0" cycle="10" comment="two more extra combo - has 10 secs cool down (to mode 6)" />
+				<ACTION type="talent" param1="210305072" duration="0" comment="combo attack 3 - if extra combo is under cool down, then finish combo here (to mode 1)" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_710050:Init( NPCID )
+	--[[
+	1: Pain데미지 누적
+	
+	--]]
+		
+	NPC_ReserveUserData( NPCID, 1 )
+
+	NPC_710050.BuffIdWhirlwind 			= 40821
+	
+	NPC_710050.TimerIdWhirlwind			= 1
+	NPC_710050.TTLWhirlwind				= 6
+	NPC_710050.TalIdFinishWhirlwind		= 210305050
+
+	NPC_710050.TalIdCancelComboA		= 210305061
+	NPC_710050.TalIdCancelComboB		= 210305061
+	NPC_710050.TalIdCancelComboC1		= 210305074
+	NPC_710050.TalIdCancelComboC2		= 210305075
+
+	NPC_710050.LimitForPain				= NPC_710050.MaxHP/10
+	NPC_710050.TalIdPain1				= 210305001
+	NPC_710050.TalIdPain2				= 210305006
+end
+
+-- 소용돌이
+function NPC_710050:OnFinishStartWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	-- Whirlwind Buff is already specified in talent.xml and gained.
+	-- ThisNPC:GainBuff( NPC_710050.BuffIdWhirlwind )
+	ThisNPC:SetTimer( NPC_710050.TimerIdWhirlwind, NPC_710050.TTLWhirlwind, false )
+	ThisNPC:Wait(0.3)
+end
+
+function NPC_710050:OnActEndWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:RemoveBuff( NPC_710050.BuffIdWhirlwind )
+end
+
+function NPC_710050:OnFinishEndWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro("far",0)
+end
+
+function NPC_710050:OnTimer( Index )
+	if Index == NPC_710050.TimerIdWhirlwind and this:GetMode() == 2 then 
+		this:ClearJob()
+		this:UseTalentSelf( NPC_710050.TalIdFinishWhirlwind )
+		return
+	end
+end
+
+function NPC_710050:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro("random",0)
+end
+
+function NPC_710050:OnCancelComboA( ThisActor, Enemy )
+	ThisActor:UseTalentSelf( NPC_710050.TalIdCancelComboA )
+end
+
+function NPC_710050:OnCancelComboB( ThisActor, Enemy )
+	ThisActor:UseTalentSelf( NPC_710050.TalIdCancelComboB )
+end
+
+function NPC_710050:OnCancelComboC1( ThisActor, Enemy )
+	ThisActor:UseTalentSelf( NPC_710050.TalIdCancelComboC1 )
+end
+
+function NPC_710050:OnCancelComboC2( ThisActor, Enemy )
+	ThisActor:UseTalentSelf( NPC_710050.TalIdCancelComboC2 )
+end
+
+function NPC_710050:AccDamage( ThisNPC, HitIdx, HitInfo )
+	local AccDamage = ThisNPC:GetUserData( 1 ) + HitInfo.Damage
+	if AccDamage > NPC_710050.LimitForPain and ThisNPC:GetCurrentTalent() <= 0 then 
+		if ThisNPC:GetMode() == 0 and not ThisNPC:IsCooldown( NPC_710050.TalIdPain1 ) then
+			ThisNPC:ClearJob();
+			ThisNPC:UseTalentSelf( NPC_710050.TalIdPain1 )
+			ThisNPC:SetUserData( 1, 0 )
+		elseif ThisNPC:GetMode() == 1 and not ThisNPC:IsCooldown( NPC_710050.TalIdPain2 ) then
+			ThisNPC:ClearJob();
+			ThisNPC:UseTalentSelf( NPC_710050.TalIdPain2 )
+			ThisNPC:SetUserData( 1, 0 )
+		end
+		
+		return
+	end
+	
+	ThisNPC:SetUserData( 1, AccDamage )
+end
+
+function NPC_710050:OnHitCapsule_1_0( HitInfo )
+	return NPC_710050:AccDamage( this, 0, HitInfo )
+end
+
+	]]></SCRIPT>
+</maiet>

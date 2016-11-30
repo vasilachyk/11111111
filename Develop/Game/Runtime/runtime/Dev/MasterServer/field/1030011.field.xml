@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="103" minimap_name="map00103" min_x="0" min_y="0" max_x="100000" max_y="100000" boundary_min_x="5000" boundary_min_y="43000" boundary_max_x="24000" boundary_max_y="58000" weather_effect="true" town="false" returnable="true" tutorial="false" qpvpnpc1="950000" qpvpnpc2="9500001" qpvprebirth1="102230" qpvprebirth2="102231">
+        <BGM>
+            <ENVBGM rainbgm="amb_rain" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="RNY">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="103200" group="0" name="조사단원 파고" x="15243.360352" y="55985.839844" z="29.245426" dir_x="-0.390731" dir_y="-0.920505" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="103200" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103500" group="0" name="나레이터" x="16686.902344" y="50490.371094" z="347.441742" dir_x="-0.961262" dir_y="0.275637" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="103500" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="9706.750977" y="47904.171875" z="520.462646" dir_x="0.882948" dir_y="0.469472" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="파고 이동1" x="14690.316406" y="54789.753906" z="32.164001" dir_x="0.342020" dir_y="-0.939693" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="파고 이동2" x="15313.723633" y="53068.363281" z="53.633945" dir_x="-0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="파고 이동3" x="15054.075195" y="51618.390625" z="110.030296" dir_x="0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="파고 이동4" x="15991.086914" y="50972.332031" z="260.519287" dir_x="0.838671" dir_y="-0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="103001" name="QM 103001" x="17236.726563" y="50184.320313" z="347.536377" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="103000" name="체크포인트" local="false" x="9688.720703" y="47925.421875" z="523.358887" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="103001" name="QOS 103001" local="false" x="17232.279297" y="50338.367188" z="347.536163" radius="2000.000000" enabled="true" groupname="none" />
+        <SENSOR id="103002" name="섬광탄 체크 센서" local="false" x="13481.199219" y="50590.921875" z="81.358856" radius="10000.000000" enabled="true" groupname="none" />
+        <SENSOR id="103003" name="퀘스트 완료 센서" local="false" x="13481.199219" y="50590.921875" z="81.358856" radius="10000.000000" enabled="false" groupname="none" />
+        <SENSOR id="103004" name="귀환 센서" x="13476.580078" y="50607.828125" z="82.128464" radius="10000.000000" enabled="false">
+            <WARP warp_type="field" title="파고가 있는 곳으로" condition="0" gate_type="auto" field="103" marker="4" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

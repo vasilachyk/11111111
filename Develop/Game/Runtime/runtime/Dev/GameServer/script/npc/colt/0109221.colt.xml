@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="모켄" npcid="109221">
+		<COMBAT victory="210901709">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6" />
+				<ACTION type="nothing" param1="1" rate="25" cycle="6" />
+				
+				<ACTION type="talent" param1="210901701" rate="30" /><!--1타 -->
+				<ACTION type="talent" param1="210901702" rate="20" /><!--2타 -->
+				<ACTION type="talent" param1="210901702" rate="5" /><!--3타 -->
+				
+				<ACTION type="talent" param1="210901730" rate="10" /><!--파멸의일격-->
+				<ACTION type="talent" param1="210901704" rate="10" /><!--강한공격 -->
+			</DEFAULT>
+
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80" >
+					<ACTION type="talent" param1="210901710" rate="50" /><!--회피L -->
+					<ACTION type="talent" param1="210901711" rate="50" /><!--회피R -->
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6" />
+				<ACTION type="nothing" param1="1" rate="25" cycle="6" />
+				
+				<ACTION type="talent" param1="210901701" rate="10" />
+				<ACTION type="talent" param1="210901702" rate="10" />
+				<ACTION type="talent" param1="210901704" rate="10" />
+				<ACTION type="talent" param1="210901705" rate="20" /> <!-- 찌르기 -->
+				<ACTION type="talent" param1="210901730" rate="10" /><!--파멸의일격-->
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210901707" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />				
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+--[[
+function NPC_109221:AccDamage( ThisNPC, HitInfo )
+	if ( ThisNPC:GetHP() - HitInfo.Damage )/ ThisNPC:GetMaxHP() < 0.3 then
+		ThisNPC:ClearJob()
+		
+		
+		ThisNPC:DisableCombat()
+		
+		ThisNPC:Say( "$$COLT_0109221_62" )
+		ThisNPC:Despawn()
+	end
+end
+
+function NPC_109221:OnHitCapsule_1_0( HitInfo )
+	return NPC_109221:AccDamage( this, HitInfo )
+end
+--]]
+
+	]]></SCRIPT>
+	
+</maiet>

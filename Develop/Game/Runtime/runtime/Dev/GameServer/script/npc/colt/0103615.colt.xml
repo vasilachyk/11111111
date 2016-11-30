@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="아케론 부족 중간 거점 - 코웬 늪지대 quest pvp" npcid="103615" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+			<CHECK type="distance" param2="2000" >
+				<CHECK type="distance" param1="1500" >
+					<ACTION type="aggro" param1="short" param2="0" cycle="5" />
+				</CHECK>
+				
+				<ACTION type="talent" param1="210361500" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_103615:Init( NPCID )
+	NPC_ReserveUserData( NPCID, 1 )
+end
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 어부
+210110801	찌르고어퍼컷
+210110802	베기
+210110803	발목절단
+-->
+<maiet>
+	<COLT name="오염된 어부">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210110801" rate="10" />
+				<ACTION type="talent" param1="210110802" rate="30" />
+				<ACTION type="talent" param1="210110803" rate="30" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400">
+				<ACTION type="distance" param1="300" param2="300" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

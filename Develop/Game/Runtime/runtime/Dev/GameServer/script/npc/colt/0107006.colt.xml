@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="거대한 이끼거미">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<!--<ACTION type="talent" param1="210700304" rate="20"/> 배흔들기-->
+				
+				<ACTION type="talent" param1="210700601" rate="20" />
+				<ACTION type="talent" param1="210700602" rate="10" />
+				<ACTION type="talent" param1="210700604" rate="30" /> <!--맹독공격-->
+				
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<!--<ACTION type="talent" param1="210700304" rate="20" /> 배흔들기-->
+				
+				<ACTION type="talent" param1="210700601" rate="20" />
+				<ACTION type="talent" param1="210700602" rate="10" />
+				<ACTION type="talent" param1="210700604" rate="30" /> <!--맹독공격-->
+				<ACTION type="talent" param1="210700205" rate="20" cycle="30" />
+			</CHECK>
+			<CHECK type="distance" param1="400" param2="500" >
+				<ACTION type="talent" param1="210700205" rate="20" cycle="30" />
+				<ACTION type="talent" param1="210700602" rate="80" />
+			</CHECK>	
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210700205" rate="10" />
+				<ACTION type="nothing" param1="2" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

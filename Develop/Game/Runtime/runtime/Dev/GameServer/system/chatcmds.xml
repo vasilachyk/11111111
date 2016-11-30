@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<maiet>
+<!-- 0 : user, 1 : gm -->
+<!-- 콘솔명령어 reloadui로 /help 값 재적용 가능 -->
+  <CHAT_CMD>
+    <CMD id="1" name="help" usage="help [command]" help="/help : You can see a help screen. (/h, /help, /?)" category="console command">
+      <ALIAS name="h"/>
+	  <ALIAS name="ㅗ"/>
+	  <ALIAS name="도움"/>
+	  <ALIAS name="도움말"/>
+	  <ALIAS name="?"/>
+	  <ALIAS name="ehdna"/>
+	  <ALIAS name="ehdnaakf"/>
+    </CMD>
+
+	
+    <CMD id="2" name="die" usage="die" help="/die : Character dies. (/die)" category="console command">
+      <ALIAS name="자살"/>
+      <ALIAS name="wktkf"/>
+    </CMD><!-- 12.03.07 유저 사용이 가능해 방지를 위해 막아놓음. 12.06.12 탈출용으로 사용할 수 있도록 다시 풀어 놓음 -->
+
+    <CMD id="3" name="afk" usage="away from keyboard" help="/afk : Set the status as away from keyboard. (/afk, /keyboard)" category="console command">
+      <ALIAS name="자리"/>
+      <ALIAS name="자리비움"/>
+      <ALIAS name="wkfl"/>
+      <ALIAS name="wkflqldna"/>
+    </CMD>
+<!--aaaaaaaaa
+    <CMD id="4" name="who" usage="누구 [상대방]" help="다른 플레이어의 정보를 봅니다.">
+      <ALIAS name="who"/>
+    </CMD> 12.03.07 /h 명령어를 통해 노출되므로 막아놓음. -->
+
+    <!-- 채팅 시작 -->
+    <CMD id="10" name="s" usage="chat [comment]" help="/chat [comment] : Had a conversation by normal chatting. (/s)" category="chatting command">
+		<ALIAS name="ㄴ"/>
+		<ALIAS name="대화"/>
+		<ALIAS name="일반"/>
+		<ALIAS name="일"/>
+		<ALIAS name="eoghk"/>
+		<ALIAS name="dlfqks"/>
+		<ALIAS name="[일반]"/>
+	  <ALIAS name="chat"/>
+	  <ALIAS name="[chat]"/>
+	  <ALIAS name="allg."/>
+	  <ALIAS name="[allg.]"/>
+	  <ALIAS name="General"/>
+	  <ALIAS name="Czat"/>
+	  <ALIAS name="Ogólne"/>
+    </CMD>
+
+    <CMD id="11" name="w" usage="whisper [opponent] [comment]" help="/whisper [Character name] [comment] : Send whisper. (/w)" category="chatting command">
+    <ALIAS name="w"/>
+		<ALIAS name="ㅈ"/>
+		<ALIAS name="귓"/>
+		<ALIAS name="귓말"/>
+		<ALIAS name="귓속말"/>
+		<ALIAS name="rnlt"/>
+		<ALIAS name="rnltakf"/>
+		<ALIAS name="rnltthrakf"/>
+		<ALIAS name="[귓말]"/>
+		<ALIAS name="[귓속말]"/>
+    	<ALIAS name="[Flüstern]"/>
+		<ALIAS name="whisper"/>
+		<ALIAS name="[whisper]"/>
+		<ALIAS name="flüstern"/>
+		<ALIAS name="[flüstern]"/>
+		<ALIAS name="szept"/>
+		<ALIAS name="[szept]"/>
+    </CMD>
+
+    <CMD id="12" name="reply" usage="reply [comment]" help="/reply [comment] : Reply whisper. (/r)" category="chatting command">
+		<ALIAS name="r"/>
+		<ALIAS name="ㄱ"/>
+		<ALIAS name="답"/>
+		<ALIAS name="답장"/>
+		<ALIAS name="ekq"/>
+		<ALIAS name="ekqwkd"/>
+		<ALIAS name="[답장]"/>
+    </CMD>
+
+    <CMD id="13" name="party" usage="party [comment]" help="/party [comment] : Party chatting. (/p)" category="chatting command">
+		<ALIAS name="p"/>
+		<ALIAS name="ㅔ"/>
+		<ALIAS name="ㅍ"/>
+		<ALIAS name="파"/>
+		<ALIAS name="파티"/>
+		<ALIAS name="vk"/>
+		<ALIAS name="vkxl"/>
+		<ALIAS name="[파티]"/>
+		<ALIAS name="파티대화"/>
+		<ALIAS name="[파티대화]"/>
+	    <ALIAS name="party"/>
+		<ALIAS name="[party]"/>
+		<ALIAS name="Party"/>
+		<ALIAS name="[Party]"/>
+	    <ALIAS name="grp."/>
+		<ALIAS name="[grp.]"/>
+		<ALIAS name="drużyna"/>
+		<ALIAS name="[drużyna]"/>
+		
+    </CMD>
+
+    <CMD id="14" name="guild" usage="guild [comment]" help="/guild [comment] : Guild chatting. (/g)" category="chatting command">
+		<ALIAS name="g"/>
+		<ALIAS name="ㅎ"/>
+		<ALIAS name="길"/>
+		<ALIAS name="길드"/>
+		<ALIAS name="rlf"/>
+		<ALIAS name="rlfem"/>
+		<ALIAS name="[길드]"/>
+		<ALIAS name="길드대화"/>
+		<ALIAS name="[길드대화]"/>
+	  <ALIAS name="guild"/>
+	  <ALIAS name="[guild]"/>
+	  <ALIAS name="Guild"/>
+	  <ALIAS name="[Guild]"/>
+	  <ALIAS name="gilde"/>
+	  <ALIAS name="[gilde]"/>
+	  <ALIAS name="gildia"/>
+	  <ALIAS name="[gildia]"/>
+    </CMD>
+
+    <CMD id="15" name="yell" usage="yell [comment]" help="/yell : Sending a message for all players in current channel. (/y)" category="chatting command">
+		<ALIAS name="y"/>
+		<ALIAS name="ㅛ"/>
+		<ALIAS name="shout"/>
+		<ALIAS name="Shouts"/>
+		<ALIAS name="외"/>
+		<ALIAS name="외침"/>
+		<ALIAS name="dhl"/>
+		<ALIAS name="dhlcla"/>
+		<ALIAS name="[외침]"/>
+		<ALIAS name="외침대화"/>
+		<ALIAS name="[외침대화]"/>
+	    <ALIAS name="rufe"/>
+		<ALIAS name="[rufe]"/>
+		<ALIAS name="krzyczy"/>
+		<ALIAS name="[krzyczy]"/>
+    </CMD>
+
+	<CMD id="16" name="auction" usage="거래 [하고싶은말]" help="/거래 [하고싶은말] : 거래 채팅으로 플레이어들에게 메시지를 전달합니다. (/ㅅ, /t)" category="채팅 명령어">
+		<ALIAS name="t"/>
+		<ALIAS name="ㅅ"/>
+		<ALIAS name="거"/>
+		<ALIAS name="거래"/>
+		<ALIAS name="[거래]"/>
+		<ALIAS name="거래채널"/>
+		<ALIAS name="[거래채널]"/>
+		<ALIAS name="trade"/>
+		<ALIAS name="[trade]"/>
+		<ALIAS name="Trade"/>
+		<ALIAS name="[Trade]"/>
+		<ALIAS name="auction"/>
+		<ALIAS name="[auction]"/>
+        <ALIAS name="handel"/>
+		<ALIAS name="[handel]"/>
+    </CMD>
+	<!--
+    <CMD id="17" name="channel" usage="채널 [채널명] [하고싶은말]" help="특정 채널내 모든 플레이어에게 메시지 전달">
+      <ALIAS name="ch"/>
+      <ALIAS name="채널"/>
+    </CMD> 12.03.07 유저 사용이 가능해 방지를 위해 막아놓음. -->
+
+    <CMD id="18" name="field" usage="field [comment]" help="/field [comment] : Sending a message for all players in the same field. (/f)" category="chatting command">
+		<ALIAS name="f"/>
+		<ALIAS name="ㄹ"/>
+		<ALIAS name="필"/>
+		<ALIAS name="필드"/>
+		<ALIAS name="[필드]"/>
+		<ALIAS name="필드대화"/>
+		<ALIAS name="[필드대화]"/>
+		<ALIAS name="vlf"/>
+		<ALIAS name="vlfem"/>
+	    <ALIAS name="field"/>
+		<ALIAS name="[field]"/>
+		<ALIAS name="Field"/>
+		<ALIAS name="[Field]"/>
+		<ALIAS name="geb."/>
+		<ALIAS name="[geb.]"/>
+		<ALIAS name="obszar"/>
+		<ALIAS name="[obszar]"/>
+    </CMD>
+
+    <CMD id="19" grade="1" name="all" usage="all [comment]" help="/all [comment] : Sending a message for all players. (/a) **GM only** " category="chatting command">
+		<ALIAS name="a"/>
+		<ALIAS name="ㅁ"/>
+		<ALIAS name="전"/>
+		<ALIAS name="전체"/>
+		<ALIAS name="wjs"/>
+		<ALIAS name="wjscp"/>
+		<ALIAS name="Wszystko"/>
+    </CMD>
+
+	
+    <CMD id="20" grade="1" name="narration" usage="narration [comment]" help="/na [comment] : **GM only**" category="chatting command">
+		<ALIAS name="na"/>
+		<ALIAS name="나"/>
+		<ALIAS name="나레이션"/>
+		<ALIAS name="sk"/>
+		<ALIAS name="skfpdltus"/>
+    </CMD>
+
+    <CMD id="21" grade="1" name="announce" usage="announce [comment]" help="/gm [comment] : **GM only**" category="chatting command">
+		<ALIAS name="gm"/>
+		<ALIAS name="안"/>
+		<ALIAS name="안내"/>
+		<ALIAS name="dks"/>
+		<ALIAS name="dksso"/>
+    </CMD>
+
+    <CMD id="22" grade="1" name="notice" usage="notice [comment]" help="/notice [comment] : **GM only** " category="chatting command">
+		<ALIAS name="공지"/>
+		<ALIAS name="알"/>
+		<ALIAS name="알림"/>
+		<ALIAS name="rhdwl"/>
+		<ALIAS name="dkf"/>
+		<ALIAS name="dkffla"/>
+    </CMD>
+	
+	<CMD id="23" name="newbie" usage="초보자 [하고싶은말]" help="/초보 [하고싶은말] : 초보자 채팅으로 플레이어들에게 메시지를 전달합니다. (/ㅜ, /n)" category="채팅 명령어">
+		<ALIAS name="n"/>
+		<ALIAS name="ㅜ"/>
+		<ALIAS name="초보"/>
+		<ALIAS name="[초보]"/>
+		<ALIAS name="초보자"/>
+		<ALIAS name="[초보자]"/>
+		<ALIAS name="초보채널"/>
+		<ALIAS name="[초보채널]"/>
+		<ALIAS name="newbie"/>
+		<ALIAS name="[newbie]"/>
+		<ALIAS name="Newbie"/>
+		<ALIAS name="[Newbie]"/>
+		<ALIAS name="[Beginners]"/>
+		<ALIAS name="Beginners"/>
+		<ALIAS name="Neuling"/>
+        <ALIAS name="[Neuling]"/>
+		<ALIAS name="Początkujący"/>
+		<ALIAS name="[Początkujący]"/>
+    </CMD>
+	
+	<CMD id="24" name="partymatching" usage="파티찾기 [하고싶은말]" help="/파티찾기 [하고싶은말] : 파티찾기 채팅으로 플레이어들에게 메시지를 전달합니다. (/ㅊ, /u)" category="채팅 명령어">
+		<ALIAS name="u"/>
+		<ALIAS name="ㅕ"/>
+		<ALIAS name="ㅊ"/>
+		<ALIAS name="파티찾기"/>
+		<ALIAS name="[파티찾기]"/>
+		<ALIAS name="matching"/>
+		<ALIAS name="[matching]"/>
+		<ALIAS name="PartyMatching"/>
+		<ALIAS name="[PartyMatching]"/>
+		<ALIAS name="LFP"/>
+		<ALIAS name="LookForParty"/>
+		<ALIAS name="[LookForParty]"/>
+		<ALIAS name="Gruppensuche"/>
+		<ALIAS name="[Gruppensuche]"/>
+		<ALIAS name="PartyMatching"/>
+		<ALIAS name="[PartyMatching]"/>
+		<ALIAS name="[ZnajdźDrużynę]"/>
+		<ALIAS name="ZnajdźDrużynę"/>
+    </CMD>
+		
+	<CMD id="25" grade="1" name="broadcast" usage="방송 [하고싶은말]" help="/방송 [하고싶은말] : 초보자 채팅으로 플레이어들에게 메시지를 전달합니다. (/ㅂ, /bc)" category="채팅 명령어">
+		<ALIAS name="bc"/>
+		<ALIAS name="ㅠㅊ"/>
+		<ALIAS name="ㅂ"/>
+		<ALIAS name="방송"/>
+		<ALIAS name="broadcast"/>
+		<ALIAS name="[broadcast]"/>
+    </CMD>
+	<!-- 채팅 끝 -->
+
+    <!-- 채팅 채널 시작
+    <CMD id="30" name="join" usage="채널입장 [채널명]" help="해당 채널 입장">
+      <ALIAS name="채널입장"/>
+      <ALIAS name="입장"/>
+    </CMD>
+
+    <CMD id="31" name="leave" usage="채널퇴장 [채널명]" help="해당 채널 퇴장">
+      <ALIAS name="채널퇴장"/>
+      <ALIAS name="퇴장"/>
+    </CMD>
+
+    <CMD id="32" name="kick" usage="채널추방 [채널명] [상대방]" help="[방장전용] 특정 플레이어 강제퇴장. 재입장 가능.">
+      <ALIAS name="채널추방"/>
+      <ALIAS name="추방"/>
+    </CMD>
+
+    <CMD id="33" name="ban" usage="영구추방 [채널명] [상대방]" help="[방장전용] 특정 플레이어 강제퇴장. 재입장 불가. /추방해제 명령으로 재입장 가능.">
+      <ALIAS name="영구추방"/>      
+    </CMD>
+
+    <CMD id="34" name="unban" usage="추방해제 [채널명] [상대방]" help="[방장전용] 영구추방 해제">
+      <ALIAS name="추방해제"/>      
+    </CMD>
+
+    <CMD id="35" name="owner" usage="방장 [채널명] [상대방]" help="[방장전용] 방장권한 넘겨주기">
+      <ALIAS name="방장"/>
+    </CMD>
+
+    <CMD id="36" name="createchannel" usage="채널생성 [채널명]" help="개인 채널을 개설한다.">
+      <ALIAS name="채널생성"/>
+    </CMD>
+	 채팅 채널 끝 -->
+
+	<!-- 추가 명령 -->
+	<CMD id="37" name="invite" usage="invite [character name]" help="/invite [character name] : Invite to party. (/i)" category="community command">
+		<ALIAS name="i"/>
+		<ALIAS name="ㅑ"/>
+		<ALIAS name="초"/>
+		<ALIAS name="초대"/>
+		<ALIAS name="파티초대"/>
+<!--		<ALIAS name="ch"/> 채널 명령어와 같이 주석처리함 -->
+		<ALIAS name="cheo"/>
+		<ALIAS name="vkxlcheo"/>
+    </CMD>
+	<!-- <CMD id="38" name="guildinvite" usage="guild invite [character name]" help="/guild invite [character name] : Invite to guild. (/gi)" category="community command">
+		<ALIAS name="gi"/>
+		<ALIAS name="햐"/>
+		<ALIAS name="길초"/>
+		<ALIAS name="길드초대"/>
+		<ALIAS name="rlfch"/>
+		<ALIAS name="rlfemcheo"/>
+    </CMD> 12.10.22 채팅으로 길드 초대 기능이 추가되지 않은 해외에 이 문구를 보여지지 않게 합니다. -->
+	<CMD id="39" name="friendrequest" usage="friendrequest [character name]" help="/friendrequest [character name] : Send friend request.  (/fr)" category="community command">
+		<ALIAS name="fr"/>
+		<ALIAS name="ㄺ"/>
+		<ALIAS name="친구"/>
+		<ALIAS name="친구맺기"/>
+		<ALIAS name="친맺"/>
+		<ALIAS name="친구초대"/>
+		<ALIAS name="친초"/>
+		<ALIAS name="친구추가"/>
+		<ALIAS name="친추"/>
+		<ALIAS name="clsrn"/>
+		<ALIAS name="clsrnaowrl"/>
+		<ALIAS name="clsaow"/>
+		<ALIAS name="clsrncheo"/>
+		<ALIAS name="clsch"/>
+		<ALIAS name="clsrncnrk"/>
+		<ALIAS name="clscn"/>
+    </CMD>
+
+    <!-- 추가 명령( 차단 ) -->
+    <CMD id="50" name="block" usage="block [character name]" help="/block [character name] : Block a conversation of the character. (/b)" category="community command">
+		<ALIAS name="차단"/>
+		<ALIAS name="차"/>
+		<ALIAS name="b"/>
+		<ALIAS name="ㅠ"/>
+		<ALIAS name="ck"/>
+		<ALIAS name="ckeks"/>
+    </CMD>
+    <CMD id="51" name="blocklist" usage="blocklist" help="/blocklist : See the blocklist. (/bl)" category="community command">
+		<ALIAS name="목록"/>
+		<ALIAS name="차단목록"/>
+		<ALIAS name="bl"/>
+		<ALIAS name="ahrfhr"/>
+		<ALIAS name="ckeksahrfhr"/>
+    </CMD>
+    <CMD id="52" name="unblock" usage="unblock" help="/unblock [character name] : Unblock the character. (/ub)" category="community command">
+		<ALIAS name="해제"/>
+		<ALIAS name="차단해제"/>
+		<ALIAS name="ub"/>
+		<ALIAS name="gowp"/>
+		<ALIAS name="ckeksgowp"/>
+    </CMD>
+
+    <!-- 의사 표시 -->
+    <CMD id="100" name="beg" usage="beg" help="/beg : beg[expression] (/beg)" category="expression command">
+		<ALIAS name="beg"/>
+		<ALIAS name="빌기"/>
+		<ALIAS name="모션1"/>
+		<ALIAS name="qlfrl"/>
+    </CMD>
+    <CMD id="101" name="bow" usage="bow" help="/bow : bow[expression] (/bow)" category="expression command">
+		<ALIAS name="bow"/>
+		<ALIAS name="인사"/>
+		<ALIAS name="모션2"/>
+		<ALIAS name="dlstk"/>
+    </CMD>
+    <CMD id="102" name="cheer" usage="cheer" help="/cheer : cheer[expression] (/cheer)" category="expression command">
+		<ALIAS name="cheer"/>
+		<ALIAS name="환호"/>
+		<ALIAS name="모션3"/>
+		<ALIAS name="ghksgh"/>
+    </CMD>
+    <CMD id="103" name="clap" usage="clap" help="/clap : clap[expression] (/clap)" category="expression command">
+		<ALIAS name="clap"/>
+		<ALIAS name="박수"/>
+		<ALIAS name="모션4"/>
+		<ALIAS name="qkrtn"/>
+    </CMD>
+    <CMD id="104" name="cry" usage="cry" help="/cry : cry[expression] (/cry)" category="expression command">
+		<ALIAS name="cry"/>
+		<ALIAS name="울기"/>
+		<ALIAS name="모션5"/>
+		<ALIAS name="dnfrl"/>
+    </CMD>
+    <CMD id="105" name="dance" usage="dance" help="/dance : dance[expression] (/dance)" category="expression command">
+		<ALIAS name="dance"/>
+		<ALIAS name="dance1"/>
+		<ALIAS name="춤"/>
+		<ALIAS name="춤1"/>
+		<ALIAS name="모션6"/>
+		<ALIAS name="cna"/>
+		<ALIAS name="cna1"/>
+    </CMD>
+    <CMD id="106" name="ignore" usage="ignore" help="/ignore: ignore[expression] (/ignore)" category="expression command">
+		<ALIAS name="ignore"/>
+		<ALIAS name="무시"/>
+		<ALIAS name="모션7"/>
+		<ALIAS name="antl"/>
+    </CMD>
+    <CMD id="107" name="kiss" usage="kiss" help="/kiss : kiss[expression] (/kiss)" category="expression command">
+		<ALIAS name="kiss"/>
+		<ALIAS name="키스"/>
+		<ALIAS name="모션8"/>
+		<ALIAS name="zltm"/>
+    </CMD>
+    <CMD id="108" name="laugh" usage="laugh" help="/laugh : laugh[expression] (/laugh)" category="expression command">
+		<ALIAS name="laugh"/>
+		<ALIAS name="웃기"/>
+		<ALIAS name="모션9"/>
+		<ALIAS name="dntrl"/>
+    </CMD>
+    <CMD id="109" name="lookaround" usage="lookaround" help="/lookaround : lookaround[expression] (/lookaround)" category="expression command">
+		<ALIAS name="lookaround"/>
+		<ALIAS name="둘러보기"/>
+		<ALIAS name="모션10"/>
+		<ALIAS name="enffjqhrl"/>
+    </CMD>
+    <CMD id="110" name="negative" usage="negative" help="/negative : negative[expression] (/negative)" category="expression command">
+		<ALIAS name="negative"/>
+		<ALIAS name="부정"/>
+		<ALIAS name="모션11"/>
+		<ALIAS name="qnwjd"/>
+    </CMD>
+    <CMD id="111" name="indicate" usage="indicate" help="/indicate : indicate[expression] (/indicate)" category="expression command">
+		<ALIAS name="indicate"/>
+		<ALIAS name="지목"/>
+		<ALIAS name="모션12"/>
+		<ALIAS name="wlahr"/>
+    </CMD>
+    <CMD id="112" name="positive" usage="positive" help="/positive : positive[expression] (/positive)" category="expression command">
+		<ALIAS name="positive"/>
+		<ALIAS name="긍정"/>
+		<ALIAS name="모션13"/>
+		<ALIAS name="rmdwjd"/>
+    </CMD>
+    <CMD id="113" name="salute" usage="salute" help="/salute : salute[expression] (/salute)" category="expression command">
+		<ALIAS name="salute"/>
+		<ALIAS name="경례"/>
+		<ALIAS name="모션14"/>
+		<ALIAS name="rudfP"/>
+    </CMD>
+    <CMD id="114" name="sigh" usage="sigh" help="/sigh : sigh[expression] (/sigh)" category="expression command">
+		<ALIAS name="sigh"/>
+		<ALIAS name="한숨"/>
+		<ALIAS name="모션15"/>
+		<ALIAS name="gkstna"/>
+    </CMD>
+    <CMD id="115" name="talk1" usage="talk1" help="/talk1 : talk1[expression] (/talk1)" category="expression command">
+		<ALIAS name="talk1"/>
+		<ALIAS name="대화1"/>
+		<ALIAS name="모션16"/>
+		<ALIAS name="eoghk1"/>
+    </CMD>
+    <CMD id="116" name="talk2" usage="talk2" help="/talk2 : talk2[expression] (/talk2)" category="expression command">
+		<ALIAS name="talk2"/>
+		<ALIAS name="대화2"/>
+		<ALIAS name="모션17"/>
+		<ALIAS name="eoghk2"/>
+    </CMD>
+    <CMD id="117" name="taunt" usage="taunt" help="/taunt : taunt[expression] (/taunt)" category="expression command">
+		<ALIAS name="taunt"/>
+		<ALIAS name="조롱"/>
+		<ALIAS name="모션18"/>
+		<ALIAS name="whfhd"/>
+    </CMD>
+    <CMD id="118" name="here" usage="here" help="/here : here[expression] (/here)" category="expression command">
+		<ALIAS name="here"/>
+		<ALIAS name="신호"/>
+		<ALIAS name="손흔들기"/>
+		<ALIAS name="모션19"/>
+		<ALIAS name="tlsgh"/>
+		<ALIAS name="thsgmsemfrl"/>
+    </CMD>
+    <CMD id="121" name="dance2" usage="dance2" help="/dance2 : disco[expression] (/dance2, /disco)" category="expression command">
+		<ALIAS name="dance2"/>
+		<ALIAS name="disco"/>
+		<ALIAS name="d2"/>
+		<ALIAS name="춤2"/>
+		<ALIAS name="디스코"/>
+		<ALIAS name="모션22"/>
+		<ALIAS name="cna2"/>
+		<ALIAS name="eltmzh"/>
+    </CMD>
+    <CMD id="122" name="dance3" usage="dance3" help="/dance3 : joyful dance[expression] (/dance3)" category="expression command">
+		<ALIAS name="dance3"/>
+		<ALIAS name="d3"/>
+		<ALIAS name="춤3"/>
+		<ALIAS name="신나는 춤"/>
+		<ALIAS name="모션23"/>
+		<ALIAS name="cna3"/>
+		<ALIAS name="tlssksms cna"/>
+    </CMD>
+    <CMD id="123" grade="1" name="dance4" usage="dance4" help="/dance4 : GM exclusive brake dance[expression] (/dance4, /d4)" category="expression command">
+		<ALIAS name="dance4"/>
+		<ALIAS name="d4"/>
+		<ALIAS name="춤4"/>
+		<ALIAS name="브레이크 댄스"/>
+		<ALIAS name="모션24"/>
+		<ALIAS name="cna4"/>
+		<ALIAS name="qmfpdlzm eostm"/>
+    </CMD>
+
+	<!-- hidden command -->
+    <CMD id="200" name="showmetheserver" usage="" help="" category="">
+    </CMD>
+	
+	<CMD id="201" name="punishment" usage="" help="" category="">
+    </CMD>
+
+  </CHAT_CMD>
+</maiet>

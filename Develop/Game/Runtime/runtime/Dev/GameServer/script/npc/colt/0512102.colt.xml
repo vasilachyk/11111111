@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="구울 버서커">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="251210201" rate="20" />
+			</DEFAULT>
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="251210202" rate="60" />				
+			</CHECK>
+			<CHECK type="rage" param1="200">
+				<ACTION type="guard" param1="251210203" param2="2" rate="50" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

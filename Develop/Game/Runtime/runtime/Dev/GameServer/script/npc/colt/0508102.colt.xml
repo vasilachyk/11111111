@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="변해버린 시종" npcid="508102">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810201" rate="10" desc="우측공격(약)" />
+				<ACTION type="talent" param1="250810202" rate="10" desc="우측공격" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="40">
+				<CHECK type="distance" param2="300" >
+					<ACTION type="talent" param1="250810203" rate="10" desc="회피기 (좌)" />
+					<ACTION type="talent" param1="250810204" rate="10" desc="회피기 (우)" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810200" rate="30" desc="idle2" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

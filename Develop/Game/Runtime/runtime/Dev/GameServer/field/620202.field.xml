@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="110" minimap_name="map00110" loading_image_name="00110" min_x="0" min_y="0" max_x="60000" max_y="60000" boundary_min_x="28100" boundary_min_y="39400" boundary_max_x="55700" boundary_max_y="56600" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="34363.949219" y="46720.507813" z="3038.378662" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="퀘스트목표지점" x="48888.941406" y="49024.910156" z="4181.750488" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="패트롤_사냥꾼" x="39561.550781" y="45196.988281" z="3608.780273" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="4" name="패트롤_사냥꾼" x="38769.660156" y="43782.972656" z="3613.471436" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="5" name="패트롤_사냥꾼2" x="41633.378906" y="47783.988281" z="3759.720215" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="2" />
+        <MARKER id="6" name="패트롤_사냥꾼2" x="42951.222656" y="46997.113281" z="3844.134033" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="2" />
+        <SENSOR id="1" name="안전지대설정" local="false" x="34600.644531" y="46682.820313" z="3038.397217" radius="791.452820" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ITEM id="2891" />
+            <ITEM id="2892" />
+            <ITEM id="2894" />
+            <ITEM id="2895" />
+            <ITEM id="10002003" />
+            <ITEM id="10002104" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

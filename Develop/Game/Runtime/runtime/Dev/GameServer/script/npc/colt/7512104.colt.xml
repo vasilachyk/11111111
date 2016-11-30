@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="고위사제 콰트라">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="251210301" rate="20" />
+				<ACTION type="talent" param1="251210303" rate="20" />
+			</DEFAULT>
+			<CHECK type="hp" param2="40" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="face_to" />
+					<ACTION type="talent" param1="251210302" duration="0" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400">
+				<ACTION type="distance" param1="300" param2="300" rate="50" />
+				<ACTION type="talent" param1="251210303" rate="50" />
+			</CHECK>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_7512104" param2="SummonSkel" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_7512104:SummonSkel( ThisNPC, Enemy )
+	ThisNPC:FaceTo( Enemy )
+	ThisNPC:UseTalentSelf( 251210305 )
+	
+	local Dir = Enemy:GetFowardDir( ThisNPC )
+	local Pos = ThisNPC:GetPos()
+	local Points = Math_GetPolygonPoints( Pos, Dir, 100, 4 )
+	
+	ThisNPC:Summon( 7512116, Points["1"] )
+end
+
+	]]></SCRIPT>
+</maiet>

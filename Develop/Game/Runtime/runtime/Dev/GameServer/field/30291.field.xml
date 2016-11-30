@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="33001" minimap_name="map33001" loading_image_name="30291" min_x="-900" min_y="-900" max_x="900" max_y="900" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="part_bar_1" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="보통침대" x="-187.123260" y="383.235229" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="800000" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="개인보관함" x="-8.838959" y="379.988190" z="2.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="802001" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="from 여관" x="-88.177521" y="-274.517334" z="2.360321" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 여관" x="-320.294769" y="-243.890930" z="1.043716" radius="100.000000" enabled="true">
+            <EFFECT effect="sensor_trial_01" x="3.466644" y="-9.687225" z="-1.991424" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.700000" scale_y="0.200000" scale_z="0.900000" />
+            <WARP warp_type="field" title="다른 필드로 이동" condition="700" gate_type="auto" field="3" marker="45" />
+            <WARP warp_type="field" title="다른 필드로 이동" condition="701" gate_type="auto" field="1" marker="13" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="젬버" npcid="605001" >
+		<COMBAT victory="260500101" >
+			<DEFAULT comment="근접 기본공격">
+				<!-- 기본공격 패턴 -->
+				<ACTION type="talent" param1="260500110" rate="4" />
+				<ACTION type="talent" param1="260500111" rate="4" />
+				<ACTION type="talent" param1="260500113" rate="4" />
+				
+				<!-- 특수기술 -->
+				<ACTION type="talent" param1="260500142" rate="4" comment="내려찍기"/>
+				<ACTION type="talent" param1="260500150" rate="4" comment="연타공격"/>
+
+				<!-- 멍청 3종 -->
+				<ACTION type="talent" param1="260500106" rate="1" duration="0" comment="울부짓기-배치기" />
+				<ACTION type="talent" param1="260500108" rate="1" duration="0" comment="울부짓기-함성" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="hp" param1="50">
+					<CHECK type="rage" param1="150">
+						<ACTION type="talent" param1="260500123" duration="0" rate="10" />
+					</CHECK>
+				</CHECK>
+				<CHECK type="hp" param2="50">
+					<CHECK type="rage" param1="150">
+						<ACTION type="talent" param1="260500124" duration="0" rate="10" />
+					</CHECK>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="800" comment="원거리패턴#1">
+				<!-- 50%이상일때 -->
+				<CHECK type="hp" param1="50">
+					<!-- 접근을 위한 스킬사용 -->
+					<ACTION type="talent" param1="260500110" rate="1" comment="수타"/>
+					<ACTION type="talent" param1="260500111" rate="1" comment="몽둥이내려치기"/>
+					<ACTION type="talent" param1="260500113" rate="1" comment="밀어내기"/>
+					<ACTION type="talent" param1="260500150" rate="2" comment="연타공격"/>
+					
+					<!-- 원거리 전용 주요 공격 -->
+					<ACTION type="talent" param1="260500121" rate="4" comment="어께치기"/>
+					<ACTION type="talent" param1="260500144" rate="5" comment="돌던지기"/>
+				</CHECK>
+				<!-- 50%이하일때 -->
+				<ACTION type="talent" param1="260500110" rate="1" comment="수타"/>
+				<ACTION type="talent" param1="260500111" rate="1" comment="몽둥이내려치기"/>
+				<ACTION type="talent" param1="260500113" rate="1" comment="밀어내기"/>
+				<ACTION type="talent" param1="260500150" rate="2" comment="연타공격"/>
+				
+				<ACTION type="talent" param1="260500140" rate="5" comment="어께치기"/>
+				<ACTION type="talent" param1="260500141" rate="7" comment="어께치기-빠른"/>
+				<ACTION type="talent" param1="260500143" rate="2" comment="충격파"/>
+				
+				<ACTION type="talent" param1="260500144" rate="1" comment="돌던지기"/>
+				<ACTION type="talent" param1="260500145" rate="1" comment="돌던지기"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" comment="원거리패턴#2-어중간한거리 돌안던짐">
+				<!-- 50%이상일때 -->
+				<CHECK type="hp" param1="50">
+					<!-- 접근을 위한 스킬사용 -->
+					<ACTION type="talent" param1="260500110" rate="1" comment="수타"/>
+					<ACTION type="talent" param1="260500111" rate="1" comment="몽둥이내려치기"/>
+					<ACTION type="talent" param1="260500113" rate="1" comment="밀어내기"/>
+					<ACTION type="talent" param1="260500150" rate="2" comment="연타공격"/>
+					
+					<!-- 원거리 전용 주요 공격 -->
+					<ACTION type="talent" param1="260500121" rate="5" comment="어께치기"/>
+				</CHECK>
+				<!-- 50%이하일때 -->
+				<ACTION type="talent" param1="260500110" rate="1" comment="수타"/>
+				<ACTION type="talent" param1="260500111" rate="1" comment="몽둥이내려치기"/>
+				<ACTION type="talent" param1="260500113" rate="1" comment="밀어내기"/>
+				<ACTION type="talent" param1="260500150" rate="2" comment="연타공격"/>
+				
+				<ACTION type="talent" param1="260500140" rate="5" comment="어께치기"/>
+				<ACTION type="talent" param1="260500141" rate="7" comment="어께치기-빠른"/>
+				<ACTION type="talent" param1="260500143" rate="2" comment="충격파"/>
+			</CHECK>
+			
+			<!-- 근접해서 스턴 다운 쓰로업 상태면 무조건 잡기를 콤보로 -->
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="talent" param1="260500127" rate="1" comment="잡기"/>
+			</CHECK>
+			<CHECK type="e_motionfactor" param1="throwup">
+				<ACTION type="talent" param1="260500127" rate="1" comment="잡기"/>
+			</CHECK>
+			<CHECK type="e_motionfactor" param1="stun">
+				<ACTION type="talent" param1="260500127" rate="1" comment="잡기"/>
+			</CHECK>
+			
+			<!-- 체력 50%이하의 어려운 패턴-->
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="260500107" auto_run="true" max_count="1" duration="0" comment="울부짖기-발구르기"/>
+				<!-- 짤짤이 -->
+				<ACTION type="talent" param1="260500110" rate="1" />
+				<ACTION type="talent" param1="260500111" rate="1" />
+				<ACTION type="talent" param1="260500113" rate="1" />
+				
+				<ACTION type="talent" param1="260500127" rate="2" comment="잡기"/>
+				<ACTION type="talent" param1="260500143" rate="1" comment="충격파"/>
+				
+				<ACTION type="lua" param1="NPC_605001" param2="PressAttack" rate="3" comment="엉덩방아" />
+				
+				<ACTION type="talent" param1="260500150" rate="3" comment="연타공격(추적)" />
+			</CHECK>
+		</COMBAT>
+		
+		<!-- 연속 공격을 위한 모드전환 -->
+		<COMBAT mode="1" victory="260500153">
+			<DEFAULT>
+				<ACTION type="talent" param1="260500153" rate="50" duration="0" />
+			</DEFAULT>
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="260500151" rate="50" duration="0" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="2" victory="260500153">
+			<DEFAULT>
+				<ACTION type="talent" param1="260500153" rate="50" duration="0" />
+			</DEFAULT>
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="260500154" rate="50" duration="0" />
+			</CHECK>
+			<CHECK type="hp" param1="50">
+				<ACTION type="talent" param1="260500152" rate="50" duration="0" />
+			</CHECK>
+		</COMBAT>
+		<STRESS>
+			<CHECK type="stress" param1="600">
+				<CHECK type="mode" param1="0">
+					<ACTION type="lua" param1="NPC_605001" param2="Stressed" rate="100" />
+				</CHECK>
+			</CHECK>
+		</STRESS>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="260500102" rate="15" cycle="10" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+<![CDATA[
+	
+function NPC_605001:Init(NPCID)
+	--[[
+	1: OTL 누적데미지
+	2: OTL Count
+	--]]
+	
+	NPC_ReserveUserData(NPCID, 2)
+	
+	NPC_605001.LimitForOTL 			= NPC_605001.MaxHP/20
+	NPC_101000.LimitForPain			= 1000
+	
+	NPC_605001.TalIdIdot 			= 260500102
+	NPC_605001.TalIdOTL				= 260500130
+	NPC_605001.TalIdEnrage 			= 260500107
+	NPC_605001.TalIdPain			= 260500109
+	
+	NPC_605001.TalIdWhirlWind 		= 260500123
+	NPC_605001.TalIdWhirlWindFast	= 260500124
+	
+	NPC_605001.TalIdHeapAttack 		= 260500125
+	NPC_605001.TalIdFlopDown		= 260500126
+	NPC_605001.TalIdShoulderAttack	= 260500141
+	NPC_605001.TalIdThrowStone 		= 260500144
+end
+
+-- 뒤에있으면 무조건 드러 눞는다. (뒤로가지마라)
+-- 앞에있으면 엉덩이 프레스
+
+function NPC_605001:PressAttack(  ThisNPC, Enemy )
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	if Dist > 300 then
+		return
+	end
+	
+	if Enemy:IsRear( ThisNPC ) then
+		ThisNPC:UseTalentSelf(NPC_605001.TalIdFlopDown)
+	else
+		ThisNPC:UseTalentSelf(NPC_605001.TalIdHeapAttack)
+	end
+end
+
+function NPC_605001:OnBPartRecover()
+	for i=1, 2 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+function NPC_605001:OnFinishDashAttack(  ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+	
+	-- 반피이하일때는 바보짓 안함
+	if ThisNPC:GetHP()/ThisNPC:GetMaxHP() > 0.5 and math.random( 0, 1 ) == 0 then
+		ThisNPC:UseTalentSelf( NPC_605001.TalIdIdot )
+	end
+end
+
+function NPC_605001:OnFinishAndAggro( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_605001:Stressed( ThisNPC, Enemy )
+	local Distance 	= ThisNPC:DistanceTo( Enemy )
+	local r = math.random(0, 3)
+
+	if Distance < 500 then
+		-- 근거리
+		if r == 0 then
+			ThisNPC:UseTalentSelf( NPC_605001.TalIdWhirlWindFast )
+		elseif r == 1 then
+			ThisNPC:UseTalentSelf( NPC_605001.TalIdHeapAttack )
+		else
+			ThisNPC:UseTalentSelf( NPC_605001.TalIdFlopDown )
+		end
+	else
+		if r == 0 then
+			ThisNPC:UseTalent( NPC_605001.TalIdShoulderAttack, Enemy )
+		else
+			ThisNPC:UseTalent( NPC_605001.TalIdThrowStone, Enemy )
+		end
+	end
+end
+
+function NPC_605001:AccDamage( ThisNPC, HitInfo )
+	ProcessPain( ThisNPC, HitInfo, NPC_605001.TalIdPain, 1 )
+	return HitInfo
+end
+
+function NPC_605001:OTL(HitInfo)
+	return HitInfo
+	--[[
+	local ThisNPC = AsNPC( HitInfo.Victim )
+	if ThisNPC:GetMode() == 0 then
+		return HitInfo
+	end
+	
+	local totalDamage = ThisNPC:GetUserData(1) + HitInfo.Damage
+	local totalCount = ThisNPC:GetUserData(2)
+
+	ThisNPC:SetUserData(1, totalDamage)
+	
+	if totalDamage > NPC_605001.LimitForOTL then
+		if totalCount < 4 then
+			ThisNPC:SetUserData(1, 0)
+			ThisNPC:SetUserData(2, totalCount + 1)
+			
+			if not ThisNPC:IsCooldown( NPC_605001.TalIdEnrage ) then
+				ThisNPC:ClearJob()
+				ThisNPC:UseTalentSelf( NPC_605001.TalIdEnrage )
+			end
+			
+			return HitInfo
+		else
+			if ThisNPC:IsCooldown( NPC_605001.TalIdPain ) or ThisNPC:IsCooldown( NPC_605001.TalIdOTL ) then
+				return HitInfo
+			end 
+			
+			ThisNPC:SetUserData(1, 0)
+			ThisNPC:SetUserData(2, totalCount + 1)
+			
+			ThisNPC:ClearJob()
+			
+			if totalCount % 2 == 1 then
+				ThisNPC:UseTalentSelf( NPC_605001.TalIdPain )
+			else
+				ThisNPC:UseTalentSelf( NPC_605001.TalIdOTL )
+			end
+			
+			return HitInfo
+		end
+	end
+
+	return HitInfo
+	--]]
+end
+
+function NPC_605001:OnHitCapsule_0_0(HitInfo)
+	return NPC_605001:AccDamage(this, HitInfo)
+end
+
+function NPC_605001:OnHitCapsule_1_0(HitInfo)
+	return NPC_605001:OTL(HitInfo)
+end
+
+function NPC_605001:OnHitCapsule_1_1(HitInfo)
+	return NPC_605001:OTL(HitInfo)
+end
+
+function NPC_605001:OnHitCapsule_2_0(HitInfo)
+
+end
+
+function NPC_605001:OnHitCapsule_2_1(HitInfo)
+	-- 머리 뽀개기
+	local victim = AsNPC( HitInfo.Victim )
+	local attacker = HitInfo.Attacker
+	
+	if victim:CheckBPart(1) then
+		return HitInfo
+	end
+	
+--	if victim:GetHP()/victim:GetMaxHP() < 0.3 then
+--		victim:BreakPart(1, attacker)
+--	end
+	
+	return HitInfo
+end
+
+function NPC_605001:OnHitCapsule_2_2(HitInfo)
+	return HitInfo
+end
+
+function NPC_605001:OnHitCapsule_3_0(HitInfo)
+	return HitInfo
+end
+
+function NPC_605001:OnHitCapsule_3_1(HitInfo)
+	return HitInfo
+end
+
+function NPC_605001:OnHitCapsule_3_2(HitInfo)
+	return HitInfo
+end
+
+function NPC_605001:OnHitCapsule_3_3(HitInfo)
+	return HitInfo
+end
+
+
+]]>
+	</SCRIPT>
+</maiet>

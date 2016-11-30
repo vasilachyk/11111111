@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌델 전투병 (여)">
+		<COMBAT mode="0" victory="211022010" >
+			<DEFAULT>	
+				<ACTION type="group" rate="50">
+					<ACTION type="face_to"  />
+					<ACTION type="nothing" param1="0.5" />
+				</ACTION>
+				
+				<ACTION type="talent" param1="211022001" rate="20" />
+				<ACTION type="talent" param1="211022002" rate="20" />
+				<ACTION type="talent" param1="211022004" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="group" rate="40">
+					<ACTION type="face_to"  />
+					<ACTION type="nothing" param1="0.5" />
+				</ACTION>
+				<ACTION type="distance" param1="150" param2="200" rate="20" />
+				<ACTION type="talent" param1="211022005" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80" >
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="211022007" />  <!-- 회피 L -->
+						<ACTION type="talent" param1="211022005" />
+					</ACTION>
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="211022008" /> <!-- 회피 R -->
+						<ACTION type="talent" param1="211022005" />
+					</ACTION>
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211022009" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+			</DEFAULT>
+		</AGGRO>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

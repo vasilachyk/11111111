@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="토가트 부족 전사">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="210360901" rate="10" />
+				<ACTION type="talent" param1="210360902" rate="10" />
+				<ACTION type="talent" param1="210360903" rate="10" />
+				<ACTION type="talent" param1="210360904" rate="10" />				
+			</DEFAULT>			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210360900" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

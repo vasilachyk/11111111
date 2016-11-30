@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="99011" minimap_name="map99011" loading_image_name="109003" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="13000" boundary_min_y="37000" boundary_max_x="40000" boundary_max_y="80000" weather_effect="true" fixed_time="Night" town="false" returnable="true" tutorial="true">
+        <BGM fieldbgm="bgm_gstar_start">
+            <ENVBGM dawnbgm="amb_dawn" />
+            <ENVBGM daytimebgm="amb_daytime" />
+            <ENVBGM sunsetbgm="amb_sunset" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="">
+                <ADD weather="SUN" percent="100" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1531" group="0" name="고블린 시체" x="26868.503906" y="61833.179688" z="2163.289307" dir_x="-0.573577" dir_y="-0.819152" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="true" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1540" group="0" name="고블린 시체" x="27748.234375" y="60072.769531" z="2150.470947" dir_x="0.743145" dir_y="0.669130" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="true" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1541" group="0" name="고블린 시체" x="28758.548828" y="60461.128906" z="2125.929688" dir_x="0.743145" dir_y="0.669130" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="true" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1552" group="0" name="고블린 시체" x="25124.789063" y="56345.894531" z="2166.429932" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="true" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="192,192,192">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1567" group="0" name="고블린 시체 시작" x="30387.193359" y="62302.671875" z="2172.677490" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="true" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1568" group="0" name="고블린 시체" x="28152.898438" y="60983.605469" z="2137.222412" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="true" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <MARKER id="1" name="시작 위치" x="24304.798828" y="71081.390625" z="2632.772949" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="이동마커 1" x="25497.580078" y="65891.437500" z="2344.621582" dir_x="0.669130" dir_y="-0.743145" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="이동마커 2" x="27645.828125" y="63119.113281" z="2218.995850" dir_x="0.777146" dir_y="-0.629321" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="부활 위치" x="26613.298828" y="63959.503906" z="2248.716064" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="이동마커 4" x="29185.439453" y="59889.285156" z="2117.852539" dir_x="0.342021" dir_y="-0.939692" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="이동마커 5" x="27688.246094" y="59043.296875" z="2158.994629" dir_x="-0.422619" dir_y="-0.906308" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="이동마커 6" x="27265.375000" y="57802.515625" z="2166.833740" dir_x="-0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="이동마커 7" x="26784.669922" y="56047.027344" z="2104.170898" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="이동마커 8" x="26555.421875" y="52927.726563" z="1836.300171" dir_x="0.438371" dir_y="-0.898794" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="MON_M 109710 고블린골렘" x="26799.787109" y="55916.585938" z="2095.563477" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="부하용 이동마커 a1" x="24523.228516" y="65994.898438" z="2295.336426" dir_x="0.798636" dir_y="-0.601815" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="부하용 이동마커 a2" x="27321.189453" y="62847.785156" z="2196.051025" dir_x="0.615662" dir_y="-0.788011" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="부하용 이동마커 a3" x="30034.066406" y="60219.355469" z="2111.410156" dir_x="0.121870" dir_y="-0.992546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="부하용 이동마커 a4" x="27443.724609" y="60459.164063" z="2141.356934" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="부하용 이동마커 a5" x="28686.677734" y="60596.695313" z="2127.521729" dir_x="-0.292372" dir_y="-0.956305" dir_z="0.000000" random_dir="false" />
+        <MARKER id="16" name="부하용 이동마커 a6" x="26432.193359" y="56099.816406" z="2112.570068" dir_x="-0.104529" dir_y="-0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="21" name="부하용 이동마커 b1" x="25067.417969" y="65714.031250" z="2300.743408" dir_x="0.694658" dir_y="-0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="23" name="부하용 이동마커 b3" x="28634.783203" y="59254.835938" z="2138.637939" dir_x="-0.573577" dir_y="-0.819152" dir_z="0.000000" random_dir="false" />
+        <MARKER id="24" name="부하용 이동마커 b4" x="27952.222656" y="60555.792969" z="2141.604004" dir_x="-0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="25" name="부하용 이동마커 b5" x="28057.308594" y="55682.003906" z="2177.233643" dir_x="0.034898" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="31" name="부하용 이동마커 c1" x="25163.474609" y="66452.976563" z="2339.988770" dir_x="0.309017" dir_y="-0.951056" dir_z="0.000000" random_dir="false" />
+        <MARKER id="32" name="부하용 이동마커 c2" x="28917.667969" y="61473.765625" z="2132.266602" dir_x="0.798635" dir_y="-0.601815" dir_z="0.000000" random_dir="false" />
+        <MARKER id="33" name="부하용 이동마커 c3" x="30395.099609" y="60682.457031" z="2121.994873" dir_x="0.121869" dir_y="-0.992546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="34" name="부하용 이동마커 c4" x="28815.988281" y="59254.792969" z="2133.667969" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="35" name="부하용 이동마커 c5" x="29223.074219" y="60689.511719" z="2112.646729" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="41" name="부하용 이동마커 d1" x="29704.794922" y="59230.960938" z="2123.895752" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="42" name="부하용 이동마커 d2" x="30118.906250" y="62726.464844" z="2176.080322" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="44" name="부하용 이동마커 d4" x="28667.828125" y="59117.761719" z="2138.611816" dir_x="-0.587785" dir_y="-0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="45" name="부하용 이동마커 d5" x="29900.730469" y="61719.687500" z="2149.228271" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="46" name="부하용 이동마커 d6" x="28254.828125" y="56470.566406" z="2197.526611" dir_x="-0.207911" dir_y="-0.978148" dir_z="0.000000" random_dir="false" />
+        <MARKER id="47" name="부하용 이동마커 d7" x="28677.882813" y="58267.519531" z="2147.283447" dir_x="-0.406736" dir_y="-0.913546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="48" name="부하용 이동마커 d8" x="27079.611328" y="56035.632813" z="2111.729736" dir_x="-0.224950" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="49" name="부하용 이동마커 d9" x="25417.697266" y="57100.460938" z="2147.444336" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50" name="부하용 이동마커 e1" x="26558.271484" y="55732.410156" z="2084.257324" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="51" name="부하용 이동마커 e2" x="26700.468750" y="55826.832031" z="2087.671143" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="52" name="부하용 이동마커 e3" x="26796.470703" y="55619.644531" z="2076.828613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="53" name="부하용 이동마커 e4" x="26945.166016" y="55686.730469" z="2083.802246" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="54" name="부하용 이동마커 e1" x="26578.742188" y="55931.035156" z="2094.682861" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="55" name="부하용 이동마커 e1" x="26963.666016" y="55885.328125" z="2097.460205" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="24322.511719" y="71440.757813" z="2607.195313" radius="500.000000" enabled="true" checkpoint="4" groupname="none" />
+        <SENSOR id="2" name="진군 개시" local="false" x="24102.988281" y="68366.914063" z="2583.323975" radius="900.000000" enabled="true" groupname="none" />
+        <SENSOR id="3" name="센서3_소레나 시작" local="false" x="26526.193359" y="55536.585938" z="2075.484619" radius="3000.000000" enabled="false" groupname="none" />
+        <SENSOR id="2004" name="[Sensor] 튜토리얼 도움말 -  기본공격" local="true" x="24149.408203" y="69897.406250" z="2689.862061" radius="800.000000" enabled="true" groupname="none" />
+        <SENSOR id="2009" name="[Sensor] 튜토리얼 도움말 - 회피" local="true" x="28278.281250" y="61906.699219" z="2152.068848" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="2020" name="[Sensor] 튜토리얼 도움말 -  비파츠루팅설명" local="true" x="25385.281250" y="65428.296875" z="2286.466064" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="2021" name="[Sensor] 튜토리얼 도움말 - 비파츠콤보설명" local="true" x="26637.138672" y="63711.929688" z="2240.401123" radius="1000.000000" enabled="true" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ITEM id="11100" />
+            <ITEM id="11101" />
+            <ITEM id="11102" />
+            <ITEM id="11103" />
+            <ITEM id="11104" />
+            <ITEM id="11105" />
+            <ITEM id="10002003" />
+            <ITEM id="10002105" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

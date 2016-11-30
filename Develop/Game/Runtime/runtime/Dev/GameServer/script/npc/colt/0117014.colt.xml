@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 세타블	
+# 인간형 한손둔기 기본, 방패	
+#일반	
+211701401	#모드0전환(칼뽑기)
+211701402	#모드1전환(칼넣기)
+#전투	
+211701411	#1타
+211701412	#2연타
+211701413	#찌르기
+211701414	#강격
+211701415	#방패 가격: 기절
+211701416	#돌진
+211701417	#방어
+211701418	#보루
+211701419	#역습 포커스
+211701420	#징벌의 성역
+211701421	#빛의 구
+211701422	#홀리워드
+-->
+<maiet>
+	<COLT name="세타블" nicid="117014">
+		<COMBAT mode="0" victory="211701402">
+			<DEFAULT>
+				<ACTION type="talent" param1="211701411" rate="10" desc="1타" />
+				<ACTION type="talent" param1="211701412" rate="15" desc="2연타" />
+				<ACTION type="talent" param1="211701414" rate="15" desc="강격" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211701419" rate="50" desc="역습 포커스" />
+			</CHECK>
+			
+			<CHECK type="gained_buff" param1="80120">
+				<CHECK type="rage" param1="50" >
+					<CHECK type="distance" param2="500" >
+						<ACTION type="talent" param1="211701422" rate="50" desc="홀리워드" />
+					</CHECK>
+					
+					<ACTION type="talent" param1="211701415" rate="50" desc="방패 가격: 기절" />
+					<ACTION type="talent" param1="211701418" rate="50" desc="보루" />
+				</CHECK>
+				
+				<CHECK type="distance" param1="500" >
+					<ACTION type="talent" param1="211701416" rate="10" desc="돌진" />
+					<ACTION type="group" rate="5" cycle="220">
+						<ACTION type="talent" param1="211701421" desc="빛의 구" />
+						<ACTION type="nothing" param1="0.5"/>
+					</ACTION>
+				</CHECK>
+				
+				<CHECK type="distance" param1="300" >
+					<ACTION type="talent" param1="211701416" rate="50" desc="돌진" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="rage" param1="50" >
+				<ACTION type="talent" param1="211701415" rate="50" desc="방패 가격: 기절" />
+				<ACTION type="guard" param1="211701417" param2="2" rate="20" desc="방어" cycle="15" />
+				<ACTION type="talent" param1="211701420" rate="20" desc="징벌의 성역" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="600" >
+				<ACTION type="talent" param1="211701413" rate="10" desc="찌르기" />
+				<ACTION type="group" rate="5" cycle="220">
+					<ACTION type="talent" param1="211701421" desc="빛의 구" />
+					<ACTION type="nothing" param1="0.5"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="distance" param1="350" >
+				<ACTION type="talent" param1="211701413" rate="50" desc="찌르기" />
+				<ACTION type="group" rate="5" cycle="220">
+					<ACTION type="talent" param1="211701421" desc="빛의 구" />
+					<ACTION type="nothing" param1="0.5"/>
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211701401" rate="100" desc="모드0전환(칼뽑기)" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_117014:Init( NPCID )
+	NPC_117014.TALENT_1 = 211701419 -- 역습 포커스
+	NPC_117014.TALENT_2 = 211701418 -- 보루
+end
+
+function NPC_117014:SelectSkill(ThisNPC, Enemy)
+	local ranNum = math.random(0, 2)
+	
+	if (ranNum == 1) then
+		ThisNPC:UseTalent( NPC_117014.TALENT_1, Enemy )
+	elseif (ranNum == 2) then
+		ThisNPC:UseTalent( NPC_117014.TALENT_2, Enemy )
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

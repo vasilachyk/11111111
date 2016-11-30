@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="123" minimap_name="map00122" loading_image_name="00122" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="40000" boundary_min_y="33000" boundary_max_x="60000" boundary_max_y="55000" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_15">
+            <ENVBGM dawnbgm="amb_night" />
+            <ENVBGM daytimebgm="amb_night" />
+            <ENVBGM sunsetbgm="amb_night" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_night" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작 지점" x="50023.554688" y="49782.386719" z="2.000010" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="부활마커" x="49887.210938" y="49004.351563" z="1.999570" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="워프지점" x="49866.468750" y="45471.066406" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="100" name="왼쪽부대이동마커" x="49487.382813" y="46773.125000" z="1.068764" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="101" name="왼쪽부대이동마커" x="49245.335938" y="46108.628906" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102" name="왼쪽부대이동마커" x="49168.796875" y="45420.820313" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="103" name="왼쪽부대이동마커" x="48797.328125" y="44397.394531" z="32.944740" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="104" name="왼쪽부대이동마커" x="48637.191406" y="43394.679688" z="55.461357" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="200" name="왼쪽부대이동마커" x="50810.832031" y="46562.515625" z="19.658525" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="201" name="왼쪽부대이동마커" x="50380.066406" y="46082.164063" z="13.956018" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="202" name="왼쪽부대이동마커" x="49938.246094" y="45356.703125" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="203" name="왼쪽부대이동마커" x="49834.472656" y="44608.425781" z="5.838160" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="204" name="왼쪽부대이동마커" x="49691.601563" y="43637.824219" z="2.348391" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="300" name="오른쪽부대이동마커" x="51287.132813" y="45995.722656" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="301" name="오른쪽부대이동마커" x="50862.601563" y="45327.847656" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="302" name="오른쪽부대이동마커" x="50359.183594" y="44688.113281" z="18.298719" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="400" name="오른쪽부대이동마커" x="51936.996094" y="45143.949219" z="1.999811" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="401" name="오른쪽부대이동마커" x="51348.601563" y="44504.062500" z="1.999355" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="402" name="오른쪽부대이동마커" x="50749.253906" y="43864.167969" z="2.005934" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="118215" name="NPC_M 118215 부대장 포블드" x="50060.609375" y="44768.886719" z="1.999271" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="511010" name="MON_M 511010 키메라" x="50192.347656" y="43303.746094" z="2.788985" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="3" name="체크포인트" local="false" x="50017.847656" y="49852.527344" z="1.999433" radius="700.000000" enabled="true" checkpoint="2" groupname="none" />
+        <SENSOR id="118008" name="SENSOR 118008 창공의 괴음" x="55059.289063" y="44735.089844" z="11.444097" radius="900.000000" enabled="false" exit="11800">
+            <EFFECT effect="sensor_trial_01" x="217.769531" y="-117.812500" z="5.170253" dir_x="1.000000" dir_y="0.000000" dir_z="-0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="6.000000" scale_y="8.000000" scale_z="8.000000" />
+            <WARP warp_type="field" title="부서진 침묵의 장벽으로" condition="0" gate_type="auto" field="119" marker="119201" />
+        </SENSOR>
+        <SENSOR id="140710" name="키메라 스폰 센서" local="false" x="47650.722656" y="51030.863281" z="3.022675" radius="100000.000000" enabled="true" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

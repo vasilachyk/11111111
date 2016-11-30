@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="상급기사 세네스">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="50"/>
+								
+				<ACTION type="talent" param1="211030101" rate="20" />
+				<ACTION type="talent" param1="211030102" rate="20" />
+				<ACTION type="talent" param1="211030104" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="0.5" rate="40"/>
+				
+				<ACTION type="distance" param1="150" param2="200" rate="20" />
+				<ACTION type="talent" param1="211030105" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80" >
+					<ACTION type="talent" param1="211030107" rate="30" />
+					<ACTION type="talent" param1="211030108" rate="30" />  <!-- 회피 R -->
+					<ACTION type="talent" param1="211030106" rate="40" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		<!--
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211030109" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		-->
+		<AGGRO>
+			<DEFAULT>
+			</DEFAULT>
+		</AGGRO>
+				
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="어둠의 종속자(더미)" npcid="111037">
+		<COMBAT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+
+function NPC_111037:OnSpawn( Info )
+
+	this:SetTimer( 1, 10, false )
+
+end
+	
+	
+function NPC_111037:OnTimer( Index )
+	if Index == 1 then
+		
+		this:Despawn( false )
+		return	
+	end
+end
+
+
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 사슴	
+210110600	#idle2
+210110601	#idle3
+210110602	#idle4
+210110603	#뿔공격
+210110604	#돌진
+210110605	#앞발공격
+210110606	#뒷발공격
+210110607	#후방회피
+210110608	#가드
+210110609	#돌진2(뿔없음)
+-->
+<maiet>
+	<COLT name="오염된 사슴" npcid="101106">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210110603" rate="40" desc="뿔공격" />
+				<ACTION type="talent" param1="210110605" rate="20" desc="앞발공격" />
+				<ACTION type="talent" param1="210110604" rate="20" desc="돌진" />
+				<ACTION type="lua" param1="NPC_101106" param2="KickAttack" rate="20" />
+				<ACTION type="talent" param1="210110607" rate="5" desc="후방회피" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="80" >
+				<ACTION type="talent" param1="210110607" rate="5" desc="후방회피" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="700">
+				<!-- 뿔이 없으면 -->
+				<CHECK type="breakpart" param1="1">
+					<ACTION type="group" rate="40">
+						<ACTION type="face_to"  />
+						<ACTION type="talent" param1="210110609" duration="0" desc="돌진2(뿔없음)" />
+					</ACTION>
+					
+					<ACTION type="talent" param1="210110605" rate="20" desc="앞발공격" />
+				</CHECK>
+				
+				<!-- 뿔이 있으면 -->
+				<ACTION type="talent" param1="210110603" rate="20" desc="뿔공격" />
+				<ACTION type="talent" param1="210110605" rate="20" desc="앞발공격" />
+				
+				<ACTION type="group" rate="40">
+					<ACTION type="face_to"  />
+					<ACTION type="talent" param1="210110604" duration="0" desc="돌진" />
+				</ACTION>
+			</CHECK>
+
+			<CHECK type="breakpart" param1="1">
+				<ACTION type="talent" param1="210110609" rate="20" desc="돌진2(뿔없음)" />
+				<ACTION type="talent" param1="210110605" rate="20" desc="앞발공격" />
+				<ACTION type="lua" param1="NPC_101106" param2="KickAttack" rate="35" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210110600" rate="20" desc="idle2" />
+				<ACTION type="talent" param1="210110601" rate="20" desc="idle3" />
+				<ACTION type="talent" param1="210110602" rate="20" desc="idle4" />
+				<ACTION type="nothing" param1="1" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	function NPC_101106:Init( NPCID )
+
+	end
+	
+	
+	
+	function NPC_101106:KickAttack( ThisNPC, Enemy )
+		local Dist = ThisNPC:DistanceTo( Enemy )
+
+		if Dist < 200 and Enemy:IsRear( ThisNPC ) then
+			-- 근접해서 뒤에있을경우 뒷발길질
+			ThisNPC:UseTalentSelf( 210110606 )
+		else
+			ThisNPC:MoveToActor( Enemy, 210110605 )
+			ThisNPC:UseTalent( 210110605, Enemy )
+		end
+	end
+	
+	]]></SCRIPT>
+	
+</maiet>

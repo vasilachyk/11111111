@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" minimap_name="map00102" loading_image_name="00102" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="80000" boundary_max_y="77000" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="34">
+        <BGM fieldbgm="bgm_field_5">
+            <ENVBGM dawnbgm="amb_snowyfield_dawn" />
+            <ENVBGM daytimebgm="amb_snowyfield_daytime" />
+            <ENVBGM sunsetbgm="amb_snowyfield_sunset" />
+            <ENVBGM nightbgm="amb_snowyfield_night" />
+            <ENVBGM clodybgm="amb_normal_2" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SNW">
+                <ADD weather="SUN" percent="5" />
+                <ADD weather="CLD" percent="5" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="HSW" percent="45" />
+            </WEATHER>
+        </Env>
+        <GRID type="questpvp" row="267" column="257" filled="13972,6,16,6,231,14,12,15,224,18,10,15,223,19,9,16,223,21,4,20,222,45,220,47,220,47,220,47,220,47,220,47,220,47,220,46,221,46,221,46,221,46,221,45,223,44,223,44,222,45,222,45,222,48,219,48,219,48,218,49,218,50,216,51,216,51,216,52,215,52,215,53,215,52,215,55,212,58,209,61,205,62,205,64,203,70,197,74,193,76,191,77,191,76,191,77,190,78,189,79,188,80,187,80,187,80,187,81,187,81,186,83,184,84,184,85,182,94,173,95,174,93,175,95,177,93,174,96,3,10,158,96,1,13,157,96,1,13,157,96,1,14,156,96,1,14,156,111,156,111,156,111,156,111,156,110,157,110,157,110,158,109,158,109,158,109,159,108,159,108,160,109,158,109,158,109,159,108,159,108,160,107,160,107,161,106,162,105,162,105,162,105,163,104,164,103,164,103,164,104,163,106,161,107,160,108,159,108,159,108,161,107,160,107,161,106,164,103,164,103,164,103,164,103,167,99,168,98,170,96,176,89,179,88,185,81,186,76,191,76,192,73,195,71,197,68,199,63,204,63,204,60,208,58,209,57,211,53,216,49,220,47,222,45,224,43,224,40,228,35,236,30,251,7,20939" board_image_name="" faction1="115" faction2="116" faction_name1="マッドアイ" faction_name2="フロストウィンド" rebirth_buff_id="0" rebirth_debuff_id="1903" rebirth_buff_bonus1_id="1951" rebirth_buff_bonus2_id="1952" rebirth_buff_bonus3_id="1953" npc_id1="950000" npc_id2="950001" rebirth_marker_id1="102230" rebirth_marker_id2="102231" minlevel="20" maxlevel="31" />
+        <GRID type="buffarea" row="267" column="257" filled="7025,5,238,74,193,86,181,96,171,96,171,96,171,101,166,101,166,101,29,1,136,101,166,101,166,101,166,103,163,104,163,105,162,113,154,113,154,115,152,32,4,79,152,32,4,80,151,30,7,80,150,26,16,75,150,23,21,73,150,22,24,71,150,16,44,57,150,12,50,55,150,11,53,61,142,11,53,61,142,11,54,60,142,11,55,59,142,10,56,59,142,10,57,58,142,10,59,63,135,12,57,64,134,12,58,63,134,12,58,63,134,13,57,63,134,13,57,63,134,13,57,63,134,13,57,63,134,13,58,62,134,13,58,62,134,13,58,9,1,54,132,13,68,55,131,13,68,58,128,13,68,58,128,13,74,54,126,13,73,10,3,44,124,13,73,10,3,44,124,13,73,10,8,41,122,13,75,8,8,41,122,13,91,41,122,13,91,41,122,13,91,42,121,13,91,42,121,13,91,42,121,13,93,43,118,13,93,43,118,13,93,43,118,13,95,41,118,13,95,41,118,12,99,39,117,12,99,39,117,12,99,39,117,12,99,39,17,1,99,11,100,39,117,11,108,31,117,11,109,30,117,11,111,28,117,11,117,22,117,11,117,22,117,11,118,21,117,10,120,20,117,10,121,19,117,10,122,18,117,10,123,17,117,10,123,16,118,10,124,15,118,9,126,14,118,11,124,14,118,11,126,12,118,11,127,11,118,11,128,10,118,11,129,9,118,13,128,8,118,13,128,8,118,13,129,7,118,13,129,7,118,13,130,6,118,13,131,5,118,13,131,5,118,13,130,6,118,14,127,8,118,14,127,8,118,14,127,8,118,14,127,8,118,14,127,8,118,14,127,8,118,14,127,8,118,14,127,8,118,14,127,8,118,15,126,8,118,17,124,8,118,17,125,7,118,17,125,7,118,17,126,6,118,17,126,6,118,17,126,6,118,17,125,7,118,17,125,7,118,17,125,7,118,17,125,7,118,17,125,7,118,16,126,7,118,16,126,7,118,16,126,7,118,16,126,7,118,16,126,7,118,16,126,7,118,17,126,6,118,17,126,6,118,18,126,5,118,18,127,4,118,18,127,4,118,18,128,3,118,18,128,3,118,19,126,4,118,21,124,4,118,23,122,4,118,23,122,4,118,23,122,4,118,23,121,5,118,23,121,5,118,23,121,5,118,23,121,5,118,23,121,5,118,24,120,5,118,27,116,6,118,27,107,15,118,29,103,17,118,29,99,21,118,29,99,21,118,29,99,21,118,30,89,30,118,30,89,30,118,30,76,43,118,33,72,38,1,5,118,33,72,44,118,33,72,44,118,33,70,46,118,33,70,46,118,37,66,46,118,39,64,46,118,39,64,46,118,39,64,46,118,39,63,47,118,44,58,48,117,54,48,47,118,54,48,47,118,54,48,47,118,54,48,47,118,54,48,46,119,54,48,46,119,61,41,44,121,61,42,43,121,61,42,43,121,61,41,41,124,61,23,59,124,66,15,61,125,66,12,64,125,73,3,66,125,75,1,62,129,137,130,137,130,135,132,135,132,133,134,130,137,130,137,127,140,125,155,22,13257" id="120084" />
+        <SPAWN id="20000" name="[채집] 약초" x="47841.484375" y="25921.814453" z="6988.636230" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20001" name="[채집] 약초" x="23111.667969" y="18998.189453" z="8789.411133" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20002" name="[채집] 약초" x="18666.375000" y="45220.984375" z="1472.459473" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20003" name="[채집] 약초" x="41811.160156" y="44201.121094" z="13324.453125" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20004" name="[채집] 약초" x="43994.582031" y="34409.281250" z="13072.081055" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20005" name="[채집] 약초" x="11484.240234" y="41869.011719" z="407.873749" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20006" name="[채집] 약초" x="47231.769531" y="35256.007813" z="12005.183594" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20007" name="[채집] 약초" x="35987.738281" y="40450.746094" z="14784.791992" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20008" name="[채집] 약초" x="30333.300781" y="36153.625000" z="13154.561523" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20009" name="[채집] 약초" x="44630.437500" y="30124.968750" z="11947.791992" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20010" name="[채집] 약초" x="36650.937500" y="31908.234375" z="12744.202148" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20011" name="[채집] 약초" x="12791.125000" y="29229.431641" z="-1187.678589" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20012" name="[채집] 약초" x="18378.400391" y="34095.632813" z="2903.940186" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20013" name="[채집] 약초" x="16839.876953" y="26328.103516" z="3625.993408" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20014" name="[채집] 약초" x="42675.066406" y="22892.271484" z="7277.378418" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20015" name="[채집] 약초" x="24190.988281" y="28275.833984" z="10997.912109" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20016" name="[채집] 약초" x="62081.683594" y="32558.382813" z="2844.432861" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20017" name="[채집] 약초" x="54959.671875" y="47401.960938" z="9894.447266" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20018" name="[채집] 약초" x="34642.414063" y="26614.218750" z="11891.269531" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20019" name="[채집] 약초" x="66501.898438" y="39669.742188" z="-2568.329346" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20020" name="[채집] 약초" x="56012.410156" y="25859.195313" z="4556.407227" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20021" name="[채집] 약초" x="56760.562500" y="27949.119141" z="4380.843750" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20022" name="[채집] 약초" x="64054.492188" y="38636.742188" z="2781.588623" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20023" name="[채집] 약초" x="47979.292969" y="41539.843750" z="12090.375977" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20024" name="[채집] 약초" x="43359.312500" y="61596.500000" z="2539.194580" dir_x="-0.484810" dir_y="0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20025" name="[채집] 약초" x="29913.865234" y="10007.061523" z="5329.322266" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20026" name="[채집] 약초" x="51339.019531" y="39633.484375" z="12036.315430" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20027" name="[채집] 약초" x="43920.058594" y="37677.820313" z="13111.525391" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20028" name="[채집] 약초" x="35000.535156" y="34633.167969" z="13688.887695" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20029" name="[채집] 약초" x="29943.640625" y="25991.785156" z="11955.833984" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20030" name="[채집] 약초" x="40321.984375" y="29671.492188" z="11962.291016" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20031" name="[채집] 약초" x="23000.736328" y="14708.109375" z="5274.812012" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20032" name="[채집] 약초" x="38101.804688" y="40344.964844" z="14744.920898" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20033" name="[채집] 약초" x="45603.832031" y="46552.199219" z="12558.259766" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20034" name="[채집] 약초" x="61333.437500" y="47084.277344" z="3286.722900" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102401" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20100" name="[채집] 상자" x="30981.810547" y="25173.509766" z="11921.584961" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20101" name="[채집] 상자" x="31758.917969" y="44848.308594" z="16213.826172" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20102" name="[채집] 상자" x="36968.519531" y="43814.257813" z="14837.752930" dir_x="0.874620" dir_y="0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20103" name="[채집] 상자" x="30541.224609" y="40961.753906" z="13290.587891" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20104" name="[채집] 상자" x="49661.597656" y="36584.765625" z="12040.694336" dir_x="0.190809" dir_y="0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20105" name="[채집] 상자" x="41382.218750" y="29670.767578" z="11977.295898" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20106" name="[채집] 상자" x="42733.652344" y="42802.488281" z="12043.534180" dir_x="0.996195" dir_y="-0.087156" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20107" name="[채집] 상자" x="44960.328125" y="48613.113281" z="12698.022461" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20108" name="[채집] 상자" x="33510.640625" y="29563.714844" z="11907.883789" dir_x="-0.069757" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20110" name="[채집] 상자" x="65134.359375" y="27704.566406" z="-809.532410" dir_x="-0.882948" dir_y="0.469471" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20111" name="[채집] 상자" x="50429.171875" y="17040.087891" z="3267.593262" dir_x="0.743145" dir_y="0.669131" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20112" name="[채집] 상자" x="18940.818359" y="26019.500000" z="3603.154541" dir_x="0.874620" dir_y="-0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20113" name="[채집] 상자" x="41627.105469" y="36155.140625" z="11971.145508" dir_x="-0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20114" name="[채집] 상자" x="57401.125000" y="57890.136719" z="2878.646240" dir_x="0.642788" dir_y="-0.766044" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="102402" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20200" name="[채집] 광맥" x="33467.648438" y="38273.910156" z="14753.785156" dir_x="0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20201" name="[채집] 광맥" x="33039.347656" y="40652.503906" z="14851.482422" dir_x="0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20202" name="[채집] 광맥" x="40879.300781" y="38972.906250" z="13734.426758" dir_x="0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20203" name="[채집] 광맥" x="48632.101563" y="39045.503906" z="12211.838867" dir_x="0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20204" name="[채집] 광맥" x="50404.074219" y="37729.937500" z="12218.454102" dir_x="0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20205" name="[채집] 광맥" x="54273.179688" y="48379.835938" z="10239.612305" dir_x="0.515038" dir_y="-0.857167" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20206" name="[채집] 광맥" x="66325.835938" y="43181.027344" z="-2770.727051" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20207" name="[채집] 광맥" x="69605.093750" y="34927.312500" z="-2047.283936" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20208" name="[채집] 광맥" x="50969.523438" y="21330.677734" z="5223.316406" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20209" name="[채집] 광맥" x="41370.527344" y="22005.490234" z="7793.624023" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20210" name="[채집] 광맥" x="33499.375000" y="14243.052734" z="3924.798828" dir_x="0.945519" dir_y="-0.325568" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20211" name="[채집] 광맥" x="34788.558594" y="14470.437500" z="4054.316406" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20212" name="[채집] 광맥" x="25786.857422" y="15092.223633" z="5489.544922" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20213" name="[채집] 광맥" x="38804.941406" y="40582.320313" z="14643.594727" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20214" name="[채집] 광맥" x="12736.111328" y="42454.261719" z="786.253418" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20215" name="[채집] 광맥" x="6161.676270" y="34819.550781" z="-518.472961" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20216" name="[채집] 광맥" x="28899.531250" y="39066.390625" z="13302.422852" dir_x="0.882948" dir_y="0.469472" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20217" name="[채집] 광맥" x="23792.904297" y="20242.560547" z="8974.636719" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20218" name="[채집] 광맥" x="23185.710938" y="24713.730469" z="10193.276367" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20219" name="[채집] 광맥" x="59336.320313" y="44213.085938" z="8766.975586" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20220" name="[채집] 광맥" x="51121.101563" y="46770.437500" z="10902.825195" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20221" name="[채집] 광맥" x="32145.802734" y="23901.878906" z="11978.397461" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20222" name="[채집] 광맥" x="36704.500000" y="45665.167969" z="13441.973633" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20223" name="[채집] 광맥" x="25533.375000" y="31243.599609" z="11825.110352" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20224" name="[채집] 광맥" x="48417.777344" y="44041.566406" z="12566.951172" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20225" name="[채집] 광맥" x="69506.234375" y="46846.441406" z="-3173.048340" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20226" name="[채집] 광맥" x="41915.792969" y="37335.539063" z="13518.151367" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20227" name="[채집] 광맥" x="38596.300781" y="38812.765625" z="14641.072266" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20228" name="[채집] 광맥" x="29139.035156" y="35485.875000" z="13259.607422" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20229" name="[채집] 광맥" x="33723.160156" y="32645.419922" z="13343.523438" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20230" name="[채집] 광맥" x="36149.992188" y="30404.501953" z="12306.001953" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20231" name="[채집] 광맥" x="31284.037109" y="23528.013672" z="12035.940430" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20232" name="[채집] 광맥" x="38461.015625" y="29912.457031" z="11972.169922" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20233" name="[채집] 광맥" x="37446.953125" y="23838.822266" z="8347.589844" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20234" name="[채집] 광맥" x="53908.675781" y="30379.841797" z="8339.848633" dir_x="0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102400" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20300" name="[채집] 목재" x="16593.035156" y="24265.013672" z="3637.641602" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20301" name="[채집] 목재" x="19926.964844" y="29143.822266" z="3577.905762" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20302" name="[채집] 목재" x="17059.263672" y="28087.642578" z="3600.226807" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20303" name="[채집] 목재" x="18677.742188" y="24976.449219" z="3603.234131" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20304" name="[채집] 목재" x="29245.431641" y="9257.185547" z="5348.903809" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20305" name="[채집] 목재" x="45683.050781" y="23486.900391" z="5549.125000" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20306" name="[채집] 목재" x="28750.648438" y="28653.929688" z="11934.360352" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20307" name="[채집] 목재" x="31142.791016" y="30749.976563" z="13404.096680" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20308" name="[채집] 목재" x="28724.978516" y="31112.435547" z="12060.887695" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20309" name="[채집] 목재" x="40190.675781" y="27532.916016" z="11964.714844" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20310" name="[채집] 목재" x="25463.689453" y="23868.117188" z="9816.634766" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20311" name="[채집] 목재" x="46312.656250" y="43030.414063" z="12293.449219" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20312" name="[채집] 목재" x="54195.464844" y="44386.945313" z="9592.514648" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20313" name="[채집] 목재" x="57379.011719" y="58603.738281" z="2921.144775" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20314" name="[채집] 목재" x="60833.589844" y="41068.562500" z="2985.175781" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20315" name="[채집] 목재" x="56581.945313" y="22040.455078" z="4283.806641" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20317" name="[채집] 목재" x="53590.820313" y="56564.859375" z="2713.740479" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20322" name="[채집] 목재" x="67369.882813" y="30433.554688" z="-1524.140259" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" color="auto" gather="true">
+            <NPC id="102403" default="true" rate="100" />
+        </SPAWN>
+        <MARKER id="1" name="from 영웅의 오솔길" x="9942.141602" y="23937.457031" z="-2112.603027" dir_x="0.224952" dir_y="0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="장작불 쉼터" x="38932.261719" y="12897.286133" z="4689.684082" dir_x="-0.062790" dir_y="0.998027" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="from 리오드" x="69695.382813" y="47755.351563" z="-3187.499023" dir_x="-0.852640" dir_y="-0.522499" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="신전" x="35186.378906" y="41493.703125" z="14860.684570" dir_x="0.999391" dir_y="0.034899" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="from 마코트 부락 하층" x="66911.570313" y="33623.335938" z="-1971.359375" dir_x="0.981627" dir_y="0.190809" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="from 마코트 부락 상층" x="54423.074219" y="55304.656250" z="2705.757324" dir_x="-0.104528" dir_y="0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="순례자와 상단" x="19429.167969" y="39674.894531" z="2114.267822" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="코볼트 산적" x="17481.404297" y="26193.912109" z="3610.253906" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="99" name="이동술사를 통해 들어왔을 때" x="47385.390625" y="23667.542969" z="6272.436523" dir_x="-0.529919" dir_y="0.848048" dir_z="0.000000" random_dir="false" />
+        <MARKER id="218" name="순간이동 위로" x="41332.574219" y="62419.660156" z="2561.864014" dir_x="-0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="219" name="은자에서 캠프로" x="39113.410156" y="12111.454102" z="4687.776855" dir_x="-0.275637" dir_y="0.961262" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1110" name="유령늑대 패트롤 0" x="63126.378906" y="40261.726563" z="2963.036133" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1111" name="유령늑대 패트롤 1" x="62432.781250" y="42352.515625" z="3196.089844" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1112" name="유령늑대 패트롤 2" x="62234.781250" y="44860.980469" z="3296.890381" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1113" name="유령늑대 패트롤 3" x="61862.738281" y="47118.789063" z="3286.982178" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1114" name="유령늑대 패트롤 4" x="61150.574219" y="48943.933594" z="3294.189697" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1115" name="유령늑대 패트롤 5" x="61460.796875" y="47434.589844" z="3286.643311" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1116" name="유령늑대 패트롤 6" x="61854.562500" y="45308.718750" z="3299.897949" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1117" name="유령늑대 패트롤 7" x="62026.718750" y="43008.117188" z="3242.663818" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1118" name="유령늑대 패트롤 8" x="62117.367188" y="38981.246094" z="2763.596436" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1119" name="유령늑대 패트롤 9" x="62601.761719" y="38121.398438" z="2721.539063" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1120" name="유령늑대 패트롤 10" x="63631.683594" y="38260.601563" z="2744.081543" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6130" name="613패트롤 0" x="46981.789063" y="59261.675781" z="2535.459473" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6131" name="613패트롤 1" x="47997.632813" y="59224.933594" z="2526.771240" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6132" name="613패트롤 2" x="49013.585938" y="58961.054688" z="2507.534668" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6133" name="613패트롤 3" x="50586.375000" y="59085.894531" z="2510.927002" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6134" name="613패트롤 4" x="52048.285156" y="58579.457031" z="2542.406494" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6135" name="613패트롤 5" x="47678.519531" y="58758.570313" z="2568.796875" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6136" name="613패트롤 6" x="46907.824219" y="58803.675781" z="2538.739502" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6137" name="613패트롤 7" x="46701.046875" y="59124.636719" z="2525.953613" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6140" name="614패트롤 0" x="58825.867188" y="56788.046875" z="2965.204590" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6141" name="614패트롤 1" x="58155.074219" y="56478.511719" z="2928.092285" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6142" name="614패트롤 2" x="57350.679688" y="57135.605469" z="2867.547607" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6143" name="614패트롤 3" x="56231.269531" y="57509.617188" z="2787.880127" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6144" name="614패트롤 4" x="56665.785156" y="58952.957031" z="2862.147705" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6145" name="614패트롤 5" x="57590.902344" y="58545.070313" z="2935.356689" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6146" name="614패트롤 6" x="58551.585938" y="58153.246094" z="2938.333984" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6150" name="615패트롤 0" x="55237.375000" y="58951.699219" z="2717.850098" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6151" name="615패트롤 1" x="55831.082031" y="57476.363281" z="2760.598145" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6152" name="615패트롤 2" x="54662.324219" y="56396.324219" z="2710.064697" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6153" name="615패트롤 3" x="53254.894531" y="57613.675781" z="2653.595703" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6154" name="615패트롤 4" x="53367.046875" y="58789.996094" z="2617.192627" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6155" name="615패트롤 5" x="54122.792969" y="59255.808594" z="2624.492920" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6156" name="615패트롤 6" x="54932.507813" y="59298.843750" z="2654.461670" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8001" name="트롤제사장이동마커1 시작" x="28005.390625" y="29731.085938" z="11951.337891" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8002" name="트롤제사장이동마커2" x="31778.666016" y="27944.673828" z="11908.393555" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8003" name="트롤제사장이동마커3" x="34435.679688" y="27920.519531" z="11907.186523" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8004" name="트롤제사장이동마커4" x="36587.015625" y="30409.820313" z="12281.784180" dir_x="0.358368" dir_y="0.933580" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8005" name="트롤제사장이동마커5" x="36813.777344" y="32897.699219" z="12917.176758" dir_x="-0.945519" dir_y="0.325568" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8006" name="트롤제사장이동마커6" x="33399.808594" y="33753.074219" z="13033.665039" dir_x="-0.798636" dir_y="0.601815" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8007" name="트롤제사장이동마커7" x="31853.894531" y="34847.085938" z="13059.748047" dir_x="0.681999" dir_y="0.731353" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8008" name="트롤제사장이동마커8" x="33337.621094" y="36301.609375" z="13446.979492" dir_x="0.913546" dir_y="-0.406736" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8009" name="트롤제사장이동마커9" x="36137.800781" y="35696.496094" z="13845.156250" dir_x="0.984808" dir_y="0.173648" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8010" name="트롤제사장이동마커10" x="38209.617188" y="36529.914063" z="14127.586914" dir_x="-0.601815" dir_y="0.798635" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8011" name="트롤제사장이동마커11" x="36050.191406" y="39429.765625" z="14687.338867" dir_x="-0.707107" dir_y="0.707107" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8012" name="트롤제사장이동마커12" x="34996.707031" y="40931.285156" z="14857.074219" dir_x="-0.422618" dir_y="0.906308" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8013" name="트롤제사장이동마커13 마지막" x="34221.449219" y="42490.753906" z="15109.914063" dir_x="-0.500000" dir_y="0.866025" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8014" name="트롤제사장 라스트 마커 - 테스트" x="33725.898438" y="43156.199219" z="15508.041016" dir_x="-0.515038" dir_y="0.857167" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9001" name="오우거제사장이동마커1 시작" x="49940.796875" y="41250.445313" z="12044.172852" dir_x="-0.956305" dir_y="-0.292371" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9002" name="오우거제사장이동마커2" x="46941.136719" y="42990.953125" z="12251.576172" dir_x="-0.642787" dir_y="0.766045" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9003" name="오우거제사장이동마커3" x="44228.128906" y="46440.140625" z="12731.438477" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9004" name="오우거제사장이동마커4" x="39265.894531" y="44615.500000" z="13441.466797" dir_x="0.469472" dir_y="-0.882948" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9005" name="오우거제사장이동마커5" x="42608.250000" y="38423.332031" z="13376.652344" dir_x="-0.927184" dir_y="-0.374606" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9006" name="오우거제사장이동마커6" x="38079.164063" y="36717.335938" z="14150.954102" dir_x="-0.601815" dir_y="0.798635" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9007" name="오우거제사장이동마커7" x="36766.722656" y="39193.113281" z="14576.167969" dir_x="-0.913545" dir_y="0.406737" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9008" name="오우거제사장이동마커8" x="35948.472656" y="39366.945313" z="14691.040039" dir_x="-0.601815" dir_y="0.798636" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9009" name="오우거제사장이동마커9" x="35020.984375" y="40642.218750" z="14852.809570" dir_x="-0.422618" dir_y="0.906308" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9010" name="오우거제사장이동마커10" x="34626.562500" y="41680.753906" z="14858.364258" dir_x="-0.374607" dir_y="0.927184" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9011" name="오우거제사장이동마커11 마지막" x="34513.835938" y="42732.683594" z="15140.649414" dir_x="-0.544639" dir_y="0.838671" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9012" name="오우거제사장 라스트 마커 - 테스트" x="34149.898438" y="43379.125000" z="15498.989258" dir_x="-0.422618" dir_y="0.906308" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10000" name="트롤호위시작마커" x="59391.117188" y="5549.921875" z="17492.460938" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10001" name="오우거호위시작마커" x="58469.246094" y="7816.043457" z="16688.923828" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102001" name="QM 매서운 추위" x="12545.705078" y="43540.128906" z="690.361633" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102003" name="QM 순례자 보호" x="18626.078125" y="18480.400391" z="4509.551270" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102004" name="QM 하나라도 놓쳐선 안돼" x="17573.306641" y="25822.277344" z="3610.091064" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102005" name="QM 항의의 우편배달" x="38412.117188" y="13082.255859" z="4689.022461" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102009" name="QM 과거의 식물" x="36268.847656" y="39755.855469" z="14727.962891" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102010" name="QM 유적으로 가는길(1)" x="41642.296875" y="22810.472656" z="7616.649414" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102011" name="QM 유적으로 가는길(2)" x="50751.425781" y="29320.267578" z="8036.579102" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102016" name="QM 102016" x="31652.265625" y="18811.933594" z="8495.002930" dir_x="0.945519" dir_y="-0.325568" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102017" name="QM 102017" x="56931.878906" y="36727.714844" z="8503.678711" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102021" name="QM 디아고 처치" x="41719.964844" y="31029.718750" z="11977.599609" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102023" name="QM 102023" x="40891.652344" y="61183.289063" z="2570.142578" dir_x="0.974370" dir_y="-0.224951" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102024" name="QM 102024" x="39400.023438" y="13596.033203" z="4678.705078" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102025" name="QM 102025" x="38529.964844" y="36820.269531" z="14136.269531" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102027" name="QM 102027" x="33552.148438" y="44183.007813" z="15910.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102040" name="QM 유령늑대 샤디즈" x="62316.714844" y="42033.464844" z="3157.688965" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102041" name="QM 사냥꾼을 사냥하기" x="55183.972656" y="57822.035156" z="2739.290039" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102050" name="QM 오우거 전사 처치" x="47802.683594" y="40036.164063" z="12134.621094" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102051" name="QM 트롤 전사 처치" x="32043.710938" y="31946.398438" z="13399.950195" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102052" name="QM 102052" x="29096.144531" y="17963.232422" z="8523.917969" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102053" name="QM 102053" x="57694.414063" y="40279.187500" z="8527.063477" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102054" name="QM 102054" x="47629.171875" y="44553.593750" z="12426.906250" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102055" name="QM 102055" x="33588.945313" y="31708.166016" z="13344.286133" dir_x="0.999877" dir_y="0.015707" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102056" name="QM 102056" x="41593.597656" y="38430.199219" z="13567.576172" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102057" name="QM 102057" x="34933.078125" y="35246.566406" z="13699.337891" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102110" name="MON_M 102110 디아고" x="41443.667969" y="30997.001953" z="11977.076172" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102120" name="NPC_M 102120 광기의 눈 부족 용병" x="37524.753906" y="37390.000000" z="14272.072266" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102121" name="NPC_M 102122 흰색 예티 부족 용병" x="37833.382813" y="37688.281250" z="14304.843750" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102226" name="영혼석 마커 (트롤 입구)" x="31200.458984" y="17767.234375" z="8494.999023" dir_x="0.681998" dir_y="0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102227" name="영혼석 마커 (오우거 입구)" x="55950.468750" y="36996.292969" z="8502.925781" dir_x="0.998630" dir_y="0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102229" name="영혼석 마커 (쉼터)" x="37883.027344" y="12118.818359" z="4689.021484" dir_x="-0.559193" dir_y="0.829037" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102230" name="영혼석 마커 (트롤 PVP지역)" x="27188.300781" y="30156.542969" z="11973.548828" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="102231" name="영혼석 마커 (오우거 PVP지역)" x="51432.058594" y="42346.574219" z="11918.009766" dir_x="-0.529919" dir_y="-0.848048" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="2000000" name="트롤호위시작센서" local="false" x="59312.460938" y="5291.255859" z="17637.214844" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="2000001" name="오우거호위시작센서" local="false" x="58638.847656" y="7678.889648" z="16658.056641" radius="1000.000000" enabled="true" groupname="none" />
+        <AREA id="4" name="광기의 눈 부족" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="36870.222656" y="19990.408203" z="8520.850586" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="34574.476563" y="17908.277344" z="8486.724609" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="31372.505859" y="18381.333984" z="8493.001953" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="27671.208984" y="17996.697266" z="8493.003906" radius="2500.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="5" name="전쟁 구역" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="38839.601563" y="37496.492188" z="11958.363281" radius="12000.000000" height="6000.000000" />
+            <CYLINDER x="32287.273438" y="27348.591797" z="11906.376953" radius="5000.000000" height="6000.000000" />
+            <CYLINDER x="50251.980469" y="39116.078125" z="12041.884766" radius="3000.000000" height="6000.000000" />
+            <CYLINDER x="50133.546875" y="35552.839844" z="12001.708984" radius="3000.000000" height="6000.000000" />
+        </AREA>
+        <AREA id="6" name="흰색 예티 부족" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="55952.671875" y="32936.449219" z="8503.130859" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="56507.433594" y="36534.000000" z="8500.453125" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="56792.437500" y="38829.828125" z="8494.431641" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="56989.675781" y="40899.925781" z="8500.113281" radius="2500.000000" height="1000.000000" />
+        </AREA>
+        <PRELOAD>
+            <ELU name="hf_fighter.elu" />
+            <ITEM id="2241" />
+            <ITEM id="2242" />
+            <ITEM id="2243" />
+            <ITEM id="2244" />
+            <ITEM id="2245" />
+            <ITEM id="70071" />
+            <ITEM id="70077" />
+            <ITEM id="10003004" />
+            <ITEM id="10003108" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="53794" boundary_min_y="38875" boundary_max_x="75683" boundary_max_y="60456" weather_effect="true" fixed_time="Sunset" town="false" returnable="true" tutorial="false" rebirth_debuff_id="502020">
+		<BGM fieldbgm="bgm_field_2">
+            <ENVBGM dawnbgm="amb_plain_dawn" />
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM sunsetbgm="amb_plain_sunset" />
+            <ENVBGM nightbgm="amb_plain_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작지점" x="67552.968750" y="47295.281250" z="601.224670" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="62600.980469" y="54763.257813" z="556.985535" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10000" name="auto" x="67889.460938" y="45678.058594" z="601.727173" dir_x="-0.529919" dir_y="0.848048" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트저장" local="false" x="67357.968750" y="47437.515625" z="590.683105" radius="915.113098" enabled="true" checkpoint="10000" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ELU name="hm_old.elu" />
+            <ITEM id="2891" />
+            <ITEM id="2892" />
+            <ITEM id="2894" />
+            <ITEM id="2895" />
+            <ITEM id="10002003" />
+            <ITEM id="10002104" />
+            <ITEM id="10008020" />
+            <ITEM id="10008021" />
+            <ITEM id="10008022" />
+            <ITEM id="10008023" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

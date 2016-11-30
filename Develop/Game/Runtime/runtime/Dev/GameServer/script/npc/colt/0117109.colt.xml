@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 역병 들린 고블린 유골
+211710901	일반공격
+211710902	연타공격
+211710903	강한공격
+211710904	도발
+211710905	일반공격2
+211710906	방어
+211710907	idle1
+211710908	idle2
+-->
+<maiet>
+	<COLT name="역병 들린 고블린 유골" npcid="117109">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211710901" rate="10" desc="일반공격" />
+				<ACTION type="talent" param1="211710902" rate="20" desc="연타공격" />
+				<ACTION type="talent" param1="211710903" rate="10" desc="강한공격" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710908" rate="20" desc="idle2" />
+				<ACTION type="nothing" param1="2" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="샤디즈의 환영" npcid="102112">
+		<COMBAT>
+			<DEFAULT comment="근접">
+				<ACTION type="talent" param1="210211101" rate="35" />
+				<ACTION type="talent" param1="210211105" rate="35" />
+				
+				<ACTION type="talent" param1="210211102" rate="5" />
+				<ACTION type="talent" param1="210211103" rate="5" />
+				
+				<ACTION type="talent" param1="210211107" rate="10" />
+				<ACTION type="talent" param1="210211108" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="700"  comment="원거리">
+				<ACTION type="distance" param1="500" param2="500" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" comment="중거리">
+				<ACTION type="talent" param1="210211102" rate="40" />
+				<ACTION type="talent" param1="210211103" rate="30" />
+				<ACTION type="talent" param1="210211105" rate="20" />
+				
+				<ACTION type="talent" param1="210211107" rate="5" />
+				<ACTION type="talent" param1="210211108" rate="5" />
+			</CHECK>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="group">
+					<ACTION type="talent" param1="210211107"  rate="10" />
+					<AcTION type="aggro" param1="random" param2="0" />
+				</ACTION>
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210211106" rate="20" />
+				<ACTION type="talent" param1="210211108" rate="20" />
+				<ACTION type="nothing" param1="2" rate="20" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+	<![CDATA[
+	
+function NPC_102112:Init(NPCID)
+	-- 1: 머리
+	-- 2: 꼬리
+	NPC_ReserveUserData(NPCID, 2)
+
+	local MaxHP = NPC_102112.MaxHP
+	NPC_102112.LimitForBreakTail 	= MaxHP/10
+	NPC_102112.LimitForPain 			= MaxHP/10
+	
+	NPC_102112.TalIdPain1 			= 210211109
+	NPC_102112.TalIdPain2 			= 210211110
+	
+	NPC_102112.DistanceForScrifice = 800
+	
+	NPC_102112.BufIdSacrifice			= 40190
+	NPC_102112.BufIdLinkage			= 40191
+end
+
+function NPC_102112:OnSpawn( Info )
+	this:GainBuff( NPC_102111.BufIdRedEye )
+end
+
+function NPC_102112:AccDamage(bHead, dHitInfo)
+	local victim = AsNPC( dHitInfo.Victim )
+	local attacker = dHitInfo.Attacker
+	local totalDamage = 0
+	local currentDamage = 0
+	local currentTalent = victim:GetCurrentTalent()
+	local userDataIdx = 1
+	
+	if(bHead == false and (victim:CheckBPart(1) == true and victim:CheckBPart(2) == true and victim:CheckBPart(3) == true)) then
+		return dHitInfo
+	end
+	
+	--[[ 
+	꼬리쪽은 SLASH와 PIERCE가 아니면 누적 데미지에 패널티를 받는다.
+	머리쪽은 BLUNT가 아니면 누적데미지에 패널티를 받는다.
+	누적데미지는 파츠 파괴나 Pain패턴에 영향을 준다. 
+	--]]
+	
+	if( bHead == false ) then
+		userDataIdx = 2
+		
+		if( dHitInfo.Type == DA_SLASH or dHitInfo.Type == DA_PIERCE ) then
+			currentDamage = dHitInfo.Damage
+		else
+			currentDamage = dHitInfo.Damage * 0.2
+		end
+	else
+		if( dHitInfo.Type == DA_BLUNT ) then
+			currentDamage = dHitInfo.Damage
+		else
+			currentDamage = dHitInfo.Damage * 0.8
+		end
+	end
+	
+	if currentDamage == 0 then
+		return dHitInfo
+	end
+	
+	totalDamage = victim:GetUserData(userDataIdx) + currentDamage
+	victim:SetUserData(userDataIdx, totalDamage)
+	
+	-- GLog( "T:" .. totalDamage .. "\n" )
+	if bHead == true and totalDamage > NPC_102112.LimitForPain  then
+		-- _LogHitInfo( dHitInfo )
+		local bPain = 0
+		
+		if ChkMFForHitReaction( dHitInfo ) then
+			if not victim:IsCooldown( NPC_102112.TalIdPain1 ) then
+				victim:ClearJob()
+				victim:UseTalentSelf( NPC_102112.TalIdPain1 )
+				victim:SetUserData(userDataIdx, 0)
+			end
+		end
+	end
+	
+	return dHitInfo
+end
+
+-- 머리 히트
+function NPC_102112:OnHitCapsule_1_0(HitInfo)
+	return NPC_102112:AccDamage(true, HitInfo)
+end
+
+-- 머리 히트
+function NPC_102112:OnHitCapsule_2_0(HitInfo)
+	return NPC_102112:AccDamage(true, HitInfo)
+end
+
+-- 꼬리 히트
+function NPC_102112:OnHitCapsule_2_2(HitInfo)
+	return NPC_102112:AccDamage(false, HitInfo)
+end
+
+function NPC_102112:OnVictory( )
+	this:SetUserData( 1, 0 )
+	this:SetUserData( 2, 0 )
+end
+
+-- 40191 중첩 버프 구현되면 중첩 버젼으로 변경할것
+function NPC_102112:OnSpawn( Info )
+	local Summoner = this:GetSummoner()
+	if Summoner == nil then
+		return
+	end
+	
+	Summoner:GainBuff( NPC_102112.BufIdLinkage )
+	Summoner:SetUserData( 2, Summoner:GetUserData( 2 ) + 1 )
+end
+
+function NPC_102112:OnDie(Info)
+	
+	local Summoner = this:GetSummoner()
+	if Summoner == nil then
+		return
+	end
+	
+	local Dist = this:DistanceTo(Summoner)
+	
+	if Dist < NPC_102112.DistanceForScrifice then 
+		Summoner:GainBuff( NPC_102112.BufIdSacrifice )
+	end
+
+	Summoner:RemoveBuff( NPC_102112.BufIdLinkage )	
+	Summoner:SetUserData( 2, Summoner:GetUserData( 2 ) - 1 )
+	this:Despawn(false)
+end
+	
+	]]></SCRIPT>
+</maiet>

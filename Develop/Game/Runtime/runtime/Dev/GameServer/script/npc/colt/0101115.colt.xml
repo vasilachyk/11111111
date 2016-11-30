@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 디펜더 -->
+<!--
+# 리오드의 인간형 한손검, 방패	
+210111501	1타
+210111502	2연타
+210111503	3연타
+210111505	찌르기
+210111506	칼뽑기(tomode0)
+210111507	칼넣기(tomode1)
+210111508	회피L
+210111509	회피R
+210111511	역습 포커스
+210111512	강격
+210111513	충격 반사
+210111514	보루
+210111515	파멸의 일격
+210111516	방패 가격: 기절
+210111517	돌진
+210111518	방어
+210111519	일어나서칼뽑기(tomode0)
+210111520	근접 공격1(1hs_atk_npc1)
+210111521	근접 공격2(1hs_atk_npc2)
+210111522	강격(1hs_atk_npc3)
+-->
+<maiet>
+	<COLT name="버림받은 신도" npcid="101115">
+		<COMBAT mode="0" victory="210111507" >
+			<DEFAULT>
+				<ACTION type="talent" param1="210111520" rate="10" desc="근접 공격1(1hs_atk_npc1)" />
+				<ACTION type="talent" param1="210111521" rate="10" desc="근접 공격2(1hs_atk_npc2)" />
+				<ACTION type="talent" param1="210111502" rate="20" desc="2연타" />
+				<ACTION type="talent" param1="210111515" rate="10" desc="파멸의 일격" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="50" cycle="15">
+				<ACTION type="talent" param1="210111511" rate="50" desc="역습 포커스" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="gained_buff" param1="80120">
+				<CHECK type="distance" param1="300" >
+					<ACTION type="talent" param1="210111517" rate="50" desc="돌진" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="50" >
+					<ACTION type="talent" param1="210111522" rate="50" desc="강격" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="rage" param1="50" >
+				<ACTION type="talent" param1="210111516" rate="50" desc="방패 가격: 기절" />
+				<ACTION type="guard" param1="210111518" param2="2" rate="10" cycle="15" desc="방어" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="350" >
+				<ACTION type="talent" param1="210111505" rate="10" desc="찌르기" />
+				<ACTION type="talent" param1="210111515" rate="10" desc="파멸의 일격" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210111506" rate="100" desc="칼뽑기(tomode0)" />
+			</DEFAULT>
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="GaddielAggroChat2" />
+			</DEFAULT>
+		</AGGRO>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

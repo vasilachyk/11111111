@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="PAX지그니프" npcid="8896003"> 
+		<COMBAT mode="0" comment="">
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_8896003" rate="10" param2="LeftStep" /> 
+				<ACTION type="lua" param1="NPC_8896003" rate="10" param2="RightStep" />				
+				<ACTION type="talent" param1="210100023" rate="20" duration="1" desc="왼발오른발 밟기" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="800" >
+				<CHECK type="hp" param1="65" param2="100" >
+					<ACTION type="talent" param1="210100019" rate="50" duration="1" desc="주먹연속치기" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="800" >
+				<CHECK type="hp" param2="65" >				
+					<ACTION type="talent" param1="210100021" rate="40" duration="1" desc="주먹내려치기" />							
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="40" param2="80" > <!-- 페이즈2  -->
+				<ACTION type="talent" param1="210100020" rate="20" duration="1" desc="러시" />
+				<ACTION type="lua" param1="NPC_8896003" rate="10" param2="LeftStep" /> 
+				<ACTION type="lua" param1="NPC_8896003" rate="10" param2="RightStep" />				
+				<ACTION type="talent" param1="210100023" rate="30" duration="1" desc="왼발오른발 밟기" />		
+				<ACTION type="talent" param1="210100024" rate="50" duration="1" desc="파워슬램" />					
+			</CHECK>
+			
+			<CHECK type="hp" param2="40" > <!-- 페이즈3 -->
+				<ACTION type="talent" param1="210100022" rate="30" duration="1" desc="러시(빠른버전)" />
+				<ACTION type="lua" param1="NPC_8896003" rate="10" param2="LeftStep" /> 
+				<ACTION type="lua" param1="NPC_8896003" rate="10" param2="RightStep" />				
+				<ACTION type="talent" param1="210100023" rate="30" duration="1" desc="왼발오른발 밟기" />		
+				<ACTION type="talent" param1="210100024" rate="50" duration="1" desc="파워슬램" />						
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+function NPC_8896003:Init( NPCID )
+	--[[
+		User Data
+		1: GlobalPain
+		2: Horn
+	--]]
+	NPC_ReserveUserData( NPCID, 2 );
+	
+	NPC_8896003.IdxHorn 					= 1
+	NPC_8896003.IdxLeftAnkle 			= 2
+	NPC_8896003.IdxRightAnkle 			= 3
+	
+	NPC_8896003.TALENT_LeftStep_Slow 	= 210100013
+	NPC_8896003.TALENT_LeftStep_Fast 	= 210100014
+	NPC_8896003.TALENT_RightStep_Slow 	= 210100015
+	NPC_8896003.TALENT_RightStep_Fast 	= 210100016
+	
+	NPC_8896003.TALENT_Pain1 			= 210100001
+	NPC_8896003.TALENT_Pain2 			= 210100002
+	
+	NPC_8896003.TALENT_Punch1 			= 210100019
+	NPC_8896003.TALENT_Punch2 			= 210100021	
+	
+	NPC_8896003.LimitForPain				= 1000
+	NPC_8896003.LimitForBreakHorn		= NPC_8896003.MaxHP/20
+end
+
+function NPC_8896003:OnBPartRecover()
+	for i=1, 2 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+function NPC_8896003:LeftStep( ThisNPC, Enemy )
+	if ThisNPC:CheckBPart(NPC_8896003.IdxLeftAnkle) then
+		ThisNPC:UseTalent( NPC_8896003.TALENT_LeftStep_Fast, Enemy )
+	else
+		ThisNPC:UseTalent( NPC_8896003.TALENT_LeftStep_Slow, Enemy )
+	end
+end
+
+function NPC_8896003:RightStep( ThisNPC, Enemy )
+	if ThisNPC:CheckBPart(NPC_8896003.IdxRightAnkle) then
+		ThisNPC:UseTalent( NPC_8896003.TALENT_RightStep_Fast, Enemy )
+	else
+		ThisNPC:UseTalent( NPC_8896003.TALENT_RightStep_Slow, Enemy )
+	end	
+end
+
+-- Talent Callback Func
+function NPC_8896003:OnFinishAndAggroFar( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "far", 0 )
+end
+
+function NPC_8896003:OnFinishAndAggroShort( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_8896003:AccDamageForLeftFoot( ThisNPC, HitIdx, HitInfo )
+	local PainPoint = GetPainPoint( HitInfo )
+	if PainPoint > 0 and 
+		( ThisNPC:GetHP()/ThisNPC:GetMaxHP() ) < 0.7 and 
+		( not ThisNPC:IsCooldown( NPC_8896003.TALENT_Pain1 ) ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_8896003.TALENT_Pain1 )
+		ThisNPC:BreakPart(2, HitInfo.Attacker)
+		
+		return true
+	end
+	
+	return false
+end
+
+function NPC_8896003:AccDamageForRightFoot( ThisNPC, HitIdx, HitInfo )
+	local PainPoint = GetPainPoint( HitInfo )
+
+	if PainPoint > 0 and 
+		(ThisNPC:GetHP()/ThisNPC:GetMaxHP() ) < 0.4 and 
+		( not ThisNPC:IsCooldown( NPC_8896003.TALENT_Pain1 ) ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_8896003.TALENT_Pain1 )
+		ThisNPC:BreakPart(3, HitInfo.Attacker)
+		
+		return true
+	end 
+	
+	return false
+end
+
+function NPC_8896003:AccDamageForHorn( ThisNPC, HitIdx, HitInfo )
+	--GLog( "NPC_8896003:AccDamageForHorn\n" )
+	
+	local PainPoint = GetPainPoint( HitInfo )
+
+	local AccDamage = ThisNPC:GetUserData(2) + HitInfo.Damage
+	if PainPoint > 0 and
+		AccDamage >= NPC_8896003.LimitForBreakHorn and
+		( not ThisNPC:IsCooldown( NPC_8896003.TALENT_Pain1 ) ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_8896003.TALENT_Pain1 )
+		ThisNPC:BreakPart( 1, HitInfo.Attacker )
+		ThisNPC:SetUserData( 2, 0 )
+		
+		return true
+	else
+		ThisNPC:SetUserData( 2, AccDamage )
+	end 
+	
+	return false
+end
+
+function NPC_8896003:AccDamageForPain( ThisNPC, HitIdx, HitInfo )
+	--GLog( "NPC_8896003:AccDamageForPain\n" )
+	local PainPoint = GetPainPoint( HitInfo )
+	
+	if PainPoint < 0 then
+		return
+	end
+	
+	local AccPainPoint = ThisNPC:GetUserData( 1 ) + PainPoint
+	if AccPainPoint > NPC_8896003.LimitForPain and 
+		( not ThisNPC:IsCooldown( NPC_8896003.TALENT_Pain2 ) ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_8896003.TALENT_Pain2 )
+		ThisNPC:SetUserData( 1, 0 )
+	else
+		ThisNPC:SetUserData( 1, AccPainPoint )
+	end
+end
+
+--[[
+Hit Index
+1: left foot
+2: right foot
+3: head
+4: body
+--]]
+
+function NPC_8896003:AccDamage( ThisNPC, HitIdx, HitInfo) -- 오른발을 계속 때리면 오른쪽 족쇄가 왼발을 때리면 왼발족쇄가 부숴진다
+	--GLog( "NPC_8896003:AccDamage\n" ) 
+	if HitIdx == 1 and (not ThisNPC:CheckBPart(NPC_8896003.IdxLeftAnkle)) then -- 왼발
+		if not NPC_8896003:AccDamageForLeftFoot( ThisNPC, HitIdx, HitInfo ) then
+			NPC_8896003:AccDamageForPain( ThisNPC, HitIdx, HitInfo )
+		end
+	elseif HitIdx == 2 and not ThisNPC:CheckBPart(NPC_8896003.IdxRightAnkle) then -- 오른발
+		if not NPC_8896003:AccDamageForRightFoot( ThisNPC, HitIdx, HitInfo ) then
+			NPC_8896003:AccDamageForPain( ThisNPC, HitIdx, HitInfo )
+		end
+	elseif HitIdx == 3 and not ThisNPC:CheckBPart(NPC_8896003.IdxHorn) then -- 머리
+		if not NPC_8896003:AccDamageForHorn( ThisNPC, HitIdx, HitInfo ) then
+			NPC_8896003:AccDamageForPain( ThisNPC, HitIdx, HitInfo )
+		end
+	else
+		NPC_8896003:AccDamageForPain( ThisNPC, HitIdx, HitInfo )
+	end
+	
+	return HitInfo
+end
+
+--[[ 
+	힛캡슐 콜백 매핑
+	
+	기본 모드0
+--]]
+function NPC_8896003:OnHitCapsule_1_0(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_1_1(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_1_2(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_1_3(HitInfo) -- 왼발 때릴 떄
+	return NPC_8896003:AccDamage( this, 1, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_1_4(HitInfo) -- 뿔때릴때
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+--[[
+	주먹 연속 치기용
+--]]
+function NPC_8896003:OnHitCapsule_2_0(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_2_1(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_2_2(HitInfo) -- 왼발 때릴 때
+	return NPC_8896003:AccDamage( this, 1, HitInfo)
+end
+
+--[[
+	러시용
+--]]
+function NPC_8896003:OnHitCapsule_3_0(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_3_1(HitInfo) -- 왼발 때릴 때
+	return NPC_8896003:AccDamage( this, 1, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_3_2(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+
+--[[
+	오른발 공격
+--]]
+function NPC_8896003:OnHitCapsule_4_0(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_4_1(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_4_2(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_4_3(HitInfo) -- 왼발
+	return NPC_8896003:AccDamage( this, 1, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_4_4(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_4_5(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_4_6(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_4_7(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_4_8(HitInfo) -- 뿔
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_4_9(HitInfo) -- 뿔
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_4_10(HitInfo) -- 뿔
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+--[[
+	오른발공격2
+--]]
+function NPC_8896003:OnHitCapsule_5_0(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_5_1(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_5_2(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_5_3(HitInfo) -- 왼발
+	return NPC_8896003:AccDamage( this, 1, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_5_4(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_5_5(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_5_6(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+function NPC_8896003:OnHitCapsule_5_7(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_5_8(HitInfo) -- 뿔
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_5_9(HitInfo) -- 뿔
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_5_10(HitInfo) -- 뿔
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+--[[
+	Pain2
+--]]
+function NPC_8896003:OnHitCapsule_6_0(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_6_1(HitInfo) -- 몸통
+	return NPC_8896003:AccDamage( this, 4, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_6_2(HitInfo) -- 오른발 때릴 때
+	return NPC_8896003:AccDamage( this, 2, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_6_3(HitInfo) -- 왼발 때릴 떄
+	return NPC_8896003:AccDamage( this, 1, HitInfo)
+end
+
+function NPC_8896003:OnHitCapsule_6_4(HitInfo) -- 뿔
+	return NPC_8896003:AccDamage( this, 3, HitInfo)
+end
+
+	]]></SCRIPT>
+</maiet>
+

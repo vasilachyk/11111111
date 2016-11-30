@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="보석 감정사 아노키 - 아란바스 화산지대 4 Rank">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="talent" param1="211611101" rate="40" />
+				<ACTION type="talent" param1="211611102" rate="40" />
+				<ACTION type="talent" param1="211611103" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="1" rate="10" cycle="6"/>
+				<ACTION type="talent" param1="211611101" rate="30" />
+				<ACTION type="talent" param1="211611102" rate="30" />
+				<ACTION type="talent" param1="211611103" rate="40" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족저항군">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="211001902" rate="20" />
+				<ACTION type="talent" param1="211001901" rate="20" />
+			</DEFAULT>
+
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param1="0" param2="300">
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="211001901" rate="20" />
+				<ACTION type="talent" param1="211001902" rate="20" />  <!-- 일반공격(근접) -->
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211001900" rate="10" />
+				<ACTION type="nothing" param1="1" rate="90"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

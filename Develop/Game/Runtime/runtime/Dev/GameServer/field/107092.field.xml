@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="13762" boundary_min_y="43955" boundary_max_x="42695" boundary_max_y="74276" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="도전 보르고" x="27676.810547" y="58982.460938" z="2159.038086" dir_x="-0.469472" dir_y="-0.882947" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="true" start_time="1" respawn_time="1800" roam_radius="0" roam_depth="200" color="auto">
+            <NPC id="1000004" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="26047.681641" y="55193.507813" z="2083.427490" dir_x="0.390731" dir_y="0.920505" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

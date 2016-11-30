@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 호박귀신	
+210110301	#idle2(두리번)
+210110302	#idle3(으하하하)
+210110303	#약공격(atk1)
+210110304	#강공격(atk2)
+210110305	회피회전L
+210110306	회피회전R
+-->
+<maiet>
+	<COLT name="호박귀신" npcid="101103">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210110303" rate="50" desc="약공격(atk_1)" />
+				<ACTION type="talent" param1="210110304" rate="20" desc="강공격(atk_2)" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200" >
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="210110305" rate="30" desc="move_l" />
+					<ACTION type="talent" param1="210110306" rate="30" desc="move_r" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param2="40" >
+				<ACTION type="talent" param1="210110303" rate="50" desc="약공격(atk_1)" />
+				<ACTION type="talent" param1="210110304" rate="30" desc="강공격(atk_2)" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210110301" rate="40" desc="idle2(두리번)" />
+				<ACTION type="talent" param1="210110302" rate="10" desc="idle3(으하하하)" />
+				<ACTION type="nothing" param1="2" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

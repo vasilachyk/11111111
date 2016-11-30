@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="라노사" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="5"/>
+				
+				<ACTION type="talent" param1="211610103" rate="40" />
+				<ACTION type="talent" param1="211610104" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="100">
+					<ACTION type="group" rate="50" cycle="5">
+						<ACTION type="talent" param1="211610105"/>
+						<ACTION type="talent" param1="211610106"/>
+					</ACTION>
+					<ACTION type="talent" param1="211610105" rate="50"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="5" />
+				
+				<ACTION type="talent" param1="211610103" rate="20" />
+				<ACTION type="talent" param1="211610104" rate="10" />
+				<ACTION type="talent" param1="211610106" rate="40" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610100" rate="20" />
+				<ACTION type="talent" param1="211610101" rate="20" />
+				<ACTION type="talent" param1="211610102" rate="20" />
+				<ACTION type="nothing" param1="2" rate="20" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

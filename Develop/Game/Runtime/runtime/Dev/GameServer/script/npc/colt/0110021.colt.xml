@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 진군대장 브라비 (렌고트 족장) -->
+<maiet>
+	<COLT name="브라비">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+
+				<ACTION type="talent" param1="211002101" rate="35" />
+				<ACTION type="talent" param1="211002102" rate="25" />
+				<ACTION type="talent" param1="211002105" rate="10" />
+				<ACTION type="talent" param1="211002107" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="distance" param1="300">
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="6"/>
+
+				<ACTION type="talent" param1="211002101" rate="20" />
+				<ACTION type="talent" param1="211002102" rate="10" />
+				<ACTION type="talent" param1="211002105" rate="40" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="211002103" param2="1" rate="50"/>
+					<ACTION type="talent" param1="211002107" param2="1" rate="50"/>
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="5" />
+				<ACTION type="talent" param1="211002106" rate="5" />
+				<ACTION type="nothing" param1="1" rate="90" />
+				<!-- <ACTION type="lua" param1="NPC_110021_Patrol" rate="5" /> -->
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_110021:Init(NPCID)
+end
+
+function NPC_110021_Patrol(thisNPC, Target)
+	local pt = MARKER_LIST()
+
+	pt:Add(8)
+	pt:Add(7)
+	pt:Add(6)
+	pt:Add(5)
+	pt:Add(4)
+
+	thisNPC:Patrol(pt, PT_ONCE)
+end
+
+	]]></SCRIPT>
+		
+</maiet>

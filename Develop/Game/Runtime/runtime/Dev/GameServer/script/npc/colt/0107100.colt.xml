@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="Teresis" npcid="107007">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="yell" param1="1200" auto_run="true" max_count="1" />
+				
+				<ACTION type="talent" param1="210700701" rate="40" />
+				<ACTION type="talent" param1="210700702" rate="40" />
+				
+				<ACTION type="talent" param1="210700703" rate="5" />
+				<ACTION type="talent" param1="210700704" rate="5" duration="5" />
+				<ACTION type="talent" param1="210700713" rate="5" duration="0" />
+				<ACTION type="talent" param1="210700714" rate="5" duration="0" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="300" >
+				<CHECK type="rage" param1="100">
+					<ACTION type="talent" param1="210700704" rate="60" duration="0" />
+					<ACTION type="talent" param1="210700713" rate="20" duration="0" />
+					<ACTION type="talent" param1="210700714" rate="20" duration="0" />
+				</CHECK>
+			</CHECK>
+
+			<CHECK type="distance" param1="800" >
+				<ACTION type="distance" param1="600" param2="600" rate="60"/>
+				<ACTION type="talent" param1="210700703" rate="10" />
+				<ACTION type="talent" param1="210700707" rate="30" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="60">
+				<ACTION type="yell" param1="1200" auto_run="true" max_count="1" />
+				
+				<ACTION type="talent" param1="210700701" rate="20" />
+				<ACTION type="talent" param1="210700702" rate="20" />
+				
+				<ACTION type="lua" param1="NPC_107100" param2="Healing" rate="20" />
+				
+				<ACTION type="talent" param1="210700703" rate="5" />
+				<ACTION type="talent" param1="210700704" rate="5" />
+				<ACTION type="talent" param1="210700713" rate="5" duration="0"/>
+				<ACTION type="talent" param1="210700714" rate="5" duration="0"/>
+			</CHECK>
+		</COMBAT>
+		
+		<STRESS>
+			<CHECK type="stress" param1="300">
+				<ACTION type="lua" param1="NPC_107100" param2="Stressed" rate="100" />
+			</CHECK>
+		</STRESS>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+	<![CDATA[ 
+
+	--[[
+		테레시스
+	--]]
+	
+function NPC_107100:Init(NPCID)
+	NPC_ReserveUserData(NPCID, 2);
+	
+	NPC_107100.LimitForBreakParts	= NPC_107100.MaxHP/15
+	
+	NPC_107100.TalIdSpiltWeb 		= 210700707
+	NPC_107100.TalIdAroundWeb1 		= 210700713
+	NPC_107100.TalIdAroundWeb2 		= 210700714
+	NPC_107100.TalIdPain1			= 210700712
+	NPC_107100.TalIdRoar			= 210700708
+	NPC_107100.TalIdHeal			= 210700706
+	NPC_107100.TalIdJump			= 210700703
+	NPC_107100.TalIdWhirl			= 210700704
+	
+	NPC_107100.PartIdJawL			= 3
+	NPC_107100.PartIdJawR			= 4
+end
+
+function NPC_107100:OnBPartRecover()
+	for i=1, 2 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+function NPC_107100:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC)
+end
+
+function NPC_107100:Healing(ThisNPC, Opponent)
+	if ThisNPC:IsCooldown( NPC_107100.TalIdHeal ) then
+		return
+	end
+	
+	if ThisNPC:GetHP()/ThisNPC:GetMaxHP() == 1 then
+		return
+	end
+	
+	if ThisNPC:CheckBPart( NPC_107100.PartIdJawL ) and ThisNPC:CheckBPart( NPC_107100.PartIdJawR ) then
+		return
+	end
+	
+	ThisNPC:UseTalentSelf( NPC_107100.TalIdHeal )
+end
+
+-- Talent Callback Func
+function NPC_107100:OnFinishAndAggroSwap( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+---
+function NPC_107100:CheckBreakpart(HitInfo, bFrontPart)
+	local ThisNPC = AsNPC( HitInfo.Victim )
+	local hpRate = ThisNPC:GetHP()/ThisNPC:GetMaxHP()
+	
+	
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	if currentTalent == NPC_107100.TalIdPain1 or currentTalent == NPC_107100.TalIdRoar then
+		return HitInfo
+	end
+	
+	if (bFrontPart == true and (ThisNPC:CheckBPart(3) == false or ThisNPC:CheckBPart(4) == false)) then
+		-- 전면 누적치
+		local frontDamage = ThisNPC:GetUserData(1) + HitInfo.Damage		
+		
+		if (frontDamage >= NPC_107100.LimitForBreakParts) then
+			if (ThisNPC:CheckBPart(3) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(3, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf( NPC_107100.TalIdPain1 )
+				frontDamage = 0
+			elseif (ThisNPC:CheckBPart(4) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(4, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf(NPC_107100.TalIdPain1)
+				frontDamage = 0
+			end
+		end
+		
+		ThisNPC:SetUserData(1, frontDamage)
+	else
+		-- 후면 누적치
+		local rearDamage = ThisNPC:GetUserData(2) + HitInfo.Damage
+		if rearDamage >= NPC_107100.LimitForBreakParts and (ThisNPC:CheckBPart(1) == false or ThisNPC:CheckBPart(2) == false) then
+			if (ThisNPC:CheckBPart(1) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(1, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf(NPC_107100.TalIdPain1)
+				rearDamage = 0
+			elseif(ThisNPC:CheckBPart(2) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(2, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf(NPC_107100.TalIdPain1)
+				rearDamage = 0
+			end
+		end
+		
+		ThisNPC:SetUserData(2, rearDamage)
+	end
+
+	return HitInfo
+end
+
+function NPC_107100:OnHitCapsule_0_0(HitInfo)
+	return NPC_107100:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_107100:OnHitCapsule_1_0(HitInfo)
+	return NPC_107100:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_107100:OnHitCapsule_2_0(HitInfo)
+	return NPC_107100:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_107100:OnHitCapsule_3_0(HitInfo)
+	return NPC_107100:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_107100:OnHitCapsule_1_1(HitInfo)
+	return NPC_107100:CheckBreakpart(HitInfo, false)
+end
+
+-- NPC107007_Stressed
+function NPC_107100:Stressed(ThisNPC, Enemy)
+	ThisNPC:Aggro("short", 0)
+
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	if Dist < 400 and not ThisNPC:IsCooldown( NPC_107100.TalIdWhirl ) then
+		
+		ThisNPC:UseTalentSelf( NPC_107100.TalIdWhirl )
+	end
+end
+	
+	]]>
+	</SCRIPT>
+</maiet>

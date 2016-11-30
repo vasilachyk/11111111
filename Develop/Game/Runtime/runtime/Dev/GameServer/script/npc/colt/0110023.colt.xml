@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 사냥꾼 요오마	
+211002301	근접공격
+211002302	일반활쏘기
+211002303	빠른활쏘기
+211002304	방어
+211002305	마비독공격
+-->
+<maiet>
+	<COLT name="사냥꾼 요오마" npcid="110023">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211002302" rate="30" desc="일반활쏘기" />
+				<ACTION type="talent" param1="211002303" rate="20" desc="빠른활쏘기" />
+				<ACTION type="talent" param1="211002306" rate="30" desc="폭팔사격" />
+			</DEFAULT>
+			
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param2="200">
+				<ACTION type="talent" param1="211002301" rate="40" desc="근접공격" />
+				<ACTION type="talent" param1="211002305" rate="30" desc="마비독공격" />
+				<ACTION type="talent" param1="211002302" rate="10" desc="일반활쏘기" />
+				<ACTION type="talent" param1="211002303" rate="10" desc="빠른활쏘기" />
+				<ACTION type="talent" param1="211002306" rate="20" desc="폭팔사격" />
+			</CHECK>
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="say" param1="$$COLT_0110023_33"  param2="0" max_count="1" />
+			</DEFAULT>
+		</AGGRO>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="10" desc="idle2" />
+				<ACTION type="nothing" param1="1" rate="90"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

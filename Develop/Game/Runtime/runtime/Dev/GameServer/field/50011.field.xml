@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8005" min_x="0" min_y="0" max_x="10000" max_y="10000" weather_effect="true" bgm="bgm_war_1" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="1번 시작점" x="665.095825" y="616.453064" z="0.000000" dir_x="0.669131" dir_y="0.743145" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="2번 시작점" x="4363.603516" y="4652.216309" z="0.000000" dir_x="-0.656059" dir_y="-0.754710" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

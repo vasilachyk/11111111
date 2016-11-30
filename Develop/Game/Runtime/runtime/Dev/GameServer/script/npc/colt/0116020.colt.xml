@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="하프메인" npcid="116020">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="lua" param1="NPC_116020" param2="Event" desc="전투시작 대사"/>
+					<ACTION type="talent" param1="211602050"/>
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>		
+		
+		<COMBAT mode="0" >
+			<DEFAULT>
+				<ACTION type="talent" param1="211602010" rate="10" duration="5" desc="검휘두르기 1"/>
+				<ACTION type="talent" param1="211602011" rate="10" duration="5" desc="검휘두르기 2"/>
+				<ACTION type="talent" param1="211602012" rate="10" duration="5" desc="검휘두르기 3"/>
+			</DEFAULT>
+				
+			<CHECK type="hp" param1="80" >
+				<ACTION type="talent" param1="211602010" rate="10" duration="5" desc="검휘두르기 1"/>
+				<ACTION type="talent" param1="211602011" rate="10" duration="5" desc="검휘두르기 2"/>
+				<ACTION type="talent" param1="211602012" rate="10" duration="5" desc="검휘두르기 3"/>
+				<ACTION type="talent" param1="211602017" rate="10" duration="5" desc="제자리 베기 2연타"/>
+				<ACTION type="group" cycle="40">
+					<ACTION type="talent" param1="211602005" desc="점프 왼쪽"/>
+					<ACTION type="talent" param1="211602023" rate="10" duration="5" desc="브레스 1"/>
+				</ACTION>
+				<ACTION type="group" cycle="45">
+					<ACTION type="talent" param1="211602006" desc="점프 오른쪽"/>
+					<ACTION type="talent" param1="211602023" rate="10" duration="5" desc="브레스 1"/>
+				</ACTION>
+				<ACTION type="group" cycle="50">
+					<ACTION type="talent" param1="211602007" desc="점프 뒤쪽"/>
+					<ACTION type="talent" param1="211602024" rate="10" duration="5" desc="브레스 2"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="80" >
+				<ACTION type="talent" param1="211602020" rate="10" duration="5" desc="힙의 흡수(잡기)"/>
+				<ACTION type="talent" param1="211602010" rate="10" duration="5" desc="검휘두르기 1"/>
+				<ACTION type="talent" param1="211602011" rate="10" duration="5" desc="검휘두르기 2"/>
+				<ACTION type="talent" param1="211602012" rate="10" duration="5" desc="검휘두르기 3"/>
+				<ACTION type="talent" param1="211602017" rate="10" duration="5" desc="제자리 베기 2연타"/>
+				<ACTION type="talent" param1="211602030" duration="5" desc="은신베기 도약 (tomode1)"/>
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="211602005" desc="점프 왼쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="35">
+					<ACTION type="talent" param1="211602006" desc="점프 오른쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="40">
+					<ACTION type="talent" param1="211602007" desc="점프 뒤쪽"/>
+					<ACTION type="talent" param1="211602016" desc="검광날리기2(발사체)"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param1="40" param2="60" >
+				<ACTION type="lua" param1="NPC_116020" param2="NarrationNow1" max_count="1" desc="대사"/>
+				<ACTION type="talent" param1="211602020" rate="10" duration="5" desc="힙의 흡수(잡기)"/>
+				<ACTION type="talent" param1="211602010" rate="10" duration="5" desc="검휘두르기 1"/>
+				<ACTION type="talent" param1="211602011" rate="10" duration="5" desc="검휘두르기 2"/>
+				<ACTION type="talent" param1="211602012" rate="10" duration="5" desc="검휘두르기 3"/>
+				<ACTION type="talent" param1="211602017" rate="10" duration="5" desc="제자리 베기 2연타"/>
+				<ACTION type="talent" param1="211602030" rate="5" duration="5" desc="은신베기 도약 (tomode1)"/>
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="211602005" desc="점프 왼쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="35">
+					<ACTION type="talent" param1="211602006" desc="점프 오른쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="211602007" desc="점프 뒤쪽"/>
+					<ACTION type="talent" param1="211602016" desc="검광날리기2(발사체)"/>
+				</ACTION>
+				<CHECK type="distance" param1="1000" >
+					<ACTION type="talent" param1="211602016" desc="검광날리기2(발사체)"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="20" param2="40" >
+				<ACTION type="talent" param1="211602020" rate="15" duration="5" desc="힙의 흡수(잡기)"/>
+				<ACTION type="talent" param1="211602010" rate="10" duration="5" desc="검휘두르기 1"/>
+				<ACTION type="talent" param1="211602011" rate="10" duration="5" desc="검휘두르기 2"/>
+				<ACTION type="talent" param1="211602012" rate="10" duration="5" desc="검휘두르기 3"/>
+				<ACTION type="talent" param1="211602017" rate="10" duration="5" desc="제자리 베기 2연타"/>
+				<ACTION type="talent" param1="211602030" rate="10" duration="5" desc="은신베기 도약 (tomode1)"/>
+				<ACTION type="group" cycle="60">
+					<ACTION type="talent" param1="211602040" desc="불의 테두리(안전지역)"/>
+					<ACTION type="talent" param1="211602041" desc="불의 테두리(화염지역)"/>
+					<ACTION type="talent" param1="211602021" desc="불의 폭발 5m"/>
+				</ACTION>
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="211602005" desc="점프 왼쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="35">
+					<ACTION type="talent" param1="211602006" desc="점프 오른쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="20">
+					<ACTION type="talent" param1="211602007" desc="점프 뒤쪽"/>
+					<ACTION type="talent" param1="211602016" desc="검광날리기2(발사체)"/>
+				</ACTION>
+				<CHECK type="distance" param1="1000" >
+					<ACTION type="talent" param1="211602016" desc="검광날리기2(발사체)"/>
+				</CHECK>
+			</CHECK>
+			<CHECK type="hp" param1="0" param2="20" >
+				<ACTION type="lua" param1="NPC_116020" param2="SwordFire" max_count="1" desc="칼불"/>
+				<ACTION type="talent" param1="211602010" rate="10" duration="5" desc="검휘두르기 1"/>
+				<ACTION type="talent" param1="211602011" rate="10" duration="5" desc="검휘두르기 2"/>
+				<ACTION type="talent" param1="211602012" rate="10" duration="5" desc="검휘두르기 3"/>
+				<ACTION type="talent" param1="211602017" rate="10" duration="5" desc="제자리 베기 2연타"/>
+				<ACTION type="group" cycle="50">
+					<ACTION type="talent" param1="211602046" desc="불의 테두리(안전지역)"/>
+					<ACTION type="talent" param1="211602047" desc="불의 테두리(화염지역)"/>
+					<ACTION type="talent" param1="211602021" desc="불의 폭발 5m"/>
+				</ACTION>
+				<ACTION type="group" cycle="20">
+					<ACTION type="talent" param1="211602005" desc="점프 왼쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="25">
+					<ACTION type="talent" param1="211602006" desc="점프 오른쪽"/>
+					<ACTION type="talent" param1="211602015" desc="검광날리기1(발사체)"/>
+				</ACTION>
+				<ACTION type="group" cycle="20">
+					<ACTION type="talent" param1="211602007" desc="점프 뒤쪽"/>
+					<ACTION type="talent" param1="211602016" desc="검광날리기2(발사체)"/>
+				</ACTION>
+				<CHECK type="distance" param1="1000" >
+					<ACTION type="talent" param1="211602016" desc="검광날리기2(발사체)"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="rage" param1="300">
+				<CHECK type="distance" param2="400">
+					<ACTION type="talent" param1="211602005" rate="10" duration="5" cycle="15" desc="점프 왼쪽"/>
+					<ACTION type="talent" param1="211602006" rate="10" duration="5" cycle="15" desc="점프 오른쪽"/>
+					<ACTION type="talent" param1="211602007" rate="10" duration="5" cycle="15" desc="점프 뒤"/>
+				</CHECK>
+			</CHECK>
+	
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="211602031">
+			<DEFAULT>
+				<ACTION type="talent" param1="211602031" duration="0" desc="은신베기 베기 (tomode0)"/>
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+--[[
+211602003	pain1
+211602004	pain2
+211602005	점프 왼쪽
+211602006	점프 오른쪽
+211602007	점프 뒤
+#공격스킬	
+211602010	검휘두르기 1
+211602011	검휘두르기 2
+211602012	검휘두르기 3
+211602013	검광날리기1
+211602014	검광날리기2
+#잡다구리	
+211602020	힙의 흡수(잡기)
+211602021	불의 폭발
+211602022	불의 테두리
+211602023	브레스 1
+211602024	브레스 2
+#은신베기	
+211602030	은신베기 도약 (tomode1)
+211602031	은신베기 베기 (tomode0)
+
+--]]
+
+function NPC_116020:Init(NPCID)
+	
+	NPC_116020.UD_PAIN1 = 1		-- Pain을 위한 누적 데미지.
+	NPC_116020.UD_PAIN2 = 2
+	NPC_116020.UD_Spewup = 3
+	NPC_116020.UD_DATASIZE = 3
+	
+	NPC_ReserveUserData( NPCID, NPC_116020.UD_DATASIZE );
+		
+	NPC_116020.LIMIT_PAIN1 = NPC_116020.MaxHP * 0.1
+	NPC_116020.LIMIT_PAIN2 = NPC_116020.MaxHP * 0.5
+	NPC_116020.LIMIT_Spewup = 3000
+		
+	NPC_116020.BPARTS_LeftDragon = 1
+	NPC_116020.BPARTS_RightDragon = 2
+	NPC_116020.BPARTS_Sword = 3
+	
+	NPC_116020.MODE_DAFAULT = 0
+	NPC_116020.MODE_HIDE = 1
+		
+	NPC_116020.TALENT_PAIN1 = 211602003
+	NPC_116020.TALENT_PAIN2 = 211602004
+
+	NPC_116020.TALENT_HIDE_ATTACK = 211602031
+		
+	NPC_116020.BUFF_Strength = 40080
+	NPC_116020.BUFF_SwordLight = 40081
+	NPC_116020.BUFF_SwordFire = 40082
+end
+
+--	전투 시작 대사
+function NPC_116020:Event( ThisNPC, Enemy )
+	local dice = math.random(0,2)		
+	if( dice == 0) then 
+		ThisNPC:NarrationNow("$$COLT_0116020_1")
+	end
+	if( dice == 1) then 
+		ThisNPC:NarrationNow("$$COLT_0116020_2")
+	end
+	if( dice == 2) then 
+		ThisNPC:NarrationNow("$$COLT_0116020_3")
+	end
+end
+
+--	기본 공격 대사
+function NPC_116020:OnSayNow1( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	local dice = math.random(0,9)		
+	if( dice == 0) then 
+		ThisNPC:SayNow("$$COLT_0116020_4")
+	end
+	if( dice == 1) then 
+		ThisNPC:SayNow("$$COLT_0116020_5")
+	end
+	if( dice == 2) then 
+		ThisNPC:SayNow("$$COLT_0116020_6")
+	end
+end
+
+--	잡기 대사
+function NPC_116020:OnSayNow2( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	local dice = math.random(0,5)		
+	if( dice == 0) then 
+		ThisNPC:SayNow("$$COLT_0116020_11")
+	end
+	if( dice == 1) then 
+		ThisNPC:SayNow("$$COLT_0116020_12")
+	end
+end
+
+--	불의테두리 화염지역설치 대사
+function NPC_116020:OnSayNow3( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	local dice = math.random(0,5)		
+	if( dice == 0) then 
+		ThisNPC:SayNow("$$COLT_0116020_16")
+	end
+	if( dice == 1) then 
+		ThisNPC:SayNow("$$COLT_0116020_17")
+	end
+end
+
+--	검광 대사
+function NPC_116020:OnSayNow4( ThisActor, Enemy )
+	local ThisNPC = AsNPC(ThisActor)
+	local dice = math.random(0,5)		
+	if( dice == 0) then 
+		ThisNPC:SayNow("$$COLT_0116020_7")
+	end
+	if( dice == 1) then 
+		ThisNPC:SayNow("$$COLT_0116020_8")
+	end
+end
+
+-- 전투 승리시 대사
+function NPC_116020:OnVictory()
+	local dice = math.random(0,1)		
+	if( dice == 0) then 
+		this:SayNow("$$COLT_0116020_18")
+	end
+	if( dice == 1) then 
+		this:SayNow("$$COLT_0116020_19")
+	end
+end
+
+--	hp60%이하
+function NPC_116020:NarrationNow1( ThisNPC, Enemy )
+	local dice = math.random(0,1)
+	if( dice == 0) then 
+		ThisNPC:NarrationNow("$$COLT_0116020_13")
+	end
+	if( dice == 1) then 
+		ThisNPC:NarrationNow("$$COLT_0116020_14")
+	end
+end
+
+--	칼불 hp 20%이하
+function NPC_116020:SwordFire( ThisNPC, Enemy )
+	ThisNPC:GainBuff( NPC_116020.BUFF_SwordFire )
+	ThisNPC:NarrationNow("$$COLT_0116020_15")
+end
+
+function NPC_116020:OnSpawn(Spawn)
+	this:GainBuff( NPC_116020.BUFF_SwordLight )
+end
+
+-- 먹기 중 pain 처리
+function NPC_116020:OnHitSwallowed(HitInfo)
+	-- GLog("NPC_116020:OnHitSwallowed()\n")
+	local totalDamage = this:GetUserData( NPC_116020.UD_Spewup ) + HitInfo.Damage
+
+	-- GLog( "NPC_116020:OnHitSwallowed() totalDamage "..totalDamage.."\n" )
+	if ( totalDamage > NPC_116020.LIMIT_Spewup ) then
+		this:SetUserData( NPC_116020.UD_Spewup, 0 )
+		this:Spewup() -- 뱉기
+	else
+		this:SetUserData( NPC_116020.UD_Spewup, totalDamage )
+	end
+end
+
+-- 먹기 후 힘이 쌔짐
+function NPC_116020:OnFinishChew( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:GainBuff( NPC_116020.BUFF_Strength )
+	local Target = ThisNPC:Aggro( "far", 0 )
+	ThisNPC:SetUserData( NPC_116020.UD_Spewup, 0 )
+	-- ThisNPC:SayNow( "test" )
+end
+
+function NPC_116020:OnFinishAndAggroFar( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "far", 0 )
+end
+
+function NPC_116020:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "random", 0 )
+end
+
+-- 은신베기 시작
+function NPC_116020:OnStartHideAttack( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "far", 0 )
+	ThisNPC:FaceTo( Target )
+	ThisNPC:UseTalent( NPC_116020.TALENT_HIDE_ATTACK, Target )
+	local dice = math.random(0,5)		
+	if( dice == 0) then 
+		ThisNPC:SayNow("$$COLT_0116020_9")
+	end
+	if( dice == 1) then 
+		ThisNPC:SayNow("$$COLT_0116020_10")
+	end
+end
+
+function NPC_116020:AccDamage( ThisNPC, HitInfo )
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	local mode = ThisNPC:GetMode()
+	
+	local painAcc = ThisNPC:GetUserData( NPC_116020.UD_PAIN1 ) + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_116020.UD_PAIN1, painAcc )
+	
+	local damageAcc = ThisNPC:GetUserData( NPC_116020.UD_PAIN2 ) + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_116020.UD_PAIN2, damageAcc )
+
+
+	
+	-- pain 예외 처리.
+	if currentTalent == NPC_116020.TALENT_FireField_Safe or
+		ThisNPC:IsCooldown( NPC_116020.TALENT_PAIN1 ) or
+		ThisNPC:IsCooldown( NPC_116020.TALENT_PAIN2 ) then
+			return HitInfo
+	end
+	
+	
+	if damageAcc > NPC_116020.LIMIT_PAIN2 then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( NPC_116020.UD_PAIN1, 0 )
+		ThisNPC:SetUserData( NPC_116020.UD_PAIN2, 0 )
+	 	ThisNPC:UseTalentSelf( NPC_116020.TALENT_PAIN2 )
+		ThisNPC:BreakPart( NPC_116020.BPARTS_LeftDragon, HitInfo.Attacker )
+		ThisNPC:BreakPart( NPC_116020.BPARTS_RightDragon, HitInfo.Attacker )
+	 	return HitInfo
+	elseif painAcc > NPC_116020.LIMIT_PAIN1 then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( NPC_116020.UD_PAIN1, 0 )
+	 	ThisNPC:UseTalentSelf( NPC_116020.TALENT_PAIN1 )
+	 	return HitInfo
+	end
+
+	return HitInfo
+end
+
+function NPC_116020:OnHitCapsule_1_0(HitInfo)
+	return NPC_116020:AccDamage( this, HitInfo )
+end
+
+function NPC_116020:OnBPartRecover()
+	for i=1, NPC_116020.UD_DATASIZE do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+	]]></SCRIPT>
+</maiet>
+
+
+

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="길잃은 유령기사">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="211305201" rate="30" />
+				<ACTION type="talent" param1="211305202" rate="20" />
+				<ACTION type="talent" param1="211305204" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="211305201" rate="10" />
+				<ACTION type="talent" param1="211305202" rate="20" />
+				<ACTION type="talent" param1="211305204" rate="30" />
+
+			</CHECK>
+
+			<CHECK type="distance" param1="100" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="211305201" rate="10" />
+					<ACTION type="talent" param1="211305202" rate="10" />
+					<ACTION type="talent" param1="211305203" rate="80"/>
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211305200" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

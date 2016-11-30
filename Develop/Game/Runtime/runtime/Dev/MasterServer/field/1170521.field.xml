@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="117" minimap_name="map00117" loading_image_name="00117" min_x="-33650" min_y="-31970" max_x="31350" max_y="33030" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="4" max_gather_herb="4" max_gather_relic="12" max_gather_lumber="9">
+        <BGM fieldbgm="amb_dungeon_underpass">
+            <ENVBGM dungeonbgm="amb_dungeon_3" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="283" group="0" name="안보이는벽" x="-256.405762" y="9094.601563" z="550.486389" dir_x="0.292372" dir_y="0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="117002" group="0" name="[EPIC]펑거스" x="286.548950" y="13760.512695" z="553.381165" dir_x="-0.017453" dir_y="-0.999848" dir_z="0.000000" radius="500.000000" random_dir="false" enabled="false" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="false" roam_radius="1000" roam_depth="100" combat_radius="5000" color="255,0,0">
+            <NPC id="117002" default="true" rate="1000" />
+        </SPAWN>
+        <MARKER id="1" name="시작위치" x="209.764526" y="10607.050781" z="487.433075" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="117002" name="MON_M 117002 폴루토" x="76.434082" y="13590.085938" z="552.515015" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="부활위치" local="false" x="206.254272" y="10760.505859" z="498.610321" radius="300.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="to 지하수로" x="9.781677" y="9128.286133" z="541.952881" radius="800.000000" enabled="false" checkpoint="1">
+            <EFFECT effect="ZoneLine" x="223.646729" y="790.970703" z="0.000000" dir_x="0.275637" dir_y="0.961262" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="지하수로로 이동" condition="0" gate_type="auto" field="117" marker="117052" />
+        </SENSOR>
+        <SENSOR id="140709" name="펑거스 스폰하게 하는 센서" local="false" x="379.622192" y="12502.385742" z="558.554688" radius="4000.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

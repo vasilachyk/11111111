@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="전위부대 저격수">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="189404202" rate="35" />
+				<ACTION type="talent" param1="189404203" rate="15" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="20">
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="189404205" rate="20" />
+					<ACTION type="flee" param1="from_enemy" param2="3" />  <!-- 거리 벌리기 -->
+				</ACTION>
+			</CHECK>
+			
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param1="0" param2="300">
+				<ACTION type="talent" param1="189404201" rate="20" />  <!-- 일반공격(근접) -->
+				<ACTION type="talent" param1="189404202" rate="10" />
+				<ACTION type="talent" param1="189404203" rate="20" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+</maiet>

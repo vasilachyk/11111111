@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="508" minimap_name="map00508" loading_image_name="00508" min_x="-20270" min_y="-29730" max_x="29730" max_y="20270" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_6">
+            <ENVBGM dungeonbgm="amb_dungeon_3" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="108001" name="채집_상자" x="6630.952148" y="-15312.455078" z="402.873596" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103453" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108002" name="채집_상자" x="5259.585449" y="-22656.140625" z="2307.066162" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103453" default="true" rate="50" />
+        </SPAWN>
+        <SPAWN id="108003" name="채집_상자" x="-0.762848" y="13100.366211" z="385.637207" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103453" default="true" rate="25" />
+        </SPAWN>
+        <SPAWN id="108007" name="채집_광맥" x="14792.317383" y="-3032.775391" z="-387.080017" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103451" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108008" name="채집_광맥" x="14333.582031" y="1233.171387" z="-453.537292" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103451" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108009" name="채집_광맥" x="13347.643555" y="6087.410156" z="-541.332275" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103451" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108010" name="채집_약초" x="-2906.803955" y="-938.158875" z="-1359.725342" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103452" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108011" name="채집_약초" x="2804.147461" y="-6792.424316" z="-1367.982544" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103452" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108012" name="채집_약초" x="-1598.113525" y="-4773.905273" z="-1363.609863" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103452" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108013" name="채집_약초" x="5976.650879" y="-18555.048828" z="17.524017" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103452" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108014" name="채집_약초" x="8736.917969" y="-18542.640625" z="33.279667" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103452" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108015" name="채집_약초" x="9038.264648" y="-18906.314453" z="18.519522" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103452" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108016" name="채집_약초" x="3674.459961" y="-16427.261719" z="0.000313" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103452" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108020" name="채집 상자" x="-2225.950928" y="-5071.035645" z="-1378.344238" dir_x="-0.819152" dir_y="0.573577" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103453" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="108021" name="채집광맥" x="12418.073242" y="5911.568359" z="-502.922913" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103451" default="true" rate="80" />
+        </SPAWN>
+        <SPAWN id="108022" name="채집광맥" x="10400.710938" y="4192.186523" z="-423.473450" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" color="auto" gather="true">
+            <NPC id="103451" default="true" rate="50" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="11593.567383" y="-25483.421875" z="2303.000244" dir_x="-1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="marker:홀" x="4352.213379" y="-18188.554688" z="7.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="marker:식물원" x="2086.353516" y="-2454.493652" z="-1379.002930" dir_x="-0.906308" dir_y="0.422618" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="marker:보스방" x="-7.939472" y="2254.781738" z="426.743561" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="marker:프로로기" x="11532.998047" y="1191.310425" z="-469.090820" dir_x="0.156434" dir_y="0.987688" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="부유물_로밍1" x="1864.606323" y="-5013.705078" z="-1379.006470" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="7" name="부유물_로밍1" x="2244.192139" y="-3505.582520" z="-1379.006348" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="8" name="부유물_로밍2" x="-660.365051" y="-5068.494629" z="-1379.005859" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="2" />
+        <MARKER id="9" name="부유물_로밍2" x="-2237.112793" y="-4493.163086" z="-1378.230957" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="2" />
+        <MARKER id="10" name="부활지점 2" x="5959.171875" y="-6321.356445" z="-1197.002441" dir_x="0.956305" dir_y="-0.292372" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="부유물_로밍2" x="-3336.758057" y="-3831.665527" z="-1379.005615" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="2" />
+        <MARKER id="12" name="부유물_로밍3" x="2456.170898" y="-7296.578125" z="-1379.004639" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="3" />
+        <MARKER id="13" name="부유물_로밍3" x="1139.376465" y="-6002.199219" z="-1379.004517" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="3" />
+        <MARKER id="14" name="부유물_로밍1" x="3261.067871" y="-2754.127930" z="-1379.005859" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="9980131" name="QM 998013 obj 1" x="5153.408203" y="-18149.357422" z="2.999475" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9980132" name="QM 998013 obj 2" x="-2483.528320" y="-694.617310" z="-1376.304565" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9980133" name="QM 998013 obj 3" x="1960.185913" y="2492.131592" z="427.542908" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9980141" name="QM 998014 obj 1" x="6.558838" y="-6131.566406" z="402.995361" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9980142" name="QM 998014 obj 2" x="-7.461046" y="4450.104492" z="434.588989" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트 1" local="false" x="11577.313477" y="-25467.921875" z="2302.000244" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="출구 1" x="12643.947266" y="-25474.966797" z="2316.847900" radius="400.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-202.925781" y="0.000000" z="80.556152" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="0.100000" scale_z="1.000000" />
+            <WARP warp_type="field" title="나가기" condition="0" gate_type="auto" field="103" marker="5" />
+        </SENSOR>
+        <SENSOR id="3" name="출구 2" x="-3.875970" y="14714.864258" z="681.178223" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="0.000000" y="23.461914" z="37.198669" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="0.100000" scale_z="1.000000" />
+            <WARP warp_type="field" title="나가기" condition="0" gate_type="auto" field="103" marker="5" />
+        </SENSOR>
+        <SENSOR id="4" name="renas" local="true" x="7360.521484" y="-18729.673828" z="2600.084717" radius="5340.000000" enabled="true" groupname="renas" />
+        <SENSOR id="5" name="veinus" local="true" x="-110.687180" y="5307.579102" z="431.725586" radius="5832.724121" enabled="true" groupname="veinus" />
+        <SENSOR id="6" name="veinus" local="true" x="4675.031738" y="2022.956055" z="423.672729" radius="1279.683472" enabled="true" groupname="veinus" />
+        <SENSOR id="7" name="renas" local="true" x="2583.421387" y="-18201.816406" z="1753.729492" radius="5400.000000" enabled="true" groupname="renas" />
+        <SENSOR id="8" name="veinus" local="true" x="5618.657715" y="4216.400879" z="609.746582" radius="1279.683472" enabled="true" groupname="veinus" />
+        <SENSOR id="10" name="체크포인트 2" local="false" x="5730.653320" y="-6245.901367" z="-1197.002441" radius="400.000000" enabled="false" checkpoint="10" groupname="none" />
+        <SENSOR id="101" name="room" local="false" x="4440.775391" y="-13922.538086" z="401.998444" radius="500.000000" enabled="true" groupname="none" />
+        <SENSOR id="201" name="room" local="false" x="4773.681641" y="-6238.482422" z="-1257.902100" radius="500.000000" enabled="true" groupname="none" />
+        <SENSOR id="301" name="room" local="false" x="7448.967285" y="4998.204102" z="109.527847" radius="500.000000" enabled="true" groupname="none" />
+        <SENSOR id="1000" name="나레이션_석상죽여라" local="false" x="-9.305489" y="-9146.509766" z="401.996765" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="103200" name="어뷰징 방지 센서" local="false" x="2705.233643" y="-12281.483398" z="402.998169" radius="2200.000000" enabled="true" groupname="none" />
+        <SENSOR id="103201" name="어뷰징 방지 센서" local="false" x="4377.727051" y="6975.703125" z="445.816498" radius="2200.000000" enabled="true" groupname="none" />
+        <SENSOR id="9980131" name="QOS 998013 obj 1" local="false" x="4966.773926" y="-18170.349609" z="15.491423" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="9980132" name="QOS 998013 obj 2" local="false" x="-2241.040527" y="-899.148865" z="-1380.007080" radius="1000.000000" enabled="true" groupname="none" />
+        <SENSOR id="9980133" name="QOS 998013 obj 3" local="false" x="1721.234131" y="2738.739014" z="427.542877" radius="1000.000000" enabled="true" groupname="none" />
+        <AREA id="1" name="레나스석상 예배소" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="1395.605469" y="-17858.722656" z="-288.592041" radius="4000.000000" height="4000.000000" />
+            <CYLINDER x="6533.575684" y="-18118.017578" z="0.000241" radius="4000.000000" height="4000.000000" />
+        </AREA>
+        <AREA id="2" name="음침한 동굴" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="12031.275391" y="-5242.308105" z="-464.383667" radius="5000.000000" height="1000.000000" />
+            <CYLINDER x="11261.327148" y="3324.669678" z="-833.302612" radius="5020.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="신전 입구" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="4642.853516" y="-25578.480469" z="2308.810547" radius="1000.000000" height="1000.000000" />
+            <CYLINDER x="6133.395508" y="-25547.884766" z="2299.999756" radius="1000.000000" height="1000.000000" />
+            <CYLINDER x="8044.648926" y="-25467.988281" z="2299.999756" radius="1000.000000" height="1000.000000" />
+            <CYLINDER x="9937.544922" y="-25494.542969" z="2299.999756" radius="1000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="성스러운 연못" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-2497.737549" y="-2953.118652" z="-1382.718750" radius="4000.000000" height="1000.000000" />
+            <CYLINDER x="2430.447266" y="-6632.330078" z="-1382.718750" radius="4000.000000" height="1000.000000" />
+            <CYLINDER x="-3073.207275" y="-6031.478516" z="-1374.899292" radius="4000.000000" height="1000.000000" />
+            <CYLINDER x="2512.487549" y="-2810.779053" z="-1382.718750" radius="3980.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="7" name="집회장" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-27.193237" y="4495.970215" z="185.116699" radius="3800.000000" height="1000.000000" />
+        </AREA>
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 츄즌의 시종	
+211715001	idle
+211715002	몸돌려뒤보기
+211715003	무릎꿇기
+211715004	1타 주먹치기
+211715005	상체 회전
+211715006	팔떼서치기
+211715007	양팔치기
+211715008	번개발사
+-->
+<maiet>
+	<COLT name="츄즌의 시종" npcid="117150">
+		<COMBAT>
+			<DEFAULT>				
+				<ACTION type="talent" param1="211715004" rate="50" desc="1타 주먹치기" />
+				<ACTION type="talent" param1="211715006" rate="20" desc="팔떼서치기" />
+				<ACTION type="talent" param1="211715005" rate="20" desc="상체 회전" />
+				<ACTION type="talent" param1="211715008" rate="10" desc="번개발사" />
+			</DEFAULT>		
+			
+			<CHECK type="rage" param1="70">
+				<ACTION type="talent" param1="211715008" rate="40" desc="번개발사" />
+			</CHECK>
+		</COMBAT>
+
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211715002" rate="30" desc="몸돌려뒤보기" />
+				<ACTION type="talent" param1="211715001" rate="10" desc="idle" />
+				<ACTION type="talent" param1="211715003" rate="30" desc="무릎꿇기" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>	
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

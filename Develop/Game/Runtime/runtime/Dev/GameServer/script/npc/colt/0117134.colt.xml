@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 베스피오단 마법사(남)	
+# 인간형 지팡이 기본(화염)	
+#일반	
+211713401	#모드0전환(칼뽑기)
+211713402	#모드1전환(칼넣기)
+211713403	#회피L
+211713404	#회피R
+211713405	#회피B
+#전투	
+211713411	화염화살
+211713412	화염구
+211713413	화염기둥
+211713414	연쇄폭파
+211713415	화염충격
+-->
+<maiet>
+	<COLT name="베스피오단 마법사(남)" npcid="117134">
+		<COMBAT victory="211713402">
+			<DEFAULT>
+				<ACTION type="talent" param1="211713411" rate="50" desc="화염화살" />
+				<ACTION type="talent" param1="211713412" rate="10" desc="화염구" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="300">
+				<ACTION type="talent" param1="211713414" rate="30" desc="연쇄폭파" cycle="5" />
+				<ACTION type="talent" param1="211713413" rate="30" desc="화염기둥" />
+				<ACTION type="talent" param1="211713411" rate="10" desc="화염화살" />
+				<ACTION type="talent" param1="211713412" rate="10" desc="화염구" />
+				<ACTION type="group" rate="10" cycle="15">
+					<ACTION type="talent" param1="211713405" desc="회피B" />
+					<ACTION type="talent" param1="211713411" desc="화염화살" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211713401" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

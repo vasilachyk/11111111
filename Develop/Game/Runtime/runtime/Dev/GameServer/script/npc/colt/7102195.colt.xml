@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 중간 거점	
+710219501	#화염의 화살
+710219502	#냉기의 화살
+-->
+<maiet>
+	<COLT name="트롤 중간거점" npcid="7102195">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+			<CHECK type="hp" param1="90" param2="99" >
+				<ACTION type="lua" param1="NPC_7102195" param2="Say" auto_run="true" max_count="1" />
+			</CHECK>
+			<CHECK type="distance" param2="2000" >
+				<CHECK type="distance" param1="1500" >
+					<ACTION type="aggro" param1="short" param2="0" cycle="5" />
+				</CHECK>
+				
+				<ACTION type="talent" param1="710219501" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_7102195:Say(ThisNPC, Enemy)
+	ThisNPC:NarrationNow( "$$Field_102001_4" )
+end
+	]]></SCRIPT>
+</maiet>
+

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="이성을 잃은 시중" npcid="508106">
+		<COMBAT mode="0" comment="default">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250810610" comment="구슬 날리기" />
+			</DEFAULT>
+			<CHECK type="distance" param1="120" >
+				<ACTION type="talent" param1="250810611" comment="마법 발사" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810600" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+		]]></SCRIPT>
+</maiet>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="110" minimap_name="map00110" loading_image_name="00110" min_x="0" min_y="0" max_x="60000" max_y="60000" boundary_min_x="42400" boundary_min_y="43000" boundary_max_x="55000" boundary_max_y="55000" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="17" max_gather_herb="15" max_gather_relic="7" max_gather_lumber="11">
+        <BGM fieldbgm="bgm_field_4">
+            <ENVBGM dawnbgm="amb_forest_dawn" />
+            <ENVBGM daytimebgm="amb_forest_daytime" />
+            <ENVBGM sunsetbgm="amb_forest_sunset" />
+            <ENVBGM nightbgm="amb_forest_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="9000" group="0" name="[EPIC] 고블린 골렘" x="49190.707031" y="49057.375000" z="4185.520020" dir_x="-0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="5000" color="128,0,255">
+            <NPC id="110050" default="true" rate="100" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="46605.281250" y="49005.824219" z="4159.124512" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="고블린 골렘" x="49387.714844" y="49039.789063" z="4191.290039" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="46618.445313" y="49013.027344" z="4155.313477" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <AREA id="4" name="렌고트 성소" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="49146.781250" y="49083.582031" z="4187.080078" radius="2800.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="티라니스">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="10" cycle="6"/>
+				<ACTION type="talent" param1="211610201" rate="15" />
+				<ACTION type="talent" param1="211610202" rate="30" />
+				<ACTION type="talent" param1="211610203" rate="25" />				
+				<ACTION type="talent" param1="211610205" rate="20" />				
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40">
+				<ACTION type="talent" param1="211610207" rate="30" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="40" >
+					<ACTION type="talent" param1="211610206" />  <!-- 회피 L -->
+					<ACTION type="talent" param1="211610204" rate="30" />
+					<ACTION type="nothing" param1="0.5" rate="10" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+ 		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

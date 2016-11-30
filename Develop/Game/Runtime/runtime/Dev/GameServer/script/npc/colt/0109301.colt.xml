@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="미네르와똘만이들">
+		<COMBAT victory="210930109">
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210930101" rate="10" />
+				<ACTION type="talent" param1="210930106" rate="40" /> <!-- 화염구 -->
+				
+				<ACTION type="talent" param1="210930104" rate="20" />  <!--화염채찍 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" >
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="210930101" rate="10" />  <!--지팡이평타1-->
+				<ACTION type="talent" param1="210930102" rate="30" />  <!--지팡이평타2-->
+			
+				<ACTION type="talent" param1="210930106" rate="30" />  <!--화염구 -->
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="210930104" rate="20" />  <!--화염채찍 -->
+				</CHECK>
+			</CHECK>
+
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210930108" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

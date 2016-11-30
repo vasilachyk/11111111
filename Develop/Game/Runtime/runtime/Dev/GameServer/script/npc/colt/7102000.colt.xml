@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="디아고" npcid="7102000">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="talent" param1="210211054" duration="0"/>
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>
+		
+		<COMBAT mode="0" comment="default">
+			<DEFAULT>
+				<ACTION type="talent" param1="210211010" rate="1" comment="오른손 내려치기" />
+				<ACTION type="lua" param1="NPC_7102000" param2="LeftHandAttack"  rate="2" />
+				<ACTION type="talent" param1="210211012" rate="1" comment="연속 휘두르기" />
+				<ACTION type="talent" param1="210211028" rate="1" comment="제자리 점프 공격" />
+				
+				<ACTION type="talent" param1="210211050" rate="1" comment="으앙1" />
+				<ACTION type="talent" param1="210211053" rate="1" comment="으앙2" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="90" param2="99" >
+				<ACTION type="lua" param1="NPC_7102000" param2="Say" auto_run="true" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="210211040" duration="0" desc="광포화" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="210211013" comment="냉기포효" cycle="15"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000" param2="2400" >
+				<ACTION type="talent" param1="210211010" rate="1" comment="오른손 내려치기" />
+				<ACTION type="talent" param1="210211011" rate="1" comment="왼손 휘두르기" />
+				<ACTION type="talent" param1="210211012" rate="1" comment="연속 휘두르기" />
+				
+				<ACTION type="talent" param1="210211020" rate="2" comment="앞 점프 찍기" />
+				<ACTION type="lua" param1="NPC_7102000" param2="SlidingAttack" rate="6" cycle="8" />
+				
+				<ACTION type="talent" param1="210211030" rate="2" comment="돌던지기" />
+				<ACTION type="talent" param1="210211031" rate="2" comment="돌던지기" />
+				<ACTION type="talent" param1="210211032" rate="2" comment="돌던지기" />
+				
+				<ACTION type="talent" param1="210211050" rate="2" comment="으앙1" />
+				<ACTION type="talent" param1="210211053" rate="2" comment="으앙2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="2400" >
+				<ACTION type="distance" param1="1300" param2="1300" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" comment="enrage">
+			<DEFAULT>
+				<ACTION type="talent" param1="210211010" rate="1" comment="오른손 내려치기" />
+				<ACTION type="lua" param1="NPC_7102000" param2="LeftHandAttack"  rate="2" />
+				<ACTION type="talent" param1="210211043" rate="1" comment="연속 휘두르기" />
+				<ACTION type="talent" param1="210211028" rate="1" comment="제자리 점프 공격" />
+				
+				<ACTION type="talent" param1="210211050" rate="1" comment="으앙1" />
+				<ACTION type="talent" param1="210211053" rate="1" comment="으앙2" />
+				
+				<ACTION type="talent" param1="210211014" rate="1" comment="냉기포효" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="210211042" comment="냉기포효" cycle="20"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000" param2="2400" >
+				<ACTION type="talent" param1="210211010" rate="1" comment="오른손 내려치기" />
+				<ACTION type="talent" param1="210211011" rate="1" comment="왼손 휘두르기" />
+				<ACTION type="talent" param1="210211043" rate="1" comment="연속 휘두르기" />
+				
+				<ACTION type="talent" param1="210211020" rate="2" comment="앞 점프 찍기" />
+				<ACTION type="lua" param1="NPC_7102000" param2="SlidingAttack" rate="6" cycle="8"/>
+				
+				<ACTION type="talent" param1="210211030" rate="1" comment="돌던지기" />
+				<ACTION type="talent" param1="210211031" rate="1" comment="돌던지기" />
+				<ACTION type="talent" param1="210211032" rate="1" comment="돌던지기" />
+				
+				<ACTION type="talent" param1="210211050" rate="2" comment="으앙1" />
+				<ACTION type="talent" param1="210211053" rate="2" comment="으앙2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="2400" >
+				<ACTION type="distance" param1="1300" param2="1300" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_7102000:Init( NPCID )
+	--[[  USERDATA 
+	1 : Pain패턴을 보이기 위한 데미지 누적 
+	2 : 머리 파츠 데미지 누적
+	3 : 왼손톱 파츠 데미지 누적
+	4 : 오른손톱 파츠 데미지 누적
+	--]]
+	
+	NPC_ReserveUserData( NPCID, 5 )
+	
+	NPC_7102000.DataIdxForPain			= 1
+	NPC_7102000.DataIdxForHorn			= 2
+	NPC_7102000.DataIdxForLeftNail		= 3
+	NPC_7102000.DataIdxForRightNail		= 4
+	
+	NPC_7102000.PartIdxForHorn			= 1
+	NPC_7102000.PartIdxForRightNail		= 2
+	NPC_7102000.PartIdxForLeftNail		= 3
+	NPC_7102000.PartIdxForPain			= 5
+		
+	NPC_7102000.LimitForPain				= NPC_7102000.MaxHP * 0.15
+	NPC_7102000.LimitForBreakNail		= NPC_7102000.MaxHP * 0.1
+	NPC_7102000.LimitForBreakHorn		= NPC_7102000.MaxHP * 0.1
+	
+	NPC_7102000.TalIdPain1				= 210211003
+	NPC_7102000.TalIdPain2				= 210211004
+
+	NPC_7102000.TalIdRage				= 210211003	
+		
+	NPC_7102000.TalIdLeftClawAttack		= 210211011
+	NPC_7102000.TalIdLeftHandAttack		= 210211041
+	
+	NPC_7102000.TalIdSlidingClawAttack	= 210211021
+	NPC_7102000.TalIdSlidingHandAttack	= 210211022
+	
+	NPC_7102000.BuffIdRage				= 40171
+end
+
+function NPC_7102000:Say(ThisNPC, Enemy)
+	ThisNPC:NarrationNow( "$$Field_102001_8" )
+end	
+
+function NPC_7102000:LeftHandAttack( ThisNPC, Enemy )
+	if ThisNPC:CheckBPart(3) then 	-- 손톱이 없으면 손으로 때리고
+		ThisNPC:UseTalent( NPC_7102000.TalIdLeftHandAttack, Enemy )
+	else  							-- 손톱이 있으면 손톱으로 긁는다.
+		ThisNPC:UseTalent( NPC_7102000.TalIdLeftClawAttack, Enemy )
+	end
+end
+
+function NPC_7102000:SlidingAttack( ThisNPC, Enemy )
+	if ThisNPC:CheckBPart(2) then 	-- 손톱이 없으면 손으로 때리고
+		ThisNPC:UseTalent( NPC_7102000.TalIdSlidingHandAttack, Enemy )
+	else  							-- 손톱이 있으면 손톱으로 긁는다.
+		ThisNPC:UseTalent( NPC_7102000.TalIdSlidingClawAttack, Enemy )		
+	end
+end
+
+function NPC_7102000:OnFinishAndAggroShort( ThisActor, Enemy )
+	AsNPC(ThisActor):Aggro( "short", 0 )
+end
+
+function NPC_7102000:AccDamage( ThisNPC, PartsIdx, HitInfo )
+	-- Acc damage parts
+	if  PartsIdx <= 3 then
+		if NPC_7102000:AccDamageForBreakPart( ThisNPC, PartsIdx, HitInfo ) then
+			return HitInfo
+		end
+	end
+	
+	return NPC_7102000:AccDamageForPain( ThisNPC, HitInfo )
+end
+
+function NPC_7102000:AccDamageForPain( ThisNPC, HitInfo )
+	if ThisNPC:GetCurrentTalent() == NPC_7102000.TalIdRage then
+		return
+	end
+	
+	local DmgAcc = ThisNPC:GetUserData( NPC_7102000.DataIdxForPain ) + HitInfo.Damage
+	
+	if DmgAcc < NPC_7102000.LimitForPain then 
+		ThisNPC:SetUserData( NPC_7102000.DataIdxForPain, DmgAcc )
+		return 
+	end
+	
+	if ( not ChkMFForHitReaction( HitInfo ) ) or
+		( ThisNPC:IsCooldown( NPC_7102000.TalIdPain1 ) ) then
+		return 
+	end
+	
+	ThisNPC:ClearJob()
+	ThisNPC:UseTalentSelf( NPC_7102000.TalIdPain1 )	
+	ThisNPC:SetUserData( NPC_7102000.DataIdxForPain, 0 )
+	
+	return 
+end
+
+function NPC_7102000:AccDamageForBreakPart( ThisNPC, PartsIdx, HitInfo )
+	--GLog( "AccDamageForBreakPart : (" .. PartsIdx ..")\n" )
+	
+	if ThisNPC:GetCurrentTalent() == NPC_7102000.TalIdRage or 	-- 분노 탤런트중이거나
+		ThisNPC:CheckBPart( PartsIdx ) then						-- 파츠가 뽀개져 있거나
+		return false
+	end
+
+	-- 데미지 누적 체크
+	local DmgAcc = 0
+	if PartsIdx == NPC_7102000.PartIdxForHorn then -- 뿔
+		DmgAcc = ThisNPC:GetUserData( NPC_7102000.DataIdxForHorn ) + HitInfo.Damage
+		if DmgAcc < NPC_7102000.LimitForBreakHorn then
+			ThisNPC:SetUserData( NPC_7102000.DataIdxForHorn, DmgAcc )
+			return false
+		end
+	end
+	
+	if PartsIdx == NPC_7102000.PartIdxForRightNail then -- 오른손톱
+		DmgAcc = ThisNPC:GetUserData( NPC_7102000.DataIdxForRightNail ) + HitInfo.Damage
+		if DmgAcc < NPC_7102000.LimitForBreakNail then
+			ThisNPC:SetUserData( NPC_7102000.DataIdxForRightNail, DmgAcc )
+			return false
+		end
+	end
+		
+	if PartsIdx == NPC_7102000.PartIdxForLeftNail then -- 왼손톱
+		DmgAcc = ThisNPC:GetUserData( NPC_7102000.DataIdxForLeftNail ) + HitInfo.Damage
+		if DmgAcc < NPC_7102000.LimitForBreakNail then
+			ThisNPC:SetUserData( NPC_7102000.DataIdxForLeftNail, DmgAcc )
+			return false
+		end
+	end
+
+	--GLog( "Prepare BreakPart\n" )
+	-- 파괴로직
+	-- 모션이 쿨타임중만 아니라면 파츠를 파괴한다.
+	if 	PartsIdx == NPC_7102000.PartIdxForHorn then
+		if ThisNPC:IsCooldown( NPC_7102000.TalIdPain1 ) then
+			return false
+		end
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_7102000.TalIdPain1 )
+		ThisNPC:BreakPart( PartsIdx, HitInfo.Attacker )
+		ThisNPC:SetUserData( NPC_7102000.DataIdxForHorn, 0 )
+		
+		-- 그로기 상태가 너무자주 노출되지 않도록 글로벌 Pain의 누적수치를 리셋한다.
+		ThisNPC:SetUserData( NPC_7102000.DataIdxForPain, 0 )
+		
+		return true
+	elseif PartsIdx == NPC_7102000.PartIdxForRightNail then
+		if ThisNPC:IsCooldown( NPC_7102000.TalIdPain2 ) then
+			return false
+		end
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_7102000.TalIdPain2 )
+		ThisNPC:BreakPart( PartsIdx, HitInfo.Attacker )
+		ThisNPC:SetUserData( NPC_7102000.DataIdxForRightNail, 0 )
+		
+		-- 그로기 상태가 너무자주 노출되지 않도록 글로벌 Pain의 누적수치를 리셋한다.
+		ThisNPC:SetUserData( NPC_7102000.DataIdxForPain, 0 )
+
+		return true
+		
+	elseif PartsIdx == NPC_7102000.PartIdxForLeftNail then
+		if ThisNPC:IsCooldown( NPC_7102000.TalIdPain2 ) then
+			return false
+		end
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_7102000.TalIdPain2 )
+		ThisNPC:BreakPart( PartsIdx, HitInfo.Attacker )
+		ThisNPC:SetUserData( NPC_7102000.DataIdxForLeftNail, 0 )
+		
+		-- 그로기 상태가 너무자주 노출되지 않도록 글로벌 Pain의 누적수치를 리셋한다.
+		ThisNPC:SetUserData( NPC_7102000.DataIdxForPain, 0 )
+		
+		return true
+	end
+	
+	return false
+end
+
+function NPC_7102000:OnBPartRecover()
+	for i=1, 5 do
+		this:SetUserData( i, 0 )
+	end
+end
+
+function NPC_7102000:OnHitCapsule_1_0(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForRightNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_1_1(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForLeftNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_1_2(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_1_3(HitInfo)
+	NPC_7102000:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_2_0(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_2_1(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_2_2(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_2_3(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForRightNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_2_4(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForLeftNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_2_5(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForHorn, HitInfo )
+end
+
+
+function NPC_7102000:OnHitCapsule_3_0(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_3_1(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForRightNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_3_2(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForLeftNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_3_3(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForHorn, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_4_0(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_4_1(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_4_2(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_4_3(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_4_4(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForRightNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_4_5(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForLeftNail, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_4_6(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForHorn, HitInfo )
+end
+
+function NPC_7102000:OnHitCapsule_5_0(HitInfo)
+	NPC_7102000:AccDamage( this, NPC_7102000.PartIdxForPain, HitInfo )
+end
+
+	]]></SCRIPT>
+</maiet>

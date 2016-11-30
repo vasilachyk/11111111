@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 디펜더 -->
+<maiet>
+	<COLT name="가디엘 문지기" npcid="501100">
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="GaddielAggroChat2" />
+			</DEFAULT>
+		</AGGRO>
+		<COMBAT mode="0" victory="250110007" >
+			<DEFAULT>
+				<ACTION type="talent" param1="250110014" rate="40" /> <!-- 보루 : 긴 쿨타임-->
+				
+				<ACTION type="talent" param1="250110001" rate="20" />
+				<ACTION type="talent" param1="250110003" rate="15" />
+				<ACTION type="talent" param1="250110002" rate="30" />
+				
+				<ACTION type="talent" param1="250110013" rate="5" /> <!-- 충격 반사 -->
+				<ACTION type="talent" param1="250110015" rate="10" /> <!-- 파멸의 일격 -->
+				<ACTION type="talent" param1="250110016" rate="5" /> <!-- 방패 가격 -->
+				<ACTION type="talent" param1="250110017" rate="5" /> <!-- 돌진 -->
+			</DEFAULT>
+
+			<CHECK type="rage" param1="200">
+				<ACTION type="guard" param1="250110018" param2="2" rate="50" />
+			</CHECK>
+
+			<CHECK type="gained_buff" param1="80120"> <!-- 역습 -->
+				<ACTION type="talent" param1="250110001" rate="20" />
+				<ACTION type="talent" param1="250110003" rate="15" />
+				<ACTION type="talent" param1="250110002" rate="30" />
+				
+				<ACTION type="talent" param1="250110012" rate="35"/>
+			</CHECK>
+				
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+
+				<ACTION type="talent" param1="250110013" rate="20" /> <!-- 충격 반사 -->
+				<ACTION type="talent" param1="250110014" rate="10" /> <!-- 보루 -->
+				<ACTION type="talent" param1="250110005" rate="20" /> <!-- 파멸의 일격 -->
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110006" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

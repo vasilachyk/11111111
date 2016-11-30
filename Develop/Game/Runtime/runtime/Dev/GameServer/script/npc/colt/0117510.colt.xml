@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 변성된 마리니 경비병
+211751001	#찌르고어퍼컷
+211751002	#베기
+211751003	#발목절단
+-->
+<maiet>
+	<COLT name="변성된 마리니 경비병" npcid="117510">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211751001" rate="20" />
+				<ACTION type="talent" param1="211751002" rate="20" />
+				<ACTION type="talent" param1="211751003" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400">
+				<ACTION type="distance" param1="300" param2="300" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

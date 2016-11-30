@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="508" minimap_name="map00508" loading_image_name="00508" min_x="-20270" min_y="-29730" max_x="29730" max_y="20270" boundary_min_x="-7319" boundary_min_y="-2421" boundary_max_x="5300" boundary_max_y="14700" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_17">
+            <ENVBGM dungeonbgm="amb_dungeon_3" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="-67.184212" y="12189.427734" z="402.993652" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="도착지점" x="-35.723969" y="4390.316895" z="431.725586" dir_x="-0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_시작지점" local="false" x="-49.202194" y="12222.190430" z="427.483398" radius="599.075012" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

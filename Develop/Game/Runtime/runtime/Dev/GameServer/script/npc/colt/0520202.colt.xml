@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 밀리 -->
+
+<maiet>
+	<COLT name="괴려운 병사들의 망령">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="252020201" rate="30" />
+				<ACTION type="talent" param1="252020202" rate="20" />
+				<ACTION type="talent" param1="252020204" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="252020201" rate="10" />
+				<ACTION type="talent" param1="252020202" rate="20" />
+				<ACTION type="talent" param1="252020204" rate="30" />
+			</CHECK>
+
+			<CHECK type="distance" param1="100" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="252020201" rate="10" />
+					<ACTION type="talent" param1="252020202" rate="10" />
+					<ACTION type="talent" param1="252020203" rate="80"/>
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 마리옹 암살자(117101)	
+211710101	일반공격1
+211710102	일반공격2 - [디버프]
+211710103	일반공격2
+211710104	idle2
+211710105	idle3
+-->
+<maiet>
+	<COLT name="마리옹 암살자" npcid="117101">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710101" desc="일반공격1" rate="50"/>
+				<ACTION type="talent" param1="211710103" desc="일반공격2" rate="50" />				
+			</DEFAULT>
+			
+			<CHECK type="unbreakpart" param1="2">
+				<ACTION type="talent" param1="211710101" desc="일반공격1" rate="30"/>
+				<ACTION type="talent" param1="211710102" desc="일반공격2 - [디버프]" rate="50" />				
+			</CHECK>
+
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710104" rate="10" desc="idle2" cycle="8" />
+				<ACTION type="talent" param1="211710105" rate="10" desc="idle3" cycle="8"  />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

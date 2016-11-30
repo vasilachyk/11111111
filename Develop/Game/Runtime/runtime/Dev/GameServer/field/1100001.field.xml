@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="20000" boundary_min_y="33000" boundary_max_x="46000" boundary_max_y="72000" weather_effect="true" town="false" returnable="false" tutorial="false">
+        <BGM>
+            <ENVBGM dawnbgm="amb_dawn" />
+            <ENVBGM daytimebgm="amb_daytime" />
+            <ENVBGM sunsetbgm="amb_sunset" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="CLD">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="[NPC] 탈출 NPC" x="32358.447266" y="43684.953125" z="1216.724365" dir_x="-0.207911" dir_y="0.978148" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110304" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="[NPC] 세네스" x="31993.601563" y="44663.003906" z="1112.775391" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110301" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="[NPC] 렌델 전투병" x="32022.513672" y="45067.007813" z="1097.073242" dir_x="0.052335" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="[NPC] 렌델 전투병" x="32000.648438" y="44190.617188" z="1148.215698" dir_x="0.000001" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="[NPC] 렌델 전투병" x="31839.826172" y="44321.222656" z="1127.463379" dir_x="0.422619" dir_y="0.906308" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="[NPC] 렌델 전투병" x="31613.162109" y="44522.367188" z="1099.523193" dir_x="0.951057" dir_y="0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="[NPC] 렌델 전투병" x="32196.748047" y="44924.343750" z="1115.104736" dir_x="-0.615662" dir_y="-0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="[NPC] 렌델 전투병" x="32426.910156" y="44956.039063" z="1131.865356" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="[NPC] 렌델 전투병" x="32387.271484" y="44761.730469" z="1137.970581" dir_x="-0.970296" dir_y="-0.241922" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="[NPC] 렌델 전투병" x="31671.580078" y="44811.398438" z="1085.246460" dir_x="0.898794" dir_y="-0.438371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="[NPC] 렌델 전투병" x="32387.664063" y="44480.148438" z="1152.271729" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="31" group="0" name="렌델 전투병(로밍)" x="25408.759766" y="54606.398438" z="2055.054199" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="32" group="0" name="렌델 전투병(로밍)" x="25533.585938" y="57851.468750" z="2162.560547" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="33" group="0" name="렌델 전투병(로밍)" x="28592.050781" y="61782.726563" z="2145.915039" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="34" group="0" name="렌델 전투병(로밍)" x="29936.484375" y="60165.488281" z="2139.718750" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="35" group="0" name="렌델 전투병(로밍)" x="24436.503906" y="54239.183594" z="2041.278687" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="60" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110302" default="false" rate="500" />
+            <NPC id="110303" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="850" group="0" name="렌고트 전위부대" x="30729.791016" y="60250.417969" z="2152.460938" dir_x="-0.939693" dir_y="-0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="851" group="0" name="렌고트 전위부대" x="29567.703125" y="59428.050781" z="2119.384277" dir_x="0.819152" dir_y="0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="852" group="0" name="렌고트 전위부대" x="31295.173828" y="59011.679688" z="2156.196533" dir_x="-0.469471" dir_y="0.882948" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="853" group="0" name="렌고트 전위부대" x="24714.246094" y="57360.957031" z="2147.641602" dir_x="-0.961262" dir_y="0.275638" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="854" group="0" name="렌고트 전위부대" x="25232.457031" y="56791.429688" z="2187.341309" dir_x="0.087156" dir_y="0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="855" group="0" name="렌고트 전위부대" x="25543.357422" y="57311.253906" z="2171.639160" dir_x="-0.874620" dir_y="-0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="856" group="0" name="렌고트 전위부대" x="30258.541016" y="62187.140625" z="2171.079346" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="857" group="0" name="렌고트 전위부대" x="30837.931641" y="61938.828125" z="2176.989014" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="858" group="0" name="렌고트 전위부대" x="28978.994141" y="58775.914063" z="2138.500488" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="859" group="0" name="렌고트 전위부대" x="28458.050781" y="56045.675781" z="2210.911377" dir_x="-0.629320" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="860" group="0" name="렌고트 전위부대" x="30919.076172" y="63356.539063" z="2146.546875" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="861" group="0" name="렌고트 전위부대" x="31200.056641" y="62406.886719" z="2154.904785" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="862" group="0" name="렌고트 전위부대" x="25356.312500" y="55636.312500" z="2123.477783" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="863" group="0" name="렌고트 전위부대" x="27671.201172" y="55230.355469" z="2119.009766" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="864" group="0" name="렌고트 전위부대" x="26132.496094" y="54031.023438" z="1986.534180" dir_x="-0.422618" dir_y="0.906308" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="865" group="0" name="렌고트 전위부대" x="26694.701172" y="55332.457031" z="2069.521729" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="866" group="0" name="렌고트 전위부대" x="24916.035156" y="54579.921875" z="2062.590332" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="867" group="0" name="렌고트 전위부대" x="27764.314453" y="56008.457031" z="2162.343994" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="868" group="0" name="렌고트 전위부대" x="29803.642578" y="63003.660156" z="2182.233643" dir_x="0.669130" dir_y="-0.743145" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="870" group="0" name="렌고트 전위부대" x="29227.871094" y="62082.144531" z="2159.649170" dir_x="0.819152" dir_y="0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="871" group="0" name="렌고트 전위부대" x="30659.306641" y="62753.867188" z="2166.334473" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="872" group="0" name="렌고트 전위부대" x="25114.548828" y="57086.121094" z="2151.532227" dir_x="0.951056" dir_y="0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="874" group="0" name="렌고트 전위부대" x="24065.097656" y="56986.609375" z="2150.121582" dir_x="0.951056" dir_y="0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="875" group="0" name="렌고트 전위부대" x="24541.681641" y="56326.460938" z="2165.235840" dir_x="0.719340" dir_y="0.694659" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="878" group="0" name="렌고트 전위부대" x="29080.853516" y="55982.355469" z="2221.093018" dir_x="-0.406737" dir_y="-0.913546" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="879" group="0" name="렌고트 전위부대" x="28551.230469" y="55478.414063" z="2203.446289" dir_x="-0.951056" dir_y="0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="880" group="0" name="렌고트 전위부대" x="28132.332031" y="54363.097656" z="2097.421387" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="881" group="0" name="렌고트 전위부대" x="28901.988281" y="61699.968750" z="2140.660400" dir_x="-0.422619" dir_y="-0.906308" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="883" group="0" name="렌고트 전위부대" x="29959.027344" y="62796.875000" z="2179.705078" dir_x="-0.374607" dir_y="0.927184" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="885" group="0" name="렌고트 전위부대" x="30242.261719" y="59761.757813" z="2118.658691" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="886" group="0" name="렌고트 전위부대" x="30360.611328" y="60336.382813" z="2116.392334" dir_x="0.156434" dir_y="-0.987688" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="887" group="0" name="렌고트 전위부대" x="31285.832031" y="59831.406250" z="2136.727051" dir_x="-0.809017" dir_y="0.587785" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="888" group="0" name="렌고트 전위부대" x="24164.222656" y="57819.812500" z="2136.823730" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="890" group="0" name="렌고트 전위부대" x="25234.841797" y="58301.617188" z="2132.818604" dir_x="0.342020" dir_y="-0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="892" group="0" name="렌고트 전위부대" x="29052.574219" y="62851.281250" z="2189.890381" dir_x="0.990268" dir_y="-0.139173" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="893" group="0" name="렌고트 전위부대" x="29335.103516" y="63493.789063" z="2191.074951" dir_x="-0.121870" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="894" group="0" name="렌고트 전위부대" x="30407.156250" y="59164.941406" z="2139.413818" dir_x="0.241922" dir_y="0.970296" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="895" group="0" name="렌고트 전위부대" x="30356.912109" y="63192.542969" z="2174.389648" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="896" group="0" name="렌고트 전위부대" x="32187.263672" y="59984.367188" z="2144.537354" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="897" group="0" name="렌고트 전위부대" x="27998.111328" y="54828.699219" z="2123.895752" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="898" group="0" name="렌고트 전위부대" x="26737.730469" y="53996.882813" z="1989.919434" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="899" group="0" name="렌고트 전위부대" x="24874.587891" y="54935.851563" z="2087.001953" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="900" group="0" name="렌고트 전위부대" x="27593.111328" y="55611.023438" z="2131.902100" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="901" group="0" name="렌고트 전위부대" x="26470.585938" y="55005.191406" z="2074.453125" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="902" group="0" name="렌고트 전위부대" x="25021.966797" y="54089.503906" z="2008.831909" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="903" group="0" name="렌고트 전위부대" x="27996.863281" y="55573.640625" z="2164.538086" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="904" group="0" name="렌고트 전위부대" x="29276.851563" y="59866.542969" z="2160.529053" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="905" group="0" name="렌고트 전위부대" x="29431.425781" y="62374.500000" z="2172.764648" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="906" group="0" name="렌고트 전위부대" x="29953.800781" y="61653.625000" z="2146.681152" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="907" group="0" name="렌고트 전위부대" x="30802.087891" y="59583.500000" z="2133.565674" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="908" group="0" name="렌고트 전위부대" x="31413.712891" y="60209.921875" z="2139.847412" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="909" group="0" name="렌고트 전위부대" x="26051.757813" y="53493.515625" z="1914.955688" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="910" group="0" name="렌고트 전위부대" x="26635.509766" y="53369.363281" z="1901.300171" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="911" group="0" name="렌고트 전위부대" x="27101.927734" y="53520.691406" z="1939.470581" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="912" group="0" name="렌고트 전위부대" x="26431.244141" y="54630.140625" z="2048.539063" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="913" group="0" name="렌고트 전위부대" x="25733.648438" y="56260.734375" z="2152.083740" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="914" group="0" name="렌고트 전위부대" x="25377.904297" y="53694.105469" z="1949.938721" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="100" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="915" group="0" name="렌고트 전위부대" x="28677.158203" y="62144.890625" z="2161.875000" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="916" group="0" name="렌고트 전위부대" x="27823.230469" y="56548.421875" z="2179.203857" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="917" group="0" name="렌고트 전위부대" x="28656.806641" y="54894.027344" z="2175.741699" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="918" group="0" name="렌고트 전위부대" x="29618.208984" y="62064.531250" z="2161.724365" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110306" default="false" rate="334" />
+            <NPC id="110307" default="false" rate="333" />
+            <NPC id="110308" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="1000" group="0" name="오우거 용병" x="25920.144531" y="64755.550781" z="2268.599609" dir_x="0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="180" respawn_time="100000" enable_respawn_tick_boost="true" roam_radius="1500" roam_depth="30" combat_radius="0" color="128,0,255">
+            <NPC id="110305" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1500" group="0" name="전위부대 저격수" x="26129.470703" y="52058.351563" z="1667.813232" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110308" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1501" group="0" name="전위부대 저격수" x="27224.857422" y="52105.667969" z="1663.645508" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110308" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1504" group="0" name="고블린 시체" x="27121.259766" y="47840.878906" z="759.905701" dir_x="0.258818" dir_y="-0.965926" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1506" group="0" name="고블린 시체" x="28137.457031" y="48749.781250" z="853.121338" dir_x="0.965926" dir_y="0.258819" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1507" group="0" name="고블린 시체" x="27515.312500" y="48497.882813" z="834.474304" dir_x="-0.819152" dir_y="0.573577" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1508" group="0" name="고블린 시체" x="28724.744141" y="48628.949219" z="799.018921" dir_x="-0.104529" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1512" group="0" name="고블린 시체" x="29590.041016" y="50919.628906" z="1209.417114" dir_x="0.309017" dir_y="-0.951057" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1513" group="0" name="고블린 시체" x="30334.810547" y="51280.089844" z="1240.515747" dir_x="0.999391" dir_y="0.034900" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1514" group="0" name="고블린 시체" x="30616.361328" y="51424.453125" z="1237.671143" dir_x="0.891006" dir_y="-0.453991" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1515" group="0" name="고블린 시체" x="32369.937500" y="54334.980469" z="1268.233276" dir_x="0.882948" dir_y="-0.469472" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1516" group="0" name="고블린 시체" x="32990.609375" y="54273.292969" z="1265.907837" dir_x="0.898794" dir_y="-0.438371" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1517" group="0" name="고블린 시체" x="34074.109375" y="60803.031250" z="1967.050781" dir_x="0.997564" dir_y="-0.069757" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1518" group="0" name="고블린 시체" x="34975.839844" y="61450.449219" z="1747.122070" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1519" group="0" name="고블린 시체" x="33662.441406" y="61634.843750" z="1955.581177" dir_x="0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1521" group="0" name="고블린 시체" x="40061.351563" y="62164.437500" z="706.317566" dir_x="0.669130" dir_y="-0.743145" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1529" group="0" name="고블린 시체" x="40468.046875" y="63058.566406" z="703.182861" dir_x="0.998630" dir_y="0.052336" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1530" group="0" name="고블린 시체" x="39474.410156" y="63353.484375" z="810.592773" dir_x="-0.121869" dir_y="0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1531" group="0" name="고블린 시체" x="39995.601563" y="62894.449219" z="758.523438" dir_x="-0.573577" dir_y="-0.819152" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1532" group="0" name="고블린 시체" x="39365.230469" y="62570.300781" z="778.825562" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1533" group="0" name="고블린 시체" x="34059.589844" y="55168.625000" z="1191.475952" dir_x="0.961262" dir_y="-0.275638" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1535" group="0" name="고블린 시체" x="34431.515625" y="56729.296875" z="1206.131348" dir_x="0.961262" dir_y="-0.275638" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1536" group="0" name="고블린 시체" x="33913.285156" y="56619.093750" z="1201.413086" dir_x="0.777146" dir_y="-0.629321" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1538" group="0" name="고블린 시체" x="34719.281250" y="55891.691406" z="1178.696533" dir_x="-1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1540" group="0" name="고블린 시체" x="34020.910156" y="55514.031250" z="1196.624268" dir_x="0.743145" dir_y="0.669130" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1541" group="0" name="고블린 시체" x="33427.808594" y="55187.812500" z="1213.881348" dir_x="0.848048" dir_y="0.529919" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1548" group="0" name="고블린 시체" x="35631.328125" y="58521.945313" z="1317.871582" dir_x="0.866025" dir_y="-0.500000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1549" group="0" name="고블린 시체" x="36148.910156" y="59555.828125" z="1368.130005" dir_x="0.939692" dir_y="-0.342020" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1551" group="0" name="고블린 시체" x="33277.148438" y="52807.195313" z="1217.314575" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1552" group="0" name="고블린 시체" x="32903.289063" y="51327.792969" z="997.632202" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1554" group="0" name="고블린 시체" x="31993.281250" y="51410.800781" z="1132.037964" dir_x="0.484809" dir_y="-0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1555" group="0" name="고블린 시체" x="30354.541016" y="50560.242188" z="1172.948608" dir_x="0.484809" dir_y="-0.874620" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1557" group="0" name="고블린 시체" x="26519.900391" y="48879.792969" z="919.528809" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1558" group="0" name="고블린 시체" x="27455.126953" y="49661.730469" z="1062.337769" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1559" group="0" name="고블린 시체" x="32516.630859" y="52292.046875" z="1137.126343" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1563" group="0" name="고블린 시체" x="38457.406250" y="56076.003906" z="756.692200" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1564" group="0" name="고블린 시체" x="37524.468750" y="60185.378906" z="1125.937500" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1565" group="0" name="고블린 시체" x="37940.367188" y="56619.058594" z="817.781921" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1566" group="0" name="고블린 시체" x="37365.160156" y="58008.312500" z="1051.232056" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="30000" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <MARKER id="1" name="시작 위치" x="32961.914063" y="43626.648438" z="1256.453857" dir_x="-0.681998" dir_y="0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="이동마커 1" x="30529.808594" y="45933.292969" z="996.236328" dir_x="-0.587785" dir_y="0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="이동마커 2" x="28520.488281" y="48964.476563" z="879.377625" dir_x="-0.656059" dir_y="0.754710" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="이동마커 3" x="26536.279297" y="51558.550781" z="1556.901001" dir_x="-0.258819" dir_y="0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="이동마커 4" x="28235.478516" y="55762.550781" z="2191.747559" dir_x="-0.874620" dir_y="0.484809" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="이동마커 5" x="25647.289063" y="57321.824219" z="2164.905273" dir_x="0.838671" dir_y="0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="이동마커 6" x="30676.796875" y="60469.941406" z="2125.317627" dir_x="-0.173648" dir_y="0.984808" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="이동마커 7" x="29192.962891" y="62227.003906" z="2175.958984" dir_x="-0.838671" dir_y="0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="이동마커 8" x="27252.402344" y="63341.214844" z="2231.815430" dir_x="-0.615661" dir_y="0.788011" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="부하용 이동마커 a1" x="30387.279297" y="45536.230469" z="998.460022" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="부하용 이동마커 a2" x="27935.917969" y="47119.292969" z="720.667603" dir_x="-0.469472" dir_y="0.882948" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="부하용 이동마커 a3" x="26299.798828" y="50767.375000" z="1349.948120" dir_x="0.156434" dir_y="0.987688" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="부하용 이동마커 a4" x="28040.464844" y="56077.914063" z="2187.887451" dir_x="0.325568" dir_y="0.945519" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="부하용 이동마커 a5" x="29869.578125" y="60499.191406" z="2110.147949" dir_x="0.374607" dir_y="0.927184" dir_z="0.000000" random_dir="false" />
+        <MARKER id="16" name="부하용 이동마커 a6" x="30716.816406" y="63396.335938" z="2159.886963" dir_x="-0.121869" dir_y="0.992546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="21" name="부하용 이동마커 b1" x="30216.527344" y="46811.179688" z="976.627441" dir_x="-0.615661" dir_y="0.788011" dir_z="0.000000" random_dir="false" />
+        <MARKER id="22" name="부하용 이동마커 b2" x="26627.382813" y="51948.964844" z="1634.207153" dir_x="-0.173648" dir_y="0.984808" dir_z="0.000000" random_dir="false" />
+        <MARKER id="23" name="부하용 이동마커 b3" x="25209.294922" y="57859.160156" z="2134.579102" dir_x="0.920505" dir_y="0.390731" dir_z="0.000000" random_dir="false" />
+        <MARKER id="24" name="부하용 이동마커 b4" x="31478.710938" y="60447.062500" z="2145.661377" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="25" name="부하용 이동마커 b5" x="31250.490234" y="62535.375000" z="2146.175537" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="31" name="부하용 이동마커 c1" x="29816.351563" y="45590.949219" z="972.621399" dir_x="-0.207912" dir_y="0.978148" dir_z="0.000000" random_dir="false" />
+        <MARKER id="32" name="부하용 이동마커 c2" x="28919.224609" y="49635.535156" z="1000.290710" dir_x="-0.681998" dir_y="0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="33" name="부하용 이동마커 c3" x="26781.537109" y="51284.792969" z="1474.038574" dir_x="-0.309017" dir_y="0.951057" dir_z="0.000000" random_dir="false" />
+        <MARKER id="34" name="부하용 이동마커 c4" x="24539.105469" y="56814.257813" z="2163.237793" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="35" name="부하용 이동마커 c5" x="30031.558594" y="59027.941406" z="2135.019531" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="41" name="부하용 이동마커 d1" x="26086.333984" y="57092.019531" z="2145.098633" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="42" name="부하용 이동마커 d2" x="27584.039063" y="56486.417969" z="2166.474854" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="43" name="부하용 이동마커 d3" x="26959.156250" y="51730.386719" z="1575.626465" dir_x="-0.173648" dir_y="0.984808" dir_z="0.000000" random_dir="false" />
+        <MARKER id="44" name="부하용 이동마커 d4" x="27583.748047" y="58278.328125" z="2161.534668" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="45" name="부하용 이동마커 d5" x="25635.798828" y="56546.367188" z="2156.335449" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="46" name="부하용 이동마커 d6" x="27268.205078" y="62054.593750" z="2156.626709" dir_x="0.069756" dir_y="0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="47" name="부하용 이동마커 d7" x="29301.173828" y="60543.371094" z="2112.308594" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="48" name="부하용 이동마커 d8" x="28802.521484" y="62593.753906" z="2183.042480" dir_x="-0.087156" dir_y="0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="49" name="부하용 이동마커 d9" x="29791.919922" y="61934.777344" z="2157.788574" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50" name="부하용 이동마커 e1" x="28185.498047" y="62293.921875" z="2169.429688" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="51" name="부하용 이동마커 e2" x="27822.175781" y="61737.878906" z="2151.090088" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="52" name="부하용 이동마커 e3" x="28912.021484" y="61411.742188" z="2154.096191" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="53" name="부하용 이동마커 e4" x="28472.507813" y="63260.292969" z="2216.351807" dir_x="-0.961262" dir_y="-0.275638" dir_z="0.000000" random_dir="false" />
+        <MARKER id="54" name="부하용 이동마커 e5" x="27736.109375" y="62314.304688" z="2170.715576" dir_x="-0.358368" dir_y="0.933580" dir_z="0.000000" random_dir="false" />
+        <MARKER id="55" name="부하용 이동마커 e5" x="28250.509766" y="62719.320313" z="2193.584473" dir_x="-0.882948" dir_y="0.469472" dir_z="0.000000" random_dir="false" />
+        <MARKER id="56" name="오우거 도착 지점" x="27676.175781" y="62896.269531" z="2203.049805" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="110301" name="NPC_M 110301 상급기사 세네스" x="31817.453125" y="44863.160156" z="1089.532227" dir_x="-0.681998" dir_y="0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11020100" name="NPC_M 110201 상급기사 세네스" x="31953.167969" y="44652.128906" z="1110.097900" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11020101" name="NPC_M 110201 상급기사 세네스" x="27193.171875" y="63317.996094" z="2227.209717" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="32959.496094" y="43628.234375" z="1255.173218" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="진군 개시" local="false" x="31994.863281" y="44664.992188" z="1111.789917" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="3" name="퀘스트 완료 센서" local="false" x="27252.634766" y="63352.484375" z="2231.672119" radius="6000.000000" enabled="false" groupname="none" />
+        <SENSOR id="4" name="to 인젠" x="0.000000" y="0.000000" z="0.000000" radius="0.000000" enabled="false">
+            <WARP warp_type="field" title="마커로 이동" condition="0" gate_type="auto" field="3" marker="2" />
+        </SENSOR>
+        <SENSOR id="13" name="to 렌고트 부락" x="24153.164063" y="73408.453125" z="2937.347900" radius="3000.000000" enabled="true">
+            <WARP warp_type="field" title="마커로 이동" condition="0" gate_type="auto" field="110" marker="1" />
+        </SENSOR>
+        <SENSOR id="110000" name="QOS 110000 obj 1" local="false" x="32908.164063" y="43657.585938" z="1250.924438" radius="500.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

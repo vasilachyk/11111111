@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 부패된 시민(117107)	
+211710700	idle2
+211710701	위협모션 // 3파츠 있을때 안어색
+211710702	일반공격 // 2파츠 있어야 가능
+211710703	덥치기
+211710704	토하기 // 3파츠 있어야 가능
+-->
+<maiet>
+	<COLT name="부패된 시민" npcid="117107">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="211710702" rate="40" desc="일반공격" />
+				<ACTION type="talent" param1="211710703" rate="10" desc="덥치기" />
+				<ACTION type="talent" param1="211710704" rate="20" desc="토하기" />
+			</DEFAULT>
+			
+			<CHECK type="breakpart" param1="3">
+				<CHECK type="unbreakpart" param1="2">
+					<ACTION type="talent" param1="211710702" rate="40" desc="일반공격"  />
+					<ACTION type="talent" param1="211710703" rate="10" desc="덥치기"  />
+				</CHECK>
+				
+				<ACTION type="talent" param1="211710703" rate="30" desc="덥치기" />
+			</CHECK>
+			
+			<CHECK type="breakpart" param1="2">
+				<CHECK type="unbreakpart" param1="3">
+					<ACTION type="talent" param1="211710704" rate="10" desc="토하기"  />
+					<ACTION type="talent" param1="211710703" rate="10" desc="덥치기"  />
+				</CHECK>
+				
+				<ACTION type="talent" param1="211710703" rate="30" desc="덥치기" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="211710702" rate="40" desc="일반공격" />
+				<ACTION type="talent" param1="211710701" rate="10" desc="위협모션" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710700" rate="30" desc="idle2" />
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

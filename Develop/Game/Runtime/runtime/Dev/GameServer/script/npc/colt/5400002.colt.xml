@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="방패게" npcid="5400002">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="talent" param1="210910300" rate="10" duration="0"/>
+				
+				<ACTION type="talent" param1="210910301" rate="10" />
+				<ACTION type="talent" param1="210910302" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="600">
+				<ACTION type="distance" param1="400" param2="400" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="30" cycle="6"/>
+				
+				<ACTION type="talent" param1="210910300" rate="10" duration="0"/>
+				<ACTION type="talent" param1="210910301" rate="10" />
+				<ACTION type="talent" param1="210910302" rate="10" />
+				
+			</CHECK>
+		</COMBAT>
+		<REACTION>
+			<CHECK type="hp" param1="1" param2="100">
+				<ACTION type="breakpart" param1="1"/>
+			</CHECK>
+		</REACTION>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210910300" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

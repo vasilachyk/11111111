@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="오래된 이끼" npcid="508101">
+		<COMBAT mode="0">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="250810110" rate="40" comment="atk_1" />
+				<ACTION type="talent" param1="250810111" rate="40" comment="atk_2" />
+				<ACTION type="talent" param1="250810112" rate="20" comment="moss" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="200" comment="">
+					<ACTION type="talent" param1="250810112" rate="1" duration="0" comment="moss" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810100" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

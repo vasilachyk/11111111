@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="호수 트롤" npcid="8895000">
+		<COMBAT>
+			<DEFAULT>
+				
+				<ACTION type="talent" param1="210931605" rate="30" />						
+				
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="210931602" rate="10" />
+				<ACTION type="talent" param1="210931605" rate="30" />								
+			</CHECK>
+			
+			<CHECK type="rage" param1="100">				
+				<ACTION type="talent" param1="210931608" rate="10" />						
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210931600" rate="70" />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	function NPC_8895000:Init(NPCID)
+		NPC_8895000.BP_Bag = 1
+		NPC_8895000.TALENT_Pain = 210931609 -- 뿔에 맞으면 쓰는 탤런트
+		NPC_8895000.LIMIT_BParts	= NPC_8895000.MaxHP*0.8
+	end
+	
+	function NPC_8895000:OnHitCapsule_1_0(HitInfo) -- hp 70이하일 때 브레이커블 파츠가 확율적으로 부숴진다
+	
+		local ThisNPC = AsNPC( HitInfo.Victim )	
+	
+		if ThisNPC:CheckBPart( NPC_8895000.BP_Bag ) then
+			return HitInfo
+		end
+		
+		if( ThisNPC:GetHP() <= NPC_8895000.LIMIT_BParts ) and ( math.random( 0, 1 ) == 1 ) then
+			ThisNPC:ClearJob()
+			ThisNPC:UseTalentSelf( NPC_8895000.TALENT_Pain )
+			ThisNPC:BreakPart(1, HitInfo.Attacker)
+		end
+		
+		return HitInfo		
+	end
+	
+	]]></SCRIPT>
+</maiet>

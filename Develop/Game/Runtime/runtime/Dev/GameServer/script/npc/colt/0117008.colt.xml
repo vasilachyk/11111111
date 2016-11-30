@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 붉은 거대 줄리줄리
+211700800	#idle_shake
+#공격	
+211700810	#몸통박치기1
+211700811	#몸통박치기2
+211700812	#젤리공격
+-->
+<maiet>
+	<COLT name="붉은 거대 줄리줄리" npcid="117008">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211700810" rate="60" desc="몸통박치기1" />
+				<ACTION type="talent" param1="211700811" rate="30" desc="몸통박치기2" />
+				<ACTION type="talent" param1="211700812" rate="10" desc="젤리공격" />
+			</DEFAULT>
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="211700812" rate="60" desc="젤리공격" />
+				<ACTION type="talent" param1="211700810" rate="10" desc="몸통박치기1" />
+				<ACTION type="talent" param1="211700811" rate="10" desc="몸통박치기2" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211700800" rate="50" desc="idle_shake" />
+				<ACTION type="nothing" param1="0.5" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

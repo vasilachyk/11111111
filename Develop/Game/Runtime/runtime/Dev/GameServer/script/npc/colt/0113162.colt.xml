@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>					
+	<COLT name="도깨비불" npcid="113162">
+		<COMBAT>			
+			<DEFAULT>
+			<!--
+				<ACTION type="distance" param1="200" param2="200" duration="10" rate="35" />
+				<ACTION type="nothing" param1="1" rate="35" />
+				<ACTION type="talent" param1="211316201" rate="35" />
+				-->
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_113162:Init(NPCID)
+	--[[
+		User Data
+		1: 
+		2: 
+		3: Pain누적 데미지
+	--]]
+	
+	--NPC_ReserveUserData(NPCID, 3);
+	
+	NPC_113162.BufIdFlame		= 40141
+	NPC_113162.BufIdSoulSteal 	= 40149
+end
+
+function NPC_113162:OnSpawn( Info )
+	this:GainBuff( NPC_113162.BufIdFlame )
+	
+	--[[
+	this:Wait(3)
+	this:MoveToActor( this:GetSummoner(), -1 )
+	this:SetTimer( 1, 1, true )
+	this:SetTimer( 2, 30, false )
+	--]]
+end
+
+function NPC_113162:OnTimer( TimerID )
+	if TimerID == 1 then
+		local Summoner = this:GetSummoner()
+		if Summoner:DistanceTo( this ) < 200 then
+			Summoner:GainBuff( 40149 )
+			this:Despawn(false)
+		end
+	elseif TimerID == 2 then
+		this:Despawn(false)
+	end
+end
+	
+	]]></SCRIPT>	
+</maiet>

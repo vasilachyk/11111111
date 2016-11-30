@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1031" min_x="-6007" min_y="-6007" max_x="4207" max_y="4207" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" qpvpnpc1="950000" qpvpnpc2="950000" qpvprebirth1="102230" qpvprebirth2="102231">
+        <BGM fieldbgm="amb_cave_2">
+            <ENVBGM dungeonbgm="amb_cave_2" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="은둔자 니베스" x="-716.992126" y="-2729.070313" z="-46.742809" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="1.000000" random_dir="true" enabled="true" start_time="1" respawn_time="120" roam_radius="700" roam_depth="200" color="auto">
+            <NPC id="113215" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="spawn_00001" x="-2242.427002" y="-3290.763184" z="685.764526" dir_x="0.719340" dir_y="-0.694658" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="15050" default="true" rate="0" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="실패 바구니" x="-1261.135498" y="-4977.244629" z="517.838623" dir_x="0.422618" dir_y="0.906308" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="180" roam_radius="0" roam_depth="200" color="auto">
+            <NPC id="1" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="from 영웅의 오솔길" x="195.808411" y="-1964.167725" z="-12.143593" dir_x="-0.374606" dir_y="-0.927184" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 영웅의 오솔길" x="385.454163" y="-1078.459961" z="-36.245819" radius="300.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="162.134216" y="-259.116211" z="0.000000" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP title="마커로 이동" condition="0" gate_type="auto" field="113" marker="5" />
+        </SENSOR>
+        <SENSOR id="2" name="퀘스트 스카우트용" local="false" x="45.291321" y="-2307.896973" z="1.005233" radius="600.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

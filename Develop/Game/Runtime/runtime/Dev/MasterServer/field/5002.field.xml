@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" min_x="0" min_y="0" max_x="80000" max_y="80000" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SNW">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="CLD" percent="5" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="HSW" percent="40" />
+                <ADD weather="CLR" percent="0" />
+            </WEATHER>
+        </Env>
+        <PVPAREA top="38737" left="30588" bottom="44118" right="39195" faction1="102" faction2="103" faction_name1="" faction_name2="" />
+        <PVPAREA top="29420" left="29645" bottom="44769" right="51592" faction1="253" faction2="254" faction_name1="" faction_name2="" />
+        <PVPAREA top="38737" left="30588" bottom="44118" right="39195" faction1="102" faction2="103" faction_name1="" faction_name2="" />
+        <PVPAREA top="29420" left="29645" bottom="44769" right="51592" faction1="253" faction2="254" faction_name1="" faction_name2="" />
+        <PVPAREA top="38737" left="30588" bottom="44118" right="39195" faction1="102" faction2="103" faction_name1="" faction_name2="" />
+        <PVPAREA top="29420" left="29645" bottom="44769" right="51592" faction1="253" faction2="254" faction_name1="" faction_name2="" />
+        <SPAWN id="1" name="트롤팩션퀘스트NPC" x="25988.994141" y="31048.705078" z="11852.239258" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" name="오우거팩션허수아비" x="25966.611328" y="30197.308594" z="11881.292969" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102004" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" name="오우거팩션퀘스트NPC" x="51831.480469" y="44361.566406" z="11407.015625" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" name="트롤팩션허수아비" x="51647.453125" y="42941.285156" z="11779.426758" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102003" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="50" name="오우거족장 베사고" x="55832.093750" y="37271.308594" z="8503.037109" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102030" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="51" name="오우거사제 라미고" x="55805.039063" y="37835.421875" z="8504.021484" dir_x="0.669131" dir_y="-0.743145" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102031" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="52" name="오우거잡화상 피타고" x="55067.289063" y="34271.449219" z="8502.441406" dir_x="0.997564" dir_y="-0.069757" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102032" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="53" name="오우거감독관 신다고" x="54943.894531" y="30306.203125" z="8514.225586" dir_x="-0.829038" dir_y="-0.559193" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102033" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="54" name="오우거 사령관 카릴고" x="57229.871094" y="41264.937500" z="8509.635742" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102034" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="55" name="오우거 잡병" x="56607.132813" y="32805.105469" z="8521.711914" dir_x="-0.292372" dir_y="-0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="56" name="오우거 잡병" x="55820.078125" y="32939.878906" z="8506.670898" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="57" name="오우거 잡병" x="57109.996094" y="34871.656250" z="8514.338867" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="58" name="오우거 잡병" x="56448.093750" y="36169.496094" z="8503.688477" dir_x="0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="59" name="오우거 잡병" x="56591.386719" y="39069.593750" z="8500.591797" dir_x="0.777146" dir_y="-0.629321" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="60" name="오우거 잡병" x="57468.027344" y="39997.199219" z="8496.005859" dir_x="-0.819152" dir_y="0.573577" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="61" name="오우거 잡병" x="57346.691406" y="42234.859375" z="8562.690430" dir_x="0.694659" dir_y="0.719340" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="62" name="오우거 잡병" x="58017.722656" y="42265.222656" z="8541.387695" dir_x="0.573577" dir_y="0.819152" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102035" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="100" name="트롤족장 와파카" x="30575.621094" y="20150.511719" z="8496.138672" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102010" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="101" name="트롤사제 마릴카" x="30107.689453" y="19784.697266" z="8496.309570" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="102" name="트롤잡화상 토발카" x="34953.699219" y="16986.916016" z="8517.770508" dir_x="-0.996195" dir_y="0.087156" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102012" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="103" name="트롤감독관 자탕카" x="37999.121094" y="23148.023438" z="8343.819336" dir_x="0.374607" dir_y="0.927184" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="104" name="트롤 사령관 스왈카" x="27744.837891" y="17191.873047" z="8503.392578" dir_x="-0.965926" dir_y="0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="105" name="트롤 잡병" x="25741.353516" y="18458.736328" z="8517.041992" dir_x="-0.965926" dir_y="0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="106" name="트롤 잡병" x="25919.820313" y="17479.257813" z="8513.439453" dir_x="-0.965926" dir_y="0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="107" name="트롤 잡병" x="37046.218750" y="19702.128906" z="8499.041016" dir_x="0.559193" dir_y="0.829037" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="108" name="트롤 잡병" x="36366.714844" y="20071.050781" z="8491.805664" dir_x="0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109" name="트롤 잡병" x="34105.320313" y="18004.531250" z="8491.704102" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="110" name="트롤 잡병" x="32546.486328" y="17314.462891" z="8495.983398" dir_x="0.994522" dir_y="-0.104529" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="111" name="트롤 잡병" x="28700.259766" y="18793.921875" z="8496.153320" dir_x="-0.882948" dir_y="-0.469471" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="112" name="트롤 잡병" x="31641.189453" y="18654.875000" z="8496.002930" dir_x="0.994522" dir_y="-0.104529" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="102015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="200" name="동상" x="31267.640625" y="26377.664063" z="11909.369141" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="1000" roam_depth="200" color="auto">
+            <NPC id="5000201" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="201" name="spawn_00002" x="33353.582031" y="28263.300781" z="11909.367188" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="202" name="spawn_00003" x="34159.179688" y="27892.771484" z="11909.077148" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="203" name="spawn_00004" x="33407.390625" y="27241.447266" z="11911.568359" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="204" name="spawn_00005" x="34283.796875" y="27130.093750" z="11902.330078" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="205" name="spawn_00006" x="34646.328125" y="27577.320313" z="11902.872070" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="206" name="spawn_00007" x="33833.593750" y="27664.134766" z="11909.229492" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="207" name="spawn_00008" x="33979.800781" y="28365.000000" z="11909.241211" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="208" name="spawn_00009" x="33069.097656" y="27822.435547" z="11909.378906" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="0" roam_radius="0" roam_depth="0" color="auto">
+            <NPC id="5000202" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="from 영웅의 오솔길" x="9338.361328" y="21430.900391" z="-2358.218262" dir_x="0.224952" dir_y="0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="인간 캠프" x="37783.386719" y="12954.100586" z="4689.021973" dir_x="-0.062790" dir_y="0.998027" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="from 리오드" x="69852.640625" y="47938.507813" z="-3161.464355" dir_x="-0.852640" dir_y="-0.522499" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="신전" x="36572.835938" y="40323.750000" z="14764.447266" dir_x="0.999391" dir_y="0.034899" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="from 마코트 부락 하층" x="66150.257813" y="33567.488281" z="-1971.444092" dir_x="0.994522" dir_y="0.104528" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="from 마코트 부락 상층" x="56021.074219" y="52334.765625" z="2862.939697" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="MK00001" x="24058.001953" y="29273.097656" z="11223.949219" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 영웅의 오솔길" x="8102.288574" y="18071.187500" z="-2898.640381" radius="3000.000000" enabled="true">
+            <WARP title="마커로 이동" condition="0" gate_type="auto" field="113" marker="2" />
+        </SENSOR>
+        <SENSOR id="3" name="to 리오드" x="73256.851563" y="49551.753906" z="-3412.498535" radius="3000.000000" enabled="true">
+            <WARP title="리오드로 이동" condition="1" gate_type="auto" field="101" marker="1" />
+        </SENSOR>
+        <SENSOR id="5" name="to 마코트 부락 하층" local="false" x="63717.152344" y="31932.062500" z="-1817.521484" radius="500.000000" enabled="true" />
+        <SENSOR id="6" name="to 마코트 부락 상층" local="false" x="56073.625000" y="51505.394531" z="2914.969482" radius="500.000000" enabled="true" />
+        <SENSOR id="7" name="7" local="false" x="31131.849609" y="26141.013672" z="11924.929688" radius="540.000000" enabled="true" />
+    </FIELDINFO>
+</maiet>

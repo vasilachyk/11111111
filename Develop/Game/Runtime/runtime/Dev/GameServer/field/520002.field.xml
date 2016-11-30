@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="520002" min_x="-10900" min_y="-10900" max_x="10900" max_y="10900" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Sunset" town="false" returnable="true" tutorial="false" max_gather_mine="10" max_gather_herb="10" max_gather_relic="10" max_gather_lumber="10" qpvpnpc1="950000" qpvpnpc2="950000" qpvprebirth1="102230" qpvprebirth2="102231">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="5" group="0" name="2번째 레버돌렸을때 나오는 몹" x="1056.294189" y="-4503.762207" z="14.062256" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520207" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="auto" x="-3737.103271" y="3339.337158" z="6.186279" dir_x="0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="auto" x="-3569.265137" y="3204.874756" z="6.186279" dir_x="0.906308" dir_y="0.422619" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="[에픽]영혼조리사" x="223.291229" y="-4710.466309" z="19.394287" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="99999" roam_radius="1000" roam_depth="200" combat_radius="2400" color="auto">
+            <NPC id="501004" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="포탈" x="-3116.590820" y="28.398315" z="-26.670898" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520503" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="보스문" x="1734.751953" y="-4360.551758" z="29.052002" dir_x="-0.951056" dir_y="-0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520504" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="벽돌리는레버1" x="-4066.619385" y="2731.567139" z="-40.726807" dir_x="-0.874620" dir_y="0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520502" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="auto" x="-2397.675049" y="-4291.292969" z="20.833740" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="auto" x="-4168.819336" y="-3319.244629" z="20.833740" dir_x="-0.927184" dir_y="0.374606" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="auto" x="3110.218262" y="-5039.424316" z="20.833740" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="2번째 레버돌렸을때 나오는 몹" x="548.987549" y="-9671.111328" z="54.080322" dir_x="0.906308" dir_y="-0.422618" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="2번째 레버돌렸을때 나오는 몹" x="-1513.575684" y="-4919.684082" z="36.516846" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520207" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="2번째 레버돌렸을때 나오는 몹" x="1078.761719" y="-8936.480469" z="75.038330" dir_x="0.913546" dir_y="-0.406737" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="auto" x="-4981.135742" y="-3387.366699" z="-3.912354" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" group="0" name="auto" x="-4487.221680" y="-2798.834961" z="-3.912354" dir_x="0.422618" dir_y="0.906308" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20" group="0" name="auto" x="-4669.459961" y="-3217.118652" z="-3.912354" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="auto" x="190.029663" y="3627.728516" z="28.335693" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="520.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="auto" x="-4565.715820" y="3140.850342" z="97.575684" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="23" group="0" name="auto" x="-4362.263672" y="689.877258" z="53.818115" dir_x="0.766044" dir_y="-0.642788" dir_z="0.000000" radius="520.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="24" group="0" name="auto" x="-4563.986328" y="-411.148193" z="53.818115" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="520.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="25" group="0" name="auto" x="-5051.270020" y="-826.840088" z="53.818115" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="520.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="26" group="0" name="auto" x="-1478.096802" y="5303.541504" z="55.228760" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="520.000000" random_dir="true" enabled="true" only_client="false" start_time="30" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="27" group="0" name="auto" x="-4837.575195" y="-2748.182129" z="-0.000301" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28" group="0" name="벽돌리는레버2" x="4234.605469" y="-2518.723633" z="-22.828369" dir_x="-0.743145" dir_y="-0.669131" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520505" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="29" group="0" name="보스문" x="-2237.679688" y="2279.425537" z="-23.836182" dir_x="-0.731354" dir_y="0.681999" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520504" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="30" group="0" name="auto" x="-4944.235352" y="185.911011" z="57.580811" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="520.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="31" group="0" name="auto" x="-5043.935547" y="-3044.823975" z="-8.750244" dir_x="-0.999391" dir_y="0.034899" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="32" group="0" name="auto" x="-207.888184" y="-9255.564453" z="20.455811" dir_x="0.515038" dir_y="0.857167" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="33" group="0" name="auto" x="275.429199" y="-9759.040039" z="20.455811" dir_x="0.766044" dir_y="0.642788" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="34" group="0" name="auto" x="-2083.827881" y="-3668.471680" z="43.845459" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="35" group="0" name="auto" x="-4437.454590" y="3276.209961" z="97.575684" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="36" group="0" name="auto" x="-5290.991211" y="843.627686" z="-0.000301" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="520.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="37" group="0" name="auto" x="5098.937500" y="2635.238525" z="-0.000301" dir_x="-0.629320" dir_y="-0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="38" group="0" name="auto" x="5213.361328" y="3184.038330" z="-0.000301" dir_x="-0.978148" dir_y="-0.207912" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="39" group="0" name="auto" x="3621.080811" y="3526.198242" z="-0.000301" dir_x="0.819152" dir_y="-0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="40" group="0" name="auto" x="1970.025635" y="3318.835693" z="-0.000301" dir_x="0.965926" dir_y="0.258819" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="41" group="0" name="auto" x="3335.047363" y="3098.725830" z="-0.000301" dir_x="-0.961262" dir_y="0.275637" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="42" group="0" name="auto" x="-4531.705566" y="522.395142" z="-0.000301" dir_x="0.994522" dir_y="-0.104529" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="43" group="0" name="보스문" x="-2195.047363" y="-2181.406738" z="-10.233517" dir_x="-0.731354" dir_y="-0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520504" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="44" group="0" name="2번째 레버돌렸을때 나오는 몹" x="-2503.841797" y="-2508.306152" z="85.067574" dir_x="-0.642788" dir_y="-0.766044" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520208" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="45" group="0" name="auto" x="2630.461670" y="3427.733643" z="0.000000" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="46" name="auto" x="-4378.876953" y="-4428.601563" z="12.554474" dir_x="0.707107" dir_y="-0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="47" name="auto" x="-4431.086914" y="4597.634277" z="0.000977" dir_x="0.615662" dir_y="-0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="48" name="auto" x="4529.760742" y="4456.397949" z="0.000977" dir_x="-0.642787" dir_y="-0.766045" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="520510" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="49" group="0" name="auto" x="3055.041260" y="3934.122803" z="0.000000" dir_x="0.190809" dir_y="0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="50" group="0" name="auto" x="2463.896729" y="3121.321045" z="0.000000" dir_x="-0.374607" dir_y="0.927184" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="51" group="0" name="auto" x="2865.583740" y="5250.023438" z="0.000000" dir_x="0.882948" dir_y="-0.469471" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="52" group="0" name="보스문" x="3160.558350" y="-32.445679" z="0.000000" dir_x="-0.999391" dir_y="0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520504" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="53" group="0" name="auto" x="-3404.802979" y="2494.820557" z="32.180664" dir_x="0.829038" dir_y="-0.559193" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="54" group="0" name="auto" x="-3531.416992" y="2301.462646" z="32.180664" dir_x="0.829038" dir_y="-0.559193" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520204" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="55" group="0" name="auto" x="-3031.465820" y="4485.122070" z="0.000000" dir_x="0.809017" dir_y="0.587785" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="56" group="0" name="auto" x="-2728.373047" y="4614.500977" z="0.000000" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="57" group="0" name="auto" x="-2227.723633" y="3148.815430" z="0.000000" dir_x="0.891007" dir_y="0.453990" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="58" group="0" name="auto" x="-2010.642822" y="3312.122070" z="0.000000" dir_x="-0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520203" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="59" group="0" name="auto" x="-3697.309082" y="-4470.841797" z="0.000000" dir_x="-0.121869" dir_y="0.992546" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="60" group="0" name="auto" x="2844.908936" y="-5172.632324" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="61" group="0" name="auto" x="-3206.227295" y="-3016.111572" z="0.000000" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="200" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520205" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="62" group="0" name="보스문" x="-3133.265137" y="17.209293" z="0.000000" dir_x="0.996195" dir_y="-0.087156" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520504" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="63" group="0" name="auto" x="-106.195038" y="4761.926270" z="56.105469" dir_x="-0.998630" dir_y="0.052336" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="109846" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="64" group="0" name="auto" x="-318.231201" y="4437.040039" z="56.105469" dir_x="-0.829038" dir_y="0.559193" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="109846" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="65" group="0" name="auto" x="398.204987" y="4474.222168" z="56.105469" dir_x="-0.629320" dir_y="-0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="109846" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="66" group="0" name="auto" x="1559.352417" y="5492.953125" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="67" group="0" name="auto" x="1734.817139" y="5294.167969" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="100" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520209" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="68" group="0" name="지진이벤트" x="-3377.487793" y="3423.227051" z="442.609985" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="69" group="0" name="지진이벤트" x="4060.874268" y="-2761.270752" z="352.540039" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520511" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="70" group="0" name="auto" x="1334.208008" y="2098.783691" z="0.000000" dir_x="-0.374607" dir_y="0.927184" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="50" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520514" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="출발지점" x="2865.294434" y="3.320251" z="28.013916" dir_x="-0.996195" dir_y="0.087156" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="auto" x="-789.790344" y="3681.108643" z="19.372314" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="auto" x="-1093.416748" y="3770.409668" z="19.372314" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="auto" x="-1446.326416" y="5268.533691" z="64.272705" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="auto" x="946.331909" y="3621.617676" z="19.370605" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="auto" x="3589.213623" y="-3361.181152" z="3.005455" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="퀘스트표시용_레버1" x="-4222.666504" y="2584.591309" z="3.004278" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="퀘스트표시용 레버2" x="4450.627441" y="-2594.377686" z="3.004036" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="3층으로" x="-3429.799072" y="10.156815" z="-20.134277" radius="310.060669" enabled="false">
+            <WARP warp_type="field" title="3층으로 이동" condition="0" gate_type="auto" field="520003" marker="1" />
+        </SENSOR>
+        <SENSOR id="2" name="auto" local="false" x="4297.124512" y="-2518.041016" z="-20.835938" radius="400.000000" enabled="true" groupname="none" />
+        <SENSOR id="3" name="auto" local="false" x="-4086.084229" y="2761.199463" z="28.109131" radius="400.000000" enabled="true" groupname="none" />
+        <SENSOR id="4" name="auto" local="false" x="-1655.875488" y="-4242.805664" z="3.004658" radius="300.000000" enabled="false" groupname="none" />
+        <AREA id="1" name="재료 저장실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-72.932434" y="5320.711426" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="2" name="영혼 조리실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-101.403778" y="-4956.784180" z="0.000255" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="저택 제어실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-3745.964844" y="3552.688232" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="저택 제어실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="3580.499512" y="-3630.635986" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

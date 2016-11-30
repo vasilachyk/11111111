@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 연습상대 -->
+<maiet>
+	<COLT>
+		<COMBAT victory="219999806">
+			<DEFAULT>
+				<ACTION type="nothing" param1="2" rate="20" />
+				<ACTION type="talent" param1="219999801" rate="20" />
+				<ACTION type="group" rate="20">
+					<ACTION type="say" param1="$$COLT_0099998_10"/>
+					<ACTION type="nothing" param1="2" />
+					<ACTION type="talent" param1="219999801" />
+				</ACTION>
+				<ACTION type="group" rate="20">
+					<ACTION type="say" param1="$$COLT_0099998_15"/>
+					<ACTION type="nothing" param1="2" />
+					<ACTION type="talent" param1="219999802" />
+				</ACTION>
+				<ACTION type="group" rate="20">
+					<ACTION type="say" param1="$$COLT_0099998_20"/>
+					<ACTION type="talent" param1="219999804" />
+				</ACTION>
+				<ACTION type="group" rate="20">
+					<ACTION type="say" param1="$$COLT_0099998_24"/>
+					<ACTION type="talent" param1="219999805" />
+				</ACTION>
+				<ACTION type="group" rate="20">
+					<ACTION type="say" param1="$$COLT_0099998_28"/>
+					<ACTION type="talent" param1="219999806" />
+				</ACTION>
+				<ACTION type="group" rate="20">
+					<ACTION type="say" param1="$$COLT_0099998_32" />
+					<ACTION type="guard" param1="219999807" param2="10" />
+				</ACTION>
+			</DEFAULT>
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="group" rate="100">
+					<ACTION type="say" param1="$$COLT_0099998_38"/>
+					<ACTION type="talent" param1="219999805" />
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+  		<REACTION>
+		</REACTION>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="219999805" rate="50" />
+				<ACTION type="talent" param1="219999806" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

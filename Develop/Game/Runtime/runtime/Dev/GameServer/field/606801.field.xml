@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="109" minimap_name="map00109" loading_image_name="00109" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="35821" boundary_min_y="34575" boundary_max_x="52582" boundary_max_y="55747" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_7">
+            <ENVBGM daytimebgm="amb_plain_daytime" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="42696.996094" y="39535.542969" z="1489.246094" dir_x="0.358368" dir_y="0.933580" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="44868.171875" y="47230.957031" z="725.267456" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_출발지점" local="false" x="42696.984375" y="39269.324219" z="1492.807861" radius="669.548157" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

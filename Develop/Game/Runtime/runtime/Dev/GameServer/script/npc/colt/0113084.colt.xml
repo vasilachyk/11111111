@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="검은뿔 사슴" npcid="113084">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211308403" rate="10" />
+				<ACTION type="talent" param1="211308404" rate="80"/>
+				<ACTION type="lua" param1="NPC113084_KickAttack" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="120">
+					<CHECK type="breakpart" param1="1">
+						<ACTION type="talent" param1="211308407" rate="50" />
+					</CHECK>
+					<ACTION type="talent" param1="211308407" rate="50" />
+					<ACTION type="guard" param1="211308408" param2="1" rate="50" />
+				</CHECK>
+			</CHECK>
+
+			<CHECK type="breakpart" param1="1">
+				<ACTION type="group" rate="60">
+					<ACTION type="talent" param1="211308409" />
+				</ACTION>
+				<ACTION type="talent" param1="211308405" rate="20" />
+			</CHECK>
+				
+			<CHECK type="distance" param1="300" param2="500">
+				<!-- 뿔이 없으면 -->
+				<CHECK type="breakpart" param1="1">
+					<ACTION type="group" rate="80">
+						<ACTION type="face_to"  />
+						<ACTION type="talent" param1="211308409" duration="0"/>
+					</ACTION>
+					
+					<ACTION type="talent" param1="211308405" rate="10" />
+				</CHECK>
+				
+				<!-- 뿔이 있으면 -->
+				<ACTION type="talent" param1="211308403" rate="20" />
+				
+				<ACTION type="group" rate="80">
+					<ACTION type="face_to"  />
+					<ACTION type="talent" param1="211308404" duration="0"/>
+				</ACTION>
+				
+				<ACTION type="talent" param1="211308405" rate="10" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211308400" rate="20" />
+				<ACTION type="talent" param1="211308401" rate="20" />
+				<ACTION type="talent" param1="211308402" rate="20" />
+				<ACTION type="nothing" param1="1" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	function NPC_113084:Init( NPCID )
+		
+	end
+	
+	
+	
+	function NPC113084_KickAttack( ThisNPC, Enemy )
+		local Dist = ThisNPC:DistanceTo( Enemy )
+
+		if Dist < 200 and Enemy:IsRear( ThisNPC ) then
+			-- 근접해서 뒤에있을경우 뒷발길질
+			ThisNPC:UseTalentSelf( 211308406 )
+		else
+			ThisNPC:MoveToActor( Enemy, 211308405 )
+			ThisNPC:UseTalent( 211308405, Enemy )
+		end
+	end
+	
+	]]></SCRIPT>
+	
+</maiet>

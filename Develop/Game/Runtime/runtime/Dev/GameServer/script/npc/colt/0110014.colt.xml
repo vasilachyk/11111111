@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족사냥꾼">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211001402" rate="35" />
+				<ACTION type="talent" param1="211001403" rate="25" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="300">
+				<ACTION type="talent" param1="211001401" rate="30" />  <!-- 일반공격(근접) -->
+			</CHECK>			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_110014:OnSpawn( Spawn )
+	local NPCID_HOUNTER = 110035
+	local Pos = this:GetPos()
+	local Field = this:GetField()
+	local Pet = Field:Spawn(  NPCID_HOUNTER, Pos )
+	this:SetTarget( Pet )
+	Pet:SetTarget( this )
+end
+
+function NPC_110014:OnAggro( Target )
+	local Pet = this:GetTarget()
+	if Pet == nil or Pet:IsNull() or Pet:IsDead() then
+		return
+	end
+
+	AsNPC(Pet):Assist( this )
+end
+
+
+	]]></SCRIPT>
+</maiet>

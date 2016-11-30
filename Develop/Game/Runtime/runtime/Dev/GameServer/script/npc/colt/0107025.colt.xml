@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족궁수">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702502" rate="20" />
+				<ACTION type="talent" param1="210702503" rate="40" />
+				<ACTION type="talent" param1="210702504" rate="40" />
+				
+			</DEFAULT>
+
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="flee" param1="from_enemy" duration="3" cycle="15" />  <!-- 거리 벌리기 -->
+				</CHECK>
+			</CHECK>
+			
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param1="0" param2="300">
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702501" rate="40" />  <!-- 일반공격(근접) -->
+				<ACTION type="talent" param1="210702502" rate="10" />
+				<ACTION type="talent" param1="210702503" rate="10" />
+				<ACTION type="talent" param1="210702504" rate="10" />
+			</CHECK>
+			
+			<!-- 적이 아주멀리 있을 경우 -->
+			<CHECK type="distance" param1="1500">
+				<ACTION type="talent" param1="210702502" rate="20" />
+				<ACTION type="talent" param1="210702503" rate="40" />
+				<ACTION type="talent" param1="210702504" rate="40" />
+			</CHECK>
+
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80" />
+				<ACTION type="talent" param1="210702307" rate="20" />
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+</maiet>

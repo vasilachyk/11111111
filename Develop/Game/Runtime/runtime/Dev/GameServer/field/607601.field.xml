@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="117" minimap_name="map00117" loading_image_name="00117" min_x="-33650" min_y="-31970" max_x="31350" max_y="33030" boundary_min_x="-24630" boundary_min_y="2420" boundary_max_x="500" boundary_max_y="16270" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_dungeon_underpass">
+            <ENVBGM dungeonbgm="amb_dungeon_3" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="-19091.585938" y="8238.659180" z="-47.000034" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="-5671.145020" y="10728.878906" z="3.000168" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="도둑 로밍" x="-12173.632813" y="9686.063477" z="-47.005856" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <MARKER id="4" name="도둑 로밍" x="-13870.337891" y="9682.800781" z="-46.998207" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="1" />
+        <SENSOR id="1" name="출발지점" local="false" x="-19096.894531" y="8179.652344" z="-47.000023" radius="438.985504" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

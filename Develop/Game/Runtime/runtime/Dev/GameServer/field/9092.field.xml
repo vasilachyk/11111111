@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8003" min_x="0" min_y="0" max_x="60000" max_y="60000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true">
+	    <BGM fieldbgm="bgm_field_8">
+            <ENVBGM dawnbgm="amb_normal_2" />
+            <ENVBGM daytimebgm="amb_normal_2" />
+            <ENVBGM sunsetbgm="amb_normal_2" />
+            <ENVBGM nightbgm="amb_normal_2" />
+            <ENVBGM clodybgm="amb_normal_2" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+		
+		<SPAWN id="1" group="0" name="인젠 투기장 관리인" x="1000" y="1000" z="0" dir_x="-0.681998" dir_y="0.731354" dir_z="0.000000" radius="1.000000" random_dir="false" enabled="true" start_time="0" color="auto">
+            <NPC id="3300" default="true" rate="10" />
+        </SPAWN>
+    </FIELDINFO>
+</maiet>

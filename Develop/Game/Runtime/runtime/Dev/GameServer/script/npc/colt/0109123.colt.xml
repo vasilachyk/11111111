@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="초승달 사슴">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="40" cycle="6"/>
+				<ACTION type="talent" param1="210912303" rate="20" />
+				<ACTION type="lua" param1="NPC_109123" param2="KickAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200" comment="분노패턴">
+				<CHECK type="rage" param1="120">
+					<CHECK type="breakpart" param1="1">
+						<ACTION type="talent" param1="210912307" rate="50" />
+					</CHECK>
+					<ACTION type="guard" param1="210912308" param2="1" rate="50" />
+				</CHECK>
+			</CHECK>
+
+			<CHECK type="distance" param1="300" param2="500">
+				<!-- 뿔이 없으면 -->
+				<CHECK type="breakpart" param1="1">
+					<ACTION type="talent" param1="210912305" rate="20" />
+				</CHECK>
+				
+				<!-- 뿔이 있으면 -->
+				<ACTION type="talent" param1="210912303" rate="20" />
+			</CHECK>
+
+			<CHECK type="breakpart" param1="1">
+				<ACTION type="nothing" param1="0.5" rate="40" cycle="6"/>
+				<ACTION type="lua" param1="NPC_109123" param2="KickAttack" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210912300" rate="20" />
+				<ACTION type="talent" param1="210912301" rate="20" />
+				<ACTION type="talent" param1="210912302" rate="20" />
+				<ACTION type="nothing" param1="3" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	function NPC_109123:Init( NPCID )
+		NPC_ReserveUserData( NPCID, 1 )
+	end
+	
+	function NPC109123_BreakParts( ThisNPC, Enemy )
+		if math.random( 1, 2 ) == 1 then
+			ThisNPC:BreakPart( 1, Enemy)
+		end
+	end
+	
+	function NPC_109123:OnHitCapsule_1_0(HitInfo)
+		local HPPer = this:GetHP() / this:GetMaxHP()
+		local State =  this:GetUserData( 1 )
+		
+		if HPPer < 0.5 and State < 1 and ChkMFForHitReaction(HitInfo) then
+
+			NPC109123_BreakParts( this, HitInfo.Attacker )
+			this:SetUserData( 1, 1 )
+		end
+	end
+	
+	function NPC_109123:KickAttack( ThisNPC, Enemy )
+		local Dist = ThisNPC:DistanceTo( Enemy )
+
+		if Dist < 200 and Enemy:IsRear( ThisNPC ) then
+			-- 근접해서 뒤에있을경우 뒷발길질
+			ThisNPC:UseTalentSelf( 210912306 )
+		else
+			ThisNPC:MoveToActor( Enemy, 210912305 )
+			ThisNPC:UseTalent( 210912305, Enemy )
+		end
+	end
+	
+	]]></SCRIPT>
+	
+</maiet>

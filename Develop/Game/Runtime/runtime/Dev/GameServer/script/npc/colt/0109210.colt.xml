@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="모켄의 갑판원" npcid="109210">
+		<COMBAT victory="210901809">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+			
+				<ACTION type="talent" param1="210901801" rate="25" /><!--1타 -->
+				<ACTION type="talent" param1="210901802" rate="15" /><!--2타 -->
+				
+				<ACTION type="talent" param1="210901804" rate="10" /><!--강한공격 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210901801" rate="10" />
+				<ACTION type="talent" param1="210901802" rate="10" />
+				
+				<ACTION type="talent" param1="210901804" rate="10" />
+				<ACTION type="talent" param1="210901805" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210901807" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />				
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

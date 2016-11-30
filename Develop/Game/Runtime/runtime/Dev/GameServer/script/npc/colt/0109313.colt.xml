@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="에보스 수렵민" npcid="109205">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210920500" rate="15" duration="0"/>
+				
+				<ACTION type="talent" param1="210920501" rate="10" />
+				<ACTION type="talent" param1="210920502" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="210920500" rate="10" duration="0"/>
+				
+				<ACTION type="talent" param1="210920501" rate="10" />
+				<ACTION type="talent" param1="210920502" rate="10" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="40">
+				<CHECK type="distance" param2="300" >
+					<ACTION type="talent" param1="210920501" rate="10" />
+					<ACTION type="talent" param1="210920502" rate="10" />
+					<ACTION type="talent" param1="210920503" rate="10" />
+					<ACTION type="talent" param1="210920504" rate="10" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210920500" rate="30" />
+				<ACTION type="nothing" param1="5" rate="70" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

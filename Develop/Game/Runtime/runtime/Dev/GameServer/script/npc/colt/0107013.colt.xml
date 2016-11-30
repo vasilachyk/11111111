@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 버서커 -->
+<maiet>
+	<COLT name="베스피오단 노상강도(남)" >
+		<COMBAT victory="210701308">
+			<DEFAULT>
+				<!--<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>-->
+				
+				<ACTION type="talent" param1="210701301" rate="50" cycle="6"/>
+				<ACTION type="talent" param1="210701302" rate="30" />
+				<ACTION type="talent" param1="210701303" rate="30" />
+				<ACTION type="talent" param1="210701312" rate="20" cycle="6"/> <!-- 후진 -->
+				<ACTION type="talent" param1="210701313" rate="3"/> <!-- 분쇄 -->				
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="210701305" rate="100" cycle="6"/>   <!-- 돌진 -->
+				<ACTION type="distance" param1="300" param2="350" rate="10" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="210701311" rate="100" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="talent" param1="210701305" rate="5" cycle="10"/>   <!-- 돌진 -->
+				<ACTION type="talent" param1="210701306" rate="100" />   <!-- 전진 -->
+			</CHECK>
+
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="100" >
+					<ACTION type="talent" param1="210701304" rate="100" />  <!-- 회피배기 -->
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210701307" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+				
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="BespioAggroChat1" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+						
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

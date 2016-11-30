@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="혼돈의 불길 - 아란바스 화산지대" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211612101" rate="15" />
+				<ACTION type="talent" param1="211612102" rate="15" />
+				<ACTION type="talent" param1="211612103" rate="35" />			
+				<ACTION type="talent" param1="211612104" rate="35" />			
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211612100" rate="40" />
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

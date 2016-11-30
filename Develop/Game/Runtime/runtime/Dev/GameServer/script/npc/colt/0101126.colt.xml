@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 수색대장 코코키	
+210112601	#idle
+210112602	#내려찍기
+210112603	#왼손휘두르기
+210112604	#오른손휘두르기
+210112605	#양손휘두르기
+210112606	#태클
+210112607	#포효
+-->
+<maiet>
+	<COLT name="수색대장 코코키" npcid="101126">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210112602" rate="10" desc="내려찍기" />
+				<ACTION type="talent" param1="210112603" rate="25" desc="왼손휘두르기" />
+				<ACTION type="talent" param1="210112604" rate="25" desc="오른손휘두르기" />
+				<ACTION type="talent" param1="210112606" rate="25" desc="태클" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="120" >
+				<ACTION type="talent" param1="210112605" rate="40" desc="양손휘두르기" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="210112607" rate="10" desc="포효" />
+				<ACTION type="talent" param1="210112602" rate="40" desc="내려찍기" />
+			</CHECK>
+		</COMBAT>
+	
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[ 
+
+	]]></SCRIPT>
+</maiet>

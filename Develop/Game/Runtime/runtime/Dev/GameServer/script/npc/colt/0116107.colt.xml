@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="코볼트 전사 - 아란바스 화산지대">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="talent" param1="211610701" rate="40" />
+				<ACTION type="talent" param1="211610702" rate="40" />
+				<ACTION type="talent" param1="211610703" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="200" >
+				<CHECK type="rage" param1="200">
+					<ACTION type="guard" param1="211610704" param2="1" rate="10" />
+				</CHECK>
+			</CHECK>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="1" rate="10" cycle="6"/>
+				<ACTION type="talent" param1="211610701" rate="30" />
+				<ACTION type="talent" param1="211610702" rate="30" />
+				<ACTION type="talent" param1="211610703" rate="10" />
+				
+				<!-- 포효 -->
+				<ACTION type="talent" param1="211610705" rate="10" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610700" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

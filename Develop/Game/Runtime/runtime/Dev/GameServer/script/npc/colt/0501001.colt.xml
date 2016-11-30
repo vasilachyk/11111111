@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="네이터(노인)" npcid="501001">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_501001" param2="NaiterAAggroChat" />
+			</DEFAULT>
+		</PROLOGUE>	
+		<COMBAT mode="0" comment="" victory="250100101">
+			<DEFAULT>
+				<ACTION type="talent" param1="250100110" />
+				<ACTION type="talent" param1="250100111" />
+				<ACTION type="talent" param1="250100112" />
+				<ACTION type="talent" param1="250100113" />
+				<ACTION type="talent" param1="250100120" />
+				<ACTION type="talent" param1="250100121" />
+			</DEFAULT>
+			<CHECK type="hp" param2="50">
+				<ACTION type="lua" param1="NPC_501001" param2="Say" auto_run="true" max_count="1" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1" comment="">
+			<DEFAULT>
+				<ACTION type="talent" param1="250100100" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_501001" param2="NaiterIdleChat" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+function NPC_501001:Init()
+	NPC_501001.NpcIdValkyrie = 501000
+end
+
+-- NPC501001_Say
+function NPC_501001:Say(ThisNPC, Enemy)
+	ThisNPC:NonDelayBalloon("$$COLT_0501001_1")
+end
+
+function NPC_501001:NaiterAAggroChat( ThisNPC, Enemy)
+	ThisNPC:NonDelaySay("$$NaiterAAggroChat")
+end
+
+function NPC_501001:NaiterIdleChat( ThisNPC, Enemy)
+	ThisNPC:SetTimer(1, 120, true)
+end
+
+function NPC_501001:OnTimer( TimerID )
+	if TimerID == 1 then
+		local dice = math.random(0,2)
+		if dice == 0 then
+			this:NonDelayBalloon("$$Field_501001_10")
+		elseif dice == 1 then
+			this:NonDelayBalloon("$$Field_501001_11")
+		end
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

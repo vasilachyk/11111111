@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 부족 용병 (인간형 한손검 기본, 방패)	
+710212001	1타
+710212002	2연타
+710212003	3연타
+710212004	찌르기
+710212005	모드0전환(칼뽑기)
+710212006	모드1전환(칼넣기)
+710212007	회피L
+710212008	회피R
+710212009	역습 포커스
+710212010	강격
+710212011	충격 반사
+710212012	보루
+710212013	파멸의 일격
+710212014	방패 가격: 기절
+710212015	돌진
+710212016	방어
+-->
+<maiet>
+	<COLT name="용병" npcid="7102120">
+		<COMBAT mode="0" victory="710212006" >
+			<DEFAULT>
+				<ACTION type="talent" param1="710212012" rate="40" desc="보루" />
+				
+				<ACTION type="talent" param1="710212001" rate="20" desc="1타" />
+				<ACTION type="talent" param1="710212003" rate="15" desc="3연타" />
+				<ACTION type="talent" param1="710212002" rate="30" desc="2연타" />
+				
+				<ACTION type="talent" param1="710212013" rate="10" desc="파멸의 일격" />
+				<ACTION type="talent" param1="710212014" rate="5" desc="방패 가격: 기절" />
+				<ACTION type="talent" param1="710212015" rate="5" desc="돌진" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80" >
+				<ACTION type="talent" param1="710212009" rate="100" desc="역습 포커스" />
+			</CHECK>
+	
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<CHECK type="gained_buff" param1="80120">
+					<ACTION type="talent" param1="710212010" desc="강격" />
+				</CHECK>
+
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="710212012" rate="10" desc="보루" />
+				<ACTION type="talent" param1="710212013" rate="20" desc="파멸의 일격" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="710212005" rate="100" desc="모드0전환(칼뽑기)" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

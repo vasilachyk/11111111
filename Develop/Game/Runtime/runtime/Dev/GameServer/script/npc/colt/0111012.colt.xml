@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#광기의 코볼트 전사	
+211101200	#idle2
+211101201	#망치공격
+211101202	#방패공격
+211101203	#헤딩
+211101204	#방어
+211101205	#포효
+-->
+<maiet>
+	<COLT name="광기의 코볼트 전사" npcid="111012">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211101201" rate="40" />
+				<ACTION type="talent" param1="211101202" rate="40" />
+				<ACTION type="talent" param1="211101203" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param2="400" >
+				<CHECK type="rage" param1="90">
+					<ACTION type="guard" param1="211101204" param2="1.5" rate="10" />
+				</CHECK>
+			</CHECK>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="211101201" rate="30" />
+				<ACTION type="talent" param1="211101202" rate="30" />
+				<ACTION type="talent" param1="211101203" rate="10" />
+				
+				<!-- 포효 -->
+				<ACTION type="talent" param1="211101205" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211101200" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

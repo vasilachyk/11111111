@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="109" minimap_name="map00109" loading_image_name="00109" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="35000" boundary_min_y="18000" boundary_max_x="51000" boundary_max_y="41000" weather_effect="true" fixed_time="Night" town="false" returnable="true" tutorial="false">
+        <BGM>
+            <ENVBGM sunsetbgm="amb_sunset_jungle" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="HRN">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1000" group="0" name="선원의 시체" x="42706.992188" y="34559.230469" z="823.134460" dir_x="0.469472" dir_y="-0.882948" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1001" group="0" name="선원의 시체" x="45391.718750" y="32849.242188" z="818.816345" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1002" group="0" name="선원의 시체" x="43216.359375" y="34921.113281" z="849.630249" dir_x="0.629320" dir_y="-0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1003" group="0" name="선원의 시체" x="42468.296875" y="35167.339844" z="830.056396" dir_x="0.342020" dir_y="-0.939693" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1004" group="0" name="선원의 시체" x="45835.164063" y="28186.822266" z="335.846405" dir_x="0.390731" dir_y="-0.920505" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1005" group="0" name="선원" x="41849.097656" y="35682.839844" z="805.674316" dir_x="0.891006" dir_y="-0.453991" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109017" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1006" group="0" name="선원의 시체" x="46215.667969" y="29590.375000" z="557.149109" dir_x="0.629320" dir_y="-0.777146" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1007" group="0" name="선원의 시체" x="42049.585938" y="35285.644531" z="812.361755" dir_x="0.469472" dir_y="-0.882948" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1008" group="0" name="선원" x="42118.332031" y="36016.667969" z="830.222717" dir_x="0.642788" dir_y="-0.766044" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1009" group="0" name="선원의 시체" x="43096.031250" y="35407.816406" z="866.974670" dir_x="0.069757" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1010" group="0" name="선원의 시체" x="43334.507813" y="35174.730469" z="865.420532" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1011" group="0" name="선원의 시체" x="42669.960938" y="35625.644531" z="865.631287" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1012" group="0" name="선원의 시체" x="47482.964844" y="29788.894531" z="626.294861" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1013" group="0" name="선원의 시체" x="46917.179688" y="29953.677734" z="623.695496" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1014" group="0" name="선원의 시체" x="47560.992188" y="28839.326172" z="534.525757" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1015" group="0" name="선원의 시체" x="48114.882813" y="29870.214844" z="649.356079" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1016" group="0" name="선원의 시체" x="46576.875000" y="31005.644531" z="663.705017" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1017" group="0" name="선원의 시체" x="48438.058594" y="28333.152344" z="608.335083" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1018" group="0" name="선원의 시체" x="49239.886719" y="29257.591797" z="648.582031" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109314" default="false" rate="500" />
+            <NPC id="109315" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1100" group="0" name="모켄 해적" x="46352.488281" y="29141.693359" z="498.207245" dir_x="0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="1101" group="0" name="모켄 해적" x="46565.722656" y="28862.535156" z="505.442383" dir_x="0.224951" dir_y="0.974370" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="1102" group="0" name="모켄 해적" x="47316.027344" y="29236.466797" z="548.502258" dir_x="-0.788011" dir_y="0.615662" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="1103" group="0" name="모켄 해적" x="47170.613281" y="28973.740234" z="533.289795" dir_x="-0.544639" dir_y="0.838671" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="1104" group="0" name="모켄 해적" x="43164.882813" y="35183.683594" z="855.148193" dir_x="-0.587785" dir_y="-0.809017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="1105" group="0" name="모켄 해적" x="42961.000000" y="34747.183594" z="832.902344" dir_x="-0.956305" dir_y="0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="2006" group="0" name="제일스의 노예" x="42083.500000" y="26641.197266" z="2.394982" dir_x="0.898794" dir_y="0.438371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109311" default="false" rate="250" />
+            <NPC id="109312" default="false" rate="250" />
+            <NPC id="109319" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="2007" group="0" name="제일스의 노예" x="41787.523438" y="27666.544922" z="104.168106" dir_x="0.984808" dir_y="0.173648" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109311" default="false" rate="250" />
+            <NPC id="109312" default="false" rate="250" />
+            <NPC id="109319" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="2008" group="0" name="제일스의 노예" x="41800.011719" y="27325.791016" z="58.438046" dir_x="0.927184" dir_y="0.374606" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="192,192,192">
+            <NPC id="109311" default="false" rate="250" />
+            <NPC id="109312" default="false" rate="250" />
+            <NPC id="109319" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="3000" group="0" name="[NPC] 제일스의 부하" x="39213.937500" y="25949.746094" z="65.556648" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109301" default="false" rate="500" />
+            <NPC id="109302" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="3001" group="0" name="[NPC] 제일스의 부하" x="39610.382813" y="25664.541016" z="111.768333" dir_x="-0.766044" dir_y="-0.642788" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109301" default="false" rate="500" />
+            <NPC id="109302" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="3002" group="0" name="[NPC] 제일스의 부하" x="38803.753906" y="25747.109375" z="54.178669" dir_x="0.615662" dir_y="-0.788010" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109301" default="false" rate="500" />
+            <NPC id="109302" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="3003" group="0" name="[NPC] 제일스의 부하" x="39705.359375" y="25203.056641" z="110.080391" dir_x="-0.951057" dir_y="0.309016" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109301" default="false" rate="500" />
+            <NPC id="109302" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="3004" group="0" name="[NPC] 제일스의 부하" x="38626.601563" y="25284.527344" z="64.804596" dir_x="0.984808" dir_y="0.173649" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="109301" default="false" rate="500" />
+            <NPC id="109302" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10101" group="0" name="첫번째 웨이브 01" x="45554.449219" y="32903.621094" z="820.935730" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="10102" group="0" name="첫번째 웨이브 02" x="45511.121094" y="32481.191406" z="796.571350" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="10103" group="0" name="첫번째 웨이브 03" x="45836.832031" y="32392.355469" z="779.759705" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="10104" group="0" name="첫번째 웨이브 04" x="45876.347656" y="32695.265625" z="803.857849" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="10105" group="0" name="대기 해적 05" x="45982.562500" y="32380.023438" z="775.345276" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,64">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="10106" group="0" name="대기 해적 06" x="46434.746094" y="32639.689453" z="799.761169" dir_x="-0.866026" dir_y="0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,64">
+            <NPC id="109211" default="false" rate="250" />
+            <NPC id="109212" default="false" rate="250" />
+            <NPC id="109213" default="false" rate="250" />
+            <NPC id="109214" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="20001" group="0" name="1단계" x="73095.023438" y="43494.226563" z="1948.803467" dir_x="-0.139173" dir_y="0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="1" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="20002" group="0" name="2단계" x="73469.484375" y="43396.855469" z="2023.945923" dir_x="-0.139173" dir_y="0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="1" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="20003" group="0" name="3단계" x="73842.023438" y="43255.355469" z="2063.800781" dir_x="-0.139173" dir_y="0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="1" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="20004" group="0" name="4단계" x="74142.796875" y="43164.941406" z="2066.078613" dir_x="-0.139173" dir_y="0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="1" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="20005" group="0" name="5단계" x="74456.750000" y="43047.628906" z="2116.733154" dir_x="-0.139173" dir_y="0.990268" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="1" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="109020" group="0" name="[NPC] 티안" x="46755.714844" y="29598.701172" z="564.890869" dir_x="0.156435" dir_y="-0.987688" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,255,64">
+            <NPC id="109020" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="109025" group="0" name="[NPC] 로코" x="41206.058594" y="36332.210938" z="815.769470" dir_x="-0.927184" dir_y="-0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109025" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="109100" group="0" name="크라울러" x="39174.605469" y="25399.857422" z="2.148865" dir_x="0.069756" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="3800" color="128,0,255">
+            <NPC id="109100" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109221" group="0" name="[NPC] 모켄" x="46848.003906" y="29024.912109" z="530.606079" dir_x="-0.156435" dir_y="0.987688" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,128,0">
+            <NPC id="109221" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="109310" group="0" name="[NPC] 제일스" x="41903.328125" y="26979.441406" z="24.764038" dir_x="0.913545" dir_y="0.406737" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,128">
+            <NPC id="109310" default="false" rate="1000" />
+        </SPAWN>
+        <MARKER id="1" name="체크포인트 1" x="40742.640625" y="36165.972656" z="780.044189" dir_x="0.882948" dir_y="-0.469472" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="체크포인트 2" x="42477.339844" y="27309.535156" z="48.204102" dir_x="-0.913546" dir_y="-0.406736" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="제일스 이벤트 마커" x="41337.222656" y="26674.373047" z="38.417274" dir_x="-0.898794" dir_y="-0.438371" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="제일스 워프 마커" x="41084.222656" y="26562.425781" z="47.636372" dir_x="0.913545" dir_y="0.406737" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="해제 위치로" x="39974.753906" y="25843.511719" z="72.438293" dir_x="-0.891007" dir_y="-0.453990" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="[QM] 109018 obj 1" x="47004.406250" y="29382.267578" z="548.943542" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="100" name="티안 서 있을 곳" x="39401.554688" y="27860.523438" z="112.217026" dir_x="0.374607" dir_y="-0.927184" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1101" name="wave1 1-1" x="44784.070313" y="33071.839844" z="835.747620" dir_x="-0.882948" dir_y="0.469471" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1102" name="wave1 1-2" x="43881.792969" y="33526.289063" z="811.295654" dir_x="-0.694658" dir_y="0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1103" name="wave1 1-3" x="43462.621094" y="33929.089844" z="814.820923" dir_x="-0.529919" dir_y="0.848048" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1201" name="wave1 2-1" x="45131.636719" y="33229.007813" z="840.369629" dir_x="-0.913546" dir_y="0.406736" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1202" name="wave1 2-2" x="44323.414063" y="33627.722656" z="842.539246" dir_x="-0.838671" dir_y="0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1203" name="wave1 2-3" x="43734.867188" y="34106.074219" z="841.862427" dir_x="-0.656059" dir_y="0.754709" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2401" name="wave2 4-1" x="45210.011719" y="28823.710938" z="335.845337" dir_x="-0.882948" dir_y="-0.469472" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2402" name="wave2 4-2" x="44011.777344" y="28366.152344" z="267.134949" dir_x="-0.838671" dir_y="-0.544639" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2403" name="wave2 4-3" x="43155.972656" y="27833.369141" z="146.821106" dir_x="-0.848048" dir_y="-0.529920" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10101" name="10101 End" x="42356.074219" y="34847.800781" z="810.838623" dir_x="-0.390731" dir_y="0.920505" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10102" name="10102 End" x="42810.714844" y="34945.750000" z="835.500427" dir_x="-0.848048" dir_y="0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10103" name="10103 End" x="42844.882813" y="35539.261719" z="865.861511" dir_x="-0.992546" dir_y="-0.121869" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10104" name="10104 End" x="43082.898438" y="35127.078125" z="852.067505" dir_x="-0.857167" dir_y="0.515038" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10105" name="10105 End" x="42598.136719" y="35321.796875" z="843.126648" dir_x="-0.999848" dir_y="-0.017452" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트 1 센서" local="false" x="40626.382813" y="36340.808594" z="782.734497" radius="1000.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="알림 센서" local="false" x="42771.394531" y="28997.525391" z="227.061295" radius="10000.000000" enabled="false" groupname="none" />
+        <SENSOR id="3" name="귀환 센서" x="42782.105469" y="29070.822266" z="226.668930" radius="10000.000000" enabled="false">
+            <WARP warp_type="field" title="귀환" condition="1090189" gate_type="auto" field="109" marker="1090189" />
+            <WARP warp_type="field" title="귀환 (미 완료시)" condition="1090181" gate_type="auto" field="109001" marker="109059" />
+        </SENSOR>
+        <SENSOR id="4" name="첫번째 적" local="false" x="44951.992188" y="32008.210938" z="810.715576" radius="3000.000000" enabled="true" groupname="none" />
+        <SENSOR id="6" name="모켄 이벤트" local="false" x="46827.414063" y="29304.810547" z="538.101440" radius="1200.000000" enabled="false" groupname="none" />
+        <SENSOR id="8" name="모켄 끝 " local="false" x="45336.812500" y="29033.994141" z="335.844543" radius="4000.000000" enabled="false" checkpoint="2" groupname="none" />
+        <SENSOR id="10" name="제일스 이벤트 센서" local="false" x="42264.449219" y="27194.839844" z="37.287876" radius="700.000000" enabled="false" groupname="none" />
+        <SENSOR id="11" name="2번째 체크포인트" local="false" x="41598.183594" y="26807.396484" z="23.929604" radius="5000.000000" enabled="true" checkpoint="2" groupname="none" />
+        <SENSOR id="12" name="크라울러와 전투 시작" local="false" x="41055.601563" y="26527.445313" z="46.763088" radius="700.000000" enabled="false" checkpoint="2" groupname="none" />
+        <SENSOR id="13" name="obj 3 완료 센서" local="false" x="42729.902344" y="29036.990234" z="226.098495" radius="10000.000000" enabled="false" groupname="none" />
+        <AREA id="1" name="1." path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="46824.882813" y="29402.929688" z="10000.000000" radius="0.000000" height="0.000000" />
+        </AREA>
+        <AREA id="2" name="2." path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="42409.453125" y="27137.826172" z="10000.000000" radius="0.000000" height="0.000000" />
+        </AREA>
+        <AREA id="3" name="3." path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="40208.445313" y="25199.630859" z="10000.000000" radius="0.000000" height="0.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="스코노" npcid="104020">
+		<COMBAT comment="default">
+			<DEFAULT>
+				<ACTION type="talent" param1="210402021" rate="20" />
+				<ACTION type="talent" param1="210402026" rate="20" />
+				<ACTION type="talent" param1="210402023" rate="10" />
+				<ACTION type="lua" param1="NPC_104020_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="gained_buff" param1="88167">
+				<ACTION type="talent" param1="210402028" rate="20" duration="0"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402024" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402024" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402032" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402032" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="30" param2="60" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402033" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402033" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402031" rate="30" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402031" rate="40" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" comment="broken left tentacle. cannot use grapple.">
+			<DEFAULT>
+				<ACTION type="talent" param1="210402021" rate="25" />
+				<ACTION type="talent" param1="210402023" rate="20" />
+				<ACTION type="lua" param1="NPC_104020_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="gained_buff" param1="88167">
+				<ACTION type="talent" param1="210402028" rate="20" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402024" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402024" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402032" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402032" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="30" param2="60" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402033" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402033" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402020" rate="20" />
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402031" rate="30" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402031" rate="40" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="2" comment="broken right tentacle. cannot use tentacle-swing and cleaning teeth.">
+			<DEFAULT>
+				<ACTION type="talent" param1="210402021" rate="25" />
+				<ACTION type="talent" param1="210402023" rate="20" />
+				<ACTION type="lua" param1="NPC_104020_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402024" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0"/>
+					<ACTION type="talent" param1="210402024" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402032" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0"/>
+					<ACTION type="talent" param1="210402032" rate="40" />
+				</CHECK>
+			</CHECK>
+
+			<CHECK type="hp" param1="30" param2="60" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402033" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0"/>
+					<ACTION type="talent" param1="210402033" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402027" rate="30" />
+					<ACTION type="talent" param1="210402031" rate="30" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true"/>
+					<ACTION type="talent" param1="210402030" rate="20" duration="0"/>
+					<ACTION type="talent" param1="210402031" rate="40" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="3" comment="broken all tentacle">
+			<DEFAULT>
+				<ACTION type="talent" param1="210402021" rate="25" />
+				<ACTION type="talent" param1="210402023" rate="20" />
+				<ACTION type="lua" param1="NPC_104020_BackAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402024" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true" />
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402024" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="80" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402032" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true" />
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402032" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="30" param2="60" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402033" rate="20" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true" />
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402033" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30" >
+				<CHECK type="distance" param1="300">
+					<ACTION type="talent" param1="210402021" rate="20" />
+					<ACTION type="talent" param1="210402022" rate="20" />
+					<ACTION type="talent" param1="210402031" rate="30" />
+				</CHECK>
+				
+				<CHECK type="rage" param1="300">
+					<ACTION type="aggro" param1="short" param2="30"  cycle="15" auto_run="true" />
+					<ACTION type="talent" param1="210402030" rate="20" duration="0" />
+					<ACTION type="talent" param1="210402031" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210402000" rate="10"  />
+				<ACTION type="talent" param1="210402001" rate="10"  />
+				<ACTION type="nothing" param1="3" rate="80"  />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_104020:Init(NPCID)
+	--[[
+		User Data
+		1: 왼촉수  누적 데미지
+		2: 오른촉수 누적 데미지
+		3: Pain누적 데미지
+	--]]
+	NPC_ReserveUserData(NPCID, 3);
+	
+	local MaxHP 						= NPC_104020.MaxHP
+	
+	NPC_104020.LimitForBeaten			= MaxHP/5		-- beaten reaction
+	
+	NPC_104020.LimitForLeftTentacle 	= MaxHP/2		-- left tentacle
+	NPC_104020.LimitForRightTentacle 	= MaxHP/4		-- right tentacle
+	
+	NPC_104020.TalIdPain1				= 210402002		-- long 		to_mode2
+	NPC_104020.TalIdPain1_1				= 210402003		-- short		to_mode2
+	NPC_104020.TalIdPain2				= 210402004		-- long			to_mode1
+	NPC_104020.TalIdPain2_1				= 210402005		-- short		to_mode1
+	NPC_104020.TalIdPain3				= 210402006		-- short		for hit reaction
+	NPC_104020.TalIdPain4				= 210402007		-- long			to_mode3
+	NPC_104020.TalIdPain4_1				= 210402008		-- short		to_mode3
+	
+	NPC_104020.TalIdVomit				= 210402024
+	NPC_104020.TalIdBackAttack			= 210402025
+	NPC_104020.TalIdFrontJump			= 210402029
+	
+	NPC_104020.BuffIdBadBreath			= 88167
+	NPC_104020.NpcIdBug					= 104021    	-- 벌레
+	NPC_104020.NpcIdBug2				= 104022    	-- 큰벌레
+end
+
+function NPC_104020:OnFinishSummonBug1( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_104020.NpcIdBug	, 5, "", -500, 500 )
+end
+
+function NPC_104020:OnFinishSummonBug2( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_104020.NpcIdBug2 , 1, "", -500, 500 )
+end
+
+function NPC_104020:OnFinishSummonBug3( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_104020.NpcIdBug	, 10, "", -500, 500 )
+end
+
+function NPC_104020_BackAttack( ThisNPC, Enemy )
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	local IsRear = Enemy:IsRear( ThisNPC )
+	
+	if Dist > 150 and Dist < 600 and IsRear then
+		if ThisNPC:IsCooldown( NPC_104020.TalIdBackAttack ) then
+			ThisNPC:UseTalentSelf( NPC_104020.TalIdFrontJump )
+			return
+		end
+		ThisNPC:UseTalentSelf( NPC_104020.TalIdBackAttack )
+	end
+end
+
+function NPC_104020:OnStartCleaning( ThisNPC, Enemy )
+	ThisNPC:RemoveBuff( NPC_104020.BuffIdBadBreath )
+end
+
+function NPC_104020_ProcessAccDamage( ThisNPC, PartsIdx, HitInfo )
+	-- Acc damage 
+	local DmgAcc = 0
+	if  PartsIdx == 1 or PartsIdx == 2 then
+		DmgAcc = ThisNPC:GetUserData( PartsIdx ) + HitInfo.Damage	
+		ThisNPC:SetUserData( PartsIdx, DmgAcc )
+	end
+	
+	DmgAcc = ThisNPC:GetUserData( 3 ) + HitInfo.Damage
+	ThisNPC:SetUserData( 3, DmgAcc )
+	
+	--[[
+	GLog( "-- Process Acc Damage Root ( P:" .. PartsIdx .. 
+		", D:" .. HitInfo.Damage .. 
+		", 1:" .. ThisNPC:GetUserData( 1 ) .. 
+		", 2:" .. ThisNPC:GetUserData( 2 ) .. 
+		", 3:" .. ThisNPC:GetUserData( 3 ) .. " ) --\n"  )
+	--]]
+	
+	
+	if ThisNPC:GetCurrentTalent() == NPC_104020.TalIdVomit then
+		-- no reaction while act vomit
+		return
+	end
+	
+	-- Reaction
+	if 	PartsIdx == 1 and													 
+		( not ThisNPC:CheckBPart( 1 ) ) and									-- If left tentacle is exist
+		ThisNPC:GetUserData( 1 ) > NPC_104020.LimitForLeftTentacle and  	-- If accumulated damage is enough
+		ChkMFForHitReaction( HitInfo ) then									-- If current damage have enough motion-factor
+	
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( 1, HitInfo.Attacker )
+
+		-- Choose Pain Ani and mode change
+		if ThisNPC:CheckBPart( 2 ) then
+			--GLog( "To mode3 ..\n" )
+			
+			if ThisNPC:IsCooldown( NPC_104020.TalIdPain4 ) then
+				ThisNPC:UseTalentSelf( NPC_104020.TalIdPain4_1 )
+			else
+				ThisNPC:UseTalentSelf( NPC_104020.TalIdPain4 )
+			end
+			
+			return
+		end 
+		
+		--GLog( "To mode 1..\n" )
+		if ThisNPC:IsCooldown( NPC_104020.TalIdPain1 ) then
+			ThisNPC:UseTalentSelf( NPC_104020.TalIdPain1_1	 )
+		else
+			ThisNPC:UseTalentSelf( NPC_104020.TalIdPain1	 )
+		end
+		
+		return
+	end
+	
+	if 	PartsIdx == 2 and
+		( not ThisNPC:CheckBPart( 2 ) ) and
+		ThisNPC:GetUserData( 2 ) > NPC_104020.LimitForRightTentacle and
+		ChkMFForHitReaction( HitInfo ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( 2, HitInfo.Attacker )
+		
+		if ThisNPC:CheckBPart( 1 ) then
+			--GLog( "To mode3 ..\n" )
+			
+			if ThisNPC:IsCooldown( NPC_104020.TalIdPain4 ) then
+				ThisNPC:UseTalentSelf( NPC_104020.TalIdPain4_1 )
+			else
+				ThisNPC:UseTalentSelf( NPC_104020.TalIdPain4 )
+			end
+			return
+		end 
+		
+		--GLog( "To mode 2..\n" )
+		if ThisNPC:IsCooldown( NPC_104020.TalIdPain2 ) then
+			ThisNPC:UseTalentSelf( NPC_104020.TalIdPain2_1	 )
+		else
+			ThisNPC:UseTalentSelf( NPC_104020.TalIdPain2	 )
+		end
+		
+		return
+	end
+
+	if ThisNPC:IsCooldown( NPC_104020.TalIdPain3 ) then
+		return
+	end
+	
+	if ThisNPC:GetUserData( 3 ) > NPC_104020.LimitForBeaten and
+		ChkMFForHitReaction( HitInfo ) then
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_104020.TalIdPain3	 )
+		ThisNPC:SetUserData( 3, 0 )
+		return
+	end
+end
+
+function NPC_104020:OnHitCapsule_1_0(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_1_1(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_1_2(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 2, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_0(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_1(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_2(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 2, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_3(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_4(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_5(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 2, HitInfo )
+end	
+
+function NPC_104020:OnHitCapsule_2_6(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_7(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 1, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_2_8(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 2, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_3_0(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_3_0(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 3, HitInfo )
+end
+
+function NPC_104020:OnHitCapsule_3_0(HitInfo)
+	NPC_104020_ProcessAccDamage( this, 3, HitInfo )
+end
+
+]]></SCRIPT>
+</maiet>

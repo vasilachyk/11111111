@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 늙은곰 탈린 : 에다산 챔피온	
+210923901	idle2(땅파기)
+210923902	물기(atk_1)
+210923903	내려찍기(atk_2)
+210923904	오른손휘두르기(atk_3)
+210923905	왼손휘두르기(atk_4)
+-->
+
+<maiet>
+	<COLT name="늙은곰 탈린" npcid="102139">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210923902" rate="20" desc="물기(atk_1)" />
+				<ACTION type="talent" param1="210923903" rate="10" desc="내려찍기(atk_2)"/>
+				<ACTION type="talent" param1="210923904" rate="35" desc="오른손휘두르기(atk_3)"/>
+				<ACTION type="talent" param1="210923905" rate="35" desc="왼손휘두르기(atk_4)"/>
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40" >
+				<ACTION type="talent" param1="210923902" rate="20" desc="물기(atk_1)" />
+				<ACTION type="talent" param1="210923903" rate="30" desc="내려찍기(atk_2)"/>
+				<ACTION type="talent" param1="210923904" rate="25" desc="오른손휘두르기(atk_3)"/>
+				<ACTION type="talent" param1="210923905" rate="25" desc="왼손휘두르기(atk_4)"/>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923901" rate="70" desc="idle2(땅파기)" />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

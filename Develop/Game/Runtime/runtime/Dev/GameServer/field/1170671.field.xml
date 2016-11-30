@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="117" minimap_name="map00117" loading_image_name="00117" min_x="-33650" min_y="-31970" max_x="31350" max_y="33030" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="4" max_gather_herb="4" max_gather_relic="12" max_gather_lumber="9">
+        <BGM fieldbgm="amb_dungeon_underpass">
+            <ENVBGM dungeonbgm="amb_dungeon_3" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="283" group="0" name="안보이는벽" x="14958.008789" y="-10566.050781" z="-197.987778" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="117000" group="0" name="[EPIC]폴루토" x="19980.775391" y="-10544.743164" z="-118.135040" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" radius="500.000000" random_dir="false" enabled="false" only_client="false" start_time="1" respawn_time="120" enable_respawn_tick_boost="false" roam_radius="1000" roam_depth="100" combat_radius="7000" color="255,0,0">
+            <NPC id="117040" default="true" rate="1000" />
+        </SPAWN>
+        <MARKER id="1" name="시작위치" x="16282.167969" y="-10513.705078" z="-197.988663" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="117000" name="MON_M 117000 폴루토" x="20226.810547" y="-10568.450195" z="-78.757324" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="부활위치" local="false" x="16267.658203" y="-10513.517578" z="-197.988663" radius="100.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="to 지하수로" x="14986.014648" y="-10431.614258" z="-197.988007" radius="800.000000" enabled="false" checkpoint="1">
+            <EFFECT effect="ZoneLine" x="483.260742" y="0.000000" z="0.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="지하수로로 이동" condition="0" gate_type="auto" field="117" marker="117260" />
+        </SENSOR>
+        <SENSOR id="3" name="툴팁센서" local="false" x="16343.283203" y="-10521.135742" z="-197.988663" radius="500.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="140708" name="폴루토 소환센서" local="false" x="20134.841797" y="-10315.685547" z="-136.979294" radius="5000.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

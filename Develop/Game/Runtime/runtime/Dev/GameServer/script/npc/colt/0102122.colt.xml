@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="용병">
+		<COMBAT mode="0" victory="210212007" >
+			<DEFAULT>
+				<ACTION type="talent" param1="210212014" rate="40" /> <!-- 보루 : 긴 쿨타임-->
+				
+				<ACTION type="talent" param1="210212001" rate="20" />
+				<ACTION type="talent" param1="210212003" rate="15" />
+				<ACTION type="talent" param1="210212002" rate="30" />
+				
+				<ACTION type="talent" param1="210212013" rate="5" /> <!-- 충격 반사 -->
+				<ACTION type="talent" param1="210212015" rate="10" /> <!-- 파멸의 일격 -->
+				<ACTION type="talent" param1="210212016" rate="5" /> <!-- 방패 가격 -->
+				<ACTION type="talent" param1="210212017" rate="5" /> <!-- 돌진 -->
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80" >
+				<ACTION type="talent" param1="210212011" rate="100" /> <!-- 역습 -->
+			</CHECK>
+	
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<CHECK type="gained_buff" param1="80120"> <!-- 역습 -->
+					<ACTION type="talent" param1="210212012"/>
+				</CHECK>
+
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+
+				<ACTION type="talent" param1="210212013" rate="20" /> <!-- 충격 반사 -->
+				<ACTION type="talent" param1="210212014" rate="10" /> <!-- 보루 -->
+				<ACTION type="talent" param1="210212005" rate="20" /> <!-- 파멸의 일격 -->
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210212006" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

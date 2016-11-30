@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="호저">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211004300" rate="20" />
+				<ACTION type="talent" param1="211004302" rate="30" />
+				<ACTION type="group" rate="10">
+					<ACTION type="talent" param1="211004301" />
+					<ACTION type="talent" param1="211004303" />
+				</ACTION>
+			</DEFAULT>
+			
+
+			<CHECK type="distance" param1="600">
+				<ACTION type="talent" param1="211004300" rate="20" />
+				<ACTION type="talent" param1="211004302" rate="30" />
+				<ACTION type="group" rate="60">
+					<ACTION type="talent" param1="211004301" />
+					<ACTION type="talent" param1="211004303" />
+				</ACTION>
+			</CHECK>
+
+			<CHECK type="distance" param1="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="211004304" />
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211004301" rate="15" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+
+</maiet>

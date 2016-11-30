@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- 
+# 역병 들린 에보스 유골	
+211710800	idle2
+211710801	우측 공격(약)
+211710802	우측 공격
+211710803	회피기 (좌)
+211710804	회피기 (우)
+211710805	가드
+211710806	태클
+-->
+<maiet>
+	<COLT name="역병 들린 에보스 유골" npcid="117108">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211710801" rate="10" desc="우측 공격(약)" />
+				<ACTION type="talent" param1="211710802" rate="10" desc="우측 공격" />
+				<ACTION type="talent" param1="211710806" rate="20" desc="태클" />
+			</DEFAULT>
+
+			<CHECK type="distance" param1="600">
+				<ACTION type="distance" param1="400" param2="400" />
+			</CHECK>
+
+			<CHECK type="distance" param2="130" >
+				<ACTION type="talent" param1="211710803" rate="10" desc="회피기 (좌)" />
+				<ACTION type="talent" param1="211710804" rate="10" desc="회피기 (우)" />
+				
+				<ACTION type="talent" param1="211710801" rate="10" desc="우측 공격(약)" />
+				<ACTION type="talent" param1="211710802" rate="10" desc="우측 공격" />
+				<ACTION type="talent" param1="211710806" rate="20" desc="태클" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

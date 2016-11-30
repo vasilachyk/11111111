@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<maiet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!-- REWARD_MODIFIER : 투데이 보상 비율에 관련 / money, exp, item 변수는 배수개념, item의 제한은 5개
+-->
+  <REWARD_MODIFIER money="2" exp="2" item="1415004,1415006, 1450401, 1000"/>
+  <!--
+HELLHOUND_GROUP grade는 1부터 순차적으로 증가해야 됩니다(UI 탭 인덱스와 연결됩니다).
+HELLHOUND_GROUP grade 값과 HELLHOUND id 값이 중복되면 안됩니다(서버 클라 통신 헬하운드 ID로 사용됩니다).
+-->
+
+<!--
+title : 헬하운드 미션 패키지 이름 및 라이센스	title1: 와일드독 title2: 하운드1급 title3: 하운드2급 title4: 하운드3급 title5: 하운드4급 hellmode: 헬하운드
+reward_quest : 헬하운드 미션 패키지 올클리어 퀘스트
+icon : 헬하운드 미션 패키지 올클리어 퀘스트 아이콘
+-->
+<!--
+missiontype : 헬하운드 미션 종류	kill: 처치 destroy: 전부처치 bparts: 부위파괴 capture: 포획
+difficulty_color : 헬하운드 미션 난이도 별 색깔 (white, yellow)
+difficulty : 헬하운드 미션 난이도 별 개수 (1, 2, 3)
+token_itemid : 필요한 토큰 아이템 종류
+token_itemqty : 필요한 토큰 아이템 개수
+icon : 헬하운드 미션 퀘스트 아이콘
+-->
+
+
+
+  <HELLHOUND_GROUP grade="1" condition="" title="title1" reward_quest="" icon="">
+	<HELLHOUND id="1000" quest="609601" trialfield="609601" missiontype="kill" condition="8" difficulty_color="white" difficulty="1" icon="hellhound_11600"/>
+	<HELLHOUND id="1001" quest="609801" trialfield="609801" missiontype="kill" condition="9" difficulty_color="white" difficulty="1" icon="hellhound_11700"/>
+	<HELLHOUND id="1002" quest="610001" trialfield="610001" missiontype="kill" condition="15" difficulty_color="white" difficulty="1" icon="hellhound_11800"/>
+	<HELLHOUND id="1003" quest="610201" trialfield="610201" missiontype="kill" condition="17" difficulty_color="white" difficulty="1" icon="hellhound_11900"/>
+	<HELLHOUND id="1004" quest="610401" trialfield="610401" missiontype="kill" condition="23" difficulty_color="white" difficulty="1" icon="hellhound_12000"/>
+	<HELLHOUND id="1005" quest="609701" trialfield="609701" missiontype="kill" condition="8" difficulty_color="white" difficulty="1" icon="hellhound_11600"/>
+	<HELLHOUND id="1006" quest="609901" trialfield="609901" missiontype="kill" condition="9" difficulty_color="white" difficulty="1" icon="hellhound_11700"/>
+	<HELLHOUND id="1007" quest="610101" trialfield="610101" missiontype="kill" condition="15" difficulty_color="white" difficulty="1" icon="hellhound_11800"/>
+	<HELLHOUND id="1008" quest="610301" trialfield="610301" missiontype="kill" condition="17" difficulty_color="white" difficulty="1" icon="hellhound_11900"/>
+	<HELLHOUND id="1009" quest="610501" trialfield="610501" missiontype="kill" condition="23" difficulty_color="white" difficulty="1" icon="hellhound_12000"/>
+  </HELLHOUND_GROUP>
+  <HELLHOUND_GROUP grade="2" condition="" title="title2" reward_quest="" icon="" >
+	<HELLHOUND id="2000" quest="620001" trialfield="620001" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_11700"/>
+	<HELLHOUND id="2001" quest="620101" trialfield="620101" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="2002" quest="620201" trialfield="620201" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_11800"/>
+	<HELLHOUND id="2003" quest="620301" trialfield="620301" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11400"/>
+	<HELLHOUND id="2004" quest="620401" trialfield="620401" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11500"/>
+	<HELLHOUND id="2005" quest="620003" trialfield="620003" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_11700"/>
+	<HELLHOUND id="2006" quest="620102" trialfield="620102" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="2007" quest="620202" trialfield="620202" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_11800"/>
+	<HELLHOUND id="2008" quest="620302" trialfield="620302" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11400"/>
+	<HELLHOUND id="2009" quest="620402" trialfield="620402" missiontype="kill" condition="6000110" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11500"/>
+  </HELLHOUND_GROUP>
+  <HELLHOUND_GROUP grade="3" condition="" title="title3" reward_quest="" icon="" >
+	<HELLHOUND id="3000" quest="620501" trialfield="620501" missiontype="kill" condition="6000120" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_10200"/>
+	<HELLHOUND id="3001" quest="620601" trialfield="620601" missiontype="destroy" condition="6000120" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11300"/>
+	<HELLHOUND id="3002" quest="620701" trialfield="620701" missiontype="destroy" condition="6000120" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="3003" quest="620503" trialfield="620503" missiontype="kill" condition="6000120" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_10200"/>
+	<HELLHOUND id="3004" quest="620703" trialfield="620703" missiontype="capture" condition="6000120" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="3005" quest="620801" trialfield="620801" missiontype="capture" condition="6000120" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11400"/>
+	<HELLHOUND id="3006" quest="620901" trialfield="620901" missiontype="destroy" condition="6000120" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10600"/>
+  </HELLHOUND_GROUP>
+  <HELLHOUND_GROUP grade="4" condition="" title="title4" reward_quest="" icon="" >
+	<HELLHOUND id="4000" quest="607501" trialfield="607501" missiontype="kill" condition="6000130" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_10800"/>
+	<HELLHOUND id="4001" quest="607001" trialfield="607001" missiontype="kill" condition="6000130" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_10500"/>
+	<!-- 비바 삭제 <HELLHOUND id="4002" quest="610801" trialfield="610801" missiontype="kill" condition="6000130" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11500"/>-->
+	<HELLHOUND id="4002" quest="608701" trialfield="608701" missiontype="destroy" condition="6000130" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11100"/>
+	<HELLHOUND id="4003" quest="608101" trialfield="608101" missiontype="bparts" condition="6000130" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_11100"/>
+	<HELLHOUND id="4004" quest="608301" trialfield="608301" missiontype="bparts" condition="6000130" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10200"/>
+	<HELLHOUND id="4005" quest="607801" trialfield="607801" missiontype="kill" condition="6000130" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10900"/>
+	<HELLHOUND id="4006" quest="608001" trialfield="608001" missiontype="kill" condition="6000130" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11000"/>
+  </HELLHOUND_GROUP>
+  <HELLHOUND_GROUP grade="5" condition="" title="title5" reward_quest="" icon="" >
+	<HELLHOUND id="5000" quest="607901" trialfield="607901" missiontype="kill" condition="6000140" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11000"/>
+	<HELLHOUND id="5001" quest="606501" trialfield="606501" missiontype="kill" condition="6000140" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_10200"/>
+	<HELLHOUND id="5002" quest="608801" trialfield="608801" missiontype="destroy" condition="6000140" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="5003" quest="608901" trialfield="608901" missiontype="destroy" condition="6000140" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11300"/>
+	<HELLHOUND id="5004" quest="610601" trialfield="610601" missiontype="capture" condition="6000140" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="5005" quest="607101" trialfield="607101" missiontype="kill" condition="6000140" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10500"/>
+	<HELLHOUND id="5006" quest="608601" trialfield="608601" missiontype="bparts" condition="6000140" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_11200"/>
+  </HELLHOUND_GROUP>
+  <HELLHOUND_GROUP grade="6" condition="" title="title6" reward_quest="" icon="" >
+	<HELLHOUND id="6000" quest="607701" trialfield="607701" missiontype="kill" condition="6000150" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10900"/>
+	<HELLHOUND id="6001" quest="606801" trialfield="606801" missiontype="kill" condition="6000150" difficulty_color="yellow" difficulty="1" token_itemid="1450401" token_itemqty="1" icon="hellhound_10400"/>
+	<HELLHOUND id="6002" quest="609201" trialfield="609201" missiontype="capture" condition="6000150" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_11400"/>
+	<HELLHOUND id="6003" quest="606601" trialfield="606601" missiontype="kill" condition="6000150" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10200"/>
+	<HELLHOUND id="6004" quest="606901" trialfield="606901" missiontype="kill" condition="6000150" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10400"/>
+	<HELLHOUND id="6005" quest="608201" trialfield="608201" missiontype="bparts" condition="6000150" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_11100"/>
+  </HELLHOUND_GROUP>
+  <HELLHOUND_GROUP grade="7" condition="" title="title7" reward_quest="" icon="" >
+	<HELLHOUND id="7000" quest="608501" trialfield="608501" missiontype="bparts" condition="6000160" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_11200"/>
+	<HELLHOUND id="7001" quest="607601" trialfield="607601" missiontype="kill" condition="6000160" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_10800"/>
+	<HELLHOUND id="7002" quest="607201" trialfield="607201" missiontype="destroy" condition="6000160" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_10600"/>
+	<HELLHOUND id="7003" quest="606701" trialfield="606701" missiontype="kill" condition="6000160" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_10300"/>
+	<HELLHOUND id="7004" quest="608401" trialfield="608401" missiontype="bparts" condition="6000160" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_10200"/>
+	<HELLHOUND id="7005" quest="610701" trialfield="610701" missiontype="capture" condition="6000160" difficulty_color="yellow" difficulty="2" token_itemid="1450401" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="7006" quest="609301" trialfield="609301" missiontype="capture" condition="6000160" difficulty_color="yellow" difficulty="3" token_itemid="1450401" token_itemqty="1" icon="hellhound_11400"/>
+  </HELLHOUND_GROUP>
+  <!--
+   <HELLHOUND_GROUP grade="8" condition="" title="hellmode" reward_quest="" icon="" >
+	<HELLHOUND id="8000" quest="605001" trialfield="605001" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11400"/>
+	<HELLHOUND id="8001" quest="602001" trialfield="602001" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11800"/>
+	<HELLHOUND id="8002" quest="603001" trialfield="603001" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11500"/>
+	<HELLHOUND id="8003" quest="601001" trialfield="601001" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11700"/>
+	<HELLHOUND id="8004" quest="604001" trialfield="604001" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="8005" quest="607301" trialfield="607301" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_10700"/>
+	<HELLHOUND id="8006" quest="606301" trialfield="606301" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_10100"/>
+	<HELLHOUND id="8007" quest="605101" trialfield="605101" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11400"/>
+	<HELLHOUND id="8008" quest="602101" trialfield="602101" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11800"/>
+	<HELLHOUND id="8009" quest="603101" trialfield="603101" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11500"/>
+	<HELLHOUND id="8010" quest="601101" trialfield="601101" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_11700"/>
+	<HELLHOUND id="8011" quest="604101" trialfield="604101" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_12100"/>
+	<HELLHOUND id="8012" quest="607401" trialfield="607401" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_10700"/>
+	<HELLHOUND id="8013" quest="606401" trialfield="606401" missiontype="kill" condition="38" difficulty_color="yellow" difficulty="3" token_itemid="1450402" token_itemqty="1" icon="hellhound_10100"/>
+  </HELLHOUND_GROUP>
+	-->
+
+	
+	
+<!-- 순번을 의미 , 날짜마다 등급별로 하나씩 부여되야 함
+-->
+  <TODAY_QUEST>
+	<HELLHOUND id="2000,3003,4004,5006,6001,7000"/>
+	<HELLHOUND id="2008,3004,4002,5001,6000,7005"/>
+	<HELLHOUND id="2009,3001,4001,5002,6005,7001"/>
+	<HELLHOUND id="2002,3006,4005,5005,6004,7002"/>
+	<HELLHOUND id="2005,3005,4006,5000,6003,7003"/>
+	<HELLHOUND id="2006,3002,4003,5003,6002,7006"/>
+	<HELLHOUND id="2003,3004,4000,5004,6004,7004"/>
+	<HELLHOUND id="2007,3006,4002,5006,6005,7001"/>
+	<HELLHOUND id="2009,3000,4005,5002,6000,7000"/>
+	<HELLHOUND id="2001,3005,4003,5003,6003,7002"/>
+	<HELLHOUND id="2006,3003,4000,5005,6005,7006"/>
+	<HELLHOUND id="2007,3002,4001,5004,6003,7004"/>
+	<HELLHOUND id="2004,3006,4006,5000,6002,7005"/>
+	<HELLHOUND id="2005,3005,4005,5001,6004,7003"/>
+	<HELLHOUND id="2008,3001,4004,5006,6003,7002"/>
+	<HELLHOUND id="2002,3003,4003,5005,6001,7000"/>
+	<HELLHOUND id="2006,3004,4001,5003,6002,7006"/>
+	<HELLHOUND id="2005,3000,4006,5000,6005,7005"/>
+	<HELLHOUND id="2001,3006,4004,5006,6004,7003"/>
+	<HELLHOUND id="2008,3004,4000,5001,6005,7001"/>
+	<HELLHOUND id="2007,3002,4002,5004,6000,7004"/>
+	<HELLHOUND id="2003,3003,4005,5002,6003,7000"/>
+	<HELLHOUND id="2009,3005,4006,5005,6004,7006"/>
+	<HELLHOUND id="2005,3001,4001,5000,6001,7005"/>
+	<HELLHOUND id="2004,3004,4000,5004,6003,7001"/>
+	<HELLHOUND id="2007,3003,4002,5002,6004,7004"/>
+	<HELLHOUND id="2009,3000,4005,5006,6005,7002"/>
+	<HELLHOUND id="2000,3005,4004,5001,6002,7003"/>
+	<HELLHOUND id="2008,3006,4003,5003,6003,7006"/>
+	<HELLHOUND id="2006,3002,4006,5005,6004,7004"/>
+  </TODAY_QUEST>
+</maiet>

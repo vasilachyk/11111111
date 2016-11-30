@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="103" minimap_name="map00103" loading_image_name="103" min_x="0" min_y="0" max_x="100000" max_y="100000" boundary_min_x="59000" boundary_min_y="74000" boundary_max_x="75000" boundary_max_y="93000" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작점" x="70424.632813" y="78552.812500" z="2574.912354" dir_x="-0.500000" dir_y="0.866026" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="볼락 obj " x="66323.585938" y="86149.742188" z="2705.567871" dir_x="0.719340" dir_y="0.694658" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="전진 지점" x="66557.664063" y="85667.906250" z="2708.415771" dir_x="0.325569" dir_y="-0.945518" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11100" name="패트롤A" x="71832.070313" y="84605.648438" z="2849.296387" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="111" />
+        <MARKER id="11101" name="패트롤A" x="70624.671875" y="88913.117188" z="2695.114502" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="111" />
+        <MARKER id="11201" name="패트롤B" x="66880.242188" y="82599.531250" z="2907.223877" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="112" />
+        <MARKER id="11202" name="패트롤B" x="64360.160156" y="86413.812500" z="2936.490967" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="112" />
+        <SENSOR id="1" name="체크포인트" local="false" x="70193.546875" y="78926.046875" z="2593.142334" radius="1200.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="5" name="안내문" local="false" x="66461.984375" y="85875.562500" z="2701.922607" radius="2500.000000" enabled="true" groupname="none" />
+        <SENSOR id="10" name="env_bolrac" local="true" x="70870.640625" y="83299.320313" z="2760.354248" radius="16622.148438" enabled="true" groupname="env_bolrac" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

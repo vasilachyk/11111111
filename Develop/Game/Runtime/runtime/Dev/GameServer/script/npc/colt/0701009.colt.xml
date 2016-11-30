@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- 아루카 -->
+<maiet>
+	<COLT max_duration="5">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="group" rate="100">
+					<ACTION type="talent" param1="212100930"/>
+					<ACTION type="nothing" param1="2" />
+					<ACTION type="talent" param1="212100931"/>
+					<ACTION type="talent" param1="212100933"/>
+					<ACTION type="nothing" param1="2" />
+<!--					<ACTION type="talent" param1="212100932"/> -->
+				</ACTION>
+			</DEFAULT>
+		</PROLOGUE>
+		<COMBAT  victory="212100906">
+			<DEFAULT>
+				<ACTION type="talent" param1="212100901" rate="20" duration="10" />
+				<ACTION type="talent" param1="212100902" rate="20" />
+				<ACTION type="talent" param1="212100905" duration="0" rate="20" cycle="30" />
+				<ACTION type="talent" param1="212100906" duration="0" rate="20" cycle="30" />
+				<ACTION type="lua" param1="NPC_701009" param2="SpAtk" rate="20" />
+				<ACTION type="talent" param1="212100911" rate="15" />
+				<ACTION type="talent" param1="212100912" rate="15" />
+				<ACTION type="talent" param1="212100913" rate="15" />
+			</DEFAULT>
+			<CHECK type="hp" param2="50">
+				<ACTION type="yell" param1="1500" rate="20" duration="0" />
+				<ACTION type="talent" param1="212100901" rate="20" duration="10" />
+				<ACTION type="talent" param1="212100902" rate="20" />
+				<ACTION type="talent" param1="212100905" rate="10" cycle="30" />
+				<ACTION type="talent" param1="212100906" rate="10" cycle="30" />
+				<ACTION type="lua" param1="NPC_701009" param2="SpAtk" rate="20" />
+				<ACTION type="talent" param1="212100911" rate="15" />
+				<ACTION type="talent" param1="212100912" rate="15" /> <!-- 파이어 볼 -->
+				<ACTION type="talent" param1="212100913" rate="15" cycle="20" />
+				<ACTION type="talent" param1="212100904" rate="10" />
+			</CHECK>
+			<CHECK type="distance" param1="500">
+				<ACTION type="lua" param1="NPC_701009" param2="SpAtk" rate="50" duration="10" />
+				<ACTION type="talent" param1="212100912" rate="20" /> <!-- 파이어 볼 -->
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="212100914" rate="100" duration="0" />				
+			</DEFAULT>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="yell" param1="1500" auto_run="true" max_count="1" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<STRESS>
+			<CHECK type="stress" param1="200">
+				<ACTION type="talent" param1="212100911" rate="50" cycle="10" /> <!-- 회오리 베기 -->
+				<ACTION type="talent" param1="212100913" rate="50" cycle="10" /> <!-- 수면가스 -->
+				<ACTION type="talent" param1="212100902" rate="50" /> <!-- 밀쳐내기 -->
+				<ACTION type="lua" param1="NPC_701009" param2="SpAtk" rate="50" /> <!-- 대시 -->
+			</CHECK>
+		</STRESS>
+		
+  		<REACTION>
+			<CHECK type="used_talent" param1="212100913">
+				<CHECK type="hp" param2="30">
+					<CHECK type="unbreakpart" param1="1">
+						<ACTION type="group">
+							<ACTION type="breakpart" param1="1" />
+							<ACTION type="talent" param1="212100904" />
+						</ACTION>
+					</CHECK>
+				</CHECK>
+			</CHECK>
+		</REACTION>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />
+			</DEFAULT>
+			<CHECK type="mode" param1="0">
+				<ACTION type="talent" param1="212100915" rate="50" />
+			</CHECK>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+<![CDATA[ 
+
+
+
+function NPC_701009:OnHitCapsule_1_0(HitInfo) 
+	
+	local ranNum = math.random(0, 100)
+	local ThisNPC = AsNPC( HitInfo.Victim )		
+	
+	if( ranNum < 10) then 
+		if ChkMFForHitReaction( HitInfo ) then
+			ThisNPC:ClearJob()
+			ThisNPC:BreakPart(1, HitInfo.Attacker)
+			ThisNPC:UseTalentSelf( 212100940 )
+		end
+	end		
+
+end
+
+
+function NPC_701009:SpAtk(ThisNPC, Opponent)
+	local ranNum = math.random(0, 2)
+	local ranNum2 = math.random(0, 3)
+	
+	if (ranNum == 0) then
+		ThisNPC:UseTalent(212100908, Opponent)
+	elseif (ranNum == 1) then
+		ThisNPC:UseTalent(212100909, Opponent)
+	else
+		ThisNPC:UseTalent(212100910, Opponent)
+	end
+	if (ranNum2 == 0) then
+		ThisNPC:UseTalentSelf(212100904)
+	end
+end
+
+function NPC_701009:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC)
+end
+
+]]>
+	</SCRIPT>
+</maiet>

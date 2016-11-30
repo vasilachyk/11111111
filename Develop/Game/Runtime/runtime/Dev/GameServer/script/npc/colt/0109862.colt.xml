@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="불타는 배" npcid="109843">
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_109862:OnSpawn( Info )
+	this:GainBuff( 100204 )
+end
+	]]></SCRIPT>
+		
+</maiet>

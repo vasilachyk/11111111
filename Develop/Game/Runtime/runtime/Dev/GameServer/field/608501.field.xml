@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="508" minimap_name="map00508" loading_image_name="00508" min_x="-20270" min_y="-29730" max_x="29730" max_y="20270" boundary_min_x="-3336" boundary_min_y="-24270" boundary_max_x="12556" boundary_max_y="-7000" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_9">
+            <ENVBGM dungeonbgm="amb_dungeon_garden" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="18.527374" y="-10218.294922" z="399.999756" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="3547.457520" y="-18318.869141" z="147.604248" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_출발지점" local="false" x="30.894653" y="-10172.035156" z="399.999756" radius="611.173523" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD>
+            <ELU name="hm_fighter.elu" />
+            <ITEM id="2891" />
+            <ITEM id="2892" />
+            <ITEM id="2894" />
+            <ITEM id="2895" />
+            <ITEM id="10002003" />
+            <ITEM id="10002104" />
+        </PRELOAD>
+    </FIELDINFO>
+</maiet>

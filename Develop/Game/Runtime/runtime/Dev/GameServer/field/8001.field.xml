@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="113" minimap_name="map00113" loading_image_name="00113" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false" max_gather_mine="16" max_gather_herb="18" max_gather_relic="14" max_gather_lumber="13">
+        <BGM fieldbgm="bgm_field_8">
+            <ENVBGM dawnbgm="amb_normal_2" />
+            <ENVBGM daytimebgm="amb_normal_2" />
+            <ENVBGM sunsetbgm="amb_normal_2" />
+            <ENVBGM nightbgm="amb_normal_2" />
+            <ENVBGM clodybgm="amb_normal_2" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="CLD">
+                <ADD weather="SUN" percent="5" />
+                <ADD weather="RNY" percent="40" />
+                <ADD weather="HRN" percent="20" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="113160" group="0" name="[EPIC] 고스트라이더" x="60491.859375" y="22238.994141" z="2882.549805" dir_x="-0.731353" dir_y="0.681999" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="false" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255" time1="TIME_NIGHT">
+            <NPC id="113160" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="113161" group="0" name="[EPIC] 고스트라이더" x="62823.851563" y="47747.941406" z="2968.149414" dir_x="0.156435" dir_y="0.987688" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="false" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255" time1="TIME_NIGHT">
+            <NPC id="113160" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="auto" x="56140.578125" y="26907.441406" z="2826.841553" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="auto" x="63104.980469" y="50970.363281" z="2934.766846" dir_x="-0.104529" dir_y="-0.994522" dir_z="0.000000" random_dir="false" />
+        <AREA id="1" name="샤파인 호수" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="26563.496094" y="18822.527344" z="-1205.384888" radius="8000.000000" height="3000.000000" />
+        </AREA>
+        <AREA id="2" name="회색아치마을" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="39623.125000" y="29018.117188" z="-542.246094" radius="5000.000000" height="3000.000000" />
+        </AREA>
+        <AREA id="3" name="공동묘지" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="25264.867188" y="48915.722656" z="1895.910156" radius="9500.000000" height="3000.000000" />
+            <CYLINDER x="19792.615234" y="42718.574219" z="1707.958984" radius="4000.000000" height="3000.000000" />
+        </AREA>
+        <AREA id="4" name="납골당 구역" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="40885.644531" y="55579.347656" z="3171.462158" radius="7000.000000" height="3000.000000" />
+            <CYLINDER x="44768.578125" y="60866.507813" z="3286.125977" radius="5000.000000" height="3000.000000" />
+        </AREA>
+        <AREA id="5" name="암흑안개숲" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="62277.582031" y="50404.871094" z="2923.671387" radius="7500.000000" height="3000.000000" />
+        </AREA>
+        <AREA id="6" name="제르디농장" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="57734.878906" y="26406.863281" z="2772.306641" radius="8800.000000" height="3000.000000" />
+        </AREA>
+        <AREA id="7" name="사친의 오두막" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="32198.503906" y="47723.183594" z="1473.290039" radius="1000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="100" name="테레스 평원" path="true" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="10129.044922" y="32377.250000" z="-1.000000" radius="0.000000" height="-2901.000000" />
+        </AREA>
+        <AREA id="101" name="에다산" path="true" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="69957.734375" y="36299.949219" z="-1.000000" radius="0.000000" height="0.000000" />
+        </AREA>
+        <AREA id="102" name="오염된 화원" path="true" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="41843.632813" y="10542.866211" z="7017.606934" radius="100.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="103" name="저주받은 납골당" path="true" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="39532.492188" y="57936.972656" z="3246.514648" radius="0.000000" height="0.000000" />
+        </AREA>
+        <AREA id="104" name="저주받은 납골당" path="true" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="43921.230469" y="54377.203125" z="3289.090332" radius="0.000000" height="0.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

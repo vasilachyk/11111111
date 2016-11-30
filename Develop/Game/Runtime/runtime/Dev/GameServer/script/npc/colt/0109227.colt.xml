@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 도밍 용병	
+210922701	idle2
+210922702	휘두르기
+210922703	찌르기
+-->
+<maiet>
+	<COLT name="도밍 용병" npcid="109227">
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="say" rate="10" param1="$$COLT_0109227_1" param2="1" />
+				<ACTION type="say" rate="10" param1="$$COLT_0109227_2" param2="1" />
+				<ACTION type="say" rate="10" param1="$$COLT_0109227_3" param2="1" />
+			</DEFAULT>
+		</AGGRO>
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="group" rate="10">
+					<ACTION type="say" param1="$$COLT_0109227_4"/>
+					<ACTION type="talent" param1="210922703" desc="찌르기" />
+				</ACTION>
+				<ACTION type="group" rate="10">
+					<ACTION type="say" param1="$$COLT_0109227_5"/>
+					<ACTION type="talent" param1="210922702" desc="휘두르기" />
+				</ACTION>
+				
+				<ACTION type="talent" param1="210922702" rate="30" desc="휘두르기" />
+				<ACTION type="talent" param1="210922703" rate="30" desc="찌르기" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210922701" rate="30" desc="idle2" />
+				<ACTION type="nothing" param1="5" rate="70" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

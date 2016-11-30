@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="106" min_x="0" min_y="0" max_x="55000" max_y="55000" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="5" />
+                <ADD weather="HRN" percent="5" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="10" name="spawn_00010" x="25595.664063" y="30198.058594" z="355.023834" dir_x="0.438371" dir_y="0.898794" dir_z="0.000000" radius="560.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="10000" roam_depth="200" color="auto">
+            <NPC id="106001" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="M4_Limos (temp)" x="25637.423828" y="41875.750000" z="303.172638" dir_x="-0.481754" dir_y="-0.876307" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="S4_Limos (temp)" x="26233.710938" y="43888.777344" z="291.746704" radius="1780.000000" enabled="true" />
+    </FIELDINFO>
+</maiet>

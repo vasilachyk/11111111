@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="">
+		<COMBAT mode="0" victory="310212007" >
+			<DEFAULT>
+				<ACTION type="talent" param1="310212014" rate="40" />
+				
+				<ACTION type="talent" param1="310212001" rate="20" />
+				<ACTION type="talent" param1="310212003" rate="15" />
+				<ACTION type="talent" param1="310212002" rate="30" />
+				
+				<ACTION type="talent" param1="310212013" rate="5" /> 
+				<ACTION type="talent" param1="310212015" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="rage" param1="80" >
+				<ACTION type="talent" param1="310212011" rate="100" /> 
+			</CHECK>
+	
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<CHECK type="gained_buff" param1="80120"> 
+					<ACTION type="talent" param1="310212012"/>
+				</CHECK>
+
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+
+				<ACTION type="talent" param1="310212013" rate="20" />
+				<ACTION type="talent" param1="310212014" rate="10" />
+				<ACTION type="talent" param1="310212005" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="310212006" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

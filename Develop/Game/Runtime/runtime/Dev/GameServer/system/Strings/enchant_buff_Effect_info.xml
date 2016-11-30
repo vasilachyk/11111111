@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+// 강화 버프 이펙트 설정 인자 종류
+<ENCHANT_BUFFEFFECT id="1">
+
+  * id                       : 버프 ID
+  
+  <DEFAULT>
+  
+    // 더미 이펙트
+    <DummyEffect EffectName="" BoneName="" />
+    
+     * EffectName               : 이펙트 이름 (effect.xml)
+     * BoneName                 : 본 이름(없을때에는 전체 본으로 인식)
+
+    // 검광 텍스쳐 이펙트
+    <TrailEffect TexName="trail_test1.tga"/>
+    
+     * TexName                  : 텍스쳐 이름
+
+    // 강화 피격 이펙트
+    <HitEffect EffectName=""/>
+    
+     * EffectName               : 이펙트 이름 (effect.xml)
+
+  </DEFAULT>
+  
+  <EQUIP Type="1hs">
+  
+     * Type                     : 장착 타입(1hs, 1hb, 1hp, 2hd, sta, arc, 2hb, dwd, dwp, head, body, hands, leg, feet)
+  
+     ...
+  
+  </EQUIP>
+
+</ENCHANT_BUFFEFFECT>
+
+-->
+<maiet>
+	<!-- 테스트용 -->
+	<ENCHANT_BUFFEFFECT id="100033">
+		<DEFAULT>
+			<DummyEffect EffectName="ghostrider_flame1" BoneName=""/>
+			<TrailEffect TexName="trail_test.tga"/>
+			<HitEffect EffectName="fireball_projectile_attack"/>
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="100035">
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electric" BoneName=""/>
+			<TrailEffect TexName="trail_test.tga"/>
+			<HitEffect EffectName="enchant_hit_Electric"/>
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	
+	<!-- 실전용 -->
+	<ENCHANT_BUFFEFFECT id="1010000" comment="low-class beast"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Beast" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="1hd,1hb">
+			<DummyEffect EffectName="enchant_Beast" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	
+	<ENCHANT_BUFFEFFECT id="1010002" comment="normal-class beast"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Beast" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="1hd,1hb">
+			<DummyEffect EffectName="enchant_Beast" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1010100" comment="하급 암살자 다이아"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Assassin" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1010102" comment="일반 암살자 다이아"> 
+    <DEFAULT>
+      <DummyEffect EffectName="enchant_Assassin" BoneName="" />
+    </DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1010200" comment="하급 수호자 다이아"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Guardian" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	
+	<ENCHANT_BUFFEFFECT id="1010202" comment="일반 수호자 다이아"> 
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Guardian" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	
+	<ENCHANT_BUFFEFFECT id="1020000" comment="low-class storm"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electric" BoneName=""/>
+		</DEFAULT>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_ElectricBlunt" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1020002" comment="normal-class storm"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electric" BoneName=""/>
+		</DEFAULT>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_ElectricBlunt" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	
+	<ENCHANT_BUFFEFFECT id="1020200"> <!-- 화염강타 -->
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+
+	<ENCHANT_BUFFEFFECT id="1020202"> <!-- 화염강타 -->
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1020300"> <!-- 설원의 눈 다이아 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_FrozenBlunt" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1020302"> <!-- 설원의 눈 다이아 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_FrozenBlunt" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="1hs">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_03" />
+		</EQUIP>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+  
+	<ENCHANT_BUFFEFFECT id="1010300"> <!-- 화룡심장 -->
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	
+	<ENCHANT_BUFFEFFECT id="1010302"> <!-- 화룡심장 -->
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_BUFFEFFECT>
+	
+	<ENCHANT_BUFFEFFECT id="1040000" comment="영생"> 
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_EternalLife" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1040002" comment="영생"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_EternalLife" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+  
+  	<ENCHANT_BUFFEFFECT id="1040100" comment="하급 마나폭풍"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_ManaStorm" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+	<ENCHANT_BUFFEFFECT id="1040102" comment="일반 마나폭풍"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_ManaStorm" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_BUFFEFFECT>
+</maiet>

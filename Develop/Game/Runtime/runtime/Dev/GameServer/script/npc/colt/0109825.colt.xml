@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="오우거 전사">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="talent" param1="210200311" rate="30" />
+				<ACTION type="talent" param1="210200312" rate="30" />
+				<ACTION type="talent" param1="210200313" rate="25" />
+			</DEFAULT>
+						
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				
+				<!-- 접근스킬 -->
+				<ACTION type="talent" param1="210200311" rate="30" />
+				<ACTION type="talent" param1="210200312" rate="30" />
+				<ACTION type="talent" param1="210200313" rate="25" />
+			</CHECK>
+		</COMBAT>
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="210200313" rate="50"/>
+				<ACTION type="nothing" param1="0" rate="50"/>
+			</DEFAULT>
+		</AGGRO>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210200300" rate="20" />
+				<ACTION type="nothing" param1="1" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

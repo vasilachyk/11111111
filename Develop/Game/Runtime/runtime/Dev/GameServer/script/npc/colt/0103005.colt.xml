@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="볼락의 보라벌레" npcid="103005">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="aggro" param1="random" param2="0" cycle="5"/>
+			</DEFAULT>
+	
+			<CHECK type="hp" param1="0" >
+				<ACTION type="aggro" param1="short" param2="0" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="800" >
+				<ACTION type="distance" param1="600" param2="600" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="600" >
+				<ACTION type="distance" param1="400" param2="400" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="300" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" >
+				<ACTION type="distance" param1="200" param2="200" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="200" >
+				<ACTION type="distance" param1="100" param2="100" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="10" >
+				<ACTION type="talent" param1="210300501" rate="100" desc="자폭" />
+			</CHECK>
+			
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_103005:Init( NPCID )
+	NPC_103005.BufIdBubble 	= 40832
+end	
+
+function NPC_103005:OnCombatBegin()
+	this:GainBuff( NPC_103005.BufIdBubble )
+	this:SetTimer( 1, 20, false )
+end
+
+function NPC_103005:OnTimer( Index )
+	if Index == 1 then
+		
+		this:RemoveBuff( NPC_103005.BufIdBubble )
+		this:Despawn(false)
+		return
+	end
+end
+
+function NPC_103005:OnFinishKillAttackP( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Despawn(false)
+end
+
+
+	]]></SCRIPT>
+</maiet>

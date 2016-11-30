@@ -1,0 +1,2287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Umbra Synchronization="true" />
+<ROOT>
+    <SCENE>
+        <DIRLIGHT>
+            <COMMON name="DirectionalLight">
+                <POSITION>0.000000 -1.000000 1.000000</POSITION>
+                <DIRECTION>-0.000000 0.707107 -0.707107</DIRECTION>
+                <UP>0.000000 0.707107 0.707107</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYSPECULAR>1.000</SKYSPECULAR>
+                <DOUBLE_SHADOW_INTENSITY>0.500</DOUBLE_SHADOW_INTENSITY>
+            </PROPERTY>
+        </DIRLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubLight">
+                <POSITION>57902.539063 41502.070313 462.805542</POSITION>
+                <DIRECTION>-0.718381 0.429663 -0.547099</DIRECTION>
+                <UP>-0.695631 -0.449390 0.560487</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.314 0.392 0.498</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_001">
+                <POSITION>57921.363281 41568.613281 466.709961</POSITION>
+                <DIRECTION>-0.367966 -0.925598 -0.088714</DIRECTION>
+                <UP>-0.071873 -0.066810 0.995174</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.290 0.184 0.325</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SUBLIGHT>
+            <COMMON name="SubL_002">
+                <POSITION>57860.949219 41460.191406 456.742401</POSITION>
+                <DIRECTION>0.966718 0.232756 0.106208</DIRECTION>
+                <UP>-0.052876 -0.224401 0.973061</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.263 0.318 0.267</COLOR>
+            </PROPERTY>
+        </SUBLIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="trial_dungeon_04.scene_001">
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>trial_dungeon_04.scene.xml</FILENAME>
+                <UMBRAID>87</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SPOTLIGHT>
+            <COMMON name="SpotLight">
+                <POSITION>-1240.450439 7705.958496 2506.542725</POSITION>
+                <DIRECTION>0.250501 -0.251480 -0.934884</DIRECTION>
+                <UP>0.065088 0.967863 -0.242911</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <ATTENUATIONEND>3000.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>1000.000</ATTENUATIONSTART>
+                <FOV>40.000</FOV>
+                <INTENSITY>1.000</INTENSITY>
+                <COLOR>1.000 1.000 0.000</COLOR>
+            </PROPERTY>
+        </SPOTLIGHT>
+        <LIGHT>
+            <COMMON name="PointLight">
+                <POSITION>1739.452515 7140.243164 698.936951</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.435 0.220 0.067</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_001">
+                <POSITION>-2320.563477 7804.085938 698.936951</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_002">
+                <POSITION>-2017.087524 5845.936035 698.936951</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_003">
+                <POSITION>-850.127441 3717.161133 698.936951</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_004">
+                <POSITION>-363.825745 1561.443604 698.936951</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_005">
+                <POSITION>-154.870972 -620.279297 772.340088</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_006">
+                <POSITION>-1598.042847 107.898193 -329.714294</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_007">
+                <POSITION>1537.479370 -292.891357 -329.714294</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_008">
+                <POSITION>2445.374268 -3383.189697 2.960876</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_009">
+                <POSITION>1484.427490 -4028.886963 2.960876</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_010">
+                <POSITION>1613.854980 -6518.723633 2.960876</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_011">
+                <POSITION>-2037.007324 -7862.709473 270.306915</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_012">
+                <POSITION>-2734.051025 -4515.212891 500.250793</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <LIGHT>
+            <COMMON name="PointL_013">
+                <POSITION>-369.596436 -6219.163086 500.250793</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <SPOTLIGHT>
+            <COMMON name="SpotL_001">
+                <POSITION>-2005.084717 -5218.452148 2506.542725</POSITION>
+                <DIRECTION>-0.011709 -0.192742 -0.981180</DIRECTION>
+                <UP>0.963425 -0.264895 0.040539</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <ATTENUATIONEND>3000.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>1000.000</ATTENUATIONSTART>
+                <FOV>40.000</FOV>
+                <INTENSITY>1.000</INTENSITY>
+                <COLOR>1.000 1.000 0.000</COLOR>
+            </PROPERTY>
+        </SPOTLIGHT>
+        <LIGHT>
+            <COMMON name="PointL_014">
+                <POSITION>1098.871216 5540.861816 698.936951</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.318 0.463 0.624</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>1500.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>800.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="riode_npart_02.scene_001">
+                <POSITION>1706.436768 5139.150879 16.261875</POSITION>
+                <DIRECTION>0.857167 -0.515038 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>riode_npart_02.scene.xml</FILENAME>
+                <UMBRAID>97</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="riode_npart_01.scene_001">
+                <POSITION>1977.797607 5876.381836 16.286343</POSITION>
+                <DIRECTION>0.965926 -0.258819 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>riode_npart_01.scene.xml</FILENAME>
+                <UMBRAID>123</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_tent_gh01.scene_001">
+                <POSITION>-1869.687744 8144.869141 -25.000080</POSITION>
+                <DIRECTION>-0.034900 0.999391 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_tent_gh01.scene.xml</FILENAME>
+                <UMBRAID>124</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_tent_gh01.scene_002">
+                <POSITION>-2511.117432 7964.006836 -25.000080</POSITION>
+                <DIRECTION>-0.559193 0.829037 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_tent_gh01.scene.xml</FILENAME>
+                <UMBRAID>125</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_campfire_k01.scene_001">
+                <POSITION>-2069.754639 7757.280762 -25.000080</POSITION>
+                <DIRECTION>0.358368 0.933581 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_campfire_k01.scene.xml</FILENAME>
+                <UMBRAID>126</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_pot_gh01.scene_001">
+                <POSITION>-2074.548584 7754.148926 -16.494003</POSITION>
+                <DIRECTION>-0.173648 0.984808 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_pot_gh01.scene.xml</FILENAME>
+                <UMBRAID>127</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article-armory_01.scene_001">
+                <POSITION>-4097.388672 -5915.022461 10.000002</POSITION>
+                <DIRECTION>-1.000000 0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article-armory_01.scene.xml</FILENAME>
+                <UMBRAID>128</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_desk3.scene_001">
+                <POSITION>-3930.283936 -6470.282715 10.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_desk3.scene.xml</FILENAME>
+                <UMBRAID>129</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_001">
+                <POSITION>-4005.922363 -6309.226563 10.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>130</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_002">
+                <POSITION>-3863.422363 -6307.867188 10.000000</POSITION>
+                <DIRECTION>0.241922 0.970296 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>131</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_003">
+                <POSITION>-3986.777100 -6630.560547 10.000000</POSITION>
+                <DIRECTION>-0.087156 0.996195 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>132</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_004">
+                <POSITION>-3856.326172 -6640.731934 10.000000</POSITION>
+                <DIRECTION>0.052336 0.998630 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>133</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_candle5.scene_001">
+                <POSITION>-4031.600342 -6474.308105 93.999985</POSITION>
+                <DIRECTION>-1.000000 -0.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_candle5.scene.xml</FILENAME>
+                <UMBRAID>134</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <LIGHT>
+            <COMMON name="PointL_015">
+                <POSITION>-4032.499512 -6470.187012 161.400238</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.980 0.729 0.608</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>600.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="article_beerset_02.scene_001">
+                <POSITION>-3909.006592 -6467.231934 93.999985</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_beerset_02.scene.xml</FILENAME>
+                <UMBRAID>138</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_001">
+                <POSITION>-1273.946289 8257.336914 3.825642</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>139</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_002">
+                <POSITION>2229.953125 10450.417969 -60.981895</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>140</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_003">
+                <POSITION>593.527222 9341.134766 -36.588272</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>141</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_004">
+                <POSITION>548.863037 10661.003906 -61.634552</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>142</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_005">
+                <POSITION>777.037781 6636.966797 403.339874</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>143</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_006">
+                <POSITION>1994.652100 8211.743164 21.755873</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>144</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_007">
+                <POSITION>1178.248535 4837.777832 15.113234</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>145</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_008">
+                <POSITION>-1268.521973 5482.094727 -4.528706</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>146</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_009">
+                <POSITION>-786.000610 3590.150391 -52.817211</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>147</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_010">
+                <POSITION>-859.713562 1202.869263 56.615219</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>148</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_011">
+                <POSITION>902.165894 2170.300049 -10.645638</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>149</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_012">
+                <POSITION>1514.546387 198.325195 -56.601326</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>150</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_013">
+                <POSITION>436.384460 -319.716980 356.989899</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>151</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_014">
+                <POSITION>1513.644165 -3025.208740 -486.540405</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>152</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_015">
+                <POSITION>2320.828613 -4166.934570 -470.053131</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>153</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_016">
+                <POSITION>1033.540283 -1483.282471 -395.301575</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>154</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_017">
+                <POSITION>1837.012939 -6000.106934 -444.000153</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>155</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_018">
+                <POSITION>215.713715 -6967.579590 -86.841057</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>156</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_019">
+                <POSITION>-816.981812 -4962.511719 19.999983</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>157</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_020">
+                <POSITION>-1400.443848 -6949.475098 10.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>158</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_021">
+                <POSITION>-3165.116943 -7688.311035 10.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>159</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_022">
+                <POSITION>-3679.204346 -5279.603516 10.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>160</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_023">
+                <POSITION>-3540.792969 -2558.764160 -526.925659</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>161</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_024">
+                <POSITION>-5132.586914 -2950.307129 -532.884094</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>162</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_025">
+                <POSITION>-4796.876465 -1428.000488 -545.409729</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>163</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_026">
+                <POSITION>-2172.110596 -910.333130 -317.481842</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>164</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_027">
+                <POSITION>-1114.475586 226.613770 -59.909203</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>165</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.scene_001">
+                <POSITION>-2125.360596 8224.572266 -25.000080</POSITION>
+                <DIRECTION>0.087156 0.996195 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+                <UMBRAID>166</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_bucket_k01.scene_001">
+                <POSITION>-2558.288818 7748.848145 -25.000080</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_bucket_k01.scene.xml</FILENAME>
+                <UMBRAID>167</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_tent_gh01.scene_004">
+                <POSITION>305.684143 -968.882080 363.239624</POSITION>
+                <DIRECTION>0.358368 -0.933580 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_tent_gh01.scene.xml</FILENAME>
+                <UMBRAID>168</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_pot_gh01.scene_002">
+                <POSITION>-70.434341 -666.093872 363.826416</POSITION>
+                <DIRECTION>-0.052336 -0.998630 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_pot_gh01.scene.xml</FILENAME>
+                <UMBRAID>169</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_campfire_k01.scene_002">
+                <POSITION>-79.616455 -672.327515 363.828613</POSITION>
+                <DIRECTION>-0.559193 -0.829038 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_campfire_k01.scene.xml</FILENAME>
+                <UMBRAID>170</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_tent_gh01.scene_005">
+                <POSITION>-358.095459 -989.839661 365.949890</POSITION>
+                <DIRECTION>-0.190809 -0.981627 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_tent_gh01.scene.xml</FILENAME>
+                <UMBRAID>171</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.scene_002">
+                <POSITION>160.659241 -1142.195801 359.744995</POSITION>
+                <DIRECTION>-0.309017 -0.951057 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+                <UMBRAID>172</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_12.scene_004">
+                <POSITION>542.686096 -926.803528 350.441284</POSITION>
+                <DIRECTION>0.956305 -0.292372 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_12.scene.xml</FILENAME>
+                <UMBRAID>173</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_bucket_k01.scene_002">
+                <POSITION>539.689697 -924.482666 440.441284</POSITION>
+                <DIRECTION>0.529919 -0.848048 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_bucket_k01.scene.xml</FILENAME>
+                <UMBRAID>174</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_001">
+                <POSITION>869.359802 6901.814941 395.942383</POSITION>
+                <DIRECTION>0.961262 0.275637 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>175</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_31.scene_001">
+                <POSITION>-1322.680176 6635.616211 565.319336</POSITION>
+                <DIRECTION>0.956305 0.292372 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_31.scene.xml</FILENAME>
+                <UMBRAID>176</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_31.scene_002">
+                <POSITION>-448.488831 8681.474609 621.961731</POSITION>
+                <DIRECTION>0.874620 0.484810 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_31.scene.xml</FILENAME>
+                <UMBRAID>177</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_31.scene_003">
+                <POSITION>-2842.812988 7454.620605 -25.000080</POSITION>
+                <DIRECTION>-0.997564 0.069756 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_31.scene.xml</FILENAME>
+                <UMBRAID>178</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_002">
+                <POSITION>-1548.978149 8640.075195 10.428953</POSITION>
+                <DIRECTION>-0.587785 0.809017 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>179</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_003">
+                <POSITION>-319.238831 4913.707520 433.559143</POSITION>
+                <DIRECTION>0.000000 0.999894 0.014546</DIRECTION>
+                <UP>0.109950 -0.014458 0.993832</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>180</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_torch_k01.scene_028">
+                <POSITION>-24.049622 4969.093262 399.742432</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_torch_k01.scene.xml</FILENAME>
+                <UMBRAID>181</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_scaffold_04.scene_001">
+                <POSITION>-1389.002441 1596.427856 -2.821751</POSITION>
+                <DIRECTION>-0.866025 0.500000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_scaffold_04.scene.xml</FILENAME>
+                <UMBRAID>185</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_scaffold_04.scene_002">
+                <POSITION>1520.156372 1208.861450 10.244314</POSITION>
+                <DIRECTION>-0.961262 -0.275637 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_scaffold_04.scene.xml</FILENAME>
+                <UMBRAID>189</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_scaffold_05.scene_001">
+                <POSITION>-182.212524 4552.078125 418.968994</POSITION>
+                <DIRECTION>-0.121869 0.992546 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.746872 0.746872 0.746872</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_scaffold_05.scene.xml</FILENAME>
+                <UMBRAID>190</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_scaffold_05.scene_002">
+                <POSITION>35.313446 8131.047852 469.924805</POSITION>
+                <DIRECTION>0.965926 0.258819 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>0.746872 0.746872 0.746872</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_scaffold_05.scene.xml</FILENAME>
+                <UMBRAID>191</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k01.scene_001">
+                <POSITION>1410.593262 1565.574829 377.988342</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k01.scene.xml</FILENAME>
+                <UMBRAID>192</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k01.scene_002">
+                <POSITION>1342.054443 1437.764893 381.177063</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k01.scene.xml</FILENAME>
+                <UMBRAID>193</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k01.scene_003">
+                <POSITION>1440.074707 1282.036499 727.820618</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k01.scene.xml</FILENAME>
+                <UMBRAID>194</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k01.scene_004">
+                <POSITION>1633.836426 778.665039 728.443298</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k01.scene.xml</FILENAME>
+                <UMBRAID>195</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_k02.scene_002">
+                <POSITION>1490.182495 1072.988281 379.156433</POSITION>
+                <DIRECTION>0.766044 0.642788 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_k02.scene.xml</FILENAME>
+                <UMBRAID>196</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k01.scene_005">
+                <POSITION>-1419.320557 1411.501831 365.377319</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k01.scene.xml</FILENAME>
+                <UMBRAID>197</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k01.scene_006">
+                <POSITION>-1514.616943 1272.841797 717.111572</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k01.scene.xml</FILENAME>
+                <UMBRAID>198</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_k01.scene_007">
+                <POSITION>-1430.552124 1397.488037 717.830933</POSITION>
+                <DIRECTION>-0.891006 0.453991 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_k01.scene.xml</FILENAME>
+                <UMBRAID>199</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_k02.scene_003">
+                <POSITION>-1231.311768 1692.861816 364.813477</POSITION>
+                <DIRECTION>0.642788 0.766044 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_k02.scene.xml</FILENAME>
+                <UMBRAID>200</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_bucket_k01.scene_003">
+                <POSITION>-1218.402832 1680.028809 454.813477</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_bucket_k01.scene.xml</FILENAME>
+                <UMBRAID>201</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_cage1.scene_001">
+                <POSITION>-5126.027832 -2658.540039 -537.843811</POSITION>
+                <DIRECTION>-0.997564 -0.069756 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.731287 0.731287 0.731287</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_cage1.scene.xml</FILENAME>
+                <UMBRAID>202</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.scene_003">
+                <POSITION>-4950.485840 -1645.348145 -538.685181</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+                <UMBRAID>203</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_12.scene_001">
+                <POSITION>-4963.992676 -1761.450195 -542.105225</POSITION>
+                <DIRECTION>-0.999391 -0.034900 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_12.scene.xml</FILENAME>
+                <UMBRAID>204</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.scene_004">
+                <POSITION>-4848.271973 -3009.716797 -536.054443</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+                <UMBRAID>205</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_setbox_01.scene_001">
+                <POSITION>-3937.000000 -7029.000000 10.000000</POSITION>
+                <DIRECTION>0.766044 -0.642788 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_setbox_01.scene.xml</FILENAME>
+                <UMBRAID>226</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <LIGHT>
+            <COMMON name="PointL_016">
+                <POSITION>-5125.488770 -2099.472412 -384.496094</POSITION>
+                <DIRECTION>0.309017 0.951057 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <COLOR>0.980 0.729 0.608</COLOR>
+                <INTENSITY>0.700</INTENSITY>
+                <ATTENUATIONEND>600.000</ATTENUATIONEND>
+                <ATTENUATIONSTART>100.000</ATTENUATIONSTART>
+            </PROPERTY>
+        </LIGHT>
+        <SCENEINSTANCE>
+            <COMMON name="article_candle5.scene_002">
+                <POSITION>-5123.664063 -2110.968262 -454.058228</POSITION>
+                <DIRECTION>-0.951057 0.309017 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_candle5.scene.xml</FILENAME>
+                <UMBRAID>227</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_beerset_02.scene_002">
+                <POSITION>-5004.358398 -2140.044189 -454.058228</POSITION>
+                <DIRECTION>0.309017 0.951057 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_beerset_02.scene.xml</FILENAME>
+                <UMBRAID>231</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_desk3.scene_002">
+                <POSITION>-5025.598145 -2136.739502 -538.058228</POSITION>
+                <DIRECTION>0.309017 0.951057 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_desk3.scene.xml</FILENAME>
+                <UMBRAID>232</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_005">
+                <POSITION>-4914.349121 -2000.941406 -538.978516</POSITION>
+                <DIRECTION>0.529919 0.848048 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>233</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_006">
+                <POSITION>-5051.019531 -1960.578369 -540.082703</POSITION>
+                <DIRECTION>0.309017 0.951057 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>234</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_007">
+                <POSITION>-5019.335938 -2304.239990 -545.975891</POSITION>
+                <DIRECTION>0.052336 0.998630 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>235</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_chair5.scene_008">
+                <POSITION>-5126.483398 -2273.495605 -541.100098</POSITION>
+                <DIRECTION>0.224951 0.974370 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_chair5.scene.xml</FILENAME>
+                <UMBRAID>236</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_31.scene_004">
+                <POSITION>-740.577698 -912.140564 348.089783</POSITION>
+                <DIRECTION>-0.997564 0.069756 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_31.scene.xml</FILENAME>
+                <UMBRAID>237</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_005">
+                <POSITION>563.154419 -649.023865 359.793732</POSITION>
+                <DIRECTION>-0.981627 0.190809 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>238</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_006">
+                <POSITION>-717.115479 -392.076538 363.926727</POSITION>
+                <DIRECTION>-0.874620 0.484810 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>239</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_007">
+                <POSITION>589.179810 1534.154419 -10.066946</POSITION>
+                <DIRECTION>0.515038 0.857167 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>240</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="riode_npart_02.scene_002">
+                <POSITION>-3183.387695 -4228.602051 19.999983</POSITION>
+                <DIRECTION>-0.515038 0.857167 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>riode_npart_02.scene.xml</FILENAME>
+                <UMBRAID>250</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="riode_npart_01.scene_002">
+                <POSITION>-2625.404297 -7989.543945 10.000000</POSITION>
+                <DIRECTION>-0.292372 -0.956305 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>riode_npart_01.scene.xml</FILENAME>
+                <UMBRAID>276</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="mt_eda_humantent01.scene_001">
+                <POSITION>-3875.757568 -5460.597656 10.000000</POSITION>
+                <DIRECTION>-0.913545 0.406737 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>mt_eda_humantent01.scene.xml</FILENAME>
+                <UMBRAID>277</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_12.scene_007">
+                <POSITION>-1631.425415 -7633.733887 10.000000</POSITION>
+                <DIRECTION>0.956305 -0.292372 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_12.scene.xml</FILENAME>
+                <UMBRAID>278</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_bucket_k01.scene_004">
+                <POSITION>-1634.421509 -7631.412109 100.000000</POSITION>
+                <DIRECTION>0.529919 -0.848048 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_bucket_k01.scene.xml</FILENAME>
+                <UMBRAID>279</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_tent_gh01.scene_006">
+                <POSITION>-1889.092773 -7538.956543 10.000000</POSITION>
+                <DIRECTION>0.069757 -0.997564 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_tent_gh01.scene.xml</FILENAME>
+                <UMBRAID>280</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_drum_11.scene_005">
+                <POSITION>-2098.834473 -7471.103027 10.000000</POSITION>
+                <DIRECTION>-0.573576 -0.819152 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_drum_11.scene.xml</FILENAME>
+                <UMBRAID>281</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_pot_gh01.scene_003">
+                <POSITION>-2321.249023 -7379.897461 10.000000</POSITION>
+                <DIRECTION>0.743145 -0.669131 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_pot_gh01.scene.xml</FILENAME>
+                <UMBRAID>282</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_campfire_k01.scene_003">
+                <POSITION>-2327.559326 -7383.687988 10.000000</POSITION>
+                <DIRECTION>-0.559193 -0.829038 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_campfire_k01.scene.xml</FILENAME>
+                <UMBRAID>283</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_tent_gh01.scene_007">
+                <POSITION>-2032.895996 -4681.791016 19.999983</POSITION>
+                <DIRECTION>0.190809 0.981627 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_tent_gh01.scene.xml</FILENAME>
+                <UMBRAID>284</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_008">
+                <POSITION>-1620.056396 -6900.433105 -6.357471</POSITION>
+                <DIRECTION>-0.694658 -0.719340 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>285</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_31.scene_006">
+                <POSITION>-1572.137939 -4843.117676 19.999983</POSITION>
+                <DIRECTION>0.809017 -0.587785 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_31.scene.xml</FILENAME>
+                <UMBRAID>286</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="rengot_campfire_k01.scene_004">
+                <POSITION>-3417.352539 -5977.379883 -6.357471</POSITION>
+                <DIRECTION>-0.559193 -0.829038 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>rengot_campfire_k01.scene.xml</FILENAME>
+                <UMBRAID>287</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_fense_32.scene_009">
+                <POSITION>-406.994843 -5865.040527 19.723772</POSITION>
+                <DIRECTION>-0.681998 0.731354 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_fense_32.scene.xml</FILENAME>
+                <UMBRAID>288</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_setbox_02.scene_001">
+                <POSITION>-1701.660645 -4497.133301 19.999983</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_setbox_02.scene.xml</FILENAME>
+                <UMBRAID>297</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_pot_gh01.scene_004">
+                <POSITION>-2095.672363 -5167.643555 9.999999</POSITION>
+                <DIRECTION>-0.173648 -0.984808 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_pot_gh01.scene.xml</FILENAME>
+                <UMBRAID>298</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_campfire_gh01.scene_001">
+                <POSITION>-2099.471191 -5175.338379 9.999999</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_campfire_gh01.scene.xml</FILENAME>
+                <UMBRAID>299</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_campfire_gh01.scene_002">
+                <POSITION>-4493.092773 -1947.097168 -548.574829</POSITION>
+                <DIRECTION>-0.694658 0.719340 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_campfire_gh01.scene.xml</FILENAME>
+                <UMBRAID>300</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_pot_gh01.scene_005">
+                <POSITION>-4497.382324 -1947.780273 -548.574829</POSITION>
+                <DIRECTION>-0.694658 0.719340 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_pot_gh01.scene.xml</FILENAME>
+                <UMBRAID>301</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_001">
+                <POSITION>-793.693970 1375.314209 32.013428</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>302</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_002">
+                <POSITION>-1919.097168 1752.083618 56.733673</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>303</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_003">
+                <POSITION>-1846.145142 1835.013550 58.476784</POSITION>
+                <DIRECTION>-0.999391 0.034899 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.566650 0.566650 0.566650</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>304</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_001">
+                <POSITION>-618.086304 2538.891113 12.264011</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>305</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_004">
+                <POSITION>620.334351 2414.962891 25.896126</POSITION>
+                <DIRECTION>0.374606 -0.927184 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>306</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_002">
+                <POSITION>2216.496582 10964.435547 -64.253624</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>307</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_005">
+                <POSITION>2134.677979 11006.433594 -64.826607</POSITION>
+                <DIRECTION>-0.994522 -0.104529 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>308</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_003">
+                <POSITION>531.343384 9646.880859 -63.263527</POSITION>
+                <DIRECTION>0.984808 -0.173648 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>309</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_006">
+                <POSITION>2189.990967 7968.383789 14.433794</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>310</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_004">
+                <POSITION>2247.875732 5687.208008 18.940554</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>311</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_007">
+                <POSITION>2148.803467 5651.876953 18.104580</POSITION>
+                <DIRECTION>0.981627 -0.190809 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>312</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_005">
+                <POSITION>547.025391 4840.512695 -1.963746</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>313</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_008">
+                <POSITION>-674.003540 5594.255859 522.342224</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.122774 1.122774 1.122774</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>314</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_006">
+                <POSITION>152.792938 6641.728516 4.894079</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>315</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_009">
+                <POSITION>-1597.649414 6967.580566 -26.942720</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>316</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_007">
+                <POSITION>-905.907104 8548.779297 12.786247</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>317</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_010">
+                <POSITION>-1882.379517 8877.399414 13.229095</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>318</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_011">
+                <POSITION>-2004.182251 8729.770508 13.229095</POSITION>
+                <DIRECTION>0.241922 -0.970296 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.711540 0.711540 0.711540</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>319</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_012">
+                <POSITION>-2889.931152 6047.864746 19.445408</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>320</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_008">
+                <POSITION>71.245483 2956.433105 -27.529613</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>321</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_009">
+                <POSITION>548.759216 432.800415 210.314148</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>322</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_013">
+                <POSITION>1010.227539 -990.419983 -304.442719</POSITION>
+                <DIRECTION>0.939693 -0.342020 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>323</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_010">
+                <POSITION>1860.419678 731.293213 75.299347</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>324</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_011">
+                <POSITION>1253.327393 -3320.659180 -485.449585</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>325</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_012">
+                <POSITION>2432.991943 -5468.254883 -478.584656</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>326</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_014">
+                <POSITION>2808.939453 -3692.639404 -459.886047</POSITION>
+                <DIRECTION>0.939693 0.342020 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>327</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_015">
+                <POSITION>1630.535400 -6873.062988 -315.638763</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>328</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_016">
+                <POSITION>-1864.593628 -8163.691406 18.913658</POSITION>
+                <DIRECTION>0.898794 0.438371 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>329</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_017">
+                <POSITION>-244.379211 -5529.529785 19.999983</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.152109 1.152109 1.152109</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>330</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_013">
+                <POSITION>-2466.334717 -8221.531250 22.619282</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>331</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_014">
+                <POSITION>-3653.842285 -7343.861328 10.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>332</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_015">
+                <POSITION>-3568.778320 -7322.900391 10.000000</POSITION>
+                <DIRECTION>-0.956305 0.292372 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.379328 1.379328 1.379328</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>333</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_018">
+                <POSITION>-2251.751465 -4251.500488 19.999983</POSITION>
+                <DIRECTION>0.358368 0.933581 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>334</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_016">
+                <POSITION>-3350.901855 -2093.477539 -518.458008</POSITION>
+                <DIRECTION>0.544639 0.838671 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>0.807983 0.807983 0.807983</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>335</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_017">
+                <POSITION>-5208.953125 -3014.575684 -532.957520</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>336</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_019">
+                <POSITION>-4362.152344 -1416.714844 -540.112976</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>337</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_020">
+                <POSITION>-4238.800781 -1481.383301 -540.151123</POSITION>
+                <DIRECTION>-0.034900 -0.999391 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.594687 0.594687 0.594687</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>338</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_02.scene_021">
+                <POSITION>-2552.231445 -1198.570435 -439.666626</POSITION>
+                <DIRECTION>-0.422618 -0.906308 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_02.scene.xml</FILENAME>
+                <UMBRAID>339</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="article_mushroom_01.scene_018">
+                <POSITION>51.631592 3003.264893 -28.438728</POSITION>
+                <DIRECTION>0.996195 -0.087156 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>0.633251 0.633251 0.633251</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_mushroom_01.scene.xml</FILENAME>
+                <UMBRAID>340</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_set01.scene_001">
+                <POSITION>-2327.000000 8191.000000 -25.000080</POSITION>
+                <DIRECTION>0.777146 0.629320 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_set01.scene.xml</FILENAME>
+                <UMBRAID>344</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_set12.scene_001">
+                <POSITION>-93.573593 -1064.238525 359.905579</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_set12.scene.xml</FILENAME>
+                <UMBRAID>348</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_set12.scene_002">
+                <POSITION>-4943.000000 -3108.000000 -534.297974</POSITION>
+                <DIRECTION>-0.500000 0.866025 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_set12.scene.xml</FILENAME>
+                <UMBRAID>352</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_set11.scene_001">
+                <POSITION>-2308.040283 -4611.229004 19.999983</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_set11.scene.xml</FILENAME>
+                <UMBRAID>354</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+        <SCENEINSTANCE>
+            <COMMON name="teress_box_set06.scene_001">
+                <POSITION>1604.598389 703.127502 381.177185</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>teress_box_set06.scene.xml</FILENAME>
+                <UMBRAID>358</UMBRAID>
+            </PROPERTY>
+            <SCENE />
+        </SCENEINSTANCE>
+    </SCENE>
+</ROOT>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="미친 구울 광신자">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211303201" rate="20" />
+				<ACTION type="talent" param1="211303203" rate="20" />
+			</DEFAULT>
+			<CHECK type="hp" param2="40" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="face_to" />
+					<ACTION type="talent" param1="211303202" duration="0" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400">
+				<ACTION type="distance" param1="300" param2="300" rate="50" />
+				<ACTION type="talent" param1="211303203" rate="50" />
+			</CHECK>
+		</COMBAT>
+		
+		
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+
+	]]></SCRIPT>
+</maiet>

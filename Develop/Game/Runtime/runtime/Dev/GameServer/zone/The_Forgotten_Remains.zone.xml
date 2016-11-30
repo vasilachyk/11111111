@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY />
+    <SCENE>
+        <RTERRAIN>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY version="1.2">
+                <MAP_WIDTH type="int">
+                    <int>256</int>
+                </MAP_WIDTH>
+                <MAP_HEIGHT type="int">
+                    <int>256</int>
+                </MAP_HEIGHT>
+                <MAP_SIZE type="vec3">
+                    <vec3>55000.000000 55000.000000 0.000000</vec3>
+                </MAP_SIZE>
+                <MAP_NAME>The_Forgotten_Remains_dis.dds</MAP_NAME>
+                <CREATE_NAVEMESH type="bool">
+                    <bool>true</bool>
+                </CREATE_NAVEMESH>
+                <LIGHTMAP index="0" number="2">The_Forgotten_Remains_light0.bmp</LIGHTMAP>
+                <LIGHTMAP index="1" number="2">The_Forgotten_Remains_light1.bmp</LIGHTMAP>
+                <GRASS>The_Forgotten_Remains_grass.grs</GRASS>
+                <LAYER type="array" size="7">
+                    <LAYERINFO index="0">
+                        <ALPHAMAP>The_Forgotten_Remains_mask0.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Limos_sand_f02.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="1">
+                        <ALPHAMAP>The_Forgotten_Remains_mask1.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Limos_sand_f01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>200.000000 200.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="2">
+                        <ALPHAMAP>The_Forgotten_Remains_mask2.dds</ALPHAMAP>
+                        <TILEMAP type="specular">rinden_rock_03.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="3">
+                        <ALPHAMAP>The_Forgotten_Remains_mask3.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Cemetery_rock_f02.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="4">
+                        <ALPHAMAP>The_Forgotten_Remains_mask4.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Limos_sand_f03.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="5">
+                        <ALPHAMAP>The_Forgotten_Remains_mask5.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Limos_sand_f04.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="6">
+                        <ALPHAMAP>The_Forgotten_Remains_mask6.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Limos_sand_f06.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                </LAYER>
+            </PROPERTY>
+        </RTERRAIN>
+        <DIRLIGHT>
+            <COMMON name="TerrainLightMap0">
+                <POSITION>-1.000000 -1.000000 1.000000</POSITION>
+                <DIRECTION>0.577350 0.577350 -0.577350</DIRECTION>
+                <UP>0.408248 0.408248 0.816497</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <ENV />
+            </PROPERTY>
+        </DIRLIGHT>
+        <WATERPLANE>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <MESHFILE>The_Forgotten_Remains_water_p_1.elu</MESHFILE>
+                <DEPTHLIMIT>1500.000</DEPTHLIMIT>
+                <BUMPUVSCALE>2000.000000 3500.000000 5000.000000 7000.000000</BUMPUVSCALE>
+                <BUMPUVMOVE>0.012000 -0.010000 -0.007000 0.008000 0.004000 -0.004000 -0.004000 0.003000</BUMPUVMOVE>
+                <BUMPADJUST>15.000</BUMPADJUST>
+                <BUMPWEIGHT>0.550000 0.350000 0.250000 0.150000</BUMPWEIGHT>
+                <BUMPTEX1>WaterBumps1.tga</BUMPTEX1>
+                <BUMPTEX2>WaterBumps2.tga</BUMPTEX2>
+                <CUSTOMFOG>false</CUSTOMFOG>
+                <FOGNEAR>0.000</FOGNEAR>
+                <FOGFAR>0.000</FOGFAR>
+                <FOGCOLOR>0.000000 0.000000 0.000000</FOGCOLOR>
+                <WATERCOLOR>0.000000 0.000000 0.000000</WATERCOLOR>
+                <RGBHALFLIFE>2400.000000 4800.000000 12000.000000</RGBHALFLIFE>
+                <FRESNELCONSTANT>0.970</FRESNELCONSTANT>
+                <REFLECTADJUST>1.000</REFLECTADJUST>
+            </PROPERTY>
+        </WATERPLANE>
+        <TREE>
+            <COMMON name="Limos_CholloCactus_RT_001">
+                <POSITION>24474.068359 40230.894531 261.765167</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>29.199984 29.199984 29.199984</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_CholloCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_CholloCactus_RT_002">
+                <POSITION>24298.257813 40186.851563 278.329834</POSITION>
+                <DIRECTION>-0.883766 0.467930 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>24.600023 24.600023 24.599964</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_CholloCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_CholloCactus_RT_003">
+                <POSITION>24869.734375 39181.343750 240.750320</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>29.199984 29.199984 29.199984</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_CholloCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_CholloCactus_RT_004">
+                <POSITION>24693.923828 39137.300781 237.375610</POSITION>
+                <DIRECTION>-0.883766 0.467930 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>24.600025 24.600025 24.599964</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_CholloCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_CholloCactus_RT_005">
+                <POSITION>24835.257813 39398.554688 247.901855</POSITION>
+                <DIRECTION>-0.673012 -0.739631 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>20.600031 20.600031 20.599945</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_CholloCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_CholloCactus_RT_006">
+                <POSITION>25575.664063 41527.089844 306.720703</POSITION>
+                <DIRECTION>-0.673012 -0.739631 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>20.600031 20.600031 20.599945</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_CholloCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_001">
+                <POSITION>23458.937500 39547.542969 349.297577</POSITION>
+                <DIRECTION>0.411514 0.911403 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>35.600014 35.600014 35.600006</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_002">
+                <POSITION>23352.791016 39485.492188 341.536774</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_003">
+                <POSITION>23468.125000 39479.507813 335.233856</POSITION>
+                <DIRECTION>-0.964558 0.263873 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>30.600010 30.600006 30.599989</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_004">
+                <POSITION>26476.773438 43682.289063 331.729706</POSITION>
+                <DIRECTION>0.411514 0.911403 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>35.600014 35.600014 35.600006</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_005">
+                <POSITION>26368.873047 43608.644531 308.345734</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_006">
+                <POSITION>26484.207031 43602.660156 334.798553</POSITION>
+                <DIRECTION>-0.964557 0.263873 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>30.600012 30.600008 30.599989</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_007">
+                <POSITION>25457.878906 41477.839844 295.601074</POSITION>
+                <DIRECTION>0.411514 0.911403 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>35.600014 35.600014 35.600006</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_PricklyPearCactus_RT_008">
+                <POSITION>25465.312500 41398.210938 299.473022</POSITION>
+                <DIRECTION>-0.964557 0.263873 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>30.600012 30.600008 30.599989</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_PricklyPearCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="Limos_SaguaroCactus_RT_001">
+                <POSITION>24285.548828 40002.605469 279.968201</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>28.399979 28.399979 28.399979</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>Limos_SaguaroCactus_RT.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+    </SCENE>
+</ROOT>

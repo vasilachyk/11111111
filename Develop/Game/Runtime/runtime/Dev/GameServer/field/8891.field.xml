@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="99010" min_x="28750" min_y="28750" max_x="72500" max_y="72500" boundary_min_x="48500" boundary_min_y="58500" boundary_max_x="52000" boundary_max_y="71507" weather_effect="true" fixed_time="Daytime" town="true" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_gstar_injen">
+            <ENVBGM dawnbgm="amb_dawn" />
+            <ENVBGM daytimebgm="amb_daytime" />
+            <ENVBGM sunsetbgm="amb_sunset" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <PRELOAD>
+            <ELU name="data/model/NPC/sandbag/sandbag.elu" />
+            <ELU name="data/model/NPC/hf_adult/hf_adult.elu" />
+            <ELU name="data/model/Player/hf/hf_hair_02.elu" />
+            <ELU name="data/model/Player/hf/hf_hair_03.elu" />
+            <ELU name="data/model/Player/hf/hf_face_02.elu" />
+            <ELU name="data/model/Player/hf/hf_face_03.elu" />
+            <ELU name="data/model/Player/hf/hf_cloth_armor_novice_00.elu" />
+            <ELU name="data/model/Player/hf/hf_cloth_armor_novice_02.elu" />
+            <ELU name="data/model/Player/hf/hf_cloth_armor_novice_03.elu" />
+            <ELU name="data/model/Player/hf/hf_guard_armor.elu" />
+            <ELU name="data/model/weapons/shield_train.elu" />
+            <ELU name="data/model/weapons/1hd_train.elu" />
+            <ELU name="data/model/NPC/hm_adult/hm_adult.elu" />
+        </PRELOAD>
+        <Env set="default">
+            <WEATHER default="">
+                <ADD weather="SUN" percent="100" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="27" group="0" name="[NPC] 현상 수배지" x="48405.265625" y="60326.691406" z="2296.547607" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="1" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="3035" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="57" group="0" name="[NPC] 음유시인 라임" x="53459.710938" y="55988.488281" z="2372.999512" dir_x="0.866026" dir_y="-0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="3018" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="58" group="0" name="[NPC] 댄서 엘레나" x="53604.425781" y="56052.402344" z="2372.999512" dir_x="0.874620" dir_y="-0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="3019" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="60" group="0" name="[NPC] 수문장 테라슨" x="50369.222656" y="63193.453125" z="2313.395020" dir_x="-0.999848" dir_y="0.017451" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="3070" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="61" group="0" name="[NPC] 운석 예찬론자" x="52957.753906" y="51647.089844" z="2522.000000" dir_x="-0.999848" dir_y="0.017451" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="3047" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="63" group="0" name="[NPC] 렌고트 부락 전쟁 모집병" x="49770.156250" y="61357.136719" z="2313.395020" dir_x="0.358368" dir_y="-0.933580" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="1" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131005" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="65" group="0" name="[NPC] 세레스" x="50383.746094" y="61374.910156" z="2313.395020" dir_x="-0.544639" dir_y="-0.838671" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="1" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131007" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="200" group="0" name="인젠 자유 경비대" x="50437.890625" y="65403.613281" z="2226.676025" dir_x="-0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="201" group="0" name="인젠 자유 경비대" x="53448.570313" y="61099.953125" z="2302.000000" dir_x="0.017451" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="202" group="0" name="인젠 자유 경비대" x="55704.542969" y="55170.207031" z="2282.000000" dir_x="-0.866026" dir_y="0.500000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="203" group="0" name="인젠 자유 경비대" x="48695.195313" y="53940.417969" z="2281.999512" dir_x="0.694659" dir_y="-0.719339" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="204" group="0" name="인젠 자유 경비대" x="53773.203125" y="51637.937500" z="2522.000000" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="206" group="0" name="인젠 자유 경비대(순찰)" x="52673.898438" y="59755.253906" z="2282.000000" dir_x="-0.992546" dir_y="-0.121870" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3068" default="false" rate="500" />
+            <NPC id="3069" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="207" group="0" name="인젠 자유 경비대(순찰)" x="49884.960938" y="54880.914063" z="2281.999512" dir_x="0.587786" dir_y="-0.809017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3068" default="false" rate="500" />
+            <NPC id="3069" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="209" group="0" name="인젠 자유 경비대" x="49714.851563" y="65389.035156" z="2227.153809" dir_x="-0.000001" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="210" group="0" name="인젠 자유 경비대" x="48408.527344" y="60848.441406" z="2302.003906" dir_x="0.999848" dir_y="-0.017451" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="213" group="0" name="인젠 자유 경비대" x="55387.187500" y="54577.492188" z="2281.999756" dir_x="-0.848049" dir_y="0.529919" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="300" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3071" default="false" rate="500" />
+            <NPC id="3072" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="217" group="0" name="인젠 자유 경비대(순찰)" x="55386.964844" y="54956.632813" z="2281.999512" dir_x="0.207911" dir_y="0.978148" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3068" default="false" rate="500" />
+            <NPC id="3069" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="218" group="0" name="인젠 자유 경비대(순찰)" x="56582.839844" y="60397.613281" z="2281.999512" dir_x="0.615661" dir_y="0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3068" default="false" rate="500" />
+            <NPC id="3069" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="230" group="0" name="기다리는 남자" x="51906.871094" y="55441.171875" z="2371.999512" dir_x="-0.139173" dir_y="-0.990268" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" start_time="0" respawn_time="120" roam_radius="400" roam_depth="100" combat_radius="0" color="255,255,255" weather1="WEATHER_SUNNY" weather2="WEATHER_CLOUDY" weather3="WEATHER_CLEAR">
+            <NPC id="3073" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="267" group="0" name="구경꾼(여1)" x="51624.644531" y="52192.207031" z="2281.999512" dir_x="0.034899" dir_y="0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="10" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3046" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="268" group="0" name="구경꾼(어린애1)" x="52556.433594" y="53445.765625" z="2281.999512" dir_x="-0.920505" dir_y="0.390730" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="10" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3052" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="269" group="0" name="구경꾼(남1)" x="52662.218750" y="52764.910156" z="2281.999512" dir_x="0.882948" dir_y="-0.469471" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="10" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3045" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="270" group="0" name="구경꾼(남2)" x="52773.214844" y="52732.578125" z="2281.999512" dir_x="-0.996195" dir_y="0.087154" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="10" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3045" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="271" group="0" name="구경꾼(남3)" x="51686.417969" y="52191.390625" z="2281.999512" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="10" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3045" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="272" group="0" name="구경꾼(여2)" x="52149.937500" y="52650.437500" z="2281.999512" dir_x="0.190811" dir_y="-0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="10" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3046" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="273" group="0" name="구경꾼(어린애2)" x="52466.589844" y="53494.246094" z="2281.999512" dir_x="0.927184" dir_y="-0.374606" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="10" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255">
+            <NPC id="3052" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="280" group="0" name="수다떠는 아줌마 1a" x="56761.089844" y="59098.527344" z="2281.999512" dir_x="0.069757" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255" time1="TIME_DAWN" time2="TIME_DAYTIME" time3="TIME_SUNSET" time4="TIME_EVENING">
+            <NPC id="3048" default="false" rate="500" />
+            <NPC id="3049" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="281" group="0" name="수다떠는 아줌마 1b" x="56772.292969" y="59259.035156" z="2281.999512" dir_x="-0.104529" dir_y="-0.994522" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255" time1="TIME_DAWN" time2="TIME_DAYTIME" time3="TIME_SUNSET" time4="TIME_EVENING">
+            <NPC id="3048" default="false" rate="500" />
+            <NPC id="3049" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="284" group="0" name="수다떠는 아줌마 3a" x="54740.128906" y="52240.351563" z="2281.999512" dir_x="0.681998" dir_y="0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255" time1="TIME_DAWN" time2="TIME_DAYTIME" time3="TIME_SUNSET" time4="TIME_EVENING">
+            <NPC id="3048" default="false" rate="500" />
+            <NPC id="3049" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="285" group="0" name="수다떠는 아줌마 3b" x="54874.589844" y="52383.500000" z="2281.999512" dir_x="-0.681999" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="120" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255" time1="TIME_DAWN" time2="TIME_DAYTIME" time3="TIME_SUNSET" time4="TIME_EVENING">
+            <NPC id="3048" default="false" rate="500" />
+            <NPC id="3049" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="9994" group="0" name="도전 퀘스트 게시판" x="48259.171875" y="56924.218750" z="2302.000000" dir_x="0.999391" dir_y="0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="120" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="5200000" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3016" group="0" name="[NPC] 개" x="53778.003906" y="55406.539063" z="2371.999756" dir_x="-0.939693" dir_y="-0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255" weather1="WEATHER_SUNNY" weather2="WEATHER_CLOUDY" weather3="WEATHER_CLEAR">
+            <NPC id="3016" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="3015" group="0" name="[NPC] 소녀" x="54066.062500" y="55584.230469" z="2371.999756" dir_x="-0.874619" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="255,255,255" weather1="WEATHER_SUNNY" weather2="WEATHER_CLOUDY" weather3="WEATHER_CLEAR">
+            <NPC id="3015" default="true" rate="500" />
+        </SPAWN>
+        <SPAWN id="501" group="0" name="샌드백" x="50390.539063" y="60659.347656" z="2282.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="502" group="0" name="샌드백" x="50390.347656" y="61756.550781" z="2314.395020" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="503" group="0" name="샌드백" x="49768.105469" y="60648.160156" z="2282.000244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="504" group="0" name="샌드백" x="49768.320313" y="61771.640625" z="2313.395020" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="505" group="0" name="샌드백" x="50391.218750" y="62761.015625" z="2314.395020" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="506" group="0" name="spawn_00506" x="49768.648438" y="62754.914063" z="2314.395020" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="509" group="0" name="샌드백" x="50396.335938" y="63587.699219" z="2314.395020" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="510" group="0" name="spawn_00510" x="49771.003906" y="63597.304688" z="2314.395020" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="1" respawn_time="10" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="99999" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="최초 시작점" x="50170.550781" y="60925.832031" z="2282.000000" dir_x="0.034899" dir_y="0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="from 테레스 평원" x="50097.066406" y="67611.210938" z="2226.936035" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="보석 상점" x="47338.625000" y="63555.437500" z="2350.229980" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="항구 창고 탈출점" x="63987.476563" y="49147.539063" z="342.001495" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="티모트 여관" x="47151.828125" y="56225.425781" z="2333.000977" dir_x="-0.999391" dir_y="0.034899" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="경매장" x="55532.328125" y="54873.449219" z="2281.999756" dir_x="0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="에버로즈" x="47199.441406" y="49659.808594" z="5106.617188" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="등대" x="44718.132813" y="39038.781250" z="9355.876953" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="대장간" x="59915.402344" y="60829.316406" z="2924.462158" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="광장" x="52703.632813" y="56503.417969" z="3130.202881" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="선교사 레니안" x="57470.203125" y="59205.429688" z="5286.994141" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="모험가 상점" x="52823.667969" y="62447.289063" z="2321.533447" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="40" name="40m 높이" x="65380.742188" y="49971.359375" z="4160.704102" dir_x="-0.559193" dir_y="-0.829037" dir_z="0.000000" random_dir="false" />
+        <MARKER id="45" name="여관방출구" x="46467.097656" y="55953.585938" z="2833.562988" dir_x="1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="201" name="부두일꾼 마커1" x="61743.113281" y="40002.832031" z="988.161499" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="202" name="부두일꾼 마커2" x="62194.410156" y="40506.429688" z="983.721191" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="203" name="부두일꾼 마커3" x="62312.605469" y="40949.074219" z="1019.155884" dir_x="0.601815" dir_y="0.798635" dir_z="0.000000" random_dir="false" />
+        <MARKER id="204" name="부두일꾼 마커4" x="61540.570313" y="40101.832031" z="1033.669678" dir_x="0.087156" dir_y="0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="205" name="부두일꾼 마커5" x="61658.527344" y="40342.367188" z="961.914063" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="206" name="부두일꾼 마커6" x="61853.875000" y="40725.617188" z="963.840332" dir_x="0.754709" dir_y="0.656059" dir_z="0.000000" random_dir="false" />
+        <MARKER id="207" name="부두일꾼 마커7" x="62035.250000" y="41029.007813" z="974.021973" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="208" name="부두일꾼 마커8" x="62504.972656" y="40893.613281" z="1015.830688" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="209" name="부두일꾼 마커9" x="62122.796875" y="42934.980469" z="345.545319" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="210" name="부두일꾼 마커10" x="61563.027344" y="44036.152344" z="235.632202" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="211" name="부두일꾼 마커11" x="64122.875000" y="43699.707031" z="232.000092" dir_x="0.034899" dir_y="0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="212" name="부두일꾼 마커12" x="64148.593750" y="44227.214844" z="232.000031" dir_x="-0.866025" dir_y="0.500000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="213" name="부두일꾼 마커13" x="62892.937500" y="44863.023438" z="232.000046" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="214" name="부두일꾼 마커14" x="62905.738281" y="45934.257813" z="322.000122" dir_x="-0.866026" dir_y="0.500000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="215" name="부두일꾼 마커15" x="61124.082031" y="43719.214844" z="232.000336" dir_x="0.438372" dir_y="0.898794" dir_z="0.000000" random_dir="false" />
+        <MARKER id="216" name="부두일꾼 마커16" x="61764.082031" y="44503.492188" z="232.000122" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="217" name="부두일꾼 마커17" x="62364.121094" y="44529.023438" z="232.000122" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="218" name="부두일꾼 마커18" x="62423.765625" y="46359.421875" z="322.000000" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="219" name="부두일꾼 마커19" x="62617.507813" y="46587.042969" z="322.000000" dir_x="0.987688" dir_y="0.156434" dir_z="0.000000" random_dir="false" />
+        <MARKER id="220" name="부두일꾼 마커20" x="64320.902344" y="46962.070313" z="342.004425" dir_x="-0.965926" dir_y="-0.258819" dir_z="0.000000" random_dir="false" />
+        <MARKER id="221" name="부두일꾼 마커21" x="62347.957031" y="46826.917969" z="323.350800" dir_x="0.241921" dir_y="0.970296" dir_z="0.000000" random_dir="false" />
+        <MARKER id="222" name="부두일꾼 마커22" x="62438.371094" y="47505.027344" z="322.000031" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="223" name="부두일꾼 마커23" x="62423.441406" y="48335.562500" z="322.000031" dir_x="0.857167" dir_y="0.515038" dir_z="0.000000" random_dir="false" />
+        <MARKER id="224" name="부두일꾼 마커24" x="63844.296875" y="49149.050781" z="342.001556" dir_x="0.559193" dir_y="0.829038" dir_z="0.000000" random_dir="false" />
+        <MARKER id="225" name="부두일꾼 마커25" x="63603.796875" y="47574.625000" z="342.003784" dir_x="-0.996195" dir_y="-0.087156" dir_z="0.000000" random_dir="false" />
+        <MARKER id="226" name="부두일꾼 마커26" x="62120.808594" y="41851.921875" z="972.901245" dir_x="0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="250" name="순찰 마커 A1" x="50338.050781" y="58868.839844" z="2281.999756" dir_x="-0.601815" dir_y="-0.798636" dir_z="0.000000" random_dir="false" />
+        <MARKER id="251" name="순찰 마커 A2" x="49462.480469" y="57405.867188" z="2281.999756" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="252" name="순찰 마커 A3" x="49453.464844" y="55609.671875" z="2281.999512" dir_x="0.500000" dir_y="-0.866026" dir_z="0.000000" random_dir="false" />
+        <MARKER id="253" name="순찰 마커 A4" x="50450.011719" y="54091.500000" z="2281.999756" dir_x="0.777146" dir_y="-0.629320" dir_z="0.000000" random_dir="false" />
+        <MARKER id="254" name="순찰 마커 A5" x="51712.308594" y="53286.128906" z="2281.999756" dir_x="0.987688" dir_y="-0.156435" dir_z="0.000000" random_dir="false" />
+        <MARKER id="255" name="순찰 마커 A6" x="53568.632813" y="53251.308594" z="2281.999512" dir_x="0.754709" dir_y="0.656059" dir_z="0.000000" random_dir="false" />
+        <MARKER id="256" name="순찰 마커 A7" x="55419.394531" y="54952.996094" z="2281.999512" dir_x="0.207911" dir_y="0.978148" dir_z="0.000000" random_dir="false" />
+        <MARKER id="257" name="순찰 마커 A8" x="55905.105469" y="57368.800781" z="2282.999512" dir_x="-0.406737" dir_y="0.913545" dir_z="0.000000" random_dir="false" />
+        <MARKER id="258" name="순찰 마커 A9" x="55028.101563" y="58858.988281" z="2282.999512" dir_x="-0.766045" dir_y="0.642788" dir_z="0.000000" random_dir="false" />
+        <MARKER id="260" name="순찰 마커 A11" x="51848.515625" y="59748.621094" z="2281.999756" dir_x="-0.956305" dir_y="-0.292372" dir_z="0.000000" random_dir="false" />
+        <MARKER id="259" name="순찰 마커 A10" x="53568.558594" y="59688.316406" z="2282.999756" dir_x="-0.984808" dir_y="0.173648" dir_z="0.000000" random_dir="false" />
+        <MARKER id="301" name="MK00001" x="52642.457031" y="53490.472656" z="2281.999512" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" random_dir="false" />
+        <MARKER id="302" name="MK00002" x="52937.019531" y="53601.585938" z="2281.999512" dir_x="0.342020" dir_y="0.939693" dir_z="0.000000" random_dir="false" />
+        <MARKER id="303" name="MK00003" x="53045.839844" y="53850.832031" z="2282.999512" dir_x="-0.681998" dir_y="0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="304" name="MK00004" x="52828.699219" y="54084.503906" z="2282.999512" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" random_dir="false" />
+        <MARKER id="305" name="MK00005" x="52549.378906" y="54124.183594" z="2282.999512" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="306" name="MK00006" x="52300.085938" y="54003.167969" z="2282.999512" dir_x="-0.342020" dir_y="-0.939693" dir_z="0.000000" random_dir="false" />
+        <MARKER id="307" name="MK00007" x="52213.707031" y="53746.242188" z="2281.999756" dir_x="0.707107" dir_y="-0.707107" dir_z="0.000000" random_dir="false" />
+        <MARKER id="308" name="MK00008" x="52393.855469" y="53565.789063" z="2281.999512" dir_x="0.951057" dir_y="-0.309017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="309" name="MK00009" x="52543.046875" y="52440.160156" z="2281.999512" dir_x="-0.629321" dir_y="-0.777146" dir_z="0.000000" random_dir="false" />
+        <MARKER id="310" name="MK00310" x="52424.539063" y="52510.664063" z="2282.999512" dir_x="-0.469472" dir_y="-0.882948" dir_z="0.000000" random_dir="false" />
+        <MARKER id="311" name="MK00011" x="52142.035156" y="52592.324219" z="2281.999512" dir_x="0.190809" dir_y="-0.981627" dir_z="0.000000" random_dir="false" />
+        <MARKER id="312" name="MK00012" x="52235.160156" y="51668.457031" z="2522.000000" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="313" name="MK00013" x="52235.121094" y="52048.800781" z="2367.756348" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="314" name="MK00314" x="52280.359375" y="52665.203125" z="2281.999512" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="315" name="MK00315" x="52399.136719" y="52698.867188" z="2281.999512" dir_x="-0.258820" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="316" name="MK00316" x="50328.597656" y="54164.871094" z="2282.999512" dir_x="0.484810" dir_y="-0.874620" dir_z="0.000000" random_dir="false" />
+        <MARKER id="317" name="MK00317" x="51888.503906" y="52429.992188" z="2282.999512" dir_x="0.694658" dir_y="-0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="318" name="MK00318" x="51978.476563" y="52561.718750" z="2282.999512" dir_x="0.484810" dir_y="-0.874620" dir_z="0.000000" random_dir="false" />
+        <MARKER id="319" name="MK00319" x="51809.910156" y="52523.968750" z="2281.999512" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" random_dir="false" />
+        <MARKER id="320" name="MK00320" x="52291.648438" y="52781.968750" z="2281.999512" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="321" name="MK00321" x="52434.046875" y="52842.093750" z="2282.999512" dir_x="-0.241922" dir_y="-0.970296" dir_z="0.000000" random_dir="false" />
+        <MARKER id="322" name="MK00322" x="52624.925781" y="52525.105469" z="2281.999512" dir_x="-0.642788" dir_y="-0.766044" dir_z="0.000000" random_dir="false" />
+        <MARKER id="323" name="MK00323" x="52490.621094" y="52613.824219" z="2282.999512" dir_x="-0.484809" dir_y="-0.874620" dir_z="0.000000" random_dir="false" />
+        <MARKER id="324" name="MK00324" x="53336.117188" y="52501.023438" z="2281.999512" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="270" name="순찰 마커 B1" x="60294.800781" y="59203.738281" z="2002.000000" dir_x="0.719340" dir_y="-0.694658" dir_z="0.000000" random_dir="false" />
+        <MARKER id="271" name="순찰 마커 B2" x="61891.019531" y="57682.406250" z="2002.000000" dir_x="0.707107" dir_y="-0.707107" dir_z="0.000000" random_dir="false" />
+        <MARKER id="272" name="순찰 마커 B3" x="63530.355469" y="55987.394531" z="1402.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="273" name="순찰 마커 B4" x="63509.296875" y="52529.093750" z="1013.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="274" name="순찰 마커 B5" x="62857.039063" y="51197.328125" z="1012.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="275" name="순찰 마커 B6" x="62824.683594" y="49547.621094" z="323.000122" dir_x="-0.422618" dir_y="-0.906308" dir_z="0.000000" random_dir="false" />
+        <MARKER id="276" name="순찰 마커 B7" x="62662.351563" y="49008.968750" z="323.000122" dir_x="-0.374607" dir_y="0.927184" dir_z="0.000000" random_dir="false" />
+        <MARKER id="277" name="순찰 마커 B8" x="62522.066406" y="49543.304688" z="323.000061" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="278" name="순찰 마커 B9" x="62643.597656" y="51278.945313" z="1013.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="279" name="순찰 마커 B10" x="63314.152344" y="52552.781250" z="1013.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="280" name="순찰 마커 B11" x="63309.867188" y="55893.339844" z="1402.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="281" name="순찰 마커 B12" x="60467.359375" y="58687.406250" z="2002.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="282" name="순찰 마커 B13" x="59269.277344" y="57783.570313" z="2023.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="283" name="순찰 마커 B14" x="56612.121094" y="57812.832031" z="2282.999512" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="284" name="순찰 마커 B15" x="56606.796875" y="60454.898438" z="2282.999512" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="285" name="순찰 마커 B16" x="58021.792969" y="60454.210938" z="2161.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="286" name="순찰 마커 B17" x="58764.929688" y="59404.332031" z="2002.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3022" name="인젠 바인드 지점" x="49123.335938" y="58026.031250" z="2281.999756" dir_x="0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30151" name="개 산책 코스1" x="52422.753906" y="55069.683594" z="2371.999756" dir_x="-0.987688" dir_y="-0.156435" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30152" name="개 산책 코스2" x="52021.882813" y="54964.187500" z="2371.999756" dir_x="-0.529919" dir_y="-0.848048" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30153" name="개 산책 코스3" x="50931.460938" y="53092.132813" z="2281.999756" dir_x="-0.974370" dir_y="-0.224951" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30154" name="개 산책 코스4" x="48972.921875" y="52598.222656" z="2281.999512" dir_x="-0.469472" dir_y="-0.882948" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30155" name="개 산책 코스5" x="48341.011719" y="51420.097656" z="2519.337891" dir_x="-0.956305" dir_y="-0.292372" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30156" name="개 산책 코스6" x="47761.082031" y="51244.265625" z="2518.337891" dir_x="-0.996195" dir_y="0.087156" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30157" name="개 산책 코스7" x="45572.921875" y="52256.140625" z="2477.520996" dir_x="-0.656059" dir_y="0.754709" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30158" name="개 산책 코스8" x="44397.855469" y="53331.535156" z="2458.025146" dir_x="-0.998630" dir_y="0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30159" name="개 산책 코스9" x="43399.894531" y="53387.269531" z="2459.866211" dir_x="-0.669131" dir_y="-0.743145" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30160" name="개 산책 코스10" x="42891.398438" y="52599.312500" z="2502.719238" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30161" name="개 산책 코스11" x="43396.585938" y="51531.535156" z="2508.943848" dir_x="0.829038" dir_y="-0.559193" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30162" name="개 산책 코스12" x="44561.527344" y="51053.445313" z="2452.458252" dir_x="0.933581" dir_y="0.358368" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30163" name="개 산책 코스13" x="45405.007813" y="51694.292969" z="2493.026123" dir_x="0.694658" dir_y="0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30164" name="개 산책 코스14" x="46354.785156" y="52639.648438" z="2492.001465" dir_x="0.978148" dir_y="0.207912" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30165" name="개 산책 코스15" x="49062.238281" y="53351.609375" z="2281.999512" dir_x="0.615661" dir_y="0.788011" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30166" name="개 산책 코스16" x="49452.050781" y="54062.296875" z="2281.999756" dir_x="-0.069757" dir_y="0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30167" name="개 산책 코스17" x="49204.078125" y="58449.531250" z="2281.999756" dir_x="0.325568" dir_y="0.945519" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30168" name="개 산책 코스18" x="50027.714844" y="59722.937500" z="2281.999756" dir_x="0.848048" dir_y="0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30169" name="개 산책 코스19" x="51473.218750" y="60403.710938" z="2282.000000" dir_x="0.987688" dir_y="0.156434" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30170" name="개 산책 코스20" x="53312.414063" y="60398.078125" z="2282.999512" dir_x="0.927184" dir_y="-0.374607" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30171" name="개 산책 코스21" x="54024.527344" y="60004.429688" z="2283.000000" dir_x="0.500000" dir_y="-0.866025" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30172" name="개 산책 코스22" x="54333.699219" y="59395.183594" z="2283.000000" dir_x="-0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30173" name="개 산책 코스23" x="54122.687500" y="58871.242188" z="2283.000244" dir_x="-0.529919" dir_y="-0.848048" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30174" name="개 산책 코스24" x="53556.941406" y="57922.960938" z="2373.000000" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30175" name="개 산책 코스25" x="53570.953125" y="57524.328125" z="2372.999756" dir_x="0.424199" dir_y="-0.905569" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30176" name="개 산책 코스26" x="53779.046875" y="57078.160156" z="2372.999756" dir_x="0.139173" dir_y="-0.990268" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30177" name="개 산책 코스27" x="53959.375000" y="56257.957031" z="2372.999756" dir_x="-0.325568" dir_y="-0.945519" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30178" name="개 산책 코스28" x="53490.851563" y="55319.769531" z="2372.999756" dir_x="-0.974370" dir_y="-0.224951" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30391" name="거지 코스1" x="57733.781250" y="56209.457031" z="2282.999512" dir_x="0.965926" dir_y="-0.258819" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30392" name="거지 코스2" x="58293.066406" y="56066.664063" z="2282.999756" dir_x="0.970296" dir_y="-0.241922" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30393" name="거지 코스3" x="58881.289063" y="55932.632813" z="2282.999512" dir_x="0.829038" dir_y="-0.559193" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30394" name="거지 코스4" x="59727.453125" y="55341.453125" z="2282.999512" dir_x="0.573576" dir_y="-0.819152" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30395" name="거지 코스5" x="60053.933594" y="54882.671875" z="2282.999512" dir_x="-0.642788" dir_y="-0.766044" dir_z="0.000000" random_dir="false" />
+        <MARKER id="30396" name="거지 코스6" x="59753.757813" y="54516.890625" z="2282.999756" dir_x="-0.743145" dir_y="-0.669131" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3009" name="3009 퀘스트 마커" x="47374.960938" y="59057.835938" z="2350.240723" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 테레스 평원" x="49480.695313" y="74068.679688" z="2433.117432" radius="6000.000000" enabled="true" exit="2">
+            <EFFECT effect="ZoneLine" x="214.796875" y="-6042.820313" z="-194.017578" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="7.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="전투 지원 퀘스트" condition="8891011" gate_type="auto" field_group="8893" quest="889101" />
+            <WARP warp_type="field" title="되돌아가기" condition="1" gate_type="auto" field="8891" marker="1" />
+        </SENSOR>
+        <SENSOR id="2" name="test" local="false" x="50460.757813" y="61393.066406" z="2313.395020" radius="200.000000" enabled="false" groupname="none" />
+        <AREA id="1" name="인젠 광장" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="52690.347656" y="56505.378906" z="2087.895264" radius="4000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="에버로즈" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="47216.230469" y="49678.328125" z="2510.828613" radius="2100.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="8" name="테레스 평원 방면" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="50059.019531" y="68592.906250" z="2314.119141" radius="4000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="9" name="대장간" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="59775.718750" y="60060.359375" z="2019.999268" radius="900.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="10" name="하나의 부띠끄" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="47400.179688" y="59102.718750" z="2300.000732" radius="1200.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="11" name="탐험가 상점" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="52828.199219" y="62093.765625" z="2300.000732" radius="1200.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="12" name="티모트 여관" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="47317.417969" y="56080.160156" z="2330.029297" radius="1700.000000" height="2000.000000" />
+        </AREA>
+        <AREA id="2" name="경비대 초소" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="47439.933594" y="61432.558594" z="2300.000732" radius="1200.000000" height="1500.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

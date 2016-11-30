@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1022" min_x="-1580" min_y="-1730" max_x="1580" max_y="1430" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="4" name="spawn_00004" x="-6.248778" y="-382.950928" z="372.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="30" color="auto">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" name="spawn_00005" x="787.281677" y="-426.391541" z="372.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="30" color="auto">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" name="spawn_00006" x="-774.913818" y="-338.092072" z="372.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="30" color="auto">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" name="spawn_00007" x="-136.884003" y="18.876678" z="31.999960" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="10" respawn_time="120" roam_radius="0" roam_depth="30" color="auto">
+            <NPC id="31" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="-2.167694" y="-898.513855" z="31.999954" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

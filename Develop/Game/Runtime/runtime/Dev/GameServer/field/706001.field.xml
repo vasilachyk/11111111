@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="121002" minimap_name="map121002" loading_image_name="121002" min_x="0" min_y="0" max_x="20000" max_y="20000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_9">
+            <ENVBGM dungeonbgm="amb_dungeon_garden" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <GRID type="wall" row="67" column="67" filled="0,160,14,51,20,44,25,40,29,36,33,32,37,29,39,27,41,25,43,22,19,7,20,20,18,13,17,19,15,17,17,17,15,21,15,15,16,22,1,3,10,14,14,29,11,13,13,30,11,13,13,30,12,13,10,33,12,11,8,37,11,10,9,37,12,9,8,39,11,8,9,39,11,8,9,40,11,7,8,41,11,6,9,42,10,6,9,42,10,6,8,44,10,5,8,44,10,5,8,44,10,6,7,47,7,7,6,48,6,8,5,49,5,8,5,49,3,11,4,48,4,11,5,46,5,10,6,45,6,10,6,45,4,11,7,45,3,12,7,45,3,12,7,44,4,12,9,41,4,13,9,38,6,14,9,38,6,16,9,36,6,16,9,37,5,17,9,39,4,16,9,38,4,16,12,35,4,17,14,28,8,17,16,26,6,20,17,23,6,22,20,11,14,22,20,3,19,25,42,25,42,26,38,29,38,29,38,30,35,34,32,36,26,43,22,48,18,52,6,103" />
+        <SPAWN id="168" name="spawn_00168" x="17335.650391" y="14128.218750" z="2.971840" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="113089" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="169" name="spawn_00169" x="4412.430176" y="15049.963867" z="3.412476" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="113089" default="true" rate="100" />
+        </SPAWN>
+        <MARKER id="1" name="마커_시작지점" x="9070.243164" y="985.000732" z="3.000093" dir_x="0.087156" dir_y="0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="마커_열쇠먹은봉봉1" x="14283.792969" y="16950.037109" z="3.000403" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="마커_열쇠먹은봉봉2" x="10403.037109" y="17481.255859" z="3.000745" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="마커_봉봉로밍1" x="5347.066895" y="7278.821289" z="64.196777" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="봉봉들이동" x="2673.948242" y="11931.176758" z="3.000977" dir_x="0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="마커_봉봉로밍2" x="2298.005371" y="12108.715820" z="3.000265" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="마커_봉봉로밍2" x="2539.133789" y="11125.282227" z="3.000113" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="마커 나무정령1" x="16986.904297" y="8690.315430" z="3.000616" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="마커 나무정령2" x="18828.222656" y="8381.005859" z="3.000113" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="마커 나무정령3" x="17723.220703" y="7953.833984" z="3.000290" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="마커 보스한테 죽었을 때" x="4949.556152" y="16919.013672" z="3.000977" dir_x="-0.766045" dir_y="-0.642787" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="마커 보스해치운다음" x="9271.380859" y="3116.477539" z="2.960111" dir_x="-0.156435" dir_y="-0.987688" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="SENSOR_M 보스방에서마지막방으로" x="6581.602051" y="4086.514160" z="3.000815" dir_x="-0.544639" dir_y="-0.838671" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="MK후반봉봉도망1" x="4167.256348" y="15187.926758" z="3.000977" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="MK후반봉봉도망2" x="1343.975708" y="7327.985840" z="3.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="16" name="OBJ_M 113246 알케스트 꽃" x="7294.858887" y="3713.799072" z="3.000848" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="17" name="SENSOR_M 센서_보스룸으로" x="6803.088379" y="4282.287109" z="2.000916" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="706009" name="MON_M 706009 아루카" x="6957.348633" y="17402.371094" z="3.000295" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="706205" name="MON_M 706205 루루가" x="11922.108398" y="17949.724609" z="3.000410" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="706210" name="MON_M 706210 타나루가" x="2479.308105" y="11825.289063" z="2.000977" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="706240" name="OBJ_M 706240 포자 버섯" x="5358.318359" y="3136.757568" z="21.960905" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_1독꽃정지" local="false" x="18449.353516" y="9248.550781" z="3.000000" radius="307.425812" enabled="true" groupname="none" />
+        <SENSOR id="2" name="센서_가시덩굴더미_정지1" local="false" x="8858.517578" y="17638.533203" z="3.000610" radius="543.248047" enabled="true" groupname="none" />
+        <SENSOR id="3" name="센서_가시덩굴더미_정지2" local="false" x="14542.470703" y="17196.814453" z="3.000782" radius="523.251465" enabled="true" groupname="none" />
+        <SENSOR id="4" name="센서_봉봉뒤에서출현" local="false" x="2662.250000" y="13152.018555" z="3.000552" radius="509.115601" enabled="true" groupname="none" />
+        <SENSOR id="5" name="SENSOR 센서_보스룸으로" x="7251.839355" y="5162.265625" z="50.476532" radius="600.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-239.562988" y="-369.135254" z="-66.179565" dir_x="-0.495133" dir_y="-0.868818" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="보스룸으로" condition="0" gate_type="auto" field="706002" marker="1" />
+        </SENSOR>
+        <SENSOR id="6" name="룸_벌_독꽃" local="false" x="15535.521484" y="4677.655273" z="3.000008" radius="243.183273" enabled="true" groupname="none" />
+        <SENSOR id="7" name="센서_1번방" local="false" x="11332.475586" y="1575.784180" z="15.832520" radius="195.285843" enabled="true" groupname="none" />
+        <SENSOR id="8" name="시작 체크포인트" local="false" x="9043.980469" y="985.026611" z="2.993142" radius="400.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="9" name="SR00009" x="8964.013672" y="10.827271" z="2.996400" radius="426.345642" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="16.672852" y="272.774719" z="61.097778" dir_x="0.104528" dir_y="0.994522" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="다른 필드로 이동" condition="0" gate_type="auto" field="113" marker="7" />
+        </SENSOR>
+        <SENSOR id="10" name="SR00010" local="false" x="9294.709961" y="17639.843750" z="47.630493" radius="205.396240" enabled="true" groupname="none" />
+        <SENSOR id="11" name="SR00011" local="false" x="4245.968262" y="16371.802734" z="35.884277" radius="202.215546" enabled="true" groupname="none" />
+        <SENSOR id="12" name="SR00012" local="false" x="2801.378662" y="5538.598145" z="41.660034" radius="187.175461" enabled="true" groupname="none" />
+        <SENSOR id="13" name="SR 첫번째체크포인트" local="false" x="11769.331055" y="1658.300415" z="3.000882" radius="250.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="14" name="SR 두번째 체크포인트" local="false" x="4125.323242" y="15515.675781" z="2.999489" radius="790.000000" enabled="true" checkpoint="11" groupname="none" />
+        <SENSOR id="15" name="환경_1번방" local="true" x="13516.687500" y="2927.316895" z="3.000548" radius="2359.604248" enabled="true" groupname="none" />
+        <SENSOR id="16" name="환경_첫번째꽃밭" local="true" x="17310.593750" y="6316.840332" z="3.000611" radius="2808.728027" enabled="true" groupname="none" />
+        <SENSOR id="17" name="환경_가시덩굴복도" local="true" x="16864.431641" y="13035.880859" z="3.000695" radius="3841.453369" enabled="true" groupname="none" />
+        <SENSOR id="18" name="환경_거대봉봉과 꽃밭" local="true" x="12323.476563" y="17906.472656" z="3.000500" radius="2785.807617" enabled="true" groupname="none" />
+        <SENSOR id="19" name="환경_아루카" local="true" x="6964.731445" y="17360.023438" z="3.000736" radius="2490.991699" enabled="true" groupname="none" />
+        <SENSOR id="20" name="환경_마지막가시덩굴복도" local="true" x="2281.081543" y="11360.502930" z="3.000977" radius="5061.824219" enabled="true" groupname="none" />
+        <SENSOR id="21" name="환경_마지막방_꽃밭" local="true" x="4654.056152" y="3945.273193" z="2.979777" radius="2696.541748" enabled="true" groupname="none" />
+        <AREA id="1" name="숨겨진 봉봉의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="13845.636719" y="2520.836914" z="-203.614258" radius="2400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="가시덩굴의 통로" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="18458.058594" y="13745.423828" z="-143.510254" radius="4400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="5" name="거대한 봉봉의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="12397.587891" y="18077.888672" z="11.174806" radius="2700.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="6" name="아루카의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="6884.966309" y="17735.894531" z="0.000000" radius="2400.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="8" name="안식처의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="4620.909668" y="3830.621094" z="-134.625977" radius="2600.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="9" name="오염된 꽃의 방" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="17377.626953" y="6267.394531" z="13.958508" radius="2500.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="10" name="거대한 봉봉과 가시덩굴의 통로" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="2935.314941" y="14054.807617" z="0.000000" radius="2500.000000" height="1000.000000" />
+            <CYLINDER x="1486.880005" y="8972.521484" z="0.000000" radius="3100.000000" height="1000.000000" />
+        </AREA>
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

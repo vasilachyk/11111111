@@ -1,0 +1,980 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+// 강화 버프 이펙트 설정 인자 종류
+<ENCHANT_EFFECT id="1">
+
+  * id                       : 버프 ID( 스트링처리 )
+  
+  <DEFAULT>
+  
+    // 더미 이펙트
+    <DummyEffect EffectName="" BoneName="" />
+    
+     * EffectName               : 이펙트 이름 (effect.xml)
+     * BoneName                 : 본 이름(없을때에는 전체 본으로 인식)
+
+    // 검광 텍스쳐 이펙트
+    <TrailEffect TexName="trail_test1.tga"/>
+    
+     * TexName                  : 텍스쳐 이름
+
+    // 강화 피격 이펙트
+    <HitEffect EffectName=""/>
+    
+     * EffectName               : 이펙트 이름 (effect.xml)
+
+  </DEFAULT>
+  
+  <EQUIP Type="1hs">
+  
+     * Type                     : 장착 타입(1hs, 1hb, 1hp, 2hd, sta, arc, 2hb, dwd, dwp, head, body, hands, leg, feet)
+  
+     ...
+  
+  </EQUIP>
+
+</ENCHANT_EFFECT>
+
+-->
+<maiet>
+	<!-- 테스트용
+  <ENCHANT_EFFECT id="100033">
+		<DEFAULT>
+			<DummyEffect EffectName="ghostrider_flame1" BoneName=""/>
+			<TrailEffect TexName="trail_test.tga"/>
+			<HitEffect EffectName="fireball_projectile_attack"/>
+		</DEFAULT>
+	</ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="100035">
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electronic" BoneName=""/>
+			<TrailEffect TexName="trail_test.tga"/>
+			<HitEffect EffectName="enchant_hit_Electric"/>
+		</DEFAULT>
+	</ENCHANT_EFFECT>
+  <!-- 테스트용 끝 -->
+
+	<!-- 실전용 -->
+	<!-- 7강 이하의 일반 강화 이펙트 8종 시작 -->
+	  <ENCHANT_EFFECT id="101000" comment="manastorm"> <!-- 마나폭풍 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_ManastormShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Manastorm" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Manastorm" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+
+	  <ENCHANT_EFFECT id="102000" comment="frozen"> <!-- 설원 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Frozen" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_FrozenShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Frozen" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Frozen" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+
+	  <ENCHANT_EFFECT id="103000" comment="guardian"> <!-- 수호 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Guardian" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_GuardianShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Guardian" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Guardian" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+
+	  <ENCHANT_EFFECT id="104000" comment="assassin"> <!-- 암살 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Assassin" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_AssassinShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Assassin" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Assassin" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+
+	  <ENCHANT_EFFECT id="105000" comment="beast"> <!-- 야수 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Beast" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_BeastShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Beast" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Beast" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+
+	  <ENCHANT_EFFECT id="106000" comment="eternallife"> <!-- 영생 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_EternallifeShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Eternallife" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Eternallife" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+
+	  <ENCHANT_EFFECT id="107000" comment="electronic"> <!-- 폭풍 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electronic" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_ElectronicShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Electronic" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Electronic" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+
+	  <ENCHANT_EFFECT id="108000" comment="fire"> <!-- 화염 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_FireShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Fire" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Fire" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+	<ENCHANT_EFFECT id="109000" comment="poison"> <!-- 암살 일반 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Poison" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_PoisonShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+    <EQUIP Type="dwp">
+      <DummyEffect EffectName="enchant_dagger_Poison" BoneName="dummy_ef_enchant_00" />
+      <DummyEffect EffectName="enchant_dagger_Poison" BoneName="dummy_ef_enchant_l_00" />
+    </EQUIP>
+	</ENCHANT_EFFECT>
+	<!-- 일반 강화 이펙트 8종(방패 분리) 끝 -->
+
+	<!-- 8강일 때 나오는 이펙트 (무기 : 섬광, 방패는 변화 없음) 시작 -->
+	<ENCHANT_EFFECT id="101100" comment="Manastorm"> <!-- 마나폭풍 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_ManastormHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_ManastormHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_ManastormShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_ManastormHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_ManastormHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Manastorm" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_ManastormHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="102100" comment="Frozen"> <!-- 설원 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_FrozenHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_FrozenHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_FrozenShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_FrozenHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_FrozenHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Frozen" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_FrozenHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="103100" comment="Guardian"> <!-- 수호 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_GuardianHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_GuardianHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_GuardianShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_GuardianHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_GuardianHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Guardian" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_GuardianHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="104100" comment="Assassin"> <!-- 암살 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_AssassinHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_AssassinHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_AssassinShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_AssassinHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_AssassinHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Assassin" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_AssassinHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="105100" comment="Beast"> <!-- 야수 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_BeastHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_BeastHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_BeastShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_BeastHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_BeastHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Beast" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_BeastHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="106100" comment="Eternallife"> <!-- 영생 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_EternallifeHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_EternallifeHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_EternallifeShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_EternallifeHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_EternallifeHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Eternallife" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_EternallifeHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="107100" comment="Electric"> <!-- 폭풍 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_ElectronicHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_ElectronicHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_ElectronicShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_ElectronicHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_ElectronicHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Electronic" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_ElectronicHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="108100" comment="fire"> <!-- 화염 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_FireHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_FireHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_FireShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_FireHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_FireHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Fire" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_FireHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+		
+		<ENCHANT_EFFECT id="109100" comment="poison"> <!-- 독 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_PoisonHero" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_PoisonHero" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_PoisonShield" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_PoisonHero" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_PoisonHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Poison" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_PoisonHero" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+	<!-- 8강일 때 나오는 이펙트 (무기 : 섬광, 방패는 변화 없음) 끝 -->
+
+	<!-- 9강일 때 나오는 이펙트 (무기 : 섬광+꼬리, 방패 :번개 이펙트) 시작 -->
+	<ENCHANT_EFFECT id="101200" comment="Manastorm"> <!-- 마나폭풍 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_ManastormHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_ManastormTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_ManastormHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_ManastormTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_ManastormShield" BoneName="" />
+			<DummyEffect EffectName="enchant_ManastormShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_ManastormHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_ManastormTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Manastorm" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_ManastormHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_ManastormTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Manastorm" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_ManastormHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_ManastormTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="102200" comment="Frozen"> <!-- 설원 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_FrozenHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_FrozenHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_FrozenShield" BoneName="" />
+			<DummyEffect EffectName="enchant_FrozenShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_FrozenHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_FrozenTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_FrozenHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_FrozenTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Frozen" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_FrozenHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_FrozenTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="103200" comment="Guardian"> <!-- 수호 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_GuardianHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_GuardianTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_GuardianHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_GuardianTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_GuardianShield" BoneName="" />
+			<DummyEffect EffectName="enchant_GuardianShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_GuardianHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_GuardianTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Guardian" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_GuardianHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_GuardianTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Guardian" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_GuardianHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_GuardianTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="104200" comment="Assassin"> <!-- 암살 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_AssassinHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_AssassinTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_AssassinHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_AssassinTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_AssassinShield" BoneName="" />
+			<DummyEffect EffectName="enchant_AssassinShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_AssassinHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_AssassinTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Assassin" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_AssassinHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_AssassinTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Assassin" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_AssassinHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_AssassinTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="105200" comment="Beast"> <!-- 야수 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_BeastHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_BeastTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_BeastHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_BeastTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_BeastShield" BoneName="" />
+			<DummyEffect EffectName="enchant_BeastShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_BeastHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_BeastTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Beast" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_BeastHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_BeastTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Beast" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_BeastHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_BeastTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="106200" comment="Eternallife"> <!-- 영생 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_EternallifeHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_EternallifeTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_EternallifeHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_EternallifeTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_EternallifeShield" BoneName="" />
+			<DummyEffect EffectName="enchant_EternallifeShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_EternallifeHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_EternallifeTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Eternallife" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_EternallifeHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_EternallifeTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Eternallife" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_EternallifeHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_EternallifeTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="107200" comment="Electric"> <!-- 폭풍 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_ElectronicHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_ElectronicTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_ElectronicHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_ElectronicTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_ElectronicShield" BoneName="" />
+			<DummyEffect EffectName="enchant_ElectronicShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_ElectronicHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_ElectronicTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Electronic" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_ElectronicHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_ElectronicTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Electronic" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_ElectronicHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_ElectronicTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+
+	<ENCHANT_EFFECT id="108200" comment="fire"> <!-- 화염 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_FireHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_FireTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_FireHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_FireTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_FireShield" BoneName="" />
+			<DummyEffect EffectName="enchant_FireShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_FireHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_FireTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Fire" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_FireHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_FireTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Fire" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_FireHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_FireTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+		<ENCHANT_EFFECT id="109200" comment="poison"> <!-- 독 -->
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_PoisonHero" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_PoisonTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_PoisonHero" BoneName="dummy_ef_enchant_05" />
+			<DummyEffect EffectName="enchant_PoisonTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="shield">
+			<DummyEffect EffectName="enchant_PoisonShield" BoneName="" />
+			<DummyEffect EffectName="enchant_PoisonShieldPerfect" BoneName="" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_PoisonHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_PoisonTailBlunt" BoneName="dummy_ef_enchant_00" />
+		</EQUIP>
+		<EQUIP Type="dwp">
+			<DummyEffect EffectName="enchant_dagger_Poison" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_PoisonHero" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_PoisonTail" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_dagger_Poison" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_PoisonHero" BoneName="dummy_ef_enchant_l_00" />
+			<DummyEffect EffectName="enchant_dagger_PoisonTail" BoneName="dummy_ef_enchant_l_00" />
+		</EQUIP>
+		</ENCHANT_EFFECT>
+	<!-- 9강일 때 나오는 이펙트 (무기 : 섬광+꼬리, 방패 :번개 이펙트) 끝 -->
+
+<!-- 예전에 쓰던 보석 강화 이펙트 시작
+  <ENCHANT_EFFECT id="1010002" comment="normal-class beast"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Beast" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="1hs,1hb">
+			<DummyEffect EffectName="enchant_Beast" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1010100" comment="하급 암살자 다이아">
+    <DEFAULT>
+      <DummyEffect EffectName="enchant_Assassin" BoneName="" />
+    </DEFAULT>
+  </ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1010102" comment="일반 암살자 다이아"> 
+    <DEFAULT>
+      <DummyEffect EffectName="enchant_Assassin" BoneName="" />
+    </DEFAULT>
+	</ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1010200" comment="하급 수호자 다이아"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Guardian" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1010202" comment="일반 수호자 다이아">
+    <DEFAULT>
+      <DummyEffect EffectName="enchant_Guardian" BoneName="" />
+    </DEFAULT>
+  </ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1020000" comment="low-class storm"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electronic" BoneName=""/>
+		</DEFAULT>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_ElectronicBlunt" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1020002" comment="normal-class storm"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Electronic" BoneName=""/>
+		</DEFAULT>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_ElectronicBlunt" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1020200"> <!-- 화염강타
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1020202"> <!-- 화염강타
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1020300"> <!-- 설원의 눈 다이아
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_03" />
+		</DEFAULT>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+		<EQUIP Type="1hb,2hb,sta">
+			<DummyEffect EffectName="enchant_FrozenBlunt" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1020302"> <!-- 설원의 눈 다이아
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_FrozenBlunt" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="1hs">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_03" />
+		</EQUIP>
+		<EQUIP Type="2hd">
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_00" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_01" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_02" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_03" />
+			<DummyEffect EffectName="enchant_Frozen" BoneName="dummy_ef_enchant_04" />
+			<DummyEffect EffectName="enchant_FrozenTail" BoneName="dummy_ef_enchant_05" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1010300"> <!-- 화룡심장
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1010302"> <!-- 화룡심장
+		<DEFAULT>
+		  <DummyEffect EffectName="enchant_Fire" BoneName="" />
+		</DEFAULT>
+		<EQUIP Type="2hd,2hb">
+			<DummyEffect EffectName="enchant_2HDFire" BoneName="" />
+		</EQUIP>
+	</ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1040000" comment="영생">
+    <DEFAULT>
+      <DummyEffect EffectName="enchant_Eternallife" BoneName="" />
+    </DEFAULT>
+  </ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1040002" comment="영생"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Eternallife" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_EFFECT>
+
+  <ENCHANT_EFFECT id="1040100" comment="하급 마나폭풍"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_EFFECT>
+  <ENCHANT_EFFECT id="1040102" comment="일반 마나폭풍"> 
+		<DEFAULT>
+			<DummyEffect EffectName="enchant_Manastorm" BoneName="" />
+		</DEFAULT>
+	</ENCHANT_EFFECT>
+<!-- 예전에 쓰던 보석 강화 이펙트 끝 -->
+</maiet>

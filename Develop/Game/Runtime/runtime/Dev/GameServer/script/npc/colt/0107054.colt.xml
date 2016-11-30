@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 렌고트 음유시인 고비  -->
+<maiet>
+	<COLT name="렌고트 음유시인 고비">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="20"/>
+				
+				<ACTION type="talent" param1="210705401" rate="20" />
+				<ACTION type="talent" param1="210705402" rate="10" />
+				<ACTION type="talent" param1="210705403" rate="30" />
+				<ACTION type="talent" param1="210705404" rate="20"/>
+				<ACTION type="talent" param1="210705405" rate="10" duration="0" cycle="15"/>
+			</DEFAULT>
+			
+			<!-- 전투대기 위치 -->
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="2" rate="20" cycle="5"/>
+				<ACTION type="talent" param1="210705404" rate="10"/>
+				<ACTION type="talent" param1="210705405" rate="50" duration="0" cycle="15"/>
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+		
+function NPC_107054:AggroChat( ThisNPC, Enemy )
+	local dice = math.random(1,7)
+	AsNPC(ThisNPC):SayNow("$$NPC_107054_"..dice)
+end
+
+	]]></SCRIPT>
+</maiet>
+

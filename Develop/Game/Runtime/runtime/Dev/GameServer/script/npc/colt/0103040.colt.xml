@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="쇼크트랩" npcid="103040">
+		<COMBAT mode="0" comment="검정 거미모드">
+			<DEFAULT>
+				<ACTION type="yell" param1="1200" auto_run="true" max_count="1" />
+				<ACTION type="talent" param1="210304001" rate="40" desc="찍어누르기"/>
+				<ACTION type="talent" param1="210304002" rate="40" desc="왼손 공격"/>
+			</DEFAULT>
+			
+			<CHECK type="hp" param1="60" >
+				<DEFAULT>
+					<ACTION type="yell" param1="1200" auto_run="true" max_count="1" />
+					<ACTION type="talent" param1="210304001" rate="40" desc="찍어누르기"/>
+					<ACTION type="talent" param1="210304002" rate="40" desc="왼손 공격"/>
+					<ACTION type="talent" param1="210304003" rate="5" desc="점프 공격"/>
+					<ACTION type="talent" param1="210304004" rate="5" duration="5" desc="몸통 돌려치기"/>
+				</DEFAULT>
+				
+				<CHECK type="distance" param2="300" >
+					<CHECK type="rage" param1="100">
+						<ACTION type="talent" param1="210304004" rate="60" duration="0" desc="몸통 돌려치기"/>
+					</CHECK>
+				</CHECK>
+
+				<CHECK type="distance" param1="800" >
+					<ACTION type="distance" param1="600" param2="600" rate="60"/>
+					<ACTION type="talent" param1="210304003" rate="10" desc="점프 공격"/>
+					<ACTION type="talent" param1="210304007" rate="30" desc="거미줄발사"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="60">  
+				<ACTION type="talent" param1="210304016" desc="모드1로 전환"/>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" comment="파랑색 모드(계속 이모드)">
+			<CHECK type="hp" param1="30" param2="60"> 
+				<DEFAULT>
+					<ACTION type="talent" param1="210304017" rate="10" desc="찍어누르기(모드1)"/>
+					<ACTION type="talent" param1="210304018" rate="5" desc="왼손 공격(모드1)"/>
+					<ACTION type="talent" param1="210304026" rate="5" desc="오른손 공격(모드1)"/>
+				</DEFAULT>
+				<ACTION type="yell" param1="1200" auto_run="true" max_count="1" />
+				<ACTION type="talent" param1="210304019" cycle="25" desc="쇼크트랩의 입김"/>
+				<ACTION type="talent" param1="210304017" rate="10" desc="찍어누르기(모드1)"/>
+				<ACTION type="talent" param1="210304018" rate="6" desc="왼손 공격(모드1)"/>
+				<ACTION type="talent" param1="210304026" rate="6" desc="오른손 공격(모드1)"/>
+				<ACTION type="lua" param1="NPC_103040" param2="Healing" rate="20" />
+				<ACTION type="talent" param1="210304024" rate="2" desc="점프 공격(모드1)"/>
+				<ACTION type="talent" param1="210304004" rate="5" desc="몸통 돌려치기" />
+				<ACTION type="talent" param1="210304013" rate="10" duration="0" desc="턴1"/>
+				<ACTION type="talent" param1="210304014" rate="10" duration="0" desc="턴2"/>
+				
+				<CHECK type="distance" param1="800" >
+					<ACTION type="distance" param1="600" param2="600" rate="20"/>
+					<ACTION type="talent" param1="210304024" rate="20" desc="점프 공격(모드1)"/>
+					<ACTION type="talent" param1="210304020" rate="30" desc="거미줄발사"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30"> 
+				<ACTION type="group" cycle="15">
+					<ACTION type="talent" param1="210304024" desc="점프 공격(모드1)"/>
+					<ACTION type="talent" param1="210304023" desc="쇼크트랩의 입김(최후)"/>
+				</ACTION>
+				<ACTION type="talent" param1="210304017" rate="10" desc="찍어누르기(모드1)"/>
+				<ACTION type="talent" param1="210304018" rate="5" desc="왼손 공격(모드1)"/>
+				<ACTION type="talent" param1="210304026" rate="5" desc="오른손 공격(모드1)"/>
+				
+				<CHECK type="distance" param1="800" >
+					<ACTION type="distance" param1="600" param2="600" rate="20"/>
+					<ACTION type="talent" param1="210304024" rate="10" desc="점프 공격(모드1)"/>
+					<ACTION type="talent" param1="210304020" rate="30" desc="거미줄발사"/>
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<STRESS>
+			<CHECK type="stress" param1="300">
+				<ACTION type="lua" param1="NPC_103040" param2="Stressed" rate="100" />
+			</CHECK>
+		</STRESS>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+	<![CDATA[ 
+
+	--[[
+		쇼크트랩
+	--]]
+	
+function NPC_103040:Init(NPCID)
+	NPC_ReserveUserData(NPCID, 2);
+	
+	NPC_103040.LimitForBreakParts	= NPC_103040.MaxHP/15
+	
+	NPC_103040.TalIdSpiltWeb 		= 210304007
+	NPC_103040.TalIdAroundWeb1 		= 210304013
+	NPC_103040.TalIdAroundWeb2 		= 210304014
+	NPC_103040.TalIdPain1			= 210304012
+	NPC_103040.TalIdRoar			= 210304008
+	NPC_103040.TalIdHeal			= 210304006
+	NPC_103040.TalIdJump			= 210304003
+	NPC_103040.TalIdWhirl			= 210304004
+	
+	NPC_103040.PartIdJawL			= 3
+	NPC_103040.PartIdJawR			= 4
+	
+	NPC_103040.BuffId				= 88212
+end
+
+function NPC_103040:OnFinishLightning( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:GainBuff( NPC_103040.BuffId )
+end
+
+function NPC_103040:OnFinishLightningEnd( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:RemoveBuff( NPC_103040.BuffId )
+end
+
+function NPC_103040:OnBPartRecover()
+	for i=1, 2 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+function NPC_103040:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC)
+end
+
+function NPC_103040:Healing(ThisNPC, Opponent)
+	if ThisNPC:IsCooldown( NPC_103040.TalIdHeal ) then
+		return
+	end
+	
+	if ThisNPC:GetHP()/ThisNPC:GetMaxHP() == 1 then
+		return
+	end
+	
+	if ThisNPC:CheckBPart( NPC_103040.PartIdJawL ) and ThisNPC:CheckBPart( NPC_103040.PartIdJawR ) then
+		return
+	end
+	
+	ThisNPC:UseTalentSelf( NPC_103040.TalIdHeal )
+end
+
+-- Talent Callback Func
+function NPC_103040:OnFinishAndAggroSwap( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:Aggro( "short", 0 )
+end
+
+---
+function NPC_103040:CheckBreakpart(HitInfo, bFrontPart)
+	local ThisNPC = AsNPC( HitInfo.Victim )
+	local hpRate = ThisNPC:GetHP()/ThisNPC:GetMaxHP()
+	
+	
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	if currentTalent == NPC_103040.TalIdPain1 or currentTalent == NPC_103040.TalIdRoar then
+		return HitInfo
+	end
+	
+	if (bFrontPart == true and (ThisNPC:CheckBPart(3) == false or ThisNPC:CheckBPart(4) == false)) then
+		-- 전면 누적치
+		local frontDamage = ThisNPC:GetUserData(1) + HitInfo.Damage		
+		
+		if (frontDamage >= NPC_103040.LimitForBreakParts) then
+			if (ThisNPC:CheckBPart(3) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(3, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf( NPC_103040.TalIdPain1 )
+				frontDamage = 0
+			elseif (ThisNPC:CheckBPart(4) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(4, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf(NPC_103040.TalIdPain1)
+				frontDamage = 0
+			end
+		end
+		
+		ThisNPC:SetUserData(1, frontDamage)
+	else
+		-- 후면 누적치
+		local rearDamage = ThisNPC:GetUserData(2) + HitInfo.Damage
+		if rearDamage >= NPC_103040.LimitForBreakParts and (ThisNPC:CheckBPart(1) == false or ThisNPC:CheckBPart(2) == false) then
+			if (ThisNPC:CheckBPart(1) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(1, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf(NPC_103040.TalIdPain1)
+				rearDamage = 0
+			elseif(ThisNPC:CheckBPart(2) == false) then
+				ThisNPC:ClearJob()
+				ThisNPC:BreakPart(2, HitInfo.Attacker)
+				ThisNPC:UseTalentSelf(NPC_103040.TalIdPain1)
+				rearDamage = 0
+			end
+		end
+		
+		ThisNPC:SetUserData(2, rearDamage)
+	end
+
+	return HitInfo
+end
+
+function NPC_103040:OnHitCapsule_0_0(HitInfo)
+	return NPC_103040:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_103040:OnHitCapsule_1_0(HitInfo)
+	return NPC_103040:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_103040:OnHitCapsule_2_0(HitInfo)
+	return NPC_103040:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_103040:OnHitCapsule_3_0(HitInfo)
+	return NPC_103040:CheckBreakpart(HitInfo, true)
+end
+
+function NPC_103040:OnHitCapsule_1_1(HitInfo)
+	return NPC_103040:CheckBreakpart(HitInfo, false)
+end
+
+-- NPC103040_Stressed
+function NPC_103040:Stressed(ThisNPC, Enemy)
+	ThisNPC:Aggro("short", 0)
+
+	local Dist = ThisNPC:DistanceTo( Enemy )
+	if Dist < 400 and not ThisNPC:IsCooldown( NPC_103040.TalIdWhirl ) then
+		
+		ThisNPC:UseTalentSelf( NPC_103040.TalIdWhirl )
+	end
+end
+	
+	]]>
+	</SCRIPT>
+</maiet>

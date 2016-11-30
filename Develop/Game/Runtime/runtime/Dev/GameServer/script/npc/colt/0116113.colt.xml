@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="오염된 불의 정령 - 아란바스 화산지대" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211611301" rate="30" />
+				<ACTION type="talent" param1="211611302" rate="30" />
+				<ACTION type="talent" param1="211611303" rate="30" />	
+				<ACTION type="nothing" param1="1" rate="20" />					
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211611304" rate="100" max_count="1"/>						
+			</CHECK>
+			<CHECK type="gained_buff" param1="88541">
+				<ACTION type="talent" param1="211611305" rate="50" />			
+				<ACTION type="talent" param1="211611306" rate="50" />					
+			</CHECK>			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211611300" rate="40" />
+				<ACTION type="nothing" param1="5" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

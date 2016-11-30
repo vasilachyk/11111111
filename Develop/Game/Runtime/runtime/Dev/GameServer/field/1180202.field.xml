@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="122" minimap_name="map00122" loading_image_name="00122" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="37000" boundary_min_y="26000" boundary_max_x="57500" boundary_max_y="65500" weather_effect="true" fixed_time="Night" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_15">
+            <ENVBGM dawnbgm="amb_battlefield_dawn" />
+            <ENVBGM daytimebgm="amb_battlefield_daytime" />
+            <ENVBGM sunsetbgm="amb_battlefield_sunset" />
+            <ENVBGM nightbgm="amb_battlefield_night" />
+            <ENVBGM clodybgm="amb_night" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM snowbgm="amb_snow" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <SOUNDREVERB reverb="5" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="200" group="0" name="NPC 118400 대장 레온" x="48432.640625" y="44400.597656" z="3.676291" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="118400" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28000" group="0" name="투명벽" x="52511.238281" y="28824.611328" z="-7.327497" dir_x="-0.981627" dir_y="0.190809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28001" group="0" name="투명벽" x="53190.679688" y="33107.660156" z="-9.677368" dir_x="0.992546" dir_y="-0.121869" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28002" group="0" name="투명벽" x="53638.949219" y="37382.167969" z="-104.969948" dir_x="0.996195" dir_y="-0.087156" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28003" group="0" name="투명벽" x="53859.066406" y="41543.457031" z="-3.534619" dir_x="0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28004" group="0" name="투명벽" x="56258.464844" y="43528.421875" z="-2.380859" dir_x="0.069756" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28005" group="0" name="투명벽" x="56281.222656" y="45574.585938" z="-159.317871" dir_x="0.069756" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28006" group="0" name="투명벽" x="54003.351563" y="47794.363281" z="-3.465332" dir_x="0.999391" dir_y="0.034900" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28007" group="0" name="투명벽" x="53733.832031" y="52078.027344" z="-1.032227" dir_x="0.997564" dir_y="0.069757" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28008" group="0" name="투명벽" x="53328.214844" y="56459.253906" z="-1.045803" dir_x="0.994522" dir_y="0.104529" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28009" group="0" name="투명벽" x="52433.281250" y="60605.750000" z="-49.819824" dir_x="0.956305" dir_y="0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28010" group="0" name="투명벽" x="46622.765625" y="39572.953125" z="-3.920898" dir_x="-0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28011" group="0" name="투명벽" x="47176.765625" y="36021.753906" z="24.512207" dir_x="-0.939693" dir_y="-0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28012" group="0" name="투명벽" x="48654.933594" y="32275.041016" z="-28.385742" dir_x="-0.939693" dir_y="-0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28013" group="0" name="투명벽" x="50474.140625" y="29769.429688" z="-29.652832" dir_x="-0.258819" dir_y="-0.965926" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28014" group="0" name="투명벽" x="44554.265625" y="42063.386719" z="37.649414" dir_x="-0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28015" group="0" name="투명벽" x="41407.460938" y="49282.988281" z="-288.784912" dir_x="-0.374606" dir_y="-0.927184" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28016" group="0" name="투명벽" x="44176.031250" y="42194.859375" z="100.487793" dir_x="-0.961262" dir_y="0.275637" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28017" group="0" name="투명벽" x="43157.824219" y="50867.343750" z="-44.393066" dir_x="-0.978148" dir_y="0.207911" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28018" group="0" name="투명벽" x="42814.449219" y="54513.824219" z="152.141968" dir_x="0.898794" dir_y="0.438371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28019" group="0" name="투명벽" x="43321.500000" y="56089.480469" z="469.569336" dir_x="0.978148" dir_y="-0.207912" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28020" group="0" name="투명벽" x="44998.972656" y="59188.699219" z="262.506104" dir_x="0.777146" dir_y="-0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28021" group="0" name="투명벽" x="48383.843750" y="61847.593750" z="-38.112793" dir_x="0.529919" dir_y="-0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="28022" group="0" name="투명벽" x="44059.242188" y="46374.187500" z="-7.937012" dir_x="-0.951056" dir_y="-0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="1" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="118501" group="0" name="MON 118501 볼라스" x="48791.386719" y="45189.175781" z="1.999756" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="3000" roam_depth="200" combat_radius="999999" color="auto">
+            <NPC id="118501" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작마커" x="47767.875000" y="44429.398438" z="30.814064" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="부활마커" x="45931.632813" y="53395.289063" z="72.348610" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="118501" name="MON_M 118501 볼라스" x="49145.472656" y="44566.128906" z="2.018144" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="118400000" name="NPC_M 118400 대장 레온" x="48405.753906" y="44209.296875" z="5.915170" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="부활체크센서" local="false" x="47775.292969" y="44412.886719" z="11.452508" radius="200.000000" enabled="true" checkpoint="2" groupname="none" />
+        <SENSOR id="2" name="탈렌트체크" local="false" x="48212.746094" y="44422.757813" z="5.722632" radius="20000.000000" enabled="true" checkpoint="2" groupname="none" />
+        <SENSOR id="999" name="볼라스스폰센서" local="false" x="49302.406250" y="44518.101563" z="2.008010" radius="300000.000000" enabled="false" checkpoint="2" groupname="none" />
+        <SENSOR id="1000" name="볼라스처치센서" local="false" x="48752.058594" y="44663.382813" z="2.252894" radius="10000.000000" enabled="false" checkpoint="2" groupname="none" />
+        <SENSOR id="999999" name="모두 클리어" x="55292.898438" y="44697.253906" z="-1.464600" radius="800.000000" enabled="false">
+            <EFFECT effect="ZoneLine" x="-712.906250" y="-153.824219" z="4.943614" dir_x="0.999848" dir_y="0.017452" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="2.000000" scale_y="1.000000" scale_z="1.500000" />
+            <WARP warp_type="field" title="침묵의 장벽 이동" condition="0" gate_type="auto" field="118" marker="118201" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

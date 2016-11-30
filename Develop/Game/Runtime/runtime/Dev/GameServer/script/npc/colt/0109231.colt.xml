@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 리자드맨 습격자	
+210923100	idle2
+#전투	
+210923101	활쏘기
+210923102	주먹치기
+210923103	활쏘기(강)
+-->
+<maiet>
+	<COLT name="리자드맨 습격자" npcid="109231" >
+		<COMBAT max_duration="-1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210923102" desc="주먹치기" rate="50" />
+				<ACTION type="talent" param1="210923101" desc="활쏘기" rate="10" />
+				<ACTION type="talent" param1="210923103" desc="활쏘기(강)" rate="15" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="250" >
+				<ACTION type="talent" param1="210923101" desc="활쏘기" rate="50" />
+				<ACTION type="talent" param1="210923103" desc="활쏘기(강)" rate="20" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923100" desc="idle2" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--#동굴 거미	
+211103201	#일반공격
+211103202	#강한공격
+211103203	#거미줄
+211103211	#tomode0
+211103212	#tomode1 (no ani)
+-->
+<maiet>
+	<COLT name="새끼 동굴거미" npcid="111032">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="211103201" rate="40" />
+				<ACTION type="talent" param1="211103202" rate="40" />
+				<ACTION type="talent" param1="211103203" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="211103201" rate="30" />
+				<ACTION type="talent" param1="211103202" rate="30" />
+				<ACTION type="talent" param1="211103203" rate="50" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="211103211"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

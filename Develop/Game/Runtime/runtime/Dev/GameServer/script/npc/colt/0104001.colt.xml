@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="검은심장 칼로스" npcid="104001">
+		<COMBAT victory="210400100">
+			<DEFAULT>
+				<ACTION type="talent" param1="210400132" rate="15" duration="0" cycle="3" desc="포 발사9M" />
+				<ACTION type="talent" param1="210400133" rate="10" duration="0" cycle="3" desc="포 발사11M" />
+				<ACTION type="distance" param1="300" param2="400" rate="10" duration="3" cycle="30" />
+				<!--<ACTION type="far" param1="near" param2="0" cycle="30" />-->
+			</DEFAULT>
+			
+			<!-- 30~0 -->
+			<CHECK type="hp" param2="30">
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="210400134" duration="0" desc="포 정좌/후우" />
+					<ACTION type="talent" param1="210400135" duration="0" desc="포 정후/후좌" />
+					<ACTION type="talent" param1="210400134" duration="0" desc="포 정좌/후우" />
+					<ACTION type="talent" param1="210400135" duration="0" desc="포 정후/후좌" />
+					<ACTION type="talent" param1="210400134" duration="0" desc="포 정좌/후우" />
+					<ACTION type="talent" param1="210400135" duration="0" desc="포 정후/후좌" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="30">
+				<ACTION type="lua" param1="NPC_104001" param2="Firewall3" rate="20" cycle="70" desc="3방향 불 발사"/>
+				<ACTION type="talent" param1="210400131" duration="0" rate="10"  cycle="10" desc="포 발사6M" />
+				<ACTION type="talent" param1="210400132" duration="0" rate="5" cycle="20" desc="포 발사9M" />
+			</CHECK>
+
+			<!-- 50~30 -->
+			<CHECK type="hp" param2="50">
+				<ACTION type="group" max_count="1" >
+					<ACTION type="talent" param1="210400130" duration="0" desc="포 발사14M" />
+					<ACTION type="talent" param1="210400133" duration="0" desc="포 발사11M" />
+					<ACTION type="talent" param1="210400132" duration="0" desc="포 발사9M" />
+					<ACTION type="talent" param1="210400131" duration="0" desc="포 발사6M" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param1="30" param2="50">
+				<ACTION type="group" cycle="40" desc="(14초*2)+10">
+					<ACTION type="talent" param1="210400123" duration="0" cycle="30" desc="불 발사3 전면" />
+					<ACTION type="talent" param1="210400125" duration="0" cycle="30" desc="불 발사3 좌측" />
+				</ACTION>
+			</CHECK>
+
+			<!-- 99~40 -->
+			<CHECK type="distance" param2="700">
+				<ACTION type="lua" param1="NPC_104001" param2="Kick" rate="10" desc="내려치기"/>
+				
+				<ACTION type="talent" param1="210400131" duration="0" rate="4" cycle="10" desc="포 발사6M" />
+				
+				<ACTION type="talent" param1="210400127" rate="3" duration="0" desc="불 발사4" />
+			</CHECK>
+
+			<CHECK type="hp" param1="40" param2="80">
+				<ACTION type="talent" param1="210400122" duration="0" cycle="30" desc="불 발사2 좌우" />
+				<ACTION type="talent" param1="210400121" duration="0" cycle="30" desc="불 발사2 전후" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="80" param2="90">
+				<ACTION type="talent" param1="210400121" duration="0" desc="불 발사2 전후" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="60" param2="99">
+				<ACTION type="talent" param1="210400120" rate="80" duration="0" desc="불 발사1" />
+			</CHECK>
+
+		</COMBAT>
+		
+		<!--
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_104001" param2="ChangeTarget" desc="타겟 이펙트"/>
+			</DEFAULT>
+		</AGGRO>
+		-->
+	</COLT>
+	<SCRIPT><![CDATA[
+
+function NPC_104001:Init( NPCID )
+	--[[
+		User Data
+		1: Pain누적 데미지
+	--]]
+	NPC_104001.UD_Pain1 	= 1
+	NPC_104001.UD_Pain2 	= 2
+	NPC_104001.UD_LastLeg 	= 3
+	NPC_104001.UD_DATASIZE	= 3
+	NPC_ReserveUserData(NPCID, NPC_104001.UD_DATASIZE)
+	
+	NPC_104001.LIMIT_PAIN1		= NPC_104001.MaxHP * 0.005 -- 894 / 30 = 30대
+	NPC_104001.LIMIT_PAIN2		= NPC_104001.MaxHP * 0.5 -- * 0.3
+	
+	NPC_104001.BUFF_CoreAttack = 88150
+	NPC_104001.BUFF_Target = 88153
+
+	NPC_104001.TALENT_Firewall1 = 210400120	
+	NPC_104001.TALENT_Firewall3_front = 210400123
+
+	NPC_104001.TALENT_PAIN1 = 210400103
+	NPC_104001.TALENT_PAIN2 = 210400104
+	
+	NPC_104001.Minion	= 104003
+	NPC_104001.MinionCount = 5
+end
+
+function NPC_104001:OnSpawn( Info )
+	this:GainBuff( NPC_104001.BUFF_CoreAttack )
+	
+end
+
+function NPC_104001:OnCoreStop( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:RemoveBuff( NPC_104001.BUFF_CoreAttack )
+end
+
+function NPC_104001:OnStartFirewall3( ThisActor, Enemy )
+	--GLog("NPC_104001:OnStartFirewall3()\n")
+	local ThisNPC = AsNPC( ThisActor )
+	if ThisNPC:GetSummonCount() ~= 1 then
+		-- GLog("NPC_104001 : MinionCount ~= 1\n")
+	end
+	
+	local Bar = AsNPC(ThisNPC:GetTarget())
+	Bar:Warp( ThisNPC:GetPos() )
+	Bar:SetDir( ThisNPC:GetDir() )
+
+	-- GLog( "\nNPC_104001 : "..PrintVec( ThisNPC:GetDir() ).."\nBar "..PrintVec( Bar:GetDir() ).."\n" )
+	
+	if Bar:CheckBPart(1) and Bar:CheckBPart(3) then
+		Bar:UseTalentSelf( 210400203 )
+	elseif Bar:CheckBPart(1) then
+		Bar:UseTalentSelf( 210400202 )
+	elseif Bar:CheckBPart(3) then
+		Bar:UseTalentSelf( 210400201 )
+	else
+		Bar:UseTalentSelf( 210400200 )
+	end
+
+	NPC_104001:OnCoreStop( ThisActor, Enemy )	
+end
+
+function PrintVec(vec)
+	return "x "..vec.x.." y "..vec.y.." z "..vec.z
+end
+
+function NPC_104001:OnCoreStart( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:GainBuff( NPC_104001.BUFF_CoreAttack )
+	--local Target = ThisNPC:Aggro( "far", 0 )
+end
+
+function NPC_104001:Kick( ThisNPC, Enemy)
+	local lastLeg = ThisNPC:GetUserData( NPC_104001.UD_LastLeg )
+
+	-- 1/3 확율로 빠른 내려치기를 한다.
+	local rand = math.random( 0, 2 )
+	local fast = 0
+	if rand == 0 then
+		fast = 4
+	end
+	
+	if lastLeg == 21 then
+		ThisNPC:UseTalentSelf( 210400113 + fast )
+	elseif lastLeg == 12 then
+		ThisNPC:UseTalentSelf( 210400111 + fast )
+	elseif lastLeg == 22 then
+		ThisNPC:UseTalentSelf( 210400112 + fast )
+	else
+		ThisNPC:UseTalentSelf( 210400110 + fast )
+	end
+	
+	if ThisNPC:GetSummonCount() <= NPC_104001.MinionCount then
+		local worldPos = Math_LocalToWorld( Enemy:GetDir(), Enemy:GetPos(), vec3( math.random(-300,300) , math.random(-300,300) ,0 )  )
+		local Minion = ThisNPC:SummonNow( NPC_104001.Minion, worldPos )
+		Minion:UseTalentSelf( 210400300 )
+	end
+	--GLog("NPC_104001:Kick()\n")
+end
+
+
+function NPC_104001:OnFinishKick( ThisActor, Enemy )	
+	--local ThisNPC = AsNPC( ThisActor )
+	--ThisNPC:FaceTo( Enemy )
+end
+
+function NPC_104001:Firewall3( ThisNPC, Enemy)
+	-- GLog("NPC_104001:Firewall3()\n")
+	if math.random( 0, 1 ) == 0 then
+		ThisNPC:UseTalentSelf( 210400124 )
+		ThisNPC:UseTalentSelf( 210400126 )
+		ThisNPC:UseTalentSelf( 210400125 )
+		ThisNPC:UseTalentSelf( 210400123 )
+		ThisNPC:Aggro( "far", 0)
+	else
+		ThisNPC:UseTalentSelf( 210400125 )
+		ThisNPC:UseTalentSelf( 210400126 )
+		ThisNPC:UseTalentSelf( 210400124 )
+		ThisNPC:UseTalentSelf( 210400123 )
+		ThisNPC:Aggro( "far", 0)	
+	end -- if
+end
+
+function NPC_104001:OnAggro( Target )
+	Target:GainBuff( NPC_104001.BUFF_Target )
+	local Minion = this:SummonNow( 104002, this:GetPos() )
+	this:SetTarget( Minion )
+end
+
+function NPC_104001:ProcessAccDamage( ThisNPC, partsID, HitInfo )
+	--GLog("NPC_104001:ProcessAccDamage "..partsID.." "..HitInfo.Damage.."\n")
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	local currentHP = ThisNPC:GetHP()
+	
+	local pain1 = ThisNPC:GetUserData( NPC_104001.UD_Pain1 )
+	--local pain2 = ThisNPC:GetUserData( NPC_104001.UD_Pain2 )
+	
+	-- 코어는 공격력 감소 처리를 하지 않는다.
+	if partsID == 1 then
+		HitInfo.Damage = (HitInfo.Damage * 15) + math.random( 0, 9 ) -- 0.01
+		return HitInfo
+	end
+
+	-- 마지막으로 피격된 다리 저장.
+	if partsID < 30 then
+		ThisNPC:SetUserData( NPC_104001.UD_LastLeg, partsID )
+	end
+	
+	if 20 < partsID then
+		return HitInfo
+	end
+	
+	pain1 = pain1 + HitInfo.Damage
+	--pain2 = pain2 + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_104001.UD_Pain1, pain1 )
+	--ThisNPC:SetUserData( NPC_104001.UD_Pain2, pain2 )
+	
+	-- 불 발사, 폭탄 투하 중에는 pain 모션을 하지 않는다.
+	if NPC_104001.TALENT_Firewall1 <= currentTalent then
+		return HitInfo
+	end
+
+	-- pain 상태가 충족되지 않으면 끝.
+	if pain1 < NPC_104001.LIMIT_PAIN1 or
+		ThisNPC:IsCooldown( NPC_104001.TALENT_PAIN1 ) or
+		( not ChkMFForHitReaction( HitInfo ) ) then
+			return HitInfo
+	end
+	
+	-- pain 처리
+	ThisNPC:SetUserData( NPC_104001.UD_Pain1, 0 )
+	ThisNPC:ClearJob()
+
+	if currentHP <= NPC_104001.LIMIT_PAIN2 then
+		ThisNPC:UseTalentSelf( NPC_104001.TALENT_PAIN1 )
+	else
+		ThisNPC:UseTalentSelf( NPC_104001.TALENT_PAIN2 )
+	end
+
+	return HitInfo
+end
+
+
+function NPC_104001:OnHitCapsule_1_0(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_1_1(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 11, HitInfo )
+end
+function NPC_104001:OnHitCapsule_1_2(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 12, HitInfo )
+end
+function NPC_104001:OnHitCapsule_1_3(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 21, HitInfo )
+end
+function NPC_104001:OnHitCapsule_1_4(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 22, HitInfo )
+end
+
+function NPC_104001:OnHitCapsule_2_0(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_1(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 11, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_2(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 12, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_3(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 21, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_4(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 22, HitInfo )
+end
+
+function NPC_104001:OnHitCapsule_2_5(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_6(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 11, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_7(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 12, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_8(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 21, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_9(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 22, HitInfo )
+end
+
+function NPC_104001:OnHitCapsule_2_10(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 22, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_11(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_12(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 11, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_13(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 12, HitInfo )
+end
+function NPC_104001:OnHitCapsule_2_14(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 21, HitInfo )
+end
+
+
+function NPC_104001:OnHitCapsule_3_0(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_1(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_2(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_3(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_4(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_5(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_6(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_7(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_8(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_9(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_10(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_11(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_12(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_13(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+function NPC_104001:OnHitCapsule_3_14(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 0, HitInfo )
+end
+
+function NPC_104001:OnHitCapsule_4_0(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_4_1(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 11, HitInfo )
+end
+function NPC_104001:OnHitCapsule_4_2(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 12, HitInfo )
+end
+function NPC_104001:OnHitCapsule_4_3(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 21, HitInfo )
+end
+function NPC_104001:OnHitCapsule_4_4(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 22, HitInfo )
+end
+function NPC_104001:OnHitCapsule_4_5(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 31, HitInfo )
+end
+function NPC_104001:OnHitCapsule_4_6(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 32, HitInfo )
+end
+
+function NPC_104001:OnHitCapsule_5_0(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 1, HitInfo )
+end
+function NPC_104001:OnHitCapsule_5_1(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 11, HitInfo )
+end
+function NPC_104001:OnHitCapsule_5_2(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 12, HitInfo )
+end
+function NPC_104001:OnHitCapsule_5_3(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 21, HitInfo )
+end
+function NPC_104001:OnHitCapsule_5_4(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 22, HitInfo )
+end
+function NPC_104001:OnHitCapsule_5_5(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 31, HitInfo )
+end
+function NPC_104001:OnHitCapsule_5_6(HitInfo)
+	return NPC_104001:ProcessAccDamage( this, 32, HitInfo )
+end
+
+	]]></SCRIPT>
+</maiet>

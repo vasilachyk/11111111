@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="흑연꽃 중독자" npcid="103126">
+		<COMBAT mode="0">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210312601" rate="10" />
+				<ACTION type="talent" param1="210312605" rate="40" />
+				<ACTION type="talent" param1="210312603" rate="35" />
+				<ACTION type="talent" param1="210312604" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="breakpart" param1="2">
+				<CHECK type="breakpart" param1="3">
+					<ACTION type="talent" param1="210312603" rate="10" />
+				</CHECK>
+				<ACTION type="talent" param1="210312603" rate="30" />
+				<ACTION type="talent" param1="210312604" rate="20" />
+			</CHECK>
+			
+			<CHECK type="breakpart" param1="3">
+				<ACTION type="talent" param1="210312605" rate="40" />
+				<ACTION type="talent" param1="210312603" rate="20" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210312600" rate="10"/>
+				<ACTION type="nothing" param1="1" rate="90"/>
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	function NPC_103126:Init( NPCID )
+		NPC_ReserveUserData( NPCID, 1 )
+	end
+	
+	function NPC_103126:BreakRandomPart( ThisNPC, Enemy)
+		ThisNPC:ClearJob()
+		
+		local n = math.random( 1, 3 )
+		if not ThisNPC:CheckBPart( n ) then
+			ThisNPC:BreakPart( n, Enemy )
+		end
+	end
+	
+	function NPC_103126:OnHitCapsule_1_0(HitInfo)
+		local HPPer = this:GetHP() / this:GetMaxHP()
+		local State =  this:GetUserData( 1 )
+		
+		if HPPer < 0.75 and State < 1 and ChkMFForHitReaction( HitInfo ) then
+			NPC_103126:BreakRandomPart( this, HitInfo.Attacker )
+			this:SetUserData( 1, 1 )
+		elseif HPPer < 0.5 and State < 2 then
+			NPC_103126:BreakRandomPart( this, HitInfo.Attacker )
+			this:SetUserData( 1, 2 )
+		elseif HPPer < 0.25 and State < 3 then
+			NPC_103126:BreakRandomPart( this, HitInfo.Attacker )
+			this:SetUserData( 1, 3 )
+		end
+	end
+
+	]]></SCRIPT>
+</maiet>

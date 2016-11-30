@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="아이센드 유령병사">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="251210801" rate="50" />
+				<ACTION type="talent" param1="251210802" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="40" />
+				
+				<ACTION type="talent" param1="251210802" rate="30" />
+				<ACTION type="talent" param1="251210801" rate="30" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="251210800" rate="30"/>
+				<ACTION type="nothing" param1="1" rate="70"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+	
+</maiet>

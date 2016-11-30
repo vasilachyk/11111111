@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="신전 수호자">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="250810711" rate="10" />
+				<ACTION type="talent" param1="250810712" rate="10" />
+				<ACTION type="talent" param1="250810713" rate="10" />
+				<ACTION type="talent" param1="250810714" rate="10" />				
+			</DEFAULT>			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250810700" rate="50" />
+				<ACTION type="nothing" param1="1" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	function NPC_508107:OnSpawn( Info )
+		this:GainBuff( 110023 )
+	end
+	]]></SCRIPT>
+</maiet>

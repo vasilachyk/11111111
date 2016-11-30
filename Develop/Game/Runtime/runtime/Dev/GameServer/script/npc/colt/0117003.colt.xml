@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="마이코니드 블리" npcid="117003" >
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211700300" rate="100" desc="씻고싶은독가스(자폭)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0" rate="40" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_117003:OnFinishKillAttack1( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+
+	ThisNPC:Die( Enemy )
+end
+
+function NPC_117003:OnSpawn(Spawn)
+	this:UseTalentSelf(211700301)
+end
+	]]></SCRIPT>
+</maiet>

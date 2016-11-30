@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="부유하는시체" npcid="512004">
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="talent" param1="251200412"/>					
+			</DEFAULT>
+		</PROLOGUE>	
+	
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="251200410" rate="40"/> 
+				<ACTION type="talent" param1="251200411" rate="40"/>
+				<ACTION type="talent" param1="251200401" rate="5" duration="0"/>
+				<ACTION type="talent" param1="251200402" rate="5" duration="0"/>
+				<ACTION type="talent" param1="251200403" rate="5" duration="0"/>
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="251200410" rate="10"/> 
+				<ACTION type="talent" param1="251200411" rate="10"/>
+				<ACTION type="talent" param1="251200413" rate="30" />
+			</CHECK> 
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_7512004:Init( NPCID )
+end
+
+function NPC_7512004:OnDie()
+	local Summoner = this:GetSummoner()
+	Summoner:SetUserData( NPC_512000.DataIdxMinionCnt, Summoner:GetUserData(NPC_512000.DataIdxMinionCnt)-1 )
+end
+	]]></SCRIPT>
+</maiet>

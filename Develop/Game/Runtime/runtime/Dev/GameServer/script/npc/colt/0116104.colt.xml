@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="불붙은 나무정령 - 아란바스 화산지대" >
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610412" rate="40" />
+				<ACTION type="talent" param1="211610411" rate="30" />
+				<ACTION type="talent" param1="211610410" rate="10" />
+			</DEFAULT>
+
+			<CHECK type="e_motionfactor" param1="knockdown">
+				<ACTION type="talent" param1="211610411" rate="40" />
+				<ACTION type="talent" param1="211610402" rate="10" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="40">
+				<ACTION type="talent" param1="211610414" rate="80" max_count="3"/>
+				<ACTION type="talent" param1="211610412" rate="40" />
+				<ACTION type="talent" param1="211610411" rate="30" />
+				<ACTION type="talent" param1="211610410" rate="10" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211610400" rate="50" />
+				<ACTION type="nothing" param1="5" rate="50" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

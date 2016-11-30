@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="8006" boundary_min_y="-2000" boundary_max_x="50902" boundary_max_y="16443" weather_effect="true" town="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="10" />
+                <ADD weather="HSW" percent="10" />
+                <ADD weather="CLR" percent="10" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="[도전] 샤디즈" x="27975.513672" y="6107.670898" z="-1072.209839" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="1" respawn_time="1800" roam_radius="500" roam_depth="200" color="auto">
+            <NPC id="1000011" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="MK00001" x="30634.996094" y="6407.520996" z="-1081.769287" dir_x="-0.998630" dir_y="-0.052336" dir_z="0.000000" random_dir="false" />
+    </FIELDINFO>
+</maiet>

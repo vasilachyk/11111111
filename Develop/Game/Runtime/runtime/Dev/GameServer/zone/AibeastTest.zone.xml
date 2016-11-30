@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT>
+    <PROPERTY />
+    <SCENE>
+        <RTERRAIN>
+            <COMMON>
+                <POSITION>0.000000 0.000000 0.000000</POSITION>
+                <DIRECTION>0.000000 1.000000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY version="1.3">
+                <MAP_WIDTH type="int">
+                    <int>256</int>
+                </MAP_WIDTH>
+                <MAP_HEIGHT type="int">
+                    <int>256</int>
+                </MAP_HEIGHT>
+                <MAP_SIZE type="vec3">
+                    <vec3>10000.000000 10000.000000 0.000000</vec3>
+                </MAP_SIZE>
+                <MAP_NAME>AibeastTest_dis.dds</MAP_NAME>
+                <BASEMAP_NAME>AibeastTest_baked.bmp</BASEMAP_NAME>
+                <CREATE_NAVEMESH type="bool">
+                    <bool>true</bool>
+                </CREATE_NAVEMESH>
+                <GRASS>AibeastTest_grass.grs</GRASS>
+                <LAYER type="array" size="4">
+                    <LAYERINFO index="0">
+                        <ALPHAMAP>AibeastTest_mask0.dds</ALPHAMAP>
+                        <TILEMAP type="specular">teress_ground_f01.dds</TILEMAP>
+                        <NORMALMAP>teress_ground_f01_nm.dds</NORMALMAP>
+                        <TILEUV type="vec3">
+                            <vec3>512.000000 512.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="1">
+                        <ALPHAMAP>AibeastTest_mask1.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Teress_rock_f01.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="2">
+                        <ALPHAMAP>AibeastTest_mask2.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Cemetery_ground_k09.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                    <LAYERINFO index="3">
+                        <ALPHAMAP>AibeastTest_mask3.dds</ALPHAMAP>
+                        <TILEMAP type="specular">Cemetery_ground_k05.dds</TILEMAP>
+                        <TILEUV type="vec3">
+                            <vec3>500.000000 500.000000 1.000000</vec3>
+                        </TILEUV>
+                    </LAYERINFO>
+                </LAYER>
+            </PROPERTY>
+        </RTERRAIN>
+        <DIRLIGHT>
+            <COMMON name="TerrainLightMap0">
+                <POSITION>-50.000000 -50.000000 50.000000</POSITION>
+                <DIRECTION>0.577350 0.577350 -0.577350</DIRECTION>
+                <UP>0.408248 0.408248 0.816497</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <SHADOWLUMINOSITY>0.100</SHADOWLUMINOSITY>
+                <HALFLAMBERTFACTOR>1.000</HALFLAMBERTFACTOR>
+                <POWER>1.000</POWER>
+                <AMBIENT>0.000 0.000 0.000</AMBIENT>
+                <DIFFUSE>1.000 1.000 1.000</DIFFUSE>
+                <SPECULAR>1.000 1.000 1.000</SPECULAR>
+                <SKYCOLOR>0.000 0.000 0.000</SKYCOLOR>
+                <GROUNDCOLOR>0.000 0.000 0.000</GROUNDCOLOR>
+            </PROPERTY>
+        </DIRLIGHT>
+        <ACTOR>
+            <COMMON name="article_butterfly_01_ani_006">
+                <POSITION>4637.587891 3961.899658 141.562393</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_butterfly_01_ani.elu</FILENAME>
+                <ANI />
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="article_butterfly_01_ani_009">
+                <POSITION>5306.081055 1985.461914 0.000066</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_butterfly_01_ani.elu</FILENAME>
+                <ANI />
+            </PROPERTY>
+            <SCENE />
+        </ACTOR>
+        <ACTOR>
+            <COMMON name="article_butterfly_02_ani_008">
+                <POSITION>2146.028076 3435.719238 10.688181</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>1.000000 1.000000 1.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>article_butterfly_02_ani.elu</FILENAME>
+                <ANI />
+            </PROPERTY>
+        </ACTOR>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_001">
+                <POSITION>7541.528320 2397.157715 0.000000</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_002">
+                <POSITION>2397.380127 3357.850342 30.479548</POSITION>
+                <DIRECTION>-0.809017 0.587785 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>49.964542 49.964542 49.964539</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_003">
+                <POSITION>2509.591553 3054.766113 44.917938</POSITION>
+                <DIRECTION>0.866025 -0.500000 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_004">
+                <POSITION>1890.583252 3188.962891 1.412279</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_011">
+                <POSITION>2081.519775 3335.526367 7.144710</POSITION>
+                <DIRECTION>-0.529919 -0.848048 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_012">
+                <POSITION>7661.569336 2558.972168 0.000000</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_013">
+                <POSITION>4573.007324 1499.872925 0.000000</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_019">
+                <POSITION>4446.556641 1777.641357 0.000000</POSITION>
+                <DIRECTION>0.325568 -0.945519 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.222885 33.222885 33.222878</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_020">
+                <POSITION>5407.133789 1898.407227 0.000000</POSITION>
+                <DIRECTION>0.978148 -0.207912 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>56.583626 56.583626 56.583618</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_021">
+                <POSITION>4845.851563 1860.126465 0.000005</POSITION>
+                <DIRECTION>-0.258820 -0.965926 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>56.583618 56.583618 56.583618</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_030">
+                <POSITION>2106.563232 3767.800049 4.236891</POSITION>
+                <DIRECTION>0.615661 0.788011 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000004 33.000004 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_047">
+                <POSITION>8439.023438 4134.212891 0.000073</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_048">
+                <POSITION>8507.664063 4000.151367 0.000013</POSITION>
+                <DIRECTION>-0.515038 0.857167 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>21.874382 21.874382 21.874378</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_049">
+                <POSITION>2354.118408 3001.410889 14.146363</POSITION>
+                <DIRECTION>-0.999391 0.034900 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000004 33.000004 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_1_050">
+                <POSITION>2794.703369 2458.991699 2.352626</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_001">
+                <POSITION>7746.536133 2396.403809 0.000000</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_002">
+                <POSITION>2176.941162 2808.825195 1.712979</POSITION>
+                <DIRECTION>0.987688 0.156434 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>47.427204 47.427204 47.427208</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_010">
+                <POSITION>8153.412598 2958.883301 0.000000</POSITION>
+                <DIRECTION>0.970296 -0.241922 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>56.583618 56.583618 56.583618</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_011">
+                <POSITION>5107.053711 1715.468262 0.000000</POSITION>
+                <DIRECTION>0.453990 0.891007 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>110.892296 110.892296 110.892296</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_012">
+                <POSITION>4580.303223 1727.132324 0.000000</POSITION>
+                <DIRECTION>0.754710 0.656059 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>31.973545 31.973545 31.973543</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_022">
+                <POSITION>1999.489014 3591.854980 3.962093</POSITION>
+                <DIRECTION>-0.156434 0.987688 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>20.982944 20.982944 20.982946</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_023">
+                <POSITION>2009.790771 3832.128174 1.715090</POSITION>
+                <DIRECTION>0.034900 0.999391 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_024">
+                <POSITION>2194.964600 3550.164063 12.055772</POSITION>
+                <DIRECTION>-0.629321 -0.777146 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>15.334286 15.334286 15.334284</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_038">
+                <POSITION>8375.794922 3949.993164 0.000102</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_039">
+                <POSITION>2773.618408 2249.980469 0.406269</POSITION>
+                <DIRECTION>0.453990 0.891007 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>55.637001 55.637001 55.636997</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_040">
+                <POSITION>2320.956299 2515.069580 0.152270</POSITION>
+                <DIRECTION>0.087156 -0.996195 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>40.176735 40.176735 40.176716</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_049">
+                <POSITION>2835.504150 2708.195313 13.360362</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_AmericanBoxwood_2_050">
+                <POSITION>2726.617432 2973.853760 53.729744</POSITION>
+                <DIRECTION>0.275637 -0.961262 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>26.371498 26.371498 26.371494</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_AmericanBoxwood_2.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_CommonOlive_1_001">
+                <POSITION>2528.353271 2655.888184 0.013753</POSITION>
+                <DIRECTION>-0.453991 -0.891006 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>53.987450 53.987450 53.987373</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_CommonOlive_1.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_ElmStocky_003">
+                <POSITION>7641.268555 2442.766602 0.000000</POSITION>
+                <DIRECTION>0.978148 0.207912 0.000000</DIRECTION>
+                <UP>-0.000000 0.000000 1.000000</UP>
+                <SCALE>33.000000 33.000000 33.000000</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_ElmStocky.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+        <TREE>
+            <COMMON name="eda_ElmStocky_004">
+                <POSITION>8368.172852 4014.124512 0.000074</POSITION>
+                <DIRECTION>-0.882948 0.469471 0.000000</DIRECTION>
+                <UP>0.000000 0.000000 1.000000</UP>
+                <SCALE>19.732029 19.732029 19.732016</SCALE>
+            </COMMON>
+            <PROPERTY>
+                <FILENAME>eda_ElmStocky.spt</FILENAME>
+            </PROPERTY>
+        </TREE>
+    </SCENE>
+</ROOT>

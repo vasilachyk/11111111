@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--  렌고트 돼지 -_- -->
+<maiet>
+	<COLT>
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="flee" param1="from_enemy" param2="7" />				
+			</DEFAULT>			
+			<CHECK type="distance" param1="0" param2="300">
+				<ACTION type="flee" param1="from_enemy" param2="3" />				
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211002001" rate="80" />
+				<ACTION type="nothing" param1="1" rate="20" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

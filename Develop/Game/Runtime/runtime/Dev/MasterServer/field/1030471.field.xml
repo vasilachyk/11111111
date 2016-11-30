@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1030351" minimap_name="map1030351" loading_image_name="1030351" min_x="-18900" min_y="-17500" max_x="17100" max_y="18500" boundary_min_x="-17000" boundary_min_y="-15000" boundary_max_x="-3000" boundary_max_y="1000" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="시작점" x="-6481.344727" y="-1047.182861" z="219.413147" dir_x="-0.173648" dir_y="-0.984808" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="신데아 obj 2" x="-10985.629883" y="-8828.726563" z="208.526917" dir_x="-0.809017" dir_y="0.587785" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="전진지점" x="-10017.748047" y="-7601.149902" z="235.243896" dir_x="0.544639" dir_y="0.838671" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10313301" name="103133" x="-8342.792969" y="-6925.782227" z="207.464233" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="103133" />
+        <MARKER id="10313302" name="103133" x="-9511.503906" y="-4914.284668" z="219.244308" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="103133" />
+        <MARKER id="10313303" name="103133" x="-7069.196289" y="-4783.915039" z="202.056625" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="103133" />
+        <MARKER id="10313401" name="103134" x="-7501.145508" y="-6006.429199" z="251.073929" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="103134" />
+        <MARKER id="10313402" name="auto" x="-9674.028320" y="-5113.169922" z="229.112244" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="103134" />
+        <MARKER id="10313403" name="auto" x="-10774.791016" y="-6056.594238" z="234.672684" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="103134" />
+        <MARKER id="10313404" name="auto" x="-7775.497070" y="-7092.294922" z="225.852234" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" patrol_group_id="103134" />
+        <SENSOR id="1" name="체크포인트" local="false" x="-6831.968750" y="-1844.962891" z="264.301025" radius="1000.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="5" name="안내문" local="false" x="-9031.684570" y="-6565.685059" z="231.757202" radius="1500.000000" enabled="true" groupname="none" />
+        <SENSOR id="10" name="탈출지점" x="-6059.307129" y="168.575714" z="81.621254" radius="900.000000" enabled="true">
+            <WARP warp_type="field" title="탈출" condition="0" gate_type="auto" field="1030350" marker="103035" />
+        </SENSOR>
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

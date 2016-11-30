@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 고대 쿠오테스 석상	
+210923410	휘두르기1
+210923411	휘두르기2
+210923412	내려찍기
+# 석상모드	
+210923420	모드전환_고정석상
+210923421	모드전환_이동모드
+-->
+<maiet>
+	<COLT name="고대 쿠오테스 석상" npcid="109234" max_duration="-1">
+		<COMBAT mode="0">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="210923410" rate="10" comment="atk1" />
+				<ACTION type="talent" param1="210923411" rate="10" comment="atk2" />
+				<ACTION type="talent" param1="210923412" rate="10" comment="atk3" />
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT comment="">
+				<ACTION type="talent" param1="210923421" duration="0" rate="10" comment="이동모드" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

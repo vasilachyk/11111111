@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#타일런트 좀비	
+211702100	idle2
+211702101	내려찍기
+211702102	휘둘러치기
+211702103	올려치기
+211702104	잡기
+211702105	벌레숨결
+211702106	좌측 회전
+211702107	우측 회전
+211702108	pain1
+211702109	pain2
+211702110	tomode1
+211702111	tomode0
+	
+211702120	idle2
+211702121	내려찍기
+211702122	휘둘러치기
+211702123	올려치기
+211702124	잡기
+211702125	벌레숨결
+211702126	좌측 회전
+211702127	우측 회전
+211702128	pain1
+211702129	pain2
+211702130	tomode0(no ani)
+211702131	tomode2(no ani)
+211702132	tomode3(no ani)
+-->
+<maiet>
+	<COLT name="타일런트 좀비">
+		<COMBAT comment="Drum playing.">
+			<DEFAULT>
+				<ACTION type="talent" param1="211702101" rate="20"/>
+				<ACTION type="talent" param1="211702102" rate="20"/>
+				<ACTION type="talent" param1="211702103" rate="10"/>
+				<ACTION type="talent" param1="211702105" rate="30"/>
+				<ACTION type="lua" param1="NPC_117021" param2="GrappingAttack" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="300" >
+				<ACTION type="lua" param1="NPC_117021" param2="GrappingAttack" rate="5" />
+				<ACTION type="talent" param1="211702102" rate="5"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000" >
+				<ACTION type="distance" param1="700" param2="700" rate="20" duration="2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="700" >
+				<ACTION type="talent" param1="211702101" rate="5"/>
+				<ACTION type="talent" param1="211702102" rate="5"/>
+				<ACTION type="talent" param1="211702103" rate="5"/>
+				<ACTION type="lua" param1="NPC_117021" param2="GrappingAttack" rate="5" />
+				<ACTION type="talent" param1="211702105" rate="60"/>
+				<ACTION type="distance" param1="400" param2="400" rate="20" duration="2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" >
+				<CHECK type="e_motionfactor" param1="knockdown" >
+					<ACTION type="talent" param1="211702103" rate="20"/>	
+				</CHECK>
+				<CHECK type="e_motionfactor" param1="throwup" >
+					<ACTION type="talent" param1="211702103" rate="20"/>	
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" comment="No playing." victory="211702130">
+			<DEFAULT>
+				<ACTION type="talent" param1="211702121" rate="40"/>
+				<ACTION type="talent" param1="211702122" rate="40"/>
+				<ACTION type="talent" param1="211702123" rate="20"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="2" comment="Playing with enforced aura damage.">
+			<DEFAULT>
+				<ACTION type="talent" param1="211702101" rate="40"/>
+				<ACTION type="talent" param1="211702102" rate="40"/>
+				<ACTION type="talent" param1="211702103" rate="15"/>
+				<ACTION type="talent" param1="211702105" rate="5"/>
+				<ACTION type="lua" param1="NPC_117021" param2="GrappingAttack" rate="5" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="300" >
+				<ACTION type="talent" param1="211702102" rate="5"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="1000" >
+				<ACTION type="distance" param1="700" param2="700" rate="20" duration="2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="700" >
+				<ACTION type="talent" param1="211702101" rate="5"/>
+				<ACTION type="talent" param1="211702102" rate="5"/>
+				<ACTION type="talent" param1="211702103" rate="5"/>
+				<ACTION type="lua" param1="NPC_117021" param2="GrappingAttack" rate="5" />
+				<ACTION type="talent" param1="211702105" rate="60"/>
+				<ACTION type="distance" param1="400" param2="400" rate="20" duration="2" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" >
+				<CHECK type="e_motionfactor" param1="knockdown" >
+					<ACTION type="talent" param1="211702103" rate="20"/>	
+				</CHECK>
+				<CHECK type="e_motionfactor" param1="throwup" >
+					<ACTION type="talent" param1="211702103" rate="20"/>	
+				</CHECK>
+				
+				<ACTION type="talent" param1="211702101" rate="30"/>
+				<ACTION type="talent" param1="211702102" rate="30"/>
+				<ACTION type="talent" param1="211702103" rate="20"/>
+				<ACTION type="lua" param1="NPC_117021" param2="GrappingAttack" rate="5" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="3" comment="None combat mode">
+			<DEFAULT>
+				<ACTION type="talent" param1="211702130" auto_run="true"/>
+			</DEFAULT>	
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="80" />
+				<ACTION type="talent" param1="211702100" rate="20" />
+			</DEFAULT>
+			<CHECK type="mode" param1="1">
+				<ACTION type="nothing" param1="3" rate="80" />
+				<ACTION type="talent" param1="211702120" rate="20" />
+			</CHECK>
+			<CHECK type="mode" param1="2">
+				<ACTION type="nothing" param1="3" rate="80" />
+				<ACTION type="talent" param1="211702100" rate="20" />
+			</CHECK>
+			<CHECK type="mode" param1="3">
+				<ACTION type="nothing" param1="3" rate="80" />
+				<ACTION type="talent" param1="211702120" rate="20" />
+			</CHECK>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[ 
+	
+function NPC_117021:Init( NPCID )
+	--[[  
+	PARTS
+	1 : 손등
+	2 : 드러머 왼손
+	3 : 북
+	
+	USERDATA 
+	1 : 북
+	2 : 손등
+	3 : Pain
+	4 : 현재 Drum 오오라 인덱스
+	5 : 분노모드 돌입여부
+	--]]
+	
+	NPC_ReserveUserData( NPCID, 5 )
+	
+	NPC_117021.LimitForBreakDrum 				= NPC_117021.MaxHP / 2
+	NPC_117021.LimitForBreakShell 				= NPC_117021.MaxHP / 10
+	NPC_117021.LimitForPain						= NPC_117021.MaxHP / 10
+	NPC_117021.LimitForRage						= NPC_117021.MaxHP / 2
+
+	--NPC_117021.LimitForPainBreakPart			= NPC_117021.MaxHP / 15
+	NPC_117021.LimitForPainDrum 				= 500 -- NPC_117021.MaxHP / 30
+	NPC_117021.LimitForPainShell 				= NPC_117021.MaxHP / 10
+	
+	NPC_117021.TalIdPain1 							= 211702108
+	NPC_117021.TalIdPain2 							= 211702109
+	
+	NPC_117021.TalIdChangeMode0				= 211702111	
+	NPC_117021.TalIdChangeMode1 			= 211702110
+	NPC_117021.TalIdChangeMode2 			= 211702131
+	NPC_117021.TalIdChangeMode3 			= 211702132
+	
+	NPC_117021.TalIdMode1Pain1 				= 211702128
+	NPC_117021.TalIdMode1Pain2 				= 211702129
+	
+	NPC_117021.TalIdGrappingAttack1			= 211702104
+	NPC_117021.TalIdGrappingAttack2			= 211702124
+	
+	NPC_117021.BufIdsDrumSound				= { 40152, 40154, 40156, 40158, 40162, 40164, 40166, 40168 } -- { 40152, 40154, 40156, 40158, 40162, 40164, 40166, 40168 }
+	NPC_117021.DurationsDrumSound			= { 10, 15, 15, 20, 10, 10, 10, 10 }
+	NPC_117021.MsgsDrumSound				= { "$$ZombieDrum1" , "$$ZombieDrum2" , "$$ZombieDrum3" , "$$ZombieDrum4" , "$$ZombieDrum5", "$$ZombieDrum6", "$$ZombieDrum7", "$$ZombieDrum8"}
+	NPC_117021.BufCount						= 8
+	
+	NPC_117021.TimerIdSetDrum				= 1
+	NPC_117021.TimerIdBufExpire				= 2
+	NPC_117021.TimerIdPainBreakPart			= 3
+
+	NPC_117021.BufIdZombieSlow				= 40161
+	NPC_117021.BufIdFaint					= 40160
+	
+end
+
+function NPC_117021:OnBPartRecover()
+	for i=1, 5 do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+-- 잡기 중 맞았을때
+function NPC_117021:OnHitSwallowed(HitInfo)
+	-- reaction
+	if not ChkMFForHitReaction( HitInfo ) then
+		return
+	end
+
+	this:Spewup() -- 뱉기
+end
+
+function NPC_117021:SetDrum( ThisNPC, Index )
+	--GLog( "SetDrum( " .. Index .." )\n" )
+	
+	local BufIdx = ThisNPC:GetUserData( 4 )
+	-- Clear current drum aura
+	
+	if  BufIdx > 0 then
+		ThisNPC:RemoveBuff( NPC_117021.BufIdsDrumSound[ BufIdx ] )
+		ThisNPC:SetUserData( 4 , 0 )
+	end
+	
+	if Index <= 0 then
+		return
+	end
+	
+	ThisNPC:NarrationNow( NPC_117021.MsgsDrumSound[ Index ] )
+	
+	ThisNPC:GainBuff( NPC_117021.BufIdsDrumSound[ Index ] )
+	--GLog ( "SetBuf (" .. NPC_117021.BufIdsDrumSound[ Index ] .. ") \n" )
+	
+	ThisNPC:SetTimer( NPC_117021.TimerIdBufExpire, NPC_117021.DurationsDrumSound[ Index ] , false )
+	ThisNPC:SetUserData( 4, Index )
+end
+
+function NPC_117021:OnTimer( Index )
+	
+	if this:GetMode() == 0 and ( this:GetHP() < NPC_117021.LimitForRage ) then
+		this:UseTalentSelf( NPC_117021.TalIdChangeMode2 )
+		return
+	end
+	
+	--GLog( "-----[ OnTimer( " .. Index .. " ) ]-----\n" )
+	
+	if Index == NPC_117021.TimerIdBufExpire then
+		if this:CheckBPart(3) then
+			return
+		end
+		
+		if this:IsNowCombat() then
+			NPC_117021:NextDrum(this)
+		else 
+			this:UseTalentSelf( NPC_117021.TalIdChangeMode3 )
+		end
+	elseif Index == NPC_117021.TimerIdPainBreakPart then
+		--GLog("onTimer PainBreakPart")
+		--if this:GetUserData(1) > NPC_117021.LimitForPainDrum then
+		--	this:SetTimer( NPC_117021.TimerIdPainBreakPart, 10 , false )
+		--else
+			this:ClearJob()
+			this:UseTalentSelf( NPC_117021.TalIdChangeMode0 )
+		--end
+	end
+end
+
+function NPC_117021:OnFinishAndAggro( ThisActor, Opponent )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_117021:OnFinishModeChange0( ThisNPC, Enemy )
+	--GLog("NPC_117021:OnFinishModeChange0")
+	ThisNPC:RemoveBuff( NPC_117021.BufIdFaint )
+	
+	AsNPC(ThisNPC):SetUserData( 1 , 0 )
+
+	NPC_117021:SetDrum( AsNPC(ThisNPC), math.random(1, NPC_117021.BufCount/2) )
+	--NPC_117021:SetDrum( AsNPC(ThisNPC), 1 )
+end
+--[[
+function NPC_117021:OnStart( ThisNPC, Enemy )
+	GLog("NPC_117021:OnStart")
+end
+function NPC_117021:OnAct( ThisNPC, Enemy )
+	GLog("NPC_117021:OnAct")
+end
+function NPC_117021:OnCancel( ThisNPC, Enemy )
+	GLog("NPC_117021:OnCancel")
+end
+--]]
+
+function NPC_117021:OnFinishModeChange1( ThisNPC, Enemy )
+	ThisNPC:GainBuff( NPC_117021.BufIdFaint )
+
+	AsNPC(ThisNPC):SetUserData( 1 , 0 )
+
+	NPC_117021:SetDrum( AsNPC(ThisNPC), 0 )
+	AsNPC(ThisNPC):SetTimer( NPC_117021.TimerIdPainBreakPart, 30 , false )
+end
+
+function NPC_117021:OnFinishModeChange2( ThisNPC, Enemy )
+	ThisNPC:RemoveBuff( NPC_117021.BufIdFaint )
+	NPC_117021:SetDrum( AsNPC(ThisNPC), math.random(1, NPC_117021.BufCount/2) )
+end
+
+function NPC_117021:OnFinishModeChange3( ThisNPC, Enemy )
+	ThisNPC:RemoveBuff( NPC_117021.BufIdFaint )
+	NPC_117021:SetDrum( AsNPC(ThisNPC), 0 )
+end
+
+function NPC_117021:NextDrum( ThisNPC )
+	local NumberOfBufs = NPC_117021.BufCount/2
+	local BufIdx = ThisNPC:GetUserData(4)
+	
+	--GLog( "BufIdx" .. BufIdx .."\n" )
+	
+	if BufIdx == 0  then
+		return
+	end
+	
+	if ThisNPC:GetMode() == 0 then
+		NPC_117021:SetDrum( ThisNPC, ( BufIdx + math.random( 0,NumberOfBufs-2) ) % NumberOfBufs +1 )
+	elseif ThisNPC:GetMode() == 2 then
+		local NextBufIdx
+		if BufIdx > NumberOfBufs then
+			NextBufIdx = ( BufIdx % NumberOfBufs + math.random( 0,NumberOfBufs-2) ) % NumberOfBufs +1
+		else
+			NextBufIdx = ( BufIdx + math.random( 0,NumberOfBufs-2) ) % NumberOfBufs + NumberOfBufs + 1
+		end
+		
+		NPC_117021:SetDrum( ThisNPC, NextBufIdx )
+	end
+end
+
+function NPC_117021:OnFinishAndAggroSwap( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_117021:GrappingAttack( ThisNPC, Enemy )
+--	GLog( "grapiing" )
+	
+	
+	if ThisNPC:CheckBPart( 1 ) then
+		return
+	end
+	
+		ThisNPC:MoveToActor( Enemy, NPC_117021.TalIdGrappingAttack2  )
+	if ThisNPC:GetMode() == 1 then
+		ThisNPC:UseTalentSelf( NPC_117021.TalIdGrappingAttack2 ) 
+	else
+		ThisNPC:MoveToActor( Enemy, NPC_117021.TalIdGrappingAttack1  )
+		ThisNPC:UseTalentSelf( NPC_117021.TalIdGrappingAttack1 ) 
+	end
+end
+
+
+function NPC_117021:AccDamage( ThisNPC, DataIdx, HitInfo )
+	-- 		( DataIdx == 2 and not ThisNPC:CheckBPart( 1 ) ) then
+	if ( DataIdx == 1 and not ThisNPC:CheckBPart( 3 ) ) or
+		( DataIdx == 2 ) then
+		ThisNPC:SetUserData( DataIdx, ThisNPC:GetUserData( DataIdx ) + HitInfo.Damage	 )
+	end
+	
+	--ThisNPC:SetUserData( 3, ThisNPC:GetUserData( 3 ) + HitInfo.Damage )
+
+	--[[
+	GLog( "-- Process Acc Damage ( P:" .. DataIdx .. 
+		", D:" .. HitInfo.Damage .. ", 1:" .. ThisNPC:GetUserData( 1 ) .. 
+		", 2:" .. ThisNPC:GetUserData( 2 ) .. ", 3:" .. ThisNPC:GetUserData( 3 ) ..
+		", all:" .. ThisNPC:GetUserData( 1 ) + ThisNPC:GetUserData( 2 ) + ThisNPC:GetUserData( 3 ) .. " )--\n"  )
+	--]]
+	
+	-- reaction
+	if not ChkMFForHitReaction( HitInfo ) then
+		return
+	end
+	
+	-- 북 안치기
+	if DataIdx == 1 and ThisNPC:GetUserData(1) > NPC_117021.LimitForPainDrum then
+		if ThisNPC:GetMode() == 1 or ThisNPC:IsCooldown( NPC_117021.TalIdChangeMode1 ) then return end
+		
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_117021.TalIdChangeMode1 )
+	end
+
+	-- 북 파괴
+	--[[
+	if DataIdx == 1 and ThisNPC:GetUserData(DataIdx) > NPC_117021.LimitForBreakDrum then
+		if not ThisNPC:IsCooldown( NPC_117021.TalIdChangeMode1 ) then
+			--GLog( "BreakPart 3\n" )
+			ThisNPC:ClearJob()
+			ThisNPC:UseTalentSelf( NPC_117021.TalIdChangeMode1 )
+			ThisNPC:BreakPart( 3, HitInfo.Attacker )
+		
+			ThisNPC:SetUserData( DataIdx , 0 )
+			ThisNPC:SetUserData( 3 , 0 )
+			NPC_117021:SetDrum( ThisNPC, 0 )
+		end
+		
+		return
+	end
+	--]]
+	
+	-- 손등
+	if DataIdx == 2 then
+		if not ThisNPC:CheckBPart( 1 ) then
+			-- 손등 파괴
+			if ThisNPC:GetUserData(2) > NPC_117021.LimitForBreakShell then
+				if ThisNPC:IsCooldown( NPC_117021.TalIdPain1 ) then return end
+				--GLog( "BreakPart 1\n" )
+				ThisNPC:ClearJob()
+				ThisNPC:UseTalentSelf( NPC_117021.TalIdPain1 )
+				ThisNPC:BreakPart( 1, HitInfo.Attacker )
+				
+				ThisNPC:NarrationNow( "$$ZombieBreakShell" )
+				
+				ThisNPC:SetUserData( 2 , 0 )
+			end
+		else
+			-- 파괴된 손등 맞으면 아픔
+			if ThisNPC:GetUserData(2) > NPC_117021.LimitForPainDrum then
+				if ThisNPC:IsCooldown( NPC_117021.TalIdPain1 ) then return end
+				ThisNPC:ClearJob()
+				ThisNPC:UseTalentSelf( NPC_117021.TalIdPain1 )
+				
+				ThisNPC:SetUserData( 2 , 0 )
+			end
+		end
+	end
+	--[[
+	-- pain
+	if  ThisNPC:GetUserData(3) > NPC_117021.LimitForPain then
+		if ThisNPC:IsCooldown( NPC_117021.TalIdPain2 ) then return end
+		ThisNPC:ClearJob()
+		ThisNPC:UseTalentSelf( NPC_117021.TalIdPain2 )
+			
+		ThisNPC:SetUserData( 3 , 0 )
+	end
+	--]]
+end
+
+--[[
+		HitCapsule Callback functions.
+--]]
+function NPC_117021:OnHitCapsule_1_0(HitInfo)
+	NPC_117021:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_1_1(HitInfo)
+	NPC_117021:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_1_2(HitInfo)
+	NPC_117021:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_3_0(HitInfo)
+	NPC_117021:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_3_1(HitInfo)
+	NPC_117021:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_3_2(HitInfo)
+	NPC_117021:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_3_3(HitInfo)
+	NPC_117021:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_3_4(HitInfo)
+	NPC_117021:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_3_5(HitInfo)
+	NPC_117021:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_4_0(HitInfo)
+	NPC_117021:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_4_1(HitInfo)
+	NPC_117021:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_4_2(HitInfo)
+	NPC_117021:AccDamage( this, 3, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_4_3(HitInfo)
+	NPC_117021:AccDamage( this, 1, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_4_4(HitInfo)
+	NPC_117021:AccDamage( this, 2, HitInfo )
+end
+
+function NPC_117021:OnHitCapsule_4_5(HitInfo)
+	NPC_117021:AccDamage( this, 3, HitInfo )
+end
+	]]>
+	</SCRIPT>
+</maiet>

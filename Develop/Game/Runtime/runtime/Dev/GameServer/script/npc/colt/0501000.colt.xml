@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="네이터(발키리)" npcid="501000">
+		<COMBAT mode="0" comment="">
+			<DEFAULT>
+				<ACTION type="lua" param1="NPC_501000" param2="NaiterAggroChat" auto_run="true" max_count="1" />
+				<ACTION type="talent" param1="250100010" cycle="5" />
+				
+				<ACTION type="talent" param1="250100011" cycle="5" />
+				<ACTION type="talent" param1="250100012" cycle="5"  />
+
+				<ACTION type="talent" param1="250100014" desc="빛의고리" />
+			</DEFAULT>
+
+			<!--
+			<CHECK type="hp" param1="0">
+				<ACTION type="group">
+					<ACTION type="talent" param1="250100016" desc="종말의예언" />
+					<ACTION type="talent" param1="250100017" desc="종말" />
+				</ACTION>
+			</CHECK>
+			-->
+			
+			<CHECK type="hp" param1="50" param2="80">
+				<ACTION type="talent" param1="250100015" cycle="20" desc="징벌의성역" />
+				<ACTION type="talent" param1="250100020" cycle="30" duration="0" desc="이륙 (tomode1)"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="20" param2="50">
+				<ACTION type="talent" param1="250100020" cycle="30" duration="0" desc="이륙 (tomode1)"/>
+				<ACTION type="group" cycle="30">
+					<ACTION type="talent" param1="250100016" desc="종말의예언" />
+					<ACTION type="talent" param1="250100017" desc="종말" />
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="20">
+				<ACTION type="talent" param1="250100018" max_count="1" desc="죽음의 오오라" />
+			</CHECK>
+
+		</COMBAT>
+		
+		<COMBAT mode="1" comment="fly" victory="250100021">
+			<DEFAULT>
+				<ACTION type="group" cycle="30">
+					<ACTION type="aggro" param1="far" param2="0" />
+					<ACTION type="talent" param1="250100022" rate="10" cycle="5" desc="창 던지기" />
+				</ACTION>
+				<ACTION type="talent" param1="250100021" desc="하강 공격" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+
+		<PROLOGUE>
+			<DEFAULT>
+				<ACTION type="talent" param1="250100001"/>
+			</DEFAULT>
+		</PROLOGUE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_501000:Init(NPCID)
+	--[[
+		User Data
+		1: Pain누적 데미지
+	--]]
+	NPC_ReserveUserData(NPCID, 1);
+	
+	NPC_501000.LimitForPain	= NPC_501000.MaxHP/10
+	
+	NPC_501000.BuffIdDoubt = 40701
+	
+	NPC_501000.TalIdApocalypseCasting = 250100016
+	NPC_501000.TalIdApocalypse = 250100017
+	NPC_501000.TalIdGroundOfDeath = 250100018
+	
+	NPC_501000.TalIdPain1 = 250100003
+	NPC_501000.TalIdPain2 = 250100004
+	NPC_501000.TalIdPain3 = 250100005
+
+end
+
+function NPC_501000:OnVictory( )
+	--GLog("NPC_501000:OnCombatEnd()\n")
+	
+	this:SetUserData( 1, 0)
+	this:RemoveAllBuff()
+end
+
+-- 종말의예언:사명감 걸어주기.
+function NPC_501000:OnStartProphecy( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro("far", 0)
+	if not Target then return end
+	Target:GainBuff( NPC_501000.BuffIdDoubt )
+	ThisNPC:NonDelaySay("$$NaiterEAggroChat")
+end
+
+function NPC_501000:ProcessAccDamage( ThisNPC, PartsIdx, HitInfo )
+	--GLog("NPC_501000:ProcessAccDamage")
+	local currentTalent = ThisNPC:GetCurrentTalent()
+
+	-- 종말의예언 캔슬 처리
+	if currentTalent == NPC_501000.TalIdApocalypse and 
+		ChkMFForHitReaction( HitInfo ) then 
+			ThisNPC:ClearJob()
+			ThisNPC:UseTalentSelf( NPC_501000.TalIdPain3 )
+			return
+	end
+	
+	-- pain 패턴
+	local PAIN = 1
+	local damageAcc = ThisNPC:GetUserData( PAIN ) + HitInfo.Damage
+	if damageAcc > NPC_501000.LimitForPain and ChkMFForHitReaction( HitInfo ) and
+		not ThisNPC:IsCooldown( NPC_117000.TalIdPain2 ) and
+		currentTalent ~= NPC_501000.TalIdApocalypseCasting and
+		currentTalent ~= NPC_501000.TalIdApocalypse and
+		currentTalent ~= NPC_501000.TalIdGroundOfDeath then
+
+	 	ThisNPC:SetUserData( PAIN, 0 )
+		ThisNPC:ClearJob()
+	 	ThisNPC:UseTalentSelf( NPC_501000.TalIdPain2 )
+	 	return
+	end
+	--if not ThisNPC:IsCooldown( NPC_117000.TalIdPain2 ) then
+	--	AsNPC(ThisNPC):SayNow("$$COLT_0501000_117")
+	--end
+	ThisNPC:SetUserData( PAIN, damageAcc )
+end
+
+function NPC_501000:OnHitCapsule_1_0(HitInfo)
+--	GLog("NPC_501000:OnHitCapsule_1_0")
+	NPC_501000:ProcessAccDamage( this, 0, HitInfo )
+end
+
+function NPC_501000:OnHitCapsule_2_0(HitInfo)
+--	GLog("NPC_501000:OnHitCapsule_1_0")
+	NPC_501000:ProcessAccDamage( this, 0, HitInfo )
+end
+
+function NPC_501000:NaiterAggroChat( ThisNPC, Enemy)
+	ThisNPC:NonDelayBalloon("$$NaiterBAggroChat")
+end
+
+--function NPC_501000:OnDie( Despawn )
+--	this:NonDelayBalloon("$$NaiterCAggroChat")
+--	this:NarrationNow("$$Field_501001_29")
+--end
+	]]></SCRIPT>
+</maiet>

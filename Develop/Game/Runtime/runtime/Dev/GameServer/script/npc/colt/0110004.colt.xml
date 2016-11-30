@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족사육사">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+
+				<ACTION type="talent" param1="211000401" rate="20" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="211000402" rate="20" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="211000403" rate="10" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="211000404" rate="10" /> <!-- 강타공격 -->
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+
+				<ACTION type="talent" param1="211000401" rate="10" /> <!-- 일반공격 -->
+				<ACTION type="talent" param1="211000402" rate="10" /> <!-- 일반공격2 -->
+				<ACTION type="talent" param1="211000403" rate="5" /> <!-- 연타공격 -->
+				<ACTION type="talent" param1="211000404" rate="35" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="211000405" param2="1" rate="50" cycle="8"/>
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="10"/>
+				<ACTION type="nothing" param1="1" rate="90"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

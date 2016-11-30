@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 오염된 멧돼지	
+210111003	돌진
+210111004	근접공격1(atk3)
+210111005	근접공격2(atk4)
+-->
+<maiet>
+	<COLT name="오염된 멧돼지" npcid="101110">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210111003" rate="30" desc="돌진" cycle="15" />
+				<ACTION type="talent" param1="210111004" rate="30" desc="근접공격1(atk3)" />
+				<ACTION type="talent" param1="210111005" rate="30" desc="근접공격2(atk4)" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="900">
+				<ACTION type="group" rate="20" cycle="5">
+					<ACTION type="talent" param1="210111003" desc="돌진" />
+					<ACTION type="talent" param1="210111004" desc="근접공격1(atk3)" />
+				</ACTION>
+				<ACTION type="distance" param1="300" param2="300" rate="30" />
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="70" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

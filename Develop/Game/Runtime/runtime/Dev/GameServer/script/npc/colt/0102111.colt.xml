@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="샤디즈" npcid="102111">
+		<COMBAT>
+			<DEFAULT comment="근접">
+				<ACTION type="talent" param1="210211114" rate="35" />
+			
+				<ACTION type="talent" param1="210211101" rate="35" />
+				<ACTION type="talent" param1="210211105" rate="35" />
+								
+				<ACTION type="talent" param1="210211102" rate="5" />
+				<ACTION type="talent" param1="210211103" rate="5" />
+				
+				<ACTION type="talent" param1="210211107" rate="10" />
+				<ACTION type="talent" param1="210211108" rate="10" />
+				
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" comment="중거리">
+				<ACTION type="talent" param1="210211114" rate="10" />
+				
+				<ACTION type="talent" param1="210211102" rate="40" />
+				<ACTION type="talent" param1="210211103" rate="30" />
+				<ACTION type="talent" param1="210211105" rate="20" />
+				
+				<ACTION type="talent" param1="210211107" rate="5" />
+				<ACTION type="talent" param1="210211108" rate="5" />
+			</CHECK>
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="talent" param1="210211107"  rate="10" />
+			</DEFAULT>
+		</AGGRO>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210211106" rate="20" />
+				<ACTION type="talent" param1="210211108" rate="20" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+	<![CDATA[
+	
+function NPC_102111:Init(NPCID)
+	--[[
+		1: Pain 누적 데미지
+	--]]
+	NPC_ReserveUserData(NPCID, 2)
+
+	NPC_102111.LimitForBreakTail 	= NPC_102111.MaxHP/10
+	NPC_102111.LimitForPain 		= NPC_102111.MaxHP/20
+	
+	NPC_102111.TalIdThreat			= 210211107
+	NPC_102111.TalIdPain1 			= 210211109
+	NPC_102111.TalIdPain2 			= 210211110
+	NPC_102111.TalIdAssultCall		= 210211113
+	
+	NPC_102111.MinionId 			= 102112
+	NPC_102111.BufIdSacrifice		= 40190
+	NPC_102111.BufIdRedEye			= 40191
+end
+
+function NPC_102111:OnSpawn( Info )
+	this:GainBuff( NPC_102111.BufIdRedEye )
+end
+
+-- 복제의 춤
+function NPC_102111:CopyDance( ThisNPC, Enemy )
+	-- Summon minion
+	
+	if ThisNPC:GetSummonCount() < 2 then
+		local Minion = ThisNPC:SummonNow( NPC_102111.MinionId, ThisNPC:GetPos() )
+		Minion:Assist(ThisNPC)
+		ThisNPC:Aggro( "random", 0 )
+	end
+
+	-- Do reaction
+	ThisNPC:ClearJob()
+	ThisNPC:UseTalentSelf( NPC_102111.TalIdPain1 )
+end
+
+function NPC_102111:AccDamage( bHead, HitInfo )
+	local ThisNPC = AsNPC( HitInfo.Victim )
+	local totalDamage = 0
+	local currentDamage = 0
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	totalDamage = ThisNPC:GetUserData(1) + HitInfo.Damage
+	ThisNPC:SetUserData(1, totalDamage)
+	
+	--GLog( "T:" .. totalDamage .. "\n" )
+	if totalDamage > NPC_102111.LimitForPain  then
+		if not ThisNPC:IsCooldown( NPC_102111.TalIdPain1 ) then
+			NPC_102111:CopyDance( ThisNPC, HitInfo.Attacker )
+			
+			ThisNPC:SetUserData(1, 0)
+		end
+	end
+
+	return HitInfo
+end
+
+-- 머리 히트
+function NPC_102111:OnHitCapsule_1_0( HitInfo )
+	return NPC_102111:AccDamage( true, HitInfo )
+end
+
+-- 머리 히트
+function NPC_102111:OnHitCapsule_2_0( HitInfo )
+	return NPC_102111:AccDamage( true, HitInfo )
+end
+
+-- 꼬리 히트
+function NPC_102111:OnHitCapsule_2_2( HitInfo )
+	return NPC_102111:AccDamage( false, HitInfo )
+end
+
+function NPC_102111:OnVictory( )
+	local MinionCnt = this:GetUserData( 2 )
+	--GLog( MinionCnt .. "\n" )
+	
+	for i=1,MinionCnt do
+		this:GainBuff( NPC_102111.BufIdSacrifice )
+		--GLog( NPC_102111.BufIdSacrifice .. " " )
+	end
+	
+	this:SetUserData( 1, 0 )
+	this:SetUserData( 2, 0 )
+end
+
+function NPC_102111:AssultCall( ThisNPC, Enemy )
+	ThisNPC:UseTalent( NPC_102111.TalIdAssultCall )
+end
+
+-- 아무나 찍어서 한놈 점사하도록 명령 
+function NPC_102111:OnFinishAssultCall( ThisNPC, Enemy )
+	--[[
+	local MinionCnt = AsNPC(ThisNPC):GetSummonCount()
+	for i=1,MinionCnt do
+		Minion = AsNPC(ThisNPC):GetMinion(i)
+		Minion:Attack( Enemy )
+	end
+	--]]
+end
+	
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="크라울러조종자">
+		<COMBAT victory="210901709">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210901701" rate="20" /><!--1타 -->
+				<ACTION type="talent" param1="210901704" rate="20" /><!--강한공격 -->
+				<ACTION type="talent" param1="210901705" rate="10" /><!--찌르기 -->
+			</DEFAULT>
+						
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210901701" rate="10" />
+				<ACTION type="talent" param1="210901702" rate="10" />
+				<ACTION type="talent" param1="210901704" rate="10" />
+				<ACTION type="talent" param1="210901705" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>					
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="80" >
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="210901710" /> <!-- 회피 L -->
+						<ACTION type="talent" param1="210901705" /> <!-- 찌르기 -->
+					</ACTION>
+					<ACTION type="group" rate="50">
+						<ACTION type="talent" param1="210901711" /> <!-- 회피 R -->
+						<ACTION type="talent" param1="210901705" /> <!-- 찌르기 -->
+					</ACTION>
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210901707" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />				
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+--[[
+function NPC_109106:OnSpawn( Info )
+
+	local Field = this:GetField()
+	local Crawler = Field:Spawn( 109100, this:GetPos() )
+	
+	NPC_109106:ControlCrawler( this, Crawler )
+end
+--]]
+
+function NPC_109106:OnDie( )
+	local Crawler = this:GetTarget()
+	AsNPC(Crawler):UseTalentSelf( 210910014 )
+end
+
+function NPC_109106:ControlCrawler( ThisNPC, Crawler )
+	ThisNPC:SetTarget( Crawler )
+	Crawler:SetTarget( ThisNPC )
+	
+	Crawler:UseTalentSelf( 210910015 )
+end
+
+	]]></SCRIPT>
+</maiet>

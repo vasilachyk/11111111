@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="거미">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+				<ACTION type="talent" param1="250810401" rate="40" />
+				<ACTION type="talent" param1="250810402" rate="40" />
+				<ACTION type="talent" param1="250810403" rate="10" />
+			</DEFAULT>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="nothing" param1="1" rate="10" cycle="6"/>
+				<ACTION type="talent" param1="250810401" rate="30" />
+				<ACTION type="talent" param1="250810402" rate="30" />
+				<ACTION type="talent" param1="250810403" rate="40" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="250810411"/>
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

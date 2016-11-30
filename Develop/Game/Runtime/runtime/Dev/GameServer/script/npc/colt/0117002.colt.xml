@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="펑거스" npcid="117002">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="talent" param1="211700211" rate="50" duration="0" desc="버섯발사"/>
+				<ACTION type="talent" param1="211700216" rate="50" duration="1" desc="오염된 포자 떨구기"/>
+			</DEFAULT>
+			<!--
+			<CHECK type="hp" param1="0" >
+				<ACTION type="talent" param1="211700214" duration="0" desc="대쉬"/>
+			</CHECK>
+			-->
+			<CHECK type="hp" param2="100" >
+				<ACTION type="talent" param1="211700212" duration="2" max_count="1" desc="쾅"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="600">
+				<ACTION type="talent" param1="211700213" duration="2" cycle="5" desc="주먹지르기"/>
+				<ACTION type="talent" param1="211700215" duration="1" cycle="10" desc="짝퉁 훨윈드"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="900" param2="1500">
+				<ACTION type="talent" param1="211700214" duration="1" cycle="15" desc="대쉬"/>
+			</CHECK>
+			
+			<CHECK type="hp" param1="80" param2="90" >
+				<ACTION type="talent" param1="211700221" duration="1" cycle="15" desc="쾅"/>		
+			</CHECK>
+			
+			<CHECK type="hp" param1="50" param2="80" >
+				<ACTION type="talent" param1="211700222" duration="1" cycle="15" desc="쾅"/>		
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="50" >
+				<ACTION type="talent" param1="211700223" duration="1" cycle="15" desc="쾅"/>		
+			</CHECK>
+
+			<CHECK type="hp" param2="80" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="60" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="50" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="40" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>	
+			
+			<CHECK type="hp" param2="30" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>	
+			
+			<CHECK type="hp" param2="20" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>		
+			
+			<CHECK type="hp" param2="15" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="10" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>
+
+			<CHECK type="hp" param2="5" >
+				<ACTION type="group" max_count="1">
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="2" >
+				<ACTION type="group" >
+					<ACTION type="talent" param1="211700221" duration="1" desc="쾅"/>
+					<ACTION type="talent" param1="211700231" duration="0" max_count="1" desc="훨윈드"/>
+				</ACTION>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="211700233"> 
+			<DEFAULT>
+				<ACTION type="distance" param1="100" param2="100" duration="1"/>
+			</DEFAULT>
+	
+			<CHECK type="hp" param1="0">
+				<ACTION type="talent" param1="211700232" cycle="2" duration="0" desc="훨윈드 끝" />
+			</CHECK>
+					
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211700203" duration="0" rate="10"  />
+				<ACTION type="talent" param1="211700204" duration="0" rate="10"  />
+				<ACTION type="nothing" param1="3" rate="80"  />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_117002:Init( NPCID )
+	NPC_ReserveUserData( NPCID, 2 )
+	
+	NPC_117002.WhirlwindBuff 		= 40781					-- 소용돌이 버프
+	
+	NPC_117002.WaterwaySpawnID1		= 1172000				-- 하수구 스폰아이디
+	NPC_117002.WaterwaySpawnID2		= 1172001				-- 하수구 스폰아이디
+	NPC_117002.WaterwaySpawnID3		= 1172002				-- 하수구 스폰아이디
+	NPC_117002.WaterwaySpawnID4		= 1172003				-- 하수구 스폰아이디
+	
+	NPC_117002.DrainTWater			= 211720001				-- 하수구 깨끗한물 탤런트
+	NPC_117002.DrainTPoison			= 211720000				-- 하수구 독물 탤런트
+	
+	NPC_117002.NPCID_BULLY			= 117031 -- 117003				-- 소환수 블리아이디
+	NPC_117002.NPCID_SLONG			= 117031 -- 117004				-- 소환수 슬롱아이디
+	NPC_117002.NPCID_CURING			= 117031 -- 117005				-- 소환수 큐링아이디
+	NPC_117002.MINION_CNT			= 1						-- 소환할 숫자
+	NPC_117002.SpawnDMin		    = -1000					-- 소환될 거리 
+	NPC_117002.SpawnDMax		    = 1000					-- 소환될 거리
+	
+	NPC_117002.NeedleBuff 			= 40782					-- 침버프
+end
+
+-- 소용돌이
+function NPC_117002:OnFinishStartWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:GainBuff( NPC_117002.WhirlwindBuff )
+	--ThisNPC:SetTimer( NPC_117002.WhirlwindTimer, NPC_117002.WhirlwindTTL, false )
+end
+
+function NPC_117002:OnActEndWhirl( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:RemoveBuff( NPC_117002.WhirlwindBuff )
+end
+
+function NPC_117002:OnSpawn(Spawn)
+	NPC_117002:WaterOrder( this, 0 )
+end
+
+function NPC_117002:OnDelayedActDash( ThisActor, Enemy )
+	--GLog("NPC_117002:OnDelayedActDash()")
+	AsNPC(ThisActor):FaceTo( Enemy )
+end
+
+function NPC_117002:OnTimer( Index )
+	if Index == NPC_117002.WhirlwindTimer then 
+		this:ClearJob()
+		this:UseTalentSelf( NPC_117002.WhirlwindFinish )
+	end
+end
+
+-- 셔플로 하수구에게 어떤물이 나오게 할지 명령
+function NPC_117002:WaterOrder(ThisNPC,WaterCount)
+	--GLog("NPC_117002:WaterOrder() "..WaterCount.." \n")
+	local Field = ThisNPC:GetField()
+	local DrainWater1 = Field:GetSpawnNPC(NPC_117002.WaterwaySpawnID1)
+	local DrainWater2 = Field:GetSpawnNPC(NPC_117002.WaterwaySpawnID2)
+	local DrainWater3 = Field:GetSpawnNPC(NPC_117002.WaterwaySpawnID3)
+	local DrainWater4 = Field:GetSpawnNPC(NPC_117002.WaterwaySpawnID4)
+	local Drain = {DrainWater1, DrainWater2, DrainWater3, DrainWater4}
+	shuffle(Drain)
+
+	if WaterCount == 4 then
+		for i = 1, 4 do
+			Drain[i]:UseTalentSelf(NPC_117002.DrainTWater)
+		end
+	else
+		for i = 1, WaterCount do
+			Drain[i]:UseTalentSelf(NPC_117002.DrainTWater)
+		end
+		
+		for i = WaterCount+1, 4 do
+			Drain[i]:UseTalentSelf(NPC_117002.DrainTPoison)
+		end
+	end
+end
+
+-- 물 바뀔때 나레이션
+function NPC_117002:OnStartNarration(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	local dice = math.random(0,1)
+	if dice == 0 then
+		ThisNPC:NarrationNow("$$COLT_0117002_1")
+	elseif dice == 1 then
+		ThisNPC:NarrationNow("$$COLT_0117002_2")
+	end
+end
+
+-- 소환1 (한마리씩 소환)
+function NPC_117002:OnFinishStartSummon1(ThisActor, Enemy)
+	--GLog("NPC_117002:OnFinishStartSummon1()\n")
+	local ThisNPC = AsNPC( ThisActor )
+	local call = ThisNPC:GetUserData(1) + 1
+	ThisNPC:SetUserData( 1, call )	
+	NPC_117002:WaterOrder(ThisNPC,3) 
+
+	if call == 1 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	elseif call == 2 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_CURING, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	elseif call == 3 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		ThisNPC:SetUserData( 1, 0 )
+	end
+end
+
+-- 소환6 (두마리씩 소환)
+function NPC_117002:OnFinishStartSummon6(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	local call = ThisNPC:GetUserData(2) + 1
+	ThisNPC:SetUserData( 2, call )	
+	NPC_117002:WaterOrder(ThisNPC,2) 
+
+	if call == 1 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_CURING, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_CURING, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	elseif call == 2 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_CURING, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	elseif call == 3 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_CURING, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	elseif call == 4 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	elseif call == 5 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	elseif call == 6 then
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+		ThisNPC:SetUserData( 2, 0 )
+	end
+end
+
+-- 소환2(세마리씩 소환)
+function NPC_117002:OnFinishStartSummon2(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_CURING, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	NPC_117002:WaterOrder(ThisNPC,1) 
+end
+
+-- 소환3
+function NPC_117002:OnFinishStartSummon3(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_CURING, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	NPC_117002:WaterOrder(ThisNPC,3) 
+end
+
+-- 소환4
+function NPC_117002:OnFinishStartSummon4(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_SLONG, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	NPC_117002:WaterOrder(ThisNPC,2) 
+end
+
+-- 소환5
+function NPC_117002:OnFinishStartSummon5(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	SummonMinion( ThisNPC, nil, NPC_117002.NPCID_BULLY, NPC_117002.MINION_CNT, "", NPC_117002.SpawnDMin, NPC_117002.SpawnDMax )
+	NPC_117002:WaterOrder(ThisNPC,0) 
+end
+
+function NPC_117002:Needle(ThisNPC, Enemy)
+	ThisNPC:GainBuff( NPC_117002.NeedleBuff )
+end
+
+function NPC_117002:OnFinishAndAggro(ThisActor, Enemy)
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "random", 0 )
+end
+
+function NPC_117002:AccDamage( ThisNPC, HitInfo )
+	--GLog("NPC_117002:AccDamage() "..HitInfo.TalentID.."\n")
+	
+	-- 미니언 폭발에 맞았을 때 pain2 처리
+	if HitInfo.TalentID == 211703111 then
+		--ThisNPC:SayNow("hit")
+		ThisNPC:ClearJob()
+		
+		if ThisNPC:GetMode() == 0 then
+			ThisNPC:UseTalentSelf( 211700202 )
+		else
+			ThisNPC:UseTalentSelf( 211700234 )
+		end
+	end
+	
+	return HitInfo
+end
+
+function NPC_117002:OnHitCapsule_1_0(HitInfo)
+	return NPC_117002:AccDamage( this, HitInfo )
+end
+
+
+	]]></SCRIPT>
+</maiet>

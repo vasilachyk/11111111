@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="전위부대 주술사"> <!--전투지원 퀘스트 인스턴스 필드용-->
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="189404101" rate="30" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="20">
+				<ACTION type="flee" param1="from_enemy" param2="3" max_count="1" />  <!-- 거리 벌리기 -->
+			</CHECK>
+			
+			<!-- 적이 가까이 왔을경우 -->
+			<CHECK type="distance" param1="0" param2="300">
+				<ACTION type="talent" param1="189404102" rate="20" />  <!-- 일반공격(근접) -->
+				<ACTION type="talent" param1="189404101" rate="20" />
+			</CHECK>
+			
+		</COMBAT>
+	</COLT>
+</maiet>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="기사단장 레버">
+		<COMBAT  >
+		</COMBAT>
+		<IDLE>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[ 
+
+function NPC_512208:OnDialogExit( Player, DialogID, ExitID )
+	--GLog( "OnDialogExit( " .. DialogID .. ", " .. ExitID .. ")\n" )
+	
+	local Field = this:GetField()
+	
+	if ( DialogID == 5120990 ) and ( ExitID == 1 ) then
+		if ( this:GetFieldID() == 512001 and ( Field:GetNPCCount(512001) == 0 ) ) or
+			( this:GetFieldID() == 512101 and ( Field:GetNPCCount(7512001) == 0 ) ) or
+			( this:GetFieldID() == 702001 and ( Field:GetNPCCount(702001) == 0 ) ) then
+			
+			local Door1 = Field:GetNPC( 512202 )
+			local Door2 = Field:GetNPC( 512203 )
+			local Door3 = Field:GetNPC( 512204 )
+			
+			this:UseTalentSelf( 251220800 )
+			this:NarrationNow( "$$COLT_0512208_24"  )
+			
+			if Door2:GetMode() == 1 then
+				Door3:UseTalentSelf( 251220200 )
+			end
+			
+			Door1:UseTalentSelf( 251220200 )
+
+		else
+			this:NarrationNow( "$$COLT_0512208_32"  )
+		end
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

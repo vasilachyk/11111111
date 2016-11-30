@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 부족 용병 (인간형 지팡이)	
+210213101	지팡이휘두르기
+210213102	전진공격
+210213103	후진공격
+210213104	화염채찍
+210213105	지팡이2연타
+210213106	화염구
+210213107	프레임게이저
+210213108	모드0전환(칼뽑기)
+210213109	모드1전환(칼넣기)
+210213110	얼음구
+-->
+<maiet>
+	<COLT name="흰색 예티 부족 용병">
+		<COMBAT victory="210213109">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210213103" rate="20" desc="후진공격" />
+				<ACTION type="talent" param1="210213101" rate="20" desc="지팡이휘두르기" />
+				<ACTION type="talent" param1="210213102" rate="20" desc="전진공격" />
+				<ACTION type="talent" param1="210213105" rate="20" desc="지팡이2연타" />
+				
+				<ACTION type="talent" param1="210213106" rate="5" desc="화염구" />
+				<ACTION type="talent" param1="210213110" rate="5" desc="얼음구" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" >
+				<ACTION type="talent" param1="210213101" rate="5" desc="지팡이휘두르기" />
+				<ACTION type="talent" param1="210213102" rate="5" desc="전진공격" />
+				<ACTION type="talent" param1="210213105" rate="5" desc="지팡이2연타" />
+			
+				<ACTION type="talent" param1="210213106" rate="40" desc="화염구" />
+				<ACTION type="talent" param1="210213110" rate="40" desc="얼음구" />
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210213108" rate="100" desc="모드0전환(칼뽑기)" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

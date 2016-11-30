@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 리오드의 인간형 한손검, 방패	
+210111501	#1타
+210111502	#2연타
+210111503	#3연타
+210111505	#찌르기
+210111506	#칼뽑기(tomode0)
+210111507	#칼넣기(tomode1)
+210111508	#회피L
+210111509	#회피R
+210111511	#역습 포커스
+210111512	#강격
+210111513	#충격 반사
+210111514	#보루
+210111515	#파멸의 일격
+210111516	#방패 가격: 기절
+210111517	#돌진
+210111518	#방어
+210111519	#일어나서칼뽑기(tomode0)
+210111520	#근접 공격1(1hs_atk_npc1)
+210111521	#근접 공격2(1hs_atk_npc2)
+210111522	#강격(1hs_atk_npc3)
+-->
+<maiet>
+	<COLT name="왕국군 병사" npcid="101400">
+		<COMBAT mode="0" victory="210111507" >
+			<DEFAULT>
+				<ACTION type="talent" param1="210111508" rate="10" desc="회피L" cycle="15" />
+				<ACTION type="talent" param1="210111509" rate="10" desc="회피R" cycle="15" />
+				<ACTION type="guard" param1="210111518" param2="2" rate="10" cycle="5" desc="방어" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="100" param2="500" >
+				<ACTION type="talent" param1="210111520" rate="70" desc="근접 공격1(1hs_atk_npc1)" />
+				<ACTION type="talent" param1="210111521" rate="70" desc="근접 공격2(1hs_atk_npc2)" />
+				<ACTION type="talent" param1="210111516" rate="10" desc="방패 가격: 기절" cycle="10" />
+				<ACTION type="talent" param1="210111517" rate="10" desc="돌진" cycle="10" />
+				<ACTION type="talent" param1="210111522" rate="10" desc="강격(1hs_atk_npc3)" cycle="10" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="210111505" rate="20" desc="찌르기" cycle="10" />
+				<ACTION type="talent" param1="210111517" rate="10" desc="돌진" cycle="10" />
+			</CHECK>
+
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210111506" rate="100" desc="칼뽑기(tomode0)" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

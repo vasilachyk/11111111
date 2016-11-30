@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+Programming by Joongpil Cho
+
+[Talent List]
+
+211700101: 오른손 공격
+211700102: 왼손 공격
+211700103: 회오리 치기
+211700104: 대시 공격
+211700105: 점프 공격 (근)
+211700106: 점프 공격 (원)
+211700107: 점프 공격 [모드 전환]
+211700108: 어퍼컷
+211700109: 삽질 #1
+211700110: 삽질 #2
+211700111: 아파하기 #1
+211700112: 아파하기 #2
+211700113: 괴성
+211700114: 괴성 #2
+211700115: 브레스 
+211700116: 땅 파헤치고 나오기
+211700119: 왼손 공격 (삽질모드)
+211700120: 변칙 대시 공격 (좌회전)
+211700121: 변칙 대시 공격 (우회전)
+
+[공격 패턴 간략 설명]
+
+1) 처음엔 매우 쉽다. 오른손/왼손 정도 공격, 대시 공격 포함.
+2) 70%이하가 되었을때 점프 공격을 해오기 시작. 광역 공격을 슬슬 시작한다.
+3) 50%이하가 되면 대시 변칙공격을 하기 시작. 이로써 왼손파괴가 가능해진다.
+4) 30%이하가 되면 땅속으로 숨기를 자주 한다.[짜증 모드] 등갑이 파괴 가능하다.
+-->
+<maiet>
+	<COLT>
+		<COMBAT >
+			<DEFAULT>
+				<ACTION type="talent" param1="211700101" rate="20" />
+				<ACTION type="talent" param1="211700102" rate="20" />
+				<ACTION type="talent" param1="211700103" rate="20" duration="0" cycle="10" />
+				<ACTION type="talent" param1="211700104" rate="20" duration="0" />
+				<ACTION type="talent" param1="211700105" rate="20" duration="0" />
+				<ACTION type="talent" param1="211700108" rate="20" duration="0" />
+
+				<!-- 테스트 -->
+				<ACTION type="talent" param1="211700119" rate="20" duration="0" />
+				<ACTION type="talent" param1="211700120" rate="10" duration="0" />
+				<ACTION type="talent" param1="211700121" rate="10" duration="0" />
+				<!-- 땅속으로 숨기 -->
+				<ACTION type="talent" param1="211700107" rate="20" duration="0" />
+				<ACTION type="talent" param1="211700106" rate="30" duration="0" />
+
+				<!-- 괴성 시리즈 -->
+				<ACTION type="talent" param1="211700113" rate="15" duration="0" cycle="60" />
+				<ACTION type="talent" param1="211700114" rate="15" duration="0" cycle="60" />
+			</DEFAULT>
+			<CHECK type="mode" param1="1">
+				<!-- 지하에 있을 때 -->
+				<ACTION type="group" rate="50">
+					<!-- 어그로 변경 -->
+					<ACTION type="aggro" param1="random" param2="0" />
+					<!-- 스크립트 어택 -->
+					<ACTION type="lua" param1="Queen_UndergroundAttack" duration="0" />
+				</ACTION>
+				<!-- 어그로 변경 없이 그냥 공격 -->
+				<ACTION type="lua" param1="Queen_UndergroundAttack" rate="50" duration="0" />
+			</CHECK>
+		</COMBAT>
+		<STRESS>
+			<!-- 땅 위에 있을때 -->
+			<CHECK type="stress" param1="500">
+				<ACTION type="lua" param1="Queen_Stressed" rate="100" />
+			</CHECK>
+		</STRESS>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211700109" rate="50" duration="0" />
+				<ACTION type="talent" param1="211700110" rate="50" duration="0" />
+				<ACTION type="nothing" param1="3" rate="50" duration="0" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+<![CDATA[
+	-- 퀸(Queen) 스크립트
+	--
+	function NPC_117001:Init(NPCID)
+		
+	end
+	
+	function Queen_Stressed(ThisNPC, Opponent)
+		-- 거리가 10m보다 멀면, 타겟을 근접으로 바꾼다.
+		if (ThisNPC:GetMode() == 0) then
+			local Distance = ThisNPC:DistanceTo(Opponent)
+			local ranNum = math.random(0, 2)
+
+			if(Distance >= 1000) then
+				if(ranNum == 0) then
+					ThisNPC:Aggro("random", 0)
+				else
+					ThisNPC:Aggro("short", 0)
+				end
+			else
+				-- 거리가 가까우면 랜덤으로 셋 중 하나의 근접기술을 사용한다.			
+				if(ranNum == 0) then 
+					ThisNPC:UseTalentSelf(211700103) -- 회오리 치기
+				elseif(ranNum == 1) then
+					ThisNPC:UseTalentSelf(211700107) -- 땅속으로 숨기
+				else
+					ThisNPC:UseTalentSelf(211700105) -- 점프 공격
+				end
+			end
+		else
+			Queen_UndergroundAttack(ThisNPC, Opponent)
+		end
+	end
+	
+	function Queen_UndergroundAttack(ThisNPC, Opponent)
+		local ranNum = math.random(0, 8)
+		AI_SideAttack(ThisNPC, Opponent, ranNum * 100, 2000, 211700116)
+	end
+]]>
+	</SCRIPT>
+</maiet>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="마법사">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="211103601" rate="70" />
+			</DEFAULT>
+			
+			<!-- 거리 벌리기 -->
+			<!--<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="flee" param1="from_enemy" duration="3" cycle="60" />
+			</CHECK>-->
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="nothing" param1="1" rate="20" cycle="5"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="5"/>
+				<ACTION type="talent" param1="211103602" rate="40"/>
+				<ACTION type="lua" param1="SideStep" rate="20" cycle="10"/>
+				<!--
+				<ACTION type="group" rate="70" cycle="5">
+					<ACTION type="talent" param1="211101102"/>
+					<ACTION type="talent" param1="211101103"/>
+					<ACTION type="talent" param1="211101103"/>
+				</ACTION>
+				-->
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

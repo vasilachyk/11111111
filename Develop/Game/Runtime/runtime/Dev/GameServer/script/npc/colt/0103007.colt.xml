@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="볼락의 진흙폭파" npcid="103007">
+		<COMBAT mode="0">
+			<DEFAULT>
+				
+			</DEFAULT>
+			
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_103007:Init( NPCID )
+	--NPC_103007.BufIdMudDamage 	= 40836
+end	
+
+function NPC_103007:OnSpawn( Info )
+	--this:GainBuff( NPC_103007.BufIdMudDamage )
+end
+
+function NPC_103007:OnFinishMudDie( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Despawn(true)
+end
+
+	]]></SCRIPT>
+</maiet>

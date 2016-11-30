@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="8007" minimap_name="map08007" loading_image_name="08007" min_x="0" min_y="0" max_x="12000" max_y="12000" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="1번 시작지점" x="6007.021484" y="2767.642822" z="0" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="2번 시작지점" x="5999.969727" y="9286.438477" z="0" dir_x="-0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="3번" x="9261.583984" y="5974.646973" z="715.830688" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="100" name="패배시이동지역" x="2825.101074" y="6008.372070" z="716.862427" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="부활체크센서" local="false" x="6013.494141" y="5769.084961" z="11.324890" radius="5000.000000" enabled="true" checkpoint="100" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

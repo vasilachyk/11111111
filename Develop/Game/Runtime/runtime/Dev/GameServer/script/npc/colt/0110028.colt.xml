@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="주술사 펜딕">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="20" />
+				
+				<ACTION type="talent" param1="211002801" rate="35" />
+				<ACTION type="talent" param1="211002802" rate="25" />
+				<ACTION type="talent" param1="211002804" rate="30" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="50">
+				<ACTION type="talent" param1="211002808" rate="10" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<CHECK type="hp" param1="50" >
+					<ACTION type="nothing" param1="0.5" rate="20" />
+					
+					<ACTION type="talent" param1="211002801" rate="20" />
+					<ACTION type="talent" param1="211002802" rate="10" />
+					
+					<ACTION type="talent" param1="211002804" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300">
+				<CHECK type="hp" param1="50" >
+					<ACTION type="nothing" param1="0.5" rate="20" />
+					
+					<ACTION type="talent" param1="211002801" rate="20" />
+					<ACTION type="talent" param1="211002802" rate="10" />
+					
+					<ACTION type="talent" param1="211002807" rate="40" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="0" param2="200">
+				<CHECK type="rage" param1="80">
+					<ACTION type="guard" param1="211002803" param2="1" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="rage" param1="80">
+				<ACTION type="talent" param1="211002808" param2="1" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="50">
+				<ACTION type="nothing" param1="0.5" rate="20"/>
+				
+				<ACTION type="talent" param1="211002801" rate="35" />
+				<ACTION type="talent" param1="211002802" rate="25" />
+				<ACTION type="talent" param1="211002807" rate="10" />
+				
+				<ACTION type="talent" param1="211002807" rate="10"/>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211000207" rate="10" />
+				<ACTION type="nothing" param1="1" rate="90" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_110021:Init(NPCID)
+end
+
+function NPC_110021:OnYell(RequestNPC, TargetActor)
+	this:Assist(RequestNPC)
+end
+
+	]]></SCRIPT>
+		
+</maiet>

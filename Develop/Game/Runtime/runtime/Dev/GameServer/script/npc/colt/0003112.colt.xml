@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+    <COLT name="악기 장인 뮬" npcid="3112">
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="group" rate="5" cycle="1200">
+					<!--<ACTION type="say" param1="$$Field_3_500"/>-->
+					<ACTION type="talent" param1="141000" />
+				</ACTION>
+				<ACTION type="group" rate="5" cycle="1200">
+					<!--<ACTION type="say" param1="$$Field_3_501"/>-->
+					<ACTION type="talent" param1="141001" />
+				</ACTION>
+				<ACTION type="group" rate="5" cycle="1200">
+					<!--<ACTION type="say" param1="$$Field_3_502"/>-->
+					<ACTION type="talent" param1="141002" />
+				</ACTION>
+				<ACTION type="talent" param1="141003" rate="5" />
+				<ACTION type="nothing" param1="10" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

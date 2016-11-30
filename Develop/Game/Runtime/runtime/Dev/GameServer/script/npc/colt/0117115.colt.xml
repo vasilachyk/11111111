@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 마이코니드 해처	
+211711500	#신나는댄스
+211711501	#포자탄발사
+211711502	#포자탄연속발사
+-->
+<maiet>
+	<COLT name="마이코니드 해처" npcid="117115">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711500" rate="20" desc="신나는댄스" duration="0" cycle="15" />
+				<ACTION type="talent" param1="211711501" rate="40" desc="포자탄발사" />
+				<ACTION type="talent" param1="211711502" rate="40" desc="포자탄연속발사" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211711500" rate="40" desc="신나는댄스" />
+				<ACTION type="nothing" param1="0" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

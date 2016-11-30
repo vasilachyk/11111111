@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="10341" minimap_name="map01034" loading_image_name="01031" min_x="-13700" min_y="-11300" max_x="11300" max_y="13700" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="amb_cave_1" />
+        <SOUNDREVERB reverb="9" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="게리온" x="-2676.488770" y="-6137.415039" z="-4.357468" dir_x="0.990268" dir_y="-0.139173" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="107021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="조나한" x="-4537.583984" y="-2440.258057" z="-539.015625" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="107031" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="베스피오단" x="567.163818" y="5866.898438" z="-26.144592" dir_x="0.939693" dir_y="0.342020" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107019" default="false" rate="500" />
+            <NPC id="107020" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="베스피오단" x="1383.632324" y="5563.482910" z="16.959000" dir_x="0.453990" dir_y="-0.891007" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="베스피오단" x="-2022.344971" y="7543.444824" z="-23.687038" dir_x="-0.342021" dir_y="0.939692" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="250" />
+            <NPC id="107018" default="false" rate="250" />
+            <NPC id="107019" default="false" rate="250" />
+            <NPC id="107020" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="베스피오단" x="-2197.759277" y="7958.531250" z="-10.708159" dir_x="0.342020" dir_y="-0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="베스피오단" x="59.541351" y="-479.062683" z="364.650208" dir_x="-0.956305" dir_y="-0.292372" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="50" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="250" />
+            <NPC id="107018" default="false" rate="250" />
+            <NPC id="107019" default="false" rate="250" />
+            <NPC id="107020" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="베스피오단" x="190.022308" y="799.285522" z="146.236832" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="50" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="250" />
+            <NPC id="107018" default="false" rate="250" />
+            <NPC id="107019" default="false" rate="250" />
+            <NPC id="107020" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="베스피오단" x="-1650.805420" y="739.253845" z="-17.987368" dir_x="0.984808" dir_y="-0.173648" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="250" />
+            <NPC id="107018" default="false" rate="250" />
+            <NPC id="107019" default="false" rate="250" />
+            <NPC id="107020" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="베스피오단 (순찰)" x="540.515503" y="2027.936523" z="-11.968788" dir_x="0.788011" dir_y="-0.615661" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="107017" default="false" rate="250" />
+            <NPC id="107018" default="false" rate="250" />
+            <NPC id="107019" default="false" rate="250" />
+            <NPC id="107020" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="베스피오단 강탈자" x="2232.427490" y="-4081.326660" z="-489.484222" dir_x="-0.309017" dir_y="0.951057" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="21" group="0" name="베스피오단 (순찰)" x="-153.088928" y="2701.847656" z="-25.497652" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="107017" default="false" rate="250" />
+            <NPC id="107018" default="false" rate="250" />
+            <NPC id="107019" default="false" rate="250" />
+            <NPC id="107020" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="22" group="0" name="베스피오단 (순찰)" x="431.386017" y="5525.343262" z="-25.047083" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="107019" default="false" rate="500" />
+            <NPC id="107020" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="23" group="0" name="베스피오단 강탈자" x="1817.321045" y="-4202.725586" z="-494.250793" dir_x="-0.069756" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107018" default="false" rate="500" />
+            <NPC id="107017" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="24" group="0" name="베스피오단 무법자" x="-2869.539551" y="-6480.895996" z="-4.357468" dir_x="0.994522" dir_y="-0.104529" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107019" default="false" rate="500" />
+            <NPC id="107020" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="25" group="0" name="베스피오단 강탈자" x="-2844.077637" y="-5754.650391" z="-4.357468" dir_x="0.990268" dir_y="-0.139173" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="26" group="0" name="베스피오단 강탈자" x="-103.454742" y="-6099.021484" z="-7.363955" dir_x="0.933581" dir_y="-0.358368" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="27" group="0" name="베스피오단 강탈자" x="-299.011047" y="-6691.436035" z="-15.704220" dir_x="0.987688" dir_y="-0.156434" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="28" group="0" name="베스피오단 (순찰)" x="-2636.285645" y="-1410.622559" z="-460.752716" dir_x="0.829037" dir_y="0.559193" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="29" group="0" name="베스피오단" x="-211.949951" y="-622.265381" z="365.303375" dir_x="0.788010" dir_y="0.615662" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="30" group="0" name="무스탕" x="-4629.418945" y="-2614.248779" z="-535.750061" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="107022" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="31" group="0" name="베스피오단" x="-183.635864" y="908.486694" z="126.758209" dir_x="0.017452" dir_y="0.999848" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="300" roam_depth="50" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="250" />
+            <NPC id="107018" default="false" rate="250" />
+            <NPC id="107019" default="false" rate="250" />
+            <NPC id="107020" default="false" rate="250" />
+        </SPAWN>
+        <SPAWN id="32" group="0" name="베스피오단 (순찰)" x="-607.639038" y="-6352.861328" z="1.236530" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="33" group="0" name="베스피오단" x="532.833130" y="8368.953125" z="-70.152954" dir_x="0.882947" dir_y="0.469472" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="99999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="255,0,0">
+            <NPC id="107017" default="false" rate="500" />
+            <NPC id="107018" default="false" rate="500" />
+        </SPAWN>
+        <MARKER id="1" name="시작점, 안전 장소1" x="350.431366" y="9783.661133" z="-68.966049" dir_x="-0.275637" dir_y="-0.961262" dir_z="0.000000" random_dir="false" />
+        <MARKER id="171" name="17순찰 1" x="536.546265" y="2024.395508" z="-11.788440" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="172" name="17순찰 2" x="1088.711548" y="1522.478516" z="-13.206441" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="173" name="17순찰 3" x="1199.852417" y="689.667847" z="-18.603037" dir_x="-0.139173" dir_y="-0.990268" dir_z="0.000000" random_dir="false" />
+        <MARKER id="174" name="17순찰 4" x="1198.139526" y="-895.822144" z="-303.317688" dir_x="0.069756" dir_y="-0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="175" name="17순찰 5" x="1508.490234" y="-2542.123779" z="-509.692108" dir_x="0.601815" dir_y="-0.798636" dir_z="0.000000" random_dir="false" />
+        <MARKER id="176" name="17순찰 6" x="2038.974121" y="-3762.650879" z="-494.250793" dir_x="-0.325568" dir_y="0.945519" dir_z="0.000000" random_dir="false" />
+        <MARKER id="210" name="21순찰 1" x="-193.398514" y="2715.443848" z="-29.214899" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="211" name="21순찰 2" x="-318.033783" y="3111.191406" z="-39.037857" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="212" name="21순찰 3" x="-973.706543" y="3458.611328" z="-53.649376" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="213" name="21순찰 4" x="-1175.075684" y="4802.483887" z="-24.950474" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="214" name="21순찰 5" x="-398.558289" y="2160.877930" z="-13.516627" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="215" name="21순찰 6" x="-113.730652" y="1402.803589" z="31.789850" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="220" name="22순찰 1" x="442.463531" y="5553.854004" z="-25.140375" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="221" name="22순찰 2" x="-1104.574097" y="7517.642578" z="-20.292969" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="222" name="22순찰 3" x="-2140.816650" y="6711.602051" z="-15.034046" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="223" name="22순찰 4" x="-2189.122314" y="5832.892578" z="-25.893066" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="224" name="22순찰 5" x="-1477.115112" y="4748.322754" z="-22.658417" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="281" name="28순찰 1" x="-2622.287109" y="-1441.460449" z="-457.535797" dir_x="0.848048" dir_y="0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="282" name="28순찰 2" x="-1555.287598" y="-746.495483" z="-255.934082" dir_x="0.694658" dir_y="0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="283" name="28순찰 3" x="-1339.492065" y="71.399048" z="-108.284592" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" random_dir="false" />
+        <MARKER id="284" name="28순찰 4" x="-1389.663208" y="898.513306" z="-16.748436" dir_x="0.358368" dir_y="0.933580" dir_z="0.000000" random_dir="false" />
+        <MARKER id="285" name="28순찰 5" x="-1113.296875" y="1921.663818" z="6.712152" dir_x="0.961262" dir_y="0.275637" dir_z="0.000000" random_dir="false" />
+        <MARKER id="286" name="28순찰 6" x="-540.638672" y="2073.688232" z="-10.676955" dir_x="-0.970296" dir_y="-0.241922" dir_z="0.000000" random_dir="false" />
+        <MARKER id="321" name="32순찰 1" x="-141.642822" y="-6401.444336" z="-44.276031" dir_x="0.906308" dir_y="-0.422618" dir_z="0.000000" random_dir="false" />
+        <MARKER id="322" name="32순찰 2" x="458.998077" y="-6741.863281" z="-167.517548" dir_x="0.994522" dir_y="-0.104528" dir_z="0.000000" random_dir="false" />
+        <MARKER id="323" name="32순찰 3" x="1502.389160" y="-6605.190918" z="-373.344421" dir_x="0.766044" dir_y="0.642788" dir_z="0.000000" random_dir="false" />
+        <MARKER id="324" name="32순찰 4" x="2163.964600" y="-5791.128418" z="-501.406982" dir_x="0.034899" dir_y="0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="325" name="32순찰 5" x="2060.867676" y="-4435.798828" z="-501.547211" dir_x="0.241922" dir_y="-0.970296" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1070131" name="QM 107013 obj 1" x="-117.842865" y="314.357849" z="255.183975" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1070133" name="QM 107013 obj 3" x="-4341.214844" y="-2331.122070" z="-540.393127" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="1070134" name="QM 107013 obj 4" x="-2989.467773" y="-6115.423340" z="-3.357468" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="탈출 위치" x="2138.425293" y="10989.429688" z="-73.859177" radius="1500.000000" enabled="true">
+            <EFFECT effect="sensor_trial_02" x="-1273.662109" y="-430.703125" z="-15.228363" dir_x="0.848048" dir_y="0.529919" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" />
+            <WARP warp_type="field" title="베스피오단 본거지에서 테레스 평원으로" condition="1" gate_type="auto" field="107" marker="107013" />
+        </SENSOR>
+        <SENSOR id="2" name="체크포인트" local="false" x="309.075165" y="9684.419922" z="-71.410835" radius="400.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="3" name="죠나한 센서" local="false" x="-3537.740479" y="-2347.419678" z="-531.287720" radius="400.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

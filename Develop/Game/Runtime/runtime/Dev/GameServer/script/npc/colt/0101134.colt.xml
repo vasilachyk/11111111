@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 성난 우르크	
+210113401	들이받기
+210113402	돌진
+210113403	idle1
+210113404	idle2
+210113405	idle3
+210113406	idle4
+210113407	idle5
+210113408	포효
+-->
+<maiet>
+	<COLT name="야생 우르크">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210113401" rate="50"/>
+				<ACTION type="talent" param1="210113402" rate="40"/>
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210113403" rate="10"/>
+				<ACTION type="talent" param1="210113404" rate="10"/>
+				<ACTION type="talent" param1="210113405" rate="10"/>
+				<ACTION type="talent" param1="210113406" rate="10"/>
+				<ACTION type="talent" param1="210113407" rate="10"/>
+				<ACTION type="talent" param1="210113408" rate="10"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

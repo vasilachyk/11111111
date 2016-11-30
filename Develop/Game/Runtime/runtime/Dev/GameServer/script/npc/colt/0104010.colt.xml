@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="레그" npcid="104010">
+		<PROLOGUE>
+			<DEFAULT>
+			</DEFAULT>
+		</PROLOGUE>
+		<COMBAT mode="0" comment="전투상태로 최초돌입">
+			<DEFAULT comment="non combat">
+				<ACTION type="talent" param1="210401001" rate="20" duration="0" comment="전투돌입"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="210401002" comment="기본전투상태">
+			<DEFAULT comment="combat default">
+				<ACTION type="talent" param1="210401010" rate="30" comment="낫베기"/>
+				<ACTION type="talent" param1="210401011" rate="30" comment="회전낫베기"/>
+				<ACTION type="talent" param1="210401012" rate="20" comment="박쥐소환" duration="0" />
+			</DEFAULT>
+
+			<CHECK type="hp" param2="60">
+				<ACTION type="lua" param1="NPC_104010" param2="DeathZone" rate="20" comment="죽음의 구덩이" cycle="15"/>
+			</CHECK>
+			
+			<CHECK type="hp" param2="30">
+				<ACTION type="lua" param1="NPC_104010" param2="MarkOfDeath" rate="40" comment="참수지목" cycle="20"/>
+				<ACTION type="lua" param1="NPC_104010" param2="TeleportAttack" rate="60" comment="죽음의 전조" />
+				<ACTION type="talent" param1="210401010" rate="10" comment="낫베기"/>
+				<ACTION type="talent" param1="210401011" rate="10" comment="회전낫베기"/>
+			</CHECK>
+						
+			<CHECK type="hp" param2="60">
+				<ACTION type="lua" param1="NPC_104010" param2="TeleportAttack" rate="60" comment="죽음의 전조" />
+				<ACTION type="talent" param1="210401010" rate="20" comment="낫베기"/>
+				<ACTION type="talent" param1="210401011" rate="20" comment="회전낫베기"/>
+			</CHECK>
+						
+			<CHECK type="hp" param2="80">
+				<!--
+				<ACTION type="lua" param1="NPC_104010" param2="TeleportAttack" rate="40" comment="죽음의 전조" cycle="30"/>
+				<ACTION type="lua" param1="NPC_104010" param2="TeleportAttack" rate="40" comment="죽음의 전조" cycle="30"/>
+				-->
+				<ACTION type="lua" param1="NPC_104010" param2="TeleportAttack" rate="40" comment="죽음의 전조" />
+				
+				<ACTION type="talent" param1="210401010" rate="20" comment="낫베기"/>
+				<ACTION type="talent" param1="210401011" rate="20" comment="회전낫베기"/>
+				<ACTION type="talent" param1="210401012" rate="20" comment="박쥐소환" duration="0" />
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="2" victory="210401022" comment="죽음의 전조 -베기">
+			<DEFAULT comment="teleport">
+				<ACTION type="talent" param1="210401021" rate="20" comment="죽음의 전조 종료"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="3" victory="210401032" comment="죽음의 전조 - 잡기">
+			<DEFAULT comment="teleport">
+				<ACTION type="talent" param1="210401031" rate="20" comment="죽음의 전조 종료"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<COMBAT mode="4" victory="210401002" comment="">
+			<DEFAULT comment="참수">
+				<ACTION type="talent" param1="210401043" rate="20" comment="참수실패" duration="0"/>
+			</DEFAULT>
+			
+			<CHECK type="e_gained_buff" param1="40845" comment="절망버프상태">
+				<CHECK type="distance" param2="250" comment="2m안쪽이면 참수 - 카메라락">
+					<ACTION type="talent" param1="210401042" max_count="1" comment="참수"/>
+				</CHECK>
+				<CHECK type="distance" param2="250" comment="2m안쪽이면 참수">
+					<ACTION type="talent" param1="210401041"/>
+				</CHECK>
+				<ACTION type="distance" param1="200" param2="200" duration="3" comment="2m 바깥쪽이면 3초간 추적 -이럴리는없지만 예외처리"/>
+			</CHECK>
+			
+			<CHECK type="e_gained_buff" param1="40843" comment="죽음의징표상태">
+				<ACTION type="distance" param1="200" param2="200" duration="6" comment="6초간 추적"/>
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_104010:Init( NPCID )
+	--[[
+	1: Pain 
+	
+	--]]
+		
+	NPC_ReserveUserData( NPCID, 5 )
+	
+	NPC_104010.LimitForBreakParts		= NPC_104010.MaxHP/10
+	NPC_104010.LimitForPain				= NPC_104010.MaxHP/10
+	NPC_104010.TalIdPain1				= 210401003
+	NPC_104010.TalIdMarkOfDeath			= 210401040
+	NPC_104010.TalIdDeathZone			= 210401200
+	NPC_104010.NpcIdBats				= 104011
+	NPC_104010.NpcIdDeathZone			= 104012
+	NPC_104010.BufIdAuraOfDarkness		= 40840
+	NPC_104010.BufIdAuraOfDead			= 40844
+end
+
+function NPC_104010:OnSpawn( Info )
+	this:GainBuff( NPC_104010.BufIdAuraOfDarkness )
+end
+
+function NPC_104010:DeathZone( ThisActor, Enemy )
+	-- GLog( "NPC_104010:DeathZone\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local NewTarget = ThisNPC:Aggro( "random", 1 )
+	ThisNPC:UseTalentSelf( 210401013, NewTarget )
+end
+	
+function NPC_104010:TeleportAttack( ThisActor, Enemy )
+	-- GLog( "NPC_104010:TeleportAttack\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local NewTarget = ThisNPC:Aggro( "random", 0 )
+	--[[
+	ThisNPC:MoveToActor( NewTarget, 210401020 )
+	ThisNPC:UseTalent( 210401020, NewTarget )
+	--]]
+	
+	if math.random(0,1) == 0 then
+		ThisNPC:MoveToActor( NewTarget, 210401020 )
+		ThisNPC:UseTalent( 210401020, NewTarget )
+	else
+		ThisNPC:MoveToActor( NewTarget, 210401030 )
+		ThisNPC:UseTalent( 210401030, NewTarget )
+	end
+end
+
+function NPC_104010:OnActStartTeleportSlash( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnActStartTeleportSlash\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:RemoveAllBuff()
+end
+
+function NPC_104010:OnActStartTeleportGrip( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnActStartTeleportGrip\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:RemoveAllBuff()
+end
+
+function NPC_104010:OnActEndTeleportSlash( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnActEndTeleportSlash\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:GainBuff(NPC_104010.BufIdAuraOfDarkness)
+end
+
+function NPC_104010:OnActEndTeleportGrip( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnActEndTeleportGrip\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+	ThisNPC:GainBuff(NPC_104010.BufIdAuraOfDarkness)
+end
+
+function NPC_104010:OnFinishEndTeleportSlash( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnFinishEndTeleportSlash\n")
+	local ThisNPC = AsNPC( ThisActor )
+	
+end
+
+function NPC_104010:OnFinishEndTeleportGrip( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnFinishEndTeleportGrip\n")
+	local ThisNPC = AsNPC( ThisActor )
+end
+
+-- 참수 시작 탤런트 종료
+function NPC_104010:OnFinishBeheading( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OninishBeheading\n")
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:GainBuff( NPC_104010.BufIdAuraOfDead )
+end
+
+-- 참수 성공 탤런트 종료
+function NPC_104010:OnFinishBeheadingSuccess( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnFinishBeheadingSuccess\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:RemoveBuff( NPC_104010.BufIdAuraOfDead )
+end
+
+-- 참수 실패 탤런트 종료
+function NPC_104010:OnFinishBeheadingFail( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnFinishBeheadingFail\n" )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:RemoveBuff( NPC_104010.BufIdAuraOfDead )
+end
+
+-- 박쥐 소환함수
+function NPC_104010:SummonBats( ThisNPC, Enemy )
+	local MinionCnt = 5
+	local SpawnRange = 300
+	local WorldPos = vec3()
+	local LocalAdjPos = vec3()
+	
+	for i = 1, MinionCnt, 1 do
+		LocalAdjPos = vec3( math.random(-1*SpawnRange, SpawnRange), math.random(-1*SpawnRange, SpawnRange), 0 )
+		WorldPos = Math_LocalToWorld( ThisNPC:GetDir(), ThisNPC:GetPos(), LocalAdjPos )
+		local Minion = ThisNPC:SummonNow( NPC_104010.NpcIdBats, WorldPos )
+		Minion:Wait(3)
+		Minion:Assist( ThisNPC )
+	end
+end
+
+function NPC_104010:OnActSummonBat( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnActSummonBat\n")
+	
+	local ThisNPC = AsNPC( ThisActor )
+	NPC_104010:SummonBats( ThisNPC, Enemy )
+end
+
+function NPC_104010:OnActDeathZone( ThisActor, Enemy )
+	-- GLog( "NPC_104010:OnActDeathZone\n")
+	
+	local ThisNPC = AsNPC( ThisActor )
+	
+	local Target = ThisNPC:Aggro( "random", 0 )
+	local SummonPos = Target:GetPos()
+	local DeathZone = ThisNPC:SummonNow( NPC_104010.NpcIdDeathZone, SummonPos )
+	DeathZone:UseTalentSelf( NPC_104012.TalIdDeathZone )
+	
+	NextTarget = ThisNPC:Aggro( "random", 0 )
+	if Target:GetName() ~= NextTarget:GetName() then
+		SummonPos = NextTarget:GetPos()
+		DeathZone = ThisNPC:SummonNow( NPC_104010.NpcIdDeathZone, SummonPos )
+		DeathZone:UseTalentSelf( NPC_104012.TalIdDeathZone )
+	end
+ end
+
+
+function NPC_104010:MarkOfDeath( ThisNPC, Enemy )
+	if ThisNPC:IsCooldown( NPC_104010.TalIdMarkOfDeath ) then
+		return
+	end
+	
+	local NewEnemy = ThisNPC:Aggro( "near", 0 )
+
+	ThisNPC:MoveToActor( NewEnemy, NPC_104010.TalIdMarkOfDeath )
+	ThisNPC:UseTalent( NPC_104010.TalIdMarkOfDeath, NewEnemy )
+end
+
+function NPC_104010:AccDamage( ThisNPC, HitIdx, HitInfo )
+	if ThisNPC:GetMode() ~= 0 then
+		return
+	end
+	
+	local AccDamage = ThisNPC:GetUserData( 1 ) + HitInfo.Damage
+	--[[
+	if AccDamage > NPC_104010.LimitForBreakParts and not ThisNPC:IsCooldown( NPC_104010.TalIdPain1 ) then
+		ThisNPC:ClearJob();
+		ThisNPC:UseTalentSelf( NPC_104010.TalIdPain1 )
+		ThisNPC:BreakParts(  )
+		ThisNPC:SetUserData( 1, 0 )
+	end
+	--]]
+	
+	if AccDamage > NPC_104010.LimitForPain and ThisNPC:GetCurrentTalent() <= 0 then 
+		if not ThisNPC:IsCooldown( NPC_104010.TalIdPain1 ) then
+			ThisNPC:ClearJob();
+			ThisNPC:UseTalentSelf( NPC_104010.TalIdPain1 )
+			ThisNPC:SetUserData( 1, 0 )
+		end
+	end
+	
+	ThisNPC:SetUserData( 1, AccDamage )
+end
+
+
+function NPC_104010:OnHitCapsule_1_0( HitInfo )
+	return NPC_104010:AccDamage( this, 0, HitInfo )
+end
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>					
+	<COLT name="푸른갈기" npcid="113152">
+		<COMBAT mode="0">			
+			<DEFAULT>	
+				<ACTION type="talent" param1="211315211" rate="30" />
+				<ACTION type="talent" param1="211315212" rate="15" />
+				<ACTION type="talent" param1="211315213" rate="15" /> 
+				<ACTION type="talent" param1="211315220" rate="50" /> 
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="talent" param1="211315202" rate="5" cycle="30"/> 
+				
+				<ACTION type="talent" param1="211315211" rate="15" />
+				<ACTION type="talent" param1="211315212" rate="15" /> 
+				<ACTION type="talent" param1="211315213" rate="30" /> 
+				
+				<ACTION type="lua" param1="RunAround"  rate="10" cycle="20" />
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="20">
+					<ACTION type="talent" param1="211315214" rate="50" />  
+					<ACTION type="talent" param1="211315215" rate="50" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="211315221">			
+			<DEFAULT>	
+				<ACTION type="talent" param1="211315211" rate="30" />
+				<ACTION type="talent" param1="211315212" rate="15" />
+				<ACTION type="talent" param1="211315213" rate="15" /> 
+				<ACTION type="talent" param1="211315221" rate="70" /> 
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="talent" param1="211315202" rate="5" cycle="30"/> 
+				
+				<ACTION type="talent" param1="211315211" rate="15" />
+				<ACTION type="talent" param1="211315212" rate="15" /> 
+				<ACTION type="talent" param1="211315213" rate="30" /> 
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="211315214" rate="50" />  
+					<ACTION type="talent" param1="211315215" rate="50" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211315200" rate="20" />
+				<ACTION type="talent" param1="211315201" rate="20" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>	
+</maiet>

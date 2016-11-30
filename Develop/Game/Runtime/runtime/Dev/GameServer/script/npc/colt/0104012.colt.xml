@@ -1,0 +1,29 @@
+﻿
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="죽음의 구덩이" npcid="104012">
+		<COMBAT mode="0" comment="">
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+function NPC_104012:Init( NPCID )
+	
+	NPC_104012.TTLDeathZone		= 20
+	NPC_104012.TalIdDeathZone	= 210401200
+end
+
+function NPC_104012:OnFinishSoulBurst( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:SetTimer( 0, NPC_104012.TTLDeathZone , false )
+end
+
+function NPC_104012:OnTimer( Index )
+	--GLog( "NPC_104012:OnTimer" .. Index .. "\n" )
+	
+	this:Despawn(false)
+end
+
+	]]></SCRIPT>
+</maiet>
+
+

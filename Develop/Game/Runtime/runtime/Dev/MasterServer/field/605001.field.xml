@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="107" minimap_name="map00107" loading_image_name="00107" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="53794" boundary_min_y="38875" boundary_max_x="75683" boundary_max_y="60456" weather_effect="true" fixed_time="Sunset" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="10" />
+                <ADD weather="RNY" percent="10" />
+                <ADD weather="HRN" percent="10" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="NPC_노엘" x="65384.589844" y="45669.582031" z="607.096252" dir_x="-0.920505" dir_y="-0.390731" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="NPC_지주록히드" x="67008.984375" y="47542.542969" z="616.305664" dir_x="0.788011" dir_y="-0.615662" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="605051" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="NPC_마틴" x="67543.500000" y="49585.160156" z="589.859558" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600104" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="NPC_제시" x="67338.726563" y="46551.746094" z="590.683044" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600103" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="NPC_샘슨" x="65935.656250" y="46850.042969" z="590.231262" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600102" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="NPC_농부" x="65643.562500" y="50890.390625" z="582.899780" dir_x="-0.258819" dir_y="0.965926" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="605052" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="NPC_농부" x="65746.000000" y="51160.148438" z="587.837830" dir_x="-0.615661" dir_y="0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="605053" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="에픽몹_젬버" x="62556.785156" y="54877.437500" z="559.820190" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="9500" color="auto">
+            <NPC id="605001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="NPC_훈련교관" x="65377.453125" y="49972.757813" z="550.076721" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="NPC_보급관" x="65143.375000" y="49883.195313" z="545.130432" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="NPC_농부" x="65057.656250" y="50694.496094" z="580.545166" dir_x="-0.258819" dir_y="0.965926" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="605054" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작지점" x="67552.968750" y="47295.281250" z="601.224670" dir_x="-0.731354" dir_y="0.681998" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="62600.980469" y="54763.257813" z="556.985535" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10000" name="auto" x="67889.460938" y="45678.058594" z="601.727173" dir_x="-0.529919" dir_y="0.848048" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트저장" local="false" x="67357.968750" y="47437.515625" z="590.683105" radius="915.113098" enabled="true" checkpoint="10000" groupname="none" />
+    </FIELDINFO>
+</maiet>

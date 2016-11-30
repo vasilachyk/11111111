@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="골렘" npcid="116010">	
+		<!--
+		<PROLOGUE>
+			<DEFAULT>
+
+			</DEFAULT>
+		</PROLOGUE>
+		-->
+		
+		<COMBAT mode="0" comment="기본 전투" victory="211601000" >
+			<DEFAULT>
+				<ACTION type="group" desc="세트 공격">
+					<ACTION type="talent" param1="211601011" desc="연속 찍기" />
+					<ACTION type="talent" param1="211601030" desc="연속 찍기 시작"/>
+					<ACTION type="talent" param1="211601031" duration="0" desc="연속 찍기 끝"/>
+					<ACTION type="talent" param1="211601010" desc="왼손 내려찍기" />
+					<ACTION type="talent" param1="211601012" desc="양손 찍기" />
+				</ACTION>
+			</DEFAULT>
+
+			<!-- 특이 패턴 -->
+			<CHECK type="hp" param2="97" >
+				<ACTION type="group" max_count="1" >
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601003" duration="0" desc="휴식"/>
+				</ACTION>	
+			</CHECK>
+
+			<CHECK type="hp" param2="60" >
+				<ACTION type="group" max_count="1" >
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601003" duration="0" desc="휴식"/>
+				</ACTION>	
+			</CHECK>
+			
+			<CHECK type="hp" param2="30" >
+				<ACTION type="group" max_count="1" >
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601003" duration="0" desc="휴식"/>
+				</ACTION>	
+			</CHECK>
+
+			<CHECK type="hp" param2="3" >
+				<ACTION type="group" max_count="1" >
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601017" duration="0" desc="돌진" />
+					<ACTION type="talent" param1="211601003" duration="0" desc="휴식"/>
+				</ACTION>
+			</CHECK>
+			
+			<!-- 기본 패턴에 추가하기 -->
+			<CHECK type="hp" param1="90" >
+				<CHECK type="distance" param1="500" param2="800" >
+					<ACTION type="talent" param1="211601017" cycle="30" duration="0" desc="돌진"/>
+				</CHECK>
+			</CHECK>
+
+			<CHECK type="hp" param1="80" param2="95" >
+				<ACTION type="talent" param1="211601013" cycle="60" duration="0" desc="빠른 훨윈드" />
+			</CHECK>
+			
+			<CHECK type="hp" param2="90" >
+				<ACTION type="group" rate="3" cycle="60">
+					<ACTION type="talent" param1="211601016" duration="0" desc="과부하 점프"/>
+					<ACTION type="talent" param1="211601003" duration="0" desc="휴식"/>
+				</ACTION>
+			</CHECK>
+			
+			<CHECK type="hp" param2="80" >
+				<CHECK type="distance" param1="500" param2="800" >
+					<ACTION type="talent" param1="211601015" rate="5" cycle="30" duration="10" desc="잡기"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="hp" param2="70" >
+				<ACTION type="talent" param1="211601014" rate="5" cycle="15" duration="0" desc="넓은 훨윈드" />
+				<ACTION type="talent" param1="211601018" rate="5" cycle="15" duration="0" desc="빠른 훨윈드 뒤보기" />
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" comment="해체 상태" victory="211601021">
+			<DEFAULT>
+				<ACTION type="talent" param1="211601021" duration="0" desc="해체 끝"/>
+			</DEFAULT>
+		</COMBAT>
+
+		<COMBAT mode="2" comment="연속 찍기" victory="211601031">
+			<DEFAULT>
+				<ACTION type="talent" param1="211601031" duration="0" desc="연속찍기 끝"/>
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="211601000" rate="20"  />
+				<ACTION type="nothing" param1="2" rate="80"/>
+			</DEFAULT>
+		</IDLE>
+
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_116010:Init( NPCID )
+	
+	NPC_116010.UD_GEMDAMAGE	= 1
+	NPC_116010.UD_DATASIZE	= 1
+	NPC_ReserveUserData( NPCID, NPC_116010.UD_DATASIZE )
+	
+	NPC_116010.MODE_DEFAULT = 0
+	NPC_116010.MODE_DISASSEMBLE = 1
+	
+	NPC_116010.BPART_LKnee = 1
+	NPC_116010.BPART_RKnee = 2
+
+	NPC_116010.LIMIT_BPART_LKnee = NPC_116010.MaxHP * 0.70
+	NPC_116010.LIMIT_BPART_RKnee = NPC_116010.MaxHP * 0.30
+	
+	NPC_116010.LIMIT_DISASSEMBLE = NPC_116010.MaxHP * 0.03
+	
+	NPC_116010.BUFF_FireGlowing = 40620
+	NPC_116010.TALENT_Recharge = 211601003
+	NPC_116010.TALENT_DISASSEMBLE = 211601020
+	
+	
+	NPC_116010.TALENT_PAIN = 211601004
+end
+
+function NPC_116010:OnSpawn( SpawnInfo )
+	
+end
+
+function NPC_116010:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "random", 0 )
+	ThisNPC:FaceTo(Target)	
+end
+
+function NPC_116010:AccDamage( ThisNPC, nHitIdx, dHitInfo)
+
+	-- 보석을 제외한 다른 부위를 공격하면 데미지가 감소한다.
+	if nHitIdx < 2 then
+		dHitInfo.Damage = dHitInfo.Damage / 10
+		dHitInfo.CriticalHit = false
+	else
+		dHitInfo.CriticalHit = true
+	end
+
+	-- 해체 상태일 경우엔 다른 상태 변환 처리를 하지 않는다.
+	local currentMode = ThisNPC:GetMode()
+	if currentMode == NPC_116010.MODE_DISASSEMBLE then
+		return dHitInfo
+	end
+	
+
+	-- 회복 상태에서 보석에 일정 데미지 누적시 해체 상태로 변환시킨다.
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	
+	if currentTalent == NPC_116010.TALENT_Recharge and nHitIdx == 2 then
+		local gemDamage = ThisNPC:GetUserData( NPC_116010.UD_GEMDAMAGE ) + dHitInfo.Damage
+		
+		if gemDamage >= NPC_116010.LIMIT_DISASSEMBLE then
+			ThisNPC:ClearJob()
+			ThisNPC:UseTalentSelf( NPC_116010.TALENT_DISASSEMBLE )
+			gemDamage = 0
+		end
+		
+		ThisNPC:SetUserData( NPC_116010.UD_GEMDAMAGE, gemDamage )
+		return dHitInfo
+	end
+	
+	-- 브레이커블파츠 파괴 처리.
+	if currentTalent ~= -1 then
+		--ThisNPC:SayNow("talent "..currentTalent)
+		return dHitInfo
+	end
+	
+	local hp = ThisNPC:GetHP()
+
+	if hp <= NPC_116010.LIMIT_BPART_LKnee and (not ThisNPC:CheckBPart(NPC_116010.BPART_LKnee)) then
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( NPC_116010.BPART_LKnee, dHitInfo.Attacker )
+		ThisNPC:UseTalentSelf( NPC_116010.TALENT_PAIN )
+		ThisNPC:GainBuff( NPC_116010.BUFF_FireGlowing )
+	elseif hp <= NPC_116010.LIMIT_BPART_RKnee and (not ThisNPC:CheckBPart(NPC_116010.BPART_RKnee)) then
+		ThisNPC:ClearJob()
+		ThisNPC:BreakPart( NPC_116010.BPART_RKnee, dHitInfo.Attacker)
+		ThisNPC:UseTalentSelf( NPC_116010.TALENT_PAIN )
+	end
+	
+	return dHitInfo
+end
+
+function NPC_116010:OnHitCapsule_1_0(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_1_1(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+
+function NPC_116010:OnHitCapsule_2_0(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_2_1(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_2_2(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+
+function NPC_116010:OnHitCapsule_3_0(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_3_1(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_3_2(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_3_3(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_3_4(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+
+
+function NPC_116010:OnHitCapsule_4_0(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+
+
+function NPC_116010:OnHitCapsule_5_0(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_5_1(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_5_2(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_5_3(HitInfo)
+	return NPC_116010:AccDamage( this, 1, HitInfo)
+end
+function NPC_116010:OnHitCapsule_5_4(HitInfo)
+	return NPC_116010:AccDamage( this, 2, HitInfo)
+end
+
+function NPC_116010:OnHitCapsule_6_0(HitInfo)
+	return NPC_116010:AccDamage( this, 3, HitInfo)
+end
+function NPC_116010:OnHitCapsule_6_1(HitInfo)
+	return NPC_116010:AccDamage( this, 3, HitInfo)
+end
+
+	]]></SCRIPT>
+</maiet>

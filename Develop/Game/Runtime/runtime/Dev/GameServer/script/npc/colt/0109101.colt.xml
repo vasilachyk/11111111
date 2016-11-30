@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 베일누스	
+#기본&연출	
+210910100	idle
+210910101	pain1
+210910102	pain2
+#공격스킬	
+210910103	앞으로 점프
+210910104	잡기
+210910105	발구르기
+210910106	크게 발구르기
+#연타공격	
+210910107	전방 휘두르기 1타
+210910108	전방 휘두르기 2연타
+210910109	전방 휘두르기 3연타
+210910110	빠름 전방 휘두르기 1타
+210910111	빠름 전방 휘두르기 2연타
+210910112	빠름 전방 휘두르기 3연타
+210910113	내려찍기
+210910114	세로찍기
+#회전애니	
+210910123	turn_l
+210910124	turn_r
+-->
+<maiet>
+	<COLT name="베일누스" npcid="109101">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210910113" rate="10" duration="5" desc="내려찍기"/>
+				<ACTION type="talent" param1="210910114" rate="10" duration="5" desc="세로찍기"/>
+				<ACTION type="talent" param1="210910107" rate="10" duration="5" desc="전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="210910108" rate="10" duration="5" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="210910109" rate="10" duration="5" desc="전방 휘두르기 3연타"/>
+				<ACTION type="talent" param1="210910105" rate="10" duration="5" desc="발구르기"/>
+				<ACTION type="talent" param1="210910106" rate="5" duration="5" desc="크게 발구르기"/>
+				<ACTION type="talent" param1="210910104" rate="5" duration="5" cycle="20" desc="잡기"/>
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="hp" param1="0" param2="30" >
+					<ACTION type="talent" param1="210910114" rate="20" duration="5" desc="세로찍기"/>
+					<ACTION type="talent" param1="210910105" rate="20" duration="5" desc="발구르기"/>
+					<ACTION type="talent" param1="210910106" rate="20" duration="5" desc="크게 발구르기"/>
+				</CHECK>
+			</CHECK>
+			<CHECK type="distance" param2="200">
+				<ACTION type="talent" param1="210910114" rate="10" duration="5" desc="세로찍기"/>
+				<ACTION type="talent" param1="210910105" rate="20" duration="5" desc="발구르기"/>
+				<ACTION type="talent" param1="210910106" rate="20" duration="5" desc="크게 발구르기"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="400">
+				<ACTION type="talent" param1="210910114" rate="70" duration="5" desc="세로찍기"/>
+				<ACTION type="talent" param1="210910105" rate="20" duration="5" desc="발구르기"/>
+				<ACTION type="talent" param1="210910104" rate="20" duration="5" cycle="20" desc="잡기"/>
+				<ACTION type="talent" param1="210910107" rate="10" duration="5" desc="전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="210910108" rate="10" duration="5" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="210910109" rate="10" duration="5" desc="전방 휘두르기 3연타"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400">
+				<CHECK type="hp" param1="0" param2="30" >
+					<ACTION type="talent" param1="210910113" rate="30" duration="5" desc="내려찍기"/>
+					<ACTION type="talent" param1="210910110" rate="10" duration="5" desc="빠름 전방 휘두르기 1타"/>
+					<ACTION type="talent" param1="210910111" rate="10" duration="5" desc="빠름 전방 휘두르기 2연타"/>
+					<ACTION type="talent" param1="210910112" rate="5" duration="5" desc="빠름 전방 휘두르기 3연타"/>
+				</CHECK>
+			</CHECK>
+			<CHECK type="distance" param1="400">
+				<ACTION type="talent" param1="210910113" rate="30" duration="5" desc="내려찍기"/>
+				<ACTION type="talent" param1="210910107" rate="10" duration="5" desc="전방 휘두르기 1타"/>
+				<ACTION type="talent" param1="210910108" rate="10" duration="5" desc="전방 휘두르기 2연타"/>
+				<ACTION type="talent" param1="210910109" rate="5" duration="5" desc="전방 휘두르기 3연타"/>
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+function NPC_109101:Init(NPCID)
+	
+	NPC_109101.UD_PAIN1 = 1		-- 주기적인 Pain을 위한 누적 데미지.
+	NPC_109101.UD_PAIN2 = 2		-- 큰 Pain을 위한 누적 데미지.
+	NPC_109101.UD_DATASIZE = 2
+	
+	NPC_ReserveUserData( NPCID, NPC_109101.UD_DATASIZE );
+		
+	NPC_109101.LIMIT_PAIN1 = NPC_109101.MaxHP * 0.2
+	NPC_109101.LIMIT_PAIN2 = NPC_109101.MaxHP * 0.6
+		
+	NPC_109101.BPARTS_1 = 1
+	NPC_109101.BPARTS_2 = 2
+	NPC_109101.BPARTS_3 = 3
+	NPC_109101.BPARTS_4 = 4
+	
+	NPC_109101.TALENT_PAIN1 = 210910101
+	NPC_109101.TALENT_PAIN2 = 210910102
+	
+	NPC_109101.TALENT_Grip 	    = 210910104	-- 잡기
+	
+	
+end
+
+
+
+
+
+
+
+function NPC_109101:OnFinishAndAggroFar( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "far", 0 )
+end
+
+function NPC_109101:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	local Target = ThisNPC:Aggro( "random", 0 )
+end
+
+function NPC_109101:AccDamage( ThisNPC, HitInfo )
+	local currentTalent = ThisNPC:GetCurrentTalent()
+	local mode = ThisNPC:GetMode()
+	local Target = HitInfo.Attacker
+	
+	local painAcc = ThisNPC:GetUserData( NPC_109101.UD_PAIN1 ) + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_109101.UD_PAIN1, painAcc )
+	
+	local damageAcc = ThisNPC:GetUserData( NPC_109101.UD_PAIN2 ) + HitInfo.Damage
+	ThisNPC:SetUserData( NPC_109101.UD_PAIN2, damageAcc )
+		
+	-- pain 예외 처리.
+	if currentTalent == NPC_109101.TALENT_Grip or
+		ThisNPC:IsCooldown( NPC_109101.TALENT_PAIN1 ) or
+		ThisNPC:IsCooldown( NPC_109101.TALENT_PAIN2 ) then
+			return HitInfo
+	end
+	
+	if damageAcc >= NPC_109101.LIMIT_PAIN2 then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( NPC_109101.UD_PAIN1, 0 )
+		ThisNPC:SetUserData( NPC_109101.UD_PAIN2, 0 )
+	 	ThisNPC:UseTalentSelf( NPC_109101.TALENT_PAIN2 )
+	elseif painAcc >= NPC_109101.LIMIT_PAIN1 then
+		ThisNPC:ClearJob()
+		ThisNPC:SetUserData( NPC_109101.UD_PAIN1, 0 )
+	 	ThisNPC:UseTalentSelf( NPC_109101.TALENT_PAIN1 )
+		if(ThisNPC:CheckBPart(1) == false) then
+			ThisNPC:BreakPart(1, Target)
+		elseif (ThisNPC:CheckBPart(2) == false) then
+			ThisNPC:BreakPart(2, Target)
+		elseif (ThisNPC:CheckBPart(3) == false) then
+			ThisNPC:BreakPart(3, Target)
+		elseif (ThisNPC:CheckBPart(4) == false) then
+			ThisNPC:BreakPart(4, Target)
+		end	
+	end
+	
+	return HitInfo
+end
+
+function NPC_109101:OnHitCapsule_1_0(HitInfo)
+	return NPC_109101:AccDamage( this, HitInfo )
+end
+
+function NPC_109101:OnHitCapsule_2_0(HitInfo)
+	return NPC_109101:AccDamage( this, HitInfo )
+end
+
+
+
+
+function NPC_109101:OnBPartRecover()
+	for i=1, NPC_109101.UD_DATASIZE do
+		this:SetUserData( i, 0)
+	end -- for
+end
+
+	]]></SCRIPT>
+</maiet>
+
+
+

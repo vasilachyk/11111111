@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="1022" minimap_name="map01022" loading_image_name="01022" min_x="-1580" min_y="-1730" max_x="1580" max_y="1430" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="false" town="false" returnable="true" tutorial="false">
+        <FLOORS>
+            <FLOOR height="250" />
+            <FLOOR height="5000" />
+        </FLOORS>
+        <BGM fieldbgm="amb_room_2" />
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="8" group="0" name="미스텔" x="217.387756" y="-528.036255" z="31.999981" dir_x="-0.857167" dir_y="-0.515038" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="107237" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="302" group="0" name="투명 영혼석" x="-803.698792" y="95.420227" z="32.999962" dir_x="0.788011" dir_y="-0.615662" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="302" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="트라이얼 시작점, 안전장소1" x="-1.132202" y="-668.372620" z="31.999954" dir_x="-0.000000" dir_y="1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="미스텔 이동1" x="267.640198" y="-277.276184" z="32.999985" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="미스텔 이동2" x="765.559998" y="-243.490143" z="33.000000" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="미스텔 이동3" x="914.791687" y="-660.524048" z="32.000000" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="미스텔 이동4" x="6.684496" y="159.831070" z="32.999924" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="미스텔 이동5" x="17.433662" y="149.977875" z="32.999908" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="17" name="미스텔 이동7" x="563.517761" y="-585.435608" z="32.000000" dir_x="-0.996195" dir_y="-0.087156" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="트라이얼 탈출점" x="-0.972504" y="-961.853943" z="46.653431" radius="100.000000" enabled="true">
+            <EFFECT effect="sensor_trial" x="2.094093" y="-15.784180" z="-11.432941" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.800000" scale_y="0.100000" scale_z="1.000000" />
+            <WARP warp_type="field" title="닷소의 집에서 테레스 평원으로" condition="0" gate_type="manual" field="107" marker="107054" />
+        </SENSOR>
+        <SENSOR id="3" name="체크포인트" local="false" x="-0.466011" y="-671.785583" z="31.999954" radius="200.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="4" name="트리거" local="false" x="22.329441" y="139.237961" z="-182.955276" radius="500.000000" enabled="false" groupname="none" />
+        <SENSOR id="5" name="지하창고로 이동" x="246.027206" y="60.082096" z="32.999992" radius="110.000000" enabled="false">
+            <EFFECT effect="sensor_trial_01" x="-119.954453" y="0.472469" z="12.153946" dir_x="0.000000" dir_y="0.000000" dir_z="-0.500000" up_x="0.700000" up_y="0.000000" up_z="0.000000" scale_x="0.950000" scale_y="0.100000" scale_z="0.800000" />
+            <WARP warp_type="field" title="지하로" condition="0" gate_type="manual" field="1070542" marker="1" />
+        </SENSOR>
+    </FIELDINFO>
+</maiet>

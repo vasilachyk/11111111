@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="하운터" npcid="109121">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="20"/>
+				
+				<ACTION type="talent" param1="210912103" rate="40" />
+				<ACTION type="talent" param1="210912104" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="100">
+					<ACTION type="group" rate="50" cycle="5">
+						<ACTION type="talent" param1="210912105"/>
+						<ACTION type="talent" param1="210912106"/>
+					</ACTION>
+					<ACTION type="talent" param1="210912105" rate="50"/>
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="500">
+				<ACTION type="nothing" param1="0.5" rate="20" />
+				
+				<ACTION type="talent" param1="210912103" rate="20" />
+				<ACTION type="talent" param1="210912104" rate="10" />
+				<ACTION type="talent" param1="210912106" rate="40" />
+			</CHECK>
+			
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210912102" rate="20" />
+				<ACTION type="talent" param1="210912103" rate="20" />
+				<ACTION type="talent" param1="210912104" rate="20" />
+				<ACTION type="nothing" param1="2" rate="20" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+
+# 엘리카, 엘루가	
+#기본&연출	
+210932301	turn_l
+210932302	turn_r
+210932303	외치기
+210932304	딴짓하기
+210932305	외치기(광폭화)
+	
+#공격스킬	
+210932311	물기 (기본)
+210932312	오일 브레스
+210932313	뒤로 점프
+210932314	아파
+210932315	앞으로 점프
+210932316	제자리 점프
+210932317	독 털기
+210932318	뿔 깨져서 아파
+210932319	먹고 뱉기
+210932320	빠른 오일 브레스
+210932322	내려찍기 (기본)
+210932323	앞으로 점프 (강화)
+210932324	하이 점프 (제자리)
+210932325	하이 점프 (앞1)
+210932326	하이 점프 (앞2)
+
+-->
+
+<maiet>
+	<COLT name="Elucha" npcid="109323">
+		<COMBAT mode="0" comment="">
+			<CHECK type="distance" param1="2000">
+				<ACTION type="talent" param1="210932315" rate="40" duration="3" desc="앞으로 점프" /> 
+				<ACTION type="talent" param1="210932323" rate="40" duration="8" desc="앞으로 점프 (강화)" /> 
+			</CHECK>
+
+			<CHECK type="hp" param1="70" param2="100">
+				<CHECK type="unbreakpart" param1="1">
+					<ACTION type="talent" param1="210932304" rate="10" cycle="30" desc="딴짓하기" />
+					<ACTION type="talent" param1="210932311" rate="15" cycle="10" desc="물기 (기본)" />
+					<ACTION type="talent" param1="210932322" rate="8" cycle="10" desc="내려찍기 (기본)" />
+
+					<ACTION type="talent" param1="210932313" rate="5" duration="0" desc="뒤로 점프" /> 
+					<ACTION type="talent" param1="210932316" rate="10" duration="1" desc="제자리 점프" /> 
+					<ACTION type="talent" param1="210932315" rate="15" duration="3" cycle="10" desc="앞으로 점프" /> 
+					
+					<ACTION type="talent" param1="210932317" rate="5" duration="1" cycle="10" desc="독 털기" />
+				</CHECK>
+
+				<ACTION type="talent" param1="210932304" rate="10" cycle="30" desc="딴짓하기" />
+				<ACTION type="talent" param1="210932311" rate="15" cycle="20" desc="물기 (기본)" />
+				<ACTION type="talent" param1="210932322" rate="8" cycle="10" desc="내려찍기 (기본)" />
+				
+				<ACTION type="talent" param1="210932313" rate="5" duration="0" desc="뒤로 점프" /> 
+				<ACTION type="talent" param1="210932316" rate="10" duration="1" desc="제자리 점프" /> 
+				<ACTION type="talent" param1="210932315" rate="5" duration="3" cycle="10" desc="앞으로 점프" /> 
+				<ACTION type="talent" param1="210932323" rate="20" duration="3" desc="앞으로 점프 (강화)" /> 
+
+				<ACTION type="talent" param1="210932317" rate="5" duration="1" cycle="10" desc="독 털기" />
+			</CHECK>
+
+			<CHECK type="hp" param1="30" param2="70">
+				<CHECK type="unbreakpart" param1="1">
+					<ACTION type="talent" param1="210932304" rate="5" cycle="30" desc="딴짓하기" />
+					<ACTION type="talent" param1="210932303" rate="5" duration="0" cycle="60" desc="외치기" />
+					<ACTION type="talent" param1="210932311" rate="10" cycle="20" desc="물기 (기본)" />
+					<ACTION type="talent" param1="210932322" rate="5" cycle="10" desc="내려찍기 (기본)" />
+					<ACTION type="talent" param1="210932319" rate="10" desc="먹고 뱉기" />
+					
+					<ACTION type="talent" param1="210932313" rate="5" duration="0" desc="뒤로 점프" /> 
+					<ACTION type="talent" param1="210932316" rate="10" duration="1" desc="제자리 점프" /> 
+					<ACTION type="talent" param1="210932315" rate="10" duration="3" cycle="15" desc="앞으로 점프" /> 
+					<ACTION type="talent" param1="210932323" rate="10" duration="3" desc="앞으로 점프 (강화)" /> 
+
+					<ACTION type="talent" param1="210932312" rate="30" duration="1" cycle="10" desc="오일 브레스" />
+					<ACTION type="talent" param1="210932317" rate="5" duration="1" cycle="10" desc="독 털기" />
+				</CHECK>
+
+				<ACTION type="talent" param1="210932304" rate="5" cycle="30" desc="딴짓하기" />
+				<ACTION type="talent" param1="210932303" rate="5" duration="0" cycle="30" desc="외치기" />
+				<ACTION type="talent" param1="210932311" rate="10" cycle="20" desc="물기 (기본)" />
+				<ACTION type="talent" param1="210932322" rate="5" cycle="10" desc="내려찍기 (기본)" />
+				<ACTION type="talent" param1="210932319" rate="10" desc="먹고 뱉기" />
+				
+				<ACTION type="talent" param1="210932313" rate="5" duration="0" desc="뒤로 점프" /> 
+				<ACTION type="talent" param1="210932316" rate="10" duration="1" desc="제자리 점프" /> 
+				<ACTION type="talent" param1="210932315" rate="5" duration="3" cycle="15" desc="앞으로 점프" /> 
+				<ACTION type="talent" param1="210932323" rate="20" duration="3" desc="앞으로 점프 (강화)" /> 
+				
+				<ACTION type="talent" param1="210932312" rate="25" duration="1" cycle="10" desc="오일 브레스" />
+				<ACTION type="talent" param1="210932317" rate="10" duration="1" cycle="10" desc="독 털기" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" param2="30" >
+				<CHECK type="unbreakpart" param1="1">
+					<ACTION type="talent" param1="210932303" rate="5" duration="0" cycle="60" desc="외치기" />
+					<ACTION type="talent" param1="210932311" rate="10" cycle="20" desc="물기 (기본)" />
+					<ACTION type="talent" param1="210932322" rate="5" cycle="10" desc="내려찍기 (기본)" />
+					
+					<ACTION type="talent" param1="210932313" rate="5" duration="0" desc="뒤로 점프" /> 
+					<ACTION type="talent" param1="210932316" rate="10" duration="1" desc="제자리 점프" /> 
+					<ACTION type="talent" param1="210932323" rate="20" duration="3" cycle="10" desc="앞으로 점프 (강화)" /> 
+					
+					<ACTION type="talent" param1="210932312" rate="25" duration="1" cycle="15" desc="오일 브레스" />
+					<ACTION type="talent" param1="210932317" rate="10" duration="1" cycle="10" desc="독 털기" />
+					
+				</CHECK>
+
+				<ACTION type="talent" param1="210932303" rate="5" duration="0" cycle="30" desc="외치기" />
+				<ACTION type="talent" param1="210932311" rate="10" cycle="20" desc="물기 (기본)" />
+				<ACTION type="talent" param1="210932322" rate="5" cycle="10" desc="내려찍기 (기본)" />
+				<ACTION type="talent" param1="210932319" rate="5" desc="먹고 뱉기" />
+				
+				<ACTION type="talent" param1="210932313" rate="5" duration="0" desc="뒤로 점프" /> 
+				<ACTION type="talent" param1="210932316" rate="10" duration="1" desc="제자리 점프" /> 
+				<ACTION type="talent" param1="210932315" rate="5" duration="3" cycle="15" desc="앞으로 점프" /> 
+				<ACTION type="talent" param1="210932323" rate="30" duration="3" cycle="10" desc="앞으로 점프 (강화)" /> 
+				
+				<ACTION type="talent" param1="210932312" rate="25" duration="1" cycle="15" desc="오일 브레스" />
+				<ACTION type="talent" param1="210932317" rate="10" duration="1" cycle="10" desc="독 털기" />
+				
+			</CHECK>
+
+			<DEFAULT>
+				<ACTION type="talent" param1="210932311" rate="10" desc="물기 (기본)" />
+				<ACTION type="talent" param1="210932322" rate="8" desc="내려찍기 (기본)" />
+				<ACTION type="talent" param1="210932313" rate="5" duration="0" desc="뒤로 점프" /> 
+				<ACTION type="talent" param1="210932315" rate="5" duration="3" cycle="15" desc="앞으로 점프" /> 
+				<ACTION type="talent" param1="210932316" rate="10" duration="1" desc="제자리 점프" /> 
+				<ACTION type="talent" param1="210932312" rate="10" duration="1" desc="오일 브레스" />
+			</DEFAULT>
+
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT>
+
+<![CDATA[
+
+function NPC_109323:Init( NPCID )
+
+	--GLog( "Init\n" )
+	
+	--[[
+		User Data
+		1: BreakPart 뿔
+		2: Total Damage
+	--]]
+	NPC_ReserveUserData( NPCID, 2 );
+
+	
+	NPC_109323.BreakPartHP	= NPC_109323.MaxHP / 15
+	--NPC_109323.BreakPartHP	= 100	-- test
+	
+	NPC_109323.PainHP	= NPC_109323.MaxHP / 5
+	
+	NPC_109323.BreakPartID = 1
+	NPC_109323.TALENT_Pain1 = 210932314
+	NPC_109323.TALENT_Pain2 = 210932318
+	NPC_109323.TALENT_Roar = 210932305
+	
+end
+
+function NPC_109323:OnSpawn( Info )
+
+end
+
+function NPC_109323:OnTimer( TimerID )
+
+
+end
+
+function NPC_109323:OnFinishSlidingAttack( ThisActor, Enemy )
+
+end
+
+
+-- 판정 > 평소 > 몸통
+function NPC_109323:OnHitCapsule_1_0(HitInfo)
+	return NPC_109323:ProcessHitBody( this, HitInfo )
+end
+
+-- 판정 > 브레스중 > 몸통
+function NPC_109323:OnHitCapsule_2_0(HitInfo)
+	return NPC_109323:ProcessHitBody( this, HitInfo )
+end
+
+-- 판정 > 브레스중 > 입
+function NPC_109323:OnHitCapsule_2_1(HitInfo)
+	return NPC_109323:ProcessHitBody( this, HitInfo )
+end
+
+-- 판정 > Pain1 > 뿔
+function NPC_109323:OnHitCapsule_3_2(HitInfo)
+	--GLog( "OnHitCapsule_3_2\n" )
+	return NPC_109323:AccDamage( this, HitInfo)
+end
+
+function NPC_109323:ProcessHitBody( ThisNPC, dHitInfo )
+
+	local AccDamage	-- 누적데미지 
+	
+	AccDamage = ThisNPC:GetUserData(2) + dHitInfo.Damage
+	
+	if AccDamage > NPC_109323.PainHP then
+		ThisNPC:ClearJob()			
+		ThisNPC:UseTalentSelf( NPC_109323.TALENT_Pain1 )
+		
+		AccDamage = 0
+	end
+	
+	ThisNPC:SetUserData( 2, AccDamage )
+
+	return dHitInfo
+end
+
+function NPC_109323:AccDamage( ThisNPC, dHitInfo)
+
+	local AccDamage	-- 누적데미지 
+	
+	if (not ThisNPC:CheckBPart(NPC_109323.BreakPartID)) then
+		--GLog("NPC_109323:AccDamage\n")
+		
+		AccDamage = ThisNPC:GetUserData(1) + dHitInfo.Damage
+		
+		if AccDamage > NPC_109323.BreakPartHP then
+			ThisNPC:ClearJob()			
+			ThisNPC:UseTalentSelf( NPC_109323.TALENT_Pain2 )
+			ThisNPC:UseTalentSelf( NPC_109323.TALENT_Roar )
+			
+			ThisNPC:BreakPart(NPC_109323.BreakPartID, dHitInfo.Attacker)
+		end
+		
+		ThisNPC:SetUserData( 1, AccDamage )
+	end
+	
+	return dHitInfo
+end
+
+function NPC_109323:OnFinishAndAggroShort( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "short", 0 )
+end
+
+function NPC_109323:OnFinishAndAggroRandom( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Aggro( "random", 0 )
+end
+
+
+	]]></SCRIPT>
+</maiet>

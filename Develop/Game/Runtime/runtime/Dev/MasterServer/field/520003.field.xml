@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="520003" minimap_name="map520003" min_x="-10900" min_y="-10900" max_x="10900" max_y="10900" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" fixed_time="Sunset" town="false" returnable="true" tutorial="false" max_gather_mine="10" max_gather_herb="10" max_gather_relic="10" max_gather_lumber="10" qpvpnpc1="950000" qpvpnpc2="950000" qpvprebirth1="102230" qpvprebirth2="102231">
+        <Env set="default">
+            <WEATHER default="RNY">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="갑옷기사" x="-4295.734863" y="46.125671" z="21.655762" dir_x="-0.987688" dir_y="-0.156434" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="안움직이는기사" x="-4092.748047" y="1232.767578" z="-0.150940" dir_x="-0.970296" dir_y="0.241922" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="갑옷기사" x="-5072.379883" y="-53.229065" z="11.173340" dir_x="0.984808" dir_y="0.173649" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="안움직이는기사" x="-4795.032227" y="1450.023560" z="1.018768" dir_x="0.927184" dir_y="-0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="보스_집사" x="3552.430664" y="3348.506348" z="23.337891" dir_x="0.669130" dir_y="-0.743145" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="99999" roam_radius="0" roam_depth="200" combat_radius="2500" color="auto">
+            <NPC id="520010" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="갑옷기사" x="-1138.377197" y="4196.809570" z="1.382462" dir_x="-0.422618" dir_y="0.906308" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="갑옷기사(로밍용)" x="-4189.368652" y="4288.097656" z="10.466797" dir_x="0.629320" dir_y="-0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520302" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="워프오브젝트" x="4421.413574" y="-1277.068359" z="21.055176" dir_x="0.224952" dir_y="0.974370" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520503" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="보스_집사" x="4276.912109" y="1818.958008" z="29.584961" dir_x="-0.358367" dir_y="0.933581" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520504" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="갑옷기사(로밍용)" x="-4380.107422" y="4168.234375" z="-7.882324" dir_x="0.342020" dir_y="-0.939693" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520302" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="안움직이는기사" x="-1350.880615" y="4850.615723" z="1.842896" dir_x="0.358368" dir_y="-0.933581" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="12" group="0" name="수리상" x="5968.727539" y="545.579956" z="0.545410" dir_x="-0.994522" dir_y="-0.104528" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="120" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520509" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="13" group="0" name="갑옷기사" x="-68.438538" y="5000.470215" z="3.469238" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="14" group="0" name="갑옷기사" x="-11.308028" y="4326.751953" z="3.469238" dir_x="-0.069756" dir_y="0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="15" group="0" name="움직이는기사" x="1229.218628" y="4854.811523" z="3.469238" dir_x="-0.292372" dir_y="-0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="16" group="0" name="움직이는기사" x="1094.354858" y="4140.672852" z="3.469238" dir_x="0.241922" dir_y="0.970296" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520301" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="17" group="0" name="안움직이는기사" x="-4911.086426" y="-1324.031128" z="-1.882629" dir_x="0.984808" dir_y="0.173649" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="18" group="0" name="안움직이는기사" x="-4104.405273" y="-1104.683350" z="-2.522095" dir_x="-0.965926" dir_y="-0.258820" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="3600" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="520303" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="19" name="auto" x="3440.141113" y="432.969208" z="3.000000" dir_x="0.987688" dir_y="0.156435" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="107259" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="20111111" group="0" name="집사 다르엘 가구" x="1608.764648" y="3136.898926" z="3.000000" dir_x="0.777146" dir_y="0.629320" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520011" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111112" group="0" name="집사 다르엘 가구" x="2410.145508" y="2355.532227" z="2.000000" dir_x="0.848048" dir_y="0.529919" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520012" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111113" group="0" name="집사 다르엘 가구" x="3142.490479" y="1626.368530" z="2.000000" dir_x="0.292372" dir_y="0.956305" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520013" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111114" group="0" name="집사 다르엘 가구" x="5710.409668" y="2678.211182" z="2.000000" dir_x="-0.984808" dir_y="0.173648" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520014" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111115" group="0" name="집사 다르엘 가구" x="4355.001953" y="4208.712891" z="2.000000" dir_x="-0.681999" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520015" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111121" group="0" name="집사 다르엘 가구" x="4983.993164" y="3654.779053" z="3.000000" dir_x="-0.731354" dir_y="-0.681999" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111122" group="0" name="집사 다르엘 가구" x="2148.280762" y="2832.268311" z="3.000000" dir_x="0.615661" dir_y="0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520016" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111131" group="0" name="집사 다르엘 가구" x="4598.957520" y="2224.399658" z="3.000000" dir_x="-0.453991" dir_y="0.891006" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520017" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="20111132" group="0" name="집사 다르엘 가구" x="3913.881836" y="4731.873047" z="3.000000" dir_x="-0.656059" dir_y="-0.754710" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="520017" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="출발마커" x="-3174.480957" y="-1775.996582" z="50.651855" dir_x="-0.898794" dir_y="-0.438371" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="로밍마커" x="-5169.928711" y="2989.624512" z="38.993164" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="로밍마커" x="-4628.583008" y="2662.276611" z="-21.441895" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="로밍마커" x="-5114.616211" y="3062.687744" z="2.136230" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="로밍마커" x="-4438.703125" y="4060.812256" z="2.136230" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="로밍마커" x="-3082.750732" y="5168.056152" z="16.293945" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="로밍마커" x="-2255.181641" y="4122.709473" z="16.293945" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="로밍마커" x="-3160.551025" y="5112.272461" z="58.252930" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10" name="로밍마커" x="-4129.819336" y="4360.125488" z="38.216797" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="20111111" name="집사 다르엘 가구" x="2502.915527" y="4041.693848" z="2.000000" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="auto" x="4452.086914" y="-1219.924316" z="24.054199" radius="300.000000" enabled="true">
+            <WARP warp_type="field" title="다른 필드로 이동" condition="0" gate_type="auto" field="520004" marker="1" />
+        </SENSOR>
+        <SENSOR id="2" name="라드의 방으로" local="false" x="4304.658203" y="1836.787720" z="3.000000" radius="500.000000" enabled="true" groupname="none" />
+        <AREA id="1" name="보물 관리실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="4986.997070" y="-331.312073" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="3" name="집무실" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="3613.732666" y="3313.925537" z="0.000000" radius="2000.000000" height="1000.000000" />
+        </AREA>
+        <AREA id="4" name="호위기사들의 복도" path="false" minz_hint="-1.000000" maxz_hint="-1.000000">
+            <CYLINDER x="-1866.855713" y="4923.012207" z="0.000000" radius="3500.000000" height="1000.000000" />
+            <CYLINDER x="-4365.351563" y="514.073669" z="0.000000" radius="4000.000000" height="1000.000000" />
+        </AREA>
+    </FIELDINFO>
+</maiet>

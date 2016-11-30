@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 클레릭 -->
+<!--
+# 리오드의 인간형(1.2배) 스태프	
+210111901	#모드0전환(칼뽑기)
+210111902	#모드1전환(칼넣기)
+210111911	#지팡이1타
+210111912	#지팡이2연타
+210111913	#전진공격
+210111914	#빛의 구
+210111915	징벌의 성역
+210111916	천벌
+210111917	빛의 고리
+-->
+<maiet>
+	<COLT name="가디엘교 사제" npcid="101120">
+		<COMBAT victory="210111902">
+			<DEFAULT>	
+				<ACTION type="talent" param1="210111911" rate="20" desc="지팡이1타" /> 
+				<ACTION type="talent" param1="210111912" rate="30" desc="지팡이2연타" />
+				<ACTION type="talent" param1="210111914" rate="10" desc="빛의 구" />
+				<ACTION type="talent" param1="210111917" rate="10" desc="빛의 고리" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param2="400">
+				<CHECK type="rage" param1="80" >
+					<ACTION type="talent" param1="210111915" rate="50" desc="징벌의 성역" />
+					<ACTION type="talent" param1="210111916" rate="50" desc="천벌" />
+				</CHECK>
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="talent" param1="210111914" rate="70" desc="빛의 구" />
+				<ACTION type="talent" param1="210111917" rate="70" desc="빛의 고리" />
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>
+				<ACTION type="talent" param1="210111901" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

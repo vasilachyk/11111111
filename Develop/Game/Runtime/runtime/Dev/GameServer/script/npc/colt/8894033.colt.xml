@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="코볼트 강도" npcid="8894033">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="189403301" rate="20" />
+				<ACTION type="talent" param1="189403303" rate="20" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="500" >
+				<ACTION type="lua" param1="SideStep" rate="30" cycle="20"/>
+				
+				<ACTION type="talent" param1="189403301" rate="30" />
+				<ACTION type="talent" param1="189403303" rate="10" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

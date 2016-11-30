@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 성난 불곰	
+210110201	idle2(땅파기)
+210110202	물기(atk_1)
+210110203	내려찍기(atk_2)
+210110204	오른손휘두르기(atk_3)
+210110205	왼손휘두르기(atk_4)
+-->
+
+<maiet>
+	<COLT name="성난 불곰" npcid="101102">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="210110202" rate="20" desc="물기(atk_1)" />
+				<ACTION type="talent" param1="210110204" rate="35" desc="오른손휘두르기(atk_3)"/>
+				<ACTION type="talent" param1="210110205" rate="35" desc="왼손휘두르기(atk_4)"/>
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="50">
+				<ACTION type="talent" param1="210110203" rate="10" desc="내려찍기(atk_2)" />						
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210110201" rate="70" />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

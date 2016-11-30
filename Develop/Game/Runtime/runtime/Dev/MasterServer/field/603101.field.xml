@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="102" minimap_name="map00102" loading_image_name="00102" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="31800" boundary_min_y="23000" boundary_max_x="48700" boundary_max_y="41700" weather_effect="true" fixed_time="Night" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="HSW">
+                <ADD weather="SUN" percent="0" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="1" group="0" name="일반몹 광기의눈용병" x="41599.972656" y="31485.681641" z="11977.984375" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="603112" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="일반몹 광기의눈용병" x="41032.875000" y="31571.599609" z="11961.012695" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="603112" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="일반몹 흰색예띠의용병" x="41629.515625" y="32416.556641" z="11957.745117" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="603111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="일반몹 흰색예띠의용병" x="41916.156250" y="31876.857422" z="11959.949219" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="603111" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="일반몹 광기의눈용병" x="41288.210938" y="31886.982422" z="11976.206055" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="500.000000" random_dir="true" enabled="true" only_client="false" start_time="10" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="1000" roam_depth="200" combat_radius="5500" color="auto">
+            <NPC id="603101" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="npc_보급관" x="36987.210938" y="27593.326172" z="11912.042969" dir_x="-0.990268" dir_y="0.139173" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600002" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="npc_훈련교관" x="37014.628906" y="27346.033203" z="11945.426758" dir_x="-0.990268" dir_y="0.139173" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="10" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="600001" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="일반몹 광기의눈용병" x="40928.453125" y="32245.880859" z="11976.174805" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" only_client="false" start_time="0" respawn_time="999999" enable_respawn_tick_boost="true" roam_radius="500" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="603112" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="출발지점" x="36147.492188" y="27795.470703" z="11892.688477" dir_x="0.874620" dir_y="0.484809" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="퀘스트목표지점" x="41514.296875" y="31808.687500" z="11963.142578" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="10000" name="마커_감옥" x="35293.089844" y="27225.070313" z="11902.494141" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크지역 설정" local="false" x="36422.500000" y="27931.435547" z="11933.254883" radius="1148.808105" enabled="true" checkpoint="10000" groupname="none" />
+    </FIELDINFO>
+</maiet>

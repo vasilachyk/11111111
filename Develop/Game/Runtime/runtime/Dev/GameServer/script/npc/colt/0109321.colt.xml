@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+  <COLT name="마리옹 전사" npcid="109321">
+		<COMBAT mode="0" comment="field" victory="210932100">
+			<DEFAULT>
+				<ACTION type="talent" param1="210932111" rate="10" />
+				<ACTION type="talent" param1="210932112" rate="10" />
+				<ACTION type="talent" param1="210932113" rate="10" />
+				
+				<!--<ACTION type="talent" param1="210932120" rate="10" duration="0"/>-->
+			</DEFAULT>
+		</COMBAT>
+		<COMBAT mode="1" comment="burrow" victory="210932121">
+			<DEFAULT>
+				<ACTION type="talent" param1="210932121" rate="10" duration="5"/>
+			</DEFAULT>
+		</COMBAT>
+	<IDLE>
+      <DEFAULT>
+      </DEFAULT>
+    </IDLE>
+  </COLT>
+  <SCRIPT><![CDATA[
+  ]]></SCRIPT>
+</maiet>

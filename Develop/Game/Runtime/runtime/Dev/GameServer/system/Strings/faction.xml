@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<maiet>
+<!--  0~15,999  |  매우 나쁨(WORST)  | -->
+<!--  16,000~27,999  |  나쁨(BAD)  | -->
+<!--  28,000~35,999  |  보통(NORMAL)  | -->
+<!--  36,000~47,999  |  좋음(GOOD) 우호 | -->
+<!--  48,000~63,999  |  매우 좋음(EXCELLENT) 매우우호  | -->
+<!--  64,000~65,000  |  신뢰(TRUST):NEW:  | -->
+
+	<!-- Faction ID 30000번 >>> 2147483647 번까지 사용 가능하게 변경 -->
+	<!-- attackable 을 현재 쓰이지 않는다. 무시 -->	
+	
+	<FACTION id="1" default="32000" title="리츠 주민" desc="리츠에 사는 주민에 대한 우호도" attackable="false" />
+	<FACTION id="2" default="28000" title="레나시안 교도" desc="레나시안 신도에 대한 우호도" attackable="false" /> 
+	<FACTION id="3" default="28000" title="인젠 주민" desc="인젠에 사는 주민에 대한 우호도" attackable="false" />
+	<FACTION id="4" default="28000" title="테레스 평원 주민" desc="테레스 평원에 사는 주민에 대한 우호도" attackable="false" />
+	<FACTION id="5" default="32000" title="렌델 기사단" desc="렌델의 기사단" attackable="false" />
+	<FACTION id="6" default="20000" title="테스트용" desc="attackable false 테스트 팩션" attackable="false" />
+	<FACTION id="7" default="32000" title="부러진 돛대" desc="티안을 따르는 자들" attackable="false" />
+	<FACTION id="8" default="20000" title="모켄의 해적" desc="모켄을 따르는 해적의 무리. 부러진 돛대에 티안과 적대적" />	
+	<FACTION id="9" default="20000" title="모켄의 해적" desc="돛대로 쳐들어오는 몬스터 무리 "/>		
+	<FACTION id="10" default="36000" title="플레이어 캐릭터" desc="PC의 우호도. 실제 게임에는 쓰이지 않으며, 탤런트에서 오로지 PC만 맞게 하고 싶을 때 사용한다." />	
+	<FACTION id="11" default="35000" title="초식동물" desc="초식동물의 우호도. 비선공. 육식 동물에게 공격 받으면 반격한다." />	
+	<FACTION id="12" default="27000" title="육식동물" desc="육식동물의 우호도. 선공. 초식 동물을 보면 공격한다." />		
+	<FACTION id="13" default="40000" title="전투민족1" desc="이벤트용 팩션. 14와 싸우지만 PC에게는 우호적" />	
+	<FACTION id="14" default="40000" title="전투민족2" desc="이벤트용 팩션. 13과 싸우지만 PC에게는 우호적" />		
+	<FACTION id="15" default="30000" title="하프메인" desc="이벤트용 팩션. 하프메인 개인 팩션" />	
+	<FACTION id="16" default="30000" title="고룡 알케이노" desc="이벤트용 팩션. 고룡 알케이노 개인 팩션. PC는 공격하지 않고 하프메인만 우선적으로 공격한다." />	
+	<FACTION id="17" default="28000" title="레나시안 교도" desc="레나시안 신도에 대한 우호도" attackable="false" /> 
+	
+	<FACTION id="18" default="28000" title="아드레킨 콜렉션" desc="언제나 리츠의 최신유행을 선도하는 아드레킨은 그의 독특한 취향 때문에 같이 일하는 사람을 구하는 데 어려움을 겪고 있습니다. 그를 도와 준다면 남들과는 뭔가 다른 멋진 보상을 얻을 수도 있습니다." attackable="false" /> 
+	<FACTION id="19" default="28000" title="르띠에 보석상회" desc="바위 속에 숨겨진 아름다움을 발견해내어 가치있는 것으로 만드는 자신들이야 말로 진정한 창조가이자 모험가라고 주장하는 이들. 아무리 뛰어난 원석이 있어도 이들의 허가 없이는 값진 보석을 만들 수 없다고 한다." attackable="false" /> 
+	
+	
+	
+	
+	<FACTION id="102" default="28000"  />
+	<FACTION id="103" default="28000"  />
+	<FACTION id="110" default="20000" title="렌고트 부족" desc="오래 전, 테레스 평원을 터전으로 살던 렌고트 고블린들은 인간과의 정복전쟁에서 패해 자신들의 터전을 잃고 북쪽으로 쫓겨났습니다. 그 이후로 이들은 계곡에 숨어서 자신들의 땅을 되찾을 기회만을 노리고 있습니다." />
+	<FACTION id="115" default="27001" title="광기의 눈 부족" desc="에다산에 사는 이 붉은색 피부의 트롤 부족은 마찬가지로 에다산에 살고있는 흰색 예티 부족과 전쟁중에 있습니다." />
+	<FACTION id="116" default="27001" title="흰색 예티 부족" desc="에다산에 사는 이 흰색 털의 오우거 부족은 마찬가지로 에다산에 살고있는 광기의 눈 부족과 전쟁중에 있습니다."  />			
+	<FACTION id="117" default="20000" title="에다산 코볼트" desc="에다산의 마코트 부락에서 서식하는 코볼트들은 마룡 카이저를 숭배하는 무리로 그의 둥지를 안전하게 지키고 있습니다. "  />		
+	<FACTION id="118" default="20000" title="광기의 심장 일족" desc="마코트 일족 중 오염된 자들이 모여서 독립적인 무리를 이룬 자들입니다. 일반 코볼트보다 훨씬 더 거칠고 포악한 성격을 지니고 있습니다. "  />
+	<FACTION id="119" default="20000" title="마코트 일족" desc="에다산의 마코트 부락에서 서식하는 코볼트들은 마룡 카이저를 숭배하는 무리로 그의 둥지를 안전하게 지키고 있습니다."  />	
+	<FACTION id="120" default="28000" title="아케론 부족" desc="아케론 부족은 본디 토가트 부족과 함께 공존하며 살아왔지만, 늪이 오염되면서 정화 효과를 가진 빛의 숨결을 사이에 두고 토가트 부족과 대립하게 되었습니다." />
+	<FACTION id="121" default="28000" title="토가트 부족" desc="토가트 부족은 본디 아케론 부족과 함께 공존하며 살아왔지만, 늪이 오염되면서 정화 효과를 가진 빛의 숨결을 사이에 두고 아케론 부족과 대립하게 되었습니다." />
+	<FACTION id="122" default="16000" title="늪지 크립" desc="코웬 늪지대에 사는 일반적인 크립" />
+	<FACTION id="123" default="48000" title="조종당하는 크립" desc="흑연꽃을 사용해 만든 페로몬에 의해 조종당하는 크립들은 유저를 보호하고 늪지 크립과 싸웁니다." />	
+	<FACTION id="124" default="16000" title="코웬 늪지대 봉봉" desc="코웬 늪지대에 사는 원주민 봉봉. 페로몬을 사용해 크립들을 조종하였다." />	
+	<FACTION id="125" default="30000" title="불의 정령" desc="불의 정령" />	
+	<FACTION id="126" default="30000" title="물의 정령" desc="물의 정령" />
+	<FACTION id="127" default="20000" title="오염된 정령" desc="오염된 정령" />	
+	<FACTION id="128" default="30000" title="드래곤 슬레이어" desc="하프메인이 조직한 드래곤 슬레이어 길드는 용을 사냥하기 위해 각지에서 모인 유능한 사냥꾼들의 길드입니다." />	
+	<FACTION id="129" default="30000" title="불타는 숲의 하피" desc="불타는 숲에 사는 선량한 하피들" />		
+	<FACTION id="130" default="20000" title="부패한 날개 일족" desc="마룡 카이저를 따르는 용족의 무리" />				
+
+	<FACTION id="201" default="48000" title="모켄의 해적" desc="모켄을 따르는 해적의 무리. "/> <!-- 연출용 -->
+	<FACTION id="202" default="48000" title="부러진 돛대" desc="티안을 따르는 자들"  /> <!-- 연출용 -->	
+	<FACTION id="203" default="48000" title="부러진 돛대" desc="티안을 따르는 자들." attackable="false "/> 
+	<FACTION id="204" default="20000" title="모켄의 해적" desc="모켄을 따르는 해적의 무리." attackable="false "/>
+
+	
+	<FACTION id="210" default="20000" title="피닉스 용병단" desc="피닉스 용병단." attackable="false "/>	
+	
+	
+	
+	<FACTION id="251" default="28000"  />
+	<FACTION id="252" default="28000"  />
+
+	<FACTION id="255" default="0" title="필드몬스터" desc="플레이어와 적대적인 필드몬스터" />
+
+	<!-- 리오드 -->
+	<FACTION id="260" default="35000"  />
+	
+	<FACTION id="261" default="16000"  title="오염된부대" desc="리오드의 오염된 일반 몬스터" /> 
+	<FACTION id="262" default="36000"  title="리츠왕국부대" desc="왕국군 소속의 기사들" />
+	
+	
+	<!-- 에다산 -->
+	
+	
+	<!-- 침묵의 장벽 & 부서진 장벽  -->
+	<FACTION id="270" default="28000" title="사자의 갈기 부대" desc="침묵의 장벽을 지키고 있는 사자의 갈기 부대는 왕국 최고의 용맹을 자랑합니다. " />
+	<FACTION id="271" default="16000" title="장벽파괴자" desc="정면으로는 침투할 수 없게 되자 크립들은 땅굴을 파서 장벽자체를 무너트리려 하고 있습니다.  " />
+	
+	<!-- 리츠 지하수로 -->
+	<FACTION id="280" default="28000"  title="왕국경비병" desc="지하수로의 경비대" /> 
+	<FACTION id="281" default="16000"  title="마리니수하" desc="마리니와 관련된 몬스터" /> 
+	<FACTION id="282" default="36000"  title="마리니" desc="마리니" /> 
+
+	<!-- ////////// 에픽 전장 ////////// -->	
+	<!-- 에픽 전장 : 에다산 -->	
+	<FACTION id="7115" default="27001" title="광기의 붉은눈 부족" desc="에다산에 사는 이 붉은색 피부의 트롤 부족은 에다산에 살고있는 서리바람 예티 부족과 전쟁중에 있습니다." />
+	<FACTION id="7116" default="27001" title="서리바람 예티 부족" desc="에다산에 사는 이 흰색 털의 오우거 부족은 에다산에 살고있는 광기의 붉은눈 부족과 전쟁중에 있습니다."  />	
+	<!-- 에픽 전장 : 코웬 늪지대 -->	
+	<FACTION id="7120" default="27001" title="아케론 피묻은 창" desc="아케론 부족은 검은 늪을 차지하기 위한 토가트 부족과의 전투를 위해 가장 호전적인 에보스와 용병들을 모아 이 전투 부대를 만들었습니다." />
+	<FACTION id="7121" default="27001" title="토가트 바람의 창" desc="토가트 부족은 검은 늪을 차지하기 위한 아케론 부족과의 전투를 위해 가장 호전적인 에보스와 용병들을 모아 이 전투 부대를 만들었습니다." />		
+	<!-- 에픽 전장 : 아란바스 화산지대 -->	
+	<FACTION id="7125" default="27001" title="화염의 파괴자" desc="불의 정령 용병 부대" />	
+	<FACTION id="7126" default="27001" title="심연의 복수자" desc="물의 정령 용병 부대" />
+	
+	<!-- 이벤트 팩션 -->
+	<FACTION id="9900" default="28000"  title="설날이벤트-화원" desc="화원에 있는 폼페이우스와 무스탕의 우호도" /> 
+	
+	<!-- 요리 팩션 -->
+	<FACTION id="9910" default="28000"  title="올리버의 테이블" desc="인젠에 있는 쉐프 올리버와의 우호도" /> 
+	<FACTION id="9911" default="28000"  title="에드워디의 키친" desc="리츠에 있는 쉐프 에드워디와의 우호도" /> 	
+	
+	<!-- 악기 팩션 -->
+	<FACTION id="9920" default="28000"  title="멜로디우스" desc="리츠에서 연주를 목적으로 결성한 예술단체와의 우호도" /> 
+	
+	<!-- 레나스 신전 -->
+	<FACTION id="508001" default="35000"  />
+	
+	<!-- 린덴언덕 -->
+	<FACTION id="10400" default="64000" title="린덴 언덕 연출" desc="이벤트용 팩션. 생명의 전달자가 X-50을 공격하는 이벤트" />	
+	<FACTION id="10401" default="28000" title="용병단" desc="린덴언덕의 용병단" />	
+   
+	<!-- 테러우드 -->
+	<FACTION id="12101" default="20000"  />
+	
+	<!-- 지스타 : 부패한 날개 일족 -->
+	<FACTION id="8894" default="20000"  />
+	<!-- 라드의 저택 -->
+	<FACTION id="520506" default="32000" title="부숴지는 오브젝트" desc="플레이어가 공격해도 아무반응없기" attackable="false" />
+	<FACTION id="520100" default="35000"  />
+	<FACTION id="520200" default="35000" desc="다르엘 마법 막는 보호막" />
+	<FACTION id="520201" default="999" desc="가구1" />
+	
+	
+	
+	<!-- (에픽) 저주받은 납골당 -->
+	<FACTION id="513001" default="28000" title="레나스의 광휘" desc="레나스 여신의 성스러운 날개아래 온갖 부정한 것들은 다 사라지리라." attackable="false" /> 
+	
+	<!-- (에픽) 오염된 화원 -->
+	<FACTION id="513002" default="28000" title="식물 연금술사" desc="리츠의 연금술사중에서도 특히 식물의 성장에 관련한 연금술에 특화된 연금술사들입니다.   " attackable="false" /> 
+	
+	<!-- (에픽) 수도원 -->
+	<FACTION id="513003" default="28000" title="브룬의 방패" desc="전쟁의 신 브룬을 믿는 사제들은 신들의 전쟁에서 자신들이 일선에 나서 방패역할을 자처하겠다는 기도를 하곤 합니다. " attackable="false" /> 
+	
+	<!-- (에픽) 레나스 신전 -->
+	<FACTION id="513004" default="28000" title="광휘의 눈" desc="오염을 정화하는 신비한 힘을 가진 여신의 숨결에 대한 정보를 얻기 위해 렌델 왕립 연금술사 학회는 최고의 연금술사들로 이루어진 광휘의 눈이라는 집단을 파견하였습니다." attackable="false" /> 	
+	
+	<!-- 도전퀘스트 폭탄용 -->
+	<FACTION id="600000" default="0" desc="몬스터 우호도" />
+	<FACTION id="600001" default="65000" desc="폭탄 우호도" />
+	
+	<!-- 테스트 디펜스-->
+	<FACTION id="9200" default="64000" title="마법사단" desc="생존자들" /> 
+	<FACTION id="9201" default="0" title="볼라스군단" desc="몬스터들" /> 
+	<FACTION id="9202" default="64000" title="대장레온" desc="대장레온" /> 
+	
+</maiet>

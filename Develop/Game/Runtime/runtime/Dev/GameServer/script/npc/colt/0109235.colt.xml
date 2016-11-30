@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 고대 쿠오테스 제사장	
+210923501	idle2
+210923502	기모으기1
+210923503	기모으기2
+210923504	밀치기
+210923505	악몽
+210923506	분노
+210923507	화염구 소환
+210923508	화염 가르기
+210923509	어둠의 균열
+210923510	혼돈의 파동
+
+-->
+<maiet>
+	<COLT name="고대 쿠오테스 제사장" npcid="109235">
+		<AGGRO>
+			<DEFAULT>
+				<ACTION type="say" rate="33" param1="$$COLT_0109235_1" param2="1" />
+				<ACTION type="say" rate="33" param1="$$COLT_0109235_2" param2="1" />			
+				<ACTION type="say" rate="34" param1="$$COLT_0109235_3" param2="1" />
+			</DEFAULT>
+		</AGGRO>
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="group" rate="25" desc="2연사 화염구" cycle="6" >		
+					<ACTION type="talent" param1="210923502" />	
+					<ACTION type="talent" param1="210923507" duration="0" />					
+					<ACTION type="talent" param1="210923507" duration="0" />						
+				</ACTION>				
+				<ACTION type="group" rate="25" desc="화염 가르기" >
+					<ACTION type="talent" param1="210923502" />			
+					<ACTION type="talent" param1="210923508" duration="0" />				
+				</ACTION>
+				<ACTION type="talent" rate="25" param1="210923504" desc="밀치기" cycle="4" />						
+				<ACTION type="talent" rate="25" param1="210923505" desc="악몽" cycle="6" />							
+			</DEFAULT>
+
+			
+			<CHECK type="hp" param1="56" param2="80">
+				<ACTION type="group" rate="100" desc="혼돈의 파동 1st" auto_run="1" max_count="1" >		<!-- 80% 이하가 되면 첫번째 혼돈의 파동 사용 -->
+					<ACTION type="say" param1="$$COLT_0109235_4" param2="0" />	
+					<ACTION type="narration" param1="$$COLT_0109235_5" param2="0" />					
+					<ACTION type="talent" param1="210923510" duration="0" />					
+				</ACTION>							
+				<ACTION type="group" rate="20" desc="2연사 화염구" cycle="6" >		
+					<ACTION type="talent" param1="210923502" />	
+					<ACTION type="talent" param1="210923507" duration="0" />
+					<ACTION type="talent" param1="210923507" duration="0" />						
+				</ACTION>				
+				<ACTION type="group" rate="25" desc="화염 가르기" >
+					<ACTION type="talent" param1="210923502" />			
+					<ACTION type="talent" param1="210923508" duration="0" />				
+				</ACTION>
+				<ACTION type="group" rate="35" desc="어둠의 균열" >		<!-- 밀치기가 어둠의 균열로 바뀜 -->
+					<ACTION type="talent" param1="210923503" />	
+					<ACTION type="talent" param1="210923509" duration="0" />					
+				</ACTION>						
+				<ACTION type="talent" rate="20" param1="210923505" cycle="6" />				
+			</CHECK>
+			
+			<CHECK type="hp" param1="31" param2="55">
+				<ACTION type="group" rate="100" desc="혼돈의 파동 2nd" auto_run="1" max_count="1" >		<!-- 55% 이하가 되면 두번째 혼돈의 파동 사용 -->
+					<ACTION type="say" param1="$$COLT_0109235_6" param2="0" />	
+					<ACTION type="narration" param1="$$COLT_0109235_7" param2="0" />					
+					<ACTION type="talent" param1="210923510" duration="0" />					
+				</ACTION>							
+				<ACTION type="group" rate="25" desc="3연사 화염구" cycle="6" >	<!-- 2연사에서 3연사로 바뀜 -->	
+					<ACTION type="talent" param1="210923502" />	
+					<ACTION type="talent" param1="210923507" duration="0" />
+					<ACTION type="talent" param1="210923507" duration="0" />	
+					<ACTION type="talent" param1="210923507" duration="0" />						
+				</ACTION>				
+				<ACTION type="group" rate="20" desc="화염 가르기" >
+					<ACTION type="talent" param1="210923502" />			
+					<ACTION type="talent" param1="210923508" duration="0" />				
+				</ACTION>
+				<ACTION type="group" rate="35" desc="어둠의 균열" >		<!-- 어둠의 균열이 2단으로 바뀜 -->
+					<ACTION type="talent" param1="210923503" />	
+					<ACTION type="talent" param1="210923509" duration="0" />					
+					<ACTION type="talent" param1="210923509" duration="0" />					
+				</ACTION>						
+				<ACTION type="talent" rate="20" param1="210923505" cycle="6" />				
+			</CHECK>
+			
+			<CHECK type="hp" param2="30"> <!-- 발악 패턴 -->
+				<ACTION type="group" rate="100" desc="혼돈의 파동 3rd" auto_run="1" max_count="1" >		<!-- 30% 이하가 되면 세번째 혼돈의 파동 사용 -->
+					<ACTION type="say" param1="$$COLT_0109235_8" param2="0" />	
+					<ACTION type="narration" param1="$$COLT_0109235_9" param2="0" />					
+					<ACTION type="talent" param1="210923510" duration="0" />					
+				</ACTION>							
+				<ACTION type="group" rate="20" desc="3연사 화염구" cycle="6" >		
+					<ACTION type="talent" param1="210923502" />	
+					<ACTION type="talent" param1="210923507" duration="0" />					
+					<ACTION type="talent" param1="210923507" duration="0" />
+					<ACTION type="talent" param1="210923507" duration="0" />					
+				</ACTION>				
+				<ACTION type="group" rate="20" desc="화염 가르기" >
+					<ACTION type="talent" param1="210923502" />			
+					<ACTION type="talent" param1="210923508" duration="0" />				
+				</ACTION>
+				<ACTION type="group" rate="40" desc="어둠의 균열" >		<!-- 어둠의 균열이 3단으로 바뀜 -->
+					<ACTION type="talent" param1="210923503" />	
+					<ACTION type="talent" param1="210923509" duration="0" />					
+					<ACTION type="talent" param1="210923509" duration="0" />					
+					<ACTION type="talent" param1="210923509" duration="0" />					
+				</ACTION>						
+				<ACTION type="talent" rate="20" param1="210923505" cycle="6" />				
+			</CHECK>			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210923501" rate="40" desc="idle2" />
+				<ACTION type="talent" param1="210923506" rate="30" />				
+				<ACTION type="nothing" param1="1" rate="30"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+
+	<SCRIPT><![CDATA[
+
+		function NPC_109235:Init( NPCID )
+			NPC_109235.BUFF_HeadEffect = 88800			
+		end	
+
+		function NPC_109235:OnSpawn( SpawnInfo )
+			this:GainBuff( NPC_109235.BUFF_HeadEffect )			
+		end
+
+		]]>
+	</SCRIPT>
+</maiet>

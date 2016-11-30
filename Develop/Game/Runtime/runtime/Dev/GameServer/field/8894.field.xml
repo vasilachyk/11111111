@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="99011" min_x="0" min_y="0" max_x="90000" max_y="90000" boundary_min_x="13000" boundary_min_y="37000" boundary_max_x="40000" boundary_max_y="80000" weather_effect="true" fixed_time="Daytime" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_gstar_start">
+            <ENVBGM dawnbgm="amb_dawn" />
+            <ENVBGM daytimebgm="amb_daytime" />
+            <ENVBGM sunsetbgm="amb_sunset" />
+            <ENVBGM nightbgm="amb_night" />
+            <ENVBGM clodybgm="amb_normal_1" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <PRELOAD>
+            <ELU name="data/model/Monster/sorena/sorena.elu" />
+            <ELU name="data/model/Monster/goblin_golem/goblin_golem.elu" />
+            <ELU name="data/model/Monster/Ogre_B/Ogre_B.elu" />
+            <ELU name="data/model/Monster/bonbon_pawn/bonbon_pawn.elu" />
+            <ELU name="data/model/Monster/bonbon_hunter_02/bonbon_hunter_02.elu" />
+            <ELU name="data/model/Monster/bonbon_mage/bonbon_mage.elu" />
+            <ELU name="data/model/NPC/rengot_temple_entrance/rengot_temple_entrance.elu" />
+            <ELU name="data/model/NPC/hf_fighter/hf_fighter.elu" />
+            <ELU name="data/model/NPC/hm_fighter/hm_fighter.elu" />
+            <ELU name="data/model/NPC/hf_adult/hf_adult.elu" />
+        </PRELOAD>
+        <Env set="default">
+            <WEATHER default="">
+                <ADD weather="SUN" percent="100" />
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="852" group="0" name="렌고트 전위부대" x="29863.996094" y="60867.613281" z="2112.228271" dir_x="-0.469471" dir_y="0.882948" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="853" group="0" name="렌고트 전위부대" x="26972.228516" y="56156.089844" z="2115.596191" dir_x="-0.961262" dir_y="0.275638" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="855" group="0" name="렌고트 전위부대" x="27220.197266" y="56921.234375" z="2166.215088" dir_x="-0.874620" dir_y="-0.484809" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894042" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="856" group="0" name="렌고트 전위부대" x="27504.302734" y="59954.386719" z="2150.883301" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894032" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="857" group="0" name="렌고트 전위부대" x="28632.642578" y="60485.062500" z="2129.936035" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="858" group="0" name="스폰858_소레나_렌고트 전위부대" x="27438.078125" y="47110.441406" z="720.668335" dir_x="0.190809" dir_y="0.981627" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894027" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="859" group="0" name="렌고트 전위부대" x="28632.871094" y="62338.308594" z="2173.208740" dir_x="-0.656059" dir_y="0.754710" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894034" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="860" group="0" name="렌고트 전위부대" x="25728.714844" y="64073.550781" z="2249.252197" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="861" group="0" name="렌고트 전위부대" x="29558.587891" y="61757.304688" z="2171.502441" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894004" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="862" group="0" name="렌고트 전위부대" x="27770.636719" y="56060.214844" z="2164.823730" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="863" group="0" name="렌고트 전위부대" x="28843.312500" y="57420.531250" z="2177.685059" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894033" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="868" group="0" name="렌고트 전위부대" x="26405.396484" y="64677.316406" z="2276.303223" dir_x="-0.707106" dir_y="0.707107" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="875" group="0" name="렌고트 전위부대" x="28927.435547" y="56614.980469" z="2216.506836" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="878" group="0" name="스폰878_소레나_렌고트 전위부대" x="27542.679688" y="47213.835938" z="720.687134" dir_x="-0.996195" dir_y="0.087156" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894027" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="880" group="0" name="렌고트 전위부대" x="26319.027344" y="57534.855469" z="2145.827148" dir_x="0.681998" dir_y="0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="885" group="0" name="렌고트 전위부대" x="29871.345703" y="59811.031250" z="2112.986084" dir_x="0.173648" dir_y="0.984808" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894042" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="886" group="0" name="렌고트 전위부대" x="27757.361328" y="60751.335938" z="2139.708740" dir_x="0.156434" dir_y="-0.987688" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894041" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="887" group="0" name="렌고트 전위부대" x="30758.931641" y="60980.898438" z="2144.179932" dir_x="-0.798636" dir_y="0.601815" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894043" default="true" rate="333" />
+        </SPAWN>
+        <SPAWN id="888" group="0" name="렌고트 전위부대" x="30537.816406" y="60216.558594" z="2118.768066" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="890" group="0" name="엘리트 봉봉" x="26282.740234" y="58378.082031" z="2143.415771" dir_x="0.544639" dir_y="0.838670" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894003" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="892" group="0" name="렌고트 전위부대" x="27632.505859" y="63383.578125" z="2241.332764" dir_x="-0.997564" dir_y="-0.069756" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894003" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="893" group="0" name="엘리트 봉봉" x="26998.437500" y="59422.289063" z="2150.781006" dir_x="-0.999848" dir_y="-0.017452" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894003" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="894" group="0" name="렌고트 전위부대" x="26967.105469" y="64029.000000" z="2268.588379" dir_x="-0.913545" dir_y="0.406737" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894043" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="896" group="0" name="렌고트 전위부대" x="27118.191406" y="62360.148438" z="2167.430908" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="897" group="0" name="렌고트 전위부대" x="28140.521484" y="56800.578125" z="2187.591309" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="898" group="0" name="렌고트 전위부대" x="26661.056641" y="58543.300781" z="2152.887939" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="903" group="0" name="렌고트 전위부대" x="28288.865234" y="62917.144531" z="2233.596680" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="904" group="0" name="렌고트 전위부대" x="29288.535156" y="60189.273438" z="2113.377686" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="1530" group="0" name="고블린 시체" x="26490.087891" y="63034.136719" z="2233.264160" dir_x="-0.121869" dir_y="0.992546" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1531" group="0" name="고블린 시체" x="26868.503906" y="61833.179688" z="2163.289307" dir_x="-0.573577" dir_y="-0.819152" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1532" group="0" name="고블린 시체" x="26377.679688" y="56574.398438" z="2135.719482" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1533" group="0" name="고블린 시체" x="27786.914063" y="59727.363281" z="2155.258301" dir_x="0.961262" dir_y="-0.275638" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1540" group="0" name="고블린 시체" x="27748.234375" y="60072.769531" z="2150.470947" dir_x="0.743145" dir_y="0.669130" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1541" group="0" name="고블린 시체" x="25943.419922" y="57184.503906" z="2142.838379" dir_x="0.848048" dir_y="0.529919" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1552" group="0" name="고블린 시체" x="25124.789063" y="56345.894531" z="2166.429932" dir_x="0.874620" dir_y="-0.484810" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1559" group="0" name="고블린 시체" x="27023.882813" y="59808.988281" z="2146.902100" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1563" group="0" name="고블린 시체" x="30147.408203" y="61861.589844" z="2160.873535" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1565" group="0" name="고블린 시체" x="28217.570313" y="58970.121094" z="2149.943848" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1566" group="0" name="고블린 시체" x="26494.400391" y="58361.007813" z="2149.357910" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1" group="0" name="[NPC] 탈출 NPC" x="24351.884766" y="69048.390625" z="2664.246582" dir_x="-0.207911" dir_y="0.978148" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="110304" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="2" group="0" name="[NPC] 세네스" x="24244.732422" y="67911.382813" z="2499.984619" dir_x="0.681998" dir_y="-0.731354" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131006" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="3" group="0" name="[NPC] 렌델 전투병" x="24275.392578" y="68312.460938" z="2568.573486" dir_x="0.052335" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131008" default="false" rate="500" />
+            <NPC id="131009" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="4" group="0" name="[NPC] 렌델 전투병" x="24248.228516" y="67437.093750" z="2420.324463" dir_x="0.000001" dir_y="1.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131008" default="false" rate="500" />
+            <NPC id="131009" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="5" group="0" name="[NPC] 렌델 전투병" x="24090.957031" y="67569.601563" z="2446.290771" dir_x="0.422619" dir_y="0.906308" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="6" group="0" name="[NPC] 렌델 전투병" x="23867.626953" y="67772.523438" z="2500.901611" dir_x="0.951057" dir_y="0.309017" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="7" group="0" name="[NPC] 렌델 전투병" x="24447.878906" y="68172.718750" z="2550.844482" dir_x="-0.615662" dir_y="-0.788011" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="8" group="0" name="[NPC] 렌델 전투병" x="24678.041016" y="68204.414063" z="2579.987305" dir_x="-0.819152" dir_y="-0.573576" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="9" group="0" name="[NPC] 렌델 전투병" x="24638.402344" y="68010.101563" z="2536.332764" dir_x="-0.970296" dir_y="-0.241922" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="10" group="0" name="[NPC] 렌델 전투병" x="23926.468750" y="68061.781250" z="2543.674072" dir_x="0.898794" dir_y="-0.438371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="11" group="0" name="[NPC] 렌델 전투병" x="24638.794922" y="67728.523438" z="2475.342041" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1000" group="0" name="오우거 용병" x="26645.978516" y="51177.792969" z="1456.602905" dir_x="0.052336" dir_y="0.998630" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" start_time="180" respawn_time="100000" roam_radius="0" roam_depth="0" combat_radius="0" color="128,0,255">
+            <NPC id="8894020" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="905" group="0" name="엘리트 봉봉 헌터" x="28888.369141" y="58496.234375" z="2143.906494" dir_x="-0.857167" dir_y="0.515038" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894004" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="908" group="0" name="엘리트 봉봉 주술사" x="28481.041016" y="59883.207031" z="2140.869385" dir_x="0.453990" dir_y="0.891007" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894003" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="911" group="0" name="렌고트 전위부대" x="26683.533203" y="57056.019531" z="2153.328369" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="915" group="0" name="렌고트 전위부대" x="26539.156250" y="63470.007813" z="2231.641357" dir_x="-0.587785" dir_y="0.809017" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894043" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="916" group="0" name="렌고트 전위부대" x="28890.644531" y="63127.628906" z="2194.246582" dir_x="-0.981627" dir_y="-0.190809" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="917" group="0" name="엘리트 봉봉" x="27924.302734" y="57625.433594" z="2165.819336" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894003" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="918" group="0" name="렌고트 전위부대" x="27103.550781" y="58001.390625" z="2163.642822" dir_x="-0.694658" dir_y="0.719340" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894034" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="919" group="0" name="타락한 나무정령" x="27638.316406" y="62766.058594" z="2194.894775" dir_x="-0.629321" dir_y="0.777146" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894030" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="920" group="0" name="악랄한 봉봉 주술사" x="29254.117188" y="59420.890625" z="2122.583740" dir_x="-0.438371" dir_y="0.898794" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894004" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="1001" group="0" name="보르고 용병" x="27789.820313" y="58953.718750" z="2158.113281" dir_x="0.573576" dir_y="0.819152" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="100000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="8894021" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1010" group="0" name="스폰1010_소레나" x="34526.351563" y="44835.828125" z="1100.295410" dir_x="-0.970296" dir_y="0.241922" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="false" start_time="180" respawn_time="100000" roam_radius="1500" roam_depth="30" combat_radius="0" color="128,0,255">
+            <NPC id="8894022" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="40" group="0" name="스폰40_소레나_곧 죽을 전투병" x="27455.041016" y="47217.394531" z="721.832031" dir_x="0.978148" dir_y="0.207911" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="1200" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="8894028" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="42" group="0" name="스폰42_소레나_곧 죽을 전투병" x="27262.707031" y="47290.656250" z="730.442322" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="1200" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="8894029" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1567" group="0" name="고블린 시체 시작" x="30539.251953" y="62796.050781" z="2169.517334" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1568" group="0" name="고블린 시체" x="28152.898438" y="60983.605469" z="2137.222412" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1570" group="0" name="고블린 시체" x="30667.525391" y="61426.125000" z="2157.236816" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1571" group="0" name="spawn_01571" x="30587.289063" y="60751.847656" z="2129.786133" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1575" group="0" name="spawn_01575" x="29358.896484" y="60726.812500" z="2110.500732" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1582" group="0" name="spawn_01582" x="28921.792969" y="58855.980469" z="2137.492920" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1584" group="0" name="spawn_01584" x="28214.179688" y="58270.031250" z="2150.417725" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1588" group="0" name="spawn_01588" x="26406.167969" y="57042.699219" z="2147.610840" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1589" group="0" name="spawn_01589" x="28839.292969" y="59959.796875" z="2127.041260" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1594" group="0" name="spawn_01594" x="25945.384766" y="55418.929688" z="2097.129150" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1595" group="0" name="spawn_01595" x="27405.742188" y="51520.773438" z="1504.200928" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1596" group="0" name="spawn_01596" x="26881.992188" y="51613.363281" z="1549.344360" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1597" group="0" name="spawn_01597" x="26010.027344" y="50972.988281" z="1406.941650" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1598" group="0" name="spawn_01598" x="26771.759766" y="50658.953125" z="1312.038940" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1599" group="0" name="spawn_01599" x="28207.083984" y="50635.066406" z="1239.923096" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1600" group="0" name="spawn_01600" x="27940.037109" y="51204.679688" z="1398.188477" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1601" group="0" name="spawn_01601" x="27366.945313" y="50984.816406" z="1375.039063" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1602" group="0" name="spawn_01602" x="26288.447266" y="51636.214844" z="1580.467529" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1603" group="0" name="spawn_01603" x="25793.115234" y="51647.808594" z="1586.104126" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1604" group="0" name="spawn_01604" x="25567.835938" y="50753.207031" z="1368.731934" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1605" group="0" name="spawn_01605" x="25852.453125" y="50083.902344" z="1208.942261" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1606" group="0" name="spawn_01606" x="26463.900391" y="50062.023438" z="1175.885986" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1607" group="0" name="spawn_01607" x="27297.740234" y="49857.210938" z="1103.822632" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1608" group="0" name="spawn_01608" x="27384.433594" y="50408.191406" z="1229.531128" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1609" group="0" name="spawn_01609" x="28356.039063" y="50088.464844" z="1118.078979" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1610" group="0" name="spawn_01610" x="28683.625000" y="50976.128906" z="1266.662842" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1611" group="0" name="spawn_01611" x="28767.248047" y="51507.312500" z="1320.632813" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1612" group="0" name="spawn_01612" x="29369.566406" y="50880.738281" z="1209.525146" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1613" group="0" name="spawn_01613" x="29066.943359" y="50466.367188" z="1159.117676" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1614" group="0" name="spawn_01614" x="29087.619141" y="49388.351563" z="936.194641" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1615" group="0" name="spawn_01615" x="28481.839844" y="49097.132813" z="908.448914" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1616" group="0" name="spawn_01616" x="28071.488281" y="49422.105469" z="994.998413" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="20.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1617" group="0" name="spawn_01617" x="27128.394531" y="49388.898438" z="1002.714783" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1618" group="0" name="spawn_01618" x="26330.791016" y="49143.363281" z="974.719482" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1619" group="0" name="spawn_01619" x="25223.869141" y="48656.089844" z="885.848694" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1620" group="0" name="spawn_01620" x="25727.375000" y="49313.558594" z="1025.216797" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1621" group="0" name="spawn_01621" x="25155.509766" y="49820.066406" z="1140.491089" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1622" group="0" name="spawn_01622" x="26105.298828" y="48240.003906" z="828.578125" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1623" group="0" name="spawn_01623" x="26969.042969" y="48719.113281" z="885.122253" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1624" group="0" name="spawn_01624" x="27559.113281" y="48919.894531" z="908.202332" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1625" group="0" name="spawn_01625" x="25448.550781" y="47604.996094" z="801.384338" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1626" group="0" name="spawn_01626" x="26958.580078" y="49476.210938" z="1020.829102" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1627" group="0" name="spawn_01627" x="27559.765625" y="50516.585938" z="1248.891357" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1628" group="0" name="spawn_01628" x="27249.023438" y="51143.019531" z="1417.141724" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1631" group="0" name="spawn_01631" x="26860.458984" y="54966.933594" z="2074.026855" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="40.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1633" group="0" name="spawn_01633" x="27552.009766" y="56375.769531" z="2159.472412" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="60.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1634" group="0" name="spawn_01634" x="26731.560547" y="53640.585938" z="1943.804077" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="60.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1635" group="0" name="spawn_01635" x="27793.082031" y="55205.273438" z="2126.911133" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="60.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1640" group="0" name="spawn_01640" x="25454.287109" y="57880.484375" z="2136.164307" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="1641" group="0" name="spawn_01641" x="25824.830078" y="56200.667969" z="2147.380127" dir_x="0.981627" dir_y="0.190808" dir_z="0.000000" radius="80.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1646" group="0" name="spawn_01646" x="25870.789063" y="65554.835938" z="2355.594482" dir_x="-0.642787" dir_y="0.766045" dir_z="0.000000" radius="80.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="500" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="1651" group="0" name="spawn_01651" x="25131.839844" y="64369.406250" z="2268.134277" dir_x="-0.707106" dir_y="0.707107" dir_z="0.000000" radius="100.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="110212" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="921" group="0" name="spawn_00921" x="30360.416016" y="62491.136719" z="2173.194824" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894042" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="923" group="0" name="spawn_00923" x="29652.894531" y="62960.503906" z="2183.192383" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894042" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="924" group="0" name="spawn_00924" x="30701.103516" y="61732.148438" z="2177.784180" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894042" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="927" group="0" name="spawn_00927" x="27224.046875" y="47198.941406" z="725.238037" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894027" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="928" group="0" name="spawn_00928" x="29926.732422" y="59090.320313" z="2130.918213" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="931" group="0" name="spawn_00931" x="25978.066406" y="56558.183594" z="2145.051025" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894043" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="932" group="0" name="spawn_00932" x="27004.492188" y="60444.238281" z="2141.981689" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894004" default="true" rate="1000" />
+        </SPAWN>
+        <SPAWN id="935" group="0" name="spawn_00935" x="29310.439453" y="62310.632813" z="2170.014160" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894040" default="false" rate="334" />
+            <NPC id="8894041" default="false" rate="333" />
+            <NPC id="8894042" default="false" rate="333" />
+        </SPAWN>
+        <SPAWN id="936" group="0" name="spawn_00936" x="27130.609375" y="61372.261719" z="2144.958252" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894042" default="true" rate="333" />
+        </SPAWN>
+        <SPAWN id="938" group="0" name="spawn_00938" x="28694.021484" y="58502.453125" z="2144.447754" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894033" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="939" group="0" name="spawn_00939" x="28090.601563" y="59537.398438" z="2152.703125" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894032" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="943" group="0" name="spawn_00943" x="28438.974609" y="59128.386719" z="2144.867676" dir_x="0.529919" dir_y="0.848048" dir_z="0.000000" radius="300.000000" random_dir="true" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894032" default="false" rate="1000" />
+        </SPAWN>
+        <SPAWN id="43" group="0" name="spawn_00043" x="30523.664063" y="61823.515625" z="2169.315674" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="6000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="49" group="0" name="spawn_00049" x="30667.634766" y="60073.582031" z="2121.052734" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="6000" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="50" group="0" name="spawn_00050" x="30024.839844" y="59104.933594" z="2132.660400" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="600" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="51" group="0" name="spawn_00051" x="26787.062500" y="56129.660156" z="2109.571045" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="false" start_time="0" respawn_time="600" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="53" group="0" name="spawn_00053" x="28155.794922" y="56224.828125" z="2196.042725" dir_x="-0.927184" dir_y="0.374607" dir_z="0.000000" radius="20.000000" random_dir="false" enabled="false" start_time="0" respawn_time="600" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="131010" default="false" rate="500" />
+            <NPC id="131011" default="false" rate="500" />
+        </SPAWN>
+        <SPAWN id="901" group="0" name="스폰901_소레나_렌고트 전위부대" x="27181.945313" y="47296.535156" z="726.167236" dir_x="0.994522" dir_y="-0.104528" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894027" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="902" group="0" name="스폰902_소레나_렌고트 전위부대" x="27238.660156" y="47386.464844" z="726.647217" dir_x="0.325568" dir_y="-0.945519" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="50" combat_radius="0" color="200,50,50">
+            <NPC id="8894027" default="false" rate="334" />
+        </SPAWN>
+        <SPAWN id="1002" group="0" name="spawn_01002" x="26636.894531" y="52827.406250" z="1823.152344" dir_x="0.087156" dir_y="-0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="100000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="8894023" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="1003" group="0" name="spawn_01003" x="26636.396484" y="52830.132813" z="1870.707520" dir_x="0.069757" dir_y="-0.997564" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="100000" roam_radius="0" roam_depth="0" combat_radius="0" color="auto">
+            <NPC id="8894025" default="true" rate="100" />
+        </SPAWN>
+        <SPAWN id="1007" group="0" name="스폰1007_소레나 목표 마커NPC" x="27238.568359" y="47132.699219" z="727.420959" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="0" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="8894026" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="1008" group="0" name="스폰1008_마커NPC 2" x="26414.005859" y="48042.648438" z="806.383850" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="true" enabled="true" start_time="0" respawn_time="1" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="8894026" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="870" group="0" name="렌고트 전위부대" x="28793.601563" y="61547.027344" z="2136.080811" dir_x="-0.719340" dir_y="0.694659" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" start_time="0" respawn_time="30000" roam_radius="0" roam_depth="0" combat_radius="0" color="200,50,50">
+            <NPC id="8894033" default="false" rate="333" />
+        </SPAWN>
+        <MARKER id="1" name="시작 위치" x="24165.138672" y="69543.007813" z="2696.111084" dir_x="0.224951" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="이동마커 1" x="25494.162109" y="65881.156250" z="2344.621582" dir_x="0.669130" dir_y="-0.743145" dir_z="0.000000" random_dir="false" />
+        <MARKER id="3" name="이동마커 2" x="27645.828125" y="63119.113281" z="2218.995850" dir_x="0.777146" dir_y="-0.629321" dir_z="0.000000" random_dir="false" />
+        <MARKER id="4" name="이동마커 3" x="28484.750000" y="46798.171875" z="791.299927" dir_x="0.999391" dir_y="0.034899" dir_z="0.000000" random_dir="false" />
+        <MARKER id="5" name="이동마커 4" x="29185.439453" y="59889.285156" z="2117.852539" dir_x="0.342021" dir_y="-0.939692" dir_z="0.000000" random_dir="false" />
+        <MARKER id="6" name="이동마커 5" x="27688.246094" y="59043.296875" z="2158.994629" dir_x="-0.422619" dir_y="-0.906308" dir_z="0.000000" random_dir="false" />
+        <MARKER id="7" name="이동마커 6" x="27265.375000" y="57802.515625" z="2166.833740" dir_x="-0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8" name="이동마커 7" x="26796.119141" y="56356.074219" z="2124.100830" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" random_dir="false" />
+        <MARKER id="9" name="이동마커 8" x="26555.421875" y="52927.726563" z="1836.300171" dir_x="0.438371" dir_y="-0.898794" dir_z="0.000000" random_dir="false" />
+        <MARKER id="11" name="부하용 이동마커 a1" x="24174.224609" y="65994.164063" z="2315.611572" dir_x="0.798636" dir_y="-0.601815" dir_z="0.000000" random_dir="false" />
+        <MARKER id="12" name="부하용 이동마커 a2" x="27321.189453" y="62847.785156" z="2196.051025" dir_x="0.615662" dir_y="-0.788011" dir_z="0.000000" random_dir="false" />
+        <MARKER id="13" name="부하용 이동마커 a3" x="30034.066406" y="60219.355469" z="2111.410156" dir_x="0.121870" dir_y="-0.992546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="14" name="부하용 이동마커 a4" x="30548.564453" y="62390.898438" z="2172.080566" dir_x="0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="15" name="부하용 이동마커 a5" x="28690.955078" y="60586.695313" z="2127.521729" dir_x="-0.292372" dir_y="-0.956305" dir_z="0.000000" random_dir="false" />
+        <MARKER id="16" name="부하용 이동마커 a6" x="26412.277344" y="56124.324219" z="2114.286133" dir_x="-0.104529" dir_y="-0.994522" dir_z="0.000000" random_dir="false" />
+        <MARKER id="21" name="부하용 이동마커 b1" x="25067.417969" y="65714.031250" z="2300.743408" dir_x="0.694658" dir_y="-0.719340" dir_z="0.000000" random_dir="false" />
+        <MARKER id="22" name="마커22_소레나 이동 목표" x="28586.306641" y="46645.746094" z="799.161377" dir_x="0.998630" dir_y="-0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="23" name="부하용 이동마커 b3" x="28634.783203" y="59254.835938" z="2138.637939" dir_x="-0.573577" dir_y="-0.819152" dir_z="0.000000" random_dir="false" />
+        <MARKER id="24" name="부하용 이동마커 b4" x="27952.222656" y="60555.792969" z="2141.604004" dir_x="-0.258819" dir_y="-0.965926" dir_z="0.000000" random_dir="false" />
+        <MARKER id="31" name="부하용 이동마커 c1" x="25777.423828" y="66645.132813" z="2395.851807" dir_x="0.309017" dir_y="-0.951056" dir_z="0.000000" random_dir="false" />
+        <MARKER id="32" name="부하용 이동마커 c2" x="30802.529297" y="61623.773438" z="2170.714600" dir_x="0.798635" dir_y="-0.601815" dir_z="0.000000" random_dir="false" />
+        <MARKER id="33" name="부하용 이동마커 c3" x="30982.904297" y="61007.750000" z="2150.708984" dir_x="0.121869" dir_y="-0.992546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="34" name="부하용 이동마커 c4" x="28815.988281" y="59254.792969" z="2133.667969" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="35" name="부하용 이동마커 c5" x="29223.074219" y="60689.511719" z="2112.646729" dir_x="0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="41" name="부하용 이동마커 d1" x="29704.794922" y="59230.960938" z="2123.895752" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="42" name="부하용 이동마커 d2" x="30118.906250" y="62726.464844" z="2176.080322" dir_x="-0.087156" dir_y="-0.996195" dir_z="0.000000" random_dir="false" />
+        <MARKER id="43" name="부하용 이동마커 d3" x="27698.601563" y="50509.933594" z="1240.825806" dir_x="0.998630" dir_y="-0.052336" dir_z="0.000000" random_dir="false" />
+        <MARKER id="44" name="부하용 이동마커 d4" x="28667.828125" y="59117.761719" z="2138.611816" dir_x="-0.587785" dir_y="-0.809017" dir_z="0.000000" random_dir="false" />
+        <MARKER id="45" name="부하용 이동마커 d5" x="29900.730469" y="61719.687500" z="2149.228271" dir_x="-0.848048" dir_y="-0.529919" dir_z="0.000000" random_dir="false" />
+        <MARKER id="46" name="부하용 이동마커 d6" x="28254.828125" y="56470.566406" z="2197.526611" dir_x="-0.207911" dir_y="-0.978148" dir_z="0.000000" random_dir="false" />
+        <MARKER id="25" name="부하용 이동마커 b5" x="28057.308594" y="55682.003906" z="2174.535400" dir_x="0.034898" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="47" name="부하용 이동마커 d7" x="28677.882813" y="58267.519531" z="2147.283447" dir_x="-0.406736" dir_y="-0.913546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="48" name="부하용 이동마커 d8" x="27079.611328" y="56035.632813" z="2111.729736" dir_x="-0.224950" dir_y="-0.974370" dir_z="0.000000" random_dir="false" />
+        <MARKER id="49" name="부하용 이동마커 d9" x="24195.109375" y="57728.464844" z="2137.763184" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" random_dir="false" />
+        <MARKER id="50" name="부하용 이동마커 e1" x="26558.271484" y="55732.410156" z="2084.257324" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="51" name="부하용 이동마커 e2" x="26700.185547" y="55829.976563" z="2087.671143" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="52" name="부하용 이동마커 e3" x="26796.470703" y="55622.695313" z="2076.828613" dir_x="-0.000000" dir_y="-1.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="53" name="부하용 이동마커 e4" x="26945.166016" y="55686.730469" z="2083.802246" dir_x="-0.069756" dir_y="-0.997564" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="체크포인트" local="false" x="24162.720703" y="69544.593750" z="2696.204590" radius="300.000000" enabled="true" checkpoint="1" groupname="none" />
+        <SENSOR id="2" name="진군 개시" local="false" x="24199.767578" y="67825.187500" z="2485.343506" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="3" name="센서3_소레나 시작" local="false" x="26883.207031" y="49219.578125" z="974.622314" radius="3000.000000" enabled="true" groupname="none" />
+        <SENSOR id="4" name="센서4_소레나 도착점" local="false" x="28574.103516" y="46596.089844" z="860.953552" radius="600.000000" enabled="true" groupname="none" />
+        <SENSOR id="6" name="퀘스트 완료" local="false" x="28455.251953" y="46796.242188" z="790.898315" radius="500.000000" enabled="false" groupname="none" />
+    </FIELDINFO>
+</maiet>

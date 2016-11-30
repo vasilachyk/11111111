@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 트롤 지원 총병, 오우거 지원 총병	
+710224301	#총쏘기
+710224302	#총돌려쏘기
+710224303	#폭팔사격
+-->
+<maiet>
+	<COLT name="오우거 지원 총병" npcid="7102248">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="group" rate="10" >
+					<ACTION type="talent" param1="710224301" desc="총쏘기" />
+					<ACTION type="nothing" param1="0.7" />
+				</ACTION>
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_7102248:OnSpawn(SpawnInfo)
+	local Field = this:GetField()
+	local ogreBoss = Field:GetNPC(7102151)
+	local checkBuff = 120081
+	local gainBuff = 120080
+
+	if (ogreBoss:CheckBuff(checkBuff) == true) then
+		this:GainBuff(gainBuff)
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

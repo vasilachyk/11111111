@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>					
+	<COLT name="검은갈기" npcid="107055">
+		<COMBAT mode="0">			
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="8"/>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="8"/>
+				
+				<ACTION type="talent" param1="210705511" rate="30" />
+				<ACTION type="talent" param1="210705512" rate="15" />
+				<ACTION type="talent" param1="210705513" rate="15" /> 
+				<ACTION type="talent" param1="210705520" rate="50" /> 
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="40" >
+				<ACTION type="talent" param1="210705516" rate="5" max_count="1"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="nothing" param1="0.5" rate="15" cycle="8" />
+				<ACTION type="nothing" param1="0.5" rate="15" cycle="8" />
+				<ACTION type="talent" param1="210705502" rate="5" cycle="30"/> 
+				
+				<ACTION type="talent" param1="210705511" rate="15" />
+				<ACTION type="talent" param1="210705512" rate="15" /> 
+				<ACTION type="talent" param1="210705513" rate="30" /> 
+				
+				<ACTION type="lua" param1="RunAround"  rate="10" cycle="20" />
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="210705514" rate="50" />  
+					<ACTION type="talent" param1="210705515" rate="50" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1" victory="210705521">			
+			<DEFAULT>	
+				<ACTION type="talent" param1="210705511" rate="30" />
+				<ACTION type="talent" param1="210705512" rate="15" />
+				<ACTION type="talent" param1="210705513" rate="15" /> 
+				<ACTION type="talent" param1="210705521" rate="70" /> 
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="talent" param1="210705502" rate="5" cycle="30"/> 
+				
+				<ACTION type="talent" param1="210705511" rate="15" />
+				<ACTION type="talent" param1="210705512" rate="15" /> 
+				<ACTION type="talent" param1="210705513" rate="30" /> 
+			</CHECK>
+						
+			<CHECK type="distance" param1="500" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+			
+			<CHECK type="distance" param2="300">
+				<CHECK type="rage" param1="80">
+					<ACTION type="talent" param1="210705514" rate="50" />  
+					<ACTION type="talent" param1="210705515" rate="50" />  
+				</CHECK>
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210705500" rate="20" />
+				<ACTION type="talent" param1="210705501" rate="20" />
+				<ACTION type="nothing" param1="3" rate="60" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+function NPC_107055:OnActWolfCry( ThisActor, Enemy )
+	--GLog( "NPC_107055:OnActWolfCry\n" )
+	CallAlly10m( ThisActor, Enemy )
+end
+
+	]]></SCRIPT>	
+</maiet>

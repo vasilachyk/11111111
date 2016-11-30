@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="코웬 하피" npcid="103124">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="8" />
+				<ACTION type="nothing" param1="0.5" rate="20" cycle="8" />
+				
+				<ACTION type="talent" param1="210312400" rate="5" />
+				<ACTION type="talent" param1="210312401" rate="5" />
+				<ACTION type="talent" param1="210312403" rate="30" />
+				<ACTION type="talent" param1="210312404" rate="5" />
+				<ACTION type="talent" param1="210312405" rate="15" />
+			</DEFAULT>
+			<CHECK type="distance" param1="500" >
+				<ACTION type="talent" param1="210312400" rate="5" />
+				<ACTION type="talent" param1="210312401" rate="5" />
+				<ACTION type="talent" param1="210312403" rate="30" />
+				<ACTION type="talent" param1="210312404" rate="5" />
+				<ACTION type="talent" param1="210312405" rate="15" />
+			</CHECK>
+			<CHECK type="hp" param2="30">
+				<ACTION type="talent" param1="210312404" rate="5" max_count="1"/>
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

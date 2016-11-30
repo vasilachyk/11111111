@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="렌고트부족 전령">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702601" rate="20" />
+				<ACTION type="talent" param1="210702605" rate="10" />
+				<ACTION type="talent" param1="210702602" rate="10" />
+				<ACTION type="talent" param1="210702603" rate="10" />
+			</DEFAULT>
+			
+			<!-- 전투대기 위치 -->
+			<CHECK type="distance" param1="300" param2="500" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210702601" rate="10" />
+				<ACTION type="talent" param1="210702605" rate="10" />
+				<ACTION type="talent" param1="210702602" rate="10" />
+				<ACTION type="talent" param1="210702603" rate="20" />
+			</CHECK>
+			
+			<!-- 원거리 -->
+			<CHECK type="distance" param1="500">
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210702307" rate="20"/>
+				<ACTION type="nothing" param1="0" rate="80" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="물방울" npcid="508000">
+		<COMBAT mode="0">
+			<DEFAULT>
+				<ACTION type="distance" param1="100" param2="100" />
+			</DEFAULT>
+	
+			<CHECK type="hp" param1="0" >
+				<ACTION type="distance" param1="100" param2="100" max_count="1" />
+			</CHECK>
+			
+			<CHECK type="hp" param1="0" >
+				<ACTION type="aggro" param1="lock" param2="0" max_count="1"/>
+			</CHECK>
+	
+			<CHECK type="distance" param1="3" >
+				<ACTION type="talent" param1="250800001" rate="100" desc="자폭" max_count="1"/>
+			</CHECK>
+			
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_508000:Init( NPCID )
+	NPC_508000.BufIdBubble 	= 40900
+end	
+
+function NPC_508000:OnSpawn( Info )
+	this:Aggro("near",0)
+end
+
+function NPC_508000:OnCombatBegin()
+	this:GainBuff( NPC_508000.BufIdBubble )
+	this:SetTimer( 1, 20, false )
+end
+
+function NPC_508000:OnTimer( Index )
+	if Index == 1 then
+		this:RemoveBuff( NPC_508000.BufIdBubble )
+		this:Despawn(false)
+		return
+	end
+end
+
+function NPC_508000:OnFinishKillAttack( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+	ThisNPC:Despawn(false)
+end
+
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="새끼 골렘">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="distance" param1="140" param2="140" />
+			</DEFAULT>			
+			<CHECK type="distance" param2="140" >
+				<ACTION type="talent" param1="210300901" rate="100" desc="자폭" />
+			</CHECK>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	
+function NPC_103009:OnFinishKillAttack( ThisActor, Enemy )
+	local ThisNPC = AsNPC( ThisActor )
+
+	ThisNPC:Die( Enemy )
+	--ThisNPC:Despawn(false)
+end
+
+	]]></SCRIPT>
+</maiet>

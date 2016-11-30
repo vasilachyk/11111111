@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#박쥐 여왕	
+211700900	#일반공격1
+211700901	#일반공격2
+211700902	#잡기
+211700903	#공포의 스크림
+211700904	#내려찍기
+-->
+<maiet>
+	<COLT name="박쥐 여왕" npcid="117009">
+		<COMBAT > 
+			<DEFAULT>
+				<ACTION type="talent" param1="211700900" rate="30" desc="일반공격1" />
+				<ACTION type="talent" param1="211700901" rate="40" desc="일반공격2" />
+			</DEFAULT>
+			
+			<CHECK type="hp" param2="50">
+				<CHECK type="rage" param1="70" >
+					<CHECK type="distance" param2="100">
+						<ACTION type="talent" param1="211700902" rate="30" desc="잡기" />
+						<ACTION type="talent" param1="211700903" rate="10" desc="공포의 스크림" />
+					</CHECK>
+					
+					<CHECK type="distance" param2="700">
+						<ACTION type="talent" param1="211700903" rate="30" desc="공포의 스크림" />
+					</CHECK>
+				</CHECK>
+				
+				<ACTION type="talent" param1="211700904" rate="50" desc="내려찍기" cycle="5" />
+				<ACTION type="talent" param1="211700900" rate="20" desc="일반공격1" />
+				<ACTION type="talent" param1="211700901" rate="20" desc="일반공격2" />
+			</CHECK>
+			
+			<CHECK type="rage" param1="70" >
+				<ACTION type="talent" param1="211700904" rate="50" desc="내려찍기" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

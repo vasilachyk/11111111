@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="선원(말하는선원)">
+		<COMBAT victory="210901709">
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+			
+				<ACTION type="talent" param1="210901701" rate="20" /><!--1타 -->
+				<ACTION type="talent" param1="210901702" rate="10" /><!--2타 -->
+				
+				<ACTION type="talent" param1="210901704" rate="10" /><!--강한공격 -->
+			</DEFAULT>
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				
+				<ACTION type="talent" param1="210901701" rate="10" />
+				<ACTION type="talent" param1="210901702" rate="10" />
+				
+				<ACTION type="talent" param1="210901704" rate="10" />
+				<ACTION type="talent" param1="210901705" rate="20" />
+			</CHECK>
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+			</CHECK>
+		</COMBAT>
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="210901707" />
+			</DEFAULT>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="50" />				
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+</maiet>

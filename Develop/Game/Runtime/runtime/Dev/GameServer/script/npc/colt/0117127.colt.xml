@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+#지하박쥐	
+211712700	idle
+211712701	일반공격1
+211712702	일반공격2
+211712703	회전공격L
+211712704	회전공격R
+211712705	마법
+-->
+<maiet>
+	<COLT name="지하박쥐" npcid="117127">
+		<COMBAT>
+			<DEFAULT>	
+				<ACTION type="talent" param1="211712702" rate="20" desc="일반공격2" />
+				<ACTION type="talent" param1="211712703" rate="10" desc="회전공격L" />
+				<ACTION type="talent" param1="211712704" rate="10" desc="회전공격R" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="80" />
+				<ACTION type="talent" param1="211712700" rate="20" desc="idle" />
+			</DEFAULT>
+		</IDLE>
+		
+	</COLT>
+</maiet>

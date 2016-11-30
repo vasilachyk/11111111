@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="501" minimap_name="map00501" loading_image_name="00501" min_x="-15214" min_y="-21040" max_x="21786" max_y="15960" boundary_min_x="-2000" boundary_min_y="-6000" boundary_max_x="8000" boundary_max_y="7010" weather_effect="true" town="false" returnable="true" tutorial="false" rebirth_debuff_id="502020">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <MARKER id="1" name="출발지점" x="5064.222656" y="3294.235596" z="3.000000" dir_x="-0.999848" dir_y="0.017452" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="3260.680908" y="-734.968872" z="469.239807" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_출발지점" local="false" x="4942.252441" y="3313.064941" z="3.000000" radius="477.157745" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

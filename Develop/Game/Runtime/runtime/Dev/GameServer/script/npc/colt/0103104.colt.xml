@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="조종당하는 크립 보초" npcid="103104">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210310400" rate="10" comment="" />
+				<ACTION type="talent" param1="210310410" rate="10" comment="침발사" />
+				<ACTION type="talent" param1="210310412" rate="10" comment="돌진" />
+				<ACTION type="talent" param1="210310413" rate="10" comment="챠지" />
+			</DEFAULT>
+			<CHECK type="breakpart" param1="1">
+				<ACTION type="talent" param1="210310400" rate="10" comment="" />
+				<ACTION type="talent" param1="210310410" rate="10" comment="침발사" />
+				<ACTION type="talent" param1="210310412" rate="10" comment="돌진" />
+			</CHECK>
+			<!--
+			<CHECK type="gained_buff" param1="1">
+				<ACTION type="talent" param1="210310400" rate="10" comment="" />
+				<ACTION type="talent" param1="210310414" rate="10" comment="침발사" />
+				<ACTION type="talent" param1="210310412" rate="10" comment="돌진" />
+			</CHECK>
+			-->
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="nothing" param1="3" rate="90"/>
+				<ACTION type="talent" param1="210310400" rate="10"/>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+		
+</maiet>

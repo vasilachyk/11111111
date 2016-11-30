@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="113" minimap_name="map00113" loading_image_name="00113" min_x="0" min_y="0" max_x="80000" max_y="80000" boundary_min_x="45000" boundary_min_y="14000" boundary_max_x="67000" boundary_max_y="38000" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <BGM fieldbgm="bgm_field_8">
+            <ENVBGM dawnbgm="amb_normal_2" />
+            <ENVBGM daytimebgm="amb_normal_2" />
+            <ENVBGM sunsetbgm="amb_normal_2" />
+            <ENVBGM nightbgm="amb_normal_2" />
+            <ENVBGM clodybgm="amb_normal_2" />
+            <ENVBGM rainbgm="amb_rain" />
+            <ENVBGM heavyrainbgm="amb_heavy_rain" />
+            <ENVBGM heavysnowbgm="amb_heavy_snow" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="CLD">
+                <ADD weather="SUN" percent="5" />
+                <ADD weather="RNY" percent="40" />
+                <ADD weather="HRN" percent="20" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="303" group="0" name="투명벽" x="48963.195313" y="27278.804688" z="2481.365234" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="304" group="0" name="투명벽" x="50628.261719" y="30099.242188" z="2492.675781" dir_x="0.642788" dir_y="-0.766044" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="305" group="0" name="투명벽" x="52374.097656" y="33525.550781" z="2414.456543" dir_x="0.999391" dir_y="-0.034899" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="306" group="0" name="투명벽" x="54282.382813" y="35001.296875" z="2365.418945" dir_x="-0.034899" dir_y="-0.999391" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="307" group="0" name="투명벽" x="57038.199219" y="33640.324219" z="2430.540527" dir_x="-0.898794" dir_y="-0.438371" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="308" group="0" name="투명벽" x="63491.089844" y="30036.345703" z="2968.534180" dir_x="0.642788" dir_y="0.766044" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="true" start_time="10" respawn_time="120" enable_respawn_tick_boost="true" roam_radius="0" roam_depth="200" combat_radius="0" color="auto">
+            <NPC id="283" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작 지점" x="54821.359375" y="31964.484375" z="2557.190430" dir_x="0.615662" dir_y="-0.788011" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="부활지점" x="57566.707031" y="18302.005859" z="2818.167480" dir_x="0.292372" dir_y="0.956305" dir_z="0.000000" random_dir="false" />
+        <MARKER id="8001120" name="MON_M 8001120 고스트라이더" x="58678.324219" y="25026.312500" z="2774.307373" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="시작지점" local="false" x="54897.300781" y="31641.867188" z="2576.388184" radius="500.000000" enabled="true" checkpoint="2" groupname="none" />
+        <SENSOR id="2" name="완료센서" x="54732.937500" y="35211.207031" z="2631.100586" radius="3000.000000" enabled="false" checkpoint="1">
+            <EFFECT effect="ZoneLine" x="62.953125" y="-2381.300781" z="-114.537109" dir_x="-0.052336" dir_y="0.998630" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="2.000000" scale_y="2.000000" scale_z="2.000000" />
+            <WARP warp_type="field" title="인젠" condition="0" gate_type="auto" field="3" marker="3311" />
+        </SENSOR>
+        <SENSOR id="1000" name="몬스터사망시체크" local="false" x="59119.851563" y="25627.123047" z="2774.307129" radius="15000.000000" enabled="false" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

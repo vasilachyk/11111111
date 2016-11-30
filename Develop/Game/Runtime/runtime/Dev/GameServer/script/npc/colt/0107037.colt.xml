@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="복수의 라쿠리">
+		<COMBAT mode="0" >
+			<DEFAULT>	
+				<ACTION type="nothing" param1="0.5" rate="50"/>
+				
+				<ACTION type="talent" param1="210703701" rate="20" />
+				<ACTION type="talent" param1="210703702" rate="20" />
+				<ACTION type="talent" param1="210703704" rate="10" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="0.5" rate="40"/>
+				<ACTION type="distance" param1="150" param2="200" rate="20" />
+				<ACTION type="talent" param1="210703705" rate="20" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" rate="90" />
+				<ACTION type="nothing" param1="1" rate="10"/>
+			</CHECK>
+
+			<CHECK type="distance" param2="200">
+				<CHECK type="rage" param1="40" >
+					<ACTION type="talent" param1="210703707" rate="50" />  <!-- 회피 L -->
+					<ACTION type="talent" param1="210703708" rate="50" /> <!-- 회피 R -->
+				</CHECK>
+			</CHECK>
+			
+		</COMBAT>
+		
+		<AGGRO>
+			<DEFAULT>
+			</DEFAULT>
+		</AGGRO>
+		
+	</COLT>
+	<SCRIPT><![CDATA[
+
+	]]></SCRIPT>
+</maiet>

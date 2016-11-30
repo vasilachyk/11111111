@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<maiet>
+	<COLT name="가디엘 수녀">
+		<COMBAT victory="250110402">
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110411" rate="10" desc="지팡이1타"/>
+				<ACTION type="talent" param1="250110412" rate="30" desc="지팡이2연타"/>
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="400" param2="500">
+				<ACTION type="talent" param1="250110413" rate="30" desc="전진 공격"/>
+			</CHECK>
+			
+			<CHECK type="distance" param1="500">
+				<ACTION type="nothing" param1="0.5" rate="30" cycle="6"/>
+				<ACTION type="talent" param1="250110422" rate="10" desc="잔인한 축복"/>
+			</CHECK>
+		</COMBAT>
+
+		<COMBAT mode="1" >
+			<DEFAULT>	
+				<ACTION type="talent" param1="250110401" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+	]]></SCRIPT>
+</maiet>

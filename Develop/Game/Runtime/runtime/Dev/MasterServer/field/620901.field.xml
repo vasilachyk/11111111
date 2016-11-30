@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="512" minimap_name="map00512" loading_image_name="00512" min_x="-17500" min_y="-16300" max_x="17500" max_y="18700" boundary_min_x="-7000" boundary_min_y="0" boundary_max_x="6860" boundary_max_y="16000" weather_effect="true" town="false" returnable="true" tutorial="false" rebirth_debuff_id="502020">
+        <BGM fieldbgm="amb_dungeon_catacomb">
+            <ENVBGM dungeonbgm="amb_dungeon_1" />
+        </BGM>
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="5" name="보물상자" x="0.558636" y="11538.566406" z="121.347298" dir_x="0.052336" dir_y="-0.998630" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" color="auto" gather="true">
+            <NPC id="103453" default="true" rate="100" />
+        </SPAWN>
+        <MARKER id="1" name="시작위치" x="4294.730957" y="5930.565430" z="3.000000" dir_x="-1.000000" dir_y="-0.000000" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="목표지점" x="-2.891654" y="11556.481445" z="121.347298" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="센서_시작위치" local="false" x="4342.345215" y="5895.154785" z="3.000000" radius="564.068542" enabled="true" checkpoint="1" groupname="none" />
+        <PRELOAD />
+    </FIELDINFO>
+</maiet>

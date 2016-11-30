@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="지역경계표시">
+		<COMBAT  >
+		</COMBAT>
+		<IDLE>
+		</IDLE>
+	</COLT>
+	<SCRIPT><![CDATA[ 
+
+function NPC_5200001:OnSpawn( Info )
+	--GLog( "OnSpawn \n" )
+	this:GainBuff( 140000 )
+end 
+
+	]]></SCRIPT>
+</maiet>

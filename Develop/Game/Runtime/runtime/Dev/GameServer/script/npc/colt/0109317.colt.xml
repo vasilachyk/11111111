@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<maiet>
+	<COLT name="바다 에보스" npcid="109317">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="talent" param1="210931700" rate="30" duration="0"/>
+				
+				<ACTION type="talent" param1="210931702" rate="10" />
+				<ACTION type="talent" param1="210931701" rate="40" />
+			</DEFAULT>
+			
+			<CHECK type="distance" param1="300">
+				<ACTION type="talent" param1="210931700" rate="10" duration="0"/>
+				<ACTION type="talent" param1="210931701" rate="30" />				
+			</CHECK>
+			
+			<CHECK type="rage" param1="40">
+				<ACTION type="talent" param1="210931701" rate="10" />						
+			</CHECK>
+		</COMBAT>
+		<IDLE>
+			<DEFAULT>
+				<ACTION type="talent" param1="210931700" rate="70" />
+				<ACTION type="nothing" param1="2" rate="30" />
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

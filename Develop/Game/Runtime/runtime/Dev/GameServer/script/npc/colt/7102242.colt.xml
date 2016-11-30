@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!--
+# 트롤 지원 돌격병, 오우거 지원 돌격병
+710224101	#idle2
+710224102	#망치공격
+710224103	#방패공격
+710224104	#헤딩
+710224105	#방어
+710224106	#포효
+-->
+<maiet>
+	<COLT name="트롤 지원 돌격병" npcid="7102242">
+		<COMBAT >
+			<DEFAULT>	
+				<ACTION type="talent" param1="710224102" rate="10" desc="망치공격" />
+				<ACTION type="talent" param1="710224103" rate="10" desc="방패공격" />
+				<ACTION type="talent" param1="710224104" rate="10" desc="헤딩" />
+			</DEFAULT>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+
+function NPC_7102242:OnSpawn(SpawnInfo)
+	local Field = this:GetField()
+	local trollBoss = Field:GetNPC(7102150)
+	local checkBuff = 120081
+	local gainBuff = 120080
+
+	if (trollBoss:CheckBuff(checkBuff) == true) then
+		this:GainBuff(gainBuff)
+	end
+end
+
+	]]></SCRIPT>
+</maiet>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<maiet>
+    <FIELDINFO zone="116005" minimap_name="map116005" min_x="-9807" min_y="-6073" max_x="5193" max_y="8927" boundary_min_x="0" boundary_min_y="0" boundary_max_x="0" boundary_max_y="0" weather_effect="true" town="false" returnable="true" tutorial="false">
+        <Env set="default">
+            <WEATHER default="SUN">
+                <ADD weather="CLD" percent="0" />
+                <ADD weather="RNY" percent="0" />
+                <ADD weather="HRN" percent="0" />
+                <ADD weather="SNW" percent="0" />
+                <ADD weather="HSW" percent="0" />
+            </WEATHER>
+        </Env>
+        <SPAWN id="281" group="0" name="결계 1" x="-5146.184082" y="1641.656128" z="4554.065918" dir_x="-0.358368" dir_y="0.933581" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="282" group="0" name="결계 2" x="-5414.832031" y="1526.960205" z="4535.508301" dir_x="-0.374606" dir_y="0.927184" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="280" default="true" rate="10" />
+        </SPAWN>
+        <SPAWN id="116210" group="0" name="[NPC] 하프메인" x="-5592.363770" y="2014.402466" z="4453.722656" dir_x="0.087155" dir_y="0.996195" dir_z="0.000000" radius="0.000000" random_dir="false" enabled="true" only_client="false" start_time="0" respawn_time="0" roam_radius="0" roam_depth="0" combat_radius="0" color="0,128,255">
+            <NPC id="116210" default="true" rate="10" />
+        </SPAWN>
+        <MARKER id="1" name="시작점" x="-5616.381836" y="3674.622314" z="4437.511230" dir_x="0.017452" dir_y="-0.999848" dir_z="0.000000" random_dir="false" />
+        <MARKER id="2" name="116030 완료 후 귀환 지점" x="-5530.799316" y="2394.044189" z="4441.272949" dir_x="-0.121869" dir_y="-0.992546" dir_z="0.000000" random_dir="false" />
+        <MARKER id="116034" name="QM 116034" x="-5767.186035" y="4264.978027" z="4452.102539" dir_x="1.000000" dir_y="0.000000" dir_z="0.000000" random_dir="false" />
+        <SENSOR id="1" name="to 아란바스" x="-6312.578125" y="4796.179688" z="4488.792969" radius="400.000000" enabled="true" exit="1">
+            <EFFECT effect="ZoneLine" x="295.252441" y="-252.189453" z="0.000000" dir_x="-0.694659" dir_y="0.719339" dir_z="0.000000" up_x="0.000000" up_y="0.000000" up_z="1.000000" scale_x="0.600000" scale_y="0.700000" scale_z="0.600000" />
+            <WARP warp_type="field" title="아란바스로" condition="1160343" gate_type="auto" field="116" marker="50" />
+            <WARP warp_type="field" title="116034 트라이얼" condition="1160341" gate_type="auto" field_group="1160340" quest="116034" />
+        </SENSOR>
+        <SENSOR id="116033" name="QOS 116033 obj4" local="false" x="-5537.344727" y="2178.661865" z="4439.348145" radius="400.000000" enabled="true" groupname="none" />
+    </FIELDINFO>
+</maiet>

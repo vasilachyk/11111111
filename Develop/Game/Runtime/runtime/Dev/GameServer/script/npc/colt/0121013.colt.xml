@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- 다크우드 봉봉 -->
+<maiet>
+	<COLT name="다크우드 봉봉 헌터">
+		<COMBAT>
+			<DEFAULT>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+
+				<ACTION type="talent" param1="212100703" rate="20" />
+				<ACTION type="talent" param1="212100704" rate="20" />
+				<ACTION type="talent" param1="212100706" rate="20" />
+			</DEFAULT>
+			
+			<!-- 체력이 낮을경우 -->
+			<CHECK type="hp" param2="40">
+				<!-- 근접일 경우만 -->
+				<CHECK type="distance" param2="200">
+					<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+					<ACTION type="nothing" param1="1" rate="20" cycle="6"/>
+										
+					<ACTION type="talent" param1="212100703" rate="20" />
+					<ACTION type="talent" param1="212100704" rate="20" />
+					<ACTION type="talent" param1="212100705" rate="20" />
+					<ACTION type="talent" param1="212100706" rate="20" />
+				</CHECK>
+				
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				<ACTION type="nothing" param1="1" rate="20" cycle="8"/>
+				
+				<ACTION type="talent" param1="212100703" rate="10" />
+				<ACTION type="talent" param1="212100704" rate="20" />
+				<ACTION type="talent" param1="212100705" rate="20" />
+			</CHECK>
+			
+			<!-- 아주 멀 경우 -->
+			<CHECK type="distance" param1="800">
+				<ACTION type="talent" param1="212100703" rate="10" />
+				<ACTION type="talent" param1="212100704" rate="20" />
+				<ACTION type="talent" param1="212100706" rate="10" />
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>
+				<ACTION type="talent" param1="212100701" rate="20" />
+			</DEFAULT>
+		</COMBAT>
+			
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+			<CHECK type="mode" param1="0">
+				<ACTION type="talent" param1="212100702" rate="100" duration="0" />
+			</CHECK>
+		</IDLE>
+		
+	</COLT>
+	
+	
+</maiet>

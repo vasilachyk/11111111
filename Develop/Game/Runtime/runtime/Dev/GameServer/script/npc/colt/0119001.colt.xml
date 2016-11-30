@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# 오염된 병사	
+#일반	
+211900100	모드0전환(칼뽑기)
+211900101	모드1전환(칼넣기)
+211900102	회피L
+211900103	회피R
+211900104	회피B
+#전투	
+211900110	1타
+211900111	2연타
+211900112	3연타
+211900113	찌르기
+211900114	강격
+211900115	파멸의 일격
+211900116	방어
+-->
+<maiet>
+	<COLT name="오염된 병사" npcid="119001">
+		<COMBAT victory="211900101">
+			<DEFAULT>	
+				<ACTION type="talent" param1="211900110" rate="50" desc="1타" />
+				<ACTION type="talent" param1="211900111" rate="70" desc="2연타" />
+				<ACTION type="talent" param1="211900112" rate="30" desc="3연타" />
+			</DEFAULT>
+			
+			<CHECK type="rage" param1="50" >
+				<ACTION type="talent" param1="211900114" rate="10" desc="강격" />
+				<ACTION type="guard" param1="211900116" param2="3" rate="10" cycle="15" desc="방어" />
+			</CHECK>
+				
+			<CHECK type="distance" param1="380">
+				<ACTION type="talent" param1="211900115" rate="10" desc="파멸의 일격" />
+			</CHECK>
+		</COMBAT>
+		
+		<IDLE>
+			<DEFAULT>
+			</DEFAULT>
+		</IDLE>
+		
+		<COMBAT mode="1" >
+			<DEFAULT>
+				<ACTION type="talent" param1="211900100" rate="100" desc="모드0전환(칼뽑기)" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	
+	<SCRIPT><![CDATA[
+	]]></SCRIPT>
+</maiet>

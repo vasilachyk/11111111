@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="./colt.xsl" type="text/xsl"?>
+<!-- tag : 인간형, 디펜더 -->
+<maiet>
+	<COLT name="라드 관리인" npcid="520104">
+		<COMBAT mode="0" victory="252010407" >
+			<DEFAULT>
+								
+				<ACTION type="talent" param1="252010401" rate="20" />
+				<ACTION type="talent" param1="252010405" rate="15" />
+				<ACTION type="talent" param1="252010402" rate="30" />
+				
+				
+				
+			</DEFAULT>
+
+			
+
+			<CHECK type="gained_buff" param1="80120"> <!-- 역습 -->
+				<ACTION type="talent" param1="252010401" rate="20" />
+				<ACTION type="talent" param1="252010405" rate="15" />
+				<ACTION type="talent" param1="252010402" rate="30" />
+				
+				<ACTION type="talent" param1="252010412" rate="35"/>
+			</CHECK>
+				
+			<CHECK type="distance" param1="400" >
+				<ACTION type="distance" param1="300" param2="350" />
+			</CHECK>
+			
+			<CHECK type="distance" param1="300" param2="400" >
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+				<ACTION type="nothing" param1="1" rate="25" cycle="6"/>
+
+				
+			
+			</CHECK>
+		</COMBAT>
+		
+		<COMBAT mode="1">
+			<DEFAULT>	
+				<ACTION type="talent" param1="252010406" rate="100" />
+			</DEFAULT>
+		</COMBAT>
+	</COLT>
+	<SCRIPT><![CDATA[
+	
+
+
+	]]></SCRIPT>
+</maiet>
