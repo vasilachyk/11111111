@@ -83,9 +83,9 @@
   </MOTION>
   <MOTION name="PS_101000" loop="false" cancelEnabled="true" cameraLook="true">
     <Default>
-      <Sequence ani="aiming" />
-      <Sequence ani="aiming_middle"  event="doShoot"  />
-      <Sequence ani="atk1"/>
+      <Sequence ani="bow_cast_bow" />
+      <Sequence ani="bow_fire_bow"  event="doShoot"  />
+      <Sequence ani="bow_fire_bow"/>
     </Default>
   </MOTION>
   <MOTION name="PS_guardattack" loop="false" cancelEnabled="true" cameraLook="true">

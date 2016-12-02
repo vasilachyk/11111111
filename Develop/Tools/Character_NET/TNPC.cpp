@@ -184,7 +184,7 @@ SH_ITEM_SLOT TNPC::NPCPartsSlot2Slot( int nSlot )
 {
 	switch(nSlot)
 	{
-	case NPC_PARTS_SLOT_HAIR:		return ITEMSLOT_CHARM; // (임시 헤러가 없어서)
+	case NPC_PARTS_SLOT_HAIR:		return ITEMSLOT_MAX; // (임시 헤러가 없어서)
 	case NPC_PARTS_SLOT_FACE:		return ITEMSLOT_FACE;
 	case NPC_PARTS_SLOT_HEAD:		return ITEMSLOT_HEAD;
 	case NPC_PARTS_SLOT_CHEST:		return ITEMSLOT_BODY;

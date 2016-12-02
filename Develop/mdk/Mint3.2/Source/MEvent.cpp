@@ -26,7 +26,7 @@ bool MEvent::GetCtrlState(void)
 
 bool MEvent::GetAltState(void)
 {
-	if((GetKeyState(VK_MENU)&0x8000)==0x8000) return true;
+	if((GetKeyState(VK_MENU)&0x8000) == 1) return true;
 	return false;
 }
 

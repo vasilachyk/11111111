@@ -397,7 +397,7 @@ ENCHANT_BUFF_EFFECT_EQUIP_TYPE XBuffInfoMgr::String2EnchantBuffEffectEquipType( 
 		return EBEET_2HD;
 	else if(strType == "sta")
 		return EBEET_STA;
-	else if(strType == "arc")
+	else if(strType == "bow")
 		return EBEET_ARC;
 	else if(strType == "2hb")
 		return EBEET_2HB;

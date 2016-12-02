@@ -101,6 +101,11 @@ bool XGameInput::OnEvent( MEvent& e)
 		bPressed = true;
 		break;
 
+	case MWM_SYSCHAR:
+		nVKey = FindVirtualKey(e.nKey, MEvent::GetShiftState(), e.bCtrl, true);
+		bPressed = true;
+		break;
+
 	case MWM_KEYUP:
 		nVKey = FindVirtualKey( e.nKey, MEvent::GetShiftState(), e.bCtrl, MEvent::GetAltState());
 		break;

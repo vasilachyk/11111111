@@ -116,7 +116,7 @@ bool ExistFile(const char* str)
 
 bool IsEqualString( System::String^ Name, System::String^ FindName )
 {
-	array<String^>^split = Name->Split( );
+	cli::array<String^>^split = Name->Split( );
 	IEnumerator^ myEnum = split->GetEnumerator();
 	while ( myEnum->MoveNext() )
 	{

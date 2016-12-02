@@ -1373,7 +1373,7 @@ struct TD_PALETTE
 
 	bool IsEmpty()
 	{
-		for (int i = 0; i < PALETTENUM_MAX*PALETTESLOT_MAX; ++i)
+		for (int i = 0; i < PALETTENUM_MAX; ++i)
 		{
 			if (0 != paletteItems[i].nItemIDorTalentID) return false;
 			if (0 != paletteItems[i].nType) return false;			

@@ -779,11 +779,28 @@ void XGameInterfaceOption::SetDefaultControlKey()
 	XSETCFG_KEY_PALETTE7(		"KEY_8",			string( ""));
 	XSETCFG_KEY_PALETTE8(		"KEY_9",			string( ""));
 	XSETCFG_KEY_PALETTE9(		"KEY_0",			string( ""));
-	XSETCFG_KEY_PALETTESET0(	"KEY_1",			string( "shift"));
-	XSETCFG_KEY_PALETTESET1(	"KEY_2",			string( "shift"));
-	XSETCFG_KEY_PALETTESET2(	"KEY_3",			string( "shift"));
-	XSETCFG_KEY_PALETTESET3(	"KEY_4",			string( "shift"));
-	XSETCFG_KEY_PALETTESET4(	"KEY_5",			string( "shift"));
+
+	XSETCFG_KEY_PALETTE10("KEY_1", string("alt"));
+	XSETCFG_KEY_PALETTE11("KEY_2", string("alt"));
+	XSETCFG_KEY_PALETTE12("KEY_3", string("alt"));
+	XSETCFG_KEY_PALETTE13("KEY_4", string("alt"));
+	XSETCFG_KEY_PALETTE14("KEY_5", string("alt"));
+	XSETCFG_KEY_PALETTE15("KEY_6", string("alt"));
+	XSETCFG_KEY_PALETTE16("KEY_7", string("alt"));
+	XSETCFG_KEY_PALETTE17("KEY_8", string("alt"));
+	XSETCFG_KEY_PALETTE18("KEY_9", string("alt"));
+	XSETCFG_KEY_PALETTE19("KEY_0", string("alt"));
+
+	XSETCFG_KEY_PALETTE20("KEY_1", string("shift"));
+	XSETCFG_KEY_PALETTE21("KEY_2", string("shift"));
+	XSETCFG_KEY_PALETTE22("KEY_3", string("shift"));
+	XSETCFG_KEY_PALETTE23("KEY_4", string("shift"));
+	XSETCFG_KEY_PALETTE24("KEY_5", string("shift"));
+	XSETCFG_KEY_PALETTE25("KEY_6", string("shift"));
+	XSETCFG_KEY_PALETTE26("KEY_7", string("shift"));
+	XSETCFG_KEY_PALETTE27("KEY_8", string("shift"));
+	XSETCFG_KEY_PALETTE28("KEY_9", string("shift"));
+	XSETCFG_KEY_PALETTE29("KEY_0", string("shift"));
 
 	ApplyControlKeyMap();
 }
@@ -833,11 +850,26 @@ void XGameInterfaceOption::ApplyControlKeyMap()
 	XGETCFG_KEY_PALETTE7( strCode, strExt);			gg.controller->SetVirtualKey( "PALETTE7", strCode, strExt);
 	XGETCFG_KEY_PALETTE8( strCode, strExt);			gg.controller->SetVirtualKey( "PALETTE8", strCode, strExt);
 	XGETCFG_KEY_PALETTE9( strCode, strExt);			gg.controller->SetVirtualKey( "PALETTE9", strCode, strExt);
-	XGETCFG_KEY_PALETTESET0( strCode, strExt);		gg.controller->SetVirtualKey( "PALETTESET0", strCode, strExt);
-	XGETCFG_KEY_PALETTESET1( strCode, strExt);		gg.controller->SetVirtualKey( "PALETTESET1", strCode, strExt);
-	XGETCFG_KEY_PALETTESET2( strCode, strExt);		gg.controller->SetVirtualKey( "PALETTESET2", strCode, strExt);
-	XGETCFG_KEY_PALETTESET3( strCode, strExt);		gg.controller->SetVirtualKey( "PALETTESET3", strCode, strExt);
-	XGETCFG_KEY_PALETTESET4( strCode, strExt);		gg.controller->SetVirtualKey( "PALETTESET4", strCode, strExt);
+	XGETCFG_KEY_PALETTE10(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE10", strCode, strExt);
+	XGETCFG_KEY_PALETTE11(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE11", strCode, strExt);
+	XGETCFG_KEY_PALETTE12(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE12", strCode, strExt);
+	XGETCFG_KEY_PALETTE13(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE13", strCode, strExt);
+	XGETCFG_KEY_PALETTE14(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE14", strCode, strExt);
+	XGETCFG_KEY_PALETTE15(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE15", strCode, strExt);
+	XGETCFG_KEY_PALETTE16(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE16", strCode, strExt);
+	XGETCFG_KEY_PALETTE17(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE17", strCode, strExt);
+	XGETCFG_KEY_PALETTE18(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE18", strCode, strExt);
+	XGETCFG_KEY_PALETTE19(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE19", strCode, strExt);
+	XGETCFG_KEY_PALETTE20(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE20", strCode, strExt);
+	XGETCFG_KEY_PALETTE21(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE21", strCode, strExt);
+	XGETCFG_KEY_PALETTE22(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE22", strCode, strExt);
+	XGETCFG_KEY_PALETTE23(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE23", strCode, strExt);
+	XGETCFG_KEY_PALETTE24(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE24", strCode, strExt);
+	XGETCFG_KEY_PALETTE25(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE25", strCode, strExt);
+	XGETCFG_KEY_PALETTE26(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE26", strCode, strExt);
+	XGETCFG_KEY_PALETTE27(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE27", strCode, strExt);
+	XGETCFG_KEY_PALETTE28(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE28", strCode, strExt);
+	XGETCFG_KEY_PALETTE29(strCode, strExt);			gg.controller->SetVirtualKey("PALETTE29", strCode, strExt);
 }
 
 
@@ -917,11 +949,26 @@ void XGameInterfaceOption::SetControlKeyConfig( const string& strName, const str
 	else if ( strName == "PALETTE7")		XSETCFG_KEY_PALETTE7( strCode, strExt);
 	else if ( strName == "PALETTE8")		XSETCFG_KEY_PALETTE8( strCode, strExt);
 	else if ( strName == "PALETTE9")		XSETCFG_KEY_PALETTE9( strCode, strExt);
-	else if ( strName == "PALETTESET0")		XSETCFG_KEY_PALETTESET0( strCode, strExt);
-	else if ( strName == "PALETTESET1")		XSETCFG_KEY_PALETTESET1( strCode, strExt);
-	else if ( strName == "PALETTESET2")		XSETCFG_KEY_PALETTESET2( strCode, strExt);
-	else if ( strName == "PALETTESET3")		XSETCFG_KEY_PALETTESET3( strCode, strExt);
-	else if ( strName == "PALETTESET4")		XSETCFG_KEY_PALETTESET4( strCode, strExt);
+	else if (strName == "PALETTE10")		XSETCFG_KEY_PALETTE10(strCode, strExt);
+	else if (strName == "PALETTE11")		XSETCFG_KEY_PALETTE11(strCode, strExt);
+	else if (strName == "PALETTE12")		XSETCFG_KEY_PALETTE12(strCode, strExt);
+	else if (strName == "PALETTE13")		XSETCFG_KEY_PALETTE13(strCode, strExt);
+	else if (strName == "PALETTE14")		XSETCFG_KEY_PALETTE14(strCode, strExt);
+	else if (strName == "PALETTE15")		XSETCFG_KEY_PALETTE15(strCode, strExt);
+	else if (strName == "PALETTE16")		XSETCFG_KEY_PALETTE16(strCode, strExt);
+	else if (strName == "PALETTE17")		XSETCFG_KEY_PALETTE17(strCode, strExt);
+	else if (strName == "PALETTE18")		XSETCFG_KEY_PALETTE18(strCode, strExt);
+	else if (strName == "PALETTE19")		XSETCFG_KEY_PALETTE19(strCode, strExt);
+	else if (strName == "PALETTE20")		XSETCFG_KEY_PALETTE20(strCode, strExt);
+	else if (strName == "PALETTE21")		XSETCFG_KEY_PALETTE21(strCode, strExt);
+	else if (strName == "PALETTE22")		XSETCFG_KEY_PALETTE22(strCode, strExt);
+	else if (strName == "PALETTE23")		XSETCFG_KEY_PALETTE23(strCode, strExt);
+	else if (strName == "PALETTE24")		XSETCFG_KEY_PALETTE24(strCode, strExt);
+	else if (strName == "PALETTE25")		XSETCFG_KEY_PALETTE25(strCode, strExt);
+	else if (strName == "PALETTE26")		XSETCFG_KEY_PALETTE26(strCode, strExt);
+	else if (strName == "PALETTE27")		XSETCFG_KEY_PALETTE27(strCode, strExt);
+	else if (strName == "PALETTE28")		XSETCFG_KEY_PALETTE28(strCode, strExt);
+	else if (strName == "PALETTE29")		XSETCFG_KEY_PALETTE29(strCode, strExt);
 }
 
 void XGameInterfaceOption::SetTextureReduction( int nTextureReduction )

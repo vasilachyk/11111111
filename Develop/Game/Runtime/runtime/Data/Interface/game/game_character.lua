@@ -878,7 +878,11 @@ function luaCharacter:OnDropLearnedTalentListCtrl()
 	local _sender = _G[ DragEventArgs:GetSender():GetName()];
 
 	if ( _sender == psPalette0)  or  ( _sender == psPalette1)  or  ( _sender == psPalette2)  or  ( _sender == psPalette3)  or  ( _sender == psPalette4)  or
-	   ( _sender == psPalette5)  or  ( _sender == psPalette6)  or  ( _sender == psPalette7)  or  ( _sender == psPalette8)  or  ( _sender == psPalette9)  then
+	   ( _sender == psPalette5)  or  ( _sender == psPalette6)  or  ( _sender == psPalette7)  or  ( _sender == psPalette8)  or  ( _sender == psPalette9)  or
+	   ( _sender == psPalette10)  or  ( _sender == psPalette11)  or  ( _sender == psPalette12)  or  ( _sender == psPalette13)  or  ( _sender == psPalette14)  or
+	   ( _sender == psPalette15)  or  ( _sender == psPalette16)  or  ( _sender == psPalette17)  or  ( _sender == psPalette18)  or  ( _sender == psPalette19)  or
+	   ( _sender == psPalette20)  or  ( _sender == psPalette21)  or  ( _sender == psPalette22)  or  ( _sender == psPalette23)  or  ( _sender == psPalette24)  or
+	   ( _sender == psPalette25)  or  ( _sender == psPalette26)  or  ( _sender == psPalette27)  or  ( _sender == psPalette28)  or  ( _sender == psPalette29)	then
 
 		luaPalette:OnDragOutPaletteSlot();
 		return true;

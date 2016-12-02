@@ -212,22 +212,68 @@ bool XPlayFrame::DispatchEvent( MEvent& e)
 
 	switch ( e.nMessage)
 	{
-	case MWM_SYSCHAR :
+	case MWM_SYSCHAR:
+	{
+		// Check Camera Lock View
+		if (CheckCameraStateClear(e))
+			return true;
+
+		// Check virtual key
+		XVirtualKey nVKey = gg.controller->FindVirtualKey(e.nKey, MEvent::GetShiftState(), e.bCtrl, true);
+		string strVKey = gg.controller->GetVirtualKeyName(nVKey);
+
+		if ((nVKey > VKEY_UI_NA  &&  nVKey < VKEY_COUNT) || nVKey == VKEY_TOGGLE_MOUSE)
 		{
-			switch ( e.nKey)
+			bool bRetVal = false;
+
+			switch (nVKey)
 			{
-			case 'z':
-				{
-					if (global.ui)
-					{
-						global.ui->ToggleShowGameUI();
-						return true;
-					}
-				}
-				break;
-			};
+			case VKEY_TOGGLE_MOUSE:		m_CursorSmartShower.OnKeyDown();	break;
+
+			case VKEY_UI_MAINMENU:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", strVKey.c_str());		break;
+
+			case VKEY_UI_CONTROLSHELP1:	bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "CONTROLSHELP", 1);	break;
+			case VKEY_UI_CONTROLSHELP2:	bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "CONTROLSHELP", 2);	break;
+
+			case VKEY_UI_PALETTE0:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 0);		break;
+			case VKEY_UI_PALETTE1:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 1);		break;
+			case VKEY_UI_PALETTE2:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 2);		break;
+			case VKEY_UI_PALETTE3:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 3);		break;
+			case VKEY_UI_PALETTE4:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 4);		break;
+			case VKEY_UI_PALETTE5:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 5);		break;
+			case VKEY_UI_PALETTE6:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 6);		break;
+			case VKEY_UI_PALETTE7:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 7);		break;
+			case VKEY_UI_PALETTE8:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 8);		break;
+			case VKEY_UI_PALETTE9:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 9);		break;
+
+			case VKEY_UI_PALETTE10:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 10);		break;
+			case VKEY_UI_PALETTE11:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 11);		break;
+			case VKEY_UI_PALETTE12:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 12);		break;
+			case VKEY_UI_PALETTE13:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 13);		break;
+			case VKEY_UI_PALETTE14:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 14);		break;
+			case VKEY_UI_PALETTE15:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 15);		break;
+			case VKEY_UI_PALETTE16:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 16);		break;
+			case VKEY_UI_PALETTE17:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 17);		break;
+			case VKEY_UI_PALETTE18:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 18);		break;
+			case VKEY_UI_PALETTE19:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 19);		break;
+
+			case VKEY_UI_PALETTE20:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 20);		break;
+			case VKEY_UI_PALETTE21:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 21);		break;
+			case VKEY_UI_PALETTE22:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 22);		break;
+			case VKEY_UI_PALETTE23:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 23);		break;
+			case VKEY_UI_PALETTE24:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 24);		break;
+			case VKEY_UI_PALETTE25:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 25);		break;
+			case VKEY_UI_PALETTE26:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 26);		break;
+			case VKEY_UI_PALETTE27:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 27);		break;
+			case VKEY_UI_PALETTE28:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 28);		break;
+			case VKEY_UI_PALETTE29:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 29);		break;
+			default:						bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", strVKey.c_str());		break;
+			}
+
+			return bRetVal;
 		}
 		break;
+	}
 	case MWM_KEYDOWN :
 		{
 			// Check Camera Lock View
@@ -235,7 +281,7 @@ bool XPlayFrame::DispatchEvent( MEvent& e)
 				return true;
 
 			// Check virtual key
-			XVirtualKey nVKey = gg.controller->FindVirtualKey( e.nKey, MEvent::GetShiftState(), e.bCtrl, MEvent::GetAltState());
+			XVirtualKey nVKey = gg.controller->FindVirtualKey( e.nKey, MEvent::GetShiftState(), e.bCtrl, false);
 			string strVKey = gg.controller->GetVirtualKeyName( nVKey);
 
 			if ( (nVKey > VKEY_UI_NA  &&  nVKey < VKEY_COUNT)  ||  nVKey == VKEY_TOGGLE_MOUSE)
@@ -262,12 +308,27 @@ bool XPlayFrame::DispatchEvent( MEvent& e)
 				case VKEY_UI_PALETTE8 :			bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", "PALETTE", 8);		break;
 				case VKEY_UI_PALETTE9 :			bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", "PALETTE", 9);		break;
 
-				case VKEY_UI_PALETTE_SET0 :		bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", "PALETTESET", 0);		break;
-				case VKEY_UI_PALETTE_SET1 :		bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", "PALETTESET", 1);		break;
-				case VKEY_UI_PALETTE_SET2 :		bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", "PALETTESET", 2);		break;
-				case VKEY_UI_PALETTE_SET3 :		bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", "PALETTESET", 3);		break;
-				case VKEY_UI_PALETTE_SET4 :		bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", "PALETTESET", 4);		break;
+				case VKEY_UI_PALETTE10:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 10);		break;
+				case VKEY_UI_PALETTE11:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 11);		break;
+				case VKEY_UI_PALETTE12:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 12);		break;
+				case VKEY_UI_PALETTE13:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 13);		break;
+				case VKEY_UI_PALETTE14:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 14);		break;
+				case VKEY_UI_PALETTE15:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 15);		break;
+				case VKEY_UI_PALETTE16:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 16);		break;
+				case VKEY_UI_PALETTE17:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 17);		break;
+				case VKEY_UI_PALETTE18:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 18);		break;
+				case VKEY_UI_PALETTE19:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 19);		break;
 
+				case VKEY_UI_PALETTE20:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 20);		break;
+				case VKEY_UI_PALETTE21:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 21);		break;
+				case VKEY_UI_PALETTE22:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 22);		break;
+				case VKEY_UI_PALETTE23:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 23);		break;
+				case VKEY_UI_PALETTE24:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 24);		break;
+				case VKEY_UI_PALETTE25:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 25);		break;
+				case VKEY_UI_PALETTE26:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 26);		break;
+				case VKEY_UI_PALETTE27:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 27);		break;
+				case VKEY_UI_PALETTE28:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 28);		break;
+				case VKEY_UI_PALETTE29:			bRetVal = global.script->GetGlueGameEvent().OnGameEvent("VKEY_DOWN", "PALETTE", 29);		break;
 				default :						bRetVal = global.script->GetGlueGameEvent().OnGameEvent( "VKEY_DOWN", strVKey.c_str());		break;
 				}
 

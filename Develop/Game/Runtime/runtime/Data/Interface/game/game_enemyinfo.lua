@@ -142,36 +142,12 @@ function luaEnemyInfo:OnDrawEnemyInfo()
 	gamedraw:SetTextAlign( "left", "bottom");
 	gamedraw:TextEx( 50, 15, w - 100, 20, luaEnemyInfo.target.name);
 
-	if ( luaEnemyInfo.target.level ~= nil) and ( luaTargetInfo.target.grade == 0)  then
+	if ( luaEnemyInfo.target.level ~= nil)  then
 	
 		gamedraw:SetFont( "fntSmall");
 		gamedraw:SetColor( 210, 210, 130);
 		gamedraw:SetTextAlign( "right", "bottom");
-		gamedraw:TextEx( 50, 15, w - 100, 20, "SR." .. luaEnemyInfo.target.level);
-	end
-
-	if ( luaTargetInfo.target.level ~= nil) and ( luaTargetInfo.target.grade > 0)  then
-	
-		gamedraw:SetFont( "fntSmall");
-		gamedraw:SetColor( 210, 210, 130);
-		gamedraw:SetTextAlign( "right", "bottom");
-		if( luaTargetInfo.target.level > 0 ) and ( luaTargetInfo.target.level < 7 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: E");
-		elseif( luaTargetInfo.target.level > 6 ) and ( luaTargetInfo.target.level < 16 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: D");
-		elseif( luaTargetInfo.target.level > 9 ) and ( luaTargetInfo.target.level < 21 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: C");
-		elseif( luaTargetInfo.target.level > 17 ) and ( luaTargetInfo.target.level < 31 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: B");
-		elseif( luaTargetInfo.target.level > 33 ) and ( luaTargetInfo.target.level < 46 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: A");
-		elseif( luaTargetInfo.target.level > 39 ) and ( luaTargetInfo.target.level < 56 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: S");
-		elseif( luaTargetInfo.target.level > 54 ) and ( luaTargetInfo.target.level < 71 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: SS");
-		elseif( luaTargetInfo.target.level > 69 ) and ( luaTargetInfo.target.level < 101 ) then
-			gamedraw:TextEx( 30, 15, w - 60, 20, "Class: SSS");
-		end
+		gamedraw:TextEx( 50, 15, w - 100, 20, "Lv." .. luaEnemyInfo.target.level);
 	end
 	
 	

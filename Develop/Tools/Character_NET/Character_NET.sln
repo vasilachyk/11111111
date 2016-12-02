@@ -1,50 +1,21 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Character_NET", "Character_NET.vcproj", "{B0A4FD90-EDA4-4A19-B045-31510AAB113E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7C2CCE0A-A288-4869-A7B7-CC0D18AF3B8C} = {7C2CCE0A-A288-4869-A7B7-CC0D18AF3B8C}
-		{97861011-05BD-450A-A221-DB5F7A2F4B7B} = {97861011-05BD-450A-A221-DB5F7A2F4B7B}
-		{7070FA22-C0D4-40F5-BEB7-EC09F3A58A51} = {7070FA22-C0D4-40F5-BEB7-EC09F3A58A51}
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-		{73F44AA8-AFF6-4036-AEAA-5E4536736E87} = {73F44AA8-AFF6-4036-AEAA-5E4536736E87}
-		{7DCC03B9-DD72-4803-AEE2-1F2BE6CE60C2} = {7DCC03B9-DD72-4803-AEE2-1F2BE6CE60C2}
-		{595010C3-5427-4453-9F44-5ADB4EDDDB28} = {595010C3-5427-4453-9F44-5ADB4EDDDB28}
-		{4C0E23C6-2793-49AE-B616-6A0463084B78} = {4C0E23C6-2793-49AE-B616-6A0463084B78}
-		{7820A4C8-B56A-40ED-9B44-86E215A93681} = {7820A4C8-B56A-40ED-9B44-86E215A93681}
-		{C49A3DEC-C70B-451E-8D7B-F30D93E4E9D2} = {C49A3DEC-C70B-451E-8D7B-F30D93E4E9D2}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Character_NET", "Character_NET.vcxproj", "{B0A4FD90-EDA4-4A19-B045-31510AAB113E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealSpace3", "..\..\mdk\RealSpace3\RealSpace3.vcproj", "{7070FA22-C0D4-40F5-BEB7-EC09F3A58A51}"
-	ProjectSection(ProjectDependencies) = postProject
-		{97861011-05BD-450A-A221-DB5F7A2F4B7B} = {97861011-05BD-450A-A221-DB5F7A2F4B7B}
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealSpace3", "..\..\mdk\RealSpace3\RealSpace3.vcxproj", "{7070FA22-C0D4-40F5-BEB7-EC09F3A58A51}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cml2", "..\..\mdk\cml2\cml2.vcproj", "{8D451493-65C2-49C3-ADAE-ACB17E6B0650}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cml2", "..\..\mdk\cml2\cml2.vcxproj", "{8D451493-65C2-49C3-ADAE-ACB17E6B0650}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSCommon", "..\..\CSCommon\CSCommon.vcproj", "{7DCC03B9-DD72-4803-AEE2-1F2BE6CE60C2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{2D063418-4E8D-4689-8394-A80BAA738631} = {2D063418-4E8D-4689-8394-A80BAA738631}
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSCommon", "..\..\CSCommon\CSCommon.vcxproj", "{7DCC03B9-DD72-4803-AEE2-1F2BE6CE60C2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MCollision", "..\..\mdk\MCollision\MCollision.vcproj", "{97861011-05BD-450A-A221-DB5F7A2F4B7B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MCollision", "..\..\mdk\MCollision\MCollision.vcxproj", "{97861011-05BD-450A-A221-DB5F7A2F4B7B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameCommon", "..\..\Game\GameCommon\GameCommon.vcproj", "{7820A4C8-B56A-40ED-9B44-86E215A93681}"
-	ProjectSection(ProjectDependencies) = postProject
-		{97861011-05BD-450A-A221-DB5F7A2F4B7B} = {97861011-05BD-450A-A221-DB5F7A2F4B7B}
-		{7070FA22-C0D4-40F5-BEB7-EC09F3A58A51} = {7070FA22-C0D4-40F5-BEB7-EC09F3A58A51}
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameCommon", "..\..\Game\GameCommon\GameCommon.vcxproj", "{7820A4C8-B56A-40ED-9B44-86E215A93681}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealSound3", "..\..\mdk\RealSound3\RealSound3.vcproj", "{C49A3DEC-C70B-451E-8D7B-F30D93E4E9D2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealSound3", "..\..\mdk\RealSound3\RealSound3.vcxproj", "{C49A3DEC-C70B-451E-8D7B-F30D93E4E9D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sano.PersonalProjects.ColorPicker.Controls", "ControlLibrary\Sano.PersonalProjects.ColorPicker.Controls.csproj", "{D6EC5694-662D-408B-918D-BE50AD3D0439}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -55,29 +26,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sano.Utility", "Sano.Utilit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterToolForms", "CharacterToolForms\CharacterToolForms.csproj", "{1E4AA61E-18BF-4A87-B101-7988AD968231}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharacterToolLib", "CharacterToolLib\CharacterToolLib.vcproj", "{4C0E23C6-2793-49AE-B616-6A0463084B78}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharacterToolLib", "CharacterToolLib\CharacterToolLib.vcxproj", "{4C0E23C6-2793-49AE-B616-6A0463084B78}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "relib", "..\..\mdk\MReflectionProperty\Reflection\relib.vcproj", "{3DE14F45-2931-4E41-8115-06687E36288F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "relib", "..\..\mdk\MReflectionProperty\Reflection\relib.vcxproj", "{3DE14F45-2931-4E41-8115-06687E36288F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomPropGrid", "..\..\mdk\MReflectionProperty\CustomPropGrid\CustomPropGrid.csproj", "{FF87288F-15F5-423D-AD99-3B9FDCF6F953}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReflectivePropertyForm", "..\..\mdk\MReflectionProperty\ReflectivePropertyForm\ReflectivePropertyForm.vcproj", "{0E8A2B9A-C4D9-433F-9168-6D5D85EFA23F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReflectivePropertyForm", "..\..\mdk\MReflectionProperty\ReflectivePropertyForm\ReflectivePropertyForm.vcxproj", "{0E8A2B9A-C4D9-433F-9168-6D5D85EFA23F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MiNet", "..\..\mdk\MiNet\MiNet.vcproj", "{595010C3-5427-4453-9F44-5ADB4EDDDB28}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MiNet", "..\..\mdk\MiNet\MiNet.vcxproj", "{595010C3-5427-4453-9F44-5ADB4EDDDB28}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToolsCommon", "..\ToolsCommon\ToolsCommon.vcproj", "{73F44AA8-AFF6-4036-AEAA-5E4536736E87}"
-	ProjectSection(ProjectDependencies) = postProject
-		{97861011-05BD-450A-A221-DB5F7A2F4B7B} = {97861011-05BD-450A-A221-DB5F7A2F4B7B}
-		{7070FA22-C0D4-40F5-BEB7-EC09F3A58A51} = {7070FA22-C0D4-40F5-BEB7-EC09F3A58A51}
-		{8D451493-65C2-49C3-ADAE-ACB17E6B0650} = {8D451493-65C2-49C3-ADAE-ACB17E6B0650}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToolsCommon", "..\ToolsCommon\ToolsCommon.vcxproj", "{73F44AA8-AFF6-4036-AEAA-5E4536736E87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeViewMS", "TreeViewMS\TreeViewMS.csproj", "{7C2CCE0A-A288-4869-A7B7-CC0D18AF3B8C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crl", "..\..\crl\crl.vcproj", "{2D063418-4E8D-4689-8394-A80BAA738631}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crl", "..\..\crl\crl.vcxproj", "{2D063418-4E8D-4689-8394-A80BAA738631}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

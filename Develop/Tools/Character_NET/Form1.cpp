@@ -118,7 +118,7 @@ namespace Character_NET
 
 			// TODO: 폴더이름으로 (플레이어 NPC 몬스터) parent이름을 설정하면 좋은데...
 
-			array<String^>^ FileNames = openFileDialog1->FileNames;
+			cli::array<String^>^ FileNames = openFileDialog1->FileNames;
 			int size = FileNames->Length;
 
 			for each ( String^ FileName in FileNames )
@@ -492,7 +492,7 @@ namespace Character_NET
 
 		if ( openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
-			array<String^>^ FileNames = openFileDialog1->FileNames;
+			cli::array<String^>^ FileNames = openFileDialog1->FileNames;
 			int size = FileNames->Length;
 
 			for each ( String^ FileName in FileNames )
@@ -697,7 +697,7 @@ namespace Character_NET
 
 			// TODO: 폴더이름으로 (플레이어 NPC 몬스터) parent이름을 설정하면 좋은데...
 
-			array<String^>^ FileNames = openFileDialog1->FileNames;
+			cli::array<String^>^ FileNames = openFileDialog1->FileNames;
 			int size = FileNames->Length;
 
 			for each ( String^ FileName in FileNames )

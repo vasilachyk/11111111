@@ -61,8 +61,14 @@ bool XUIControlKey::OnEvent( MEvent* pEvent, MListener* pListener)
 
 	switch ( pEvent->nMessage)
 	{
+
+	case MWM_SYSCHAR:
+		XGetGameInterface().OPTIONS.ChangeControlKey(m_strText.c_str(), pEvent->nKey, pEvent->bShift, pEvent->bCtrl, true);
+		OnValueChanged();
+		return true;
+
 	case MWM_KEYDOWN :
-		XGetGameInterface().OPTIONS.ChangeControlKey( m_strText.c_str(), pEvent->nKey, pEvent->bShift, pEvent->bCtrl, pEvent->bAlt);
+		XGetGameInterface().OPTIONS.ChangeControlKey( m_strText.c_str(), pEvent->nKey, pEvent->bShift, pEvent->bCtrl, false);
 		OnValueChanged();
 		return true;
 

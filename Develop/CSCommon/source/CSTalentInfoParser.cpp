@@ -1058,6 +1058,10 @@ void CSTalentInfoWeaponAllowedParser::Parse( const TCHAR* szValue, CSTalentWeapo
 			{
 				outWeaponAllowedInfo.m_setWeapons.insert(TALENT_WEAPON_ALLOWED_BOW);
 			}
+			else if (strTrimWeapon == "arc")
+			{
+				outWeaponAllowedInfo.m_setWeapons.insert(TALENT_WEAPON_ALLOWED_BOW);
+			}
 			else if (strTrimWeapon == "2hb")
 			{
 				outWeaponAllowedInfo.m_setWeapons.insert(TALENT_WEAPON_ALLOWED_2HB);

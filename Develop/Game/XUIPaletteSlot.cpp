@@ -56,7 +56,7 @@ bool XUIPaletteSlot::UpdateInfo()
 	m_nID = 0;
 	m_pIconImage = NULL;
 
-	if ( m_nIndex < 0  ||  m_nIndex > 9)	return false;
+	if ( m_nIndex < 0  ||  m_nIndex > 29)	return false;
 
 	int nIndex = (int)gvar.MyInfo.PaletteList.GetCurPaletteListIndex() * 10 + m_nIndex;
 	if (nIndex < 0 || nIndex > (gvar.MyInfo.PaletteList.GetContainerSize()-1))	return false;

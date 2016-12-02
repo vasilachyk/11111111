@@ -12,19 +12,29 @@ luaPalette.CHANGED = {};
 luaPalette.CHANGED.run = false;
 luaPalette.CHANGED.timer = 0;
 
+-- BPartsPalette Mode
+luaPalette.m_bBPartsPalette = false;
+
+-- Palette Size
+luaPalette.m_fSize = 0.0;
+
 
 
 
 
 -- RefreshPaletteSlot
-function luaPalette:RefreshPaletteSlot( bBpartsChanged, bIsBPartsPalette)
+function luaPalette:RefreshPaletteSlot( bBpartsChanged, bIsBPartsPalette, bIsBPartsPaletteExtension)
 
 	local bChanged = false;
 
 	-- Update palette slot
-	for i = 0, 9  do
+	for i = 0, 29  do   -- i: 0~9, 30~49(Extend Palette)
 
-		local _wnd = _G[ "psPalette" .. tostring( i)];
+		local nIndex	= i;
+
+		local _wnd = _G[ "psPalette" .. tostring( nIndex )];
+
+		if( nil ~= _wnd )	then
 		
 		local nType = _wnd:GetType();
 		local nID = _wnd:GetID();
@@ -32,6 +42,8 @@ function luaPalette:RefreshPaletteSlot( bBpartsChanged, bIsBPartsPalette)
 		_wnd:UpdateInfo();
 		
 		if ( nType ~= _wnd:GetType())  or  ( nID ~= _wnd:GetID())  then  bChanged = true;
+		end
+			
 		end
 	end
 	
@@ -47,34 +59,52 @@ function luaPalette:RefreshPaletteSlot( bBpartsChanged, bIsBPartsPalette)
 	
 	-- Update controls
 	if ( bBpartsChanged == true)  then
+		luaPalette.m_bBPartsPalette = bIsBPartsPalette;
 	
 		if ( bIsBPartsPalette == true)  then
 		
+			local width, height = pnlPaletteShaker:GetSize();
 			local x, y, w, h = pnlPaletteSlots:GetRect();
-			pnlPaletteSlots:SetRect( 203, y, 244, h);
+			w = 240;
 			
-			picPaletteSideDecoLeft:SetRect( 136, 0, 75, 120);
+			if (bIsBPartsPaletteExtension == true) then 
+				w = 465;
+			end
+			
+			pnlPaletteSlots:SetRect( ( width - w) * 0.5, y, w, h);
+			
+			picPaletteSideDecoLeft:SetPosition( ( width - w) * 0.5 - 100, 90);
 			picPaletteSideDecoLeft:SetImage( "bmpPaletteSideDeco2");
-			picPaletteSideDecoRight:SetRect( 439, 0, 75, 120);
+			picPaletteSideDecoRight:SetPosition( ( width + w) * 0.5 - 15, 90);
 			picPaletteSideDecoRight:SetImage( "bmpPaletteSideDeco2");
 			
+			if (bIsBPartsPaletteExtension == true) then
+				psPalette5:Show( true);
+				psPalette6:Show( true);
+				psPalette7:Show( true);
+				psPalette8:Show( true);
+				psPalette9:Show( true);
+			else
 			psPalette5:Show( false);
 			psPalette6:Show( false);
 			psPalette7:Show( false);
 			psPalette8:Show( false);
 			psPalette9:Show( false);
+			end
 
 			pnlPaletteNumber:Show( false);
 			pnlPaletteWeaponBinder:Show( false);
 			
 		else
 		
+			local width, height = pnlPaletteShaker:GetSize();
 			local x, y, w, h = pnlPaletteSlots:GetRect();
-			pnlPaletteSlots:SetRect( 88, y, 474, h);
+			w = 465;
+			pnlPaletteSlots:SetRect( ( width - w) * 0.5, y, w, h);
 			
-			picPaletteSideDecoLeft:SetRect( 5, 0, 75, 120);
+			picPaletteSideDecoLeft:SetPosition( ( width - w) * 0.5 - 100, 90);
 			picPaletteSideDecoLeft:SetImage( "bmpPaletteSideDeco");
-			picPaletteSideDecoRight:SetRect( 600, 0, 75, 120);
+			picPaletteSideDecoRight:SetPosition( ( width + w) * 0.5 - 15, 90);
 			picPaletteSideDecoRight:SetImage( "bmpPaletteSideDeco");
 
 			psPalette5:Show( true);
@@ -102,6 +132,8 @@ function luaPalette:RefreshPaletteSlot( bBpartsChanged, bIsBPartsPalette)
 		sdsPaletteEffectRight:SetCurScene( 0);
 		sdsPaletteEffectRight:SetSlideShow( true);
 	end
+
+	luaPalette:RefreshExtendPaletteSlot();
 end
 
 
@@ -111,11 +143,42 @@ end
 -- RefreshBindedWeaponPaletteSet
 function luaPalette:RefreshBindedWeaponPaletteSet()
 
+	local nID = nil;
+	local strWeaponImg = nil;
+
 	local nBindSet = gamefunc:GetWeaponBindedPaletteSet();
-	if ( nBindSet == 1)  then			picBindWeapon:SetImage( "iconWeaponSword1");
-	elseif ( nBindSet == 2)  then		picBindWeapon:SetImage( "iconWeaponSword2");
-	else								picBindWeapon:SetImage( "iconWeaponSword");
+	if ( nBindSet == 1)  then
+	
+		nID = gamefunc:GetEquippedItemID( ITEM_SLOT.RWEAPON);
+		strWeaponImg = "bmpWeaponEmpty";
+		lbBindWeaponNum:SetText( nBindSet);
+		
+	elseif ( nBindSet == 2)  then
+	
+		nID = gamefunc:GetEquippedItemID( ITEM_SLOT.RWEAPON2);
+		strWeaponImg = "bmpWeaponEmpty";
+		lbBindWeaponNum:SetText( nBindSet);
+		
+	else
+
+		strWeaponImg = "bmpWeaponBind";
+		lbBindWeaponNum:SetText( "");
 	end
+
+
+	if ( nID ~= nil)  and  ( nID > 0)  then
+	
+		local nWeaponType = gamefunc:GetItemWeaponType( nID);
+		if ( nWeaponType == WEAPON_TYPE.SLASH)  then			strWeaponImg = "bmpWeaponSword";
+		elseif ( nWeaponType == WEAPON_TYPE.TWO_HANDED)  then	strWeaponImg = "bmpWeapon2HSword";
+		elseif ( nWeaponType == WEAPON_TYPE.BLUNT)  then		strWeaponImg = "bmpWeaponBlunt";
+		elseif ( nWeaponType == WEAPON_TYPE.TWO_BLUNT)  then	strWeaponImg = "bmpWeapon2HBlunt";
+		elseif ( nWeaponType == WEAPON_TYPE.STAFF)  then		strWeaponImg = "bmpWeaponStaff";
+		elseif ( nWeaponType == WEAPON_TYPE.DUAL_PIERCE)  then		strWeaponImg = "bmpWeaponDwp";
+		end
+	end
+
+	picBindWeapon:SetImage( strWeaponImg);
 end
 
 
@@ -208,7 +271,11 @@ function luaPalette:OnDropPaletteSlot()
 	
 	-- Other palette slot
 	elseif ( _sender == psPalette0)  or  ( _sender == psPalette1)  or  ( _sender == psPalette2)  or  ( _sender == psPalette3)  or  ( _sender == psPalette4)  or
-		   ( _sender == psPalette5)  or  ( _sender == psPalette6)  or  ( _sender == psPalette7)  or  ( _sender == psPalette8)  or  ( _sender == psPalette9)  then
+		   ( _sender == psPalette5)  or  ( _sender == psPalette6)  or  ( _sender == psPalette7)  or  ( _sender == psPalette8)  or  ( _sender == psPalette9)  or
+		   ( _sender == psPalette10)  or  ( _sender == psPalette11)  or  ( _sender == psPalette12)  or  ( _sender == psPalette13)  or  ( _sender == psPalette14)  or
+		   ( _sender == psPalette15)  or  ( _sender == psPalette16)  or  ( _sender == psPalette17)  or  ( _sender == psPalette18)  or  ( _sender == psPalette19)  or
+		   ( _sender == psPalette20)  or  ( _sender == psPalette21)  or  ( _sender == psPalette22)  or  ( _sender == psPalette23)  or  ( _sender == psPalette24)  or
+		   ( _sender == psPalette25)  or  ( _sender == psPalette26)  or  ( _sender == psPalette27)  or  ( _sender == psPalette28)  or  ( _sender == psPalette29)	then
 		   
 		local nIndex = DragEventArgs:GetItemData( 0);
 		if ( nIndex >= 0)  then
@@ -220,9 +287,7 @@ function luaPalette:OnDropPaletteSlot()
 			
 			
 			-- Reciever
-			local nSetNum = gamefunc:GetPaletteSetNum();
-			local nSlotIndex = _wnd:GetSlotIndex();
-			local nPaletteIndex = nSetNum * 10 + nSlotIndex;
+			local nPaletteIndex = _wnd:GetSlotIndex();
 			local nSlotType, nSlotID = gamefunc:SetPaletteItem( nPaletteIndex, nSlotType, nSlotID);
 			
 
@@ -240,9 +305,7 @@ function luaPalette:OnDropPaletteSlot()
 		local nTalentID = DragEventArgs:GetItemData( 0);
 		if ( nTalentID >= 0)  then
 		
-			local nSetNum = gamefunc:GetPaletteSetNum();
-			local nSlotIndex = _wnd:GetSlotIndex();
-			local nPaletteIndex = nSetNum * 10 + nSlotIndex;
+			local nPaletteIndex = _wnd:GetSlotIndex();
 			
 			gamefunc:SetPaletteItem( nPaletteIndex, PALETTEITEM_TYPE.TALENT, nTalentID);
 			return true;
@@ -262,9 +325,7 @@ function luaPalette:OnDropPaletteSlot()
 			local nItemID = gamefunc:GetInvenItemID( nIndex);
 			if ( nItemID > 0)  then
 			
-				local nSetNum = gamefunc:GetPaletteSetNum();
-				local nSlotIndex = _wnd:GetSlotIndex();
-				local nPaletteIndex = nSetNum * 10 + nSlotIndex;
+				local nPaletteIndex = 0;
 				
 				gamefunc:SetPaletteItem( nPaletteIndex, PALETTEITEM_TYPE.ITEM, nItemID);
 				return true;
@@ -278,9 +339,7 @@ function luaPalette:OnDropPaletteSlot()
 		local nTalentID = DragEventArgs:GetItemData( 0);
 		if ( nTalentID > 0)  then
 
-			local nSetNum = gamefunc:GetPaletteSetNum();
-			local nSlotIndex = _wnd:GetSlotIndex();
-			local nPaletteIndex = nSetNum * 10 + nSlotIndex;
+			local nPaletteIndex = _wnd:GetSlotIndex();
 			
 			gamefunc:SetPaletteItem( nPaletteIndex, PALETTEITEM_TYPE.TALENT, nTalentID);
 			return true;
@@ -338,9 +397,7 @@ function luaPalette:OnToolTipPaletteSlot()
 	local _wnd = _G[ EventArgs:GetOwner():GetName()];
 	local strToolTip = "";
 	
-	local nSetNum = gamefunc:GetPaletteSetNum();
-	local nSlotIndex = _wnd:GetSlotIndex();
-	local nPaletteIndex = nSetNum * 10 + nSlotIndex;
+	local nPaletteIndex = _wnd:GetSlotIndex();
 	
 	local nSlotType = gamefunc:GetPalleteItemType( nPaletteIndex);
 	
@@ -366,4 +423,21 @@ function luaPalette:OnClickBindWeaponSet( _index)
 	gamefunc:SetWeaponBindedPaletteSet( _index);
 	
 	luaPalette:RefreshBindedWeaponPaletteSet();
+end
+
+-- RefreshExtendPaletteSlot
+function luaPalette:RefreshExtendPaletteSlot()
+
+	luaPalette.m_fSize = 0.0;
+	pnlExtendPaletteSlots1:Show(true);
+	if (btnAddExtendPalette2 ~= nil) then
+		btnAddExtendPalette2:Enable(true);
+	pnlExtendPaletteSlots2:Show(true);
+	end
+
+	if((luaPalette.m_bBPartsPalette == true)) then
+		pnlExtendPaletteSlots1:Show(false);
+		pnlExtendPaletteSlots2:Show(false);
+		luaPalette.m_fSize = 90.0;
+	end
 end

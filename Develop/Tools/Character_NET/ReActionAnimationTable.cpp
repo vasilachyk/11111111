@@ -62,7 +62,7 @@ void Character_NET::ReActionAnimationTable::Load_AnimationList()
 
 			String^ Name = gcnew String(strAniName.c_str() );
 
-			array<String^>^arrayData = gcnew array<String^>(CI_MAX);
+			cli::array<String^>^arrayData = gcnew cli::array<String^>(CI_MAX);
 			GetReActionDataToArray(Name, arrayData);
 
 			ReActionAniamtion_dataGridView->Rows->Add(arrayData);
@@ -241,7 +241,7 @@ bool Character_NET::ReActionAnimationTable::CheckReActionDataChange( ReAction_DA
 	return bChange;
 }
 
-void Character_NET::ReActionAnimationTable::GetReActionDataToArray( String^ strAni, array<String^>^ arrayData )
+void Character_NET::ReActionAnimationTable::GetReActionDataToArray( String^ strAni, cli::array<String^>^ arrayData )
 {
 	arrayData[CI_SOURCE_ANI] = strAni;
 

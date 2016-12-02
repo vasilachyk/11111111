@@ -1707,7 +1707,7 @@
                   </Layout>
                   <Shape>
                     <ShowScrollBar>show</ShowScrollBar>
-                    <ScrollRange min="0" max="800" />
+                    <ScrollRange min="0" max="1440" />
                     <ThumbLength>26</ThumbLength>
                   </Shape>
                   <Controls>
@@ -1717,7 +1717,7 @@
                       <Look>lookDefGroupBox</Look>
                       <Layout>
                         <Location x="10" y="30" />
-                        <Size w="635" h="620" />
+                        <Size w="635" h="1200" />
                       </Layout>
                       <Event>
                         <OnLoaded>this:SetText( STR( "UI_OPTION_CONTROLS_KEYBOARD"));</OnLoaded>
@@ -2593,152 +2593,544 @@
                         <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTE", 10));</OnLoaded>
                       </Event>
                     </Label>
+					
+					 <!-- Palette 30 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="590" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 1));</OnLoaded>
+                                            </Event>
+                                        </Label>
 
-                    <ControlKey>
-                      <Look>lookDefControlKey</Look>
-                      <Layout>
-                        <Location x="505" y="265" />
-                        <Size w="130" h="21" />
-                      </Layout>
-                      <Shape>
-                        <Text>PALETTE9</Text>
-                      </Shape>
-                      <Event>
-                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
-                      </Event>
-                    </ControlKey>
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="590" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE10</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
 
-                    <!-- Palette set 0 -->
-                    <Label>
-                      <Look>lookDefLabel</Look>
-                      <Layout>
-                        <Location x="345" y="315" />
-                        <Size w="150" h="20" />
-                      </Layout>
-                      <Event>
-                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 1));</OnLoaded>
-                      </Event>
-                    </Label>
+                                        <!-- Palette 31 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="615" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 2));</OnLoaded>
+                                            </Event>
+                                        </Label>
 
-                    <ControlKey>
-                      <Look>lookDefControlKey</Look>
-                      <Layout>
-                        <Location x="505" y="315" />
-                        <Size w="130" h="21" />
-                      </Layout>
-                      <Shape>
-                        <Text>PALETTESET0</Text>
-                      </Shape>
-                      <Event>
-                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
-                      </Event>
-                    </ControlKey>
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="615" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE11</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
 
-                    <!-- Palette set 1 -->
-                    <Label>
-                      <Look>lookDefLabel</Look>
-                      <Layout>
-                        <Location x="345" y="340" />
-                        <Size w="150" h="20" />
-                      </Layout>
-                      <Event>
-                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 2));</OnLoaded>
-                      </Event>
-                    </Label>
+                                        <!-- Palette 32 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="640" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 3));</OnLoaded>
+                                            </Event>
+                                        </Label>
 
-                    <ControlKey>
-                      <Look>lookDefControlKey</Look>
-                      <Layout>
-                        <Location x="505" y="340" />
-                        <Size w="130" h="21" />
-                      </Layout>
-                      <Shape>
-                        <Text>PALETTESET1</Text>
-                      </Shape>
-                      <Event>
-                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
-                      </Event>
-                    </ControlKey>
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="640" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE12</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
 
-                    <!-- Palette set 2 -->
-                    <Label>
-                      <Look>lookDefLabel</Look>
-                      <Layout>
-                        <Location x="345" y="365" />
-                        <Size w="150" h="20" />
-                      </Layout>
-                      <Event>
-                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 3));</OnLoaded>
-                      </Event>
-                    </Label>
+                                        <!-- Palette 33 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="665" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 4));</OnLoaded>
+                                            </Event>
+                                        </Label>
 
-                    <ControlKey>
-                      <Look>lookDefControlKey</Look>
-                      <Layout>
-                        <Location x="505" y="365" />
-                        <Size w="130" h="21" />
-                      </Layout>
-                      <Shape>
-                        <Text>PALETTESET2</Text>
-                      </Shape>
-                      <Event>
-                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
-                      </Event>
-                    </ControlKey>
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="665" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE13</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
 
-                    <!-- Palette set 3 -->
-                    <Label>
-                      <Look>lookDefLabel</Look>
-                      <Layout>
-                        <Location x="345" y="390" />
-                        <Size w="150" h="20" />
-                      </Layout>
-                      <Event>
-                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 4));</OnLoaded>
-                      </Event>
-                    </Label>
+                                        <!-- Palette 34 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="690" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 5));</OnLoaded>
+                                            </Event>
+                                        </Label>
 
-                    <ControlKey>
-                      <Look>lookDefControlKey</Look>
-                      <Layout>
-                        <Location x="505" y="390" />
-                        <Size w="130" h="21" />
-                      </Layout>
-                      <Shape>
-                        <Text>PALETTESET3</Text>
-                      </Shape>
-                      <Event>
-                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
-                      </Event>
-                    </ControlKey>
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="690" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE14</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
 
-                    <!-- Palette set 4 -->
-                    <Label>
-                      <Look>lookDefLabel</Look>
-                      <Layout>
-                        <Location x="345" y="415" />
-                        <Size w="150" h="20" />
-                      </Layout>
-                      <Event>
-                        <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_PALETTESET", 5));</OnLoaded>
-                      </Event>
-                    </Label>
+                                        <!-- Palette 35 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="715" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 6));</OnLoaded>
+                                            </Event>
+                                        </Label>
 
-                    <ControlKey>
-                      <Look>lookDefControlKey</Look>
-                      <Layout>
-                        <Location x="505" y="415" />
-                        <Size w="130" h="21" />
-                      </Layout>
-                      <Shape>
-                        <Text>PALETTESET4</Text>
-                      </Shape>
-                      <Event>
-                        <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
-                      </Event>
-                    </ControlKey>
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="715" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE15</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
 
-                    <!-- Controls help 1 -->
+                                        <!-- Palette 36 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="740" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 7));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="740" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE16</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 37 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="765" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 8));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="765" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE17</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 38 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="790" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 9));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="790" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE18</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 39 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="815" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE1", 10));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="815" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE19</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+
+                                        <!-- Palette 40 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="840" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 1));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="840" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE20</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 41 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="865" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 2));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="865" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE21</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 42 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="890" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 3));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="890" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE22</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 43 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="915" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 4));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="915" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE23</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 44 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="940" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 5));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="940" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE24</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 45 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="965" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 6));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="965" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE25</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 46 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="990" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 7));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="990" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE26</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 47 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="1015" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 8));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="1015" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE27</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 48 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="1040" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 9));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="1040" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE28</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+                                        <!-- Palette 49 -->
+                                        <Label>
+                                            <Look>lookDefLabel</Look>
+                                            <Layout>
+                                                <Location x="345" y="1065" />
+                                                <Size w="150" h="20" />
+                                            </Layout>
+                                            <Event>
+                                                <OnLoaded>this:SetText( FORMAT( "UI_OPTION_CONTROLS_KEYBOARD_EXTENDPALETTE2", 10));</OnLoaded>
+                                            </Event>
+                                        </Label>
+
+                                        <ControlKey>
+                                            <Look>lookDefControlKey</Look>
+                                            <Layout>
+                                                <Location x="505" y="1065" />
+                                                <Size w="130" h="21" />
+                                            </Layout>
+                                            <Shape>
+                                                <Text>PALETTE29</Text>
+                                            </Shape>
+                                            <Event>
+                                                <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+                                            </Event>
+                                        </ControlKey>
+
+										<ControlKey>
+										  <Look>lookDefControlKey</Look>
+										  <Layout>
+											<Location x="505" y="265" />
+											<Size w="130" h="21" />
+										  </Layout>
+										  <Shape>
+											<Text>PALETTE9</Text>
+										  </Shape>
+										  <Event>
+											<OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
+										  </Event>
+										</ControlKey>            
+
+										
+				<!-- Controls help 1 -->
                     <Label>
                       <Look>lookDefLabel</Look>
                       <Layout>
@@ -2763,8 +3155,7 @@
                         <OnValueChanged>luaOption:ChangedOption();</OnValueChanged>
                       </Event>
                     </ControlKey>
-                    
-
+										
                     <!-- Controls help 2 -->
                     <Label>
                       <Look>lookDefLabel</Look>

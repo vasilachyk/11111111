@@ -8,7 +8,7 @@ luaToolTip = {};
 
 
 -- Maximum level
-luaToolTip.MAX_LEVEL = 90;
+luaToolTip.MAX_LEVEL = 60;
 
 
 
@@ -195,35 +195,12 @@ function luaToolTip:GetItemHeader( nID, nInvenIndex, nEquippedSlot)
 	
 	if ( strFlags ~= "")  then  strFlags = string.sub( strFlags, 1, string.len( strFlags) - 2) .. "{CR}";
 	end
-
-	local XP = -1;
-	local nextLevelXP = -1;
-
-	if (nEquippedSlot ~= nil) then
-	XP = gamefunc:GetItemExp( nEquippedSlot, 1 );
-	elseif (nInvenIndex >= 0) then
-	XP = gamefunc:GetItemExp( nInvenIndex, 0);
-	end
-	
-	if (nEquippedSlot ~= nil) then
-	nextLevelXP = gamefunc:GetNextAttuneLevelXP( nEquippedSlot, 1 );
-	elseif (nInvenIndex >= 0) then
-	nextLevelXP = gamefunc:GetNextAttuneLevelXP( nInvenIndex, 0 );
-	end
-
-	local strXP = "";
-
-	if(XP ~= -1) and (nextLevelXP ~= -1) then
-	strXP = strXP .. "SP: " .. XP .. "/" .. nextLevelXP;
-	else
-	strXP = strXP .. "No XP";
-	end
 	
 
 	local strHeader = "{BITMAP name=\"bmpItemSlot\" w=42 h=42}{CR h=1}" ..
 				"{SPACE w=1 h=1}{BITMAP name=\"" .. strImage .. "\" w=40 h=40}{CR h=0}" ..
 				"{INDENT dent=45}{FONT name=\"fntBold\"}{COLOR r=" .. r .. " g=" .. g .. " b=" .. b .. "}" .. strName .. "{/COLOR}{/FONT}\n" ..
-				"{FONT name=\"fntScript\"}{ALIGN hor=\"justify\"}" .. strType .. "{CR h=0}{ALIGN hor=\"right\"}{COLOR r=" .. r .. " g=" .. g .. " b=" .. b .. "}" .. strTier .. "{/COLOR}{CR}" .. strXP .. "{CR}" ..
+				"{FONT name=\"fntScript\"}{ALIGN hor=\"justiry\"}" .. strType .. "{CR h=0}{ALIGN hor=\"right\"}{COLOR r=" .. r .. " g=" .. g .. " b=" .. b .. "}" .. strTier .. "{/COLOR}{CR}" ..
 				"{COLOR r=100 g=160 b=160}" .. strFlags .. "{/COLOR}{/INDENT}{ALIGN hor=\"justify\"}";
 				
 
@@ -291,18 +268,18 @@ function luaToolTip:GetItemDetail( nID, nInvenIndex, nEquippedSlot)
 	end
 	
 	-- License
-	--local nLicense = gamefunc:GetItemReqLicense( nID);
-	--local bHasLicense = true;
-	--if ( nLicense ~= LICENSE_TYPE.NONE)  then
-	--
-	--	local strLicense = GetLicenseName( nLicense);
-	--	bHasLicense = gamefunc:HasItemReqLicense( nID, nLicense);
-	--
-	--	local _color = "{COLOR r=100 g=160 b=160}";
-	--	if ( bHasLicense == false)  then  _color = "{COLOR r=160 g=32 b=32}";
-	--	end
-	--	strRequest = strRequest .. _color .. FORMAT( "UI_TOOLTIP_REQUIRELICENSE", strLicense) .. "{/COLOR}{CR}";
-	--end
+	local nLicense = gamefunc:GetItemReqLicense( nID);
+	local bHasLicense = true;
+	if ( nLicense ~= LICENSE_TYPE.NONE)  then
+	
+		local strLicense = GetLicenseName( nLicense);
+		bHasLicense = gamefunc:HasItemReqLicense( nID, nLicense);
+
+		local _color = "{COLOR r=100 g=160 b=160}";
+		if ( bHasLicense == false)  then  _color = "{COLOR r=160 g=32 b=32}";
+		end
+		strRequest = strRequest .. _color .. FORMAT( "UI_TOOLTIP_REQUIRELICENSE", strLicense) .. "{/COLOR}{CR}";
+	end
 	
 
 	if ( strRequest ~= "")  then	strDetail = strDetail .. "{ALIGN hor=\"justify\"}" .. STR( "REQUIREMENTS") .. " :" .. "{CR h=0}{ALIGN hor=\"right\"}" .. strRequest;

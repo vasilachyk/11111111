@@ -46,7 +46,7 @@ void TEquipItems::LoadEquipItems(TCharacter* pActor)
 		DefaultFaceLoad();
 	}
 
-	if (m_TEquipment.IsEquip(ITEMSLOT_CHARM, m_pTabModel->GetPlayerType()) == false)
+	if (m_TEquipment.IsEquip(ITEMSLOT_MAX, m_pTabModel->GetPlayerType()) == false)
 	{
 		DefaultHairLoad();
 	}

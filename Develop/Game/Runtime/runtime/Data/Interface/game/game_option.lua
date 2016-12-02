@@ -313,6 +313,7 @@ function luaOption:ChangedOption( _reboot)
 		
 		btnApplyOption:Enable( true);
 	end
+	luaPalette:RefreshExtendPaletteSlot();
 end
 
 
@@ -364,6 +365,7 @@ function luaOption:CancelOption()
 	
 
 	frmOption:Show( false);
+	luaPalette:RefreshExtendPaletteSlot();
 end
 
 

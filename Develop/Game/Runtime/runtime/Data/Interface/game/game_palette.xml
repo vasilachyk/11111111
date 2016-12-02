@@ -7,10 +7,10 @@
 
 
   <!-- Palette -->
-  <Panel name="pnlPaletteSet" parent="layerGame2">
+  <Panel name="pnlPaletteSet" parent="layerGame0">
     <Layout>
-      <Location x="187" y="797" base="BOTTOMLEFT" />
-      <Size w="650" h="120" />
+      <Location x="112" y="797" base="BOTTOMLEFT" />
+      <Size w="800" h="210" />
       <Anchor left="false" top="false" right="true" bottom="true" />
     </Layout>
     <Event>
@@ -32,8 +32,8 @@
           <!-- Side decorations -->
           <Picture name="picPaletteSideDecoLeft">
             <Layout>
-              <Location x="5" y="0" />
-              <Size w="75" h="120" />
+              <Location x="67" y="90" />
+              <Size w="115" h="120" />
             </Layout>
             <Image>bmpPaletteSideDeco</Image>
             <Shape>
@@ -43,8 +43,8 @@
 
           <Picture name="picPaletteSideDecoRight">
             <Layout>
-              <Location x="600" y="0" />
-              <Size w="75" h="120" />
+              <Location x="617" y="90" />
+              <Size w="115" h="120" />
             </Layout>
             <Image>bmpPaletteSideDeco</Image>
             <Shape>
@@ -57,50 +57,31 @@
           <!-- Palette set number -->
           <Panel name="pnlPaletteNumber">
             <Layout>
-              <Location x="75" y="0" />
-              <Size w="24" h="%100" />
+              <Location x="141" y="90" />
+              <Size w="30" h="%100" />
             </Layout>
             <Controls>
               
-              <Picture>
-                <Layout>
-                  <Location x="0" y="33" />
-                  <Size w="24" h="54" />
-                </Layout>
-                <Image>bmpPaletteSet</Image>
-              </Picture>
-
-              <Button>
-                <Look>lookDefPaletteSetUpBtn</Look>
-                <Layout>
-                  <Location x="5" y="38" />
-                  <Size w="14" h="14" />
-                </Layout>
-                <Event>
-                  <OnClick>gamefunc:ChangePaletteSet( gamefunc:GetPaletteSetNum() + 1);</OnClick>
-                </Event>
-              </Button>
-
               <LabelEx name="lbPaletteSetNum">
                 <Layout>
-                  <Location x="5" y="52" />
-                  <Size w="14" h="16" />
+                  <Location x="0" y="45" />
+                  <Size w="%100" h="30" />
                 </Layout>
                 <Shape>
-                  <Font>fntSmallStrong</Font>
-                  <FontColor r="230" g="230" b="230" />
+                  <Font>fntRegularStrong</Font>
+                  <FontColor r="255" g="255" b="255" a="200" />
                   <Align>hcenter,vcenter</Align>
                 </Shape>
               </LabelEx>
 
               <Button>
-                <Look>lookDefPaletteSetDownBtn</Look>
+                <Look>lookDefSelectBtn</Look>
                 <Layout>
-                  <Location x="5" y="68" />
-                  <Size w="14" h="14" />
+                  <Location x="0" y="45" />
+                  <Size w="30" h="30" />
                 </Layout>
                 <Event>
-                  <OnClick>gamefunc:ChangePaletteSet( gamefunc:GetPaletteSetNum() - 1);</OnClick>
+                  <OnClick>gamefunc:ChangePaletteSet( ( gamefunc:GetPaletteSetNum() + 1) % 3);</OnClick>
                 </Event>
               </Button>
             
@@ -112,8 +93,8 @@
           <!-- Palette slot -->
           <Panel name="pnlPaletteSlots">
             <Layout>
-              <Location x="88" y="0" />
-              <Size w="474" h="%100" />
+              <Location x="167" y="90" />
+              <Size w="465" h="%100" />
             </Layout>
             <Controls>
 
@@ -134,7 +115,7 @@
               <PaletteSlot name="psPalette1">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="56" y="40" />
+                  <Location x="55" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>1</SlotIndex>
@@ -148,7 +129,7 @@
               <PaletteSlot name="psPalette2">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="102" y="40" />
+                  <Location x="100" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>2</SlotIndex>
@@ -162,7 +143,7 @@
               <PaletteSlot name="psPalette3">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="148" y="40" />
+                  <Location x="145" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>3</SlotIndex>
@@ -176,7 +157,7 @@
               <PaletteSlot name="psPalette4">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="194" y="40" />
+                  <Location x="190" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>4</SlotIndex>
@@ -190,7 +171,7 @@
               <PaletteSlot name="psPalette5">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="240" y="40" />
+                  <Location x="235" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>5</SlotIndex>
@@ -204,7 +185,7 @@
               <PaletteSlot name="psPalette6">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="286" y="40" />
+                  <Location x="280" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>6</SlotIndex>
@@ -218,7 +199,7 @@
               <PaletteSlot name="psPalette7">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="332" y="40" />
+                  <Location x="325" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>7</SlotIndex>
@@ -232,7 +213,7 @@
               <PaletteSlot name="psPalette8">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="378" y="40" />
+                  <Location x="370" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>8</SlotIndex>
@@ -246,10 +227,313 @@
               <PaletteSlot name="psPalette9">
                 <Look>lookDefPaletteSlot</Look>
                 <Layout>
-                  <Location x="424" y="40" />
+                  <Location x="415" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
                 <SlotIndex>9</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+            </Controls>
+          </Panel>
+
+          <!-- Extend Palette slot 1 -->
+          <Panel name="pnlExtendPaletteSlots1">
+            <Layout>
+              <Location x="167" y="45" />
+              <Size w="465" h="%100" />
+            </Layout>
+            <Controls>
+
+              <PaletteSlot name="psPalette10">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="10" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>10</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette11">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>11</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette12">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="100" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>12</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette13">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="145" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>13</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette14">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="190" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>14</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette15">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="235" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>15</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette16">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="280" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>16</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette17">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="325" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>17</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette18">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="370" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>18</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette19">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="415" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>19</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+            </Controls>
+          </Panel>
+
+
+          <!-- Extend Palette slot 2 -->
+          <Panel name="pnlExtendPaletteSlots2">
+            <Layout>
+              <Location x="167" y="0" />
+              <Size w="465" h="%100" />
+            </Layout>
+            <Controls>
+
+              <PaletteSlot name="psPalette20">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="10" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>20</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette21">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="55" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>21</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette22">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="100" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>22</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette23">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="145" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>23</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette24">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="190" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>24</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette25">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="235" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>25</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette26">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="280" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>26</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette27">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="325" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>27</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette28">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="370" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>28</SlotIndex>
+                <Event>
+                  <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
+                  <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
+                  <OnToolTip>luaPalette:OnToolTipPaletteSlot();</OnToolTip>
+                </Event>
+              </PaletteSlot>
+
+              <PaletteSlot name="psPalette29">
+                <Look>lookDefPaletteSlot</Look>
+                <Layout>
+                  <Location x="415" y="40" />
+                  <Size w="40" h="40" />
+                </Layout>
+                <SlotIndex>29</SlotIndex>
                 <Event>
                   <OnDragBegin>return luaPalette:OnDragBeginPaletteSlot();</OnDragBegin>
                   <OnDrop>return luaPalette:OnDropPaletteSlot();</OnDrop>
@@ -265,27 +549,39 @@
           <!-- Bind weapon -->
           <Panel name="pnlPaletteWeaponBinder">
             <Layout>
-              <Location x="548" y="0" />
-              <Size w="60" h="%100" />
+              <Location x="622" y="90" />
+              <Size w="70" h="%100" />
             </Layout>
             <Controls>
 
               <Picture name="picBindWeapon">
                 <Layout>
-                  <Location x="10" y="40" />
+                  <Location x="0" y="40" />
                   <Size w="40" h="40" />
                 </Layout>
-                <Image>iconBindNone</Image>
+                <Image></Image>
                 <Shape>
                   <Stretch>true</Stretch>
                 </Shape>
               </Picture>
 
-              <Button name="btnBindWeapon">
-                <Look>lookDefPaletteSlotBtn</Look>
+              <LabelEx name="lbBindWeaponNum">
                 <Layout>
-                  <Location x="10" y="40" />
-                  <Size w="40" h="40" />
+                  <Location x="7" y="47" />
+                  <Size w="26" h="26" />
+                </Layout>
+                <Shape>
+                  <Font>fntScriptStrong</Font>
+                  <FontColor r="255" g="255" b="255" a="200" />
+                  <Align>right,bottom</Align>
+                </Shape>
+              </LabelEx>
+
+              <Button name="btnBindWeapon">
+                <Look>lookDefSelectBtn</Look>
+                <Layout>
+                  <Location x="5" y="45" />
+                  <Size w="30" h="30" />
                 </Layout>
                 <Event>
                   <OnClick>btnBindWeapon:TrackPopupMenu( "pmBindWeaponPopupMenu");</OnClick>
@@ -303,7 +599,7 @@
       <!-- Palette effect -->
       <SlideShow name="sdsPaletteEffectLeft">
         <Layout>
-          <Location x="40" y="0" />
+          <Location x="100" y="0" />
           <Size w="320" h="100" />
         </Layout>
         <Shape>
@@ -325,7 +621,7 @@
       
       <SlideShow name="sdsPaletteEffectRight">
         <Layout>
-          <Location x="290" y="0" />
+          <Location x="380" y="0" />
           <Size w="320" h="100" />
         </Layout>
         <Shape>
@@ -380,9 +676,6 @@
           <Location x="0" y="0" />
           <Size w="%100" h="25" />
         </Layout>
-        <Shape>
-          <Icon w="15" h="15">iconWeaponSword</Icon>
-        </Shape>
         <Event>
           <OnLoaded>this:SetText( STR( "UI_PALETTE_NOLINK"));</OnLoaded>
           <OnClick>luaPalette:OnClickBindWeaponSet( 0);</OnClick>
@@ -396,9 +689,6 @@
           <Location x="0" y="25" />
           <Size w="%100" h="25" />
         </Layout>
-        <Shape>
-          <Icon w="15" h="15">iconWeaponSword1</Icon>
-        </Shape>
         <Event>
           <OnLoaded>this:SetText( FORMAT( "UI_PALETTE_LINKTOWEAPON", 1));</OnLoaded>
           <OnClick>luaPalette:OnClickBindWeaponSet( 1);</OnClick>
@@ -411,9 +701,6 @@
           <Location x="0" y="50" />
           <Size w="%100" h="25" />
         </Layout>
-        <Shape>
-          <Icon w="15" h="15">iconWeaponSword2</Icon>
-        </Shape>
         <Event>
           <OnLoaded>this:SetText( FORMAT( "UI_PALETTE_LINKTOWEAPON", 2));</OnLoaded>
           <OnClick>luaPalette:OnClickBindWeaponSet( 2);</OnClick>

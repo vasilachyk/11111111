@@ -1497,7 +1497,7 @@ namespace XmlSerializable
 	public ref class maiet
 	{
 	public:
-		array<NPC^>^npcs;
+		cli::array<NPC^>^npcs;
 	};
 
 	//----------------------------------------------------------------------------//

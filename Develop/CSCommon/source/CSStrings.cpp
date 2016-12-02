@@ -856,6 +856,13 @@ int CSStrings::StringToItemTier( const TCHAR* szValue )
 
 int CSStrings::StringToWeaponType( const TCHAR* szValue )
 {
+
+	tstring strValue = StringToLower(szValue);
+	if (!_tcsicmp(strValue.c_str(), L"bow"))
+	{
+		return StringToEnum(L"arc", m_vecStrWeaponType);
+	}
+
 	return StringToEnum(szValue, m_vecStrWeaponType);
 }
 

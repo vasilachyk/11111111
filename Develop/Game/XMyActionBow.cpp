@@ -39,7 +39,7 @@ bool XMyActionBow::CheckEnterable(void* pParam)
 
 
 	if (m_pOwner->GetMyPlayerOwner()->IsDead()) return false;
-	if (!m_pOwner->GetMyPlayerOwner()->IsCurrStanceBattle()) return false;
+	//if (!m_pOwner->GetMyPlayerOwner()->IsCurrStanceBattle()) return false;
 
 	if (AmIGod()) return true;
 
@@ -98,24 +98,14 @@ XEventResult XMyActionBow::Event(XEvent &msg)
 	if (msg.m_nID == XEVTL_VIRTUAL_KEY_RELEASED)
 	{
 		XVirtualKey nVirtualKey = *static_cast<XVirtualKey*>(msg.m_pData);
-		if( nVirtualKey == VKEY_ACTION)
+		if (nVirtualKey == VKEY_ACTION)
 		{
-			if(m_bShooted == false)
+			if (m_bShooted == false)
 			{
-				if (IsDonePreparing())
-				{
-					if(global.ui)
-					{
-						global.ui->TargetUIEnd();
-					}
-
-					doShoot();
-				}
-				else
+				if (!IsDonePreparing())
 				{
 					doCancel();
 				}
-
 				return MR_TRUE;
 			}
 		}
@@ -130,7 +120,15 @@ void XMyActionBow::Update(float fDelta)
 	if( !m_bShooted )
 		doReady();
 
+	if (IsDonePreparing())
+	{
+		if (global.ui)
+		{
+			global.ui->TargetUIEnd();
+		}
 
+		doShoot();
+	}
 }
 
 void XMyActionBow::doReady()
@@ -163,14 +161,23 @@ void XMyActionBow::doReady()
 void XMyActionBow::doShoot()
 {
 	XBaseCameraSceneNode* pCameraNode = global.camera->GetCamera();
-	if (pCameraNode == NULL) return;
-
+	if (pCameraNode == NULL)
+	{
+		doCancel();
+		return;
+	}
 	XModuleTalent* pModuleTalent = m_pOwner->GetOwner()->GetModuleTalent();
 
-	if(pModuleTalent == NULL)
+	if (pModuleTalent == NULL)
+	{
+		doCancel();
 		return;
-
-	if (pModuleTalent->GetTalent() == NULL) return;
+	}
+	if (pModuleTalent->GetTalent() == NULL)
+	{
+		doCancel();
+		return;
+	}
 	MUID uidTarget	= 0;
 	int nGroupID	= -1;
 	int nDummyID	= -1;
@@ -223,6 +230,7 @@ void XMyActionBow::doShoot()
 	}
 	else
 	{
+		doCancel();
 		return;
 	}
 
@@ -245,7 +253,7 @@ void XMyActionBow::doShoot()
 	{
 		XPostAttackArchery(vArrowStartPos, vDir, uidTarget);
 	}
-
+	m_pOwner->DoActionIdle();
 	m_bShooted = true;
 }
 

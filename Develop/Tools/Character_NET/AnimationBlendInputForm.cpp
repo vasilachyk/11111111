@@ -5,7 +5,7 @@
 void Character_NET::AnimationBlendInputForm::SetAnimationBlendData( vector<string>& vecSourceAniName, vector<string>& vecTargetAniName, float fBlendTime )
 {
 	//m_arrSourceAniName->CreateInstance(System::Object^, vecSourceAniName.size());
-	m_arrSourceAniName = gcnew array<String^>(vecSourceAniName.size());
+	m_arrSourceAniName = gcnew cli::array<String^>(vecSourceAniName.size());
 
 	int i = 0;
 	for(vector<string>::iterator itSource = vecSourceAniName.begin(); itSource != vecSourceAniName.end(); ++itSource, ++i)

@@ -73,7 +73,7 @@ void XMotionAniNameMaker::MakePlayerAniName( wstring& outName, XMotion* pMotion,
 
 	WEAPON_TYPE ani_weapon_type = nWeaponType;
 
-	if (nStance == CS_NORMAL)
+	if (nStance == CS_NORMAL && ani_weapon_type != WEAPON_ARCHERY)
 	{
 		if ((pMotion->GetStanceType() != XMotion::MS_BATTLE) || 
 			pMotion->IsWeaponAni() == false)

@@ -155,7 +155,7 @@ namespace Character_NET {
 
 		int 	GetSelectSourceAniList(vector<string>& vecSelectAni);
 		String^ GetSelectCellData(int nRow, int nColumn);
-		void	GetReActionDataToArray(String^ strAni, array<String^>^ arrayData);
+		void	GetReActionDataToArray(String^ strAni, cli::array<String^>^ arrayData);
 		void	GetSourceAniList(vector<string>& vecAni);
 		void	GetSelectRowData(int nRow, ReAction_DATA& reAction_Data);
 
