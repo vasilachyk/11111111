@@ -430,9 +430,9 @@ function luaPalette:RefreshExtendPaletteSlot()
 
 	luaPalette.m_fSize = 0.0;
 	pnlExtendPaletteSlots1:Show(true);
+	pnlExtendPaletteSlots2:Show(true);
 	if (btnAddExtendPalette2 ~= nil) then
 		btnAddExtendPalette2:Enable(true);
-	pnlExtendPaletteSlots2:Show(true);
 	end
 
 	if((luaPalette.m_bBPartsPalette == true)) then

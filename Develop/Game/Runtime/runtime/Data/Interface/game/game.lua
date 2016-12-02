@@ -269,15 +269,7 @@ function luaGame:OnEventVKeyDown( sParam, nParam1, nParam2)
 	elseif ( sParam == "PALETTE")  then
 		rawget( _G, "psPalette" .. nParam1):DoUsePaletteSlot();
 		return true;
-	
-	elseif ( sParam == "PALETTESET")  then
-	
-		gamefunc:ChangePaletteSet( nParam1);
-		luaPalette:RefreshPaletteSlot();
-		return true;
 	end
-
-
 	-- Show window event key	
 	local _window = nil;
 	if ( sParam == "MAINMENU")  then
