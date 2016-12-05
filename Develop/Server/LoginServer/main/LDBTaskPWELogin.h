@@ -1,0 +1,62 @@
+#pragma once
+
+#include "LDBAsyncTask.h"
+#include "MMemPool.h"
+#include "LDBTaskDataAccount.h"
+
+struct ACCOUNT_INFO;
+
+
+class LDBTaskPWELogin : public LDBAsyncTask, public MMemPool<LDBTaskPWELogin>
+{
+public :
+	LDBTaskPWELogin(const MUID& uidReqPlayer);
+	~LDBTaskPWELogin();
+
+	enum
+	{
+		LOGIN = 0, 
+	};
+
+
+	void					Input(LDBT_ACC_LOGIN& data);
+
+
+	void					OnExecute(mdb::MDatabase& rfDB);
+	mdb::MDB_THRTASK_RESULT	_OnCompleted();
+
+
+private :
+	class _RESULT
+	{
+	public :
+		_RESULT() : m_nGSN(0), m_bNEW_ACC(true) {}
+		AID		m_nGSN;
+		wstring m_strPWD;
+		bool	m_bNEW_ACC;
+		wstring m_strSTATUS;
+		int64	m_nCONN_SN;
+	};
+
+	class Completer
+	{
+	public :
+		Completer(LDBT_ACC_LOGIN& data, _RESULT& result);
+		void Do();
+
+	private :
+		CCommandResultTable CheckError();
+		void				DebugCheckExistAccount();
+		void				InitAccountInfo();
+
+
+	private :
+		LDBT_ACC_LOGIN& m_Data;
+		_RESULT&		m_Result;
+	};
+
+
+protected :
+	LDBT_ACC_LOGIN	m_Data;
+	_RESULT			m_Result;
+};
