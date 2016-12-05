@@ -386,6 +386,7 @@ public:
 		int				m_nID;				///< 아이템의 고유한!!! ID
 		tstring			m_strName;			///< 아이템의 이름 - 문자열테이블 키워드($$ITEM_NAME_#)
 		tstring			m_strDesc;			///< 아이템 설명 - 문자열테이블 키워드($$ITEM_DESC_#)
+		vector<string>	m_vecstrDescParam;
 		ITEM_TIER		m_nTier;			///< 아이템 등급
 
 		SH_ITEM_TYPE	m_ItemType;			///< 아이템의 종류

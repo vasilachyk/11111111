@@ -3960,8 +3960,65 @@ const char* XGlueGame::GetItemDesc( int nItemID ) const
 {
 	XItemData* pItemData = info.item->GetItemData(nItemID);
 	if (pItemData == NULL) return "";
+	wstring result = L"";
+	if (pItemData->m_vecstrDescParam.size() == 0)
+		result = pItemData->GetDesc();
+	else if (pItemData->m_vecstrDescParam.size() == 1)
+		result =
+		CSFormatString::Format(
+		(pItemData->GetDesc()),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[0].c_str())
+			)
+		);
+	else if (pItemData->m_vecstrDescParam.size() == 2)
+		result =
+		CSFormatString::Format(
+			pItemData->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[1].c_str())
+			)
+		);
+	else if (pItemData->m_vecstrDescParam.size() == 3)
+		result =
+		CSFormatString::Format(
+			pItemData->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[1].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[2].c_str())
+			)
+		);
+	else if (pItemData->m_vecstrDescParam.size() == 4)
+		result =
+		CSFormatString::Format(
+			pItemData->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[1].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[2].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[3].c_str())
+			)
+		);
+	else if (pItemData->m_vecstrDescParam.size() == 5)
+		result =
+		CSFormatString::Format(
+			pItemData->GetDesc(),
+			FSParam(
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[0].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[1].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[2].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[3].c_str()),
+				MLocale::ConvAnsiToUTF16(pItemData->m_vecstrDescParam[4].c_str())
+			)
+		);
+	else
+	{
+		return "";
+	}
 
-	gvar.Temp.szTemp = MLocale::ConvUTF16ToAnsi(pItemData->GetDesc());
+	gvar.Temp.szTemp = MLocale::ConvUTF16ToAnsi(result);
 
 	return gvar.Temp.szTemp.c_str();
 }

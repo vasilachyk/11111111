@@ -77,11 +77,12 @@ bool CSItemManager::LoadFromFile_SubMtrl(const TCHAR* filename)
 
 bool CSItemManager::ParseItem(MXmlElement* pElement, CSItemData* pItemData, MXml* pXml)
 {
+	CSCSVParser csv_parser;
 	_Attribute(pItemData->m_nID, pElement, ITEM_XML_ATTR_ID);
 	
 	pItemData->m_strName = CSFormatString::Format(_T("ITEM_NAME_{0}"), FSParam(pItemData->m_nID));	// 문자열테이블 참조
 	pItemData->m_strDesc = CSFormatString::Format(_T("ITEM_DESC_{0}"), FSParam(pItemData->m_nID));	// 문자열테이블 참조
-		
+	csv_parser.Parse_CSV(pElement, "DescParam", pItemData->m_vecstrDescParam);
 	_Attribute(pItemData->m_strMeshName, pElement, "mesh_name");	
 	_Attribute(pItemData->m_bMeshNameBySex, pElement, "mesh_name_by_sex");
 	
@@ -281,7 +282,6 @@ bool CSItemManager::ParseItem(MXmlElement* pElement, CSItemData* pItemData, MXml
 
 	USES_CONVERSION_EX;
 	set<string> setData;
-	CSCSVParser csv_parser;
 	csv_parser.Parse_CSV(pElement, ITEM_XML_ATTR_ENCHANT_LIMIT_EQUIPMENTS, setData);
 	for each (string strText in setData)
 	{
